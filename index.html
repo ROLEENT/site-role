@@ -1,16 +1,153 @@
-<section style="background-color: #000000; color: white; padding: 2rem 1rem; text-align: center;">
-<img src="logo-role.png" alt="ROLÊ Logo" style="width: 120px; margin: 0 auto 1rem;" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROLÊ ENTRETENIMENTO</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #000;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      padding-top: 80px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    nav img {
+      height: 40px;
+    }
+    .nav-links a {
+      margin-left: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #FF0080;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+    }
+    header img {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.8rem;
+      color: #FF0080;
+      margin-bottom: 1rem;
+    }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .button-group a {
+      background-color: #FF0080;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .button-group a:hover {
+      background-color: #e60074;
+    }
+    footer {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      opacity: 0.6;
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="logo.png" alt="Logo ROLÊ">
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a href="#parcerias">Parcerias</a>
+      <a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
+      <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
+    </div>
+  </nav>
 
-  <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.25rem;">ROLÊ ENTRETENIMENTO</h1>
-  <p style="font-size: 1rem; color: #ccc;">Acompanhe o que acontece na noite da sua cidade</p>
+  <header>
+    <img src="logo.png" alt="Logo ROLÊ">
+    <h1>ROLÊ ENTRETENIMENTO</h1>
+    <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
+  </header>
 
-  <div style="margin: 2rem auto 1rem; max-width: 480px;">
-    <input type="text" placeholder="Onde vai ser o rolê?" 
-      style="width: 100%; padding: 0.8rem 1rem; border-radius: 12px; border: none; background-color: #1a1a1a; color: white; font-size: 1rem;" />
-  </div>
+  <main>
+    <section id="sobre">
+      <h2>Sobre o ROLÊ</h2>
+      <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
+    </section>
 
-  <div style="margin-top: 1rem;">
-    <a href="#portfolio" style="display: inline-block; background-color: #3C1AE3; color: white; font-weight: bold; padding: 0.8rem 1.5rem; border-radius: 12px; margin: 0.25rem; text-decoration: none;">Ver Portfólio</a>
-    <a href="#midiakit" style="display: inline-block; background-color: #A218A8; color: white; font-weight: bold; padding: 0.8rem 1.5rem; border-radius: 12px; margin: 0.25rem; text-decoration: none;">Ver Mídia Kit</a>
-  </div>
-</section>
+    <section id="contato">
+      <h2>Fale com a gente</h2>
+      <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
+      <div class="button-group">
+        <a href="https://wa.me/5551991732105" target="_blank">Chamar no WhatsApp</a>
+        <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
+      </div>
+    </section>
+
+    <section id="parcerias">
+      <h2>Parcerias & Vitrine Cultural</h2>
+      <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
+      <p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
+      <div class="button-group">
+        <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
+        <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 ROLÊ ENTRETENIMENTO
+  </footer>
+</body>
+</html>
