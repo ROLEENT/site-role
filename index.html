@@ -66,11 +66,34 @@
       text-decoration: none;
       transition: background 0.3s;
       display: inline-block;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
 
     a.button:hover {
       background-color: #e60074;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact-buttons a {
+      background-color: #111111;
+      border: 1px solid #FF0080;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      color: #FF0080;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .contact-buttons a:hover {
+      background-color: #FF0080;
+      color: white;
     }
 
     footer {
@@ -95,6 +118,10 @@
       a.button {
         padding: 0.7rem 1.5rem;
       }
+
+      .contact-buttons {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -114,6 +141,15 @@
       <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil.</p>
       <p>Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
       <p>Nosso Instagram é vitrine, palco e ponto de encontro de quem faz e vive a cena.</p>
+    </section>
+
+    <section id="contato">
+      <h2>Fale com a gente</h2>
+      <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
+      <div class="contact-buttons">
+        <a href="https://wa.me/5551991732105" target="_blank">Chamar no WhatsApp</a>
+        <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
+      </div>
     </section>
   </main>
 
