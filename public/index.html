@@ -249,6 +249,31 @@ body.light-mode footer {
       scroll-margin-top: 120px;
     }
 
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        text-align: right;
+        padding: 1rem;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+      }
+    }
+
 </style>
   <script>
     window.addEventListener('scroll', () => {
