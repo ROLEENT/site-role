@@ -273,19 +273,9 @@ body.light-mode footer {
   line-height: 1.6;
 }
 
-section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
 
 
 /* Estilo refinado para seções */
-section {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-  text-align: center;
-}
 
 /* Títulos das seções */
 section h2 {
@@ -307,6 +297,22 @@ section p {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  section h2 {
+    font-size: 1.5rem;
+  }
+  section p {
+    font-size: 1rem;
+  }
+}
+
+section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
   section {
     padding: 3rem 1rem;
   }
@@ -315,6 +321,22 @@ section p {
   }
   section p {
     font-size: 1rem;
+  }
+}
+
+/* Força menu hamburguer apenas até 768px */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  .nav-links {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    background: none !important;
+    width: auto !important;
+    text-align: left !important;
+    padding: 0 !important;
   }
 }
 </style>
