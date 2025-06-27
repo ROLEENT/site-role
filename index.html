@@ -35,19 +35,59 @@
     nav img {
       height: 40px;
     }
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
     .nav-links a {
       margin-left: 1.5rem;
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #FF0080;
+      border-radius: 3px;
     }
     .nav-links a:hover {
       color: #FF0080;
     }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        text-align: right;
+        padding: 1rem;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+    }
+    .menu-toggle {
+      display: none;
+    }
     header {
       text-align: center;
       padding: 3rem 2rem 2rem;
+      background: linear-gradient(145deg, #1a1a1a, #000);
     }
     header img {
       width: 120px;
@@ -65,8 +105,21 @@
       line-height: 1.6;
     }
     section {
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
+    }
+    #sobre {
+      background-image: url('https://images.unsplash.com/photo-1551808519-8c632b24c377');
+      background-size: cover;
+      background-position: center;
+    }
+    #contato {
+      background-color: #111;
+    }
+    #parcerias {
+      background-image: url('https://images.unsplash.com/photo-1581320544221-3c3b595cb7e6');
+      background-size: cover;
+      background-position: center;
     }
     h2 {
       font-family: 'League Spartan', sans-serif;
@@ -101,10 +154,37 @@
       padding: 2rem;
     }
   </style>
+  <script>
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('open');
+    }
+  </script>
 </head>
 <body>
   <nav>
-    <img src="logo.png" alt="Logo ROLÊ">
+    <img src="logo-role.png" alt="Logo ROLÊ">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="nav-links">
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
@@ -115,7 +195,7 @@
   </nav>
 
   <header>
-    <img src="logo.png" alt="Logo ROLÊ">
+    <img src="logo-role.png" alt="Logo ROLÊ">
     <h1>ROLÊ ENTRETENIMENTO</h1>
     <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
   </header>
@@ -130,7 +210,7 @@
       <h2>Fale com a gente</h2>
       <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
       <div class="button-group">
-        <a href="https://wa.me/5551991732105" target="_blank">Chamar no WhatsApp</a>
+        <a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
         <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
       </div>
     </section>
