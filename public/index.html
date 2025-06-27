@@ -276,66 +276,7 @@ body.light-mode footer {
     }
 
 </style>
-<script>
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('.nav-links a');
-      let current = '';
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
-        }
-      });
-
-      const backToTop = document.getElementById('backToTop');
-      if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
-      }
-    });
-
-    function toggleMenu() {
-      const nav = document.querySelector('.nav-links');
-      nav.classList.toggle('open');
-    }
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('section');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        threshold: 0.1
-      });
-
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-
-      // Oculta o loader após o carregamento completo
-      const loader = document.getElementById('loading-screen');
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 1000);
-    });
-  </script>
 </head>
 <body>
 <div id="loading-screen">
@@ -406,24 +347,23 @@ body.light-mode footer {
 </section>
 </main>
 <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
-<script>
-  const themeToggle = document.getElementById('themeToggle');
-  const prefersLight = localStorage.getItem('theme') === 'light';
-
-  if (prefersLight) {
-    document.body.classList.add('light-mode');
-    themeToggle.textContent = '☀️';
-  }
-
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    themeToggle.textContent = isLight ? '☀️' : '🌙';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
-</script>
 
 <script>
+const themeToggle = document.getElementById('themeToggle');
+const prefersLight = localStorage.getItem('theme') === 'light';
+
+if (prefersLight) {
+  document.body.classList.add('light-mode');
+  themeToggle.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
+  themeToggle.textContent = isLight ? '☀️' : '🌙';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
+</script><script>
 document.addEventListener('DOMContentLoaded', function () {
   const forms = document.querySelectorAll("form");
 
@@ -494,22 +434,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 </section>
 <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
-<script>
-  const themeToggle = document.getElementById('themeToggle');
-  const prefersLight = localStorage.getItem('theme') === 'light';
 
-  if (prefersLight) {
-    document.body.classList.add('light-mode');
-    themeToggle.textContent = '☀️';
-  }
-
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    themeToggle.textContent = isLight ? '☀️' : '🌙';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
-</script>
 <footer style="margin-top: 4rem; padding: 2rem; background-color: #111; text-align: center; font-size: 0.9rem; color: #ccc;">
 <div style="margin-bottom: 1rem;">
 <a href="https://instagram.com/role.ent" style="margin: 0 1rem; color: #FF0080; text-decoration: none;" target="_blank">Instagram</a>
@@ -519,6 +444,3 @@ document.addEventListener('DOMContentLoaded', function () {
 <div style="margin-top: 1rem; font-weight: bold; color: #fff;">Media Partner Oficial</div>
 <div style="margin-top: 0.5rem; font-size: 0.75rem;">© 2025 ROLÊ ENTRETENIMENTO</div>
 </footer>
-
-
-
