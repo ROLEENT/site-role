@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROLÊ - Vitrine Cultural</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -70,10 +70,9 @@
     .formulario input,
     .formulario textarea {
       margin-bottom: 1rem;
-      padding: 0.5rem;
+      padding: 0.75rem;
       border: none;
       border-radius: 5px;
-      font-size: 1rem;
     }
 
     .formulario button {
@@ -155,13 +154,13 @@
 
   <section class="formulario" id="contato">
     <h2>Contato</h2>
-    <form id="formulario" action="https://formspree.io/f/manjajyb" method="POST">
+    <form id="contact-form">
       <input type="text" name="nome" placeholder="Nome" required>
       <input type="email" name="email" placeholder="E-mail" required>
       <textarea name="mensagem" placeholder="Mensagem" required></textarea>
       <button type="submit">Enviar mensagem</button>
     </form>
-    <p class="mensagem-sucesso" id="mensagemSucesso">Mensagem enviada com sucesso!</p>
+    <p class="mensagem-sucesso" id="success-message">Mensagem enviada com sucesso!</p>
   </section>
 
   <footer>
@@ -170,29 +169,33 @@
   </footer>
 
   <script>
-    const form = document.getElementById("formulario");
-    const sucesso = document.getElementById("mensagemSucesso");
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contact-form");
+      const successMessage = document.getElementById("success-message");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
+        const formData = new FormData(form);
+
+        fetch("https://formspree.io/f/manjajyb", {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        })
         .then(response => {
           if (response.ok) {
-            sucesso.style.display = "block";
+            successMessage.style.display = "block";
             form.reset();
           } else {
             alert("Erro ao enviar. Tente novamente mais tarde.");
           }
         })
-        .catch(() => alert("Erro de conexão. Tente novamente."));
+        .catch(() => {
+          alert("Erro de conexão. Tente novamente.");
+        });
+      });
     });
   </script>
 </body>
-
 </html>
