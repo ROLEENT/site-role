@@ -133,17 +133,6 @@
       margin-bottom: 1.5rem;
       line-height: 1.6;
     }
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
     #sobre {
       background-image: url('https://images.unsplash.com/photo-1551808519-8c632b24c377');
       background-size: cover;
@@ -287,6 +276,11 @@ body.light-mode footer {
 #loading-screen {
   animation: hideLoader 1.2s ease forwards;
 }
+
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
 </style>
 
 </head>
@@ -314,10 +308,10 @@ body.light-mode footer {
 <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
 </header>
 <main>
-<section class="visible" id="sobre">
+<section id="sobre">
 <h2>Sobre o ROLÊ</h2>
 <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
-</section><section class="visible" id="destaques">
+</section><section id="destaques">
 <h2>Destaques da Semana</h2>
 <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ.<br/>Clica e descobre o que tá fervendo por aí:</p>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
@@ -355,7 +349,7 @@ body.light-mode footer {
 </div>
 </div>
 </section>
-<section class="visible" id="contato">
+<section id="contato">
 <h2>Fale com a gente</h2>
 <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
 <div class="button-group">
@@ -374,7 +368,7 @@ body.light-mode footer {
   </button>
 <div class="success-message" style="display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;">Mensagem enviada com sucesso!</div></form>
 </section>
-<section class="visible" id="parcerias">
+<section id="parcerias">
 <h2>Parcerias &amp; Vitrine Cultural</h2>
 <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
 <p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
@@ -441,19 +435,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-});
-</script><script>
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  sections.forEach(section => observer.observe(section));
 });
 </script></body>
 </html>
