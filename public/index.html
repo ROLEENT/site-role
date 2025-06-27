@@ -375,7 +375,7 @@ body.light-mode footer {
         <a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
         <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
       </div>
-<form action="https://formspree.io/f/mblyqojz" method="POST" style="max-width: 600px; margin: 2rem auto 0; text-align: left;">
+<form id="formulario-contato">
   <label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome</label>
   <input type="text" id="nome" name="nome" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
 
@@ -400,7 +400,7 @@ body.light-mode footer {
         <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
         <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
       </div>
-<form action="https://formspree.io/f/mblyqojz" method="POST" style="max-width: 600px; margin: 2rem auto 0; text-align: left;">
+<form id="formulario-contato">
   <label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome</label>
   <input type="text" id="nome" name="nome" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
 
@@ -480,7 +480,32 @@ body.light-mode footer {
   });
 </script>
 
+
+<script>
+  const form = document.getElementById("formulario-contato");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch("https://formspree.io/f/xleqwjzz", {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    if (response.ok) {
+      const sucesso = document.createElement("p");
+      sucesso.className = "mensagem-sucesso";
+      sucesso.textContent = "Mensagem enviada com sucesso!";
+      form.parentNode.appendChild(sucesso);
+      form.reset();
+    } else {
+      alert("Erro ao enviar. Tente novamente.");
+    }
+  });
+</script>
 </body>
+
 </html>
 
   
@@ -595,5 +620,30 @@ body.light-mode footer {
   <div style="margin-top: 1rem; font-weight: bold; color: #fff;">Media Partner Oficial</div>
   <div style="margin-top: 0.5rem; font-size: 0.75rem;">© 2025 ROLÊ ENTRETENIMENTO</div>
 </footer>
+
+<script>
+  const form = document.getElementById("formulario-contato");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch("https://formspree.io/f/xleqwjzz", {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    if (response.ok) {
+      const sucesso = document.createElement("p");
+      sucesso.className = "mensagem-sucesso";
+      sucesso.textContent = "Mensagem enviada com sucesso!";
+      form.parentNode.appendChild(sucesso);
+      form.reset();
+    } else {
+      alert("Erro ao enviar. Tente novamente.");
+    }
+  });
+</script>
 </body>
+
 </html>
