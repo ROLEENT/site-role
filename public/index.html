@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROLÊ ENTRETENIMENTO</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #000;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      padding-top: 80px;
+    }
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 2000;
+      transition: opacity 0.6s ease;
+    }
+    #loading-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #loading-screen img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+    #loading-screen p {
+      color: #fff;
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    nav img {
+      height: 40px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links a {
+      margin-left: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #FF0080;
+      border-radius: 3px;
+    }
+    .nav-links a:hover {
+      color: #FF0080;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        text-align: right;
+        padding: 1rem;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+    }
+    .menu-toggle {
+      display: none;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 2rem 2rem;
+      background: linear-gradient(145deg, #1a1a1a, #000);
+    }
+    header img {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #sobre {
+      background-image: url('https://images.unsplash.com/photo-1551808519-8c632b24c377');
+      background-size: cover;
+      background-position: center;
+    }
+    #contato {
+      background-color: #111;
+    }
+    #parcerias {
+      background-image: url('https://images.unsplash.com/photo-1581320544221-3c3b595cb7e6');
+      background-size: cover;
+      background-position: center;
+    }
+    h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.8rem;
+      color: #FF0080;
+      margin-bottom: 1rem;
+    }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .button-group a {
+      background-color: #FF0080;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
+    }
+    .button-group a:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 0, 128, 0.6);
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #FF0080;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1001;
+      box-shadow: 0 4px 12px rgba(255, 0, 128, 0.4);
+    }
+    #backToTop:hover {
+      background-color: #ff3399;
+    }
+    footer {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      opacity: 0.6;
+      text-align: center;
+      padding: 2rem;
+    }
+  
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #111;
+}
+body.light-mode nav {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+body.light-mode .nav-links a {
+  color: #111;
+}
+body.light-mode .nav-links a.active::after {
+  background-color: #FF0080;
+}
+body.light-mode .nav-links a:hover {
+  color: #FF0080;
+}
+body.light-mode header {
+  background: linear-gradient(145deg, #fff, #eee);
+}
+body.light-mode p {
+  color: #444;
+}
+body.light-mode #contato {
+  background-color: #ddd;
+}
+body.light-mode #parcerias {
+  background-blend-mode: lighten;
+}
+body.light-mode #backToTop {
+  background-color: #111;
+  color: #fff;
+}
+body.light-mode footer {
+  color: #333;
+}
+
+</style>
+  <script>
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+
+      const backToTop = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('open');
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Oculta o loader após o carregamento completo
+      const loader = document.getElementById('loading-screen');
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 1000);
+    });
+  </script>
+</head>
+<body>
+  <div id="loading-screen">
+    <img src="./logo-role.png" alt="Logo ROLÊ">
+    <p>Carregando...</p>
+  </div>
+
+  <nav>
+    <img src="./logo-role.png" alt="Logo ROLÊ">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button id="themeToggle" aria-label="Alternar tema" style="margin-left: 1rem; font-size: 1.2rem; background: none; border: none; color: #fff; cursor: pointer;">🌙</button>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a href="#parcerias">Parcerias</a>
+      <a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
+      <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
+    </div>
+  </nav>
+
+  <header>
+    <img src="./logo-role.png" alt="Logo ROLÊ">
+    <h1>ROLÊ ENTRETENIMENTO</h1>
+    <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre o ROLÊ</h2>
+      <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
+    </section>
+
+    <section id="contato">
+      <h2>Fale com a gente</h2>
+      <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
+      <div class="button-group">
+        <a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
+        <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
+      </div>
+<form action="https://formspree.io/f/mblyqojz" method="POST" style="max-width: 600px; margin: 2rem auto 0; text-align: left;">
+  <label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome</label>
+  <input type="text" id="nome" name="nome" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
+
+  <label for="email" style="display: block; margin-bottom: 0.5rem;">E-mail</label>
+  <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
+
+  <label for="mensagem" style="display: block; margin-bottom: 0.5rem;">Mensagem</label>
+  <textarea id="mensagem" name="mensagem" rows="5" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: none; background-color: #222; color: #fff;"></textarea>
+
+  <button type="submit" style="margin-top: 1rem; padding: 0.8rem 1.5rem; border: none; border-radius: 30px; background-color: #FF0080; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;">
+    Enviar mensagem
+  </button>
+</form>
+
+    </section>
+
+    <section id="parcerias">
+      <h2>Parcerias & Vitrine Cultural</h2>
+      <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
+      <p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
+      <div class="button-group">
+        <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
+        <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
+      </div>
+<form action="https://formspree.io/f/mblyqojz" method="POST" style="max-width: 600px; margin: 2rem auto 0; text-align: left;">
+  <label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome</label>
+  <input type="text" id="nome" name="nome" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
+
+  <label for="email" style="display: block; margin-bottom: 0.5rem;">E-mail</label>
+  <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
+
+  <label for="mensagem" style="display: block; margin-bottom: 0.5rem;">Mensagem</label>
+  <textarea id="mensagem" name="mensagem" rows="5" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: none; background-color: #222; color: #fff;"></textarea>
+
+  <button type="submit" style="margin-top: 1rem; padding: 0.8rem 1.5rem; border: none; border-radius: 30px; background-color: #FF0080; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;">
+    Enviar mensagem
+  </button>
+</form>
+
+    </section>
+  </main>
+
+  
+<section id="destaques">
+  
+<h2>Destaques da Semana</h2>
+<p>Os eventos em destaque esta semana com presença confirmada no ROLÊ.<br>Clica e descobre o que tá fervendo por aí:</p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <img src="https://instagram.fsdu37-1.fna.fbcdn.net/o1/v/t16/f1/m82/1B62F37C7C2374A62329B3E84E8DB34A_carousel_cover.jpg?stp=dst-jpg_e35_s640x640&ccb=10-5&oh=00_AYCn2i1M0RtTkq6E3ADq3sdsSTWozocVikg1MglJJuJjQA&oe=667A1876&_nc_sid=1a1240" alt="WERK" src="/snapins-ai_3662278145534087319.jpg" style="width: 100%; height: auto;">
+      <div style="padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">WERK</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Porto Alegre – 14 JUN</p>
+        <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
+      </div>
+    </div>
+    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <img src="https://instagram.fsdu37-1.fna.fbcdn.net/o1/v/t16/f1/m82/46C5175C42BC119E4322C0C057C2B4CA_carousel_cover.jpg?stp=dst-jpg_e35_s640x640&ccb=10-5&oh=00_AYCQgPjU1JbBXL3LTolOaVkUs2Tz9tzkY3B5sGqksXkNDQ&oe=667A1372&_nc_sid=1a1240" alt="SARAVAH" src="/snapins-ai_DLVCVLiOWhC.jpg" style="width: 100%; height: auto;">
+      <div style="padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">¡SARAVAH!</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Rio de Janeiro – 14 JUN</p>
+        <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
+      </div>
+    </div>
+    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <img src="https://instagram.fsdu37-1.fna.fbcdn.net/o1/v/t16/f1/m82/75D01B45ED8F2D5A632DCF5B86B03D6D_carousel_cover.jpg?stp=dst-jpg_e35_s640x640&ccb=10-5&oh=00_AYAoKvFClc6kLMRQY3CMvm_l9msz9cnYUlzR2vqu8zEzHw&oe=667A11F2&_nc_sid=1a1240" alt="DISCO INFERNO" src="/snapins-ai_3663585348265988686.jpg" style="width: 100%; height: auto;">
+      <div style="padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">Late Bar convida Disco Inferno</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">São Paulo – 14 JUN</p>
+        <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
+      </div>
+    </div>
+    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <img src="https://instagram.fsdu37-1.fna.fbcdn.net/o1/v/t16/f1/m82/3914A52A3A30D347AE1CBF7746F22DE3_carousel_cover.jpg?stp=dst-jpg_e35_s640x640&ccb=10-5&oh=00_AYANqAv_KeYJXcKtx_gxvWbWZ2MNfFGE9skZZ7A1jXBJ5g&oe=667A1671&_nc_sid=1a1240" alt="TRIPZINHA" src="/snapins-ai_3663649902824062143.jpg" style="width: 100%; height: auto;">
+      <div style="padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">Tripzinha</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Florianópolis – 15 JUN</p>
+        <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
+
+  <footer>
+    © 2025 ROLÊ ENTRETENIMENTO
+  </footer>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const prefersLight = localStorage.getItem('theme') === 'light';
+
+  if (prefersLight) {
+    document.body.classList.add('light-mode');
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    themeToggle.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector("form");
+    const successMessage = document.createElement("div");
+    successMessage.textContent = "Mensagem enviada com sucesso!";
+    successMessage.style.cssText = "display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;";
+    form.parentNode.insertBefore(successMessage, form.nextSibling);
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          successMessage.style.display = "block";
+          form.reset();
+        } else {
+          alert("Erro ao enviar. Tente novamente mais tarde.");
+        }
+      }).catch(() => {
+        alert("Erro de conexão. Tente novamente.");
+      });
+    });
+  });
+</script>
+</body>
+</html>
+
+  
+<section id="destaques">
+  
+<h2>Destaques da Semana</h2>
+<p>Os eventos em destaque esta semana com presença confirmada no ROLÊ.<br>Clica e descobre o que tá fervendo por aí:</p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <img src="https://instagram.fsdu37-1.fna.fbcdn.net/o1/v/t16/f1/m82/1B62F37C7C2374A62329B3E84E8DB34A_carousel_cover.jpg?stp=dst-jpg_e35_s640x640&ccb=10-5&oh=00_AYCn2i1M0RtTkq6E3ADq3sdsSTWozocVikg1MglJJuJjQA&oe=667A1876&_nc_sid=1a1240" alt="WERK" src="/snapins-ai_3662278145534087319.jpg" style="width: 100%; height: auto;">
+      <div style="padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">WERK</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Porto Alegre – 14 JUN</p>
+        <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
+      </div>
+    </div>
+    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <img src="https://instagram.fsdu37-1.fna.fbcdn.net/o1/v/t16/f1/m82/46C5175C42BC119E4322C0C057C2B4CA_carousel_cover.jpg?stp=dst-jpg_e35_s640x640&ccb=10-5&oh=00_AYCQgPjU1JbBXL3LTolOaVkUs2Tz9tzkY3B5sGqksXkNDQ&oe=667A1372&_nc_sid=1a1240" alt="SARAVAH" src="/snapins-ai_DLVCVLiOWhC.jpg" style="width: 100%; height: auto;">
+      <div style="padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">¡SARAVAH!</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Rio de Janeiro – 14 JUN</p>
+        <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
+      </div>
+    </div>
+    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <img src="https://instagram.fsdu37-1.fna.fbcdn.net/o1/v/t16/f1/m82/75D01B45ED8F2D5A632DCF5B86B03D6D_carousel_cover.jpg?stp=dst-jpg_e35_s640x640&ccb=10-5&oh=00_AYAoKvFClc6kLMRQY3CMvm_l9msz9cnYUlzR2vqu8zEzHw&oe=667A11F2&_nc_sid=1a1240" alt="DISCO INFERNO" src="/snapins-ai_3663585348265988686.jpg" style="width: 100%; height: auto;">
+      <div style="padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">Late Bar convida Disco Inferno</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">São Paulo – 14 JUN</p>
+        <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
+      </div>
+    </div>
+    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <img src="https://instagram.fsdu37-1.fna.fbcdn.net/o1/v/t16/f1/m82/3914A52A3A30D347AE1CBF7746F22DE3_carousel_cover.jpg?stp=dst-jpg_e35_s640x640&ccb=10-5&oh=00_AYANqAv_KeYJXcKtx_gxvWbWZ2MNfFGE9skZZ7A1jXBJ5g&oe=667A1671&_nc_sid=1a1240" alt="TRIPZINHA" src="/snapins-ai_3663649902824062143.jpg" style="width: 100%; height: auto;">
+      <div style="padding: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">Tripzinha</h3>
+        <p style="font-size: 0.9rem; color: #ccc;">Florianópolis – 15 JUN</p>
+        <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
+
+  <footer>
+    © 2025 ROLÊ ENTRETENIMENTO
+  </footer>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const prefersLight = localStorage.getItem('theme') === 'light';
+
+  if (prefersLight) {
+    document.body.classList.add('light-mode');
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    themeToggle.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector("form");
+    const successMessage = document.createElement("div");
+    successMessage.textContent = "Mensagem enviada com sucesso!";
+    successMessage.style.cssText = "display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;";
+    form.parentNode.insertBefore(successMessage, form.nextSibling);
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          successMessage.style.display = "block";
+          form.reset();
+        } else {
+          alert("Erro ao enviar. Tente novamente mais tarde.");
+        }
+      }).catch(() => {
+        alert("Erro de conexão. Tente novamente.");
+      });
+    });
+  });
+</script>
+</body>
+</html>
