@@ -448,33 +448,39 @@ body.light-mode footer {
   });
 </script>
 
+
+
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector("form");
-    const successMessage = document.createElement("div");
-    successMessage.textContent = "Mensagem enviada com sucesso!";
-    successMessage.style.cssText = "display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;";
-    form.parentNode.insertBefore(successMessage, form.nextSibling);
+    const forms = document.querySelectorAll("form");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
+    forms.forEach((form) => {
+      const successMessage = document.createElement("div");
+      successMessage.textContent = "Mensagem enviada com sucesso!";
+      successMessage.style.cssText = "display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;";
+      form.parentNode.insertBefore(successMessage, form.nextSibling);
 
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          successMessage.style.display = "block";
-          form.reset();
-        } else {
-          alert("Erro ao enviar. Tente novamente mais tarde.");
-        }
-      }).catch(() => {
-        alert("Erro de conexão. Tente novamente.");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            successMessage.style.display = "block";
+            form.reset();
+          } else {
+            alert("Erro ao enviar. Tente novamente mais tarde.");
+          }
+        }).catch(() => {
+          alert("Erro de conexão. Tente novamente.");
+        });
       });
     });
   });
@@ -555,37 +561,7 @@ body.light-mode footer {
   });
 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector("form");
-    const successMessage = document.createElement("div");
-    successMessage.textContent = "Mensagem enviada com sucesso!";
-    successMessage.style.cssText = "display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;";
-    form.parentNode.insertBefore(successMessage, form.nextSibling);
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          successMessage.style.display = "block";
-          form.reset();
-        } else {
-          alert("Erro ao enviar. Tente novamente mais tarde.");
-        }
-      }).catch(() => {
-        alert("Erro de conexão. Tente novamente.");
-      });
-    });
-  });
-</script>
 <footer style="margin-top: 4rem; padding: 2rem; background-color: #111; text-align: center; font-size: 0.9rem; color: #ccc;">
   <div style="margin-bottom: 1rem;">
     <a href="https://instagram.com/role.ent" target="_blank" style="margin: 0 1rem; color: #FF0080; text-decoration: none;">Instagram</a>
@@ -595,5 +571,41 @@ body.light-mode footer {
   <div style="margin-top: 1rem; font-weight: bold; color: #fff;">Media Partner Oficial</div>
   <div style="margin-top: 0.5rem; font-size: 0.75rem;">© 2025 ROLÊ ENTRETENIMENTO</div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach((form) => {
+      const successMessage = document.createElement("div");
+      successMessage.textContent = "Mensagem enviada com sucesso!";
+      successMessage.style.cssText = "display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;";
+      form.parentNode.insertBefore(successMessage, form.nextSibling);
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            successMessage.style.display = "block";
+            form.reset();
+          } else {
+            alert("Erro ao enviar. Tente novamente mais tarde.");
+          }
+        }).catch(() => {
+          alert("Erro de conexão. Tente novamente.");
+        });
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
