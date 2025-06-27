@@ -417,6 +417,90 @@ section#destaques img:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 16px rgba(255, 0, 128, 0.4);
 }
+
+
+/* Estilização geral de seções */
+section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Títulos */
+section h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #FF0080;
+  margin-bottom: 1.5rem;
+}
+
+/* Botão de alternância de tema */
+#themeToggle {
+  margin-left: 1rem;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilização da barra de navegação */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 1rem;
+  }
+}
+
+/* Menu completo no desktop */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    position: static !important;
+    background: none !important;
+    width: auto !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+}
+
+/* Hover nas imagens de destaque */
+#destaques img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#destaques img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(255, 0, 128, 0.4);
+}
 </style>
 
 </head>
