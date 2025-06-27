@@ -148,10 +148,12 @@
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
     }
     .button-group a:hover {
-      background-color: #e60074;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 0, 128, 0.6);
     }
     footer {
       margin-top: 4rem;
