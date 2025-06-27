@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROLÊ ENTRETENIMENTO</title>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ROLÊ ENTRETENIMENTO</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&amp;family=Poppins&amp;display=swap" rel="stylesheet"/>
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -275,7 +276,7 @@ body.light-mode footer {
     }
 
 </style>
-  <script>
+<script>
     window.addEventListener('scroll', () => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('.nav-links a');
@@ -337,100 +338,74 @@ body.light-mode footer {
   </script>
 </head>
 <body>
-  <div id="loading-screen">
-    <img src="./logo-role.png" alt="Logo ROLÊ">
-    <p>Carregando...</p>
-  </div>
-
-  <nav>
-    <img src="./logo-role.png" alt="Logo ROLÊ">
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <button id="themeToggle" aria-label="Alternar tema" style="margin-left: 1rem; font-size: 1.2rem; background: none; border: none; color: #fff; cursor: pointer;">🌙</button>
-    <div class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-      <a href="#parcerias">Parcerias</a>
-      <a href="#destaques">Destaques</a>
-      <a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
-      <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
-    </div>
-  </nav>
-
-  <header>
-    <img src="./logo-role.png" alt="Logo ROLÊ">
-    <h1>ROLÊ ENTRETENIMENTO</h1>
-    <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
-  </header>
-
-  <main>
-    <section id="sobre">
-      <h2>Sobre o ROLÊ</h2>
-      <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
-    </section>
-
-    <section id="contato">
-      <h2>Fale com a gente</h2>
-      <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
-      <div class="button-group">
-        <a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
-        <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
-      </div>
+<div id="loading-screen">
+<img alt="Logo ROLÊ" src="./logo-role.png"/>
+<p>Carregando...</p>
+</div>
+<nav>
+<img alt="Logo ROLÊ" src="./logo-role.png"/>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<button aria-label="Alternar tema" id="themeToggle" style="margin-left: 1rem; font-size: 1.2rem; background: none; border: none; color: #fff; cursor: pointer;">🌙</button>
+<div class="nav-links">
+<a href="#sobre">Sobre</a>
+<a href="#contato">Contato</a>
+<a href="#parcerias">Parcerias</a>
+<a href="#destaques">Destaques</a>
+<a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
+<a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
+</div>
+</nav>
+<header>
+<img alt="Logo ROLÊ" src="./logo-role.png"/>
+<h1>ROLÊ ENTRETENIMENTO</h1>
+<p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
+</header>
+<main>
+<section id="sobre">
+<h2>Sobre o ROLÊ</h2>
+<p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
+</section>
+<section id="contato">
+<h2>Fale com a gente</h2>
+<p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
+<div class="button-group">
+<a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
+<a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
+</div>
 <form action="https://formspree.io/f/mblyqojz" method="POST" style="max-width: 600px; margin: 2rem auto 0; text-align: left;">
-  <label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome</label>
-  <input type="text" id="nome" name="nome" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
-
-  <label for="email" style="display: block; margin-bottom: 0.5rem;">E-mail</label>
-  <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
-
-  <label for="mensagem" style="display: block; margin-bottom: 0.5rem;">Mensagem</label>
-  <textarea id="mensagem" name="mensagem" rows="5" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: none; background-color: #222; color: #fff;"></textarea>
-
-  <button type="submit" style="margin-top: 1rem; padding: 0.8rem 1.5rem; border: none; border-radius: 30px; background-color: #FF0080; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;">
+<label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome</label>
+<input id="nome" name="nome" required="" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;" type="text"/>
+<label for="email" style="display: block; margin-bottom: 0.5rem;">E-mail</label>
+<input id="email" name="email" required="" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;" type="email"/>
+<label for="mensagem" style="display: block; margin-bottom: 0.5rem;">Mensagem</label>
+<textarea id="mensagem" name="mensagem" required="" rows="5" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: none; background-color: #222; color: #fff;"></textarea>
+<button style="margin-top: 1rem; padding: 0.8rem 1.5rem; border: none; border-radius: 30px; background-color: #FF0080; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;" type="submit">
     Enviar mensagem
   </button>
-</form>
-
-    </section>
-
-    <section id="parcerias">
-      <h2>Parcerias & Vitrine Cultural</h2>
-      <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
-      <p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
-      <div class="button-group">
-        <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
-        <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
-      </div>
+<div class="success-message" style="display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;">Mensagem enviada com sucesso!</div></form>
+</section>
+<section id="parcerias">
+<h2>Parcerias &amp; Vitrine Cultural</h2>
+<p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
+<p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
+<div class="button-group">
+<a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
+<a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
+</div>
 <form action="https://formspree.io/f/mblyqojz" method="POST" style="max-width: 600px; margin: 2rem auto 0; text-align: left;">
-  <label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome</label>
-  <input type="text" id="nome" name="nome" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
-
-  <label for="email" style="display: block; margin-bottom: 0.5rem;">E-mail</label>
-  <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;">
-
-  <label for="mensagem" style="display: block; margin-bottom: 0.5rem;">Mensagem</label>
-  <textarea id="mensagem" name="mensagem" rows="5" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: none; background-color: #222; color: #fff;"></textarea>
-
-  <button type="submit" style="margin-top: 1rem; padding: 0.8rem 1.5rem; border: none; border-radius: 30px; background-color: #FF0080; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;">
+<label for="nome" style="display: block; margin-bottom: 0.5rem;">Nome</label>
+<input id="nome" name="nome" required="" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;" type="text"/>
+<label for="email" style="display: block; margin-bottom: 0.5rem;">E-mail</label>
+<input id="email" name="email" required="" style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 8px; border: none; background-color: #222; color: #fff;" type="email"/>
+<label for="mensagem" style="display: block; margin-bottom: 0.5rem;">Mensagem</label>
+<textarea id="mensagem" name="mensagem" required="" rows="5" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: none; background-color: #222; color: #fff;"></textarea>
+<button style="margin-top: 1rem; padding: 0.8rem 1.5rem; border: none; border-radius: 30px; background-color: #FF0080; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;" type="submit">
     Enviar mensagem
   </button>
-</form>
-
-    </section>
-  </main>
-
-  
-
-
-
-  
-
-
-  <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
-
-  
-
-
-
+<div class="success-message" style="display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;">Mensagem enviada com sucesso!</div></form>
+</section>
+</main>
+<button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
 <script>
   const themeToggle = document.getElementById('themeToggle');
   const prefersLight = localStorage.getItem('theme') === 'light';
@@ -448,102 +423,77 @@ body.light-mode footer {
   });
 </script>
 
-
-
-
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const forms = document.querySelectorAll("form");
+document.addEventListener('DOMContentLoaded', function () {
+  const forms = document.querySelectorAll("form");
 
-    forms.forEach((form) => {
-      const successMessage = document.createElement("div");
-      successMessage.textContent = "Mensagem enviada com sucesso!";
-      successMessage.style.cssText = "display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;";
-      form.parentNode.insertBefore(successMessage, form.nextSibling);
+  forms.forEach((form) => {
+    const successMessage = form.querySelector(".success-message");
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = new FormData(form);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
 
-        fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        }).then(response => {
-          if (response.ok) {
-            successMessage.style.display = "block";
-            form.reset();
-          } else {
-            alert("Erro ao enviar. Tente novamente mais tarde.");
-          }
-        }).catch(() => {
-          alert("Erro de conexão. Tente novamente.");
-        });
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          if (successMessage) successMessage.style.display = "block";
+          form.reset();
+        } else {
+          alert("Erro ao enviar. Tente novamente mais tarde.");
+        }
+      }).catch(() => {
+        alert("Erro de conexão. Tente novamente.");
       });
     });
   });
-</script>
-
-</body>
+});
+</script></body>
 </html>
-
-  
-
-
-
-  
 <section id="destaques">
-  <h2>Destaques da Semana</h2>
-  <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ.<br>Clica e descobre o que tá fervendo por aí:</p>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
-
-    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-      <img src="/werk.jpg" alt="WERK" style="width: 100%; height: auto;">
-      <div style="padding: 1rem;">
-        <h3 style="margin-bottom: 0.5rem;">WERK</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">Porto Alegre – 14 JUN</p>
-        <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
-      </div>
-    </div>
-
-    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-      <img src="/saravah.jpg" alt="¡SARAVAH!" style="width: 100%; height: auto;">
-      <div style="padding: 1rem;">
-        <h3 style="margin-bottom: 0.5rem;">¡SARAVAH!</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">Rio de Janeiro – 14 JUN</p>
-        <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
-      </div>
-    </div>
-
-    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-      <img src="/discoinferno.jpg" alt="Late Bar convida Disco Inferno" style="width: 100%; height: auto;">
-      <div style="padding: 1rem;">
-        <h3 style="margin-bottom: 0.5rem;">Late Bar convida Disco Inferno</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">São Paulo – 14 JUN</p>
-        <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
-      </div>
-    </div>
-
-    <div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-      <img src="/tripzinha.jpg" alt="Tripzinha" style="width: 100%; height: auto;">
-      <div style="padding: 1rem;">
-        <h3 style="margin-bottom: 0.5rem;">Tripzinha</h3>
-        <p style="font-size: 0.9rem; color: #ccc;">Florianópolis – 15 JUN</p>
-        <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;">Ver no Insta</a>
-      </div>
-    </div>
-
-  </div>
+<h2>Destaques da Semana</h2>
+<p>Os eventos em destaque esta semana com presença confirmada no ROLÊ.<br/>Clica e descobre o que tá fervendo por aí:</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+<div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+<img alt="WERK" src="/werk.jpg" style="width: 100%; height: auto;"/>
+<div style="padding: 1rem;">
+<h3 style="margin-bottom: 0.5rem;">WERK</h3>
+<p style="font-size: 0.9rem; color: #ccc;">Porto Alegre – 14 JUN</p>
+<a href="https://www.instagram.com/p/DLTBpVsPS4H/" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;" target="_blank">Ver no Insta</a>
+</div>
+</div>
+<div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+<img alt="¡SARAVAH!" src="/saravah.jpg" style="width: 100%; height: auto;"/>
+<div style="padding: 1rem;">
+<h3 style="margin-bottom: 0.5rem;">¡SARAVAH!</h3>
+<p style="font-size: 0.9rem; color: #ccc;">Rio de Janeiro – 14 JUN</p>
+<a href="https://www.instagram.com/p/DLVCVLiOWhC/" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;" target="_blank">Ver no Insta</a>
+</div>
+</div>
+<div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+<img alt="Late Bar convida Disco Inferno" src="/discoinferno.jpg" style="width: 100%; height: auto;"/>
+<div style="padding: 1rem;">
+<h3 style="margin-bottom: 0.5rem;">Late Bar convida Disco Inferno</h3>
+<p style="font-size: 0.9rem; color: #ccc;">São Paulo – 14 JUN</p>
+<a href="https://www.instagram.com/p/DLXq4sHuIR8/" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;" target="_blank">Ver no Insta</a>
+</div>
+</div>
+<div style="background-color: #111; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+<img alt="Tripzinha" src="/tripzinha.jpg" style="width: 100%; height: auto;"/>
+<div style="padding: 1rem;">
+<h3 style="margin-bottom: 0.5rem;">Tripzinha</h3>
+<p style="font-size: 0.9rem; color: #ccc;">Florianópolis – 15 JUN</p>
+<a href="https://www.instagram.com/p/DLX5i_Iu4j9/" style="display: inline-block; margin-top: 0.8rem; background-color: #FF0080; color: #fff; padding: 0.5rem 1rem; border-radius: 30px; text-decoration: none;" target="_blank">Ver no Insta</a>
+</div>
+</div>
+</div>
 </section>
-
-  <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
-
-  
-
-
-
+<button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
 <script>
   const themeToggle = document.getElementById('themeToggle');
   const prefersLight = localStorage.getItem('theme') === 'light';
@@ -560,52 +510,15 @@ body.light-mode footer {
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 </script>
-
-
 <footer style="margin-top: 4rem; padding: 2rem; background-color: #111; text-align: center; font-size: 0.9rem; color: #ccc;">
-  <div style="margin-bottom: 1rem;">
-    <a href="https://instagram.com/role.ent" target="_blank" style="margin: 0 1rem; color: #FF0080; text-decoration: none;">Instagram</a>
-    <a href="https://wa.me/5551980704353" target="_blank" style="margin: 0 1rem; color: #FF0080; text-decoration: none;">WhatsApp</a>
-    <a href="mailto:fiih@roleentretenimento.com" target="_blank" style="margin: 0 1rem; color: #FF0080; text-decoration: none;">E-mail</a>
-  </div>
-  <div style="margin-top: 1rem; font-weight: bold; color: #fff;">Media Partner Oficial</div>
-  <div style="margin-top: 0.5rem; font-size: 0.75rem;">© 2025 ROLÊ ENTRETENIMENTO</div>
+<div style="margin-bottom: 1rem;">
+<a href="https://instagram.com/role.ent" style="margin: 0 1rem; color: #FF0080; text-decoration: none;" target="_blank">Instagram</a>
+<a href="https://wa.me/5551980704353" style="margin: 0 1rem; color: #FF0080; text-decoration: none;" target="_blank">WhatsApp</a>
+<a href="mailto:fiih@roleentretenimento.com" style="margin: 0 1rem; color: #FF0080; text-decoration: none;" target="_blank">E-mail</a>
+</div>
+<div style="margin-top: 1rem; font-weight: bold; color: #fff;">Media Partner Oficial</div>
+<div style="margin-top: 0.5rem; font-size: 0.75rem;">© 2025 ROLÊ ENTRETENIMENTO</div>
 </footer>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const forms = document.querySelectorAll("form");
 
-    forms.forEach((form) => {
-      const successMessage = document.createElement("div");
-      successMessage.textContent = "Mensagem enviada com sucesso!";
-      successMessage.style.cssText = "display:none;margin-top:1rem;color:#0f0;background:#111;padding:1rem;border-radius:8px;text-align:center;font-weight:bold;";
-      form.parentNode.insertBefore(successMessage, form.nextSibling);
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        }).then(response => {
-          if (response.ok) {
-            successMessage.style.display = "block";
-            form.reset();
-          } else {
-            alert("Erro ao enviar. Tente novamente mais tarde.");
-          }
-        }).catch(() => {
-          alert("Erro de conexão. Tente novamente.");
-        });
-      });
-    });
-  });
-</script>
-
-</body>
-</html>
