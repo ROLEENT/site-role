@@ -207,7 +207,44 @@
       text-align: center;
       padding: 2rem;
     }
-  </style>
+  
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #111;
+}
+body.light-mode nav {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+body.light-mode .nav-links a {
+  color: #111;
+}
+body.light-mode .nav-links a.active::after {
+  background-color: #FF0080;
+}
+body.light-mode .nav-links a:hover {
+  color: #FF0080;
+}
+body.light-mode header {
+  background: linear-gradient(145deg, #fff, #eee);
+}
+body.light-mode p {
+  color: #444;
+}
+body.light-mode #contato {
+  background-color: #ddd;
+}
+body.light-mode #parcerias {
+  background-blend-mode: lighten;
+}
+body.light-mode #backToTop {
+  background-color: #111;
+  color: #fff;
+}
+body.light-mode footer {
+  color: #333;
+}
+
+</style>
   <script>
     window.addEventListener('scroll', () => {
       const sections = document.querySelectorAll('section');
@@ -278,6 +315,7 @@
   <nav>
     <img src="logo-role.png" alt="Logo ROLÊ">
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button id="themeToggle" aria-label="Alternar tema" style="margin-left: 1rem; font-size: 1.2rem; background: none; border: none; color: #fff; cursor: pointer;">🌙</button>
     <div class="nav-links">
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
@@ -324,6 +362,23 @@
   <footer>
     © 2025 ROLÊ ENTRETENIMENTO
   </footer>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const prefersLight = localStorage.getItem('theme') === 'light';
+
+  if (prefersLight) {
+    document.body.classList.add('light-mode');
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    themeToggle.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+</script>
 </body>
 </html>
 
@@ -332,5 +387,22 @@
   <footer>
     © 2025 ROLÊ ENTRETENIMENTO
   </footer>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const prefersLight = localStorage.getItem('theme') === 'light';
+
+  if (prefersLight) {
+    document.body.classList.add('light-mode');
+    themeToggle.textContent = '☀️';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    themeToggle.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+</script>
 </body>
 </html>
