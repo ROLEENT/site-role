@@ -339,6 +339,40 @@ section {
     padding: 0 !important;
   }
 }
+
+
+/* Botão de alternância de tema mais visível e posicionado */
+#themeToggle {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    position: static !important;
+    background: none !important;
+    width: auto !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+}
+
+/* Garantir espaçamento entre logo, menu e tema */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
 </style>
 
 </head>
