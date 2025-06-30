@@ -1,275 +1,50 @@
-/* Reset e tipografia */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: 'Poppins', sans-serif;
+  margin: 0;
   background-color: #000;
-  color: #fff;
-  scroll-behavior: smooth;
-  padding-top: 80px;
+  font-family: 'League Spartan', sans-serif;
+  color: white;
 }
 
-body.light-mode {
-  background-color: #f5f5f5;
-  color: #111;
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
+.menu {
+  list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+  justify-content: flex-end;
   padding: 1rem 2rem;
-  gap: 1rem;
-}
-
-nav img {
-  height: 40px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links a {
-  margin-left: 1.5rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-}
-
-.nav-links a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #FF0080;
-  border-radius: 3px;
-}
-
-.nav-links a:hover {
-  color: #FF0080;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-#themeToggle {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-
-header {
-  text-align: center;
-  background: linear-gradient(145deg, #1a1a1a, #000);
-  padding: 4rem 2rem 2rem;
-}
-
-header img {
-  width: 120px;
-  margin-bottom: 1rem;
-}
-
-h1 {
-  font-family: 'League Spartan', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #ccc;
-}
-
-section {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-section h2 {
-  font-family: 'League Spartan', sans-serif;
+  gap: 1.5rem;
   font-weight: 700;
-  font-size: 2rem;
-  color: #FF0080;
-  margin-bottom: 1.5rem;
 }
 
-.button-group {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.button-group a {
-  background-color: #FF0080;
+.menu li a {
   color: white;
-  border-radius: 30px;
-  padding: 0.75rem 1.5rem;
   text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.button-group a:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 0, 128, 0.6);
-}
-
-footer {
-  background-color: #111;
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-top: 4rem;
-}
-
-footer a {
-  color: #FF0080;
-  margin: 0 1rem;
-  text-decoration: none;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.card {
-  background-color: #111;
-  border-radius: 12px;
-  overflow: hidden;
-  width: 280px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card a {
-  margin: 1rem 0;
-  background-color: #FF0080;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(255, 0, 128, 0.4);
-}
-
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #FF0080;
-  color: white;
-  border: none;
-  border-radius: 50px;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 1001;
-  box-shadow: 0 4px 12px rgba(255, 0, 128, 0.4);
 }
 
-#backToTop:hover {
-  background-color: #ff3399;
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
+.logo-home {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .menu {
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.95);
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    text-align: right;
+    align-items: flex-end;
     padding: 1rem;
   }
 
-  .nav-links.open {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  header img {
-    width: 90px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex !important;
-    flex-direction: row !important;
-    position: static !important;
-    background: none !important;
-    width: auto !important;
-    text-align: left !important;
-    padding: 0 !important;
+  .logo-home {
+    max-width: 85vw;
+    max-height: 60vh;
   }
 }
