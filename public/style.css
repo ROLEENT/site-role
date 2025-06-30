@@ -207,7 +207,6 @@ footer a {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  display: none;
   z-index: 1001;
   box-shadow: 0 4px 12px rgba(255, 0, 128, 0.4);
 }
@@ -235,6 +234,27 @@ footer a {
 
   .menu-toggle {
     display: block;
+  }
+
+  header img {
+    width: 90px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
   }
 }
 
