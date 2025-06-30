@@ -1,313 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FF0080" />
-  <meta name="description" content="O ROLÊ é a plataforma que conecta eventos, artistas e rolezeiros nas principais cidades do Brasil. Divulgação cultural criativa, engajada e estratégica." />
-  <title>ROLÊ ENTRETENIMENTO</title>
+  <title>ROLÊ – Sua plataforma cultural</title>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
   <link rel="icon" href="logo-role.png" type="image/png">
-  <meta property="og:title" content="ROLÊ ENTRETENIMENTO" />
-  <meta property="og:description" content="A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil." />
-  <meta property="og:image" content="logo-role.png" />
-  <meta property="og:url" content="https://roleentretenimento.com" />
-  <meta name="twitter:card" content="summary_large_image">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background-color: #000;
-      font-family: 'Poppins', sans-serif;
       color: #fff;
-      padding-top: 80px;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #000;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
       z-index: 1000;
-      gap: 1rem;
     }
-    nav img { height: 40px; }
-    .nav-links {
-      display: flex;
-      align-items: center;
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
     }
-    .nav-links a {
-      margin-left: 1.5rem;
-      color: #fff;
+    .btn-destaque {
+      background-color: #FF0080;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      position: relative;
     }
-    .nav-links a:hover { color: #FF0080; }
-    .menu-toggle { display: none; }
-    body.light-mode {
-      background-color: #f5f5f5;
-      color: #111;
-    }
-    body.light-mode nav { background-color: rgba(255, 255, 255, 0.9); }
-    body.light-mode .nav-links a { color: #111; }
-    body.light-mode .nav-links a:hover { color: #FF0080; }
-    body.light-mode footer { color: #333; }
-    header {
+    .hero {
       text-align: center;
-      background: linear-gradient(145deg, #1a1a1a, #000);
-      padding: 2rem 1rem;
+      padding: 5rem 2rem 3rem;
     }
-    header img { width: 120px; margin-bottom: 1rem; }
-    h1 {
+    .hero h1 {
       font-family: 'League Spartan', sans-serif;
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    section {
-      max-width: 1280px;
-      margin: auto;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    section h2 {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 2rem;
+      margin-bottom: 1rem;
       color: #FF0080;
-      margin-bottom: 1.5rem;
     }
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+    .hero .buttons a {
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1024px;
+      margin: auto;
+    }
+    .section h2 {
+      font-family: 'League Spartan', sans-serif;
+      color: #FF0080;
+      margin-bottom: 1rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
     }
     .card {
-      max-width: 320px;
       background: #111;
       border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 16px rgba(255, 0, 128, 0.25);
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(255, 0, 128, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255, 0, 128, 0.35);
     }
     .card img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
     }
-    .card a {
-      display: block;
-      background: #FF0080;
-      color: white;
-      padding: 0.75rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .button-group {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .button-group a {
-      background-color: #FF0080;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.6rem 1.5rem;
-      box-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
-    }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    form label {
+    .card strong {
       display: block;
       margin-bottom: 0.5rem;
-      font-weight: bold;
     }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    form button {
-      background-color: #FF0080;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #FF0080;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      padding: 0.7rem 1.1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      display: none;
-      box-shadow: 0 4px 12px rgba(255, 0, 128, 0.4);
-    }
-    footer {
-      margin-top: 4rem;
-      padding: 2rem;
-      background-color: #111;
-      text-align: center;
+    .card p {
       font-size: 0.9rem;
       color: #ccc;
     }
+    footer {
+      background-color: #000;
+      padding: 2rem;
+      text-align: center;
+      color: #ccc;
+      font-size: 0.85rem;
+    }
     footer a {
-      margin: 0 1rem;
       color: #FF0080;
+      margin: 0 0.5rem;
       text-decoration: none;
     }
-.destaques-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 1rem;
+    .light-mode {
+      background-color: #fff;
+      color: #000;
     }
-    .destaques-scroll::-webkit-scrollbar {
-      height: 8px;
+    .light-mode header, .light-mode footer {
+      background-color: #fff;
     }
-    .destaques-scroll::-webkit-scrollbar-thumb {
-      background: #FF0080;
-      border-radius: 4px;
+    .light-mode a {
+      color: #FF0080;
     }
-    .destaques-scroll .card {
-      flex: 0 0 auto;
-      width: 220px;
-      scroll-snap-align: start;
-    }
-    .destaques-scroll .card img {
-      height: 300px;
-      object-fit: cover;
-    }
-
   </style>
 </head>
 <body>
-  <nav>
-    <img alt="Logo ROLÊ" src="./logo-role.png" />
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <button aria-label="Alternar tema" id="themeToggle">🌙</button>
-    <div class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="editorial.html" style="color: #FF0080; font-weight: bold;">✍️ Editorial</a>
-      <a href="#destaques">Destaques</a>
-      <a href="#contato">Contato</a>
-      <a href="#parcerias">Parcerias</a>
-      <a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
-      <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
-    </div>
-  </nav>
-
   <header>
-    <img alt="Logo ROLÊ" src="./logo-role.png" />
-    <h1>ROLÊ ENTRETENIMENTO</h1>
-    <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
+    <div><img src="logo-role.png" alt="ROLÊ Logo" style="height: 40px;"></div>
+    <nav>
+      <a href="#agenda">Agenda</a>
+      <a href="destaques.html">Destaques</a>
+      <a href="editorial.html">Revista do ROLÊ</a>
+      <a href="#contato">Contato</a>
+      <a class="btn-destaque" href="#enviar">Enviar meu rolê</a>
+    </nav>
+    <button onclick="toggleDark()" style="background:none; border:none; color:#FF0080; font-weight:bold;">🌓</button>
   </header>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre o ROLÊ</h2>
-      <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
-    </section>
+  <section class="hero">
+    <h1>ROLÊ: Sua plataforma cultural</h1>
+    <p>Descubra os melhores rolês nas principais cidades do Brasil. Uma vitrine viva da cultura urbana, independente e plural.</p>
+    <div class="buttons">
+      <a href="destaques.html" class="btn-destaque">Ver Destaques</a>
+      <a href="editorial.html" class="btn-destaque">Ver Revista do ROLÊ</a>
+    </div>
+  </section>
 
-    <section id="destaques">
-  <h2>Destaques da Semana</h2>
-  <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí:</p>
-  
-  <div class="destaques-scroll">
-    <div class="card">
-      <img src="werk.jpg" alt="WERK" />
-      <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank">Ver no Insta</a>
-    </div>
-    <div class="card">
-      <img src="saravah.jpg" alt="¡SARAVAH!" />
-      <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank">Ver no Insta</a>
-    </div>
-    <div class="card">
-      <img src="discoinferno.jpg" alt="Disco Inferno" />
-      <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank">Ver no Insta</a>
-    </div>
-    <div class="card">
-      <img src="tripzinha.jpg" alt="Tripzinha" />
-      <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank">Ver no Insta</a>
-    </div>
+  <section class="section" id="agenda">
+    <h2>Agenda da Semana</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <img src="destaque1.jpg" alt="Start the Engines">
+        <strong>PORTO ALEGRE</strong>
+        <p>Start the Engines, In The Name Of Love, Vulto...</p>
       </div>
-</section>
-
-    <section id="contato">
-      <h2>Fale com a gente</h2>
-      <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
-      <div class="button-group">
-        <a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
-        <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
+      <div class="card">
+        <img src="destaque2.jpg" alt="Saravah">
+        <strong>RIO DE JANEIRO</strong>
+        <p>Saravah, Tripzinha, Nova Nostalgia, Tirona...</p>
       </div>
-    </section>
-
-    <section id="parcerias">
-      <h2>Parcerias & Vitrine Cultural</h2>
-      <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
-      <p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
-      <div class="button-group">
-        <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
-        <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
+      <div class="card">
+        <img src="destaque3.jpg" alt="Disco Inferno">
+        <strong>SÃO PAULO</strong>
+        <p>Disco Inferno, Maniva, Volt Liquid, Mixórdia...</p>
       </div>
-    </section>
-  </main>
-
-  <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
-
-  <footer>
-    <p>© 2025 ROLÊ ENTRETENIMENTO – Media Partner Oficial</p>
-    <div style="margin-top: 1rem; font-size: 0.85rem;">
-      <a href="politica.html">Política de Privacidade</a>
-      <a href="termos-usuario.html">Termos de Uso</a>
-      <a href="termos-organizador.html">Organizadores</a>
-      <a href="politica-spam.html">Antispam</a>
     </div>
+  </section>
+
+  <section class="section">
+    <h2>Revista do ROLÊ</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <img src="editorial1.jpg" alt="Editorial 1">
+        <strong>As cidades já foram noturnas</strong>
+        <p>A madrugada morreu ou só se escondeu?</p>
+      </div>
+      <div class="card">
+        <img src="editorial2.png" alt="Editorial 2">
+        <strong>DJs são novos autores</strong>
+        <p>Quem escreve tua noite é o DJ. Já agradeceu?</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <p>© 2025 ROLÊ ENTRETENIMENTO</p>
+    <a href="politica.html">Política de Privacidade</a>
+    <a href="termos-usuario.html">Termos de Uso</a>
+    <a href="termos-organizador.html">Organizadores</a>
+    <a href="politica-spam.html">Antispam</a>
   </footer>
 
   <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const prefersLight = localStorage.getItem('theme') === 'light';
-    if (prefersLight) {
-      document.body.classList.add('light-mode');
-      themeToggle.textContent = '☀️';
+    function toggleDark() {
+      document.body.classList.toggle("light-mode");
     }
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
-      themeToggle.textContent = isLight ? '☀️' : '🌙';
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('open');
-    }
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    window.addEventListener('scroll', () => {
-      const btn = document.getElementById('backToTop');
-      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
   </script>
 </body>
 </html>
