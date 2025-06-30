@@ -23,11 +23,27 @@
     .section {
       margin-bottom: 4rem;
     }
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+    }
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #FF0080;
+      border-radius: 4px;
+    }
     .card {
       background: #111;
+      min-width: 300px;
+      flex: 0 0 auto;
       padding: 1rem;
-      margin: 1rem 0;
       border-radius: 12px;
+      scroll-snap-align: start;
       box-shadow: 0 4px 10px rgba(255, 0, 128, 0.25);
     }
     a {
@@ -64,32 +80,44 @@
 
   <div class="section" id="editorial">
     <h2>Editorial</h2>
-    <div class="card">Postagens editoriais que abrem a semana com reflexões culturais e provocações criativas.</div>
+    <div class="scroll-container">
+      <div class="card">Postagens editoriais que abrem a semana com reflexões culturais e provocações criativas.</div>
+    </div>
   </div>
 
   <div class="section" id="posfacio">
     <h2>Posfácio</h2>
-    <div class="card">Encerramento semanal com textos finais, críticas ou pensamentos sobre a cena cultural atual.</div>
+    <div class="scroll-container">
+      <div class="card">Encerramento semanal com textos finais, críticas ou pensamentos sobre a cena cultural atual.</div>
+    </div>
   </div>
 
   <div class="section" id="dicas">
     <h2>Dicas do ROLÊ</h2>
-    <div class="card">Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</div>
+    <div class="scroll-container">
+      <div class="card">Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</div>
+    </div>
   </div>
 
   <div class="section" id="fala-role">
     <h2>Fala, ROLÊ</h2>
-    <div class="card">Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</div>
+    <div class="scroll-container">
+      <div class="card">Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</div>
+    </div>
   </div>
 
   <div class="section" id="bpm">
     <h2>ROLÊ.bpm</h2>
-    <div class="card">Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</div>
+    <div class="scroll-container">
+      <div class="card">Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</div>
+    </div>
   </div>
 
   <div class="section" id="achadinhos">
     <h2>Achadinhos do ROLÊ</h2>
-    <div class="card">Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</div>
+    <div class="scroll-container">
+      <div class="card">Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</div>
+    </div>
   </div>
 
   <footer>
