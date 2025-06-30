@@ -1,127 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ROLÊ ENTRETENIMENTO</title>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <script>
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('open');
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
     }
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    body {
+      background-color: #000;
+      font-family: 'League Spartan', sans-serif;
+      color: white;
+      line-height: 1.6;
     }
-  </script>
+
+    nav {
+      background-color: #000;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .menu li a:hover {
+      color: #FF00B8;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      padding: 2rem;
+    }
+
+    .logo-home {
+      max-width: 80vw;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #FF00B8;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .button {
+      background-color: #FF00B8;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #d9009d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        padding-top: 4rem;
+      }
+
+      .logo-home {
+        max-width: 90vw;
+        max-height: 50vh;
+      }
+
+      .menu {
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div id="loading-screen">
-    <img alt="Logo ROLÊ" src="logo-role.png" />
-    <p>Carregando...</p>
-  </div>
 
   <nav>
-    <img src="logo-role.png" alt="Logo ROLÊ" />
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <button aria-label="Alternar tema" id="themeToggle">🌙</button>
-    <div class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-      <a href="#parcerias">Parcerias</a>
-      <a href="#destaques">Destaques</a>
-      <a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
-      <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
-    </div>
+    <ul class="menu">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#destaques">Destaques</a></li>
+      <li><a href="#parcerias">Parcerias</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a></li>
+      <li><a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a></li>
+    </ul>
   </nav>
 
-  <header>
-    <img src="logo-role.png" alt="Logo ROLÊ" />
-    <h1>ROLÊ ENTRETENIMENTO</h1>
-    <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
-  </header>
+  <section class="hero">
+    <img src="653a8122-38e5-4296-8478-92dc20b37b42.png" alt="Logo ROLÊ" class="logo-home"/>
+  </section>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre o ROLÊ</h2>
-      <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
-    </section>
+  <section id="sobre">
+    <h2>Sobre o ROLÊ</h2>
+    <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
+  </section>
 
-    <section id="destaques">
-      <h2>Destaques da Semana</h2>
-      <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí!</p>
-      <div class="cards-container">
-        <div class="card">
-          <img src="werk.jpg" alt="WERK" />
-          <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank">Ver no Insta</a>
-        </div>
-        <div class="card">
-          <img src="saravah.jpg" alt="SARAVAH!" />
-          <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank">Ver no Insta</a>
-        </div>
-        <div class="card">
-          <img src="discoinferno.jpg" alt="Disco Inferno" />
-          <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank">Ver no Insta</a>
-        </div>
-        <div class="card">
-          <img src="tripzinha.jpg" alt="Tripzinha" />
-          <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank">Ver no Insta</a>
-        </div>
-      </div>
-    </section>
+  <section id="destaques">
+    <h2>Destaques da Semana</h2>
+    <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí!</p>
+    <div class="buttons">
+      <a class="button" href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank">Ver no Insta 1</a>
+      <a class="button" href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank">Ver no Insta 2</a>
+      <a class="button" href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank">Ver no Insta 3</a>
+    </div>
+  </section>
 
-    <section id="contato">
-      <h2>Fale com a gente</h2>
-      <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
-      <div class="button-group">
-        <a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
-        <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
-      </div>
-    </section>
+  <section id="parcerias">
+    <h2>Parcerias & Vitrine Cultural</h2>
+    <p>Tem um evento, marca ou espaço que movimenta a cena? A Vitrine Cultural do ROLÊ é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
+  </section>
 
-    <section id="parcerias">
-      <h2>Parcerias & Vitrine Cultural</h2>
-      <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
-      <div class="button-group">
-        <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
-        <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
-      </div>
-    </section>
-  </main>
+  <section id="contato">
+    <h2>Fale com a gente</h2>
+    <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
+    <div class="buttons">
+      <a class="button" href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
+      <a class="button" href="mailto:fiih@roleentretenimento.com">Enviar e-mail</a>
+      <a class="button" href="https://instagram.com/role.ent" target="_blank">Instagram</a>
+    </div>
+  </section>
 
   <footer>
-    <div>
-      <a href="https://instagram.com/role.ent" target="_blank">Instagram</a>
-      <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a>
-      <a href="mailto:fiih@roleentretenimento.com">E-mail</a>
-    </div>
-    <div style="margin-top: 1rem; font-weight: bold; color: #fff;">Media Partner Oficial</div>
-    <div style="margin-top: 0.5rem; font-size: 0.75rem;">© 2025 ROLÊ ENTRETENIMENTO</div>
+    © 2025 ROLÊ ENTRETENIMENTO – Media Partner Oficial
   </footer>
 
-  <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
-
-  <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const prefersLight = localStorage.getItem('theme') === 'light';
-
-    if (prefersLight) {
-      document.body.classList.add('light-mode');
-      themeToggle.textContent = '☀️';
-    }
-
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
-      themeToggle.textContent = isLight ? '☀️' : '🌙';
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const loader = document.getElementById('loading-screen');
-      setTimeout(() => loader?.classList.add('hidden'), 1000);
-    });
-  </script>
 </body>
 </html>
