@@ -346,6 +346,42 @@ form button[type="submit"]:hover {
   font-size: 0.95rem;
 }
 
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.card {
+  max-width: 320px;
+  text-align: center;
+  background-color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(255, 0, 128, 0.25);
+}
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-btn {
+  background-color: #FF0080;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.75rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0 0 12px 12px;
+  transition: background 0.3s ease;
+}
+.card-btn:hover {
+  background-color: #e60073;
+}
+
 </style>
   </head>
   <body>
@@ -382,36 +418,30 @@ form button[type="submit"]:hover {
 
       <div style='height: 4rem;'></div>
 
-      <section id="destaques">
-        <h2>Destaques da Semana</h2>
-        <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí:</p>
-        <div class="cards">
-          <div class="card">
-            <img src="/werk.jpg" alt="WERK" />
-            <div class="card-btn">
-              <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank">Ver no Insta</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="/saravah.jpg" alt="¡SARAVAH!" />
-            <div class="card-btn">
-              <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank">Ver no Insta</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="/discoinferno.jpg" alt="Late Bar convida Disco Inferno" />
-            <div class="card-btn">
-              <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank">Ver no Insta</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="/tripzinha.jpg" alt="Tripzinha" />
-            <div class="card-btn">
-              <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank">Ver no Insta</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      
+<section id="destaques">
+  <h2>Destaques da Semana</h2>
+  <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí:</p>
+  <div class="cards">
+    <div class="card">
+      <img src="werk.jpg" alt="WERK" />
+      <a class="card-btn" href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank">Ver no Insta</a>
+    </div>
+    <div class="card">
+      <img src="saravah.jpg" alt="¡SARAVAH!" />
+      <a class="card-btn" href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank">Ver no Insta</a>
+    </div>
+    <div class="card">
+      <img src="discoinferno.jpg" alt="Disco Inferno" />
+      <a class="card-btn" href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank">Ver no Insta</a>
+    </div>
+    <div class="card">
+      <img src="tripzinha.jpg" alt="Tripzinha" />
+      <a class="card-btn" href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank">Ver no Insta</a>
+    </div>
+  </div>
+</section>
+
 
       <div style='height: 4rem;'></div>
 
