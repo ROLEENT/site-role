@@ -175,6 +175,30 @@
       color: #FF0080;
       text-decoration: none;
     }
+.destaques-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+    }
+    .destaques-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+    .destaques-scroll::-webkit-scrollbar-thumb {
+      background: #FF0080;
+      border-radius: 4px;
+    }
+    .destaques-scroll .card {
+      flex: 0 0 auto;
+      width: 220px;
+      scroll-snap-align: start;
+    }
+    .destaques-scroll .card img {
+      height: 300px;
+      object-fit: cover;
+    }
+
   </style>
 </head>
 <body>
