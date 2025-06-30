@@ -1,202 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="O ROLÊ é a plataforma que conecta eventos, artistas e rolezeiros nas principais cidades do Brasil. Divulgação cultural criativa, engajada e estratégica." />
-    <title>ROLÊ ENTRETENIMENTO</title>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="loading-screen">
-      <img alt="Logo ROLÊ" src="./logo-role.png" />
-      <p>Carregando...</p>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ROLÊ ENTRETENIMENTO | Cultura, Festas e Arte nas Principais Cidades</title>
+  <meta name="description" content="A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil."/>
+  <meta name="author" content="ROLÊ"/>
+  <meta name="keywords" content="eventos, festas, cultura, arte, rolê, música, entretenimento, Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis, ROLÊ ENTRETENIMENTO"/>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loading-screen">
+    <img alt="Logo ROLÊ" src="./logo-role.png"/>
+    <p>Carregando...</p>
+  </div>
+  <nav>
+    <img alt="Logo ROLÊ" src="./logo-role.png"/>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button aria-label="Alternar tema" id="themeToggle">🌙</button>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a href="#parcerias">Parcerias</a>
+      <a href="#destaques">Destaques</a>
+      <a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
+      <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
     </div>
+  </nav>
 
-    <nav>
-      <img alt="Logo ROLÊ" src="./logo-role.png" />
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <button aria-label="Alternar tema" id="themeToggle">🌙</button>
-      <div class="nav-links">
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-        <a href="#parcerias">Parcerias</a>
-        <a href="#destaques">Destaques</a>
-        <a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
-        <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
+  <header>
+    <img alt="Logo ROLÊ" src="./logo-role.png"/>
+    <h1>ROLÊ ENTRETENIMENTO</h1>
+    <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre o ROLÊ</h2>
+      <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
+    </section>
+
+    <hr/>
+
+    <section id="destaques">
+      <h2>Destaques da Semana</h2>
+      <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí:</p>
+      <div class="cards-container">
+        <div class="card">
+          <img src="/werk.jpg" alt="WERK"/>
+          <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank">Ver no Insta</a>
+        </div>
+        <div class="card">
+          <img src="/saravah.jpg" alt="¡SARAVAH!"/>
+          <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank">Ver no Insta</a>
+        </div>
+        <div class="card">
+          <img src="/discoinferno.jpg" alt="Disco Inferno"/>
+          <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank">Ver no Insta</a>
+        </div>
+        <div class="card">
+          <img src="/tripzinha.jpg" alt="Tripzinha"/>
+          <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank">Ver no Insta</a>
+        </div>
       </div>
-    </nav>
+    </section>
 
-    <header>
-      <img alt="Logo ROLÊ" src="./logo-role.png" />
-      <h1>ROLÊ ENTRETENIMENTO</h1>
-      <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
-    </header>
+    <hr/>
 
-    <main>
-      <section id="sobre">
-        <h2>Sobre o ROLÊ</h2>
-        <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
-      </section>
-
-      <hr />
-
-      <section id="destaques">
-        <h2>Destaques da Semana</h2>
-        <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí:</p>
-        <div class="cards">
-          <div class="card">
-            <img src="/werk.jpg" alt="WERK" />
-            <div class="card-btn">
-              <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank">Ver no Insta</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="/saravah.jpg" alt="¡SARAVAH!" />
-            <div class="card-btn">
-              <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank">Ver no Insta</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="/discoinferno.jpg" alt="Late Bar convida Disco Inferno" />
-            <div class="card-btn">
-              <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank">Ver no Insta</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="/tripzinha.jpg" alt="Tripzinha" />
-            <div class="card-btn">
-              <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank">Ver no Insta</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <section id="contato">
-        <h2>Fale com a gente</h2>
-        <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
-        <div class="button-group">
-          <a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
-          <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
-        </div>
-        <form action="https://formspree.io/f/mblyqojz" method="POST">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required />
-
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
-          <button type="submit">Enviar mensagem</button>
-          <div class="success-message">Mensagem enviada com sucesso!</div>
-        </form>
-      </section>
-
-      <hr />
-
-      <section id="parcerias">
-        <h2>Parcerias & Vitrine Cultural</h2>
-        <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
-        <p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
-        <div class="button-group">
-          <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
-          <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
-        </div>
-        <form action="https://formspree.io/f/mblyqojz" method="POST">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required />
-
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
-          <button type="submit">Enviar mensagem</button>
-          <div class="success-message">Mensagem enviada com sucesso!</div>
-        </form>
-      </section>
-    </main>
-
-    <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
-
-    <footer>
-      <div>
-        <a href="https://instagram.com/role.ent" target="_blank">Instagram</a>
-        <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a>
-        <a href="mailto:fiih@roleentretenimento.com" target="_blank">E-mail</a>
+    <section id="contato">
+      <h2>Fale com a gente</h2>
+      <p>Quer divulgar seu evento, enviar uma proposta ou só trocar uma ideia? Estamos por aqui.</p>
+      <div class="button-group">
+        <a href="https://wa.me/5551980704353" target="_blank">Chamar no WhatsApp</a>
+        <a href="mailto:fiih@roleentretenimento.com">Enviar um e-mail</a>
       </div>
-      <div>Media Partner Oficial</div>
-      <div>© 2025 ROLÊ ENTRETENIMENTO</div>
-    </footer>
+    </section>
 
-    <script>
-      const themeToggle = document.getElementById('themeToggle');
-      const prefersLight = localStorage.getItem('theme') === 'light';
+    <hr/>
 
-      if (prefersLight) {
-        document.body.classList.add('light-mode');
-        themeToggle.textContent = '☀️';
-      }
+    <section id="parcerias">
+      <h2>Parcerias & Vitrine Cultural</h2>
+      <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
+      <p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
+      <div class="button-group">
+        <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
+        <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
+      </div>
+    </section>
+  </main>
 
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const isLight = document.body.classList.contains('light-mode');
-        themeToggle.textContent = isLight ? '☀️' : '🌙';
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      });
+  <footer>
+    <div>
+      <a href="https://instagram.com/role.ent" target="_blank">Instagram</a>
+      <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a>
+      <a href="mailto:fiih@roleentretenimento.com" target="_blank">E-mail</a>
+    </div>
+    <div>© 2025 ROLÊ ENTRETENIMENTO</div>
+  </footer>
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const loader = document.getElementById('loading-screen');
-        setTimeout(() => {
-          loader.classList.add('hidden');
-        }, 1000);
-      });
+  <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
 
-      function toggleMenu() {
-        document.querySelector('.nav-links').classList.toggle('open');
-      }
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    }
 
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersLight = localStorage.getItem('theme') === 'light';
+    if (prefersLight) {
+      document.body.classList.add('light-mode');
+      themeToggle.textContent = '☀️';
+    }
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      themeToggle.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
 
-      document.addEventListener('DOMContentLoaded', function () {
-        const forms = document.querySelectorAll('form');
-
-        forms.forEach((form) => {
-          const successMessage = form.querySelector('.success-message');
-
-          form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-
-            fetch(form.action, {
-              method: 'POST',
-              body: formData,
-              headers: {
-                Accept: 'application/json',
-              },
-            })
-              .then((response) => {
-                if (response.ok) {
-                  if (successMessage) successMessage.style.display = 'block';
-                  form.reset();
-                } else {
-                  alert('Erro ao enviar. Tente novamente mais tarde.');
-                }
-              })
-              .catch(() => {
-                alert('Erro de conexão. Tente novamente.');
-              });
-          });
-        });
-      });
-    </script>
-  </body>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
 </html>
