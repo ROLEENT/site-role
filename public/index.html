@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ROLÊ ENTRETENIMENTO | Cultura, Festas e Arte nas Principais Cidades</title>
-  <meta name="description" content="A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil."/>
-  <meta name="author" content="ROLÊ"/>
-  <meta name="keywords" content="eventos, festas, cultura, arte, rolê, música, entretenimento, Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis, ROLÊ ENTRETENIMENTO"/>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil." />
+  <title>ROLÊ ENTRETENIMENTO</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="loading-screen">
-    <img alt="Logo ROLÊ" src="./logo-role.png"/>
+    <img src="logo-role.png" alt="Logo ROLÊ" />
     <p>Carregando...</p>
   </div>
+
   <nav>
-    <img alt="Logo ROLÊ" src="./logo-role.png"/>
+    <img src="logo-role.png" alt="Logo ROLÊ" />
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <button aria-label="Alternar tema" id="themeToggle">🌙</button>
+    <button id="themeToggle">🌙</button>
     <div class="nav-links">
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
@@ -30,7 +29,7 @@
   </nav>
 
   <header>
-    <img alt="Logo ROLÊ" src="./logo-role.png"/>
+    <img src="logo-role.png" alt="Logo ROLÊ" />
     <h1>ROLÊ ENTRETENIMENTO</h1>
     <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
   </header>
@@ -41,32 +40,28 @@
       <p>O ROLÊ é uma plataforma de divulgação cultural que conecta eventos, artistas e espaços aos rolezeiros mais engajados do Brasil. Atuamos com conteúdos criativos, campanhas personalizadas e uma comunidade pulsante que vive o entretenimento com intensidade.</p>
     </section>
 
-    <hr/>
-
     <section id="destaques">
       <h2>Destaques da Semana</h2>
-      <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí:</p>
+      <p>Os eventos em destaque esta semana com presença confirmada no ROLÊ. Clica e descobre o que tá fervendo por aí!</p>
       <div class="cards-container">
         <div class="card">
-          <img src="/werk.jpg" alt="WERK"/>
+          <img src="werk.jpg" alt="WERK" />
           <a href="https://www.instagram.com/p/DLTBpVsPS4H/" target="_blank">Ver no Insta</a>
         </div>
         <div class="card">
-          <img src="/saravah.jpg" alt="¡SARAVAH!"/>
+          <img src="saravah.jpg" alt="¡SARAVAH!" />
           <a href="https://www.instagram.com/p/DLVCVLiOWhC/" target="_blank">Ver no Insta</a>
         </div>
         <div class="card">
-          <img src="/discoinferno.jpg" alt="Disco Inferno"/>
+          <img src="discoinferno.jpg" alt="Disco Inferno" />
           <a href="https://www.instagram.com/p/DLXq4sHuIR8/" target="_blank">Ver no Insta</a>
         </div>
         <div class="card">
-          <img src="/tripzinha.jpg" alt="Tripzinha"/>
+          <img src="tripzinha.jpg" alt="Tripzinha" />
           <a href="https://www.instagram.com/p/DLX5i_Iu4j9/" target="_blank">Ver no Insta</a>
         </div>
       </div>
     </section>
-
-    <hr/>
 
     <section id="contato">
       <h2>Fale com a gente</h2>
@@ -77,12 +72,9 @@
       </div>
     </section>
 
-    <hr/>
-
     <section id="parcerias">
       <h2>Parcerias & Vitrine Cultural</h2>
-      <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Com formatos personalizados, linguagem envolvente e um público que vive o entretenimento com intensidade, o ROLÊ entrega visibilidade real, orgânica e estratégica.</p>
-      <p>Vamos fortalecer a cena <strong>juntos</strong>?</p>
+      <p>Tem um evento, marca ou espaço que movimenta a cena? A <strong>Vitrine Cultural do ROLÊ</strong> é o lugar certo pra te destacar. Vamos fortalecer a cena <strong>juntos</strong>?</p>
       <div class="button-group">
         <a href="https://encurtador.com.br/uLneV" target="_blank">📎 Acessar Portfólio</a>
         <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">📂 Ver Mídia Kit</a>
@@ -96,22 +88,25 @@
       <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a>
       <a href="mailto:fiih@roleentretenimento.com" target="_blank">E-mail</a>
     </div>
-    <div>© 2025 ROLÊ ENTRETENIMENTO</div>
+    <div style="margin-top: 1rem; font-weight: bold; color: #fff;">Media Partner Oficial</div>
+    <div style="margin-top: 0.5rem; font-size: 0.75rem;">© 2025 ROLÊ ENTRETENIMENTO</div>
   </footer>
 
   <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
 
   <script>
     function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('open');
+      document.querySelector(".nav-links").classList.toggle("open");
     }
 
     const themeToggle = document.getElementById('themeToggle');
     const prefersLight = localStorage.getItem('theme') === 'light';
+
     if (prefersLight) {
       document.body.classList.add('light-mode');
       themeToggle.textContent = '☀️';
     }
+
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
       const isLight = document.body.classList.contains('light-mode');
@@ -122,6 +117,11 @@
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    window.addEventListener("scroll", () => {
+      const backToTop = document.getElementById("backToTop");
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
   </script>
 </body>
 </html>
