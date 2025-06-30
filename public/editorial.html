@@ -2,191 +2,94 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="theme-color" content="#FF0080" />
-  <meta name="description" content="Editorial ROLÊ: entrevistas, provocações e investigações sobre cultura, noite, arte e resistência." />
-  <title>EDITORIAL ROLÊ</title>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="icon" href="logo-role.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editorial ROLÊ</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background-color: #000;
       font-family: 'Poppins', sans-serif;
+      background-color: #000;
       color: #fff;
-      padding-top: 80px;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #FF0080;
+      margin-bottom: 2rem;
+      font-family: 'League Spartan', sans-serif;
     }
     nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
+      text-align: center;
+      margin-bottom: 2rem;
     }
-    nav img { height: 40px; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .nav-links a {
+    nav a {
       color: #fff;
       text-decoration: none;
+      margin: 0 1rem;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
-    .nav-links a:hover { color: #FF0080; }
-
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      background: linear-gradient(145deg, #1a1a1a, #000);
-    }
-    header h1 {
-      font-family: 'League Spartan', sans-serif;
-      font-size: 2.8rem;
+    nav a:hover {
       color: #FF0080;
-      margin-bottom: 0.5rem;
     }
-    header p {
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
     section {
-      max-width: 1280px;
-      margin: auto;
-      padding: 3rem 2rem;
+      margin-bottom: 4rem;
     }
     section h2 {
+      font-size: 1.8rem;
+      color: #FF0080;
+      margin-bottom: 1rem;
       font-family: 'League Spartan', sans-serif;
-      font-size: 2rem;
-      color: #FF0080;
-      margin-bottom: 1.5rem;
     }
-    .editorial-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 1rem;
-    }
-    .editorial-scroll::-webkit-scrollbar {
-      height: 8px;
-    }
-    .editorial-scroll::-webkit-scrollbar-thumb {
-      background: #FF0080;
-      border-radius: 4px;
-    }
-    .card {
-      flex: 0 0 auto;
-      width: 280px;
+    .post-placeholder {
       background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-      scroll-snap-align: start;
-      box-shadow: 0 8px 16px rgba(255, 0, 128, 0.25);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card-content {
+      border-radius: 8px;
       padding: 1rem;
-    }
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-    .card p {
-      font-size: 0.9rem;
-      color: #ccc;
-      margin-bottom: 0.5rem;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      text-decoration: none;
-      color: #FF0080;
-      font-weight: bold;
-    }
-    footer {
-      margin-top: 4rem;
-      padding: 2rem;
-      background-color: #111;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-    footer a {
-      margin: 0 1rem;
-      color: #FF0080;
-      text-decoration: none;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
+  <h1>Editorial ROLÊ</h1>
   <nav>
-    <img alt="Logo ROLÊ" src="./logo-role.png" />
-    <div class="nav-links">
-      <a href="index.html">Início</a>
-      <a href="editorial.html">Editorial</a>
-      <a href="#contato">Contato</a>
-    </div>
+    <a href="#editorial">Editorial</a>
+    <a href="#posfacio">Posfácio</a>
+    <a href="#dicas">Dicas do ROLÊ</a>
+    <a href="#fala">Fala, ROLÊ</a>
+    <a href="#bpm">ROLÊ.bpm</a>
+    <a href="#achadinhos">Achadinhos</a>
   </nav>
 
-  <header>
-    <h1>EDITORIAL ROLÊ</h1>
-    <p>Entrevistas, provocações e investigações sobre cultura, noite, arte e resistência</p>
-  </header>
-
-  <section>
-    <h2>Em destaque</h2>
-    <div class="editorial-scroll">
-      <div class="card">
-        <img src="fala-jon.jpg" alt="Fala, ROLÊ! Jon Soares" />
-        <div class="card-content">
-          <h3>Fala, ROLÊ! com Jon Soares</h3>
-          <p>Entre beats, fé e vivências, Jon transforma a pista num templo político-afetivo.</p>
-          <a href="https://www.instagram.com/p/C8Gww_4LzN5/" target="_blank">Ler agora →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="carrossel-cidades.jpg" alt="As cidades já foram noturnas" />
-        <div class="card-content">
-          <h3>As cidades já foram noturnas</h3>
-          <p>Um manifesto sobre o fim da madrugada, do delírio coletivo e dos encontros que ela guarda.</p>
-          <a href="https://www.instagram.com/p/C7wRoGbLQEL/" target="_blank">Ler agora →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="fala-ravih.jpg" alt="Fala, ROLÊ! com RAVIH" />
-        <div class="card-content">
-          <h3>Fala, ROLÊ! com RAVIH</h3>
-          <p>Do funk ao pop romântico: o som de RAVIH transborda coragem, entrega e desejo.</p>
-          <a href="https://www.instagram.com/p/C8dNdQgrCzk/" target="_blank">Ler agora →</a>
-        </div>
-      </div>
-    </div>
+  <section id="editorial">
+    <h2>Editorial</h2>
+    <div class="post-placeholder">Post editorial 1</div>
+    <div class="post-placeholder">Post editorial 2</div>
   </section>
 
-  <footer>
-    <p>© 2025 ROLÊ ENTRETENIMENTO – Editorial ROLÊ</p>
-    <div style="margin-top: 1rem; font-size: 0.85rem;">
-      <a href="index.html">Voltar para o site</a>
-      <a href="politica.html">Política de Privacidade</a>
-      <a href="termos-usuario.html">Termos de Uso</a>
-      <a href="termos-organizador.html">Organizadores</a>
-      <a href="politica-spam.html">Antispam</a>
-    </div>
-  </footer>
+  <section id="posfacio">
+    <h2>Posfácio</h2>
+    <div class="post-placeholder">Post posfácio 1</div>
+  </section>
+
+  <section id="dicas">
+    <h2>Dicas do ROLÊ</h2>
+    <div class="post-placeholder">Dica 1</div>
+  </section>
+
+  <section id="fala">
+    <h2>Fala, ROLÊ</h2>
+    <div class="post-placeholder">Entrevista 1</div>
+  </section>
+
+  <section id="bpm">
+    <h2>ROLÊ.bpm</h2>
+    <div class="post-placeholder">bpm post 1</div>
+  </section>
+
+  <section id="achadinhos">
+    <h2>Achadinhos do ROLÊ</h2>
+    <div class="post-placeholder">Achadinho 1</div>
+  </section>
 </body>
 </html>
