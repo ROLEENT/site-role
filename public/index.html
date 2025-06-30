@@ -1,44 +1,397 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="O ROLÊ é a plataforma que conecta eventos, artistas e rolezeiros nas principais cidades do Brasil. Divulgação cultural criativa, engajada e estratégica." />
-  <title>ROLÊ ENTRETENIMENTO</title>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="icon" href="logo-role.png" type="image/png">
-  <meta property="og:title" content="ROLÊ ENTRETENIMENTO" />
-  <meta property="og:description" content="A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil." />
-  <meta property="og:image" content="logo-role.png" />
-  <meta property="og:url" content="https://roleentretenimento.com" />
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="loading-screen">
-    <img alt="Logo ROLÊ" src="./logo-role.png" />
-    <p>Carregando...</p>
-  </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="O ROLÊ é a plataforma que conecta eventos, artistas e rolezeiros nas principais cidades do Brasil. Divulgação cultural criativa, engajada e estratégica." />
+    <title>ROLÊ ENTRETENIMENTO</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
+    <style>
+/* Reset e base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #000;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  padding-top: 80px;
+}
 
-  <nav>
-    <img alt="Logo ROLÊ" src="./logo-role.png" />
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <button aria-label="Alternar tema" id="themeToggle">🌙</button>
-    <div class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-      <a href="#parcerias">Parcerias</a>
-      <a href="#destaques">Destaques</a>
-      <a href="https://encurtador.com.br/uLneV" target="_blank">Portfólio</a>
-      <a href="https://www.canva.com/design/DAGq0o6B5Fo/dXA0lSYG7yJOkpYqKlGWXA/view" target="_blank">Mídia Kit</a>
-    </div>
-  </nav>
+/* Tela de carregamento */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2000;
+  animation: hideLoader 1.2s ease forwards;
+}
+#loading-screen img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+#loading-screen p {
+  font-size: 1rem;
+  opacity: 0.7;
+}
 
-  <header>
-    <img alt="Logo ROLÊ" src="./logo-role.png" />
-    <h1>ROLÊ ENTRETENIMENTO</h1>
-    <p>A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil.</p>
-  </header>
+/* Navegação */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  gap: 1rem;
+}
+nav img {
+  height: 40px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  margin-left: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #FF0080;
+  border-radius: 3px;
+}
+.nav-links a:hover {
+  color: #FF0080;
+}
+.menu-toggle {
+  display: none;
+}
+
+/* Tema claro */
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #111;
+}
+body.light-mode nav {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+body.light-mode .nav-links a {
+  color: #111;
+}
+body.light-mode .nav-links a:hover {
+  color: #FF0080;
+}
+body.light-mode header {
+  background: linear-gradient(145deg, #fff, #eee);
+}
+body.light-mode p {
+  color: #444;
+}
+body.light-mode #contato {
+  background-color: #ddd;
+}
+body.light-mode footer {
+  color: #333;
+}
+body.light-mode #backToTop {
+  background-color: #111;
+  color: white;
+}
+
+/* Header */
+header {
+  text-align: center;
+  background: linear-gradient(145deg, #1a1a1a, #000);
+  padding: 2rem 1rem;
+}
+header img {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+h1 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Seções */
+section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+section h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2rem;
+  color: #FF0080;
+  margin-bottom: 1.5rem;
+}
+section p {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+#sobre {
+  color: #eee;
+  background-image: url('https://images.unsplash.com/photo-1551808519-8c632b24c377');
+  background-size: cover;
+  background-position: center;
+}
+#parcerias {
+  padding-top: 6rem;
+  background-image: url('https://images.unsplash.com/photo-1581320544221-3c3b595cb7e6');
+  background-size: cover;
+  background-position: center;
+}
+#contato {
+  background-color: #111;
+}
+
+/* Destaques */
+#destaques img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#destaques img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(255, 0, 128, 0.4);
+}
+
+/* Botões */
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.button-group a {
+  background-color: #FF0080;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.button-group a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 0, 128, 0.6);
+}
+
+/* Botão de voltar ao topo */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #FF0080;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1001;
+  padding: 0.7rem 1.1rem;
+  box-shadow: 0 4px 12px rgba(255, 0, 128, 0.4);
+}
+#backToTop:hover {
+  background-color: #ff3399;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #111;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+footer a {
+  margin: 0 1rem;
+  color: #FF0080;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animação da tela de loading */
+@keyframes hideLoader {
+  0% { opacity: 1; visibility: visible; }
+  99% { opacity: 0.01; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; display: none; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 1rem;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  section h2 {
+    font-size: 1.5rem;
+  }
+  section p {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    position: static !important;
+    background: none !important;
+    width: auto !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+}
+
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+form button[type="submit"] {
+  background-color: #FF0080;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+form button[type="submit"]:hover {
+  background-color: #e60073;
+}
+.success-message {
+  display: none;
+  color: limegreen;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.card {
+  max-width: 320px;
+  text-align: center;
+  background-color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(255, 0, 128, 0.25);
+}
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-btn {
+  background-color: #FF0080;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.75rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0 0 12px 12px;
+  transition: background 0.3s ease;
+}
+.card-btn:hover {
+  background-color: #e60073;
+}
+
+</style>
+  
+<link rel="icon" href="logo-role.png" type="image/png">
+<meta property="og:title" content="ROLÊ ENTRETENIMENTO" />
+<meta property="og:description" content="A plataforma que conecta artistas, eventos e rolezeiros nas principais cidades do Brasil." />
+<meta property="og:image" content="logo-role.png" />
+<meta property="og:url" content="https://roleentretenimento.com" />
+<meta name="twitter:card" content="summary_large_image">
 
 </head>
   <body>
@@ -150,51 +503,81 @@
       </section>
     </main>
 
+    <button id="backToTop" onclick="scrollToTop()">↑ Topo</button>
+
     <footer>
-    <p>© 2025 ROLÊ ENTRETENIMENTO – Media Partner Oficial</p>
-    <div style="margin-top: 1rem; font-size: 0.85rem;">
-      <a href="politica.html" style="color:#ccc; margin-right: 1rem;">Política de Privacidade</a>
-      <a href="termos-usuario.html" style="color:#ccc; margin-right: 1rem;">Termos de Uso</a>
-      <a href="termos-organizador.html" style="color:#ccc; margin-right: 1rem;">Organizadores</a>
-      <a href="politica-spam.html" style="color:#ccc;">Antispam</a>
-    </div>
-  </footer>
+  <p>© 2025 ROLÊ ENTRETENIMENTO – Media Partner Oficial</p>
+  <div style="margin-top: 1rem; font-size: 0.85rem;">
+    <a href="politica.html" style="color:#ccc; margin-right: 1rem;">Política de Privacidade</a>
+    <a href="termos-usuario.html" style="color:#ccc; margin-right: 1rem;">Termos de Uso</a>
+    <a href="termos-organizador.html" style="color:#ccc; margin-right: 1rem;">Organizadores</a>
+    <a href="politica-spam.html" style="color:#ccc;">Antispam</a>
+  </div>
+</footer>
 
-  <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const prefersLight = localStorage.getItem('theme') === 'light';
 
-    if (prefersLight) {
-      document.body.classList.add('light-mode');
-      themeToggle.textContent = '☀️';
-    }
+    <script>
+      const themeToggle = document.getElementById('themeToggle');
+      const prefersLight = localStorage.getItem('theme') === 'light';
 
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
-      themeToggle.textContent = isLight ? '☀️' : '🌙';
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
+      if (prefersLight) {
+        document.body.classList.add('light-mode');
+        themeToggle.textContent = '☀️';
+      }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const loader = document.getElementById('loading-screen');
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 1000);
-
-      window.addEventListener('scroll', () => {
-        const button = document.getElementById('backToTop');
-        button.style.display = window.scrollY > 300 ? 'block' : 'none';
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        themeToggle.textContent = isLight ? '☀️' : '🌙';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
       });
-    });
 
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('open');
-    }
+      document.addEventListener('DOMContentLoaded', () => {
+        const loader = document.getElementById('loading-screen');
+        setTimeout(() => {
+          loader.classList.add('hidden');
+        }, 1000);
+      });
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
-</body>
+      function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('open');
+      }
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const forms = document.querySelectorAll('form');
+
+        forms.forEach((form) => {
+          const successMessage = form.querySelector('.success-message');
+
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                Accept: 'application/json',
+              },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  if (successMessage) successMessage.style.display = 'block';
+                  form.reset();
+                } else {
+                  alert('Erro ao enviar. Tente novamente mais tarde.');
+                }
+              })
+              .catch(() => {
+                alert('Erro de conexão. Tente novamente.');
+              });
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
