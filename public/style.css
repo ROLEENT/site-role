@@ -8,6 +8,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  padding-bottom: 80px;
   background-color: #000;
   font-family: 'Poppins', sans-serif;
   color: #fff;
@@ -56,6 +57,7 @@ nav img {
   height: 40px;
 }
 .nav-links {
+  z-index: 999;
   display: flex;
   align-items: center;
 }
@@ -260,6 +262,7 @@ footer a:hover {
     color: #fff;
   }
   .nav-links {
+  z-index: 999;
     display: none;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.95);
@@ -287,6 +290,7 @@ footer a:hover {
     display: none !important;
   }
   .nav-links {
+  z-index: 999;
     display: flex !important;
     flex-direction: row !important;
     position: static !important;
@@ -294,5 +298,20 @@ footer a:hover {
     width: auto !important;
     text-align: left !important;
     padding: 0 !important;
+  }
+}
+
+#backToTop {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#backToTop.visible {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2.5rem 1.2rem;
   }
 }
