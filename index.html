@@ -108,12 +108,23 @@
         padding: 8px 0;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+      }
+      .cards-container::-webkit-scrollbar {
+        height: 6px;
+      }
+      .cards-container::-webkit-scrollbar-thumb {
+        background-color: var(--highlight);
+        border-radius: 4px;
+      }
+      .cards-container::-webkit-scrollbar-track {
+        background-color: transparent;
       }
       .card {
         background-color: var(--card-bg);
         border-radius: 16px;
-        padding: 16px;
-        min-width: 160px;
+        padding: 12px;
+        min-width: 140px;
         flex: 0 0 auto;
         scroll-snap-align: start;
       }
@@ -128,7 +139,6 @@
         text-decoration: none;
         margin: 0 8px;
       }
-
       @media (max-width: 600px) {
         header {
           flex-direction: column;
@@ -170,7 +180,7 @@
     </header>
 
     <div class="banner">
-      <img src="banner-role-transparente.png" alt="Banner do ROLÊ" />
+      <img src="banner-home.png" alt="Banner do ROLÊ" />
     </div>
 
     <section class="destaques">
