@@ -1,162 +1,40 @@
-/* Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Garet', 'League Spartan', sans-serif;
-  line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Cores */
-body.dark {
-  background-color: #000;
-  color: #f3f3f7;
-}
-
-body.light {
-  background-color: #fff;
-  color: #2e2e2e;
-}
-
-a {
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-body.dark a {
-  color: #c77dff;
-}
-
-body.light a {
-  color: #c77dff;
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-/* Layout */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* Botão de tema */
-#theme-toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: #c77dff;
-  z-index: 999;
-}
-
-/* Header */
-header {
-  text-align: center;
-  border-bottom: 1px solid rgba(199, 125, 255, 0.1);
-}
-
-header h1 {
-  font-size: 3rem;
-  color: #c77dff;
-  margin-bottom: 20px;
-}
 .logo {
   max-width: 160px;
   height: auto;
   margin-bottom: 20px;
 }
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  font-weight: 600;
+
+.sobre, .cidades, .vitrine {
+  margin-top: 60px;
+  text-align: center;
 }
 
-/* Hero */
-.hero h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 10px;
+.sobre h3,
+.cidades h3,
+.vitrine h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #c77dff;
 }
 
-.hero p {
-  text-align: center;
-  font-size: 1.2rem;
+.sobre p,
+.vitrine p {
+  font-size: 1.1rem;
   max-width: 700px;
-  margin: 10px auto 30px;
+  margin: 0 auto;
 }
 
-/* Call to Action */
-.call-to-action {
-  text-align: center;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #c77dff;
-  color: #000;
-  font-weight: bold;
-  text-align: center;
-}
-
-.cta-button:hover {
-  background-color: #a055d4;
-}
-
-/* Footer */
-.footer {
-  border-top: 1px solid rgba(199, 125, 255, 0.1);
-  padding-top: 30px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.footer-top {
-  margin-bottom: 20px;
-}
-
-.footer-links {
+.cidades ul {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #f3f3f7;
 }
 
-.footer-links a {
-  font-weight: 500;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-
-  .cta-button {
-    font-size: 0.95rem;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 10px;
-  }
+body.light .cidades ul {
+  color: #2e2e2e;
 }
