@@ -11,28 +11,66 @@ html {
 
 body {
   font-family: 'Garet', 'League Spartan', sans-serif;
-  background-color: #000000;
-  color: #ffffff;
   line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
   padding: 20px;
+}
+
+/* Modo Escuro */
+body.dark {
+  background-color: #000;
+  color: #f3f3f7;
+}
+
+body.dark a {
+  color: #c77dff;
+}
+
+body.dark a:hover {
+  opacity: 0.8;
+}
+
+/* Modo Claro */
+body.light {
+  background-color: #ffffff;
+  color: #2e2e2e;
+}
+
+body.light a {
+  color: #c77dff;
+}
+
+body.light a:hover {
+  opacity: 0.8;
+}
+
+/* Botão de troca de tema */
+#theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #c77dff;
+  z-index: 999;
 }
 
 /* Cabeçalho */
 header {
   text-align: center;
-  padding: 40px 20px 20px;
-  border-bottom: 1px solid #222;
+  padding: 60px 20px 30px;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   letter-spacing: 1px;
-  color: #FF00FF;
+  color: #c77dff;
+  margin-bottom: 20px;
 }
 
-/* Navegação */
 nav {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -40,51 +78,57 @@ nav {
 }
 
 nav a {
-  color: #00FFFF;
   text-decoration: none;
-  font-weight: 600;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #9932CC;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 /* Conteúdo principal */
 main {
   max-width: 800px;
-  margin: 40px auto;
+  margin: 50px auto;
   padding: 0 20px;
   text-align: center;
 }
 
 main p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 20px;
 }
 
 /* Rodapé */
 footer {
   text-align: center;
-  padding: 30px 20px;
-  border-top: 1px solid #222;
+  padding: 40px 20px 20px;
+  border-top: 1px solid rgba(199, 125, 255, 0.2);
+  margin-top: 60px;
   font-size: 0.9rem;
-  color: #999;
 }
 
-/* Responsividade */
+.footer-nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  text-decoration: none;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;
   }
 
   nav {
-    flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
 
   main p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
