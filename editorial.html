@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FF0080" />
+  <title>Editorial – ROLÊ</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" href="logo-role.png" type="image/png">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem;
+      max-width: 1024px;
+      margin: auto;
+    }
+    h1, h2 {
+      font-family: 'League Spartan', sans-serif;
+      color: #FF0080;
+    }
+    .section {
+      margin-bottom: 4rem;
+    }
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+    }
+    .scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #FF0080;
+      border-radius: 4px;
+    }
+    .card {
+      background: #111;
+      min-width: 280px;
+      max-width: 280px;
+      flex: 0 0 auto;
+      padding: 1rem;
+      border-radius: 12px;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 10px rgba(255, 0, 128, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
+    .card strong {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      max-height: 3.2em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    a {
+      color: #FF0080;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-voltar {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #FF0080;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+    footer a {
+      color: #FF0080;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <a class="btn-voltar" href="index.html">← Voltar para o início</a>
+  <h1>Editorial ROLÊ</h1>
+
+  <div class="section" id="editorial">
+    <h2>Editorial</h2>
+    <div class="scroll-container">
+      <div class="card">
+        <img src="EDITORIAL1.png" alt="As cidades já foram noturnas">
+        <strong>As cidades já foram noturnas</strong>
+        <p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p>
+        <a href="https://www.instagram.com/p/DJ2mpGfvPxL/?img_index=1" target="_blank">Ver post completo</a>
+      </div>
+      <div class="card">
+        <img src="EDITORIAL2.png" alt="DJs são novos autores">
+        <strong>DJs são novos autores</strong>
+        <p>Quem escreve tua noite é o DJ. Já agradeceu?</p>
+        <a href="https://www.instagram.com/p/DKIn4-cv4-8/?img_index=1" target="_blank">Ver post completo</a>
+      </div>
+      <div class="card">
+        <img src="EDITORIAL3.png" alt="Por que os teatros estão vazios...">
+        <strong>Por que os teatros estão vazios...</strong>
+        <p>Teatro na era do feed: presença ou performance?</p>
+        <a href="https://www.instagram.com/p/DKahp8bvT5o/?img_index=1" target="_blank">Ver post completo</a>
+      </div>
+      <div class="card">
+        <img src="EDITORIAL4.png" alt="E se teu look falassem por ti?">
+        <strong>E se teu look falassem por ti?</strong>
+        <p>Estética é política: o look também fala!</p>
+        <a href="https://www.instagram.com/p/DKsd2qwPI2a/?img_index=1" target="_blank">Ver post completo</a>
+      </div>
+      <div class="card">
+        <img src="EDITORIAL5.png" alt="Te chamam de atração...">
+        <strong>Te chamam de atração...</strong>
+        <p>Quem faz a noite vibrar também precisa viver dela.</p>
+        <a href="https://www.instagram.com/p/DK-ufETv1BH/?img_index=1" target="_blank">Ver post completo</a>
+      </div>
+      <div class="card">
+        <img src="EDITORIAL6.png" alt="Todo mundo cansado">
+        <strong>Todo mundo cansado</strong>
+        <p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p>
+        <a href="https://www.instagram.com/p/DLQw_wwvx6-/?img_index=1" target="_blank">Ver post completo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="posfacio">
+    <h2>Posfácio</h2>
+    <div class="scroll-container">
+      <div class="card">
+        <strong>Posfácio</strong>
+        <p>Encerramento semanal com textos finais, críticas ou pensamentos sobre a cena cultural atual.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="dicas">
+    <h2>Dicas do ROLÊ</h2>
+    <div class="scroll-container">
+      <div class="card">
+        <strong>Dicas do ROLÊ</strong>
+        <p>Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="fala-role">
+    <h2>Fala, ROLÊ</h2>
+    <div class="scroll-container">
+      <div class="card">
+        <strong>Fala, ROLÊ</strong>
+        <p>Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="bpm">
+    <h2>ROLÊ.bpm</h2>
+    <div class="scroll-container">
+      <div class="card">
+        <strong>ROLÊ.bpm</strong>
+        <p>Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="achadinhos">
+    <h2>Achadinhos do ROLÊ</h2>
+    <div class="scroll-container">
+      <div class="card">
+        <strong>Achadinhos do ROLÊ</strong>
+        <p>Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 ROLÊ ENTRETENIMENTO</p>
+    <a href="politica.html">Política de Privacidade</a>
+    <a href="termos-usuario.html">Termos de Uso</a>
+    <a href="termos-organizador.html">Organizadores</a>
+    <a href="politica-spam.html">Antispam</a>
+  </footer>
+</body>
+</html>
