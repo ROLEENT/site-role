@@ -62,15 +62,11 @@
       .dropdown-button {
         background-color: var(--highlight);
         border: none;
-        color: #000;
+        color: var(--bg-color);
         font-size: 16px;
         padding: 8px 12px;
         border-radius: 8px;
         cursor: pointer;
-      }
-      .dropdown-button:focus + .dropdown-content,
-      .dropdown-button:hover + .dropdown-content {
-        display: block;
       }
       .dropdown-content {
         display: none;
@@ -80,7 +76,7 @@
         border-radius: 8px;
         margin-top: 8px;
         min-width: 200px;
-        z-index: 999;
+        z-index: 1;
       }
       .dropdown-content a {
         display: block;
@@ -109,46 +105,45 @@
       }
       .cards-container {
         display: flex;
-        overflow-x: auto;
-        gap: 16px;
+        overflow-x: scroll;
+        gap: 12px;
         padding: 8px 0 16px;
-        scroll-snap-type: x mandatory;
+        scroll-snap-type: x proximity;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        scroll-behavior: smooth;
       }
       .cards-container::-webkit-scrollbar {
         display: none;
+      }
+      .scroll-arrow {
+        color: var(--highlight);
+        font-size: 24px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+      }
+      .scroll-wrapper {
+        display: flex;
+        align-items: center;
       }
       .card {
         background-color: var(--card-bg);
         border-radius: 16px;
         padding: 12px;
-        min-width: 220px;
-        max-width: 240px;
+        min-width: 180px;
         flex: 0 0 auto;
         scroll-snap-align: start;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         text-align: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       }
       .card img {
         width: 100%;
+        max-width: 160px;
         border-radius: 12px;
         margin-bottom: 8px;
-      }
-      .card strong {
-        font-size: 18px;
-        margin-bottom: 6px;
-      }
-      .card p {
-        margin-bottom: 6px;
-      }
-      .card a {
-        color: var(--highlight);
-        font-weight: bold;
-        text-decoration: none;
       }
       footer {
         text-align: center;
@@ -184,11 +179,16 @@
         .card img {
           max-width: 100%;
         }
-        .cards-container {
-          padding-bottom: 24px;
-        }
       }
     </style>
+    <script>
+      function scrollRight() {
+        document.querySelector('.cards-container').scrollBy({ left: 300, behavior: 'smooth' });
+      }
+      function scrollLeft() {
+        document.querySelector('.cards-container').scrollBy({ left: -300, behavior: 'smooth' });
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -196,8 +196,8 @@
       <div class="top-right">
         <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
         <div class="dropdown">
-          <button class="dropdown-button" onclick="toggleDropdown()">Explorar ▾</button>
-          <div class="dropdown-content" id="dropdown-menu">
+          <button class="dropdown-button">Explorar ▾</button>
+          <div class="dropdown-content">
             <a href="editorial.html">Revista ROLÊ</a>
             <a href="vitrine-cultural.html">Vitrine Cultural</a>
             <a href="#">Descontos</a>
@@ -215,37 +215,41 @@
 
     <section class="destaques">
       <h2>Destaques da Semana</h2>
-      <div class="cards-container">
-        <div class="card">
-          <img src="poa.png" alt="Porto Alegre" />
-          <strong>Porto Alegre</strong>
-          <p>A cena alternativa pulsa forte no Sul.</p>
-          <a href="#">Ver mais</a>
+      <div class="scroll-wrapper">
+        <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
+        <div class="cards-container">
+          <div class="card">
+            <img src="poa.png" alt="Porto Alegre" />
+            <strong>Porto Alegre</strong>
+            <p>A cena alternativa pulsa forte no Sul.</p>
+            <p style="color: var(--highlight); font-weight: bold;">Ver mais</p>
+          </div>
+          <div class="card">
+            <img src="floripa.png" alt="Florianópolis" />
+            <strong>Florianópolis</strong>
+            <p>Beira-mar, eletrônica e coletivo.</p>
+            <p style="color: var(--highlight); font-weight: bold;">Ver mais</p>
+          </div>
+          <div class="card">
+            <img src="curitiba.png" alt="Curitiba" />
+            <strong>Curitiba</strong>
+            <p>Frio na rua, calor nas pistas.</p>
+            <p style="color: var(--highlight); font-weight: bold;">Ver mais</p>
+          </div>
+          <div class="card">
+            <img src="são paulo.png" alt="São Paulo" />
+            <strong>São Paulo</strong>
+            <p>A cidade que nunca dorme... nem para de dançar.</p>
+            <p style="color: var(--highlight); font-weight: bold;">Ver mais</p>
+          </div>
+          <div class="card">
+            <img src="rio.png" alt="Rio de Janeiro" />
+            <strong>Rio de Janeiro</strong>
+            <p>Funk, favela, cor e calor cultural.</p>
+            <p style="color: var(--highlight); font-weight: bold;">Ver mais</p>
+          </div>
         </div>
-        <div class="card">
-          <img src="floripa.png" alt="Florianópolis" />
-          <strong>Florianópolis</strong>
-          <p>Beira-mar, eletrônica e coletivo.</p>
-          <a href="#">Ver mais</a>
-        </div>
-        <div class="card">
-          <img src="curitiba.png" alt="Curitiba" />
-          <strong>Curitiba</strong>
-          <p>Frio na rua, calor nas pistas.</p>
-          <a href="#">Ver mais</a>
-        </div>
-        <div class="card">
-          <img src="são paulo.png" alt="São Paulo" />
-          <strong>São Paulo</strong>
-          <p>A cidade que nunca dorme... nem para de dançar.</p>
-          <a href="#">Ver mais</a>
-        </div>
-        <div class="card">
-          <img src="rio.png" alt="Rio de Janeiro" />
-          <strong>Rio de Janeiro</strong>
-          <p>Funk, favela, cor e calor cultural.</p>
-          <a href="#">Ver mais</a>
-        </div>
+        <button class="scroll-arrow" onclick="scrollRight()">▶</button>
       </div>
     </section>
 
@@ -258,12 +262,5 @@
         <a href="politica-spam.html">Política Antispam</a>
       </p>
     </footer>
-
-    <script>
-      function toggleDropdown() {
-        const menu = document.getElementById('dropdown-menu');
-        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-      }
-    </script>
   </body>
 </html>
