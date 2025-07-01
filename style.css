@@ -1,0 +1,90 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Garet', 'League Spartan', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  border-bottom: 1px solid #222;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: #FF00FF;
+}
+
+/* Navegação */
+nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #00FFFF;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #9932CC;
+}
+
+/* Conteúdo principal */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+main p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 1px solid #222;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+}
