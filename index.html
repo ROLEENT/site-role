@@ -62,11 +62,15 @@
       .dropdown-button {
         background-color: var(--highlight);
         border: none;
-        color: var(--bg-color);
+        color: #000;
         font-size: 16px;
         padding: 8px 12px;
         border-radius: 8px;
         cursor: pointer;
+      }
+      .dropdown-button:focus + .dropdown-content,
+      .dropdown-button:hover + .dropdown-content {
+        display: block;
       }
       .dropdown-content {
         display: none;
@@ -76,7 +80,7 @@
         border-radius: 8px;
         margin-top: 8px;
         min-width: 200px;
-        z-index: 1;
+        z-index: 999;
       }
       .dropdown-content a {
         display: block;
@@ -106,37 +110,45 @@
       .cards-container {
         display: flex;
         overflow-x: auto;
-        gap: 12px;
+        gap: 16px;
         padding: 8px 0 16px;
-        scroll-snap-type: x proximity;
+        scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scroll-behavior: smooth;
+        scrollbar-width: none;
       }
       .cards-container::-webkit-scrollbar {
-        height: 6px;
-      }
-      .cards-container::-webkit-scrollbar-thumb {
-        background-color: var(--highlight);
-        border-radius: 10px;
-      }
-      .cards-container::-webkit-scrollbar-track {
-        background-color: transparent;
+        display: none;
       }
       .card {
         background-color: var(--card-bg);
         border-radius: 16px;
         padding: 12px;
-        min-width: 180px;
+        min-width: 220px;
+        max-width: 240px;
         flex: 0 0 auto;
         scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       }
       .card img {
         width: 100%;
-        max-width: 160px;
         border-radius: 12px;
         margin-bottom: 8px;
+      }
+      .card strong {
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+      .card p {
+        margin-bottom: 6px;
+      }
+      .card a {
+        color: var(--highlight);
+        font-weight: bold;
+        text-decoration: none;
       }
       footer {
         text-align: center;
@@ -184,8 +196,8 @@
       <div class="top-right">
         <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
         <div class="dropdown">
-          <button class="dropdown-button">Explorar ▾</button>
-          <div class="dropdown-content">
+          <button class="dropdown-button" onclick="toggleDropdown()">Explorar ▾</button>
+          <div class="dropdown-content" id="dropdown-menu">
             <a href="editorial.html">Revista ROLÊ</a>
             <a href="vitrine-cultural.html">Vitrine Cultural</a>
             <a href="#">Descontos</a>
@@ -208,26 +220,31 @@
           <img src="poa.png" alt="Porto Alegre" />
           <strong>Porto Alegre</strong>
           <p>A cena alternativa pulsa forte no Sul.</p>
+          <a href="#">Ver mais</a>
         </div>
         <div class="card">
           <img src="floripa.png" alt="Florianópolis" />
           <strong>Florianópolis</strong>
           <p>Beira-mar, eletrônica e coletivo.</p>
+          <a href="#">Ver mais</a>
         </div>
         <div class="card">
           <img src="curitiba.png" alt="Curitiba" />
           <strong>Curitiba</strong>
           <p>Frio na rua, calor nas pistas.</p>
+          <a href="#">Ver mais</a>
         </div>
         <div class="card">
           <img src="sp.png" alt="São Paulo" />
           <strong>São Paulo</strong>
           <p>A cidade que nunca dorme... nem para de dançar.</p>
+          <a href="#">Ver mais</a>
         </div>
         <div class="card">
           <img src="rio.png" alt="Rio de Janeiro" />
           <strong>Rio de Janeiro</strong>
           <p>Funk, favela, cor e calor cultural.</p>
+          <a href="#">Ver mais</a>
         </div>
       </div>
     </section>
@@ -241,5 +258,12 @@
         <a href="politica-spam.html">Política Antispam</a>
       </p>
     </footer>
+
+    <script>
+      function toggleDropdown() {
+        const menu = document.getElementById('dropdown-menu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      }
+    </script>
   </body>
 </html>
