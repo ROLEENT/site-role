@@ -5,26 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>ROLÊ — Cultura, festa e arte nas ruas do Brasil</title>
-  <meta name="description" content="O ROLÊ conecta eventos, artistas e rolezeiros nas principais cidades do Brasil. Agenda, editoriais e divulgação cultural com impacto e presença." />
+  <meta name="description" content="O ROLÊ conecta eventos, artistas e rolezeiros nas principais cidades do Brasil. Agenda, editoriais e divulgação cultural com impacto real." />
   <meta name="keywords" content="ROLÊ, festas, cultura, eventos, Porto Alegre, São Paulo, Rio de Janeiro, agenda cultural, rolezeiros" />
   <meta name="author" content="ROLÊ ENTRETENIMENTO" />
   <link rel="canonical" href="https://www.roleentretenimento.com/" />
-
-  <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="ROLÊ — Cultura, festa e arte nas ruas do Brasil" />
-  <meta property="og:description" content="A plataforma que conecta eventos, artistas e rolezeiros. Descubra o que tá rolando na sua cidade." />
-  <meta property="og:image" content="https://www.roleentretenimento.com/capa-og.jpg" />
-  <meta property="og:url" content="https://www.roleentretenimento.com/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ROLÊ — Cultura, festa e arte nas ruas do Brasil" />
-  <meta name="twitter:description" content="A plataforma que conecta eventos, artistas e rolezeiros. Descubra o que tá rolando na sua cidade." />
-  <meta name="twitter:image" content="https://www.roleentretenimento.com/capa-og.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,10 +19,12 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+<body class="dark">
 
-<body>
+  <button id="theme-toggle" aria-label="Alternar tema">🌓</button>
+
   <header>
-    <h1>Bem-vinde ao ROLÊ</h1>
+    <h1>ROLÊ</h1>
     <nav>
       <a href="index.html">Início</a>
       <a href="editorial.html">Editorial</a>
@@ -46,12 +33,27 @@
   </header>
 
   <main>
-    <p>Esse é o site oficial do ROLÊ — conectando festas, cultura e arte nas principais cidades do Brasil.</p>
-    <p>Confira os nossos conteúdos e descubra o que tá rolando na sua cidade.</p>
+    <p>Esse é o site oficial do ROLÊ — um guia vivo das festas, movimentos e artistas que fazem a cidade pulsar.</p>
+    <p>Descubra agora o que tá rolando de verdade.</p>
   </main>
 
   <footer>
-    <p>&copy; 2025 ROLÊ ENTRETENIMENTO. Todos os direitos reservados.</p>
+    <p>&copy; 2025 ROLÊ ENTRETENIMENTO</p>
+    <nav class="footer-nav">
+      <a href="politica-privacidade.html">Política de Privacidade</a>
+      <a href="termos-de-uso.html">Termos de Uso</a>
+      <a href="politica-antispam.html">Política Antispam</a>
+    </nav>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      body.classList.toggle('light');
+    });
+  </script>
 </body>
 </html>
