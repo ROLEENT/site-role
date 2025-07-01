@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,222 +14,252 @@
       --highlight: #c77dff;
       --card-bg: #151515;
     }
-
+    body.light {
+      --bg-color: #fff;
+      --text-color: #2e2e2e;
+      --card-bg: #eaeaea;
+    }
     body {
-      margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
       font-family: 'League Spartan', sans-serif;
+      margin: 0;
+      padding: 0;
     }
-
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       padding: 16px;
       border-bottom: 1px solid var(--highlight);
     }
-
     header img.logo {
       height: 40px;
+      margin-bottom: 8px;
     }
-
+    .top-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .search {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      max-width: 200px;
+    }
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--highlight);
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background-color: var(--highlight);
+      border: none;
+      color: var(--bg-color);
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .dropdown-button::after {
+      content: "▾";
+      margin-left: 6px;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+    .dropdown.open .dropdown-button::after {
+      transform: rotate(180deg);
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      margin-top: 8px;
+      min-width: 200px;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+    .dropdown.open .dropdown-content {
+      display: block;
+    }
     main {
       padding: 32px 24px;
       max-width: 1080px;
       margin: auto;
     }
-
     h1 {
       font-size: 28px;
       color: var(--highlight);
       margin-bottom: 32px;
     }
-
     h2 {
       font-size: 22px;
+      margin-bottom: 12px;
+      margin-top: 48px;
       color: var(--highlight);
-      margin: 32px 0 12px;
     }
 
-    .carousel-wrapper {
+    .carousel-container {
       position: relative;
+      margin-bottom: 24px;
     }
-
     .scroll-container {
       display: flex;
-      overflow-x: auto;
+      overflow-x: scroll;
       gap: 1rem;
       scroll-behavior: smooth;
-      padding-bottom: 1rem;
+      scrollbar-width: none;
     }
-
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
     .card {
+      background: var(--card-bg);
+      min-width: 280px;
+      max-width: 280px;
       flex: 0 0 auto;
-      width: 280px;
-      background-color: var(--card-bg);
-      padding: 16px;
+      padding: 1rem;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(199, 125, 255, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-
     .card img {
       width: 100%;
       height: 140px;
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 0.75rem;
     }
-
     .card strong {
-      display: block;
       font-size: 1.1rem;
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
-
     .card p {
       font-size: 0.95rem;
+      color: var(--text-color);
       line-height: 1.4;
-      margin-bottom: 12px;
+      margin-bottom: 1rem;
     }
-
     .card a {
       color: var(--highlight);
       text-decoration: none;
       font-weight: bold;
     }
-
-    .arrow {
+    .nav-arrow {
       position: absolute;
-      top: 50%;
+      top: 40%;
       transform: translateY(-50%);
-      font-size: 2rem;
-      background-color: #111;
+      font-size: 32px;
       color: var(--highlight);
+      background: transparent;
       border: none;
       cursor: pointer;
-      padding: 8px 12px;
-      z-index: 10;
+      z-index: 2;
     }
-
-    .arrow-left {
-      left: -20px;
-    }
-
-    .arrow-right {
-      right: -20px;
-    }
-
-    .btn-voltar {
-      text-align: center;
-      margin: 48px 0;
-    }
-
-    .btn-voltar a {
-      background-color: var(--highlight);
-      color: var(--bg-color);
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    .nav-left { left: -32px; }
+    .nav-right { right: -32px; }
 
     footer {
       text-align: center;
       font-size: 14px;
       padding: 40px 12px;
     }
-
+    footer p {
+      color: white;
+    }
     footer a {
       color: var(--highlight);
       text-decoration: none;
       margin: 0 8px;
     }
-
-    footer p {
-      color: white;
-    }
   </style>
+  <script>
+    function scrollCarousel(id, direction) {
+      const container = document.getElementById(id);
+      const scrollAmount = 320;
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  </script>
 </head>
 <body>
-
   <header>
     <img src="logo-role.png" alt="ROLÊ" class="logo" />
-    <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+    <div class="top-right">
+      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+      <div class="dropdown">
+        <button class="dropdown-button">Explorar ▾</button>
+        <div class="dropdown-content">
+          <a href="editorial.html">Revista ROLÊ</a>
+          <a href="vitrine-cultural.html">Vitrine Cultural</a>
+          <a href="descontos.html">Descontos</a>
+          <a href="contato.html">Contato</a>
+          <a href="quem-somos.html">Quem Somos</a>
+        </div>
+      </div>
+      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
+    </div>
   </header>
 
   <main>
     <h1>Revista ROLÊ</h1>
 
+    <!-- Seção com scroll e setas -->
     <h2>Editorial</h2>
-    <div class="carousel-wrapper">
-      <button class="arrow arrow-left" onclick="scrollLeft()">❮</button>
-      <div class="scroll-container" id="editorial-carousel">
-        <div class="card">
-          <img src="EDITORIAL1.png">
-          <strong>As cidades já foram noturnas</strong>
-          <p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p>
-          <a href="https://www.instagram.com/p/DJ2mpGfvPxL/?img_index=1" target="_blank">Ver post completo</a>
-        </div>
-        <div class="card">
-          <img src="EDITORIAL2.png">
-          <strong>DJs são novos autores</strong>
-          <p>Quem escreve tua noite é o DJ. Já agradeceu?</p>
-          <a href="https://www.instagram.com/p/DKIn4-cv4-8/?img_index=1" target="_blank">Ver post completo</a>
-        </div>
-        <div class="card">
-          <img src="EDITORIAL3.png">
-          <strong>Por que os teatros estão vazios...</strong>
-          <p>Teatro na era do feed: presença ou performance?</p>
-          <a href="https://www.instagram.com/p/DKahp8bvT5o/?img_index=1" target="_blank">Ver post completo</a>
-        </div>
-        <div class="card">
-          <img src="EDITORIAL4.png">
-          <strong>E se teu look falasse por ti?</strong>
-          <p>Estética é política: o look também fala!</p>
-          <a href="https://www.instagram.com/p/DKsd2qwPI2a/?img_index=1" target="_blank">Ver post completo</a>
-        </div>
-        <div class="card">
-          <img src="EDITORIAL5.png">
-          <strong>Te chamam de atração...</strong>
-          <p>Quem faz a noite vibrar também precisa viver dela.</p>
-          <a href="https://www.instagram.com/p/DK-ufETv1BH/?img_index=1" target="_blank">Ver post completo</a>
-        </div>
-        <div class="card">
-          <img src="EDITORIAL6.png">
-          <strong>Todo mundo cansado</strong>
-          <p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p>
-          <a href="https://www.instagram.com/p/DLQw_wwvx6-/?img_index=1" target="_blank">Ver post completo</a>
-        </div>
+    <div class="carousel-container">
+      <button class="nav-arrow nav-left" onclick="scrollCarousel('editorial', -1)">❮</button>
+      <div id="editorial" class="scroll-container">
+        <div class="card"><img src="EDITORIAL1.png"><strong>As cidades já foram noturnas</strong><p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p><a href="#">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL2.png"><strong>DJs são novos autores</strong><p>Quem escreve tua noite é o DJ. Já agradeceu?</p><a href="#">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL3.png"><strong>Por que os teatros estão vazios...</strong><p>Teatro na era do feed: presença ou performance?</p><a href="#">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL4.png"><strong>E se teu look falassem por ti?</strong><p>Estética é política: o look também fala!</p><a href="#">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL5.png"><strong>Te chamam de atração...</strong><p>Quem faz a noite vibrar também precisa viver dela.</p><a href="#">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL6.png"><strong>Todo mundo cansado</strong><p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p><a href="#">Ver post completo</a></div>
       </div>
-      <button class="arrow arrow-right" onclick="scrollRight()">❯</button>
+      <button class="nav-arrow nav-right" onclick="scrollCarousel('editorial', 1)">❯</button>
     </div>
 
-    <div class="btn-voltar">
-      <a href="index.html">Voltar para o início</a>
-    </div>
+    <!-- Outras seções simples -->
+    <h2>Posfácio</h2>
+    <div class="scroll-container"><div class="card"><strong>Posfácio</strong><p>Encerramento semanal com textos finais, críticas ou pensamentos sobre a cena cultural atual.</p></div></div>
+
+    <h2>Dicas do ROLÊ</h2>
+    <div class="scroll-container"><div class="card"><strong>Dicas do ROLÊ</strong><p>Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</p></div></div>
+
+    <h2>Fala, ROLÊ</h2>
+    <div class="scroll-container"><div class="card"><strong>Fala, ROLÊ</strong><p>Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</p></div></div>
+
+    <h2>ROLÊ.bpm</h2>
+    <div class="scroll-container"><div class="card"><strong>ROLÊ.bpm</strong><p>Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</p></div></div>
+
+    <h2>Achadinhos do ROLÊ</h2>
+    <div class="scroll-container"><div class="card"><strong>Achadinhos do ROLÊ</strong><p>Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</p></div></div>
+
   </main>
 
+  <div style="text-align: center; margin: 32px 0;">
+    <a href="index.html" style="background-color: var(--highlight); color: var(--bg-color); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+      Voltar para o início
+    </a>
+  </div>
+
   <footer>
-    <p>© 2025 ROLÊ ENTRETENIMENTO · 
-      <a href="politica.html">Política de Privacidade</a> · 
-      <a href="termos-usuario.html">Termos do Rolezeiro</a> · 
-      <a href="termos-organizador.html">Termos do Organizador</a> · 
-      <a href="politica-spam.html">Política Antispam</a>
-    </p>
+    <p>© 2025 ROLÊ ENTRETENIMENTO · <a href="politica.html">Política de Privacidade</a> · <a href="termos-usuario.html">Termos do Rolezeiro</a> · <a href="termos-organizador.html">Termos do Organizador</a> · <a href="politica-spam.html">Política Antispam</a></p>
   </footer>
-
-  <script>
-    function scrollLeft() {
-      const container = document.getElementById('editorial-carousel');
-      container.scrollBy({ left: -300, behavior: 'smooth' });
-    }
-
-    function scrollRight() {
-      const container = document.getElementById('editorial-carousel');
-      container.scrollBy({ left: 300, behavior: 'smooth' });
-    }
-  </script>
-
 </body>
 </html>
