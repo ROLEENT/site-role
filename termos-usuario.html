@@ -1,18 +1,222 @@
-<div class="container">
-  <h1>Termos de Uso do Rolezeiro</h1>
-  <p>Estes Termos de Uso regulam o acesso e uso da plataforma ROLÊ ENTRETENIMENTO pelo público geral (usuário final), que consome conteúdos e informações sobre eventos e artistas divulgados.</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Termos do Rolezeiro - ROLÊ</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg-color: #000;
+        --text-color: #f3f3f7;
+        --highlight: #c77dff;
+        --card-bg: #151515;
+      }
+      body.light {
+        --bg-color: #fff;
+        --text-color: #2e2e2e;
+        --card-bg: #eaeaea;
+      }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'League Spartan', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 16px;
+        border-bottom: 1px solid var(--highlight);
+      }
+      header img.logo {
+        height: 40px;
+        margin-bottom: 8px;
+      }
+      .top-right {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+      }
+      .search {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        max-width: 200px;
+      }
+      .theme-toggle {
+        cursor: pointer;
+        font-size: 14px;
+        color: var(--highlight);
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-button {
+        background-color: var(--highlight);
+        border: none;
+        color: var(--bg-color);
+        font-size: 16px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .dropdown-button::after {
+        content: "▾";
+        margin-left: 6px;
+        display: inline-block;
+        transition: transform 0.2s ease;
+      }
+      .dropdown.open .dropdown-button::after {
+        transform: rotate(180deg);
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        margin-top: 8px;
+        min-width: 200px;
+        z-index: 1;
+      }
+      .dropdown-content a {
+        display: block;
+        padding: 12px;
+        color: var(--text-color);
+        text-decoration: none;
+      }
+      .dropdown.open .dropdown-content {
+        display: block;
+      }
 
-  <h2>1. Aceitação dos Termos</h2>
-  <p>Ao acessar e utilizar o site ou os canais oficiais do ROLÊ, o usuário declara ter lido, compreendido e aceitado integralmente estes termos.</p>
+      main {
+        padding: 32px 24px;
+        max-width: 800px;
+        margin: auto;
+      }
 
-  <h2>2. Finalidade</h2>
-  <p>A plataforma tem caráter informativo e promocional. Não realizamos venda de ingressos, reservas ou qualquer intermediação comercial entre usuários e eventos.</p>
+      h1 {
+        color: var(--highlight);
+        font-size: 28px;
+        margin-bottom: 24px;
+      }
 
-  <h2>3. Responsabilidade sobre Informações</h2>
-  <p>As informações divulgadas são fornecidas por organizadores e parceiros. O ROLÊ realiza curadoria e revisão, mas não se responsabiliza por alterações de última hora, cancelamentos ou dados desatualizados.</p>
+      h2 {
+        font-size: 20px;
+        margin-top: 24px;
+      }
 
-  <h2>4. Direitos Autorais</h2>
-  <p>Todo conteúdo disponibilizado (textos, imagens, vídeos) é protegido por direitos autorais. É proibida a reprodução ou uso indevido sem autorização prévia.</p>
+      p {
+        line-height: 1.6;
+        margin-top: 8px;
+      }
 
-  <h2>5. Conduta do Usuário</h2>
-  <p>Comentários ofensivos, discriminatórios ou que promovam discurso de ódio em nossos canais serão removidos, e o usuário poderá s
+      footer {
+        text-align: center;
+        font-size: 14px;
+        padding: 24px 12px;
+      }
+      footer p {
+        color: white;
+      }
+      footer a {
+        color: var(--highlight);
+        text-decoration: none;
+        margin: 0 8px;
+      }
+
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .top-right {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+        }
+        .search {
+          width: 100%;
+          margin-bottom: 8px;
+        }
+        .dropdown-content {
+          left: 0;
+          right: auto;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const dropdown = document.querySelector('.dropdown');
+        const button = document.querySelector('.dropdown-button');
+
+        button.addEventListener('click', function (e) {
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <img src="logo-role.png" alt="ROLÊ" class="logo" />
+      <div class="top-right">
+        <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+        <div class="dropdown">
+          <button class="dropdown-button">Explorar ▾</button>
+          <div class="dropdown-content">
+            <a href="editorial.html">Revista ROLÊ</a>
+            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+            <a href="#">Descontos</a>
+            <a href="#">Contato</a>
+            <a href="#">Quem somos</a>
+          </div>
+        </div>
+        <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
+      </div>
+    </header>
+
+    <main>
+      <h1>Termos de Uso do Rolezeiro</h1>
+      <p>Estes Termos de Uso regulam o acesso e uso da plataforma ROLÊ ENTRETENIMENTO pelo público geral (usuário final), que consome conteúdos e informações sobre eventos e artistas divulgados.</p>
+
+      <h2>1. Aceitação dos Termos</h2>
+      <p>Ao acessar e utilizar o site ou os canais oficiais do ROLÊ, o usuário declara ter lido, compreendido e aceitado integralmente estes termos.</p>
+
+      <h2>2. Finalidade</h2>
+      <p>A plataforma tem caráter informativo e promocional. Não realizamos venda de ingressos, reservas ou qualquer intermediação comercial entre usuários e eventos.</p>
+
+      <h2>3. Responsabilidade sobre Informações</h2>
+      <p>As informações divulgadas são fornecidas por organizadores e parceiros. O ROLÊ realiza curadoria e revisão, mas não se responsabiliza por alterações de última hora, cancelamentos ou dados desatualizados.</p>
+
+      <h2>4. Direitos Autorais</h2>
+      <p>Todo conteúdo disponibilizado (textos, imagens, vídeos) é protegido por direitos autorais. É proibida a reprodução ou uso indevido sem autorização prévia.</p>
+
+      <h2>5. Conduta do Usuário</h2>
+      <p>Comentários ofensivos, discriminatórios ou que promovam discurso de ódio em nossos canais serão removidos, e o usuário poderá ser banido.</p>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
+        <a href="politica.html">Política de Privacidade</a> ·
+        <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+        <a href="termos-organizador.html">Termos do Organizador</a> ·
+        <a href="politica-spam.html">Política Antispam</a>
+      </p>
+    </footer>
+  </body>
+</html>
