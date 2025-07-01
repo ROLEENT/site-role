@@ -13,17 +13,11 @@
       --highlight: #c77dff;
       --card-bg: #151515;
     }
-
     body.light {
       --bg-color: #fff;
       --text-color: #2e2e2e;
       --card-bg: #eaeaea;
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -31,7 +25,6 @@
       margin: 0;
       padding: 0;
     }
-
     header {
       display: flex;
       align-items: center;
@@ -40,19 +33,15 @@
       padding: 16px;
       border-bottom: 1px solid var(--highlight);
     }
-
     header img.logo {
       height: 40px;
-      margin-bottom: 8px;
     }
-
     .top-right {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 12px;
     }
-
     .search {
       padding: 8px 12px;
       border-radius: 8px;
@@ -60,17 +49,14 @@
       outline: none;
       max-width: 200px;
     }
-
     .theme-toggle {
       cursor: pointer;
       font-size: 14px;
       color: var(--highlight);
     }
-
     .dropdown {
       position: relative;
     }
-
     .dropdown-button {
       background-color: var(--highlight);
       border: none;
@@ -80,18 +66,10 @@
       border-radius: 8px;
       cursor: pointer;
     }
-
     .dropdown-button::after {
       content: "▾";
       margin-left: 6px;
-      display: inline-block;
-      transition: transform 0.2s ease;
     }
-
-    .dropdown.open .dropdown-button::after {
-      transform: rotate(180deg);
-    }
-
     .dropdown-content {
       display: none;
       position: absolute;
@@ -102,55 +80,45 @@
       min-width: 200px;
       z-index: 1;
     }
-
     .dropdown-content a {
       display: block;
       padding: 12px;
       color: var(--text-color);
       text-decoration: none;
     }
-
     .dropdown.open .dropdown-content {
       display: block;
     }
-
     main {
       padding: 32px 24px;
       max-width: 1080px;
       margin: auto;
     }
-
     h1 {
       font-size: 28px;
       color: var(--highlight);
       margin-bottom: 32px;
     }
-
     h2 {
       font-size: 22px;
       margin-bottom: 12px;
       margin-top: 48px;
       color: var(--highlight);
     }
-
     .scroll-container {
       display: flex;
       overflow-x: auto;
       gap: 1rem;
       padding-bottom: 1rem;
       scroll-snap-type: x mandatory;
-      scroll-padding-left: 16px;
     }
-
     .scroll-container::-webkit-scrollbar {
       height: 8px;
     }
-
     .scroll-container::-webkit-scrollbar-thumb {
       background: var(--highlight);
       border-radius: 4px;
     }
-
     .card {
       background: var(--card-bg);
       min-width: 280px;
@@ -164,7 +132,6 @@
       flex-direction: column;
       justify-content: space-between;
     }
-
     .card img {
       width: 100%;
       height: 140px;
@@ -172,58 +139,45 @@
       border-radius: 8px;
       margin-bottom: 0.75rem;
     }
-
     .card strong {
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
     }
-
     .card p {
       font-size: 0.95rem;
       color: var(--text-color);
       line-height: 1.4;
       margin-bottom: 1rem;
     }
-
     .card a {
       color: var(--highlight);
       text-decoration: none;
       font-weight: bold;
     }
-
     footer {
       text-align: center;
       font-size: 14px;
       padding: 40px 12px;
     }
-
-    footer p {
-      color: white;
-    }
-
     footer a {
       color: var(--highlight);
       text-decoration: none;
       margin: 0 8px;
     }
-
     @media (max-width: 600px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
-
       .top-right {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
       }
-
       .search {
         width: 100%;
         margin-bottom: 8px;
       }
-
       .dropdown-content {
         left: 0;
         right: auto;
@@ -252,7 +206,7 @@
     <div class="top-right">
       <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
       <div class="dropdown">
-        <button class="dropdown-button">Explorar ▾</button>
+        <button class="dropdown-button">Explorar</button>
         <div class="dropdown-content">
           <a href="editorial.html">Revista ROLÊ</a>
           <a href="vitrine-cultural.html">Vitrine Cultural</a>
@@ -270,12 +224,9 @@
 
     <h2>Editorial</h2>
     <div class="scroll-container">
-      <div class="card"><img src="EDITORIAL1.png"><strong>As cidades já foram noturnas</strong><p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p><a href="https://www.instagram.com/p/DJ2mpGfvPxL/?img_index=1" target="_blank">Ver post completo</a></div>
-      <div class="card"><img src="EDITORIAL2.png"><strong>DJs são novos autores</strong><p>Quem escreve tua noite é o DJ. Já agradeceu?</p><a href="https://www.instagram.com/p/DKIn4-cv4-8/?img_index=1" target="_blank">Ver post completo</a></div>
-      <div class="card"><img src="EDITORIAL3.png"><strong>Por que os teatros estão vazios...</strong><p>Teatro na era do feed: presença ou performance?</p><a href="https://www.instagram.com/p/DKahp8bvT5o/?img_index=1" target="_blank">Ver post completo</a></div>
-      <div class="card"><img src="EDITORIAL4.png"><strong>E se teu look falassem por ti?</strong><p>Estética é política: o look também fala!</p><a href="https://www.instagram.com/p/DKsd2qwPI2a/?img_index=1" target="_blank">Ver post completo</a></div>
-      <div class="card"><img src="EDITORIAL5.png"><strong>Te chamam de atração...</strong><p>Quem faz a noite vibrar também precisa viver dela.</p><a href="https://www.instagram.com/p/DK-ufETv1BH/?img_index=1" target="_blank">Ver post completo</a></div>
-      <div class="card"><img src="EDITORIAL6.png"><strong>Todo mundo cansado</strong><p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p><a href="https://www.instagram.com/p/DLQw_wwvx6-/?img_index=1" target="_blank">Ver post completo</a></div>
+      <div class="card"><img src="EDITORIAL1.png"><strong>As cidades já foram noturnas</strong><p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p><a href="https://www.instagram.com/p/DJ2mpGfvPxL/" target="_blank">Ver post completo</a></div>
+      <div class="card"><img src="EDITORIAL2.png"><strong>DJs são novos autores</strong><p>Quem escreve tua noite é o DJ. Já agradeceu?</p><a href="https://www.instagram.com/p/DKIn4-cv4-8/" target="_blank">Ver post completo</a></div>
+      <div class="card"><img src="EDITORIAL3.png"><strong>Por que os teatros estão vazios...</strong><p>Teatro na era do feed: presença ou performance?</p><a href="https://www.instagram.com/p/DKahp8bvT5o/" target="_blank">Ver post completo</a></div>
     </div>
 
     <h2>Posfácio</h2>
