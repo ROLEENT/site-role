@@ -74,7 +74,11 @@ header h1 {
   color: #c77dff;
   margin-bottom: 20px;
 }
-
+.logo {
+  max-width: 160px;
+  height: auto;
+  margin-bottom: 20px;
+}
 nav {
   display: flex;
   justify-content: center;
