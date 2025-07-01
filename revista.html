@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,33 +13,24 @@
       --highlight: #c77dff;
       --card-bg: #151515;
     }
-    body.light {
-      --bg-color: #fff;
-      --text-color: #2e2e2e;
-      --card-bg: #eaeaea;
-    }
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'League Spartan', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'League Spartan', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
     }
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 16px;
+      align-items: center;
+      padding: 1rem 2rem;
       border-bottom: 1px solid var(--highlight);
     }
-    header img.logo {
+    header img {
       height: 40px;
-      margin-bottom: 8px;
     }
     .top-right {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       gap: 12px;
     }
@@ -49,43 +39,28 @@
       border-radius: 8px;
       border: none;
       outline: none;
-      max-width: 200px;
-    }
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 14px;
-      color: var(--highlight);
     }
     .dropdown {
       position: relative;
     }
     .dropdown-button {
-      background-color: var(--highlight);
+      background: var(--highlight);
       border: none;
       color: var(--bg-color);
-      font-size: 16px;
       padding: 8px 12px;
       border-radius: 8px;
+      font-size: 16px;
       cursor: pointer;
-    }
-    .dropdown-button::after {
-      content: "▾";
-      margin-left: 6px;
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-    .dropdown.open .dropdown-button::after {
-      transform: rotate(180deg);
     }
     .dropdown-content {
       display: none;
       position: absolute;
       right: 0;
-      background-color: var(--card-bg);
+      background: var(--card-bg);
       border-radius: 8px;
       margin-top: 8px;
       min-width: 200px;
-      z-index: 1;
+      z-index: 2;
     }
     .dropdown-content a {
       display: block;
@@ -97,43 +72,38 @@
       display: block;
     }
     main {
-      padding: 32px 24px;
+      padding: 2rem;
       max-width: 1080px;
       margin: auto;
     }
     h1 {
-      font-size: 28px;
       color: var(--highlight);
-      margin-bottom: 32px;
+      font-size: 28px;
     }
     h2 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      margin-top: 48px;
+      margin-top: 3rem;
       color: var(--highlight);
     }
-
-    .carousel-container {
+    .carousel-wrapper {
       position: relative;
-      margin-bottom: 24px;
     }
-    .scroll-container {
+    .carousel {
       display: flex;
-      overflow-x: scroll;
+      overflow-x: auto;
       gap: 1rem;
+      padding: 1rem 0;
       scroll-behavior: smooth;
-      scrollbar-width: none;
     }
-    .scroll-container::-webkit-scrollbar {
+    .carousel::-webkit-scrollbar {
       display: none;
     }
     .card {
       background: var(--card-bg);
       min-width: 280px;
       max-width: 280px;
-      flex: 0 0 auto;
-      padding: 1rem;
       border-radius: 12px;
+      padding: 1rem;
+      flex-shrink: 0;
       box-shadow: 0 4px 10px rgba(199, 125, 255, 0.25);
       display: flex;
       flex-direction: column;
@@ -161,20 +131,28 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .nav-arrow {
+    .arrow {
       position: absolute;
-      top: 40%;
+      top: 50%;
       transform: translateY(-50%);
-      font-size: 32px;
+      font-size: 2rem;
       color: var(--highlight);
-      background: transparent;
+      background: none;
       border: none;
       cursor: pointer;
-      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 1;
     }
-    .nav-left { left: -32px; }
-    .nav-right { right: -32px; }
-
+    .carousel-wrapper:hover .arrow {
+      opacity: 1;
+    }
+    .arrow.left {
+      left: -1rem;
+    }
+    .arrow.right {
+      right: -1rem;
+    }
     footer {
       text-align: center;
       font-size: 14px;
@@ -190,16 +168,38 @@
     }
   </style>
   <script>
-    function scrollCarousel(id, direction) {
-      const container = document.getElementById(id);
-      const scrollAmount = 320;
-      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdown = document.querySelector('.dropdown');
+      const button = document.querySelector('.dropdown-button');
+      button.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
+
+      document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+        const carousel = wrapper.querySelector('.carousel');
+        const prev = wrapper.querySelector('.arrow.left');
+        const next = wrapper.querySelector('.arrow.right');
+
+        prev.addEventListener('click', () => {
+          carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        next.addEventListener('click', () => {
+          carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+      });
+    });
   </script>
 </head>
 <body>
+
   <header>
-    <img src="logo-role.png" alt="ROLÊ" class="logo" />
+    <img src="logo-role.png" alt="ROLÊ" />
     <div class="top-right">
       <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
       <div class="dropdown">
@@ -212,54 +212,75 @@
           <a href="quem-somos.html">Quem Somos</a>
         </div>
       </div>
-      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
     </div>
   </header>
 
   <main>
     <h1>Revista ROLÊ</h1>
 
-    <!-- Seção com scroll e setas -->
     <h2>Editorial</h2>
-    <div class="carousel-container">
-      <button class="nav-arrow nav-left" onclick="scrollCarousel('editorial', -1)">❮</button>
-      <div id="editorial" class="scroll-container">
-        <div class="card"><img src="EDITORIAL1.png"><strong>As cidades já foram noturnas</strong><p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p><a href="#">Ver post completo</a></div>
-        <div class="card"><img src="EDITORIAL2.png"><strong>DJs são novos autores</strong><p>Quem escreve tua noite é o DJ. Já agradeceu?</p><a href="#">Ver post completo</a></div>
-        <div class="card"><img src="EDITORIAL3.png"><strong>Por que os teatros estão vazios...</strong><p>Teatro na era do feed: presença ou performance?</p><a href="#">Ver post completo</a></div>
-        <div class="card"><img src="EDITORIAL4.png"><strong>E se teu look falassem por ti?</strong><p>Estética é política: o look também fala!</p><a href="#">Ver post completo</a></div>
-        <div class="card"><img src="EDITORIAL5.png"><strong>Te chamam de atração...</strong><p>Quem faz a noite vibrar também precisa viver dela.</p><a href="#">Ver post completo</a></div>
-        <div class="card"><img src="EDITORIAL6.png"><strong>Todo mundo cansado</strong><p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p><a href="#">Ver post completo</a></div>
+    <div class="carousel-wrapper">
+      <button class="arrow left">❮</button>
+      <div class="carousel">
+        <div class="card"><img src="EDITORIAL1.png"><strong>As cidades já foram noturnas</strong><p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p><a href="https://www.instagram.com/p/DJ2mpGfvPxL/?img_index=1" target="_blank">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL2.png"><strong>DJs são novos autores</strong><p>Quem escreve tua noite é o DJ. Já agradeceu?</p><a href="#" target="_blank">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL3.png"><strong>Por que os teatros estão vazios...</strong><p>Teatro na era do feed: presença ou performance?</p><a href="#" target="_blank">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL4.png"><strong>E se teu look falasse por ti?</strong><p>Estética é política: o look também fala!</p><a href="#" target="_blank">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL5.png"><strong>Te chamam de atração...</strong><p>Quem faz a noite vibrar também precisa viver dela.</p><a href="#" target="_blank">Ver post completo</a></div>
+        <div class="card"><img src="EDITORIAL6.png"><strong>Todo mundo cansado</strong><p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p><a href="#" target="_blank">Ver post completo</a></div>
       </div>
-      <button class="nav-arrow nav-right" onclick="scrollCarousel('editorial', 1)">❯</button>
+      <button class="arrow right">❯</button>
     </div>
 
-    <!-- Outras seções simples -->
     <h2>Posfácio</h2>
-    <div class="scroll-container"><div class="card"><strong>Posfácio</strong><p>Encerramento semanal com textos finais, críticas ou pensamentos sobre a cena cultural atual.</p></div></div>
+    <div class="carousel-wrapper">
+      <button class="arrow left">❮</button>
+      <div class="carousel">
+        <div class="card"><strong>Posfácio</strong><p>Encerramento semanal com textos finais, críticas ou pensamentos sobre a cena cultural atual.</p></div>
+      </div>
+      <button class="arrow right">❯</button>
+    </div>
 
     <h2>Dicas do ROLÊ</h2>
-    <div class="scroll-container"><div class="card"><strong>Dicas do ROLÊ</strong><p>Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</p></div></div>
+    <div class="carousel-wrapper">
+      <button class="arrow left">❮</button>
+      <div class="carousel">
+        <div class="card"><strong>Dicas do ROLÊ</strong><p>Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</p></div>
+      </div>
+      <button class="arrow right">❯</button>
+    </div>
 
     <h2>Fala, ROLÊ</h2>
-    <div class="scroll-container"><div class="card"><strong>Fala, ROLÊ</strong><p>Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</p></div></div>
+    <div class="carousel-wrapper">
+      <button class="arrow left">❮</button>
+      <div class="carousel">
+        <div class="card"><strong>Fala, ROLÊ</strong><p>Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</p></div>
+      </div>
+      <button class="arrow right">❯</button>
+    </div>
 
     <h2>ROLÊ.bpm</h2>
-    <div class="scroll-container"><div class="card"><strong>ROLÊ.bpm</strong><p>Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</p></div></div>
+    <div class="carousel-wrapper">
+      <button class="arrow left">❮</button>
+      <div class="carousel">
+        <div class="card"><strong>ROLÊ.bpm</strong><p>Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</p></div>
+      </div>
+      <button class="arrow right">❯</button>
+    </div>
 
     <h2>Achadinhos do ROLÊ</h2>
-    <div class="scroll-container"><div class="card"><strong>Achadinhos do ROLÊ</strong><p>Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</p></div></div>
-
+    <div class="carousel-wrapper">
+      <button class="arrow left">❮</button>
+      <div class="carousel">
+        <div class="card"><strong>Achadinhos do ROLÊ</strong><p>Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</p></div>
+      </div>
+      <button class="arrow right">❯</button>
+    </div>
   </main>
-
-  <div style="text-align: center; margin: 32px 0;">
-    <a href="index.html" style="background-color: var(--highlight); color: var(--bg-color); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
-      Voltar para o início
-    </a>
-  </div>
 
   <footer>
     <p>© 2025 ROLÊ ENTRETENIMENTO · <a href="politica.html">Política de Privacidade</a> · <a href="termos-usuario.html">Termos do Rolezeiro</a> · <a href="termos-organizador.html">Termos do Organizador</a> · <a href="politica-spam.html">Política Antispam</a></p>
   </footer>
+
 </body>
 </html>
