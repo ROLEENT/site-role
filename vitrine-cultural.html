@@ -1,19 +1,277 @@
-<section class="destaques">
-  <h2>NA VITRINE CULTURAL</h2>
-  <div class="scroll-wrapper">
-    <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
-    <div class="cards-container">
-      <div class="card">
-        <img src="Plano.png" alt="PLANO 8 ANOS" />
-        <p>Uma pista-portal te chama: Mercúrio em Transe, 05/07!</p>
-        <a href="https://www.instagram.com/p/DLfURN7uUYq/?img_index=1" target="_blank">Ver mais</a>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ROLÊ: Vitrine Cultural com os eventos em destaque da cena independente." />
+  <title>Vitrine Cultural | ROLÊ ENTRETENIMENTO</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #f3f3f7;
+      --highlight: #c77dff;
+      --card-bg: #151515;
+    }
+    body.light {
+      --bg-color: #fff;
+      --text-color: #2e2e2e;
+      --card-bg: #eaeaea;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'League Spartan', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 16px;
+      border-bottom: 1px solid var(--highlight);
+    }
+    header img.logo {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+    .top-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .search {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      max-width: 200px;
+    }
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--highlight);
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background-color: var(--highlight);
+      border: none;
+      color: var(--bg-color);
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .dropdown-button::after {
+      content: "▾";
+      margin-left: 6px;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+    .dropdown.open .dropdown-button::after {
+      transform: rotate(180deg);
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      margin-top: 8px;
+      min-width: 200px;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+    .dropdown.open .dropdown-content {
+      display: block;
+    }
+
+    .destaques {
+      padding: 0 16px;
+      text-align: center;
+    }
+    .destaques h2 {
+      color: var(--highlight);
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-top: 32px;
+    }
+
+    .cards-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 16px 0 32px;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      justify-content: center;
+    }
+    .cards-container::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll-arrow {
+      color: var(--highlight);
+      font-size: 24px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0 8px;
+      display: flex;
+      align-items: center;
+    }
+    .scroll-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 12px;
+      min-width: 220px;
+      max-width: 220px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .card a {
+      color: var(--highlight);
+      font-weight: bold;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 24px 12px;
+    }
+    footer p {
+      color: white;
+    }
+    footer a {
+      color: var(--highlight);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .top-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .search {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .dropdown-content {
+        left: 0;
+        right: auto;
+      }
+      .card {
+        min-width: 70vw;
+        max-width: 70vw;
+      }
+    }
+  </style>
+  <script>
+    function scrollRight() {
+      document.querySelector('.cards-container').scrollBy({ left: 300, behavior: 'smooth' });
+    }
+    function scrollLeft() {
+      document.querySelector('.cards-container').scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo-role.png" alt="ROLÊ" class="logo" />
+    <div class="top-right">
+      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+      <div class="dropdown">
+        <button class="dropdown-button">Explorar ▾</button>
+        <div class="dropdown-content">
+          <a href="editorial.html">Revista ROLÊ</a>
+          <a href="vitrine-cultural.html">Vitrine Cultural</a>
+          <a href="#">Descontos</a>
+          <a href="#">Contato</a>
+          <a href="#">Quem somos</a>
+        </div>
       </div>
-      <div class="card">
-        <img src="Atrito.png" alt="VEM AÍ O ATRITO" />
-        <p>ATRITO: o after mais insano do Rio te espera!</p>
-        <a href="https://www.instagram.com/p/DLkhRnvuMpI/?img_index=1" target="_blank">Ver mais</a>
-      </div>
+      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
     </div>
-    <button class="scroll-arrow" onclick="scrollRight()">▶</button>
-  </div>
-</section>
+  </header>
+
+  <section class="destaques">
+    <h2>NA VITRINE CULTURAL</h2>
+    <div class="scroll-wrapper">
+      <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
+      <div class="cards-container">
+        <div class="card">
+          <img src="Plano.png" alt="PLANO 8 ANOS" />
+          <p>Uma pista-portal te chama: Mercúrio em Transe, 05/07!</p>
+          <a href="https://www.instagram.com/p/DLfURN7uUYq/?img_index=1" target="_blank">Ver mais</a>
+        </div>
+        <div class="card">
+          <img src="Atrito.png" alt="ATRTIO" />
+          <p>ATRITO: o after mais insano do Rio te espera!</p>
+          <a href="https://www.instagram.com/p/DLkhRnvuMpI/?img_index=1" target="_blank">Ver mais</a>
+        </div>
+      </div>
+      <button class="scroll-arrow" onclick="scrollRight()">▶</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdown = document.querySelector('.dropdown');
+      const button = document.querySelector('.dropdown-button');
+
+      button.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
