@@ -98,10 +98,12 @@
       }
       .destaques {
         padding: 0 16px;
+        text-align: center;
       }
       .destaques h2 {
         color: var(--highlight);
         font-size: 24px;
+        text-transform: uppercase;
       }
       .cards-container {
         display: flex;
@@ -112,6 +114,7 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         scroll-behavior: smooth;
+        justify-content: center;
       }
       .cards-container::-webkit-scrollbar {
         display: none;
@@ -129,6 +132,7 @@
       .scroll-wrapper {
         display: flex;
         align-items: center;
+        justify-content: center;
       }
       .card {
         background-color: var(--card-bg);
@@ -220,7 +224,7 @@
     </div>
 
     <section class="destaques">
-      <h2>Destaques da Semana</h2>
+      <h2>DESTAQUES DA SEMANA</h2>
       <div class="scroll-wrapper">
         <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
         <div class="cards-container">
