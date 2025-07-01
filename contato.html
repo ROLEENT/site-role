@@ -125,14 +125,15 @@
   <header>
     <a href="index.html"><img src="logo-role.png" alt="ROLÊ logo" /></a>
     <div class="dropdown">
-      <button class="dropbtn">Explorar ▾</button>
-      <div class="dropdown-content">
-        <a href="editorial.html">Revista ROLÊ</a>
-        <a href="vitrine.html">Vitrine Cultural</a>
-        <a href="descontos.html">Descontos</a>
-        <a href="contato.html">Contato</a>
-        <a href="quem-somos.html">Quem somos</a>
-      </div>
+  <button class="dropbtn">Explorar ▾</button>
+  <div class="dropdown-content">
+    <a href="editorial.html">Revista ROLÊ</a>
+    <a href="vitrine-cultural.html">Vitrine Cultural</a>
+    <a href="#">Descontos</a>
+    <a href="contato.html">Contato</a>
+    <a href="quem-somos.html">Quem somos</a>
+  </div>
+</div>
     </div>
   </header>
 
@@ -155,5 +156,20 @@
     <a href="termos-organizador.html">Termos do Organizador</a> • 
     <a href="politica-spam.html">Política Antispam</a>
   </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.dropdown');
+    const button = document.querySelector('.dropbtn');
+    button.addEventListener('click', function (e) {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
+  });
+</script>
 </body>
 </html>
