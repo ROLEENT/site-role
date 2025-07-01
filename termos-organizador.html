@@ -1,91 +1,219 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Termos do Organizador - ROLÊ ENTRETENIMENTO</title>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos do Organizador - ROLÊ</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #f3f3f7;
+      --highlight: #c77dff;
+      --card-bg: #151515;
+    }
+    body.light {
+      --bg-color: #fff;
+      --text-color: #2e2e2e;
+      --card-bg: #eaeaea;
+    }
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
-      padding: 2rem;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-family: 'League Spartan', sans-serif;
-      color: #FF0080;
+      margin: 0;
+      padding: 0;
     }
-    a {
-      color: #FF0080;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 16px;
+      border-bottom: 1px solid var(--highlight);
+    }
+    header img.logo {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+    .top-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .search {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      max-width: 200px;
+    }
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--highlight);
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background-color: var(--highlight);
+      border: none;
+      color: var(--bg-color);
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .dropdown-button::after {
+      content: "▾";
+      margin-left: 6px;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+    .dropdown.open .dropdown-button::after {
+      transform: rotate(180deg);
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      margin-top: 8px;
+      min-width: 200px;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px;
+      color: var(--text-color);
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    .dropdown.open .dropdown-content {
+      display: block;
     }
-    .container {
+    main {
+      padding: 32px 24px;
       max-width: 800px;
       margin: auto;
     }
+    h1 {
+      color: var(--highlight);
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 24px;
+    }
+    p {
+      line-height: 1.6;
+      margin-top: 8px;
+    }
     footer {
-      margin-top: 4rem;
-      padding: 2rem;
-      background-color: #111;
       text-align: center;
-      font-size: 0.9rem;
-      color: #ccc;
+      font-size: 14px;
+      padding: 24px 12px;
+    }
+    footer p {
+      color: white;
     }
     footer a {
-      margin: 0 1rem;
-      color: #FF0080;
+      color: var(--highlight);
       text-decoration: none;
+      margin: 0 8px;
     }
-    footer a:hover {
-      text-decoration: underline;
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .top-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .search {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .dropdown-content {
+        left: 0;
+        right: auto;
+      }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdown = document.querySelector('.dropdown');
+      const button = document.querySelector('.dropdown-button');
+      button.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
+    });
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Termos de Uso para Organizadores de Eventos</h1>
-    <p>Estes Termos de Uso regulam a relação entre o ROLÊ ENTRETENIMENTO LTDA e os organizadores que utilizam os serviços da plataforma para promover seus eventos.</p>
+  <header>
+    <img src="logo-role.png" alt="ROLÊ" class="logo" />
+    <div class="top-right">
+      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+      <div class="dropdown">
+        <button class="dropdown-button">Explorar ▾</button>
+        <div class="dropdown-content">
+          <a href="editorial.html">Revista ROLÊ</a>
+          <a href="vitrine-cultural.html">Vitrine Cultural</a>
+          <a href="#">Descontos</a>
+          <a href="#">Contato</a>
+          <a href="#">Quem somos</a>
+        </div>
+      </div>
+      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
+    </div>
+  </header>
 
-    <h2>1. Cadastro do Organizador</h2>
-    <p>Ao contratar qualquer serviço de divulgação, o organizador deve fornecer informações verídicas sobre o evento e os canais de contato. O uso da plataforma implica aceitação integral destes termos.</p>
+  <main>
+    <h1>Termos de Uso ao Organizador</h1>
+    <p>Estes Termos regulam a relação entre o ROLÊ ENTRETENIMENTO e os organizadores de eventos que utilizam nossa plataforma para promover suas produções culturais.</p>
 
-    <h2>2. Envio de Conteúdo</h2>
-    <p>O organizador deve enviar os materiais (textos, imagens, links) dentro do prazo estipulado, com antecedência mínima de 48h. Caso contrário, será aplicada a taxa de urgência (+R$50).</p>
+    <h2>1. Cadastro e Envio de Informações</h2>
+    <p>Os organizadores devem fornecer informações precisas, atualizadas e verdadeiras sobre seus eventos. O ROLÊ poderá recusar conteúdos que não estejam de acordo com sua curadoria editorial.</p>
 
-    <h2>3. Aprovação e Responsabilidade</h2>
-    <p>O ROLÊ reserva-se o direito de recusar conteúdos que violem direitos autorais, sejam ofensivos, discriminatórios ou que estejam em desacordo com os valores da empresa.</p>
+    <h2>2. Responsabilidade pelos Eventos</h2>
+    <p>O organizador é o único responsável pela realização do evento, incluindo questões legais, segurança, licenciamento e estrutura. O ROLÊ não se responsabiliza por ocorrências durante os eventos.</p>
 
-    <h2>4. Cancelamentos</h2>
-    <p>Cancelamentos são permitidos com até 24h de antecedência à publicação. Após este prazo, não haverá reembolso. Estornos são feitos via PIX em até 3 dias úteis.</p>
+    <h2>3. Direitos de Imagem e Divulgação</h2>
+    <p>Ao submeter materiais (fotos, textos, vídeos) para divulgação, o organizador declara ter os direitos sobre eles e autoriza o uso nas mídias do ROLÊ.</p>
 
-    <h2>5. Impulsionamento e Resultados</h2>
-    <p>Posts com impulsionamento são definidos em conjunto com o organizador, porém os resultados (alcance, cliques, interações) dependem de fatores externos e não são garantidos.</p>
+    <h2>4. Cancelamentos e Reembolsos</h2>
+    <p>Em caso de cancelamento de um evento divulgado, o organizador deve notificar imediatamente o ROLÊ. Não há reembolso das taxas de divulgação após a publicação do conteúdo, salvo exceções previamente acordadas.</p>
 
-    <h2>6. Concessão de Direitos</h2>
-    <p>Ao enviar conteúdo ao ROLÊ, o organizador autoriza o uso das imagens e informações para fins de divulgação e portfólio da marca.</p>
-
-    <h2>7. Comunicação</h2>
-    <p>A comunicação se dá via WhatsApp, e-mail ou Instagram, e o organizador deve acompanhar os retornos para garantir a execução correta da divulgação.</p>
-
-    <h2>8. Atualizações dos Termos</h2>
-    <p>Estes termos podem ser atualizados a qualquer momento. Recomenda-se a revisão periódica no site oficial: <a href="https://roleentretenimento.com">roleentretenimento.com</a></p>
-
-    <p>Em caso de dúvidas, entre em contato via <a href="mailto:fiih@roleentretenimento.com">fiih@roleentretenimento.com</a>.</p>
-  </div>
+    <h2>5. Ética e Conduta</h2>
+    <p>O ROLÊ reserva-se o direito de encerrar parcerias com organizadores que desrespeitem públicos, artistas, espaços ou promovam discursos de ódio.</p>
+  </main>
 
   <footer>
-    <p>© 2025 ROLÊ ENTRETENIMENTO – Todos os direitos reservados</p>
-    <div>
-      <a href="index.html">Início</a>
-      <a href="politica.html">Privacidade</a>
-      <a href="termos-usuario.html">Usuário</a>
-      <a href="politica-spam.html">Antispam</a>
+    <div style="text-align: center; margin: 32px 0;">
+      <a href="index.html" style="background-color: var(--highlight); color: var(--bg-color); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+        Voltar para o início
+      </a>
     </div>
+    <p>
+      © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </p>
   </footer>
 </body>
 </html>
