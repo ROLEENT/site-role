@@ -1,40 +1,16 @@
-.logo {
-  max-width: 160px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.sobre, .cidades, .vitrine {
-  margin-top: 60px;
-  text-align: center;
-}
-
-.sobre h3,
-.cidades h3,
-.vitrine h3 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  color: #c77dff;
-}
-
-.sobre p,
-.vitrine p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cidades ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+.cta-button {
+  display: inline-block;
+  background-color: #c77dff;
+  color: #000;
   font-weight: bold;
+  padding: 12px 24px;
   font-size: 1rem;
-  color: #f3f3f7;
+  border-radius: 6px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
-body.light .cidades ul {
-  color: #2e2e2e;
+.cta-button:hover {
+  background-color: #a055d4;
 }
