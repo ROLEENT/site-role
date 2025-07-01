@@ -86,6 +86,7 @@
     }
     .carousel-wrapper {
       position: relative;
+      margin-bottom: 48px;
     }
     .carousel {
       display: flex;
@@ -93,6 +94,7 @@
       gap: 1rem;
       padding: 1rem 0;
       scroll-behavior: smooth;
+      scrollbar-width: none;
     }
     .carousel::-webkit-scrollbar {
       display: none;
@@ -140,12 +142,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.2s;
-      z-index: 1;
-    }
-    .carousel-wrapper:hover .arrow {
-      opacity: 1;
+      z-index: 2;
     }
     .arrow.left {
       left: -1rem;
@@ -180,12 +177,10 @@
           dropdown.classList.remove('open');
         }
       });
-
       document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
         const carousel = wrapper.querySelector('.carousel');
         const prev = wrapper.querySelector('.arrow.left');
         const next = wrapper.querySelector('.arrow.right');
-
         prev.addEventListener('click', () => {
           carousel.scrollBy({ left: -300, behavior: 'smooth' });
         });
@@ -197,7 +192,6 @@
   </script>
 </head>
 <body>
-
   <header>
     <img src="logo-role.png" alt="ROLÊ" />
     <div class="top-right">
@@ -214,10 +208,8 @@
       </div>
     </div>
   </header>
-
   <main>
     <h1>Revista ROLÊ</h1>
-
     <h2>Editorial</h2>
     <div class="carousel-wrapper">
       <button class="arrow left">❮</button>
@@ -231,7 +223,6 @@
       </div>
       <button class="arrow right">❯</button>
     </div>
-
     <h2>Posfácio</h2>
     <div class="carousel-wrapper">
       <button class="arrow left">❮</button>
@@ -240,7 +231,6 @@
       </div>
       <button class="arrow right">❯</button>
     </div>
-
     <h2>Dicas do ROLÊ</h2>
     <div class="carousel-wrapper">
       <button class="arrow left">❮</button>
@@ -249,7 +239,6 @@
       </div>
       <button class="arrow right">❯</button>
     </div>
-
     <h2>Fala, ROLÊ</h2>
     <div class="carousel-wrapper">
       <button class="arrow left">❮</button>
@@ -258,7 +247,6 @@
       </div>
       <button class="arrow right">❯</button>
     </div>
-
     <h2>ROLÊ.bpm</h2>
     <div class="carousel-wrapper">
       <button class="arrow left">❮</button>
@@ -267,7 +255,6 @@
       </div>
       <button class="arrow right">❯</button>
     </div>
-
     <h2>Achadinhos do ROLÊ</h2>
     <div class="carousel-wrapper">
       <button class="arrow left">❮</button>
@@ -277,10 +264,8 @@
       <button class="arrow right">❯</button>
     </div>
   </main>
-
   <footer>
     <p>© 2025 ROLÊ ENTRETENIMENTO · <a href="politica.html">Política de Privacidade</a> · <a href="termos-usuario.html">Termos do Rolezeiro</a> · <a href="termos-organizador.html">Termos do Organizador</a> · <a href="politica-spam.html">Política Antispam</a></p>
   </footer>
-
 </body>
 </html>
