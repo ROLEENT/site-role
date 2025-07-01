@@ -117,3 +117,70 @@
       padding: 24px 12px;
     }
     footer p {
+      color: white;
+    }
+    footer a {
+      color: var(--highlight);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .top-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .search {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .dropdown-content {
+        left: 0;
+        right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-role.png" alt="ROLÊ" class="logo" />
+    <div class="top-right">
+      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+      <div class="dropdown">
+        <button class="dropdown-button">Explorar ▾</button>
+        <div class="dropdown-content">
+          <a href="editorial.html">Revista ROLÊ</a>
+          <a href="vitrine-cultural.html">Vitrine Cultural</a>
+          <a href="#">Descontos</a>
+          <a href="#">Contato</a>
+          <a href="#">Quem somos</a>
+        </div>
+      </div>
+      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
+    </div>
+  </header>
+
+  <div class="banner">
+    <img src="banner-home.png" alt="Banner do ROLÊ" />
+  </div>
+
+  <main>
+    <h1>Vitrine Cultural</h1>
+    <p>A Vitrine Cultural do ROLÊ conecta eventos, produtores e artistas com milhares de rolezeiros. Um espaço de destaque para quem faz a cena acontecer!</p>
+  </main>
+
+  <footer>
+    <p>
+      © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </p>
+  </footer>
+</body>
+</html>
