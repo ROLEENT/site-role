@@ -3,56 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Política de Privacidade do ROLÊ ENTRETENIMENTO" />
   <title>Política de Privacidade | ROLÊ</title>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #f3f3f7;
+      --highlight: #c77dff;
+      --card-bg: #151515;
+    }
+    body.light {
+      --bg-color: #fff;
+      --text-color: #2e2e2e;
+      --card-bg: #eaeaea;
+    }
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 2rem;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      color: #FF0080;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-family: 'League Spartan', sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    a {
-      color: #FF0080;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 16px;
+      border-bottom: 1px solid var(--highlight);
+    }
+    header img.logo {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+    .top-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .search {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      max-width: 200px;
+    }
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--highlight);
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background-color: var(--highlight);
+      border: none;
+      color: var(--bg-color);
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .dropdown-button::after {
+      content: "▾";
+      margin-left: 6px;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+    .dropdown.open .dropdown-button::after {
+      transform: rotate(180deg);
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      margin-top: 8px;
+      min-width: 200px;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 12px;
+      color: var(--text-color);
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    .dropdown.open .dropdown-content {
+      display: block;
     }
-    .container {
-      max-width: 960px;
+
+    main {
+      padding: 32px 24px;
+      max-width: 900px;
       margin: auto;
     }
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #ccc;
+    h1 {
+      color: var(--highlight);
+      font-size: 28px;
+      margin-bottom: 24px;
     }
-    .voltar {
-      display: inline-block;
-      margin-top: 2rem;
-      background-color: #FF0080;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 30px;
+    h2 {
+      font-size: 20px;
+      margin-top: 24px;
+    }
+    p {
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .voltar-btn {
+      display: block;
+      width: fit-content;
+      margin: 40px auto;
+      background-color: var(--highlight);
+      color: var(--bg-color);
+      padding: 12px 24px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
     }
-    .voltar:hover {
-      background-color: #e60073;
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 24px 12px;
+    }
+    footer p {
+      color: white;
+    }
+    footer a {
+      color: var(--highlight);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .top-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .search {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .dropdown-content {
+        left: 0;
+        right: auto;
+      }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdown = document.querySelector('.dropdown');
+      const button = document.querySelector('.dropdown-button');
+
+      button.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
+    });
+  </script>
 </head>
 <body>
-  <div class="container">
+  <header>
+    <img src="logo-role.png" alt="ROLÊ" class="logo" />
+    <div class="top-right">
+      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+      <div class="dropdown">
+        <button class="dropdown-button">Explorar ▾</button>
+        <div class="dropdown-content">
+          <a href="editorial.html">Revista ROLÊ</a>
+          <a href="vitrine-cultural.html">Vitrine Cultural</a>
+          <a href="#">Descontos</a>
+          <a href="#">Contato</a>
+          <a href="#">Quem somos</a>
+        </div>
+      </div>
+      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
+    </div>
+  </header>
+
+  <main>
     <h1>Política de Privacidade</h1>
 
     <p>Esta Política de Privacidade descreve como o ROLÊ ENTRETENIMENTO LTDA coleta, usa e protege os dados pessoais dos usuários da plataforma e demais canais oficiais.</p>
@@ -81,11 +227,17 @@
     <h2>8. Contato</h2>
     <p>Em caso de dúvidas sobre esta política ou para exercer seus direitos, entre em contato pelo e-mail: <a href="mailto:fiih@roleentretenimento.com">fiih@roleentretenimento.com</a>.</p>
 
-    <a class="voltar" href="index.html">← Voltar ao site</a>
-  </div>
+    <a class="voltar-btn" href="index.html">Voltar para o início</a>
+  </main>
 
   <footer>
-    © 2025 ROLÊ ENTRETENIMENTO. Todos os direitos reservados.
+    <p>
+      © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </p>
   </footer>
 </body>
 </html>
