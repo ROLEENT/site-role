@@ -1,172 +1,215 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ROLÊ ENTRETENIMENTO</title>
+  <meta name="theme-color" content="#FF0080" />
+  <title>ROLÊ – Sua plataforma cultural</title>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="logo-role.png" type="image/png">
   <style>
-    * {
-      box-sizing: border-box;
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #f3f3f7;
-      padding: 0;
-      overflow-x: hidden;
-    }
     header {
+      position: sticky;
+      top: 0;
+      background-color: #000;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 24px;
-      background-color: #000;
-      position: fixed;
-      top: 0;
-      width: 100%;
       z-index: 1000;
     }
-    nav {
-      display: flex;
-      gap: 20px;
-      align-items: center;
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
     }
-    nav a {
-      color: #c77dff;
+    .btn-destaque {
+      background-color: #FF0080;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
     }
-    .search-bar input {
-      padding: 6px 12px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
     }
-    .banner {
-      margin: 90px auto 40px auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .hero h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #FF0080;
     }
-    .banner img {
-      max-width: 300px;
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 2rem;
     }
-    .section-title {
-      font-size: 1.8rem;
+    .hero .buttons a {
+      margin: 0 1rem;
       font-weight: bold;
-      color: #c77dff;
-      padding-left: 24px;
-      margin-top: 40px;
-      margin-bottom: 16px;
     }
-    .carrossel {
-      display: flex;
-      overflow-x: auto;
-      padding-left: 24px;
-      scroll-behavior: smooth;
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1024px;
+      margin: auto;
     }
-    .carrossel::-webkit-scrollbar {
-      display: none;
+    .section h2 {
+      font-family: 'League Spartan', sans-serif;
+      color: #FF0080;
+      margin-bottom: 1rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
     }
     .card {
-      background-color: #111;
-      border-radius: 16px;
-      color: #fff;
-      width: 200px;
-      min-width: 200px;
-      margin-right: 16px;
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
+      background: #111;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(255, 0, 128, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255, 0, 128, 0.35);
     }
     .card img {
-      border-radius: 12px;
       width: 100%;
-      margin-bottom: 10px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
     }
-    .card h3 {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 6px;
+    .card strong {
+      display: block;
+      margin-bottom: 0.5rem;
     }
     .card p {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      color: #ccc;
     }
     footer {
+      background-color: #000;
+      padding: 2rem;
       text-align: center;
-      font-size: 0.75rem;
-      padding: 40px 20px 20px;
+      color: #ccc;
+      font-size: 0.85rem;
     }
     footer a {
-      color: #c77dff;
+      color: #FF0080;
+      margin: 0 0.5rem;
       text-decoration: none;
-      margin: 0 6px;
+    }
+    .light-mode {
+      background-color: #fff;
+      color: #000;
+    }
+    .light-mode header, .light-mode footer {
+      background-color: #fff;
+    }
+    .light-mode a {
+      color: #FF0080;
     }
   </style>
 </head>
 <body>
-
   <header>
+    <div><img src="logo-role.png" alt="ROLÊ Logo" style="height: 40px;"></div>
     <nav>
-      <a href="index.html">ROLÊ</a>
-      <a href="editorial.html">Revista</a>
-      <a href="vitrine-cultural.html">Vitrine</a>
-      <a href="#">Descontos</a>
-      <a href="#">Contato</a>
-      <a href="#">Quem somos</a>
+      <a href="#agenda">Agenda</a>
+      <a href="destaques.html">Destaques</a>
+      <a href="editorial.html">Revista do ROLÊ</a>
+      <a href="#contato">Contato</a>
+      <a class="btn-destaque" href="#enviar">Enviar meu rolê</a>
     </nav>
-    <div class="banner">
-      <img src="banner-role.png" alt="Banner do ROLÊ" />
-    </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar eventos, artistas, cidades..." />
-    </div>
+    <button onclick="toggleDark()" style="background:none; border:none; color:#FF0080; font-weight:bold;">🌓</button>
   </header>
 
-  <main>
-    <h2 class="section-title">Destaques da Semana</h2>
-    <section class="carrossel">
-      <div class="card">
-        <img src="role-poa.png" alt="Porto Alegre" />
-        <h3>Porto Alegre</h3>
-        <p>A cena alternativa pulsa forte no Sul.</p>
-      </div>
-      <div class="card">
-        <img src="floripa.png" alt="Florianópolis" />
-        <h3>Florianópolis</h3>
-        <p>Beira-mar, eletrônica e coletivo.</p>
-      </div>
-      <div class="card">
-        <img src="curitiba.png" alt="Curitiba" />
-        <h3>Curitiba</h3>
-        <p>Frio na rua, calor nas pistas.</p>
-      </div>
-      <div class="card">
-        <img src="sp.png" alt="São Paulo" />
-        <h3>São Paulo</h3>
-        <p>A cidade que nunca dorme... nem para de dançar.</p>
-      </div>
-      <div class="card">
-        <img src="rio.png" alt="Rio de Janeiro" />
-        <h3>Rio de Janeiro</h3>
-        <p>Funk, favela, cor e calor cultural.</p>
-      </div>
-    </section>
-  </main>
+  <section class="hero">
+    <h1>ROLÊ: Sua plataforma cultural</h1>
+    <p>Descubra os melhores rolês nas principais cidades do Brasil. Uma vitrine viva da cultura urbana, independente e plural.</p>
+    <div class="buttons">
+      <a href="destaques.html" class="btn-destaque">Ver Destaques</a>
+      <a href="editorial.html" class="btn-destaque">Ver Revista do ROLÊ</a>
+    </div>
+  </section>
 
-  <footer>
-    © 2025 ROLÊ ENTRETENIMENTO
-    <br />
-    <a href="politica.html">Política de Privacidade</a> ·
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-    <a href="termos-organizador.html">Termos do Organizador</a> ·
-    <a href="politica-spam.html">Política Antispam</a>
+  <section class="section" id="agenda">
+    <h2>Agenda da Semana</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <img src="poa.jpg" alt="Porto Alegre">
+        <strong>Porto Alegre</strong>
+        <p>O melhor da capital gaúcha, do underground ao pop.</p>
+      </div>
+      <div class="card">
+        <img src="sp.jpg" alt="São Paulo">
+        <strong>São Paulo</strong>
+        <p>A metrópole não dorme: beats, arte e liberdade.</p>
+      </div>
+      <div class="card">
+        <img src="rj.jpg" alt="Rio de Janeiro">
+        <strong>Rio de Janeiro</strong>
+        <p>Rolês com vista, alma e calor nas pistas cariocas.</p>
+      </div>
+      <div class="card">
+        <img src="curitiba.jpg" alt="Curitiba">
+        <strong>Curitiba</strong>
+        <p>O rolê curitibano em constante ebulição cultural.</p>
+      </div>
+      <div class="card">
+        <img src="floripa.jpg" alt="Florianópolis">
+        <strong>Florianópolis</strong>
+        <p>Praia, som e magia na ilha da conexão e da dança.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Revista do ROLÊ</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <img src="editorial1.jpg" alt="Editorial 1">
+        <strong>As cidades já foram noturnas</strong>
+        <p>A madrugada morreu ou só se escondeu?</p>
+      </div>
+      <div class="card">
+        <img src="editorial2.png" alt="Editorial 2">
+        <strong>DJs são novos autores</strong>
+        <p>Quem escreve tua noite é o DJ. Já agradeceu?</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <p>© 2025 ROLÊ ENTRETENIMENTO</p>
+    <a href="politica.html">Política de Privacidade</a>
+    <a href="termos-usuario.html">Termos de Uso</a>
+    <a href="termos-organizador.html">Organizadores</a>
+    <a href="politica-spam.html">Antispam</a>
   </footer>
 
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle("light-mode");
+    }
+  </script>
 </body>
 </html>
