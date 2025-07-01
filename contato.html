@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Entre em contato com o ROLÊ" />
+    <title>Contato | ROLÊ ENTRETENIMENTO</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg-color: #000;
+        --text-color: #f3f3f7;
+        --highlight: #c77dff;
+        --card-bg: #151515;
+      }
+      body.light {
+        --bg-color: #fff;
+        --text-color: #2e2e2e;
+        --card-bg: #eaeaea;
+      }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'League Spartan', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        border-bottom: 1px solid var(--highlight);
+      }
+      .logo {
+        height: 40px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 0 16px;
+      }
+      h1 {
+        color: var(--highlight);
+        text-align: center;
+        margin-bottom: 24px;
+        font-size: 28px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      input, textarea {
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        font-size: 16px;
+        resize: none;
+      }
+      button {
+        background-color: var(--highlight);
+        color: var(--bg-color);
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .back-link {
+        display: block;
+        text-align: center;
+        margin-top: 24px;
+        color: var(--highlight);
+        text-decoration: none;
+      }
+      footer {
+        text-align: center;
+        font-size: 14px;
+        padding: 24px 12px;
+      }
+      footer p {
+        color: white;
+      }
+      footer a {
+        color: var(--highlight);
+        text-decoration: none;
+        margin: 0 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><img src="logo-role.png" alt="ROLÊ" class="logo" /></a>
+    </header>
+
+    <div class="container">
+      <h1>Fala com a gente!</h1>
+      <form>
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" rows="5" placeholder="Escreve tua mensagem aqui" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <a href="index.html" class="back-link">← Voltar para a página inicial</a>
+    </div>
+
+    <footer>
+      <p>
+        © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
+        <a href="politica.html">Política de Privacidade</a> ·
+        <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+        <a href="termos-organizador.html">Termos do Organizador</a> ·
+        <a href="politica-spam.html">Política Antispam</a>
+      </p>
+    </footer>
+  </body>
+</html>
