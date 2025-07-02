@@ -72,6 +72,40 @@
     p {
       margin-bottom: 1.4rem;
     }
+    .comentarios {
+  margin-top: 4rem;
+  background: #151515;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+.comentarios h2 {
+  color: var(--highlight);
+}
+.comentarios input,
+.comentarios textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 8px;
+  background: #2e2e2e;
+  color: #f3f3f7;
+  font-family: 'League Spartan', sans-serif;
+}
+.comentarios button {
+  background: var(--highlight);
+  color: var(--bg-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.comentarios button:hover {
+  background: #a95ce6;
+}
   </style>
 </head>
 <body>
@@ -109,7 +143,37 @@
     <p>Enquanto isso, seguimos mapeando, divulgando e celebrando quem não desistiu da noite.</p>
 
     <p><strong>Comenta aqui o rolê que ainda faz tua cidade respirar.</strong><br>Queremos conhecer, divulgar e estar junto.</p>
+    <section class="comentarios">
+  <h2>Deixe um comentário</h2>
+  <form id="form-comentario">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <textarea name="comentario" placeholder="Seu comentário" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+  <div id="mensagem-sucesso" style="display: none; margin-top: 1rem; color: var(--highlight); font-weight: bold;">
+    Comentário enviado com sucesso!
+  </div>
+</section>
     <a href="../revista.html" class="back-link">← Voltar para a Revista ROLÊ</a>
   </div>
+  <script>
+  document.getElementById('form-comentario').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const dados = new FormData(form);
+    fetch("https://script.google.com/macros/s/AKfycbxajYv8JyEAnRkpJGmMb2rSbxWvwvWkf_Go0HS-AWerHuNHKwoQZvJ2zm6fKrbTOa8/exec", {
+      method: "POST",
+      body: dados
+    })
+    .then(res => res.text())
+    .then(() => {
+      form.reset();
+      document.getElementById('mensagem-sucesso').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('mensagem-sucesso').style.display = 'none';
+      }, 5000);
+    });
+  });
+</script>
 </body>
 </html>
