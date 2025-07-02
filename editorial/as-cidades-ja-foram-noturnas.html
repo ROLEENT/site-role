@@ -167,7 +167,7 @@
   </style>
 </head>
 <body>
-  <div class="content">
+<main class="content">
     <h1>As cidades já foram noturnas</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
     <img src="../EDITORIAL1.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
@@ -199,8 +199,16 @@
     <p>Esse texto abre o nosso primeiro editorial no ROLÊ. Um convite à reflexão, mas também um grito de afirmação. Porque falar de rolê é falar de cidade, de cultura, de política e de afeto. As cidades já foram noturnas. A pergunta é: o que a gente precisa fazer pra que voltem a ser?</p>
 
     <p>Enquanto isso, seguimos mapeando, divulgando e celebrando quem não desistiu da noite.</p>
-
+</main>
     <p><strong>Comenta aqui o rolê que ainda faz tua cidade respirar.</strong><br>Queremos conhecer, divulgar e estar junto.</p>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14" style="margin: 2rem auto; max-width: 540px; border-radius: 12px;">
+</blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+    <noscript>
+  <p style="color: #888; font-size: 0.9rem; text-align: center;">
+    O post no Instagram está disponível apenas com JavaScript ativado.
+  </p>
+</noscript>
 <section class="comentarios">
   <h2>Deixe um comentário</h2>
   <form id="form-comentario">
@@ -256,7 +264,7 @@
             <div class="comentario-texto">
               <p><strong>${c.nome || 'Anônimo'}</strong><span class="hora"> (${c.data})</span></p>
               <p>${c.comentario}</p>
-              <button onclick="curtirComentario(${c.index})" style="background: transparent; border: none; color: var(--highlight); cursor: pointer; padding: 0; margin-top: 0.5rem;">
+              <button onclick="curtirComentario(${c.index})" aria-label="Curtir comentário" style="background: transparent; border: none; color: var(--highlight); cursor: pointer; padding: 0; margin-top: 0.5rem;">
                 ❤️ Curtir (<span>${c.likes || 0}</span>)
               </button>
             </div>
@@ -268,7 +276,8 @@
 
   carregarComentarios();
 </script>
-    <a href="../revista.html" class="back-link">← Voltar para a Revista ROLÊ</a>
-  </div>
+    <footer style="text-align: center; margin-top: 4rem;">
+  <a href="../revista.html" class="back-link">← Voltar para a Revista ROLÊ</a>
+</footer>
   </body>
 </html>
