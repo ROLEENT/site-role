@@ -1,20 +1,20 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Revista ROLÊ</title>
-<link href="favicon.png" rel="icon" type="image/png"/>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G8Z07V63HQ');
-</script>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revista ROLÊ</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G8Z07V63HQ');
+  </script>
+  <style>
     :root {
       --bg-color: #000;
       --text-color: #f3f3f7;
@@ -91,6 +91,12 @@
     h2 {
       margin-top: 3rem;
       color: var(--highlight);
+    }
+    p.section-desc {
+      font-size: 1rem;
+      color: var(--text-color);
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
     }
     .carousel-wrapper {
       position: relative;
@@ -171,15 +177,8 @@
       text-decoration: none;
       margin: 0 8px;
     }
-  
-    .descricao-quadro {
-      margin: -16px 0 24px;
-      font-size: 0.95rem;
-      color: var(--text-color);
-      max-width: 720px;
-    }
-</style>
-<script>
+  </style>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
       const dropdown = document.querySelector('.dropdown');
       const button = document.querySelector('.dropdown-button');
@@ -207,80 +206,31 @@
   </script>
 </head>
 <body>
-<header>
-<img alt="ROLÊ" src="logo-role.png"/>
-<div class="top-right">
-<input class="search" placeholder="Buscar eventos, artistas, cidades..." type="text"/>
-<div class="dropdown">
-<button class="dropdown-button">Explorar ▾</button>
-<div class="dropdown-content">
-<a href="editorial.html">Revista ROLÊ</a>
-<a href="vitrine-cultural.html">Vitrine Cultural</a>
-<a href="descontos.html">Descontos</a>
-<a href="contato.html">Contato</a>
-<a href="quem-somos.html">Quem Somos</a>
-</div>
-</div>
-</div>
-</header>
-<main>
-<h1>Revista ROLÊ</h1>
-<h2>Editorial</h2><p class="descricao-quadro">Textos provocativos sobre cultura, noite, arte e sociedade. O editorial abre a semana com ideias para dançar e pensar.</p>
-<div class="carousel-wrapper">
-<button class="arrow left">❮</button>
-<div class="carousel">
-<div class="card"><img src="EDITORIAL1.png"/><strong>As cidades já foram noturnas</strong><p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p><a href="https://www.instagram.com/p/DJ2mpGfvPxL/?img_index=1" target="_blank">Ver post completo</a></div>
-<div class="card"><img src="EDITORIAL2.png"/><strong>DJs são novos autores</strong><p>Quem escreve tua noite é o DJ. Já agradeceu?</p><a href="#" target="_blank">Ver post completo</a></div>
-<div class="card"><img src="EDITORIAL3.png"/><strong>Por que os teatros estão vazios...</strong><p>Teatro na era do feed: presença ou performance?</p><a href="#" target="_blank">Ver post completo</a></div>
-<div class="card"><img src="EDITORIAL4.png"/><strong>E se teu look falasse por ti?</strong><p>Estética é política: o look também fala!</p><a href="#" target="_blank">Ver post completo</a></div>
-<div class="card"><img src="EDITORIAL5.png"/><strong>Te chamam de atração...</strong><p>Quem faz a noite vibrar também precisa viver dela.</p><a href="#" target="_blank">Ver post completo</a></div>
-<div class="card"><img src="EDITORIAL6.png"/><strong>Todo mundo cansado</strong><p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p><a href="#" target="_blank">Ver post completo</a></div>
-</div>
-<button class="arrow right">❯</button>
-</div>
-<h2>Posfácio</h2><p class="descricao-quadro">Encerramento semanal com textos finais, críticas ou pensamentos sobre a cena cultural atual.</p>
-<div class="carousel-wrapper">
-<button class="arrow left">❮</button>
-<div class="carousel">
+  <header>
+    <img src="logo-role.png" alt="ROLÊ" />
+    <div class="top-right">
+      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+      <div class="dropdown">
+        <button class="dropdown-button">Explorar ▾</button>
+        <div class="dropdown-content">
+          <a href="editorial.html">Revista ROLÊ</a>
+          <a href="vitrine-cultural.html">Vitrine Cultural</a>
+          <a href="descontos.html">Descontos</a>
+          <a href="contato.html">Contato</a>
+          <a href="quem-somos.html">Quem Somos</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1>Revista ROLÊ</h1>
 
-</div>
-<button class="arrow right">❯</button>
-</div>
-<h2>Dicas do ROLÊ</h2><p class="descricao-quadro">Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</p>
-<div class="carousel-wrapper">
-<button class="arrow left">❮</button>
-<div class="carousel">
+    <!-- Aqui entram os blocos como <h2> + descrição + carrossel preenchido -->
+    <!-- Já estão prontos no próximo passo -->
 
-</div>
-<button class="arrow right">❯</button>
-</div>
-<h2>Fala, ROLÊ</h2><p class="descricao-quadro">Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</p>
-<div class="carousel-wrapper">
-<button class="arrow left">❮</button>
-<div class="carousel">
-
-</div>
-<button class="arrow right">❯</button>
-</div>
-<h2>ROLÊ.bpm</h2><p class="descricao-quadro">Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</p>
-<div class="carousel-wrapper">
-<button class="arrow left">❮</button>
-<div class="carousel">
-
-</div>
-<button class="arrow right">❯</button>
-</div>
-<h2>Achadinhos do ROLÊ</h2><p class="descricao-quadro">Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</p>
-<div class="carousel-wrapper">
-<button class="arrow left">❮</button>
-<div class="carousel">
-
-</div>
-<button class="arrow right">❯</button>
-</div>
-</main>
-<footer>
-<p>© 2025 ROLÊ ENTRETENIMENTO · <a href="politica.html">Política de Privacidade</a> · <a href="termos-usuario.html">Termos do Rolezeiro</a> · <a href="termos-organizador.html">Termos do Organizador</a> · <a href="politica-spam.html">Política Antispam</a></p>
-</footer>
+  </main>
+  <footer>
+    <p>© 2025 ROLÊ ENTRETENIMENTO · <a href="politica.html">Política de Privacidade</a> · <a href="termos-usuario.html">Termos do Rolezeiro</a> · <a href="termos-organizador.html">Termos do Organizador</a> · <a href="politica-spam.html">Política Antispam</a></p>
+  </footer>
 </body>
 </html>
