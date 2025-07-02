@@ -386,5 +386,79 @@ if (btnTopo) {
 <button id="btn-topo" title="Voltar ao topo" class="hide">
   <img src="seta-para-cima.svg" alt="Voltar ao topo" />
 </button>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.dropdown');
+    const button = document.querySelector('.dropdown-button');
+
+    button.addEventListener('click', function (e) {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
+
+    // LÓGICA DOS CARROSSEIS COM LOOP
+    document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+      const carousel = wrapper.querySelector('.carousel');
+      const cards = carousel.querySelectorAll('.card');
+      const prev = wrapper.querySelector('.arrow.left');
+      const next = wrapper.querySelector('.arrow.right');
+      const totalCards = cards.length;
+      let currentIndex = 0;
+
+      function scrollToCard(index) {
+        if (index < 0) {
+          index = totalCards - 1;
+        }
+        if (index >= totalCards) {
+          index = 0;
+        }
+        currentIndex = index;
+        const cardWidth = cards[0].offsetWidth + 16;
+        carousel.scrollTo({
+          left: cardWidth * index,
+          behavior: 'smooth'
+        });
+      }
+
+      prev.addEventListener('click', () => {
+        scrollToCard(currentIndex - 1);
+      });
+
+      next.addEventListener('click', () => {
+        scrollToCard(currentIndex + 1);
+      });
+
+      carousel.addEventListener('scroll', () => {
+        const cardWidth = cards[0].offsetWidth + 16;
+        const newIndex = Math.round(carousel.scrollLeft / cardWidth);
+        currentIndex = newIndex;
+      });
+
+      scrollToCard(0);
+    });
+
+    // BOTÃO VOLTAR AO TOPO
+    const btnTopo = document.getElementById('btn-topo');
+    if (btnTopo) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          btnTopo.classList.remove('hide');
+        } else {
+          btnTopo.classList.add('hide');
+        }
+      });
+
+      btnTopo.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
 </body>
 </html>
