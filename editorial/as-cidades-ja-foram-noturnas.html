@@ -72,32 +72,13 @@
     p {
       margin-bottom: 1.4rem;
     }
-    .comentarios {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #151515;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(199, 125, 255, 0.1);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.giscus-frame {
-  border: none !important;
-  width: 100% !important;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-}
-    .comentarios::before {
-  content: "💬 Comentários da galera";
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: var(--highlight);
-}
+      .disqus-container {
+    margin-top: 3rem;
+    background-color: #151515;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  }
   </style>
 </head>
 <body>
@@ -135,23 +116,23 @@
     <p>Enquanto isso, seguimos mapeando, divulgando e celebrando quem não desistiu da noite.</p>
 
     <p><strong>Comenta aqui o rolê que ainda faz tua cidade respirar.</strong><br>Queremos conhecer, divulgar e estar junto.</p>
-<section class="comentarios">
-  <script src="https://giscus.app/client.js"
-          data-repo="ROLEENT/site-role"
-          data-repo-id="R_kgDOPCbhcA"
-          data-category="General"
-          data-category-id="DIC_kwDOPCbhcM4CcsFb"
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="bottom"
-          data-theme="preferred_color_scheme"
-          data-lang="pt"
-          crossorigin="anonymous"
-          async>
-  </script>
+    <section class="disqus-container" aria-label="Seção de comentários">
+  <div id="disqus_thread"></div>
 </section>
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html';  // URL canônica da página
+        this.page.identifier = 'editorial-as-cidades-noturnas'; // Identificador único da página
+    };
+
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://roleentretenimento.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Por favor, ative o JavaScript para ver os <a href="https://disqus.com/?ref_noscript">comentários do Disqus.</a></noscript>
     <a href="../revista.html" class="back-link">← Voltar para a Revista ROLÊ</a>
   </div>
 </body>
