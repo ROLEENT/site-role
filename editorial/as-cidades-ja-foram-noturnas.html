@@ -150,6 +150,20 @@
   background: rgba(255, 255, 255, 0.05);
   margin: 1rem 0;
 }
+    .like-btn {
+  margin-top: 0.5rem;
+  background: transparent;
+  color: var(--highlight);
+  border: 1px solid var(--highlight);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.like-btn:hover {
+  background-color: #c77dff20;
+}
   </style>
 </head>
 <body>
@@ -201,12 +215,13 @@
   <div class="comentarios-lista" id="lista-comentarios" style="margin-top: 2rem;"></div>
 </section>
 <script>
-  // Enviar comentário para o Apps Script
+  const endpoint = "https://script.google.com/macros/s/AKfycbwboSjFcza-EczqagywgYFSkatJp_7YjY6fLAXplpcTuGkSODABDfUmt-VaV4T2Sdo/exec";
+
   document.getElementById('form-comentario').addEventListener('submit', function(e) {
     e.preventDefault();
     const form = e.target;
     const dados = new FormData(form);
-    fetch("https://script.google.com/macros/s/AKfycbzFyJnE3Bl7fhllkiVbqQ0hgN7ytEagxOH-c2n6o8KVLpOyyykhE-oRn8B9Dma6OgY/exec", {
+    fetch(endpoint, {
       method: "POST",
       body: dados
     })
@@ -217,26 +232,33 @@
       setTimeout(() => {
         document.getElementById('mensagem-sucesso').style.display = 'none';
       }, 3000);
-      carregarComentarios(); // recarrega comentários após envio
+      carregarComentarios();
     });
   });
 
-  // Carregar e exibir comentários
+  function curtirComentario(index) {
+    fetch(`${endpoint}?like=${index}`)
+      .then(() => carregarComentarios());
+  }
+
   function carregarComentarios() {
-    fetch("https://script.google.com/macros/s/AKfycbzFyJnE3Bl7fhllkiVbqQ0hgN7ytEagxOH-c2n6o8KVLpOyyykhE-oRn8B9Dma6OgY/exec")
+    fetch(endpoint)
       .then(response => response.json())
       .then(data => {
         const lista = document.getElementById('lista-comentarios');
         lista.innerHTML = '';
         data.reverse().forEach(c => {
-          const primeiraLetra = c.nome.trim().charAt(0).toUpperCase();
+          const primeiraLetra = c.nome.trim().charAt(0).toUpperCase() || 'A';
           const div = document.createElement('div');
           div.className = 'comentario';
           div.innerHTML = `
             <div class="avatar">${primeiraLetra}</div>
             <div class="comentario-texto">
-              <p><strong>${c.nome}</strong><span class="hora"> (${c.data})</span></p>
+              <p><strong>${c.nome || 'Anônimo'}</strong><span class="hora"> (${c.data})</span></p>
               <p>${c.comentario}</p>
+              <button onclick="curtirComentario(${c.index})" style="background: transparent; border: none; color: var(--highlight); cursor: pointer; padding: 0; margin-top: 0.5rem;">
+                ❤️ Curtir (<span>${c.likes || 0}</span>)
+              </button>
             </div>
           `;
           lista.appendChild(div);
@@ -244,7 +266,6 @@
       });
   }
 
-  // Carregar ao abrir a página
   carregarComentarios();
 </script>
     <a href="../revista.html" class="back-link">← Voltar para a Revista ROLÊ</a>
