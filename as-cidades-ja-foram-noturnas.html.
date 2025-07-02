@@ -4,6 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>As cidades já foram noturnas – Revista ROLÊ</title>
+  <meta name="description" content="As cidades já foram noturnas? Neste editorial, o ROLÊ reflete sobre a perda da madrugada nas grandes cidades brasileiras e a resistência da cultura noturna." />
+  <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
+  <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
+  <meta property="og:description" content="Um texto sobre a repressão à vida noturna, a cultura da presença e a resistência dos que ainda fazem a cidade respirar." />
+  <meta property="og:image" content="https://seudominio.com/EDITORIAL1.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://seudominio.com/editorial/as-cidades-ja-foram-noturnas.html" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="../favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
   <style>
