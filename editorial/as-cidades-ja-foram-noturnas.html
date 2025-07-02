@@ -8,9 +8,9 @@
   <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
   <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
   <meta property="og:description" content="Um texto sobre a repressão à vida noturna, a cultura da presença e a resistência dos que ainda fazem a cidade respirar." />
-  <meta property="og:image" content="https://seudominio.com/EDITORIAL1.png" />
+  <meta property="og:image" content="https://roleentretenimento.com/EDITORIAL1.png" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://seudominio.com/editorial/as-cidades-ja-foram-noturnas.html" />
+  <meta property="og:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="../favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
@@ -72,145 +72,109 @@
     p {
       margin-bottom: 1.4rem;
     }
-    .comentarios {
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--highlight);
+      margin-bottom: 1rem;
+    }
+    details {
+      background-color: #1a1a1a;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(199, 125, 255, 0.05);
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+    details ul {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    details ul li {
+      margin: 0.5rem 0;
+    }
+    .comentarios-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   margin-top: 4rem;
-  background: #151515;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  justify-content: center;
+  align-items: flex-start;
 }
-.comentarios h2 {
-  color: var(--highlight);
+.comentario-instagram {
+  flex: 1 1 360px;
+  min-width: 320px;
 }
-.comentarios input,
-.comentarios textarea {
+.comentarios {
+  flex: 1 1 360px;
+  min-width: 320px;
+}
+.comentarios textarea,
+.comentarios input {
   width: 100%;
-  padding: 10px;
-  margin: 0.5rem 0;
-  border: none;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  background: #222;
+  color: var(--text-color);
+  border: 1px solid #333;
   border-radius: 8px;
-  background: #2e2e2e;
-  color: #f3f3f7;
-  font-family: 'League Spartan', sans-serif;
 }
 .comentarios button {
-  background: var(--highlight);
+  margin-top: 0.8rem;
+  background-color: var(--highlight);
   color: var(--bg-color);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
   font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
 }
-.comentarios button:hover {
-  background: #a95ce6;
-}
-    .comentario {
-  background-color: #1c1c1c;
+.comentarios .comentario {
+  background: #111;
+  border-radius: 12px;
   padding: 1rem;
-  border-radius: 10px;
   margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.03);
 }
-
-.comentario:nth-child(even) {
-  background-color: #232323;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  background-color: var(--highlight);
-  color: #000;
+.comentarios .avatar {
+  background: var(--highlight);
+  color: var(--bg-color);
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  flex-shrink: 0;
 }
-
-.comentario-texto {
-  flex-grow: 1;
-}
-
-.comentario-texto .hora {
-  font-size: 0.85rem;
+.comentarios .hora {
+  font-size: 0.8rem;
   color: #aaa;
-  margin-left: 0.5rem;
-}
-    .comentario + .comentario::before {
-  content: '';
-  display: block;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.05);
-  margin: 1rem 0;
-}
-    .like-btn {
-  margin-top: 0.5rem;
-  background: transparent;
-  color: var(--highlight);
-  border: 1px solid var(--highlight);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.like-btn:hover {
-  background-color: #c77dff20;
-}
-    .comentarios-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.comentario-instagram {
-  flex: 1 1 300px;
-  max-width: 340px;
-}
-
-.comentarios {
-  flex: 1 1 460px;
-  max-width: 460px;
-  padding: 1.5rem;
-}
-.comentarios input,
-.comentarios textarea {
-  font-size: 0.9rem;
-  padding: 8px;
-}
-
-.comentarios button {
-  font-size: 0.9rem;
-  padding: 8px 14px;
-}
-    .instagram-desktop {
-  display: block;
-}
-.instagram-mobile {
-  display: none;
-}
-@media (max-width: 768px) {
-  .instagram-desktop {
-    display: none;
-  }
-  .instagram-mobile {
-    display: block;
-    text-align: center;
-  }
+  margin-left: 0.4rem;
 }
   </style>
 </head>
 <body>
+
+<details>
+  <summary>👀 Leia também outros quadros e editoriais</summary>
+  <ul>
+  <li><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
+  <li><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
+  <li><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
+  <li><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
+  <li><a href="/editorial/teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
+  <li><a href="/editorial/fala-role.html">Fala, ROLÊ!</a></li>
+  <li><a href="/editorial/rolebpm.html">ROLÊ.bpm</a></li>
+  <li><a href="/editorial/posfacio.html">Posfácio</a></li>
+  <li><a href="/editorial/dicas.html">Dicas do ROLÊ</a></li>
+  <li><a href="/editorial/achadinhos.html">Achadinhos do ROLÊ</a></li>
+</ul>
+</details>
+
 <main class="content">
     <h1>As cidades já foram noturnas</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
@@ -310,7 +274,7 @@
             <div class="comentario-texto">
               <p><strong>${c.nome || 'Anônimo'}</strong><span class="hora"> (${c.data})</span></p>
               <p>${c.comentario}</p>
-              <button onclick="curtirComentario(${c.index})" aria-label="Curtir comentário" style="background: transparent; border: none; color: var(--highlight); cursor: pointer; padding: 0; margin-top: 0.5rem;">
+                <button onclick="curtirComentario(${c.index})" aria-label="Curtir o comentário de ${c.nome || 'Anônimo'}">
                 ❤️ Curtir (<span>${c.likes || 0}</span>)
               </button>
             </div>
