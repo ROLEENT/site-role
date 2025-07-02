@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>As cidades já foram noturnas – Revista ROLÊ</title>
+  <link rel="icon" href="../favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #f3f3f7;
+      --highlight: #c77dff;
+      --card-bg: #151515;
+    }
+    body {
+      margin: 0;
+      font-family: 'League Spartan', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2rem;
+      line-height: 1.7;
+    }
+    a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: var(--highlight);
+      margin-bottom: 0.2rem;
+    }
+    .autor {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      color: #aaa;
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2.5rem;
+      background: var(--highlight);
+      color: var(--bg-color);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .back-link:hover {
+      background-color: #a95ce6;
+    }
+    img.header {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      box-shadow: 0 0 15px rgba(199, 125, 255, 0.2);
+    }
+    p {
+      margin-bottom: 1.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>As cidades já foram noturnas</h1>
+    <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
+    <img src="../EDITORIAL1.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
+
+    <p>Você já teve a sensação de que a sua cidade perdeu a madrugada? Pois é. A gente também.</p>
+
+    <p>Durante décadas, as grandes cidades brasileiras, e muitas das médias também, foram movidas a beats e batidas de copo. Madrugadas que não pediam licença, bares que não tinham hora pra fechar, festas que surgiam em galpões improvisados ou na beira do Guaíba, do Tietê ou do mar. Lugares onde o improviso era o anfitrião, o corpo dançava sem patrão e o tempo parecia derreter junto com a maquiagem.</p>
+
+    <p>Mas parece que algo mudou.</p>
+
+    <p>Hoje, a noite vem murchando cedo. A música precisa acabar às 22h, os vizinhos chamam a polícia antes do primeiro drop e, de repente, o rolê virou só o que cabe no Reels. A madrugada, essa entidade sagrada de encontros e excessos, anda sumida do mapa das cidades. Ou, pior: foi expulsa.</p>
+
+    <h2>A repressão sonora e o culto ao sossego gourmet</h2>
+    <p>Nos últimos anos, o que a gente viu foi um crescimento alarmante da repressão sonora e das burocracias que tentam silenciar tudo o que é espontâneo. Bares e casas noturnas estão cada vez mais reféns de regras que, embora importantes em alguns contextos, têm sido usadas como arma contra a cultura.</p>
+
+    <p>Festas independentes são barradas antes mesmo de nascerem. A galera da arte, da produção cultural, do som, da performance, do audiovisual, precisa de uma planilha de Excel com sete abas pra conseguir fazer um evento simples. Enquanto isso, condomínios de luxo seguem nascendo onde antes havia pista, garagem de ensaio, espaço cultural. Não é só gentrificação: é higienização da vida noturna.</p>
+
+    <h2>Cultura da presença virou conteúdo efêmero?</h2>
+    <p>A cultura do rolê se transformou — e rápido. Hoje em dia, muita gente vai pra festa pra gravar que foi, e não pra estar. Os stories duram 15 segundos, mas a conexão com o momento dura menos ainda. A pista virou plano de fundo de selfie. A experiência virou evidência. O agora foi engolido pela ansiedade do engajamento.</p>
+
+    <p>Mas calma. Isso aqui não é um lamento nostálgico de “no meu tempo era melhor”. A gente não quer voltar pra trás. O que queremos é entender o que se perdeu e o que ainda pulsa, mesmo quando a cidade dorme cedo.</p>
+
+    <h2>Ainda tem gente segurando a noite pelo braço</h2>
+    <p>Sim. Tem sim. Mesmo com todas as barreiras, há quem insista. Quem dance contra o relógio, quem esconda o som até a fiscalização passar, quem segure a respiração coletiva da noite nas margens. É o povo que produz eventos independentes com amor e gambiarra. É a galera que ocupa becos, ocupações, porões e sacadas.</p>
+
+    <p>É nesse miolo de resistência que a cultura noturna sobrevive: em festas de rua, raves escondidas, bailes de garagem, botecos com microfone aberto. O improviso segue sendo o maior produtor cultural desse país. Porque enquanto tiver gente dançando, a cidade não dorme.</p>
+
+    <h2>O futuro é noturno ou não é</h2>
+    <p>Esse texto abre o nosso primeiro editorial no ROLÊ. Um convite à reflexão, mas também um grito de afirmação. Porque falar de rolê é falar de cidade, de cultura, de política e de afeto. As cidades já foram noturnas. A pergunta é: o que a gente precisa fazer pra que voltem a ser?</p>
+
+    <p>Enquanto isso, seguimos mapeando, divulgando e celebrando quem não desistiu da noite.</p>
+
+    <p><strong>Comenta aqui o rolê que ainda faz tua cidade respirar.</strong><br>Queremos conhecer, divulgar e estar junto.</p>
+
+    <a href="../revista.html" class="back-link">← Voltar para a Revista ROLÊ</a>
+  </div>
+</body>
+</html>
