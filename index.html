@@ -99,11 +99,13 @@
    .dropdown.open .dropdown-content {
   display: block;
 }
-      .banner {
-        text-align: center;
-        margin: 24px auto;
-        max-width: 90%;
-      }
+.banner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 24px auto;
+  max-width: 90%;
+}
       .banner img {
         width: 100%;
         max-width: 600px;
@@ -211,14 +213,6 @@
 
       gtag('config', 'G-G8Z07V63HQ');
     </script>
-    <script>
-      function scrollRight() {
-        document.querySelector('.cards-container').scrollBy({ left: 300, behavior: 'smooth' });
-      }
-      function scrollLeft() {
-        document.querySelector('.cards-container').scrollBy({ left: -300, behavior: 'smooth' });
-      }
-    </script>
   </head>
   <body>
     <header>
@@ -246,35 +240,35 @@
     <section class="destaques">
       <h2>DESTAQUES DA SEMANA</h2>
       <div class="scroll-wrapper">
-  <button class="scroll-arrow left">◀</button>
+<button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
   <div class="cards-container">
           <div class="card">
-            <img src="poa.png" alt="Porto Alegre" />
+            <img src="poa.png" alt="Cultura alternativa e festas em Porto Alegre" />
             <p>A cena alternativa pulsa forte no Sul.</p>
             <a href="https://www.instagram.com/p/DLlc5fZvYeS/?img_index=1" target="_blank">Ver mais</a>
           </div>
           <div class="card">
-            <img src="floripa.png" alt="Florianópolis" />
+            <img src="floripa.png" alt="Cultura alternativa e festas em Florianópolis" />
             <p>Beira-mar, eletrônica e coletivo.</p>
             <a href="https://www.instagram.com/p/DLa5qPqPo57/?img_index=1" target="_blank">Ver mais</a>
           </div>
           <div class="card">
-            <img src="curitiba.png" alt="Curitiba" />
+            <img src="curitiba.png" alt="Cultura alternativa e festas em Curitiba" />
             <p>Frio na rua, calor nas pistas.</p>
             <a href="https://www.instagram.com/p/DLYQyGivvP7/?img_index=1" target="_blank">Ver mais</a>
           </div>
           <div class="card">
-            <img src="são paulo.png" alt="São Paulo" />
+            <img src="são paulo.png" alt="Cultura alternativa e festas em São Paulo" />
             <p>A cidade que nunca dorme... nem para de dançar.</p>
             <a href="https://www.instagram.com/p/DLTT6C-PecN/?img_index=1" target="_blank">Ver mais</a>
           </div>
           <div class="card">
-            <img src="rio.png" alt="Rio de Janeiro" />
+            <img src="rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" />
             <p>Funk, favela, cor e calor cultural.</p>
             <a href="https://www.instagram.com/p/DLWABUUvm7j/?img_index=1" target="_blank">Ver mais</a>
           </div>
         </div>
-  <button class="scroll-arrow right">▶</button>
+<button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
 </div>
     </section>
 
@@ -304,30 +298,24 @@
     });
   });
 </script>
-    <script>
+ <script>
   document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.cards-container');
     const cards = document.querySelectorAll('.card');
     const totalCards = cards.length;
     let currentIndex = 0;
 
-    // Centralizar no início (POA)
-   function scrollToCard(index) {
-  if (index < 0) {
-    index = totalCards - 1; // Vai para o último card se voltar além do primeiro
-  }
-  if (index >= totalCards) {
-    index = 0; // Volta pro primeiro após o último
-  }
-  currentIndex = index;
-  const cardWidth = cards[index].offsetWidth + 12; // 12px de gap
-  container.scrollTo({
-    left: cardWidth * index,
-    behavior: 'smooth'
-  });
-}
+    function scrollToCard(index) {
+      if (index < 0) index = totalCards - 1;
+      if (index >= totalCards) index = 0;
+      currentIndex = index;
+      const cardWidth = cards[0].offsetWidth + 12;
+      container.scrollTo({
+        left: cardWidth * index,
+        behavior: 'smooth'
+      });
+    }
 
-    // Botões de navegação
     document.querySelector('.scroll-arrow.left').addEventListener('click', () => {
       scrollToCard(currentIndex - 1);
     });
@@ -336,15 +324,16 @@
       scrollToCard(currentIndex + 1);
     });
 
-    // Atualiza índice ao deslizar com dedo
     container.addEventListener('scroll', () => {
       const cardWidth = cards[0].offsetWidth + 12;
       const newIndex = Math.round(container.scrollLeft / cardWidth);
       currentIndex = newIndex;
     });
 
-    // Inicia no primeiro card (POA)
-    scrollToCard(0);
+    // ⏳ Garante que o scroll só ocorra após o carregamento completo dos elementos
+    setTimeout(() => {
+      scrollToCard(0); // Força início em POA
+    }, 100);
   });
 </script>
   </body>
