@@ -164,6 +164,24 @@
 .like-btn:hover {
   background-color: #c77dff20;
 }
+    .comentarios-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.comentario-instagram {
+  flex: 1 1 300px;
+  max-width: 340px;
+}
+
+.comentarios {
+  flex: 1 1 400px;
+}
+
   </style>
 </head>
 <body>
@@ -200,28 +218,25 @@
 
     <p>Enquanto isso, seguimos mapeando, divulgando e celebrando quem não desistiu da noite.</p>
 </main>
-    <p><strong>Comenta aqui o rolê que ainda faz tua cidade respirar.</strong><br>Queremos conhecer, divulgar e estar junto.</p>
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14" style="margin: 2rem auto; max-width: 540px; border-radius: 12px;">
-</blockquote>
-<script async src="//www.instagram.com/embed.js"></script>
-    <noscript>
-  <p style="color: #888; font-size: 0.9rem; text-align: center;">
-    O post no Instagram está disponível apenas com JavaScript ativado.
-  </p>
-</noscript>
-<section class="comentarios">
-  <h2>Deixe um comentário</h2>
-  <form id="form-comentario">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <textarea name="comentario" placeholder="Seu comentário" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-  <div id="mensagem-sucesso" style="display: none; margin-top: 1rem; color: var(--highlight); font-weight: bold;">
-    Comentário enviado com sucesso!
+    <div class="comentarios-wrapper">
+  <div class="comentario-instagram">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14" style="border-radius: 12px;"></blockquote>
   </div>
+  <section class="comentarios">
+    <h2>Deixe um comentário</h2>
+    <form id="form-comentario">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <textarea name="comentario" placeholder="Seu comentário" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem-sucesso" style="display: none; margin-top: 1rem; color: var(--highlight); font-weight: bold;">
+      Comentário enviado com sucesso!
+    </div>
+    <div class="comentarios-lista" id="lista-comentarios" style="margin-top: 2rem;"></div>
+  </section>
+</div>
+<script async src="//www.instagram.com/embed.js"></script>
 
-  <div class="comentarios-lista" id="lista-comentarios" style="margin-top: 2rem;"></div>
-</section>
 <script>
   const endpoint = "https://script.google.com/macros/s/AKfycbwboSjFcza-EczqagywgYFSkatJp_7YjY6fLAXplpcTuGkSODABDfUmt-VaV4T2Sdo/exec";
 
