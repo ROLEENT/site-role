@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="eventos, cultura, rolê, arte, música, festa, entretenimento">
+    <meta name="keywords" content="eventos, cultura, rolê, arte, música, festa, entretenimento" />
     <meta name="description" content="ROLÊ: Conectando cultura, arte e os rolês mais vivos do Brasil." />
-    <title>ROLÊ ENTRETENIMENTO</title>
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580"
-     crossorigin="anonymous"></script>
+    <title>ROLÊ ENTRETENIMENTO — Cultura, Arte e Diversão nas Cidades Brasileiras</title>
     <link rel="icon" href="favicon.png" type="image/png" />
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+    <noscript>
+      <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
     <style>
       :root {
         --bg-color: #000;
@@ -41,7 +42,7 @@
         height: 40px;
         margin-bottom: 8px;
       }
-      .top-right {
+      nav {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -72,14 +73,14 @@
         cursor: pointer;
       }
       .dropdown-button::after {
-  content: "▾";
-  margin-left: 6px;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-.dropdown.open .dropdown-button::after {
-  transform: rotate(180deg);
-}
+        content: "▾";
+        margin-left: 6px;
+        display: inline-block;
+        transition: transform 0.2s ease;
+      }
+      .dropdown.open .dropdown-button::after {
+        transform: rotate(180deg);
+      }
       .dropdown-content {
         display: none;
         position: absolute;
@@ -96,25 +97,25 @@
         color: var(--text-color);
         text-decoration: none;
       }
-   .dropdown.open .dropdown-content {
-  display: block;
-}
-.banner {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 24px auto;
-  max-width: 90%;
-}
+      .dropdown.open .dropdown-content {
+        display: block;
+      }
+      .banner {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 24px auto;
+        max-width: 90%;
+      }
       .banner img {
         width: 100%;
         max-width: 600px;
       }
-      .destaques {
+      main.destaques {
         padding: 0 16px;
         text-align: center;
       }
-      .destaques h2 {
+      main.destaques h2 {
         color: var(--highlight);
         font-size: 24px;
         text-transform: uppercase;
@@ -186,7 +187,7 @@
           flex-direction: column;
           align-items: flex-start;
         }
-        .top-right {
+        nav {
           flex-direction: column;
           align-items: flex-start;
           width: 100%;
@@ -205,22 +206,21 @@
         }
       }
     </style>
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-
       gtag('config', 'G-G8Z07V63HQ');
     </script>
   </head>
   <body>
-    <header>
-      <img src="logo-role.png" alt="ROLÊ" class="logo" />
-      <div class="top-right">
-        <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
+    <header role="banner">
+      <img src="logo-role.png" alt="Logotipo da ROLÊ ENTRETENIMENTO" class="logo" />
+      <nav role="navigation" aria-label="Navegação principal">
+        <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." aria-label="Buscar" />
         <div class="dropdown">
-          <button class="dropdown-button">Explorar ▾</button>
+          <button class="dropdown-button" aria-expanded="false">Explorar</button>
           <div class="dropdown-content">
             <a href="revista.html">Revista ROLÊ</a>
             <a href="vitrine-cultural.html">Vitrine Cultural</a>
@@ -229,50 +229,51 @@
             <a href="#">Quem somos</a>
           </div>
         </div>
-        <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
-      </div>
+        <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" aria-pressed="false" onclick="toggleTheme(this)">🌓</div>
+      </nav>
     </header>
 
     <div class="banner">
-      <img src="banner-home.png" alt="Banner do ROLÊ" />
+      <img src="banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
     </div>
 
-    <section class="destaques">
+    <main class="destaques" role="main">
       <h2>DESTAQUES DA SEMANA</h2>
       <div class="scroll-wrapper">
-<button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
-  <div class="cards-container">
+        <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
+        <div class="cards-container">
+          <!-- Cards de cidades -->
           <div class="card">
-            <img src="poa.png" alt="Cultura alternativa e festas em Porto Alegre" />
+            <img src="poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
             <p>A cena alternativa pulsa forte no Sul.</p>
-            <a href="https://www.instagram.com/p/DLlc5fZvYeS/?img_index=1" target="_blank">Ver mais</a>
+            <a href="https://www.instagram.com/p/DLlc5fZvYeS/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
           <div class="card">
-            <img src="floripa.png" alt="Cultura alternativa e festas em Florianópolis" />
+            <img src="floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
             <p>Beira-mar, eletrônica e coletivo.</p>
-            <a href="https://www.instagram.com/p/DLa5qPqPo57/?img_index=1" target="_blank">Ver mais</a>
+            <a href="https://www.instagram.com/p/DLa5qPqPo57/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
           <div class="card">
-            <img src="curitiba.png" alt="Cultura alternativa e festas em Curitiba" />
+            <img src="curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
             <p>Frio na rua, calor nas pistas.</p>
-            <a href="https://www.instagram.com/p/DLYQyGivvP7/?img_index=1" target="_blank">Ver mais</a>
+            <a href="https://www.instagram.com/p/DLYQyGivvP7/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
           <div class="card">
-            <img src="são paulo.png" alt="Cultura alternativa e festas em São Paulo" />
+            <img src="sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
             <p>A cidade que nunca dorme... nem para de dançar.</p>
-            <a href="https://www.instagram.com/p/DLTT6C-PecN/?img_index=1" target="_blank">Ver mais</a>
+            <a href="https://www.instagram.com/p/DLTT6C-PecN/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
           <div class="card">
-            <img src="rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" />
+            <img src="rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
             <p>Funk, favela, cor e calor cultural.</p>
-            <a href="https://www.instagram.com/p/DLWABUUvm7j/?img_index=1" target="_blank">Ver mais</a>
+            <a href="https://www.instagram.com/p/DLWABUUvm7j/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
         </div>
-<button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
-</div>
-    </section>
+        <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
+      </div>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
       <p>
         © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
         <a href="politica.html">Política de Privacidade</a> ·
@@ -282,6 +283,11 @@
       </p>
     </footer>
     <script>
+  function toggleTheme(el) {
+    document.body.classList.toggle('light');
+    el.setAttribute('aria-pressed', document.body.classList.contains('light'));
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     const dropdown = document.querySelector('.dropdown');
     const button = document.querySelector('.dropdown-button');
@@ -289,17 +295,16 @@
     button.addEventListener('click', function (e) {
       e.stopPropagation();
       dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
     });
 
     document.addEventListener('click', function (e) {
       if (!dropdown.contains(e.target)) {
         dropdown.classList.remove('open');
+        button.setAttribute('aria-expanded', false);
       }
     });
-  });
-</script>
- <script>
-  document.addEventListener('DOMContentLoaded', function () {
+
     const container = document.querySelector('.cards-container');
     const cards = document.querySelectorAll('.card');
     const totalCards = cards.length;
@@ -329,12 +334,22 @@
       const newIndex = Math.round(container.scrollLeft / cardWidth);
       currentIndex = newIndex;
     });
-
-    // ⏳ Garante que o scroll só ocorra após o carregamento completo dos elementos
-    setTimeout(() => {
-      scrollToCard(0); // Força início em POA
-    }, 100);
   });
+</script>
+
+<!-- 🛠️ Scroll inicial após carregar tudo -->
+<script>
+  window.onload = () => {
+    const container = document.querySelector('.cards-container');
+    const cards = document.querySelectorAll('.card');
+    if (container && cards.length > 0) {
+      const cardWidth = cards[0].offsetWidth + 12;
+      container.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  };
 </script>
   </body>
 </html>
