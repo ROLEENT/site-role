@@ -81,16 +81,16 @@
       .dropdown.open .dropdown-button::after {
         transform: rotate(180deg);
       }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        right: 0;
-        background-color: var(--card-bg);
-        border-radius: 8px;
-        margin-top: 8px;
-        min-width: 200px;
-        z-index: 1;
-      }
+    .dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  margin-top: 8px;
+  min-width: 200px;
+  z-index: 9999; /* importante para garantir que fique visível */
+}
       .dropdown-content a {
         display: block;
         padding: 12px;
@@ -283,16 +283,20 @@
       </p>
     </footer>
     <script>
-  function toggleTheme(el) {
-    document.body.classList.toggle('light');
-    el.setAttribute('aria-pressed', document.body.classList.contains('light'));
-  }
+function toggleTheme(el) {
+  document.body.classList.toggle('light');
+  el.setAttribute('aria-pressed', document.body.classList.contains('light'));
+}
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.querySelector('.dropdown');
-    const button = document.querySelector('.dropdown-button');
+document.addEventListener('DOMContentLoaded', function () {
+  // Dropdown Explorar
+  const dropdown = document.querySelector('.dropdown');
+  const button = dropdown.querySelector('.dropdown-button');
+  const content = dropdown.querySelector('.dropdown-content');
 
+  if (button && content) {
     button.addEventListener('click', function (e) {
+      e.preventDefault();
       e.stopPropagation();
       dropdown.classList.toggle('open');
       button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
@@ -305,49 +309,53 @@
       }
     });
 
-    const container = document.querySelector('.cards-container');
-    const cards = document.querySelectorAll('.card');
-    const totalCards = cards.length;
-    let currentIndex = 0;
-
-    function scrollToCard(index) {
-      if (index < 0) index = totalCards - 1;
-      if (index >= totalCards) index = 0;
-      currentIndex = index;
-      const cardWidth = cards[0].offsetWidth + 12;
-      container.scrollTo({
-        left: cardWidth * index,
-        behavior: 'smooth'
-      });
-    }
-
-    document.querySelector('.scroll-arrow.left').addEventListener('click', () => {
-      scrollToCard(currentIndex - 1);
+    content.addEventListener('click', function (e) {
+      e.stopPropagation();
     });
-
-    document.querySelector('.scroll-arrow.right').addEventListener('click', () => {
-      scrollToCard(currentIndex + 1);
-    });
-
-    container.addEventListener('scroll', () => {
-      const cardWidth = cards[0].offsetWidth + 12;
-      const newIndex = Math.round(container.scrollLeft / cardWidth);
-      currentIndex = newIndex;
-    });
-
-    // ✅ Scroll inicial garantido após tudo renderizado
-   setTimeout(() => {
-  if (container && cards.length > 0) {
-    // Remove scroll suave para o scroll inicial
-    container.style.scrollBehavior = 'auto';
-    container.scrollLeft = 0;
-
-    // Reativa o scroll suave logo depois
-    setTimeout(() => {
-      container.style.scrollBehavior = 'smooth';
-    }, 50);
   }
-}, 200);
+
+  // Carrossel
+  const container = document.querySelector('.cards-container');
+  const cards = container.querySelectorAll('.card');
+  const totalCards = cards.length;
+  let currentIndex = 0;
+
+  function scrollToCard(index) {
+    if (index < 0) index = totalCards - 1;
+    if (index >= totalCards) index = 0;
+    currentIndex = index;
+    const cardWidth = cards[0].offsetWidth + 12;
+    container.scrollTo({
+      left: cardWidth * index,
+      behavior: 'smooth'
+    });
+  }
+
+  const arrowLeft = document.querySelector('.scroll-arrow.left');
+  const arrowRight = document.querySelector('.scroll-arrow.right');
+
+  if (arrowLeft && arrowRight) {
+    arrowLeft.addEventListener('click', () => scrollToCard(currentIndex - 1));
+    arrowRight.addEventListener('click', () => scrollToCard(currentIndex + 1));
+  }
+
+  container.addEventListener('scroll', () => {
+    const cardWidth = cards[0].offsetWidth + 12;
+    const newIndex = Math.round(container.scrollLeft / cardWidth);
+    currentIndex = newIndex;
+  });
+
+  // Forçar scroll para POA ao carregar
+  setTimeout(() => {
+    if (container && cards.length > 0) {
+      container.style.scrollBehavior = 'auto';
+      container.scrollLeft = 0;
+      setTimeout(() => {
+        container.style.scrollBehavior = 'smooth';
+      }, 50);
+    }
+ }, 300);
+});
 </script>
   </body>
 </html>
