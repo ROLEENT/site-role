@@ -339,7 +339,8 @@
 
 <!-- 🛠️ Scroll inicial após carregar tudo -->
 <script>
-  window.onload = () => {
+ window.onload = () => {
+  requestAnimationFrame(() => {
     const container = document.querySelector('.cards-container');
     const cards = document.querySelectorAll('.card');
     if (container && cards.length > 0) {
@@ -349,7 +350,8 @@
         behavior: 'smooth'
       });
     }
-  };
+  });
+};
 </script>
   </body>
 </html>
