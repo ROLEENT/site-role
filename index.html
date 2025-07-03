@@ -334,24 +334,14 @@
       const newIndex = Math.round(container.scrollLeft / cardWidth);
       currentIndex = newIndex;
     });
-  });
-</script>
 
-<!-- 🛠️ Scroll inicial após carregar tudo -->
-<script>
- window.onload = () => {
-  requestAnimationFrame(() => {
-    const container = document.querySelector('.cards-container');
-    const cards = document.querySelectorAll('.card');
-    if (container && cards.length > 0) {
-      const cardWidth = cards[0].offsetWidth + 12;
-      container.scrollTo({
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
+    // ✅ Scroll inicial garantido após tudo renderizado
+    setTimeout(() => {
+      if (container && cards.length > 0) {
+        container.scrollLeft = 0;
+      }
+    }, 200); // delay de 200ms garante que a renderização terminou
   });
-};
 </script>
   </body>
 </html>
