@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,6 +6,7 @@
   <title>Revista ROLÊ</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilo.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,47 +14,111 @@
     gtag('js', new Date());
     gtag('config', 'G-G8Z07V63HQ');
   </script>
-  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-<header>
-  <img alt="Logo ROLÊ" src="images/logo-role.png" height="40" />
-  <div class="top-right">
-    <input class="search" type="text" placeholder="Buscar eventos, artistas, cidades..." aria-label="Buscar" />
-    <div class="dropdown">
-      <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">Explorar ▾</button>
-      <div class="dropdown-content">
-        <a href="editorial.html">Revista ROLÊ</a>
-        <a href="vitrine-cultural.html">Vitrine Cultural</a>
-        <a href="descontos.html">Descontos</a>
-        <a href="contato.html">Contato</a>
-        <a href="quem-somos.html">Quem Somos</a>
+  <header>
+    <img alt="Logo ROLÊ" src="images/logo-role.png" height="40" />
+    <div class="top-right">
+      <input class="search" type="text" placeholder="Buscar eventos, artistas, cidades..." aria-label="Buscar" />
+      <div class="dropdown">
+        <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">Explorar ▾</button>
+        <div class="dropdown-content">
+          <a href="revista.html">Revista ROLÊ</a>
+          <a href="vitrine-cultural.html">Vitrine Cultural</a>
+          <a href="descontos.html">Descontos</a>
+          <a href="contato.html">Contato</a>
+          <a href="quem-somos.html">Quem Somos</a>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <h1>Revista ROLÊ</h1>
-  <!-- Os conteúdos da página continuam aqui, todas as imagens estão com o prefixo "images/" -->
-  <!-- O conteúdo completo da página é muito longo, então esta versão é apenas ilustrativa -->
-</main>
+  <main>
+    <h1>Revista ROLÊ</h1>
 
-<footer>
-  <p>© 2025 ROLÊ ENTRETENIMENTO · 
-    <a href="politica.html">Política de Privacidade</a> · 
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> · 
-    <a href="termos-organizador.html">Termos do Organizador</a> · 
-    <a href="politica-spam.html">Política Antispam</a>
-  </p>
-</footer>
+    <section class="editorial-section">
+      <h2>Editorial</h2>
+      <div class="scroll-wrapper">
+        <button class="scroll-arrow left" aria-label="Anterior">◀</button>
+        <div class="cards-container">
+          <div class="card"><img src="images/editorial1.png" alt="Editorial 1"><p><a href="editorial1.html">As cidades já foram noturnas</a></p></div>
+          <div class="card"><img src="images/editorial2.png" alt="Editorial 2"><p><a href="editorial2.html">Rolê ou Rolêzão?</a></p></div>
+        </div>
+        <button class="scroll-arrow right" aria-label="Próximo">▶</button>
+      </div>
+    </section>
 
-<button id="btn-topo" title="Voltar ao topo" class="hide">
-  <img src="images/seta-para-cima.svg" alt="Voltar ao topo" />
-</button>
+    <section class="editorial-section">
+      <h2>Posfácio</h2>
+      <div class="scroll-wrapper">
+        <button class="scroll-arrow left" aria-label="Anterior">◀</button>
+        <div class="cards-container">
+          <div class="card"><img src="images/posfacio1.png" alt="Posfácio 1"><p><a href="posfacio1.html">Teatros vazios, TikToks cheios</a></p></div>
+        </div>
+        <button class="scroll-arrow right" aria-label="Próximo">▶</button>
+      </div>
+    </section>
 
-<script src="scripts/carrossel.js"></script>
-<script src="scripts/topo.js"></script>
-<script src="scripts/menu.js"></script>
+    <section class="editorial-section">
+      <h2>Dicas do ROLÊ</h2>
+      <div class="scroll-wrapper">
+        <button class="scroll-arrow left" aria-label="Anterior">◀</button>
+        <div class="cards-container">
+          <div class="card"><img src="images/dicas1.png" alt="Dica 1"><p><a href="dica1.html">Como gastar menos nos rolês</a></p></div>
+        </div>
+        <button class="scroll-arrow right" aria-label="Próximo">▶</button>
+      </div>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Fala, ROLÊ</h2>
+      <div class="scroll-wrapper">
+        <button class="scroll-arrow left" aria-label="Anterior">◀</button>
+        <div class="cards-container">
+          <div class="card"><img src="images/fala1.png" alt="Fala ROLÊ 1"><p><a href="fala1.html">Entrevista com RAVIH</a></p></div>
+        </div>
+        <button class="scroll-arrow right" aria-label="Próximo">▶</button>
+      </div>
+    </section>
+
+    <section class="editorial-section">
+      <h2>ROLÊ.bpm</h2>
+      <div class="scroll-wrapper">
+        <button class="scroll-arrow left" aria-label="Anterior">◀</button>
+        <div class="cards-container">
+          <div class="card"><img src="images/bpm1.png" alt="BPM 1"><p><a href="bpm1.html">A pista também é narrativa</a></p></div>
+        </div>
+        <button class="scroll-arrow right" aria-label="Próximo">▶</button>
+      </div>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Achadinhos do ROLÊ</h2>
+      <div class="scroll-wrapper">
+        <button class="scroll-arrow left" aria-label="Anterior">◀</button>
+        <div class="cards-container">
+          <div class="card"><img src="images/achado1.png" alt="Achadinho 1"><p><a href="achado1.html">Bar secreto no centro de SP</a></p></div>
+        </div>
+        <button class="scroll-arrow right" aria-label="Próximo">▶</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ROLÊ ENTRETENIMENTO ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </p>
+  </footer>
+
+  <button id="btn-topo" title="Voltar ao topo" class="hide">
+    <img src="images/seta-para-cima.svg" alt="Voltar ao topo" />
+  </button>
+
+  <script src="scripts/carrossel.js"></script>
+  <script src="scripts/topo.js"></script>
+  <script src="scripts/menu.js"></script>
 </body>
 </html>
