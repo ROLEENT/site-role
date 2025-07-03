@@ -125,7 +125,7 @@
         overflow-x: auto;
         gap: 12px;
         padding: 8px 0 16px;
-        scroll-snap-type: x proximity;
+scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         scroll-behavior: smooth;
@@ -134,6 +134,10 @@
       .cards-container::-webkit-scrollbar {
         display: none;
       }
+      .cards-container {
+  justify-content: flex-start; /* força o início da rolagem pela esquerda */
+  scroll-padding-left: 0;      /* garante que a rolagem comece do início */
+}
       .scroll-arrow {
         color: var(--highlight);
         font-size: 24px;
@@ -349,7 +353,10 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(() => {
     if (container && cards.length > 0) {
       container.style.scrollBehavior = 'auto';
-      container.scrollLeft = 0;
+container.scrollTo({
+  left: 0,
+  behavior: 'auto'
+});
       setTimeout(() => {
         container.style.scrollBehavior = 'smooth';
       }, 50);
