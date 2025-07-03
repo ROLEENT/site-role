@@ -336,12 +336,18 @@
     });
 
     // ✅ Scroll inicial garantido após tudo renderizado
+   setTimeout(() => {
+  if (container && cards.length > 0) {
+    // Remove scroll suave para o scroll inicial
+    container.style.scrollBehavior = 'auto';
+    container.scrollLeft = 0;
+
+    // Reativa o scroll suave logo depois
     setTimeout(() => {
-      if (container && cards.length > 0) {
-        container.scrollLeft = 0;
-      }
-    }, 200); // delay de 200ms garante que a renderização terminou
-  });
+      container.style.scrollBehavior = 'smooth';
+    }, 50);
+  }
+}, 200);
 </script>
   </body>
 </html>
