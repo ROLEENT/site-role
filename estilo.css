@@ -168,3 +168,15 @@ footer a {
 .arrow.right {
   right: 0.5rem;
 }
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  min-width: 280px;
+  margin-right: 1rem;
+}
