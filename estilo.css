@@ -103,6 +103,7 @@ footer a {
   padding: 0.7rem;
   cursor: pointer;
   z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #btn-topo img {
@@ -114,8 +115,7 @@ footer a {
   display: none;
 }
 
-/* CARROSSEL */
-
+/* Carrossel */
 .carousel-wrapper {
   position: relative;
   margin: 2rem 0;
@@ -136,20 +136,54 @@ footer a {
 
 .card {
   flex: 0 0 auto;
-  min-width: 250px;
-  background-color: #1a1a1a;
+  width: 240px;
+  background-color: var(--card-bg);
   color: var(--text-color);
   padding: 1rem;
   border-radius: 12px;
-  text-align: center;
+  text-align: left;
   transition: transform 0.2s ease-in-out;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .card img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
   margin-bottom: 0.5rem;
+  object-fit: cover;
+}
+
+.card strong {
+  font-size: 1.1rem;
+  color: var(--highlight);
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.card a {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--highlight);
+  text-decoration: underline;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(199, 125, 255, 0.3);
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 200px;
+  }
 }
 
 .arrow {
@@ -171,14 +205,4 @@ footer a {
 
 .arrow.right {
   right: 0.5rem;
-}
-
-#btn-topo { /* ... */ }
-.hide { display:none; }
-.card {
-  box-shadow: 0 0 10px rgba(199, 125, 255, 0.2);
-}
-
-#btn-topo {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
