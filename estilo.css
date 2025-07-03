@@ -100,3 +100,33 @@ footer a {
   width: 24px;
   height: 24px;
 }
+.scrolling-wrapper {
+  display: flex;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 220px;
+  text-align: center;
+  color: #f3f3f7;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
