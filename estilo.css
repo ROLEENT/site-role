@@ -172,3 +172,13 @@ footer a {
 .arrow.right {
   right: 0.5rem;
 }
+
+#btn-topo { /* ... */ }
+.hide { display:none; }
+.card {
+  box-shadow: 0 0 10px rgba(199, 125, 255, 0.2);
+}
+
+#btn-topo {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
