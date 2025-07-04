@@ -234,3 +234,19 @@ footer a {
 .arrow.right {
   right: 0.5rem;
 }
+.scroll-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-arrow {
+  color: var(--highlight);
+  font-size: 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+}
