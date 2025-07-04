@@ -24,7 +24,7 @@
       --quadro-link: #fff;
     }
     html { font-size: clamp(14px, 1.2vw, 18px); }
-    body { margin:0; font-family:'League Spartan',sans-serif; background:#000; color:#f3f3f7; padding:2rem 1rem; line-height:1.7; }
+    body { margin:0; font-family:'League Spartan',sans-serif; background: var(--bg-color); color: var(--text-color); padding:2rem 1rem; line-height:1.7; }
 
     /* Animations */
     @keyframes fadeInUp { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
@@ -54,9 +54,17 @@
     blockquote { background:var(--card-bg); border-left:4px solid var(--highlight); padding:1rem; border-radius:8px; margin:1.5rem 0; animation:fadeInUp .6s both; }
     blockquote em { color:#ccc; font-size:.9rem; }
     .grid-duas-colunas { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; align-items:flex-start; margin:4rem auto 3rem; max-width:1000px; }
-    /* Instagram embed size reduced */
+
+    /* Instagram embed size constraint */
     .instagram-embed { display:flex; justify-content:center; margin:3rem auto; max-width:400px; }
-    .instagram-embed iframe, .instagram-embed blockquote { width:100% !important; }
+    .instagram-embed blockquote.instagram-media,
+    .instagram-embed iframe {
+      max-width:400px !important;
+      width:100% !important;
+      height:auto !important;
+    }
+
+    /* Comments section */
     .comentarios { max-width:720px; margin:4rem auto; }
     .comentarios textarea, .comentarios input { width:100%; padding:.8rem; margin-top:.5rem; background:#222; color:var(--text-color); border:1px solid #333; border-radius:8px; font-size:1rem; animation:fadeInUp .6s both; }
     .comentario { background:#111; border:1px solid #333; border-radius:12px; padding:1rem; margin:1rem 0; display:flex; gap:1rem; animation:fadeInUp .6s both; }
@@ -113,11 +121,12 @@
       <p>O que está em jogo é mais do que festa. Estamos falando de políticas públicas, de direitos culturais, de ocupação do espaço urbano por corpos diversos e livres. Reduzir a madrugada a risco é escolher apagar uma parte essencial da vida coletiva.</p>
       <p>O editorial “As cidades já foram noturnas” é um chamado. Pra lembrar. Pra resistir. E pra perguntar: o que a gente precisa fazer pra trazer a madrugada de volta?</p>
     </div>
-    <div class="instagram-embed">
+     <div class="grid-duas-colunas">
+      <div class="instagram-embed">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote>
       </div>
     </div>
-</main>
+  </main>
 <section class="comentarios">
   <h2>Deixe um comentário</h2>
   <form id="form-comentario">
