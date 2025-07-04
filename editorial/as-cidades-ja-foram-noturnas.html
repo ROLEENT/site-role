@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -15,105 +15,83 @@
   <link rel="icon" href="/images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg-color: #000;
-      --text-color: #f3f3f7;
-      --highlight: #c77dff;
-      --card-bg: #151515;
-      --menu-link: #a95ce6;
-      --quadro-link: #fff;
-    }
-    html { font-size: clamp(14px, 1.2vw, 18px); }
-    body { margin:0; font-family:'League Spartan',sans-serif; background: var(--bg-color); color: var(--text-color); padding:1.5rem; line-height:1.5; }
-
-    @keyframes fadeInUp { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
-
-    /* Top controls: Leia também, Explorar e compartilhamento */
-    .top-controls { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1rem; }
-    .menu-leia-tambem, .menu-explorar-top { position:relative; display:inline-block; }
-    .explorar-btn { background:var(--bg-color); color:var(--text-color); border:2px solid var(--highlight); padding:.5rem .9rem; border-radius:4px; cursor:pointer; transition:background .2s,color .2s; font-size:0.9rem; }
-    .explorar-btn:hover { background:var(--highlight); color:var(--bg-color); }
-    .explorar-list { position:absolute; top:100%; left:0; background:var(--card-bg); border:1px solid var(--highlight); border-radius:4px; margin-top:.3rem; min-width:200px; box-shadow:0 4px 8px rgba(0,0,0,0.4); display:none; z-index:1000; }
-    .menu-leia-tambem.open .explorar-list,
-    .menu-explorar-top.open .explorar-list { display:block; }
-    .explorar-list li { list-style:none; }
-    .explorar-list li.editorial a { display:block; padding:.5rem .9rem; color:var(--menu-link); text-decoration:none; animation:fadeInUp .3s both; }
-    .explorar-list li.quadro a { display:block; padding:.5rem .9rem; color:var(--quadro-link); text-decoration:none; animation:fadeInUp .3s both; }
-    .explorar-list li a:hover { background:var(--highlight); color:var(--bg-color); }
-    .seta { margin-left:.3rem; transition:transform .2s; }
-    .menu-leia-tambem.open .seta,
-    .menu-explorar-top.open .seta { transform:rotate(180deg); }
-
-    /* Share buttons centered */
-    .share-buttons { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin:0.5rem 0; }
-    .share-buttons a, .share-buttons button { background:var(--card-bg); color:var(--highlight); padding:.5rem .8rem; border-radius:6px; text-decoration:none; border:none; cursor:pointer; font-size:0.9rem; transition:background .2s,color .2s; }
-    .share-buttons a:hover, .share-buttons button:hover { background:var(--highlight); color:var(--bg-color); }
-
-    /* Main content */
-    .content { max-width:720px; margin:auto; }
-    h1 { font-size:2rem; color:var(--highlight); margin-bottom:0.5rem; animation:fadeInUp .6s both; }
-    .autor { font-size:0.9rem; font-weight:bold; margin-bottom:1rem; color:#aaa; animation:fadeInUp .6s both; }
-    img.header { width:100%; border-radius:8px; margin:1rem 0; box-shadow:0 4px 8px rgba(199,125,255,0.2); animation:fadeInUp .6s both; }
-    img.header:hover { transform:scale(1.02); }
-    h2 { font-size:1.4rem; color:var(--highlight); margin:1.5rem 0 0.5rem; animation:fadeInUp .6s both; }
-    p { margin-bottom:1rem; animation:fadeInUp .6s both; }
-    article p:first-of-type::first-letter { font-size:3rem; float:left; line-height:1; margin-right:.4rem; color:var(--highlight); }
-    blockquote { background:var(--card-bg); border-left:4px solid var(--highlight); padding:.8rem; border-radius:6px; margin:1rem 0; animation:fadeInUp .6s both; }
-    blockquote em { color:#ccc; font-size:.85rem; }
-
-    /* Grid & Instagram embed */
-    .grid-duas-colunas { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin:1rem auto; max-width:1000px; }
-    .instagram-embed { margin:0 auto; max-width:260px; }
-    .instagram-embed blockquote.instagram-media,
-    .instagram-embed iframe { width:100% !important; max-width:260px !important; height:420px !important; }
-
-    /* Comments */
-    .comentarios { max-width:720px; margin:2rem auto; }
-    .comentarios textarea, .comentarios input { padding:.7rem; margin-top:.4rem; font-size:.95rem; }
-    .comentario { padding:.8rem; margin:.8rem 0; }
-
+    :root { --bg: #000; --text: #f3f3f7; --highlight: #c77dff; --card: #151515; --menu: #a95ce6; --quadro: #fff; }
+    body{margin:0;padding:1rem;font-family:'League Spartan',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+    .top-controls{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding:0 1rem;margin-bottom:1rem;}
+    .menu{position:relative;}
+    .explorar-btn{background:var(--bg);color:var(--text);border:2px solid var(--highlight);padding:.5rem 1rem;border-radius:4px;cursor:pointer;transition:all .2s;font-size:.9rem;}
+    .explorar-btn:hover{background:var(--highlight);color:var(--bg);}
+    .list{position:absolute;top:100%;left:0;background:var(--card);border:1px solid var(--highlight);border-radius:4px;display:none;min-width:180px;box-shadow:0 4px 8px rgba(0,0,0,.4);z-index:10;}
+    .open>.list{display:block;}
+    .list li{list-style:none;}
+    .list a{display:block;padding:.4rem .8rem;color:var(--text);text-decoration:none;transition:background .2s;}
+    .list li.editorial a{color:var(--menu);}  
+    .list li.quadro a{color:var(--quadro);}    
+    .list a:hover{background:var(--highlight);color:var(--bg);}
+    .seta{margin-left:.3rem;transition:transform .2s;}
+    .open>.explorar-btn>.seta{transform:rotate(180deg);}    
+    .share{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin:0 .5rem;}
+    .share a,.share button{background:var(--card);color:var(--highlight);padding:.4rem .8rem;border:none;border-radius:6px;cursor:pointer;transition:all .2s;font-size:.9rem;}
+    .share a:hover,.share button:hover{background:var(--highlight);color:var(--bg);}
+    .content{max-width:720px;margin:0 auto;padding:0 1rem;}
+    h1{font-size:2rem;color:var(--highlight);margin:.5rem 0;animation:fadeIn .6s;}
+    .autor{color:#aaa;font-size:.9rem;margin-bottom:1rem;}
+    img.header{width:100%;border-radius:8px;margin:1rem 0;box-shadow:0 4px 8px rgba(199,125,255,.2);animation:fadeIn .6s;}
+    h2{font-size:1.4rem;color:var(--highlight);margin:1.2rem 0 .4rem;animation:fadeIn .6s;}
+    p{margin-bottom:.8rem;animation:fadeIn .6s;}
+    article p:first-of-type::first-letter{font-size:3rem;float:left;margin-right:.3rem;color:var(--highlight);}
+    blockquote{background:var(--card);border-left:4px solid var(--highlight);padding:.6rem;border-radius:6px;margin:.8rem 0;animation:fadeIn .6s;}
+    blockquote em{color:#ccc;font-size:.85rem;}
+    .grid{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;margin:1rem 0;}
+    .embed{max-width:250px;margin:0 auto;}
+    .embed blockquote, .embed iframe{width:100%!important;max-width:250px!important;height:400px!important;}
+    .comentarios{max-width:720px;margin:1.5rem auto;padding:0 1rem;}
+    form{display:flex;gap:.5rem;flex-wrap:wrap;}
+    form input,form textarea{flex:1;padding:.6rem;border-radius:6px;border:1px solid #333;background:#222;color:var(--text);font-size:.9rem;}
+    form button{padding:.6rem 1rem;border:none;border-radius:6px;background:var(--highlight);color:var(--bg);cursor:pointer;transition:background .2s;}
+    form button:hover{background:var(--menu);}  
   </style>
 </head>
 <body>
   <div class="top-controls">
-    <div class="menu-leia-tambem" id="menuLeia">
-      <button class="explorar-btn" id="btnLeia">Leia também <span class="seta">▼</span></button>
-      <ul class="explorar-list">
-        <li class="editorial"><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
-        <li class="editorial"><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
-        <li class="editorial"><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
-        <li class="editorial"><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
-        <li class="editorial"><a href="/editorial/teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
-        <li class="quadro"><a href="/editorial/fala-role.html">Fala, ROLÊ!</a></li>
-        <li class="quadro"><a href="/editorial/rolebpm.html">ROLÊ.bpm</a></li>
-        <li class="quadro"><a href="/editorial/posfacio.html">Posfácio</a></li>
-        <li class="quadro"><a href="/editorial/dicas.html">Dicas do ROLÊ</a></li>
-        <li class="quadro"><a href="/editorial/achadinhos.html">Achadinhos do ROLÊ</a></li>
+    <div class="menu menu-leia" id="leia">
+      <button class="explorar-btn" id="btnLe">Leia também <span class="seta">▼</span></button>
+      <ul class="list">
+        <li class="editorial"><a href="#">As cidades já foram noturnas</a></li>
+        <li class="editorial"><a href="#">Já agradeceu o DJ?</a></li>
+        <li class="editorial"><a href="#">Rolê ou Rolêzão?</a></li>
+        <li class="editorial"><a href="#">O novo underground</a></li>
+        <li class="editorial"><a href="#">Teatros vazios, TikToks cheios</a></li>
+        <li class="quadro"><a href="#">Fala, ROLÊ!</a></li>
+        <li class="quadro"><a href="#">ROLÊ.bpm</a></li>
+        <li class="quadro"><a href="#">Posfácio</a></li>
+        <li class="quadro"><a href="#">Dicas do ROLÊ</a></li>
+        <li class="quadro"><a href="#">Achadinhos do ROLÊ</a></li>
       </ul>
     </div>
-    <div class="menu-explorar-top" id="menuExplorarTop">
-      <button class="explorar-btn" id="btnExplorar">Explorar <span class="seta">▼</span></button>
-      <ul class="explorar-list">
-        <li><a href="/index.html">Página Inicial</a></li>
-        <li><a href="/revista.html">Revista ROLÊ</a></li>
-        <li><a href="/vitrine.html">Vitrine Cultural</a></li>
-        <li><a href="/descontos.html">Descontos</a></li>
-        <li><a href="/contato.html">Contato</a></li>
-        <li><a href="/quem-somos.html">Quem Somos</a></li>
+    <div class="menu menu-explorar" id="explorar">
+      <button class="explorar-btn" id="btnEx">Explorar <span class="seta">▼</span></button>
+      <ul class="list">
+        <li><a href="#">Página Inicial</a></li>
+        <li><a href="#">Revista ROLÊ</a></li>
+        <li><a href="#">Vitrine Cultural</a></li>
+        <li><a href="#">Descontos</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="#">Quem Somos</a></li>
       </ul>
     </div>
-    <div class="share-buttons">
-      <a href="https://www.facebook.com/sharer.php?u=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank">Facebook</a>
-      <a href="https://twitter.com/intent/tweet?url=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html&text=Confira este editorial da Revista ROLÊ!" target="_blank">Twitter</a>
-      <a href="https://api.whatsapp.com/send?text=Confira este editorial da Revista ROLÊ! https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank">WhatsApp</a>
+    <div class="share">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">WhatsApp</a>
       <button onclick="shareOnInstagram()">Instagram</button>
     </div>
   </div>
-
-  <main class="content">
+  <div class="content">
     <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
-    <img src="/images/editorial-madrugada.png" alt="Capa do editorial" class="header" />
+    <img src="#" alt="Capa" class="header" />
     <article>
       <!-- conteúdo... -->
     </article>
@@ -144,41 +122,26 @@
       <p>O editorial “As cidades já foram noturnas” é um chamado. Pra lembrar. Pra resistir. E pra perguntar: o que a gente precisa fazer pra trazer a madrugada de volta?</p>
     </div>
      
-    <div class="grid-duas-colunas">
-      <div>
-        <h2>Leia mais no post do Instagram</h2>
-      </div>
-      <div class="instagram-embed">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote>
-      </div>
+    <div class="grid">
+      <h2>Leia mais no post do Instagram</h2>
+      <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote></div>
     </div>
-  </main>
+  </div>
   
 <section class="comentarios">
-  <h2>Deixe um comentário</h2>
-  <form id="form-comentario">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <textarea name="comentario" placeholder="Seu comentário" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-  <div id="mensagem-sucesso" style="display:none; color:var(--highlight); margin-top:1rem;">Comentário enviado com sucesso!</div>
-  <div id="lista-comentarios"></div>
-</section>
+    <h2>Deixe um comentário</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <textarea placeholder="Seu comentário" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
   <script>
-    function shareOnInstagram() {
-      if (navigator.share) {
-        navigator.share({ title: document.title, url: window.location.href });
-      } else {
-        prompt('Copie este link para compartilhar no Instagram:', window.location.href);
-      }
-    }
-    document.getElementById('btnLeia').addEventListener('click', ()=> document.getElementById('menuLeia').classList.toggle('open'));
-    document.getElementById('btnExplorar').addEventListener('click', ()=> document.getElementById('menuExplorarTop').classList.toggle('open'));
-    document.addEventListener('click', e => {
-      if (!document.getElementById('menuLeia').contains(e.target)) document.getElementById('menuLeia').classList.remove('open');
-      if (!document.getElementById('menuExplorarTop').contains(e.target)) document.getElementById('menuExplorarTop').classList.remove('open');
-    });
+    function shareOnInstagram(){navigator.share?navigator.share({title:document.title,url:location.href}):prompt('Copie o link:',location.href);}
+    document.getElementById('btnLe').onclick=()=>document.getElementById('leia').classList.toggle('open');
+    document.getElementById('btnEx').onclick=()=>document.getElementById('explorar').classList.toggle('open');
+    document.addEventListener('click',e=>{if(!document.getElementById('leia').contains(e.target))document.getElementById('leia').classList.remove('open');if(!document.getElementById('explorar').contains(e.target))document.getElementById('explorar').classList.remove('open');});
   </script>
   <script async src="//www.instagram.com/embed.js"></script>
 </body>
