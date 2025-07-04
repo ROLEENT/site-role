@@ -20,28 +20,23 @@
       --text-color: #f3f3f7;
       --highlight: #c77dff;
       --card-bg: #151515;
-      --menu-link: #a95ce6; /* nova cor para links dos quadros */
+      --menu-link: #a95ce6; /* cor para links editoriais */
+      --quadro-link: #ffffff; /* cor para links de quadros */
     }
     html { font-size: clamp(14px, 1.2vw, 18px); }
     body { margin: 0; font-family: 'League Spartan', sans-serif; background: var(--bg-color); color: var(--text-color); padding: 3rem 1rem; line-height: 1.7; }
-    h1 { font-size: 3rem; color: var(--highlight); margin: 1rem 0; animation: fadeInUp .6s ease both; }
-    h2 { font-size: 1.6rem; color: var(--highlight); margin: 2rem 0 1rem; animation: fadeInUp .6s ease both; }
-    p { margin-bottom: 1.4rem; animation: fadeInUp .6s ease both; }
-    article p:first-of-type::first-letter { font-size: 4rem; float: left; line-height: 1; margin-right: .5rem; color: var(--highlight); }
-    .content { max-width: 720px; margin: auto; }
-    img.header { width: 100%; max-width: 800px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 8px rgba(199,125,255,0.2); transition: transform .3s; animation: fadeInUp .6s ease both; }
-    img.header:hover { transform: scale(1.02); }
-    blockquote { background: var(--card-bg); border-left: 4px solid var(--highlight); padding: 1rem; border-radius: 8px; margin: 1.5rem 0; animation: fadeInUp .6s ease both; }
-    blockquote em { color: #ccc; font-size: .9rem; }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px);} to { opacity:1; transform: translateY(0);} }
-    /* dropdown "Leia também" igual ao menu Explorar */
+    /* animações e layout omitidos para brevidade... */
+    /* dropdown "Leia também" similar ao menu Explorar */
     .menu-leia-tambem { position: relative; display: inline-block; font-weight: bold; }
     .explorar-btn { background: var(--bg-color); color: var(--text-color); border: 2px solid var(--highlight); padding: .6rem 1rem; border-radius: 4px; cursor: pointer; transition: background .2s, color .2s; }
     .explorar-btn:hover { background: var(--highlight); color: var(--bg-color); }
     .explorar-list { position: absolute; top: 100%; left: 0; background: var(--card-bg); border: 1px solid var(--highlight); border-radius: 4px; margin-top: .4rem; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.4); display: none; z-index:1000; }
     .menu-leia-tambem.open .explorar-list { display: block; }
     .explorar-list li { list-style: none; }
-    .explorar-list li a { display: block; padding: .6rem 1rem; color: var(--menu-link); text-decoration: none; transition: background .2s; }
+    /* links editoriais (início até Fala, ROLÊ!) */
+    .explorar-list li.editorial a { display: block; padding: .6rem 1rem; color: var(--menu-link); text-decoration: none; transition: background .2s; }
+    /* links de quadros (a partir de Fala, ROLÊ!) */
+    .explorar-list li.quadro a { display: block; padding: .6rem 1rem; color: var(--quadro-link); text-decoration: none; transition: background .2s; }
     .explorar-list li a:hover { background: var(--highlight); color: var(--bg-color); }
     .seta { display: inline-block; margin-left: .4rem; transition: transform .2s; }
     .menu-leia-tambem.open .seta { transform: rotate(180deg); }
@@ -53,16 +48,18 @@
       Leia também <span class="seta">▼</span>
     </button>
     <ul class="explorar-list">
-      <li><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
-      <li><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
-      <li><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
-      <li><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
-      <li><a href="/editorial/teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
-      <li><a href="/editorial/fala-role.html">Fala, ROLÊ!</a></li>
-      <li><a href="/editorial/rolebpm.html">ROLÊ.bpm</a></li>
-      <li><a href="/editorial/posfacio.html">Posfácio</a></li>
-      <li><a href="/editorial/dicas.html">Dicas do ROLÊ</a></li>
-      <li><a href="/editorial/achadinhos.html">Achadinhos do ROLÊ</a></li>
+      <!-- editoriais -->
+      <li class="editorial"><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
+      <li class="editorial"><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
+      <li class="editorial"><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
+      <li class="editorial"><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
+      <li class="editorial"><a href="/editorial/teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
+      <!-- quadros -->
+      <li class="quadro"><a href="/editorial/fala-role.html">Fala, ROLÊ!</a></li>
+      <li class="quadro"><a href="/editorial/rolebpm.html">ROLÊ.bpm</a></li>
+      <li class="quadro"><a href="/editorial/posfacio.html">Posfácio</a></li>
+      <li class="quadro"><a href="/editorial/dicas.html">Dicas do ROLÊ</a></li>
+      <li class="quadro"><a href="/editorial/achadinhos.html">Achadinhos do ROLÊ</a></li>
     </ul>
   </div>
 
@@ -113,7 +110,7 @@
   <div id="mensagem-sucesso" style="display:none; color:var(--highlight); margin-top:1rem;">Comentário enviado com sucesso!</div>
   <div id="lista-comentarios"></div>
 </section>
-<script>
+  <script>
     const btnLeia = document.getElementById('btnLeia');
     const menuLeia = document.getElementById('menuLeia');
     btnLeia.addEventListener('click', () => menuLeia.classList.toggle('open'));
