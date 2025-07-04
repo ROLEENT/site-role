@@ -12,178 +12,21 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-color: #000;
-      --text-color: #f3f3f7;
-      --highlight: #c77dff;
-      --card-bg: #151515;
-    }
-    body {
-      margin: 0;
-      font-family: 'League Spartan', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding: 2rem;
-      line-height: 1.7;
-    }
-    a {
-      color: var(--highlight);
-      text-decoration: none;
-    }
-    h1 {
-      font-size: 2.2rem;
-      color: var(--highlight);
-      margin-bottom: 0.2rem;
-    }
-    .autor {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      color: #aaa;
-    }
-    .content {
-      max-width: 800px;
-      margin: auto;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 2.5rem;
-      background: var(--highlight);
-      color: var(--bg-color);
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-    .back-link:hover {
-      background-color: #a95ce6;
-    }
-    img.header {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      box-shadow: 0 0 15px rgba(199, 125, 255, 0.2);
-    }
-    p {
-      margin-bottom: 1.4rem;
-    }
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: var(--highlight);
-      margin-bottom: 1rem;
-    }
-    details {
-      background-color: #1a1a1a;
-      padding: 1rem 1.2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(199, 125, 255, 0.05);
-      max-width: 800px;
-      margin: auto;
-      margin-bottom: 2rem;
-    }
-    details ul {
-      padding-left: 1.2rem;
-      margin: 0.5rem 0;
-    }
-    details ul li {
-      margin: 0.5rem 0;
-    }
-.comentarios-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
-  gap: 3rem;
-}
-
-.comentario-instagram,
-.comentarios {
-  width: 100%;
-  max-width: 640px;
-}
-
-.comentarios textarea,
-.comentarios input {
-  width: 100%;
-  padding: 0.8rem;
-  margin-top: 0.5rem;
-  background: #222;
-  color: var(--text-color);
-  border: 1px solid #333;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.comentarios button {
-  margin-top: 0.8rem;
-  background-color: var(--highlight);
-  color: var(--bg-color);
-  font-weight: bold;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.comentarios .comentario {
-  background: #111;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.comentarios .avatar {
-  background: var(--highlight);
-  color: var(--bg-color);
-  font-weight: bold;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-
-.comentarios .hora {
-  font-size: 0.8rem;
-  color: #aaa;
-  margin-left: 0.4rem;
-}
-  </style>
+  <link rel="stylesheet" href="/style/base.css">
+  <link rel="stylesheet" href="/style/editorial.css">
 </head>
 <body>
-
-<details>
-  <summary>👀 Leia também outros quadros e editoriais</summary>
-  <ul>
-  <li><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
-  <li><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
-  <li><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
-  <li><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
-  <li><a href="/editorial/teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
-  <li><a href="/editorial/fala-role.html">Fala, ROLÊ!</a></li>
-  <li><a href="/editorial/rolebpm.html">ROLÊ.bpm</a></li>
-  <li><a href="/editorial/posfacio.html">Posfácio</a></li>
-  <li><a href="/editorial/dicas.html">Dicas do ROLÊ</a></li>
-  <li><a href="/editorial/achadinhos.html">Achadinhos do ROLÊ</a></li>
-</ul>
-</details>
-
-<main class="content">
-  <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
-  <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
-  <img src="images/editorial-madrugada.png.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
+  <header class="page-header">
+    <a href="/revista.html" class="btn">← Voltar para a Revista ROLÊ</a>
+    <a href="/index.html" class="btn">🏠 Home</a>
+  </header>
+  <main class="content">
+    <h1 class="title">A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
+    <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
+    <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" class="header-image" />
+    <article>
 
   <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
   <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
@@ -226,87 +69,46 @@
     </div>
   </div>
 </section>
+ </article>
 
-    <div class="comentarios-wrapper">
-  <div class="comentario-instagram">
-  <div class="instagram-desktop">
-   </div>
-  <div class="instagram-mobile">
-    <a href="https://www.instagram.com/p/DJ2mpGfvPxL/" target="_blank" class="back-link" style="display: inline-block; margin-top: 1rem;">🔗 Ver post no Instagram</a>
-  </div>
-</div>
-  <section class="comentarios">
-    <h2>Deixe um comentário</h2>
-    <form id="form-comentario">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <textarea name="comentario" placeholder="Seu comentário" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <div id="mensagem-sucesso" style="display: none; margin-top: 1rem; color: var(--highlight); font-weight: bold;">
-      Comentário enviado com sucesso!
-    </div>
-    <div class="comentarios-lista" id="lista-comentarios" style="margin-top: 2rem;"></div>
-  </section>
-</div>
-<script async src="//www.instagram.com/embed.js"></script>
+    <aside class="leia-tambem">
+      <details>
+        <summary>👀 Leia também outros quadros e editoriais</summary>
+        <ul>
+          <li><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
+          <li><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
+          <li><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
+          <li><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
+          <li><a href="/editorial/teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
+          <li><a href="/editorial/fala-role.html">Fala, ROLÊ!</a></li>
+          <li><a href="/editorial/rolebpm.html">ROLÊ.bpm</a></li>
+          <li><a href="/editorial/posfacio.html">Posfácio</a></li>
+          <li><a href="/editorial/dicas.html">Dicas do ROLÊ</a></li>
+          <li><a href="/editorial/achadinhos.html">Achadinhos do ROLÊ</a></li>
+        </ul>
+      </details>
+    </aside>
 
-<script>
-  const endpoint = "https://script.google.com/macros/s/AKfycbwboSjFcza-EczqagywgYFSkatJp_7YjY6fLAXplpcTuGkSODABDfUmt-VaV4T2Sdo/exec";
+    <section class="instagram-box">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote>
+      <a href="https://www.instagram.com/p/DJ2mpGfvPxL/" target="_blank" class="btn instagram-link">🔗 Ver post no Instagram</a>
+    </section>
 
-  document.getElementById('form-comentario').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const dados = new FormData(form);
-    fetch(endpoint, {
-      method: "POST",
-      body: dados
-    })
-    .then(res => res.text())
-    .then(() => {
-      form.reset();
-      document.getElementById('mensagem-sucesso').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('mensagem-sucesso').style.display = 'none';
-      }, 3000);
-      carregarComentarios();
-    });
-  });
+    <section class="comentarios">
+      <h2>Deixe um comentário</h2>
+      <form id="form-comentario">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <textarea name="comentario" placeholder="Seu comentário" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="mensagem-sucesso" class="mensagem-sucesso">Comentário enviado com sucesso!</div>
+      <div id="lista-comentarios" class="comentarios-lista"></div>
+    </section>
+  <footer class="page-footer">
+    <p>&copy; ROLÊ Entretenimento</p>
+  </footer>
 
-  function curtirComentario(index) {
-    fetch(`${endpoint}?like=${index}`)
-      .then(() => carregarComentarios());
-  }
-
-  function carregarComentarios() {
-    fetch(endpoint)
-      .then(response => response.json())
-      .then(data => {
-        const lista = document.getElementById('lista-comentarios');
-        lista.innerHTML = '';
-        data.reverse().forEach(c => {
-          const primeiraLetra = c.nome.trim().charAt(0).toUpperCase() || 'A';
-          const div = document.createElement('div');
-          div.className = 'comentario';
-          div.innerHTML = `
-            <div class="avatar">${primeiraLetra}</div>
-            <div class="comentario-texto">
-              <p><strong>${c.nome || 'Anônimo'}</strong><span class="hora"> (${c.data})</span></p>
-              <p>${c.comentario}</p>
-                <button onclick="curtirComentario(${c.index})" aria-label="Curtir o comentário de ${c.nome || 'Anônimo'}">
-                ❤️ Curtir (<span>${c.likes || 0}</span>)
-              </button>
-            </div>
-          `;
-          lista.appendChild(div);
-        });
-      });
-  }
-
-  carregarComentarios();
-</script>
-    <footer style="text-align: center; margin-top: 4rem;">
-  <a href="/revista.html" class="back-link" style="margin-right: 1rem;">← Voltar para a Revista ROLÊ</a>
-  <a href="/index.html" class="back-link">🏠 Ir para a Home</a>
-</footer>
-  </body>
+  <script async src="//www.instagram.com/embed.js"></script>
+  <script src="/scripts/comentarios.js"></script>
+</body>
 </html>
