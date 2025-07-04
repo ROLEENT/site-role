@@ -21,178 +21,45 @@
       --highlight: #c77dff;
       --card-bg: #151515;
     }
-    html {
-      font-size: clamp(14px, 1.2vw, 18px);
-    }
-    body {
-      margin: 0;
-      font-family: 'League Spartan', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding: 3rem 1rem;
-      line-height: 1.7;
-    }
-    h1 {
-      font-size: 3rem;
-      color: var(--highlight);
-      margin: 1rem 0;
-      animation: fadeInUp .6s ease both;
-    }
-    h2 {
-      font-size: 1.6rem;
-      color: var(--highlight);
-      margin: 2rem 0 1rem;
-      animation: fadeInUp .6s ease both;
-    }
-    p {
-      margin-bottom: 1.4rem;
-      animation: fadeInUp .6s ease both;
-    }
-    article p:first-of-type::first-letter {
-      font-size: 4rem;
-      float: left;
-      line-height: 1;
-      margin-right: 0.5rem;
-      color: var(--highlight);
-    }
-    .content {
-      max-width: 720px;
-      margin: auto;
-    }
-    img.header {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      box-shadow: 0 4px 8px rgba(199,125,255,0.2);
-      transition: transform .3s;
-      animation: fadeInUp .6s ease both;
-    }
-    img.header:hover {
-      transform: scale(1.02);
-    }
-    blockquote {
-      background: var(--card-bg);
-      border-left: 4px solid var(--highlight);
-      padding: 1rem;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      animation: fadeInUp .6s ease both;
-    }
-    blockquote em {
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-    .back-link, .comentarios button {
-      display: inline-block;
-      background: var(--highlight);
-      color: var(--bg-color);
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform .2s;
-    }
-    .back-link:hover, .comentarios button:hover {
-      transform: scale(1.03);
-    }
-    .grid-duas-colunas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      align-items: flex-start;
-      margin: 4rem auto 3rem;
-      max-width: 1000px;
-    }
-    nav.leia-tambem ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-      gap: 1rem;
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-    }
-    nav.leia-tambem li {
-      background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 8px;
-      transition: transform .2s;
-      animation: fadeInUp .6s ease both;
-    }
-    nav.leia-tambem li:hover {
-      transform: translateY(-4px);
-    }
-    .instagram-embed {
-      display: flex;
-      justify-content: center;
-      margin: 3rem auto;
-      animation: fadeInUp .6s ease both;
-    }
-    .comentarios {
-      max-width: 720px;
-      margin: 4rem auto;
-    }
-    .comentarios-wrapper {
-      /* preserved for legacy, not used */
-    }
-    .comentarios textarea,
-    .comentarios input {
-      width: 100%;
-      padding: 0.8rem;
-      margin-top: 0.5rem;
-      background: #222;
-      color: var(--text-color);
-      border: 1px solid #333;
-      border-radius: 8px;
-      font-size: 1rem;
-      animation: fadeInUp .6s ease both;
-    }
-    .comentario {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 1rem;
-      margin: 1rem 0;
-      display: flex;
-      gap: 1rem;
-      animation: fadeInUp .6s ease both;
-    }
-    .avatar {
-      background: var(--highlight);
-      color: var(--bg-color);
-      font-weight: bold;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-    }
-    .hora {
-      font-size: 0.8rem;
-      color: #aaa;
-      margin-left: 0.4rem;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  .comentario-texto { flex: 1; }
-nav.leia-tambem { max-width: 720px; margin: 2rem auto; }
-nav.leia-tambem h2 { margin-bottom: 1rem; }
-nav.leia-tambem a { color: var(--text-color); transition: color .2s; }
-nav.leia-tambem a:hover { color: var(--highlight); }
-</style>
+    html { font-size: clamp(14px, 1.2vw, 18px); }
+    body { margin: 0; font-family: 'League Spartan', sans-serif; background: var(--bg-color); color: var(--text-color); padding: 3rem 1rem; line-height: 1.7; }
+    h1 { font-size: 3rem; color: var(--highlight); margin: 1rem 0; animation: fadeInUp .6s ease both; }
+    h2 { font-size: 1.6rem; color: var(--highlight); margin: 2rem 0 1rem; animation: fadeInUp .6s ease both; }
+    p { margin-bottom: 1.4rem; animation: fadeInUp .6s ease both; }
+    article p:first-of-type::first-letter { font-size: 4rem; float: left; line-height: 1; margin-right: .5rem; color: var(--highlight); }
+    .content { max-width: 720px; margin: auto; }
+    img.header { width: 100%; max-width: 800px; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 8px rgba(199,125,255,0.2); transition: transform .3s; animation: fadeInUp .6s ease both; }
+    img.header:hover { transform: scale(1.02); }
+    blockquote { background: var(--card-bg); border-left: 4px solid var(--highlight); padding: 1rem; border-radius: 8px; margin: 1.5rem 0; animation: fadeInUp .6s ease both; }
+    blockquote em { color: #ccc; font-size: .9rem; }
+    .grid-duas-colunas { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: flex-start; margin: 4rem auto 3rem; max-width: 1000px; }
+    .instagram-embed { display: flex; justify-content: center; margin: 3rem auto; animation: fadeInUp .6s ease both; }
+    .comentarios { max-width: 720px; margin: 4rem auto; }
+    .comentarios textarea, .comentarios input { width: 100%; padding: .8rem; margin-top: .5rem; background: #222; color: var(--text-color); border: 1px solid #333; border-radius: 8px; font-size: 1rem; animation: fadeInUp .6s ease both; }
+    .comentario { background: #111; border: 1px solid #333; border-radius: 12px; padding: 1rem; margin: 1rem 0; display: flex; gap: 1rem; animation: fadeInUp .6s ease both; }
+    .avatar { background: var(--highlight); color: var(--bg-color); font-weight: bold; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .hora { font-size: .8rem; color: #aaa; margin-left: .4rem; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px);} to { opacity:1; transform: translateY(0);} }
+    .comentario-texto { flex: 1; }
+    /* dropdown “Leia também” igual ao menu Explorar */
+    .menu-leia-tambem { position: relative; display: inline-block; font-weight: bold; }
+    .explorar-btn { background: var(--bg-color); color: var(--text-color); border: 2px solid var(--highlight); padding: .6rem 1rem; border-radius: 4px; cursor: pointer; transition: background .2s, color .2s; }
+    .explorar-btn:hover { background: var(--highlight); color: var(--bg-color); }
+    .explorar-list { position: absolute; top: 100%; left: 0; background: var(--card-bg); border: 1px solid var(--highlight); border-radius: 4px; margin-top: .4rem; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.4); display: none; z-index:1000; }
+    .open .explorar-list { display: block; }
+    .explorar-list li { list-style: none; }
+    .explorar-list li a { display: block; padding: .6rem 1rem; color: var(--text-color); text-decoration: none; transition: background .2s; }
+    .explorar-list li a:hover { background: rgba(199,125,255,0.2); }
+    .seta { display: inline-block; margin-left: .4rem; transition: transform .2s; }
+    .open .seta { transform: rotate(180deg); }
+  </style>
 </head>
 <body>
-  <div class="menu-explorar menu-leia-tambem" id="menuLeia">
+  <div class="menu-leia-tambem" id="menuLeia">
     <button class="explorar-btn" id="btnLeia">
       Leia também <span class="seta">▼</span>
     </button>
-    <ul class="explorar-list" id="listaLeia">
+    <ul class="explorar-list">
       <li><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
       <li><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
       <li><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
@@ -206,11 +73,11 @@ nav.leia-tambem a:hover { color: var(--highlight); }
     </ul>
   </div>
 
-<main class="content">
-  <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
-  <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
-  <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
-  <article>
+  <main class="content">
+    <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
+    <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
+    <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
+    <article>
     <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
     <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
     <p>Neste primeiro editorial do ROLÊ, a gente se pergunta: o que aconteceu com a noite das cidades? E quem ainda sustenta o fôlego da cultura noturna?</p>
@@ -252,7 +119,7 @@ nav.leia-tambem a:hover { color: var(--highlight); }
   <div id="mensagem-sucesso" style="display:none; color:var(--highlight); margin-top:1rem;">Comentário enviado com sucesso!</div>
   <div id="lista-comentarios"></div>
 </section>
- <script>
+<script>
     const btnLeia = document.getElementById('btnLeia');
     const menuLeia = document.getElementById('menuLeia');
     btnLeia.addEventListener('click', () => menuLeia.classList.toggle('open'));
