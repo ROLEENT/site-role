@@ -20,41 +20,58 @@
       --text-color: #f3f3f7;
       --highlight: #c77dff;
       --card-bg: #151515;
-      --menu-link: #a95ce6; /* cor para links editoriais */
-      --quadro-link: #ffffff; /* cor para links de quadros */
+      --menu-link: #a95ce6;
+      --quadro-link: #fff;
     }
     html { font-size: clamp(14px, 1.2vw, 18px); }
-    body { margin: 0; font-family: 'League Spartan', sans-serif; background: var(--bg-color); color: var(--text-color); padding: 3rem 1rem; line-height: 1.7; }
-    /* animações e layout omitidos para brevidade... */
-    /* dropdown "Leia também" similar ao menu Explorar */
-    .menu-leia-tambem { position: relative; display: inline-block; font-weight: bold; }
-    .explorar-btn { background: var(--bg-color); color: var(--text-color); border: 2px solid var(--highlight); padding: .6rem 1rem; border-radius: 4px; cursor: pointer; transition: background .2s, color .2s; }
-    .explorar-btn:hover { background: var(--highlight); color: var(--bg-color); }
-    .explorar-list { position: absolute; top: 100%; left: 0; background: var(--card-bg); border: 1px solid var(--highlight); border-radius: 4px; margin-top: .4rem; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.4); display: none; z-index:1000; }
-    .menu-leia-tambem.open .explorar-list { display: block; }
-    .explorar-list li { list-style: none; }
-    /* links editoriais (início até Fala, ROLÊ!) */
-    .explorar-list li.editorial a { display: block; padding: .6rem 1rem; color: var(--menu-link); text-decoration: none; transition: background .2s; }
-    /* links de quadros (a partir de Fala, ROLÊ!) */
-    .explorar-list li.quadro a { display: block; padding: .6rem 1rem; color: var(--quadro-link); text-decoration: none; transition: background .2s; }
-    .explorar-list li a:hover { background: var(--highlight); color: var(--bg-color); }
-    .seta { display: inline-block; margin-left: .4rem; transition: transform .2s; }
-    .menu-leia-tambem.open .seta { transform: rotate(180deg); }
+    body { margin:0; font-family:'League Spartan',sans-serif; background:#000; color:#f3f3f7; padding:2rem 1rem; line-height:1.7; }
+
+    /* Animations */
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+
+    /* Dropdown "Leia também" */
+    .menu-leia-tambem { position:relative; display:inline-block; margin-bottom:2rem; }
+    .explorar-btn { background:var(--bg-color); color:var(--text-color); border:2px solid var(--highlight); padding:.6rem 1rem; border-radius:4px; cursor:pointer; transition:background .2s,color .2s; }
+    .explorar-btn:hover { background:var(--highlight); color:var(--bg-color); }
+    .explorar-list { position:absolute; top:100%; left:0; background:var(--card-bg); border:1px solid var(--highlight); border-radius:4px; margin-top:.4rem; min-width:220px; box-shadow:0 4px 8px rgba(0,0,0,0.4); display:none; z-index:1000; }
+    .menu-leia-tambem.open .explorar-list { display:block; }
+    .explorar-list li { list-style:none; }
+    .explorar-list li.editorial a { display:block; padding:.6rem 1rem; color:var(--menu-link); text-decoration:none; transition:background .2s; animation:fadeInUp .3s both; }
+    .explorar-list li.quadro a { display:block; padding:.6rem 1rem; color:var(--quadro-link); text-decoration:none; transition:background .2s; animation:fadeInUp .3s both; }
+    .explorar-list li a:hover { background:var(--highlight); color:var(--bg-color); }
+    .seta { margin-left:.4rem; transition:transform .2s; }
+    .menu-leia-tambem.open .seta { transform:rotate(180deg); }
+
+    /* Main content styling (preserve existing) */
+    .content { max-width:720px; margin:auto; }
+    h1 { font-size:2.2rem; color:var(--highlight); margin-bottom:.2rem; animation:fadeInUp .6s both; }
+    .autor { font-size:1rem; font-weight:bold; margin-bottom:1.5rem; color:#aaa; animation:fadeInUp .6s both; }
+    img.header { width:100%; border-radius:12px; margin:1.5rem 0; box-shadow:0 4px 8px rgba(199,125,255,0.2); transition:transform .3s; animation:fadeInUp .6s both; }
+    img.header:hover { transform:scale(1.02); }
+    h2 { font-size:1.6rem; color:var(--highlight); margin:2rem 0 1rem; animation:fadeInUp .6s both; }
+    p { margin-bottom:1.4rem; animation:fadeInUp .6s both; }
+    article p:first-of-type::first-letter { font-size:4rem; float:left; line-height:1; margin-right:.5rem; color:var(--highlight); }
+    blockquote { background:var(--card-bg); border-left:4px solid var(--highlight); padding:1rem; border-radius:8px; margin:1.5rem 0; animation:fadeInUp .6s both; }
+    blockquote em { color:#ccc; font-size:.9rem; }
+    .grid-duas-colunas { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; align-items:flex-start; margin:4rem auto 3rem; max-width:1000px; }
+    .instagram-embed { display:flex; justify-content:center; margin:3rem auto; animation:fadeInUp .6s both; }
+    .comentarios { max-width:720px; margin:4rem auto; }
+    .comentarios textarea, .comentarios input { width:100%; padding:.8rem; margin-top:.5rem; background:#222; color:var(--text-color); border:1px solid #333; border-radius:8px; font-size:1rem; animation:fadeInUp .6s both; }
+    .comentario { background:#111; border:1px solid #333; border-radius:12px; padding:1rem; margin:1rem 0; display:flex; gap:1rem; animation:fadeInUp .6s both; }
+    .avatar { background:var(--highlight); color:var(--bg-color); font-weight:bold; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .hora { font-size:.8rem; color:#aaa; margin-left:.4rem; }
+    .comentario-texto { flex:1; }
   </style>
 </head>
 <body>
   <div class="menu-leia-tambem" id="menuLeia">
-    <button class="explorar-btn" id="btnLeia">
-      Leia também <span class="seta">▼</span>
-    </button>
+    <button class="explorar-btn" id="btnLeia">Leia também <span class="seta">▼</span></button>
     <ul class="explorar-list">
-      <!-- editoriais -->
       <li class="editorial"><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
       <li class="editorial"><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
       <li class="editorial"><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
       <li class="editorial"><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
       <li class="editorial"><a href="/editorial/teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
-      <!-- quadros -->
       <li class="quadro"><a href="/editorial/fala-role.html">Fala, ROLÊ!</a></li>
       <li class="quadro"><a href="/editorial/rolebpm.html">ROLÊ.bpm</a></li>
       <li class="quadro"><a href="/editorial/posfacio.html">Posfácio</a></li>
@@ -110,11 +127,13 @@
   <div id="mensagem-sucesso" style="display:none; color:var(--highlight); margin-top:1rem;">Comentário enviado com sucesso!</div>
   <div id="lista-comentarios"></div>
 </section>
+
   <script>
     const btnLeia = document.getElementById('btnLeia');
     const menuLeia = document.getElementById('menuLeia');
     btnLeia.addEventListener('click', () => menuLeia.classList.toggle('open'));
     document.addEventListener('click', e => { if (!menuLeia.contains(e.target)) menuLeia.classList.remove('open'); });
   </script>
+  <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
