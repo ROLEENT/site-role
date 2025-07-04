@@ -49,7 +49,10 @@
     .open .explorar-list { display: block; }
     .explorar-list li { list-style: none; }
     .explorar-list li a { display: block; padding: .6rem 1rem; color: var(--text-color); text-decoration: none; transition: background .2s; }
-    .explorar-list li a:hover { background: rgba(199,125,255,0.2); }
+    .explorar-list li a:hover {
+      background: var(--highlight);
+      color: var(--bg-color);
+    }
     .seta { display: inline-block; margin-left: .4rem; transition: transform .2s; }
     .open .seta { transform: rotate(180deg); }
   </style>
@@ -77,6 +80,7 @@
     <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
     <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
+    <article>
     <article>
     <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
     <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
