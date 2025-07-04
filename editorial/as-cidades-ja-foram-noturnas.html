@@ -42,7 +42,7 @@
     .seta { margin-left:.4rem; transition:transform .2s; }
     .menu-leia-tambem.open .seta { transform:rotate(180deg); }
 
-    /* Main content styling (preserve existing) */
+    /* Main content styling */
     .content { max-width:720px; margin:auto; }
     h1 { font-size:2.2rem; color:var(--highlight); margin-bottom:.2rem; animation:fadeInUp .6s both; }
     .autor { font-size:1rem; font-weight:bold; margin-bottom:1.5rem; color:#aaa; animation:fadeInUp .6s both; }
@@ -54,7 +54,9 @@
     blockquote { background:var(--card-bg); border-left:4px solid var(--highlight); padding:1rem; border-radius:8px; margin:1.5rem 0; animation:fadeInUp .6s both; }
     blockquote em { color:#ccc; font-size:.9rem; }
     .grid-duas-colunas { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; align-items:flex-start; margin:4rem auto 3rem; max-width:1000px; }
-    .instagram-embed { display:flex; justify-content:center; margin:3rem auto; animation:fadeInUp .6s both; }
+    /* Instagram embed size reduced */
+    .instagram-embed { display:flex; justify-content:center; margin:3rem auto; max-width:400px; }
+    .instagram-embed iframe, .instagram-embed blockquote { width:100% !important; }
     .comentarios { max-width:720px; margin:4rem auto; }
     .comentarios textarea, .comentarios input { width:100%; padding:.8rem; margin-top:.5rem; background:#222; color:var(--text-color); border:1px solid #333; border-radius:8px; font-size:1rem; animation:fadeInUp .6s both; }
     .comentario { background:#111; border:1px solid #333; border-radius:12px; padding:1rem; margin:1rem 0; display:flex; gap:1rem; animation:fadeInUp .6s both; }
@@ -85,7 +87,6 @@
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
     <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
     <article>
-    <article>
     <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
     <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
     <p>Neste primeiro editorial do ROLÊ, a gente se pergunta: o que aconteceu com a noite das cidades? E quem ainda sustenta o fôlego da cultura noturna?</p>
@@ -113,9 +114,9 @@
       <p>O editorial “As cidades já foram noturnas” é um chamado. Pra lembrar. Pra resistir. E pra perguntar: o que a gente precisa fazer pra trazer a madrugada de volta?</p>
     </div>
     <div class="instagram-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote>
+      </div>
     </div>
-  </div>
 </main>
 <section class="comentarios">
   <h2>Deixe um comentário</h2>
@@ -128,7 +129,7 @@
   <div id="lista-comentarios"></div>
 </section>
 
-  <script>
+ <script>
     const btnLeia = document.getElementById('btnLeia');
     const menuLeia = document.getElementById('menuLeia');
     btnLeia.addEventListener('click', () => menuLeia.classList.toggle('open'));
