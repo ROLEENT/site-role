@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <me
-ta charset="utf-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>As cidades já foram noturnas – Revista ROLÊ</title>
   <meta name="description" content="As cidades já foram noturnas? Neste editorial, o ROLÊ reflete sobre a perda da madrugada nas grandes cidades brasileiras e a resistência da cultura noturna." />
@@ -43,9 +42,16 @@ ta charset="utf-8" />
     .seta { margin-left:.4rem; transition:transform .2s; }
     .menu-leia-tambem.open .seta { transform:rotate(180deg); }
 
+    /* Share buttons */
+    .share-buttons { margin: 1.5rem 0; }
+    .share-buttons a,
+    .share-buttons button { display:inline-block; margin-right:1rem; background:var(--card-bg); color:var(--highlight); padding:.6rem 1rem; border-radius:6px; text-decoration:none; border:none; cursor:pointer; transition:background .2s,color .2s; }
+    .share-buttons a:hover,
+    .share-buttons button:hover { background:var(--highlight); color:var(--bg-color); }
+
     /* Main content styling */
     .content { max-width:720px; margin:auto; }
-    h1 { font-size:2.2rem; color:var(--highlight); margin-bottom:.2rem; animation:fadeInUp .6s both; }
+    h1 { font-size:2.2rem; color:var(--highlight); margin-bottom:.5rem; animation:fadeInUp .6s both; }
     .autor { font-size:1rem; font-weight:bold; margin-bottom:1.5rem; color:#aaa; animation:fadeInUp .6s both; }
     img.header { width:100%; border-radius:12px; margin:1.5rem 0; box-shadow:0 4px 8px rgba(199,125,255,0.2); transition:transform .3s; animation:fadeInUp .6s both; }
     img.header:hover { transform:scale(1.02); }
@@ -55,17 +61,11 @@ ta charset="utf-8" />
     blockquote { background:var(--card-bg); border-left:4px solid var(--highlight); padding:1rem; border-radius:8px; margin:1.2rem 0; animation:fadeInUp .6s both; }
     blockquote em { color:#ccc; font-size:.9rem; }
 
-    /* Adjusted grid spacing */
+    /* Grid & embed */
     .grid-duas-colunas { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; align-items:flex-start; margin:1.5rem auto .5rem; max-width:1000px; }
-
-    /* Instagram embed: portrait orientation & reduced spacing */
     .instagram-embed { display:flex; justify-content:center; margin:1rem auto; max-width:280px; }
     .instagram-embed blockquote.instagram-media,
-    .instagram-embed iframe {
-      width:100% !important;
-      max-width:280px !important;
-      height:450px !important;
-    }
+    .instagram-embed iframe { width:100% !important; max-width:280px !important; height:450px !important; }
 
     /* Comments section */
     .comentarios { max-width:720px; margin:3rem auto; }
@@ -74,11 +74,7 @@ ta charset="utf-8" />
     .avatar { background:var(--highlight); color:var(--bg-color); font-weight:bold; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1rem; }
     .hora { font-size:.8rem; color:#aaa; margin-left:.4rem; }
     .comentario-texto { flex:1; }
-    /* Botões de compartilhamento */
-  .share-buttons { margin: 1.5rem 0; }
-  .share-buttons a { display: inline-block; margin-right: 1rem; color: var(--highlight); background: var(--card-bg); padding: 0.5rem 0.8rem; border-radius: 6px; text-decoration: none; transition: background .2s; }
-  .share-buttons a:hover { background: var(--highlight); color: var(--bg-color); }
-</style>
+  </style>
 </head>
 <body>
   <div class="menu-leia-tambem" id="menuLeia">
@@ -97,12 +93,14 @@ ta charset="utf-8" />
     </ul>
   </div>
 
-  <main class="content">
   <div class="share-buttons">
     <a href="https://www.facebook.com/sharer.php?u=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank">Compartilhar no Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html&text=Confira%20este%20editorial%20da%20Revista%20ROLÊ!" target="_blank">Tweetar</a>
-    <a href="https://api.whatsapp.com/send?text=Confira%20este%20editorial%20da%20Revista%20ROLÊ!%20https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank">WhatsApp</a>
+    <a href="https://twitter.com/intent/tweet?url=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html&text=Confira este editorial da Revista ROLÊ!" target="_blank">Tweetar</a>
+    <a href="https://api.whatsapp.com/send?text=Confira este editorial da Revista ROLÊ! https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank">WhatsApp</a>
+    <button class="explorar-btn" onclick="shareOnInstagram()">Instagram</button>
   </div>
+
+  <main class="content">
     <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
     <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
@@ -135,11 +133,15 @@ ta charset="utf-8" />
     </div>
      
     <div class="grid-duas-colunas">
+      <div>
+        <h2>O futuro da cidade é noturno ou não será</h2>
+      </div>
       <div class="instagram-embed">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote>
       </div>
     </div>
   </main>
+  
 <section class="comentarios">
   <h2>Deixe um comentário</h2>
   <form id="form-comentario">
@@ -152,6 +154,13 @@ ta charset="utf-8" />
 </section>
 
  <script>
+    function shareOnInstagram() {
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: window.location.href });
+      } else {
+        prompt('Copie este link para compartilhar no Instagram:', window.location.href);
+      }
+    }
     const btnLeia = document.getElementById('btnLeia');
     const menuLeia = document.getElementById('menuLeia');
     btnLeia.addEventListener('click', () => menuLeia.classList.toggle('open'));
@@ -160,4 +169,3 @@ ta charset="utf-8" />
   <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
-
