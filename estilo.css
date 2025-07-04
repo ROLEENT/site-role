@@ -23,6 +23,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -41,6 +42,7 @@ header img {
   gap: 12px;
 }
 
+/* Search */
 .search {
   padding: 8px 12px;
   border-radius: 8px;
@@ -48,29 +50,52 @@ header img {
   max-width: 200px;
 }
 
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
 .dropdown-button {
   background-color: var(--highlight);
   color: var(--bg-color);
   border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-radius: 12px;
   cursor: pointer;
+  font-family: var(--font);
+  font-size: 1rem;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--card-bg);
-  border-radius: 8px;
-  margin-top: 8px;
-  min-width: 200px;
+  right: 0;
+  background-color: #1b1b1b;
+  color: var(--text-color);
+  border-radius: 12px;
+  padding: 10px 0;
+  min-width: 220px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   z-index: 9999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: var(--font);
+}
+
+.dropdown-content a:hover {
+  background-color: #2a2a2a;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+/* Main */
 main {
   padding: 24px;
 }
@@ -80,6 +105,7 @@ h1 {
   font-size: 28px;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 24px;
@@ -148,6 +174,7 @@ footer a {
   flex-direction: column;
   justify-content: space-between;
   gap: 0.5rem;
+  box-shadow: 0 0 10px rgba(199, 125, 255, 0.2);
 }
 
 .card img {
@@ -186,6 +213,7 @@ footer a {
   }
 }
 
+/* Setas do carrossel */
 .arrow {
   position: absolute;
   top: 50%;
