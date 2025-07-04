@@ -48,24 +48,26 @@
     .autor { font-size:1rem; font-weight:bold; margin-bottom:1.5rem; color:#aaa; animation:fadeInUp .6s both; }
     img.header { width:100%; border-radius:12px; margin:1.5rem 0; box-shadow:0 4px 8px rgba(199,125,255,0.2); transition:transform .3s; animation:fadeInUp .6s both; }
     img.header:hover { transform:scale(1.02); }
-    h2 { font-size:1.6rem; color:var(--highlight); margin:2rem 0 1rem; animation:fadeInUp .6s both; }
-    p { margin-bottom:1.4rem; animation:fadeInUp .6s both; }
+    h2 { font-size:1.6rem; color:var(--highlight); margin:2rem 0 .5rem; animation:fadeInUp .6s both; }
+    p { margin-bottom:1.2rem; animation:fadeInUp .6s both; }
     article p:first-of-type::first-letter { font-size:4rem; float:left; line-height:1; margin-right:.5rem; color:var(--highlight); }
-    blockquote { background:var(--card-bg); border-left:4px solid var(--highlight); padding:1rem; border-radius:8px; margin:1.5rem 0; animation:fadeInUp .6s both; }
+    blockquote { background:var(--card-bg); border-left:4px solid var(--highlight); padding:1rem; border-radius:8px; margin:1.2rem 0; animation:fadeInUp .6s both; }
     blockquote em { color:#ccc; font-size:.9rem; }
-    .grid-duas-colunas { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; align-items:flex-start; margin:4rem auto 3rem; max-width:1000px; }
 
-    /* Instagram embed size constraint */
-    .instagram-embed { display:flex; justify-content:center; margin:3rem auto; max-width:400px; }
+    /* Adjusted grid spacing */
+    .grid-duas-colunas { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; align-items:flex-start; margin:1.5rem auto .5rem; max-width:1000px; }
+
+    /* Instagram embed: portrait orientation & reduced spacing */
+    .instagram-embed { display:flex; justify-content:center; margin:1rem auto; max-width:280px; }
     .instagram-embed blockquote.instagram-media,
     .instagram-embed iframe {
-      max-width:400px !important;
       width:100% !important;
-      height:auto !important;
+      max-width:280px !important;
+      height:450px !important;
     }
 
     /* Comments section */
-    .comentarios { max-width:720px; margin:4rem auto; }
+    .comentarios { max-width:720px; margin:3rem auto; }
     .comentarios textarea, .comentarios input { width:100%; padding:.8rem; margin-top:.5rem; background:#222; color:var(--text-color); border:1px solid #333; border-radius:8px; font-size:1rem; animation:fadeInUp .6s both; }
     .comentario { background:#111; border:1px solid #333; border-radius:12px; padding:1rem; margin:1rem 0; display:flex; gap:1rem; animation:fadeInUp .6s both; }
     .avatar { background:var(--highlight); color:var(--bg-color); font-weight:bold; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1rem; }
@@ -121,7 +123,8 @@
       <p>O que está em jogo é mais do que festa. Estamos falando de políticas públicas, de direitos culturais, de ocupação do espaço urbano por corpos diversos e livres. Reduzir a madrugada a risco é escolher apagar uma parte essencial da vida coletiva.</p>
       <p>O editorial “As cidades já foram noturnas” é um chamado. Pra lembrar. Pra resistir. E pra perguntar: o que a gente precisa fazer pra trazer a madrugada de volta?</p>
     </div>
-     <div class="grid-duas-colunas">
+     
+    <div class="grid-duas-colunas">
       <div class="instagram-embed">
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote>
       </div>
