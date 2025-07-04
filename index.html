@@ -56,6 +56,7 @@
         max-width: 200px;
       }
       .theme-toggle {
+  margin-top: 8px;
         cursor: pointer;
         font-size: 14px;
         color: var(--highlight);
@@ -101,12 +102,13 @@
         display: block;
       }
       .banner {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        margin: 24px auto;
-        max-width: 90%;
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px auto;
+  max-width: 100%;
+  padding: 0 16px;
+}
       .banner img {
         width: 100%;
         max-width: 600px;
@@ -224,15 +226,16 @@ scroll-snap-type: x mandatory;
       <nav role="navigation" aria-label="Navegação principal">
         <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." aria-label="Buscar" />
         <div class="dropdown">
-          <button class="dropdown-button" aria-expanded="false">Explorar</button>
-          <div class="dropdown-content">
-            <a href="revista.html">Revista ROLÊ</a>
-            <a href="vitrine-cultural.html">Vitrine Cultural</a>
-            <a href="descontos.html">Descontos</a>
-            <a href="contato.html">Contato</a>
-            <a href="quem-somos.html">Quem somos</a>
-          </div>
-        </div>
+  <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">Explorar ▾</button>
+  <div class="dropdown-content">
+    <a href="index.html">Página Inicial</a>
+    <a href="revista.html">Revista ROLÊ</a>
+    <a href="vitrine-cultural.html">Vitrine Cultural</a>
+    <a href="descontos.html">Descontos</a>
+    <a href="contato.html">Contato</a>
+    <a href="quem-somos.html">Quem Somos</a>
+  </div>
+</div>
         <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" aria-pressed="false" onclick="toggleTheme(this)">🌓</div>
       </nav>
     </header>
@@ -328,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (index < 0) index = totalCards - 1;
     if (index >= totalCards) index = 0;
     currentIndex = index;
-    const cardWidth = cards[0].offsetWidth + 12;
+    const cardWidth = cards[0].getBoundingClientRect().width + 12;
     container.scrollTo({
       left: cardWidth * index,
       behavior: 'smooth'
