@@ -23,222 +23,92 @@
       --menu: #a95ce6;
       --quadro: #fff;
     }
-    body {
-      margin: 0;
-      padding: 1rem;
-      font-family: 'League Spartan', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-    @keyframes fadeIn { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
-    .top-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'League Spartan', sans-serif; line-height:1.5; }
+    a { text-decoration: none; }
+    header { border-bottom: 2px solid var(--highlight); padding: 1rem; }
+    .top-controls { display:flex; justify-content:space-between; align-items:center; max-width: 1024px; margin: 0 auto; gap:1rem; flex-wrap:wrap; }
     .menu { position: relative; }
-    .explorar-btn {
-      background: var(--bg);
-      color: var(--text);
-      border: 2px solid var(--highlight);
-      padding: .5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all .2s;
-      font-size: .9rem;
-    }
+    .explorar-btn { background: var(--bg); color: var(--text); border:2px solid var(--highlight); padding:.5rem 1rem; border-radius:4px; cursor:pointer; transition:all .2s; }
     .explorar-btn:hover { background: var(--highlight); color: var(--bg); }
-    .list {
-      position: absolute;
-      top: 100%; left: 0;
-      background: var(--card);
-      border: 1px solid var(--highlight);
-      border-radius: 4px;
-      display: none;
-      min-width: 180px;
-      box-shadow: 0 4px 8px rgba(0,0,0,.4);
-      z-index: 10;
-    }
-    .open > .list { display: block; }
-    .list li { list-style: none; }
-    .list a {
-      display: block;
-      padding: .4rem .8rem;
-      color: var(--text);
-      text-decoration: none;
-      transition: background .2s;
-    }
-    .list li.editorial a { color: var(--menu); }
-    .list li.quadro a { color: var(--quadro); }
-    .list a:hover { background: var(--highlight); color: var(--bg); }
-    .seta { margin-left: .3rem; transition: transform .2s; }
-    .open > .explorar-btn > .seta { transform: rotate(180deg); }
+    .list { position: absolute; top:100%; left:0; background: var(--card); border:1px solid var(--highlight); border-radius:4px; display:none; min-width:160px; box-shadow:0 4px 8px rgba(0,0,0,.4); z-index:10; }
+    .open > .list { display:block; }
+    .list li { list-style:none; }
+    .list a { display:block; padding:.5rem 1rem; color:var(--text); transition:background .2s; }
+    .list li.editorial a { color:var(--menu); }
+    .list li.quadro a { color:var(--quadro); }
+    .list a:hover { background:var(--highlight); color:var(--bg); }
+    .seta { margin-left:.3rem; transition:transform .2s; }
+    .open > .explorar-btn > .seta { transform:rotate(180deg); }
+    .share { display:flex; align-items:center; gap:.5rem; }
+    .share-label { font-weight:bold; white-space:nowrap; }
+    .share a, .share button { background:var(--highlight); color:var(--bg); padding:.4rem .8rem; border:none; border-radius:6px; cursor:pointer; transition:background .2s; font-size:.9rem; }
+    .share a:hover, .share button:hover { background:var(--card); color:var(--text); }
 
-    .share {
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-    }
-    .share-label {
-      color: var(--text);
-      font-weight: bold;
-      margin-right: .5rem;
-      white-space: nowrap;
-    }
-    .share a, .share button {
-      background: var(--highlight);
-      color: var(--bg);
-      padding: .4rem .8rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background .2s;
-      font-size: .9rem;
-    }
-    .share a:hover, .share button:hover {
-      background: var(--card);
-      color: var(--text);
-    }
+    .content { max-width:720px; margin:2rem auto; padding:0 1rem; }
+    h1 { font-size:2rem; margin:1rem 0 .5rem; text-align:center; color:var(--highlight); }
+    .autor { text-align:center; font-size:.9rem; color:#aaa; margin-bottom:1rem; }
+    img.header { width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(199,125,255,.2); margin-bottom:1rem; }
+    article p:first-of-type::first-letter { font-size:3rem; float:left; margin-right:.3rem; color:var(--highlight); }
+    h2 { font-size:1.4rem; text-align:center; color:var(--highlight); margin-top:2rem; margin-bottom:.5rem; }
+    p { margin-bottom:.8rem; }
+    blockquote { background:var(--card); border-left:4px solid var(--highlight); padding:.6rem; border-radius:6px; margin:1rem 0; }
+    blockquote em { color:#ccc; font-size:.85rem; }
 
-    .content {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    h1 {
-      font-size: 2rem;
-      color: var(--highlight);
-      margin: .5rem 0;
-      animation: fadeIn .6s;
-      text-align: center;
-    }
-    .autor {
-      color: #aaa;
-      font-size: .9rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    img.header {
-      width: 100%;
-      border-radius: 8px;
-      margin: 1rem 0;
-      box-shadow: 0 4px 8px rgba(199,125,255,.2);
-      animation: fadeIn .6s;
-    }
-    h2 {
-      font-size: 1.4rem;
-      color: var(--highlight);
-      margin: 1.2rem 0 .4rem;
-      animation: fadeIn .6s;
-      text-align: center;
-    }
-    p { margin-bottom: .8rem; animation: fadeIn .6s; }
-    article p:first-of-type::first-letter {
-      font-size: 3rem;
-      float: left;
-      margin-right: .3rem;
-      color: var(--highlight);
-    }
-    blockquote {
-      background: var(--card);
-      border-left: 4px solid var(--highlight);
-      padding: .6rem;
-      border-radius: 6px;
-      margin: .8rem 0;
-      animation: fadeIn .6s;
-    }
-    blockquote em { color: #ccc; font-size: .85rem; }
+    .grid { text-align:center; margin-top:1rem; }
+    .grid a h2 { margin-bottom:.5rem; }
+    .embed { display:flex; justify-content:center; }
+    .embed blockquote, .embed iframe { width:300px!important; height:450px!important; }
 
-    .grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-      margin: 1rem 0;
-    }
-    .embed {
-      max-width: 250px;
-      width: 100%;
-      margin: 0 auto;
-    }
-    .embed blockquote, .embed iframe {
-      width: 100%!important;
-      max-width: 250px!important;
-      height: 400px!important;
-    }
-
-    .comentarios {
-      max-width: 720px;
-      margin: 1.5rem auto;
-      padding: 0 1rem;
-    }
-    form {
-      display: flex;
-      gap: .5rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    form input, form textarea {
-      flex: 1;
-      padding: .6rem;
-      border-radius: 6px;
-      border: 1px solid var(--highlight);
-      background: #222;
-      color: var(--text);
-      font-size: .9rem;
-    }
-    form button {
-      padding: .6rem 1rem;
-      border: none;
-      border-radius: 6px;
-      background: var(--highlight);
-      color: var(--bg);
-      cursor: pointer;
-      transition: background .2s;
-    }
-    form button:hover { background: var(--menu); }
+    section.comentarios { border-top:1px solid var(--card); padding:2rem 1rem; margin-top:2rem; }
+    section.comentarios h2 { text-align:center; color:var(--highlight); margin-bottom:1rem; }
+    section.comentarios form { display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center; }
+    form input, form textarea { flex:1; max-width:300px; padding:.6rem; border:1px solid var(--highlight); border-radius:6px; background:#222; color:var(--text); }
+    form button { padding:.6rem 1rem; border:none; border-radius:6px; background:var(--highlight); color:var(--bg); cursor:pointer; transition:background .2s; }
+    form button:hover { background:var(--menu); }
+    footer { border-top:2px solid var(--highlight); padding:1rem; text-align:center; font-size:.8rem; color:#aaa; }
+    footer a { color:var(--highlight); margin:0 .5rem; }
   </style>
 </head>
 <body>
-  <div class="top-controls">
-    <div class="menu menu-leia" id="leia">
-      <button class="explorar-btn" id="btnLe">Leia também <span class="seta">▼</span></button>
-      <ul class="list">
-        <li class="editorial"><a href="#">As cidades já foram noturnas</a></li>
-        <li class="editorial"><a href="#">Já agradeceu o DJ?</a></li>
-        <li class="editorial"><a href="#">Rolê ou Rolêzão?</a></li>
-        <li class="editorial"><a href="#">O novo underground</a></li>
-        <li class="editorial"><a href="#">Teatros vazios, TikToks cheios</a></li>
-        <li class="quadro"><a href="#">Fala, ROLÊ!</a></li>
-        <li class="quadro"><a href="#">ROLÊ.bpm</a></li>
-        <li class="quadro"><a href="#">Posfácio</a></li>
-        <li class="quadro"><a href="#">Dicas do ROLÊ</a></li>
-        <li class="quadro"><a href="#">Achadinhos do ROLÊ</a></li>
-      </ul>
+  <header>
+    <div class="top-controls">
+      <div class="menu" id="leia">
+        <button class="explorar-btn" id="btnLe">Leia também <span class="seta">▼</span></button>
+        <ul class="list">
+          <li class="editorial"><a href="as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
+          <li class="editorial"><a href="ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
+          <li class="editorial"><a href="role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
+          <li class="editorial"><a href="o-novo-underground.html">O novo underground</a></li>
+          <li class="editorial"><a href="teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
+          <li class="quadro"><a href="fala-role.html">Fala, ROLÊ!</a></li>
+          <li class="quadro"><a href="rolebpm.html">ROLÊ.bpm</a></li>
+          <li class="quadro"><a href="posfacio.html">Posfácio</a></li>
+          <li class="quadro"><a href="dicas.html">Dicas do ROLÊ</a></li>
+          <li class="quadro"><a href="achadinhos.html">Achadinhos do ROLÊ</a></li>
+        </ul>
+      </div>
+      <div class="menu" id="explorar">
+        <button class="explorar-btn" id="btnEx">Explorar <span class="seta">▼</span></button>
+        <ul class="list">
+          <li><a href="/">Página Inicial</a></li>
+          <li><a href="revista.html">Revista ROLÊ</a></li>
+          <li><a href="vitrine-cultural.html">Vitrine Cultural</a></li>
+          <li><a href="descontos.html">Descontos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+        </ul>
+      </div>
+      <div class="share">
+        <span class="share-label">Compartilhe este artigo:</span>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="https://api.whatsapp.com/send?text=Confira%20este%20editorial!%20https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank">WhatsApp</a>
+        <button onclick="shareOnInstagram()">Instagram</button>
+      </div>
     </div>
-    <div class="menu menu-explorar" id="explorar">
-      <button class="explorar-btn" id="btnEx">Explorar <span class="seta">▼</span></button>
-      <ul class="list">
-        <li><a href="#">Página Inicial</a></li>
-        <li><a href="#">Revista ROLÊ</a></li>
-        <li><a href="#">Vitrine Cultural</a></li>
-        <li><a href="#">Descontos</a></li>
-        <li><a href="#">Contato</a></li>
-        <li><a href="#">Quem Somos</a></li>
-      </ul>
-    </div>
-    <div class="share">
-      <span class="share-label">Compartilhe este artigo:</span>
-      <a href="#">Facebook</a>
-      <a href="#">Twitter</a>
-      <a href="#">WhatsApp</a>
-      <button onclick="shareOnInstagram()">Instagram</button>
-    </div>
-  </div>
+  </header>
+
   <div class="content">
     <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
@@ -264,11 +134,12 @@
     <blockquote>“A cultura da noite resiste no improviso.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
     <p>São coletivos que criam experiências culturais mesmo sem apoio. DJs que tocam sem line divulgado pra evitar repressão. Pessoas que dançam até o sol nascer em nome de algo maior que um story: a crença de que a noite ainda pode ser espaço de liberdade.</p>
   </article>
- <div class="grid">
+  <div class="grid">
       <a href="https://www.instagram.com/p/DJ2mpGfvPxL/" target="_blank"><h2>Leia mais no post do Instagram</h2></a>
       <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote></div>
     </div>
   </div>
+
   <section class="comentarios">
     <h2>Deixe um comentário</h2>
     <form>
@@ -277,10 +148,15 @@
       <button type="submit">Enviar</button>
     </form>
   </section>
+
+  <footer>
+    © 2025 ROLÊ ENTRETENIMENTO · <a href="politica.html">Política de Privacidade</a> · <a href="termos-usuario.html">Termos do Rolezeiro</a> · <a href="termos-organizador.html">Termos do Organizador</a> · <a href="politica-spam.html">Política Antispam</a>
+  </footer>
+
   <script>
     function shareOnInstagram() {
       const data = { title: document.title, url: location.href };
-      if (navigator.share) navigator.share(data).catch(() => {});
+      if (navigator.share) navigator.share(data).catch(()=>{});
       else prompt('Copie este link para compartilhar:', location.href);
     }
     document.getElementById('btnLe').onclick = () => document.getElementById('leia').classList.toggle('open');
