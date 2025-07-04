@@ -12,7 +12,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="icon" href="/images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -21,104 +21,124 @@
       --highlight: #c77dff;
       --card-bg: #151515;
     }
+    html {
+      font-size: clamp(14px, 1.2vw, 18px);
+    }
     body {
       margin: 0;
       font-family: 'League Spartan', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      padding: 2rem;
+      padding: 3rem 1rem;
       line-height: 1.7;
     }
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-        font-size: 0.95rem;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-      .comentario {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-    a {
-      color: var(--highlight);
-      text-decoration: none;
-    }
     h1 {
-      font-size: 2.2rem;
+      font-size: 3rem;
       color: var(--highlight);
-      margin-bottom: 0.2rem;
+      margin: 1rem 0;
+      animation: fadeInUp .6s ease both;
     }
-    .autor {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      color: #aaa;
+    h2 {
+      font-size: 1.6rem;
+      color: var(--highlight);
+      margin: 2rem 0 1rem;
+      animation: fadeInUp .6s ease both;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      animation: fadeInUp .6s ease both;
+    }
+    article p:first-of-type::first-letter {
+      font-size: 4rem;
+      float: left;
+      line-height: 1;
+      margin-right: 0.5rem;
+      color: var(--highlight);
     }
     .content {
-      max-width: 800px;
+      max-width: 720px;
       margin: auto;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 2.5rem;
-      background: var(--highlight);
-      color: var(--bg-color);
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-    .back-link:hover {
-      background-color: #a95ce6;
     }
     img.header {
       width: 100%;
       max-width: 800px;
       border-radius: 12px;
       margin: 1.5rem 0;
-      box-shadow: 0 0 15px rgba(199, 125, 255, 0.2);
+      box-shadow: 0 4px 8px rgba(199,125,255,0.2);
+      transition: transform .3s;
+      animation: fadeInUp .6s ease both;
     }
-    p {
-      margin-bottom: 1.4rem;
+    img.header:hover {
+      transform: scale(1.02);
     }
-    summary {
-      cursor: pointer;
+    blockquote {
+      background: var(--card-bg);
+      border-left: 4px solid var(--highlight);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      animation: fadeInUp .6s ease both;
+    }
+    blockquote em {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    .back-link, .comentarios button {
+      display: inline-block;
+      background: var(--highlight);
+      color: var(--bg-color);
+      padding: 10px 16px;
+      border-radius: 10px;
       font-weight: bold;
-      font-size: 1.1rem;
-      color: var(--highlight);
-      margin-bottom: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform .2s;
     }
-    details {
-      background-color: #1a1a1a;
-      padding: 1rem 1.2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(199, 125, 255, 0.05);
-      max-width: 800px;
-      margin: auto;
-      margin-bottom: 2rem;
+    .back-link:hover, .comentarios button:hover {
+      transform: scale(1.03);
     }
-    details ul {
-      padding-left: 1.2rem;
-      margin: 0.5rem 0;
+    .grid-duas-colunas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 4rem auto 3rem;
+      max-width: 1000px;
     }
-    details ul li {
-      margin: 0.5rem 0;
+    nav.leia-tambem ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    nav.leia-tambem li {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      transition: transform .2s;
+      animation: fadeInUp .6s ease both;
+    }
+    nav.leia-tambem li:hover {
+      transform: translateY(-4px);
     }
     .instagram-embed {
       display: flex;
       justify-content: center;
       margin: 3rem auto;
+      animation: fadeInUp .6s ease both;
     }
     .comentarios {
-      max-width: 800px;
+      max-width: 720px;
       margin: 4rem auto;
     }
-    .comentarios input,
-    .comentarios textarea {
+    .comentarios-wrapper {
+      /* preserved for legacy, not used */
+    }
+    .comentarios textarea,
+    .comentarios input {
       width: 100%;
       padding: 0.8rem;
       margin-top: 0.5rem;
@@ -127,25 +147,17 @@
       border: 1px solid #333;
       border-radius: 8px;
       font-size: 1rem;
-    }
-    .comentarios button {
-      margin-top: 0.8rem;
-      background-color: var(--highlight);
-      color: var(--bg-color);
-      font-weight: bold;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
+      animation: fadeInUp .6s ease both;
     }
     .comentario {
       background: #111;
+      border: 1px solid #333;
       border-radius: 12px;
       padding: 1rem;
-      margin-top: 1rem;
+      margin: 1rem 0;
       display: flex;
       gap: 1rem;
+      animation: fadeInUp .6s ease both;
     }
     .avatar {
       background: var(--highlight);
@@ -164,82 +176,105 @@
       color: #aaa;
       margin-left: 0.4rem;
     }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
-  <script async src="https://www.instagram.com/embed.js"></script>
 </head>
 <body>
-  <main class="content">
-    <!-- ... texto já incluso acima ... -->
+<details>
+  <summary>👀 Leia também outros quadros e editoriais</summary>
+  <ul>
+    <li><a href="/editorial/as-cidades-ja-foram-noturnas.html">As cidades já foram noturnas</a></li>
+    <li><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
+    <li><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
+    <li><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
+    <li><a href="/editorial/teatros-vazios-tiktoks-cheios.html">Teatros vazios, TikToks cheios</a></li>
+    <li><a href="/editorial/fala-role.html">Fala, ROLÊ!</a></li>
+    <li><a href="/editorial/rolebpm.html">ROLÊ.bpm</a></li>
+    <li><a href="/editorial/posfacio.html">Posfácio</a></li>
+    <li><a href="/editorial/dicas.html">Dicas do ROLÊ</a></li>
+    <li><a href="/editorial/achadinhos.html">Achadinhos do ROLÊ</a></li>
+  </ul>
+</details>
+<main class="content">
+  <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
+  <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
+  <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" class="header" />
+  <article>
+    <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
+    <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
+    <p>Neste primeiro editorial do ROLÊ, a gente se pergunta: o que aconteceu com a noite das cidades? E quem ainda sustenta o fôlego da cultura noturna?</p>
+    <h2>A cidade que silencia cedo</h2>
+    <p>Por décadas, o coração pulsante das cidades brasileiras batia mais forte quando o sol se escondia. Madrugada era sinônimo de liberdade, de experiências coletivas intensas, de vivência cultural espontânea. Era nesse horário que nasciam os movimentos, os encontros inesperados, os amores relâmpago e os surtos criativos.</p>
+    <p>Mas hoje, o cenário mudou. A repressão sonora cresceu. As festas independentes enfrentam cada vez mais burocracias, a fiscalização age como sensor de decibéis e vizinho virou gestor de decoro urbano. Até o after tem que acabar com CPF na nota e licença da prefeitura.</p>
+    <blockquote>“As cidades esqueceram como é pulsar no escuro.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
+    <h2>Quando a noite virou vitrine</h2>
+    <p>Com a ascensão das redes sociais e a estetização da vida, a presença virou conteúdo. A madrugada, que já foi espaço de transgressão e criação, agora corre o risco de ser só cenário pra selfie.</p>
+    <blockquote>“A madrugada virou vitrine de marca.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
+    <p>A lógica do engajamento invadiu a pista. Rolês passaram a ser planejados pensando em como vão aparecer no story, e não em como serão vividos. E nesse processo, muita coisa se perdeu: a escuta, o improviso, o erro bonito, o gesto espontâneo que não cabia no feed.</p>
+    <h2>O corpo decorativo e o som contido</h2>
+    <p>O corpo, que antes vibrava em liberdade na pista, agora muitas vezes performa uma presença domésticada. O som, que já era grito e manifesto, hoje precisa seguir as regras do “bom tom” do novo vizinho gourmet.</p>
+    <blockquote>“A vibe virou filtro. O corpo, decoração.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
+    <p>Com a gentrificação cultural acelerada, muitos espaços alternativos fecharam. Galpões, sedes de coletivo, ocupações artísticas e bares independentes foram substituídos por locais de consumo controlado, com line genérico, dresscode e patrocínio de bebida cara. A cidade perdeu o improviso. A madrugada, a coragem.</p>
+    <h2>Mas e quem ainda segura a noite?</h2>
+    <p>Calma. Ainda tem gente resistindo. Em raves de floresta, festas de garagem, pistas itinerantes e ocupações culturais, a madrugada continua viva mesmo que mais escondida, mesmo que mais frágil.</p>
+    <blockquote>“A cultura da noite resiste no improviso.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
+    <p>São coletivos que criam experiências culturais mesmo sem apoio. DJs que tocam sem line divulgado pra evitar repressão. Pessoas que dançam até o sol nascer em nome de algo maior que um story: a crença de que a noite ainda pode ser espaço de liberdade.</p>
+  </article>
+  <div class="grid-duas-colunas">
+    <div>
+      <h2>O futuro da cidade é noturno ou não será</h2>
+      <p>O que está em jogo é mais do que festa. Estamos falando de políticas públicas, de direitos culturais, de ocupação do espaço urbano por corpos diversos e livres. Reduzir a madrugada a risco é escolher apagar uma parte essencial da vida coletiva.</p>
+      <p>O editorial “As cidades já foram noturnas” é um chamado. Pra lembrar. Pra resistir. E pra perguntar: o que a gente precisa fazer pra trazer a madrugada de volta?</p>
+    </div>
     <div class="instagram-embed">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14" style="width:100%; max-width:540px; margin:0 auto;"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote>
     </div>
-  </main>
-
-  <section class="comentarios">
-    <h2>Deixe um comentário</h2>
-    <form id="form-comentario">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <textarea name="comentario" placeholder="Seu comentário" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <div id="mensagem-sucesso" style="display: none; margin-top: 1rem; color: var(--highlight); font-weight: bold;">
-      Comentário enviado com sucesso!
-    </div>
-    <div id="lista-comentarios"></div>
-  </section>
-
-  <script>
-    const endpoint = "https://script.google.com/macros/s/AKfycbwboSjFcza-EczqagywgYFSkatJp_7YjY6fLAXplpcTuGkSODABDfUmt-VaV4T2Sdo/exec";
-
-    document.getElementById('form-comentario').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const dados = new FormData(form);
-      fetch(endpoint, {
-        method: "POST",
-        body: dados
-      })
-      .then(res => res.text())
-      .then(() => {
-        form.reset();
-        document.getElementById('mensagem-sucesso').style.display = 'block';
-        setTimeout(() => {
-          document.getElementById('mensagem-sucesso').style.display = 'none';
-        }, 3000);
-        carregarComentarios();
+  </div>
+  <nav class="leia-tambem">
+    <h2>Leia também</h2>
+    <ul>
+      <li><a href="/editorial/ja-agradeceu-o-dj.html">Já agradeceu o DJ?</a></li>
+      <li><a href="/editorial/role-ou-rolezao.html">Rolê ou Rolêzão?</a></li>
+      <li><a href="/editorial/o-novo-underground.html">O novo underground</a></li>
+    </ul>
+  </nav>
+</main>
+<section class="comentarios">
+  <h2>Deixe um comentário</h2>
+  <form id="form-comentario">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <textarea name="comentario" placeholder="Seu comentário" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+  <div id="mensagem-sucesso" style="display:none; color:var(--highlight); margin-top:1rem;">Comentário enviado com sucesso!</div>
+  <div id="lista-comentarios"></div>
+</section>
+<script>
+  const endpoint = "https://script.google.com/macros/s/AKfycbwboSjFcza-EczqagywgYFSkatJp_7YjY6fLAXplpcTuGkSODABDfUmt-VaV4T2Sdo/exec";
+  document.getElementById('form-comentario').addEventListener('submit', e => {
+    e.preventDefault(); const form = e.target; const dados = new FormData(form);
+    fetch(endpoint, { method: 'POST', body: dados }).then(() => {
+      form.reset(); document.getElementById('mensagem-sucesso').style.display = 'block';
+      setTimeout(() => document.getElementById('mensagem-sucesso').style.display = 'none', 3000);
+      carregarComentarios();
+    });
+  });
+  function curtirComentario(i) { fetch(`${endpoint}?like=${i}`).then(carregarComentarios); }
+  function carregarComentarios() {
+    fetch(endpoint).then(r => r.json()).then(data => {
+      const lista = document.getElementById('lista-comentarios'); lista.innerHTML = '';
+      data.reverse().forEach(c => {
+        const letra = c.nome.trim().charAt(0).toUpperCase() || 'A';
+        const div = document.createElement('div'); div.className = 'comentario';
+        div.innerHTML = `<div class="avatar">${letra}</div><div class="comentario-texto"><p><strong>${c.nome||'Anônimo'}</strong><span class="hora"> (${c.data})</span></p><p>${c.comentario}</p><button onclick="curtirComentario(${c.index})">❤️ Curtir (<span>${c.likes||0}</span>)</button></div>`;
+        lista.appendChild(div);
       });
     });
-
-    function curtirComentario(index) {
-      fetch(`${endpoint}?like=${index}`)
-        .then(() => carregarComentarios());
-    }
-
-    function carregarComentarios() {
-      fetch(endpoint)
-        .then(response => response.json())
-        .then(data => {
-          const lista = document.getElementById('lista-comentarios');
-          lista.innerHTML = '';
-          data.reverse().forEach(c => {
-            const primeiraLetra = c.nome.trim().charAt(0).toUpperCase() || 'A';
-            const div = document.createElement('div');
-            div.className = 'comentario';
-            div.innerHTML = `
-              <div class="avatar">${primeiraLetra}</div>
-              <div class="comentario-texto">
-                <p><strong>${c.nome || 'Anônimo'}</strong><span class="hora"> (${c.data})</span></p>
-                <p>${c.comentario}</p>
-                <button onclick="curtirComentario(${c.index})">
-                  ❤️ Curtir (<span>${c.likes || 0}</span>)
-                </button>
-              </div>`;
-            lista.appendChild(div);
-          });
-        });
-    }
-
-    carregarComentarios();
-  </script>
+  }
+  carregarComentarios();
+</script>
 </body>
 </html>
