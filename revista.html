@@ -46,8 +46,8 @@
 
   <h2>Editorial</h2>
   <p>Textos instigantes que refletem a cena cultural noturna atual. Reflexões, provocações e debates sobre a cultura noturna e os movimentos da cena.</p>
- <div class="carousel-wrapper">
-  <button class="arrow left">❮</button>
+ <div class="scroll-wrapper">
+  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
   <div class="carousel">
 <div class="card">
   <img src="images/editorial-madrugada.png" alt="As cidades já foram noturnas">
@@ -90,14 +90,14 @@
   <strong>Todo mundo já foi num rolê bom.</strong>
   <p>Rolêzão: quando vira lenda, não só festa.</p>
   <a href="https://www.instagram.com/p/DLlKtmDvjnV/" target="_blank">Ver post completo</a></div>
- </div>
-  <button class="arrow right">❯</button>    <!-- ✅ FORA -->
+  </div>
+  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
 </div>
     
   <h2>Posfácio</h2>
   <p>Encerramos a semana com textos fortes, críticos ou poéticos sobre a cena cultural atual.</p>
-<div class="carousel-wrapper">
-  <button class="arrow left">❮</button>
+<<div class="scroll-wrapper">
+  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
   <div class="carousel">
 <div class="card">
   <img src="images/posfacio-arte-nao-e-favor.png">
@@ -128,14 +128,14 @@
   <strong>Não foi por convite. Foi por rebelião.</strong>
   <p>Orgulho é rebelião: leia o novo Posfácio do ROLÊ!</p>
   <a href="https://www.instagram.com/p/DLdGOdOvozf/" target="_blank">Ver post completo</a></div>
- </div>
-  <button class="arrow right">❯</button>    <!-- ✅ FORA -->
+  </div>
+  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
 </div>
 
   <h2>Dicas do ROLÊ</h2>
   <p>Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</p>
-<div class="carousel-wrapper">
-  <button class="arrow left">❮</button>     <!-- ✅ FORA -->
+<div class="scroll-wrapper">
+  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
   <div class="carousel">
 <div class="card">
   <img src="images/dica-celular-no-role.png">
@@ -160,14 +160,14 @@
   <strong>Tá caro? Tá mesmo.</strong>
   <p>Por que o rolê tá caro? Descubra e valorize a cena.</p>
   <a href="https://www.instagram.com/p/DLaMMB2uFzF/" target="_blank">Ver post completo</a></div>
- </div>
-  <button class="arrow right">❯</button>    <!-- ✅ FORA -->
+  </div>
+  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
 </div>
 
   <h2>Fala, ROLÊ</h2>
   <p>Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</p>
-<div class="carousel-wrapper">
-  <button class="arrow left">❮</button>     <!-- ✅ FORA -->
+<div class="scroll-wrapper">
+  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
   <div class="carousel">
 <div class="card">
   <img src="images/fala-quem-faz-a-cena.png">
@@ -181,13 +181,13 @@
   <p>Jon Soares no Fala, ROLÊ: som que conta histórias.</p>
   <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank">Ver post completo</a></div>
  </div>
-  <button class="arrow right">❯</button>    <!-- ✅ FORA -->
+  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
 </div>
 
   <h2>ROLÊ.bpm</h2>
   <p>Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</p>
-<div class="carousel-wrapper">
-  <button class="arrow left">❮</button>     <!-- ✅ FORA -->
+<div class="scroll-wrapper">
+  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
   <div class="carousel">
 <div class="card">
   <img src="images/bpm-techno-resistencia.png">
@@ -201,21 +201,21 @@
   <p>Do asfalto pro topo, sem pedir licença. Funk é cultura!</p>
   <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank">Ver post completo</a></div>
  </div>
-  <button class="arrow right">❯</button>    <!-- ✅ FORA -->
+  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
 </div>
 
   <h2>Achadinhos do ROLÊ</h2>
   <p>Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</p>
-<div class="carousel-wrapper">
-  <button class="arrow left">❮</button>     <!-- ✅ FORA -->
+<div class="scroll-wrapper">
+  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
   <div class="carousel">
 <div class="card">
   <img src="images/achadinho-floripa-segredos.png">
   <strong>Qual é o segredo dos rolês de Floripa?</strong>
   <p>Achadinhos de Floripa que o Google não mostra!</p>
   <a href="https://www.instagram.com/p/DLavpxbv4BT/" target="_blank">Ver post completo</a></div>
- </div>
-  <button class="arrow right">❯</button>    <!-- ✅ FORA -->
+  </div>
+  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
 </div>
 </main>
 
@@ -234,5 +234,20 @@
 <script src="scripts/topo.js"></script>
 <script src="scripts/menu.js"></script>
 <script src="scripts/carrossel.js"></script>
+  <script>
+  function scrollRight(carouselClass) {
+    const carousel = document.querySelector(carouselClass);
+    if (carousel) {
+      carousel.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  }
+
+  function scrollLeft(carouselClass) {
+    const carousel = document.querySelector(carouselClass);
+    if (carousel) {
+      carousel.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  }
+</script>
 </body>
 </html>
