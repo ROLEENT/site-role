@@ -220,27 +220,10 @@ scroll-snap-type: x mandatory;
       gtag('config', 'G-G8Z07V63HQ');
     </script>
   </head>
-  <body>
-    <header role="banner">
-<img src="images/logo-role.png" alt="Logotipo da ROLÊ ENTRETENIMENTO" class="logo" />
-      <nav role="navigation" aria-label="Navegação principal">
-        <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." aria-label="Buscar" />
-        <div class="dropdown">
-  <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">Explorar ▾</button>
-  <div class="dropdown-content">
-    <a href="index.html">Página Inicial</a>
-    <a href="revista.html">Revista ROLÊ</a>
-    <a href="vitrine-cultural.html">Vitrine Cultural</a>
-    <a href="descontos.html">Descontos</a>
-    <a href="contato.html">Contato</a>
-    <a href="quem-somos.html">Quem Somos</a>
-  </div>
-</div>
-        <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" aria-pressed="false" onclick="toggleTheme(this)">🌓</div>
-      </nav>
-    </header>
-
-    <div class="banner">
+    <body>
+  <!-- Cabeçalho compartilhado -->
+  <div id="site-header"></div>
+       <div class="banner">
 <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
     </div>
 
@@ -280,15 +263,6 @@ scroll-snap-type: x mandatory;
       </div>
     </main>
 
-    <footer role="contentinfo">
-      <p>
-        © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
-        <a href="politica.html">Política de Privacidade</a> ·
-        <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-        <a href="termos-organizador.html">Termos do Organizador</a> ·
-        <a href="politica-spam.html">Política Antispam</a>
-      </p>
-    </footer>
     <script>
 function toggleTheme(el) {
   document.body.classList.toggle('light');
@@ -367,5 +341,21 @@ container.scrollTo({
  }, 300);
 });
 </script>
-  </body>
+        <!-- Rodapé compartilhado -->
+  <div id="site-footer"></div>
+      <script>
+  async function loadFragment(id, url) {
+    try {
+      const res  = await fetch(url);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    } catch (e) {
+      console.error('Erro ao carregar', url, e);
+    }
+  }
+
+  loadFragment('site-header', '/header.html');
+  loadFragment('site-footer', '/footer.html');
+</script>
+</body>
 </html>
