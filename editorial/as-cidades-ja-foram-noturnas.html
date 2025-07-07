@@ -4,32 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>As cidades já foram noturnas – Revista ROLÊ</title>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const leiaMenu     = document.getElementById('leia');
-    const explorarMenu = document.getElementById('explorar');
-    const btnLe        = document.getElementById('btnLe');
-    const btnEx        = document.getElementById('btnEx');
-
-    btnLe.addEventListener('click', e => {
-      e.stopPropagation();
-      leiaMenu.classList.toggle('open');
-      explorarMenu.classList.remove('open');
-    });
-
-    btnEx.addEventListener('click', e => {
-      e.stopPropagation();
-      explorarMenu.classList.toggle('open');
-      leiaMenu.classList.remove('open');
-    });
-
-    // Fecha ambos ao clicar fora
-    document.addEventListener('click', () => {
-      leiaMenu.classList.remove('open');
-      explorarMenu.classList.remove('open');
-    });
-  });
-</script>
   <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
   <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
   <meta property="og:description" content="Um texto sobre a repressão à vida noturna, a cultura da presença e a resistência dos que ainda fazem a cidade respirar." />
@@ -138,8 +112,8 @@
             Leia também <span class="seta">▼</span>
           </button>
           <ul class="list">
-            <!-- seus links aqui -->
-          </ul>
+  <li><a href="/editorial/teatros-vazios.html">Teatros vazios, TikToks cheios</a></li>
+</ul>
         </div>
 
         <!-- Menu Explorar -->
@@ -158,8 +132,7 @@
         </div>
 
         <!-- Tema -->
-        <div class="theme-toggle" role="button" tabindex="0" aria-pressed="false"
-             onclick="toggleTheme(this)">🌓</div>
+        <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">🌓</div>
 
         <!-- Compartilhamento -->
        <div class="share">
@@ -173,9 +146,9 @@
   <a href="https://api.whatsapp.com/send?text=… https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="WhatsApp">
     <img src="/images/whatsapp.svg" alt="" class="icon" />
   </a>
-  <button onclick="shareOnInstagram()" aria-label="Instagram">
-    <img src="/images/instagram.svg" alt="" class="icon" />
-  </button>
+  <a href="https://instagram.com/role.ent" target="_blank" aria-label="Instagram">
+  <img src="/images/instagram.svg" alt="" class="icon" />
+</a>
 </div>
       </div>
     </div>
@@ -240,7 +213,6 @@
     <a href="politica-spam.html">Política Antispam</a>
     
   </footer>
-<script async src="//www.instagram.com/embed.js"></script>
 
   <!-- SCRIPTS -->
 <script>
