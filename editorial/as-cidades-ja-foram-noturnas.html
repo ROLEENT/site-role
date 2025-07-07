@@ -31,22 +31,25 @@
     .logo { height:40px; }
     .controls { display:flex; align-items:center; gap:1rem; }
     .menu { position:relative; }
-    .explorar-btn { background:var(--bg); color:var(--text); border:2px solid var(--highlight); padding:.5rem 1rem; border-radius:4px; cursor:pointer; transition:all .2s; }
+    .explorar-btn { background:var(--bg); color:var(--text); border:2px solid var(--highlight); padding:.5rem 1rem; border-radius:4px; cursor:pointer; transition:background .2s, color .2s; }
     .explorar-btn:hover { background:var(--highlight); color:var(--bg); }
     .list { position:absolute; top:100%; left:0; background:var(--card); border:1px solid var(--highlight); border-radius:4px; display:none; min-width:160px; box-shadow:0 4px 8px rgba(0,0,0,.4); z-index:10; }
-    .open > .list { display:block; }
+    .menu.open .list { display:block; }
     .list li { list-style:none; }
     .list a { display:block; padding:.5rem 1rem; transition:background .2s; }
     .list li.editorial a { color:var(--menu); }
     .list li.quadro a { color:var(--quadro); }
     .list a:hover { background:var(--highlight); color:var(--bg); }
     .seta { margin-left:.3rem; transition:transform .2s; }
-    .open > .explorar-btn > .seta { transform:rotate(180deg); }
+    .menu.open .explorar-btn .seta { transform:rotate(180deg); }
 
     .share { display:flex; align-items:center; gap:.5rem; }
     .share-label { font-weight:bold; white-space:nowrap; }
-    .share a, .share button { background:var(--highlight); color:var(--bg); padding:.4rem .8rem; border:none; border-radius:6px; cursor:pointer; transition:background .2s; font-size:.9rem; }
+    .share a, .share button { background:var(--highlight); color:var(--bg); padding:.4rem .6rem; border:none; border-radius:6px; cursor:pointer; transition:background .2s; font-size:1.2rem; line-height:1; }
     .share a:hover, .share button:hover { background:var(--card); color:var(--text); }
+    @media (max-width:600px) {
+      .share-label { display:none; }
+    }
 
     .content { max-width:720px; margin:2rem auto; padding:0 1rem; }
     h1 { font-size:2rem; margin:.5rem 0; text-align:center; color:var(--highlight); }
@@ -80,40 +83,64 @@
   </style>
 </head>
 <body>
+
+  <!-- CABEÇALHO -->
   <header>
     <div class="top-controls">
       <img src="/images/logo-role.png" alt="Logo ROLÊ" class="logo" />
       <div class="controls">
+
+        <!-- Menu Leia também (se quiser) -->
         <div class="menu" id="leia">
-          <button class="explorar-btn" id="btnLe">Leia também <span class="seta">▼</span></button>
+          <button class="explorar-btn" id="btnLe">
+            Leia também <span class="seta">▼</span>
+          </button>
           <ul class="list">
-            <!-- itens como antes -->
+            <!-- seus links aqui -->
           </ul>
         </div>
+
+        <!-- Menu Explorar -->
         <div class="menu" id="explorar">
-          <button class="explorar-btn" id="btnEx">Explorar <span class="seta">▼</span></button>
+          <button class="explorar-btn" id="btnEx">
+            Explorar <span class="seta">▼</span>
+          </button>
           <ul class="list">
-            <!-- itens explorar -->
+            <li><a href="/index.html">Página Inicial</a></li>
+            <li><a href="/revista.html">Revista ROLÊ</a></li>
+            <li><a href="/vitrine-cultural.html">Vitrine Cultural</a></li>
+            <li><a href="/descontos.html">Descontos</a></li>
+            <li><a href="/contato.html">Contato</a></li>
+            <li><a href="/quem-somos.html">Quem Somos</a></li>
           </ul>
         </div>
+
+        <!-- Tema -->
+        <div class="theme-toggle" role="button" tabindex="0" aria-pressed="false"
+             onclick="toggleTheme(this)">🌓</div>
+
+        <!-- Compartilhamento -->
         <div class="share">
-          <span class="share-label">Compartilhe este artigo:</span>
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="https://api.whatsapp.com/send?text=Confira%20este%20editorial!%20https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank">WhatsApp</a>
-          <button onclick="shareOnInstagram()">Instagram</button>
+          <span class="share-label">Compartilhe:</span>
+          <a href="https://www.facebook.com/sharer.php?u=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html"
+             target="_blank" aria-label="Facebook">📘</a>
+          <a href="https://twitter.com/intent/tweet?url=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html"
+             target="_blank" aria-label="Twitter">🐦</a>
+          <a href="https://api.whatsapp.com/send?text=Confira este editorial! https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html"
+             target="_blank" aria-label="WhatsApp">💬</a>
+          <button onclick="shareOnInstagram()" aria-label="Instagram">📸</button>
         </div>
+
       </div>
     </div>
   </header>
 
+  <!-- CONTEÚDO -->
   <div class="content">
-    <h1>A madrugada sumiu? O fim das noites livres nas grandes cidades brasileiras</h1>
+    <h1>A madrugada sumiu? …</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
-    <img src="/images/editorial-madrugada.png" alt="Capa do editorial" class="header" />
+    <img src="/images/editorial-madrugada.png" alt="Capa" class="header" />
     <article>
-      <!-- conteúdo editorial -->
-    </article>
     <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
     <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
     <p>Neste primeiro editorial do ROLÊ, a gente se pergunta: o que aconteceu com a noite das cidades? E quem ainda sustenta o fôlego da cultura noturna?</p>
@@ -134,12 +161,20 @@
     <blockquote>“A cultura da noite resiste no improviso.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
     <p>São coletivos que criam experiências culturais mesmo sem apoio. DJs que tocam sem line divulgado pra evitar repressão. Pessoas que dançam até o sol nascer em nome de algo maior que um story: a crença de que a noite ainda pode ser espaço de liberdade.</p>
   </article>
-   <div class="grid">
-      <a href="https://www.instagram.com/p/DJ2mpGfvPxL/" target="_blank"><h2>Leia mais no post do Instagram</h2></a>
-      <div class="embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/" data-instgrm-version="14"></blockquote></div>
+
+    <div class="grid">
+      <a href="https://www.instagram.com/p/DJ2mpGfvPxL/" target="_blank">
+        <h2>Leia mais no post do Instagram</h2>
+      </a>
+      <div class="embed">
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/"
+          data-instgrm-version="14"></blockquote>
+      </div>
     </div>
   </div>
 
+  <!-- COMENTÁRIOS -->
   <section class="comentarios">
     <h2>Deixe um comentário</h2>
     <form id="comment-form">
@@ -150,36 +185,52 @@
     <div id="comment-list" class="comment-list"></div>
   </section>
 
+  <!-- RODAPÉ -->
   <footer>
-    © 2025 ROLÊ ENTRETENIMENTO · <a href="politica.html">Política de Privacidade</a> · <a href="termos-usuario.html">Termos do Rolezeiro</a> · <a href="termos-organizador.html">Termos do Organizador</a> · <a href="politica-spam.html">Política Antispam</a>
+    © 2025 ROLÊ ENTRETENIMENTO ·
+    <a href="politica.html">Política de Privacidade</a> ·
+    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+    <a href="termos-organizador.html">Termos do Organizador</a> ·
+    <a href="politica-spam.html">Política Antispam</a>
   </footer>
 
+  <!-- SCRIPTS -->
   <script>
-    // dropdown menus
-    document.getElementById('btnLe').onclick = () => document.getElementById('leia').classList.toggle('open');
-    document.getElementById('btnEx').onclick = () => document.getElementById('explorar').classList.toggle('open');
+    // Dropdowns
+    document.getElementById('btnLe').onclick = () =>
+      document.getElementById('leia').classList.toggle('open');
+    document.getElementById('btnEx').onclick = () =>
+      document.getElementById('explorar').classList.toggle('open');
     document.addEventListener('click', e => {
-      if (!document.getElementById('leia').contains(e.target)) document.getElementById('leia').classList.remove('open');
-      if (!document.getElementById('explorar').contains(e.target)) document.getElementById('explorar').classList.remove('open');
+      if (!document.getElementById('leia').contains(e.target))
+        document.getElementById('leia').classList.remove('open');
+      if (!document.getElementById('explorar').contains(e.target))
+        document.getElementById('explorar').classList.remove('open');
     });
 
-    // compartilhar Instagram
+    // Compartilhar Instagram
     function shareOnInstagram() {
       const data = { title: document.title, url: location.href };
-      if (navigator.share) navigator.share(data).catch(()=>{});
-      else prompt('Copie este link para compartilhar:', location.href);
+      if (navigator.share) navigator.share(data).catch(() => {});
+      else prompt('Copie este link:', location.href);
     }
 
-    // comentários
-    const form = document.getElementById('comment-form');
-    const list = document.getElementById('comment-list');
+    // Tema claro/escuro
+    function toggleTheme(el) {
+      document.body.classList.toggle('light');
+      el.setAttribute('aria-pressed', document.body.classList.contains('light'));
+    }
+
+    // Comentários locais
+    const form = document.getElementById('comment-form'),
+          list = document.getElementById('comment-list');
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const texto = document.getElementById('texto').value;
-      const div = document.createElement('div');
+      const nome = document.getElementById('nome').value,
+            txt  = document.getElementById('texto').value,
+            div  = document.createElement('div');
       div.className = 'comment';
-      div.innerHTML = `<strong>${nome}</strong><p>${texto}</p>`;
+      div.innerHTML = `<strong>${nome}</strong><p>${txt}</p>`;
       list.prepend(div);
       form.reset();
     });
