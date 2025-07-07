@@ -130,6 +130,28 @@
     .list {
   min-width: 240px; /* maior */
 }
+    .theme-toggle img.icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%; /* opcional */
+  cursor: pointer;
+}
+    @media (max-width: 600px) {
+  .list a {
+    font-size: 0.9rem;
+    max-width: 180px;
+    white-space: normal;
+    text-align: left;
+  }
+}
+    @media (max-width: 600px) {
+  .share {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+    padding: 0 .5rem;
+  }
+      btn.setAttribute('aria-expanded', menu.classList.contains('open'));
   </style>
 </head>
 <body>
@@ -142,7 +164,7 @@
 
         <!-- Menu Leia também (se quiser) -->
         <div class="menu" id="leia">
-          <button class="explorar-btn" id="btnLe">
+          <button class="explorar-btn" id="btnLe" aria-haspopup="true" aria-expanded="false">
             Leia também <span class="seta">▼</span>
           </button>
           <ul class="list">
@@ -167,7 +189,7 @@
 
         <!-- Tema -->
 <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">
-  <img src="/images/theme-toggle.svg" class="icon" alt="Alternar tema" />
+  <img src="/images/theme-toggle.gif" class="icon" alt="Alternar tema" />
 </div>
         <!-- Compartilhamento -->
        <div class="share">
