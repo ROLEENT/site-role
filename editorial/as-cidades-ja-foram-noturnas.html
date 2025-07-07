@@ -35,7 +35,15 @@
     .list { position:absolute; top:100%; left:0; background:var(--card); border:1px solid var(--highlight); border-radius:4px; display:none; min-width:160px; box-shadow:0 4px 8px rgba(0,0,0,.4); z-index:10; }
     .menu.open .list { display:block; }
     .list li { list-style:none; }
-    .list a { display:block; padding:.5rem 1rem; transition:background .2s; }
+   .list a {
+  display: block;
+  padding: .5rem 1rem;
+  transition: background .2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
     .list li.editorial a { color:var(--menu); }
     .list li.quadro a { color:var(--quadro); }
     .list a:hover { background:var(--highlight); color:var(--bg); }
@@ -96,6 +104,32 @@
 }
     .menu.open .list { display: block; }
 .menu.open .explorar-btn .seta { transform: rotate(180deg); }
+    @media (max-width: 600px) {
+  .top-controls {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+  }
+
+  .share {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .share-label {
+    width: 100%;
+    text-align: center;
+  }
+}
+    .list {
+  min-width: 240px; /* maior */
+}
   </style>
 </head>
 <body>
@@ -132,8 +166,9 @@
         </div>
 
         <!-- Tema -->
-        <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">🌓</div>
-
+<div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">
+  <img src="/images/moon.svg" class="icon" alt="Alternar tema" />
+</div>
         <!-- Compartilhamento -->
        <div class="share">
   <span class="share-label">Compartilhe:</span>
@@ -143,7 +178,7 @@
   <a href="https://twitter.com/intent/tweet?url=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="Twitter">
     <img src="/images/x.svg"  alt="" class="icon" />
   </a>
-  <a href="https://api.whatsapp.com/send?text=… https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="WhatsApp">
+  <a href="https://api.whatsapp.com/send?text=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="WhatsApp">
     <img src="/images/whatsapp.svg" alt="" class="icon" />
   </a>
   <a href="https://instagram.com/role.ent" target="_blank" aria-label="Instagram">
