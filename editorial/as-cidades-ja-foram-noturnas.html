@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>As cidades já foram noturnas – Revista ROLÊ</title>
-    <meta name="description" content="As cidades já foram noturnas? Neste editorial, o ROLÊ reflete sobre a perda da madrugada nas grandes cidades brasileiras e a resistência da cultura noturna." />
   <script>
   document.addEventListener('DOMContentLoaded', () => {
     const leiaMenu     = document.getElementById('leia');
@@ -71,11 +70,21 @@
 
     .share { display:flex; align-items:center; gap:.5rem; }
     .share-label { font-weight:bold; white-space:nowrap; }
-    .share a, .share button { background:var(--highlight); color:var(--bg); padding:.4rem .6rem; border:none; border-radius:6px; cursor:pointer; transition:background .2s; font-size:1.2rem; line-height:1; }
-    .share a:hover, .share button:hover { background:var(--card); color:var(--text); }
-    @media (max-width:600px) {
-      .share-label { display:none; }
-    }
+.share a,
+.share button {
+  background: none;
+  padding: .3rem; 
+}
+.share img.icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.share a:hover,
+.share button:hover {
+  background: var(--card);
+  color: var(--text);
+}
 
     .content { max-width:720px; margin:2rem auto; padding:0 1rem; }
     h1 { font-size:2rem; margin:.5rem 0; text-align:center; color:var(--highlight); }
@@ -236,53 +245,46 @@
   <!-- SCRIPTS -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const leiaMenu     = document.getElementById('leia');
-  const explorarMenu = document.getElementById('explorar');
-  const btnLe        = document.getElementById('btnLe');
-  const btnEx        = document.getElementById('btnEx');
-
-  btnLe.addEventListener('click', e => {
-    e.stopPropagation();
-    leiaMenu.classList.toggle('open');
-    explorarMenu.classList.remove('open');
+  // DROPDOWNS
+  document.querySelectorAll('.menu').forEach(menu => {
+    const btn = menu.querySelector('button.explorar-btn');
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      document.querySelectorAll('.menu').forEach(m => m !== menu && m.classList.remove('open'));
+      menu.classList.toggle('open');
+    });
   });
-
-  btnEx.addEventListener('click', e => {
-    e.stopPropagation();
-    explorarMenu.classList.toggle('open');
-    leiaMenu.classList.remove('open');
-  });
-
-  // Fecha ambos ao clicar fora
   document.addEventListener('click', () => {
-    leiaMenu.classList.remove('open');
-    explorarMenu.classList.remove('open');
+    document.querySelectorAll('.menu').forEach(m => m.classList.remove('open'));
+  });
+
+  // COMENTÁRIOS
+  document.getElementById('comment-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value;
+    const txt  = document.getElementById('texto').value;
+    const div  = document.createElement('div');
+    div.className = 'comment';
+    div.innerHTML = `<strong>${nome}</strong><p>${txt}</p>`;
+    document.getElementById('comment-list').prepend(div);
+    e.target.reset();
   });
 });
 
+// COMPARTILHAR INSTAGRAM
 function shareOnInstagram() {
   const data = { title: document.title, url: location.href };
   if (navigator.share) navigator.share(data).catch(()=>{});
   else prompt('Copie este link para compartilhar:', location.href);
 }
 
+// TOGGLE TEMA
 function toggleTheme(el) {
   document.body.classList.toggle('light');
   el.setAttribute('aria-pressed', document.body.classList.contains('light'));
 }
-
-// comentários locais
-document.getElementById('comment-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const nome = document.getElementById('nome').value;
-  const txt  = document.getElementById('texto').value;
-  const div  = document.createElement('div');
-  div.className = 'comment';
-  div.innerHTML = `<strong>${nome}</strong><p>${txt}</p>`;
-  document.getElementById('comment-list').prepend(div);
-  e.target.reset();
-});
 </script>
+
 <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
