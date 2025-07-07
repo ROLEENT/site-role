@@ -80,6 +80,11 @@
 
     footer { border-top:2px solid var(--highlight); padding:1rem; text-align:center; font-size:.8rem; color:#aaa; }
     footer a { color:var(--highlight); margin:0 .5rem; }
+    .share img.icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
   </style>
 </head>
 <body>
@@ -120,17 +125,21 @@
              onclick="toggleTheme(this)">🌓</div>
 
         <!-- Compartilhamento -->
-        <div class="share">
-          <span class="share-label">Compartilhe:</span>
-          <a href="https://www.facebook.com/sharer.php?u=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html"
-             target="_blank" aria-label="Facebook">📘</a>
-          <a href="https://twitter.com/intent/tweet?url=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html"
-             target="_blank" aria-label="Twitter">🐦</a>
-          <a href="https://api.whatsapp.com/send?text=Confira este editorial! https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html"
-             target="_blank" aria-label="WhatsApp">💬</a>
-          <button onclick="shareOnInstagram()" aria-label="Instagram">📸</button>
-        </div>
-
+       <div class="share">
+  <span class="share-label">Compartilhe:</span>
+  <a href="https://www.facebook.com/sharer.php?u=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="Facebook">
+    <img src="/icons/facebook.svg" alt="" class="icon" />
+  </a>
+  <a href="https://twitter.com/intent/tweet?url=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="Twitter">
+    <img src="/icons/twitter.svg"  alt="" class="icon" />
+  </a>
+  <a href="https://api.whatsapp.com/send?text=… https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="WhatsApp">
+    <img src="/icons/whatsapp.svg" alt="" class="icon" />
+  </a>
+  <button onclick="shareOnInstagram()" aria-label="Instagram">
+    <img src="/icons/instagram.svg" alt="" class="icon" />
+  </button>
+</div>
       </div>
     </div>
   </header>
@@ -192,49 +201,54 @@
     <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
     <a href="termos-organizador.html">Termos do Organizador</a> ·
     <a href="politica-spam.html">Política Antispam</a>
+    
   </footer>
+<script async src="//www.instagram.com/embed.js"></script>
 
   <!-- SCRIPTS -->
   <script>
-    // Dropdowns
-    document.getElementById('btnLe').onclick = () =>
-      document.getElementById('leia').classList.toggle('open');
-    document.getElementById('btnEx').onclick = () =>
-      document.getElementById('explorar').classList.toggle('open');
-    document.addEventListener('click', e => {
-      if (!document.getElementById('leia').contains(e.target))
-        document.getElementById('leia').classList.remove('open');
-      if (!document.getElementById('explorar').contains(e.target))
-        document.getElementById('explorar').classList.remove('open');
+  // 1) dropdown “Leia também” + “Explorar”
+  document.querySelectorAll('.menu').forEach(menu => {
+    const btn = menu.querySelector('button.explorar-btn');
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      document.querySelectorAll('.menu').forEach(m => {
+        if (m !== menu) m.classList.remove('open');
+      });
+      menu.classList.toggle('open');
     });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.menu').forEach(m => m.classList.remove('open'));
+  });
 
-    // Compartilhar Instagram
-    function shareOnInstagram() {
-      const data = { title: document.title, url: location.href };
-      if (navigator.share) navigator.share(data).catch(() => {});
-      else prompt('Copie este link:', location.href);
-    }
+  // 2) compartilhar no Instagram
+  function shareOnInstagram() {
+    const data = { title: document.title, url: location.href };
+    if (navigator.share) navigator.share(data).catch(()=>{});
+    else prompt('Copie este link para compartilhar:', location.href);
+  }
 
-    // Tema claro/escuro
-    function toggleTheme(el) {
-      document.body.classList.toggle('light');
-      el.setAttribute('aria-pressed', document.body.classList.contains('light'));
-    }
+  // 3) alterna tema claro/escuro
+  function toggleTheme(el) {
+    document.body.classList.toggle('light');
+    el.setAttribute('aria-pressed', document.body.classList.contains('light'));
+  }
 
-    // Comentários locais
-    const form = document.getElementById('comment-form'),
-          list = document.getElementById('comment-list');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value,
-            txt  = document.getElementById('texto').value,
-            div  = document.createElement('div');
-      div.className = 'comment';
-      div.innerHTML = `<strong>${nome}</strong><p>${txt}</p>`;
-      list.prepend(div);
-      form.reset();
-    });
-  </script>
-  <script async src="//www.instagram.com/embed.js"></script>
+  // 4) comentários locais
+  const form = document.getElementById('comment-form'),
+        list = document.getElementById('comment-list');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value,
+          txt  = document.getElementById('texto').value,
+          div  = document.createElement('div');
+    div.className = 'comment';
+    div.innerHTML = `<strong>${nome}</strong><p>${txt}</p>`;
+    list.prepend(div);
+    form.reset();
+  });
+</script>
+<script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
