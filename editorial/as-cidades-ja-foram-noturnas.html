@@ -139,44 +139,22 @@
   border-radius: 50%; /* opcional */
   cursor: pointer;
 }
-    @media (max-width: 600px) {
-  .list a {
-    font-size: 0.9rem;
-    max-width: 180px;
-    white-space: normal;
-    text-align: left;
-  }
+    .top-controls {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
-    @media (max-width: 600px) {
-  .share {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .5rem;
-    padding: 0 .5rem;
-  }
-      .menus-wrapper {
+
+.menus-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.menus-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  max-width: 720px;
-  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
@@ -185,59 +163,59 @@
     gap: 0.6rem;
   }
 }
-
-  .menus-wrapper {
-    flex-direction: column;
-  }
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
 }
-
   </style>
 </head>
 <body>
 
   <!-- CABEÇALHO -->
-  <header>
-   <div class="top-controls">
-  <img src="/images/logo-role.png" alt="Logo ROLÊ" class="logo" />
-</div>
-    
-     <div class="controls">
-  <div class="menus-wrapper">
+<header>
+  <div class="top-controls">
+    <img src="/images/logo-role.png" alt="Logo ROLÊ" class="logo" />
+
+    <div class="controls">
+      <div class="menus-wrapper">
   
     <!-- Menu Leia também -->
     <div class="menu" id="leia">
-      <button class="explorar-btn" id="btnLe" aria-haspopup="true" aria-expanded="false">
-        Leia também <span class="seta">▼</span>
-      </button>
-      <ul class="list">
-        <li><a href="/editorial/teatros-vazios.html">Teatros vazios, TikToks cheios</a></li>
-      </ul>
-    </div>
+          <button class="explorar-btn" id="btnLe" aria-haspopup="true" aria-expanded="false">
+            Leia também <span class="seta">▼</span>
+          </button>
+          <ul class="list">
+            <li><a href="/editorial/teatros-vazios.html">Teatros vazios, TikToks cheios</a></li>
+          </ul>
+        </div>
 
     <!-- Menu Explorar -->
     <div class="menu" id="explorar">
-      <button class="explorar-btn" id="btnEx">
-        Explorar <span class="seta">▼</span>
-      </button>
-      <ul class="list">
-        <li><a href="/index.html">Página Inicial</a></li>
-        <li><a href="/revista.html">Revista ROLÊ</a></li>
-        <li><a href="/vitrine-cultural.html">Vitrine Cultural</a></li>
-        <li><a href="/descontos.html">Descontos</a></li>
-        <li><a href="/contato.html">Contato</a></li>
-        <li><a href="/quem-somos.html">Quem Somos</a></li>
-      </ul>
-    </div>
+          <button class="explorar-btn" id="btnEx">
+            Explorar <span class="seta">▼</span>
+          </button>
+          <ul class="list">
+            <li><a href="/index.html">Página Inicial</a></li>
+            <li><a href="/revista.html">Revista ROLÊ</a></li>
+            <li><a href="/vitrine-cultural.html">Vitrine Cultural</a></li>
+            <li><a href="/descontos.html">Descontos</a></li>
+            <li><a href="/contato.html">Contato</a></li>
+            <li><a href="/quem-somos.html">Quem Somos</a></li>
+          </ul></div>
+        
+        </div>
+
 
     <!-- Botão de tema -->
     <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">
-      <img src="/images/theme-toggle.gif" class="icon" alt="Alternar tema" />
-    </div>
-
+    <img src="/images/theme-toggle.gif" class="icon" alt="Alternar tema" />
   </div>
 </div>
-      
-  </header>
+</header>
 
   <!-- CONTEÚDO -->
   <div class="content">
@@ -291,9 +269,8 @@
         <blockquote class="instagram-media"
           data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/"
           data-instgrm-version="14"></blockquote>
-      </div>
-    </div>
   </div>
+</div>
 
   <!-- COMENTÁRIOS -->
   <section class="comentarios">
