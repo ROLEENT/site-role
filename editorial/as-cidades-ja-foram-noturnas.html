@@ -34,9 +34,7 @@
     body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family:'League Spartan',sans-serif; line-height:1.5; }
     a { text-decoration:none; color:inherit; }
     header { border-bottom:2px solid var(--highlight); }
-    .top-controls { max-width:1024px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:1rem; }
     .logo { height:40px; }
-    .controls { display:flex; align-items:center; gap:1rem; }
     .menu { position:relative; }
     .explorar-btn { background:var(--bg); color:var(--text); border:2px solid var(--highlight); padding:.5rem 1rem; border-radius:4px; cursor:pointer; transition:background .2s, color .2s; }
     .explorar-btn:hover { background:var(--highlight); color:var(--bg); }
@@ -139,16 +137,7 @@
   border-radius: 50%; /* opcional */
   cursor: pointer;
 }
-    .top-controls {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
+  
 .menus-wrapper {
   display: flex;
   align-items: center;
@@ -171,6 +160,29 @@
   gap: 1rem;
   width: 100%;
 }
+    .top-controls {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.top-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Logo à esquerda */
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center; /* Centraliza menus + botão de tema */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
   </style>
 </head>
 <body>
@@ -178,13 +190,14 @@
   <!-- CABEÇALHO -->
 <header>
   <div class="top-controls">
-    <img src="/images/logo-role.png" alt="Logo ROLÊ" class="logo" />
+    <div class="top-row">
+      <img src="/images/logo-role.png" alt="Logo ROLÊ" class="logo" />
+    </div>
 
     <div class="controls">
       <div class="menus-wrapper">
-  
-    <!-- Menu Leia também -->
-    <div class="menu" id="leia">
+        <!-- Menu Leia também -->
+        <div class="menu" id="leia">
           <button class="explorar-btn" id="btnLe" aria-haspopup="true" aria-expanded="false">
             Leia também <span class="seta">▼</span>
           </button>
@@ -193,8 +206,8 @@
           </ul>
         </div>
 
-    <!-- Menu Explorar -->
-    <div class="menu" id="explorar">
+        <!-- Menu Explorar -->
+        <div class="menu" id="explorar">
           <button class="explorar-btn" id="btnEx">
             Explorar <span class="seta">▼</span>
           </button>
@@ -205,17 +218,18 @@
             <li><a href="/descontos.html">Descontos</a></li>
             <li><a href="/contato.html">Contato</a></li>
             <li><a href="/quem-somos.html">Quem Somos</a></li>
-          </ul></div>
-        
+          </ul>
         </div>
+      </div>
 
-
-    <!-- Botão de tema -->
-    <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">
-    <img src="/images/theme-toggle.gif" class="icon" alt="Alternar tema" />
+      <!-- Botão de tema -->
+      <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">
+        <img src="/images/theme-toggle.gif" class="icon" alt="Alternar tema" />
+      </div>
+    </div>
   </div>
-</div>
 </header>
+
 
   <!-- CONTEÚDO -->
   <div class="content">
