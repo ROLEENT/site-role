@@ -22,6 +22,14 @@
       --menu: #a95ce6;
       --quadro: #fff;
     }
+    body.light {
+  --bg: #ffffff;
+  --text: #2e2e2e;
+  --highlight: #c77dff;
+  --card: #f3f3f3;
+  --menu: #a95ce6;
+  --quadro: #000000;
+}
     * { box-sizing: border-box; }
     body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family:'League Spartan',sans-serif; line-height:1.5; }
     a { text-decoration:none; color:inherit; }
@@ -274,6 +282,11 @@
   <!-- SCRIPTS -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  // Aplicar tema salvo
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+  }
+
   // DROPDOWNS
   document.querySelectorAll('.menu').forEach(menu => {
     const btn = menu.querySelector('button.explorar-btn');
@@ -283,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.classList.toggle('open');
     });
   });
+
   document.addEventListener('click', () => {
     document.querySelectorAll('.menu').forEach(m => m.classList.remove('open'));
   });
@@ -310,9 +324,12 @@ function shareOnInstagram() {
 // TOGGLE TEMA
 function toggleTheme(el) {
   document.body.classList.toggle('light');
-  el.setAttribute('aria-pressed', document.body.classList.contains('light'));
+  const isLight = document.body.classList.contains('light');
+  el.setAttribute('aria-pressed', isLight);
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
 }
 </script>
+
 
 <script async src="//www.instagram.com/embed.js"></script>
 </body>
