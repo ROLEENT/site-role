@@ -154,7 +154,21 @@
     gap: .5rem;
     padding: 0 .5rem;
   }
-      btn.setAttribute('aria-expanded', menu.classList.contains('open'));
+      .menus-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .menus-wrapper {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -163,37 +177,40 @@
   <header>
     <div class="top-controls">
       <img src="/images/logo-role.png" alt="Logo ROLÊ" class="logo" />
-      <div class="controls">
-        </div>
+     <div class="controls">
+  <div class="menus-wrapper">
+  
+    <!-- Menu Leia também -->
+    <div class="menu" id="leia">
+      <button class="explorar-btn" id="btnLe" aria-haspopup="true" aria-expanded="false">
+        Leia também <span class="seta">▼</span>
+      </button>
+      <ul class="list">
+        <li><a href="/editorial/teatros-vazios.html">Teatros vazios, TikToks cheios</a></li>
+      </ul>
+    </div>
 
-        <!-- Menu Leia também (se quiser) -->
-        <div class="menu" id="leia">
-          <button class="explorar-btn" id="btnLe" aria-haspopup="true" aria-expanded="false">
-            Leia também <span class="seta">▼</span>
-          </button>
-          <ul class="list">
-  <li><a href="/editorial/teatros-vazios.html">Teatros vazios, TikToks cheios</a></li>
-</ul>
-        </div>
+    <!-- Menu Explorar -->
+    <div class="menu" id="explorar">
+      <button class="explorar-btn" id="btnEx">
+        Explorar <span class="seta">▼</span>
+      </button>
+      <ul class="list">
+        <li><a href="/index.html">Página Inicial</a></li>
+        <li><a href="/revista.html">Revista ROLÊ</a></li>
+        <li><a href="/vitrine-cultural.html">Vitrine Cultural</a></li>
+        <li><a href="/descontos.html">Descontos</a></li>
+        <li><a href="/contato.html">Contato</a></li>
+        <li><a href="/quem-somos.html">Quem Somos</a></li>
+      </ul>
+    </div>
 
-        <!-- Menu Explorar -->
-        <div class="menu" id="explorar">
-          <button class="explorar-btn" id="btnEx">
-            Explorar <span class="seta">▼</span>
-          </button>
-          <ul class="list">
-            <li><a href="/index.html">Página Inicial</a></li>
-            <li><a href="/revista.html">Revista ROLÊ</a></li>
-            <li><a href="/vitrine-cultural.html">Vitrine Cultural</a></li>
-            <li><a href="/descontos.html">Descontos</a></li>
-            <li><a href="/contato.html">Contato</a></li>
-            <li><a href="/quem-somos.html">Quem Somos</a></li>
-          </ul>
-        </div>
+    <!-- Botão de tema -->
+    <div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">
+      <img src="/images/theme-toggle.gif" class="icon" alt="Alternar tema" />
+    </div>
 
-        <!-- Tema -->
-<div class="theme-toggle" role="button" tabindex="0" aria-label="Alternar tema" onclick="toggleTheme(this)">
-  <img src="/images/theme-toggle.gif" class="icon" alt="Alternar tema" />
+  </div>
 </div>
       
   </header>
