@@ -13,6 +13,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/estilo-geral.css" />
   <style>
     :root {
       --bg: #000;
@@ -23,246 +24,143 @@
       --quadro: #fff;
     }
     body.light {
-  --bg: #ffffff;
-  --text: #2e2e2e;
-  --highlight: #c77dff;
-  --card: #f3f3f3;
-  --menu: #a95ce6;
-  --quadro: #000000;
-}
-    * { box-sizing: border-box; }
-    body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family:'League Spartan',sans-serif; line-height:1.5; }
-    a { text-decoration:none; color:inherit; }
-    header { border-bottom:2px solid var(--highlight); }
-    .logo { height:40px; }
-    .menu { position:relative; }
-    .explorar-btn { background:var(--bg); color:var(--text); border:2px solid var(--highlight); padding:.5rem 1rem; border-radius:4px; cursor:pointer; transition:background .2s, color .2s; }
-    .explorar-btn:hover { background:var(--highlight); color:var(--bg); }
-    .list { position:absolute; top:100%; left:0; background:var(--card); border:1px solid var(--highlight); border-radius:4px; display:none; min-width:160px; box-shadow:0 4px 8px rgba(0,0,0,.4); z-index:10; }
-    .menu.open .list { display:block; }
-    .list li { list-style:none; }
-   .list a {
-  display: block;
-  padding: .5rem 1rem;
-  transition: background .2s;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 220px;
-}
-    .list li.editorial a { color:var(--menu); }
-    .list li.quadro a { color:var(--quadro); }
-    .list a:hover { background:var(--highlight); color:var(--bg); }
-    .seta { margin-left:.3rem; transition:transform .2s; }
-    .menu.open .explorar-btn .seta { transform:rotate(180deg); }
-
-    .share { display:flex; align-items:center; gap:.3rem; }
-    .share-label { font-weight:bold; white-space:nowrap; }
-.share a,
-.share button {
-  background: none;
-  padding: .3rem; 
-}
-.share img.icon {
-  width: 22px;
-  height: 22px;
-  display: block;
-}
-.share a:hover,
-.share button:hover {
-  background: var(--card);
-  color: var(--text);
-}
-
-    .content { max-width:720px; margin:1rem auto; padding:0 1rem; }
-    h1 { font-size:2rem; margin:.5rem 0; text-align:center; color:var(--highlight); }
-    .autor { text-align:center; font-size:.9rem; color:#aaa; margin-bottom:1rem; }
-    img.header { width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(199,125,255,.2); margin-bottom:1rem; }
-    article p:first-of-type::first-letter { font-size:3rem; float:left; margin-right:.3rem; color:var(--highlight); }
-    h2 { font-size:1.4rem; text-align:center; color:var(--highlight); margin:2rem 0 .5rem; }
-    p { margin-bottom:.8rem; }
-    blockquote { background:var(--card); border-left:4px solid var(--highlight); padding:.6rem; border-radius:6px; margin:1rem 0; }
-    blockquote em { color:#ccc; font-size:.85rem; }
-
-    .grid { text-align:center; margin-top:1rem; }
-    .grid a h2 { margin-bottom:.5rem; }
-    .embed { display:flex; justify-content:center; }
-    .embed blockquote, .embed iframe { width:300px!important; height:450px!important; }
-
-    section.comentarios { border-top:1px solid var(--card); padding:2rem 1rem; margin-top:2rem; }
-    section.comentarios h2 { text-align:center; color:var(--highlight); margin-bottom:1rem; }
-    section.comentarios form { display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center; }
-    form input, form textarea { flex:1; max-width:300px; padding:.6rem; border:1px solid var(--highlight); border-radius:6px; background:#222; color:var(--text); }
-    form button { padding:.6rem 1rem; border:none; border-radius:6px; background:var(--highlight); color:var(--bg); cursor:pointer; transition:background .2s; }
-    form button:hover { background:var(--menu); }
-
-    .comment-list { max-width:720px; margin:1rem auto; }
-    .comment { background:#111; border:1px solid var(--highlight); border-radius:6px; padding:.8rem; margin-bottom:.8rem; }
-    .comment strong { color:var(--highlight); }
-    .comment p { margin:.5rem 0 0; }
-
-    footer { border-top:2px solid var(--highlight); padding:1rem; text-align:center; font-size:.8rem; color:#aaa; }
-    footer a { color:var(--highlight); margin:0 .5rem; }
-    .menu.open .list { display: block; }
-.menu.open .explorar-btn .seta { transform: rotate(180deg); }
-  @media (max-width: 600px) {
-  .top-controls {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .controls {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menus-wrapper {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .share {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .share-label {
-    width: 100%;
-    text-align: center;
-  }
-}
-    .list {
-  min-width: 240px; /* maior */
-}
-    .theme-toggle img.icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%; /* opcional */
-  cursor: pointer;
-}
-  
-.menus-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.top-controls {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
-gap: 1rem;
-  
-.logo {
-  height: 40px;
-}
-.theme-toggle {
-  display: flex;
-  align-items: center;
-}
-  header {
-  border-bottom: 2px solid var(--highlight);
-}
-
-.top-bar {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 1rem 1rem 0 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.logo {
-  height: 40px;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  padding: 0 1rem 1rem 1rem;
-}
-  header {
-  border-bottom: 2px solid var(--highlight);
-}
-
-.top-controls {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.logo {
-  height: 40px;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.menus-wrapper {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  .top-controls {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .controls {
-    flex-direction: column;
-  }
-
-  .menus-wrapper {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-}
+      --bg: #ffffff;
+      --text: #2e2e2e;
+      --highlight: #c77dff;
+      --card: #f3f3f3;
+      --menu: #a95ce6;
+      --quadro: #000;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'League Spartan', sans-serif;
+      line-height: 1.5;
+    }
+    header {
+      border-bottom: 2px solid var(--highlight);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1024px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      height: 40px;
+    }
+    .menus-wrapper {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background: var(--bg);
+      color: var(--text);
+      border: 2px solid var(--highlight);
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--card);
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: var(--text);
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .theme-toggle img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .content {
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: var(--highlight);
+    }
+    .autor {
+      text-align: center;
+      font-size: .9rem;
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+    .header {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(199,125,255,.2);
+      margin-bottom: 1rem;
+    }
+    .share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 2rem;
+    }
+    .share img {
+      width: 22px;
+      height: 22px;
+    }
+    footer {
+      text-align: center;
+      font-size: .8rem;
+      color: #aaa;
+      padding: 1rem;
+      border-top: 2px solid var(--highlight);
+    }
+    footer a {
+      color: var(--highlight);
+      margin: 0 .5rem;
+    }
   </style>
 </head>
 <body>
-
-  <!-- CABEÇALHO -->
-<header>
-  <div class="top-controls">
+  <header>
     <img src="/images/logo-role.png" alt="ROLÊ" class="logo" />
-    
-    <div class="controls">
-      <div class="menus-wrapper">
-        <div class="dropdown">
-          <button class="dropbtn">Leia também ▼</button>
-          <div class="dropdown-content">...</div>
-        </div>
-
-        <div class="dropdown">
-          <button class="dropbtn">Explorar ▼</button>
-          <div class="dropdown-content">...</div>
+    <div class="menus-wrapper">
+      <div class="dropdown">
+        <button class="dropbtn">Leia também ▼</button>
+        <div class="dropdown-content">
+          <a href="#">Outro editorial</a>
         </div>
       </div>
-
-      <div id="theme-toggle">
-        <img id="theme-icon" src="/images/lua-icon.png" alt="Trocar tema">
+      <div class="dropdown">
+        <button class="dropbtn">Explorar ▼</button>
+        <div class="dropdown-content">
+          <a href="#">Vitrine Cultural</a>
+        </div>
+      </div>
+      <div class="theme-toggle" onclick="toggleTheme()">
+        <img src="/images/theme-toggle.gif" alt="Trocar tema">
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-  <!-- CONTEÚDO -->
   <div class="content">
     <h1>A madrugada sumiu? …</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
@@ -288,107 +186,29 @@ gap: 1rem;
     <blockquote>“A cultura da noite resiste no improviso.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
     <p>São coletivos que criam experiências culturais mesmo sem apoio. DJs que tocam sem line divulgado pra evitar repressão. Pessoas que dançam até o sol nascer em nome de algo maior que um story: a crença de que a noite ainda pode ser espaço de liberdade.</p>
   </article>
-    
- <!-- Compartilhamento -->
-<div class="share" style="margin-top: 2rem;">
-  <span class="share-label">Compartilhe:</span>
-  <a href="https://www.facebook.com/sharer.php?u=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="Facebook">
-    <img src="/images/facebook.svg" alt="" class="icon" />
-  </a>
-  <a href="https://twitter.com/intent/tweet?url=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="Twitter">
-    <img src="/images/x.svg" alt="" class="icon" />
-  </a>
-  <a href="https://api.whatsapp.com/send?text=https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" target="_blank" aria-label="WhatsApp">
-    <img src="/images/whatsapp.svg" alt="" class="icon" />
-  </a>
-  <a href="https://instagram.com/role.ent" target="_blank" aria-label="Instagram">
-    <img src="/images/instagram.svg" alt="" class="icon" />
-  </a>
-</div>
+ </div>
 
-    <div class="grid">
-      <a href="https://www.instagram.com/p/DJ2mpGfvPxL/" target="_blank">
-        <h2>Leia mais no post do Instagram</h2>
-      </a>
-      <div class="embed">
-        <blockquote class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/"
-          data-instgrm-version="14"></blockquote>
+  <div class="share">
+    <span>Compartilhe:</span>
+    <a href="#"><img src="/images/facebook.svg" alt="Facebook"></a>
+    <a href="#"><img src="/images/x.svg" alt="X"></a>
+    <a href="#"><img src="/images/whatsapp.svg" alt="WhatsApp"></a>
+    <a href="#"><img src="/images/instagram.svg" alt="Instagram"></a>
   </div>
-</div>
 
-  <!-- COMENTÁRIOS -->
-  <section class="comentarios">
-    <h2>Deixe um comentário</h2>
-    <form id="comment-form">
-      <input type="text" id="nome" placeholder="Seu nome" required>
-      <textarea id="texto" placeholder="Seu comentário" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <div id="comment-list" class="comment-list"></div>
-  </section>
-
-  <!-- RODAPÉ -->
   <footer>
     © 2025 ROLÊ ENTRETENIMENTO ·
     <a href="politica.html">Política de Privacidade</a> ·
     <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
     <a href="termos-organizador.html">Termos do Organizador</a> ·
     <a href="politica-spam.html">Política Antispam</a>
-    
   </footer>
 
-  <!-- SCRIPTS -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Aplicar tema salvo
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light');
-  }
-
-  // DROPDOWNS
-  document.querySelectorAll('.menu').forEach(menu => {
-    const btn = menu.querySelector('button.explorar-btn');
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      document.querySelectorAll('.menu').forEach(m => m !== menu && m.classList.remove('open'));
-      menu.classList.toggle('open');
-    });
-  });
-
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.menu').forEach(m => m.classList.remove('open'));
-  });
-
-  // COMENTÁRIOS
-  document.getElementById('comment-form').addEventListener('submit', e => {
-    e.preventDefault();
-    const nome = document.getElementById('nome').value;
-    const txt  = document.getElementById('texto').value;
-    const div  = document.createElement('div');
-    div.className = 'comment';
-    div.innerHTML = <strong>${nome}</strong><p>${txt}</p>;
-    document.getElementById('comment-list').prepend(div);
-    e.target.reset();
-  });
-});
-
-// COMPARTILHAR INSTAGRAM
-function shareOnInstagram() {
-  const data = { title: document.title, url: location.href };
-  if (navigator.share) navigator.share(data).catch(()=>{});
-  else prompt('Copie este link para compartilhar:', location.href);
-}
-
-// TOGGLE TEMA
-function toggleTheme(el) {
-  document.body.classList.toggle('light');
-  const isLight = document.body.classList.contains('light');
-  el.setAttribute('aria-pressed', isLight);
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-}
-</script>
-
-<script async src="//www.instagram.com/embed.js"></script>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    }
+  </script>
 </body>
 </html>
