@@ -39,17 +39,30 @@
       font-family: 'League Spartan', sans-serif;
       line-height: 1.5;
     }
-    header {
-      border-bottom: 2px solid var(--highlight);
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1024px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+   header {
+  border-bottom: 2px solid var(--highlight);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  flex-wrap: nowrap; /* NÃO usar wrap aqui */
+  gap: 1rem;
+}
+    @media (max-width: 480px) {
+  .editorial-completo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .embed-box {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
     .logo {
       height: 40px;
     }
@@ -137,12 +150,13 @@
       color: var(--highlight);
       margin: 0 .5rem;
     }
-   .comentarios {
+.comentarios {
   background: var(--card);
   padding: 2rem 1rem;
-  margin: 2rem auto;
+  margin: 4rem auto;
   border-radius: 8px;
   max-width: 720px;
+  box-sizing: border-box;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -150,41 +164,7 @@
   color: var(--highlight);
   margin-bottom: 1rem;
   font-size: 1.5rem;
-}
-
-#comment-form input,
-#comment-form textarea {
-  width: 100%;
-  background: var(--bg);
-  color: var(--text);
-  border: 2px solid var(--highlight);
-  border-radius: 6px;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  font-family: 'League Spartan', sans-serif;
-  font-size: 1rem;
-}
-
-#comment-form button {
-  background: var(--highlight);
-  color: var(--bg);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#comment-form button:hover {
-  background: #a95ce6;
-}
-
-
-.comentarios h2 {
-  color: var(--highlight);
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  text-align: center;
 }
 
 .comentarios input,
@@ -197,6 +177,7 @@
   border: 2px solid var(--highlight);
   border-radius: 4px;
   font-family: 'League Spartan', sans-serif;
+  resize: vertical;
 }
 
 .comentarios button {
@@ -218,6 +199,7 @@
 .comment-list {
   margin-top: 2rem;
 }
+
     .embed {
   display: flex;
   justify-content: center;
@@ -228,6 +210,48 @@
   max-width: 320px !important;
   width: 100% !important;
   margin: 0 auto !important;
+  border: none !important;
+}
+    .editorial-completo {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.texto-editorial {
+  flex: 1 1 60%;
+  min-width: 300px;
+}
+
+.embed-box {
+  flex: 1 1 30%;
+  min-width: 280px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.embed {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-media {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  border: none !important;
+}
+    .embed-box h2 {
+  font-size: 1rem;
+  color: var(--highlight);
+  text-align: center;
+  margin-bottom: 1rem;
 }
   </style>
 </head>
@@ -254,10 +278,11 @@
   </header>
 
   <div class="content">
-    <h1>A madrugada sumiu? …</h1>
+<h1>As cidades já foram noturnas</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
     <img src="/images/editorial-madrugada.png" alt="Capa" class="header" />
-    <article>
+    <div class="editorial-completo">
+  <article class="texto-editorial">
     <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
     <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
     <p>Neste primeiro editorial do ROLÊ, a gente se pergunta: o que aconteceu com a noite das cidades? E quem ainda sustenta o fôlego da cultura noturna?</p>
@@ -277,10 +302,19 @@
     <p>Calma. Ainda tem gente resistindo. Em raves de floresta, festas de garagem, pistas itinerantes e ocupações culturais, a madrugada continua viva mesmo que mais escondida, mesmo que mais frágil.</p>
     <blockquote>“A cultura da noite resiste no improviso.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
     <p>São coletivos que criam experiências culturais mesmo sem apoio. DJs que tocam sem line divulgado pra evitar repressão. Pessoas que dançam até o sol nascer em nome de algo maior que um story: a crença de que a noite ainda pode ser espaço de liberdade.</p>
-  </article>
- </div>
+   </article>
+<div class="embed-box">
+  <h2>Leia mais no post do Instagram</h2>
+  <div class="embed">
+    <blockquote class="instagram-media"
+  data-instgrm-permalink="https://www.instagram.com/p/C8D3G6_q9iB/"
+  data-instgrm-version="14"
+  style="background: #FFF; border: 0; margin: 0 auto;"></blockquote>
+  </div>
+</div>
+</div> <!-- fechamento do editorial-completo -->
 
-  <div class="share">
+    <div class="share">
     <span>Compartilhe:</span>
     <a href="#"><img src="/images/facebook.svg" alt="Facebook"></a>
     <a href="#"><img src="/images/x.svg" alt="X"></a>
@@ -288,21 +322,17 @@
     <a href="#"><img src="/images/instagram.svg" alt="Instagram"></a>
   </div>
 
-  <div class="embed">
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL/"
-      data-instgrm-version="14"></blockquote>
-  </div>
-</div>
-
   <!-- COMENTÁRIOS -->
 <section class="comentarios">
   <h2>Deixe um comentário</h2>
-  <form id="comment-form">
-    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-    <textarea id="texto" name="texto" placeholder="Seu comentário" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
+ <form id="comment-form">
+  <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+  <textarea id="texto" name="texto" placeholder="Seu comentário" required></textarea>
+  <button type="submit">Enviar</button>
+</form>
+  <div id="sucesso" style="display:none; color: var(--highlight); text-align:center; margin-top: 1rem;">
+  Comentário enviado com sucesso!
+</div>
   <div id="comment-list" class="comment-list"></div>
 </section>
 
@@ -323,7 +353,10 @@
     });
 
     form.reset();
-    alert("Comentário enviado com sucesso!");
+document.getElementById("sucesso").style.display = "block";
+setTimeout(() => {
+  document.getElementById("sucesso").style.display = "none";
+}, 3000);
   });
 </script>
 
@@ -346,6 +379,6 @@
     document.body.classList.add('light');
   }
 </script>
-<script async src="//www.instagram.com/embed.js"></script>
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
