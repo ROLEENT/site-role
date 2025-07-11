@@ -10,6 +10,10 @@
   <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://roleentretenimento.com" />
+  <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilo.css" />
 
   <script>
     if (localStorage.getItem('theme') === 'light') {
@@ -17,11 +21,6 @@
       document.body.classList.add('light');
     }
   </script>
-
-  <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="estilo.css" />
 
   <noscript>
     <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
@@ -34,122 +33,115 @@
     gtag('js', new Date());
     gtag('config', 'G-G8Z07V63HQ');
   </script>
+
   <style>
-/* Cabeçalho */
-.header {
-  width: 100%;
-  padding: 12px 24px;
-  display: flex;
-  justify-content: center;
-  background-color: transparent;
-}
+    :root {
+      --highlight: #c77dff;
+      --text-color: #f3f3f7;
+    }
 
-.header-container {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    body.light {
+      --text-color: #2e2e2e;
+      background-color: #ffffff;
+    }
 
-.nav-menu a {
-  color: var(--text-color);
-  margin-left: 16px;
-  font-weight: 600;
-  text-decoration: none;
-}
+    /* Cabeçalho */
+    .header {
+      width: 100%;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: center;
+      background-color: transparent;
+    }
 
-/* Logo */
-.logo-role {
-  height: 32px;
-}
+    .header-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* Rodapé */
-.footer {
-  text-align: center;
-  color: var(--text-color);
-  font-size: 12px;
-  margin-top: 40px;
-  padding: 16px;
-}
+    .nav-menu a {
+      color: var(--text-color);
+      margin-left: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-.footer-line {
-  border-top: 2px solid var(--text-color);
-  margin-bottom: 12px;
-}
+    .logo-role {
+      height: 32px;
+    }
 
-/* Corrigir carrossel */
-.carousel-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  padding-bottom: 12px;
-  margin-top: 20px;
-}
-
-.carousel-container .card {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 16px;
-}
-
-/* Centralizar banner */
-.banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0;
-}
-
-.banner img {
-  max-width: 100%;
-  height: auto;
-}
     .theme-toggle img {
       width: 28px;
       height: 28px;
       border-radius: 50%;
       cursor: pointer;
     }
+
+    /* Rodapé */
+    .footer {
+      text-align: center;
+      color: var(--text-color);
+      font-size: 12px;
+      margin-top: 40px;
+      padding: 16px;
+    }
+
+    .footer-line {
+      border-top: 2px solid var(--text-color);
+      margin-bottom: 12px;
+    }
+
+    /* Carrossel */
+    .carousel-container,
     .cards-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  padding-bottom: 12px;
-  margin-top: 20px;
-}
-.cards-container .card {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 16px;
-}
-    root {
-  --highlight: #c77dff;
-  --text-color: #f3f3f7;
-}
-body.light {
-  --text-color: #2e2e2e;
-  background-color: #ffffff;
-}
-</style>
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      padding-bottom: 12px;
+      margin-top: 20px;
+    }
+
+    .carousel-container .card,
+    .cards-container .card {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 16px;
+    }
+
+    /* Centralizar banner */
+    .banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px 0;
+    }
+
+    .banner img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 
 <body>
   <header class="header">
-  <div class="header-container">
-    <a href="index.html"><img src="images/logo-role.png" alt="ROLÊ" class="logo-role"></a>
-    <nav class="nav-menu">
-      <a href="index.html">Página Inicial</a>
-      <a href="revista.html">Revista ROLÊ</a>
-      <a href="descontos.html">Descontos</a>
-      <a href="contato.html">Contato</a>
-      <a href="quem-somos.html">Quem Somos</a>
-    </nav>
-   <div class="theme-toggle" onclick="toggleTheme()">
-  <img src="/images/theme-toggle.gif" alt="Trocar tema">
-</div>
-  </div> <!-- FECHAMENTO do .header-container -->
-</header>
+    <div class="header-container">
+      <a href="index.html"><img src="images/logo-role.png" alt="ROLÊ" class="logo-role"></a>
+      <nav class="nav-menu">
+        <a href="index.html">Página Inicial</a>
+        <a href="revista.html">Revista ROLÊ</a>
+        <a href="descontos.html">Descontos</a>
+        <a href="contato.html">Contato</a>
+        <a href="quem-somos.html">Quem Somos</a>
+      </nav>
+      <div class="theme-toggle" onclick="toggleTheme()">
+        <img src="/images/theme-toggle.gif" alt="Trocar tema">
+      </div>
+    </div>
+  </header>
 
   <div class="banner">
     <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
@@ -161,52 +153,48 @@ body.light {
 
     <div class="scroll-wrapper">
       <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
-<div class="carousel-container">
-  <!-- Cards de cidades -->
-  <div class="card">
-  <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
-  <p>A cena alternativa pulsa forte no Sul.</p>
-  <a href="https://www.instagram.com/p/DLz1gayuJFS/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-</div>
-  <div class="card">
-            <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
-            <p>Beira-mar, eletrônica e coletivo.</p>
-            <a href="https://www.instagram.com/p/DL7mjNhODps/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-  <div class="card">
-            <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
-            <p>Frio na rua, calor nas pistas.</p>
-            <a href="https://www.instagram.com/p/DL3BmWrPPwt/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-  <div class="card">
-            <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
-            <p>A cidade que nunca dorme... nem para de dançar.</p>
-            <a href="https://www.instagram.com/p/DL0P0JlvZJi/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-  <div class="card">
-            <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
-            <p>Funk, favela, cor e calor cultural.</p>
-            <a href="https://www.instagram.com/p/DL08nauuZUN/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
+      <div class="carousel-container">
+        <!-- Cards -->
+        <div class="card">
+          <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
+          <p>A cena alternativa pulsa forte no Sul.</p>
+          <a href="https://www.instagram.com/p/DLz1gayuJFS/" target="_blank">Ver mais</a>
         </div>
-        <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
+        <div class="card">
+          <img src="images/floripa.png" alt="Festas em Florianópolis" loading="lazy" />
+          <p>Beira-mar, eletrônica e coletivo.</p>
+          <a href="https://www.instagram.com/p/DL7mjNhODps/" target="_blank">Ver mais</a>
+        </div>
+        <div class="card">
+          <img src="images/curitiba.png" alt="Festas em Curitiba" loading="lazy" />
+          <p>Frio na rua, calor nas pistas.</p>
+          <a href="https://www.instagram.com/p/DL3BmWrPPwt/" target="_blank">Ver mais</a>
+        </div>
+        <div class="card">
+          <img src="images/sao-paulo.png" alt="Festas em São Paulo" loading="lazy" />
+          <p>A cidade que nunca dorme... nem para de dançar.</p>
+          <a href="https://www.instagram.com/p/DL0P0JlvZJi/" target="_blank">Ver mais</a>
+        </div>
+        <div class="card">
+          <img src="images/rio.png" alt="Festas no Rio de Janeiro" loading="lazy" />
+          <p>Funk, favela, cor e calor cultural.</p>
+          <a href="https://www.instagram.com/p/DL08nauuZUN/" target="_blank">Ver mais</a>
+        </div>
       </div>
-    </main>
+      <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
+    </div>
+  </main>
 
   <footer class="footer">
-  <div class="footer-line"></div>
-  <p>© 2025 ROLÊ ENTRETENIMENTO • <a href="politica.html">Política de Privacidade</a> • <a href="termos-usuario.html">Termos do Rolezeiro</a> • <a href="termos-organizador.html">Termos do Organizador</a> • <a href="politica-spam.html">Política Antispam</a></p>
-</footer>
-    <script>
+    <div class="footer-line"></div>
+    <p>© 2025 ROLÊ ENTRETENIMENTO • <a href="politica.html">Política de Privacidade</a> • <a href="termos-usuario.html">Termos do Rolezeiro</a> • <a href="termos-organizador.html">Termos do Organizador</a> • <a href="politica-spam.html">Política Antispam</a></p>
+  </footer>
+
+  <script>
     function toggleTheme() {
       document.body.classList.toggle('light');
       localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
     }
   </script>
-  <script>
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light');
-  }
-</script>
 </body>
 </html>
