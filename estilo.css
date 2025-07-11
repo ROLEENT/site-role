@@ -14,6 +14,11 @@ body {
   padding: 0;
 }
 
+body.light {
+  --text-color: #2e2e2e;
+  background-color: #ffffff;
+}
+
 a {
   color: var(--highlight);
   text-decoration: none;
@@ -41,7 +46,7 @@ a:hover {
   position: relative;
 }
 
-.dropdown-button {
+.dropbtn {
   background-color: var(--highlight);
   color: var(--bg-color);
   border: none;
@@ -91,17 +96,12 @@ h1 {
   font-size: 28px;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 24px;
-  font-size: 14px;
-}
-
-footer a {
-  color: var(--highlight);
-  text-decoration: none;
-  margin: 0 8px;
+/* Botão tema */
+.theme-toggle img {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
 /* Botão de topo */
@@ -236,7 +236,7 @@ footer a {
   display: flex;
   align-items: center;
 }
-/* CABEÇALHO FIXO COM LOGO À ESQUERDA E MENUS CENTRALIZADOS */
+/* Cabeçalho */
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -285,4 +285,46 @@ footer a {
   height: 32px;
   width: 32px;
   cursor: pointer;
+}
+
+.menus-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  flex-grow: 1;
+}
+
+.menus-wrapper a {
+  color: var(--text-color);
+  font-family: var(--font);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menus-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  height: 42px;
+  max-height: 42px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+footer a {
+  color: var(--highlight);
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
