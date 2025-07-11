@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="eventos, cultura, rolê, arte, música, festa, entretenimento" />
     <meta name="description" content="ROLÊ: Conectando cultura, arte e os rolês mais vivos do Brasil." />
-    <title>ROLÊ ENTRETENIMENTO — Cultura, Arte e Diversão nas Cidades Brasileiras</title>
+    <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Cultura, Arte e Diversão nas Cidades Brasileiras" />
+<meta property="og:description" content="Conectando cultura, arte e os rolês mais vivos do Brasil." />
+<meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://roleentretenimento.com" />
+        <script>
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.add('light');
+    document.body.classList.add('light');
+  }
+</script>
+<title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
 <link rel="icon" href="images/favicon.png" type="image/png" />
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
     <noscript>
@@ -211,6 +222,17 @@ scroll-snap-type: x mandatory;
           max-width: 70vw;
         }
       }
+      .theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+      .scroll-arrow {
+  transition: transform 0.2s ease;
+}
+.scroll-arrow:hover {
+  transform: scale(1.2);
+}
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
     <script>
@@ -247,14 +269,9 @@ scroll-snap-type: x mandatory;
         <a href="quem-somos.html">Quem Somos</a>
       </div>
     </div>
-    <div
-      class="theme-toggle"
-      role="button"
-      tabindex="0"
-      aria-label="Alternar tema"
-      aria-pressed="false"
-      onclick="toggleTheme(this)"
-    >🌓</div>
+<button class="theme-toggle" onclick="toggleTheme(this)" aria-label="Trocar tema">
+<img src="/images/theme-toggle.gif" alt="" role="presentation" />
+     </button>
   </nav>
 </header>
 
@@ -298,14 +315,12 @@ scroll-snap-type: x mandatory;
       </div>
     </main>
 
-    <footer role="contentinfo">
-  <p>
-    © 2025 ROLÊ ENTRETENIMENTO ·
-    <a href="politica.html">Política de Privacidade</a> ·
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-    <a href="termos-organizador.html">Termos do Organizador</a> ·
-    <a href="politica-spam.html">Política Antispam</a>
-  </p>
+   <footer>
+  © 2025 ROLÊ ENTRETENIMENTO ·
+  <a href="politica.html">Política de Privacidade</a> ·
+  <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+  <a href="termos-organizador.html">Termos do Organizador</a> ·
+  <a href="politica-spam.html">Política Antispam</a>
 </footer>
     <script>
 function toggleTheme(el) {
