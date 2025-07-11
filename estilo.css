@@ -118,8 +118,7 @@ a:hover {
 }
 
 .logo {
-  height: 48px;
-  margin-right: 2rem;
+  height: 36px;
 }
 
 .menus-wrapper {
@@ -137,7 +136,7 @@ a:hover {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  text-shadow: 0 0 3px rgba(199, 125, 255, 0.6); /* leve glow */
+  text-shadow: 0 0 3px rgba(199, 125, 255, 0.6);
 }
 
 .dropdown-content {
@@ -235,8 +234,8 @@ a:hover {
   margin: 0 auto;
 }
 .lampada-toggle {
-  width: 160px;
-  height: auto;
+  height: 36px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -256,4 +255,12 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: var(--background);
 }
