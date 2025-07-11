@@ -310,9 +310,50 @@ html {
 .social-icons img {
   height: 24px;
   width: 24px;
-  
-  .content {
+  transition: transform 0.2s ease;
+}
+
+.content {
   padding-bottom: 4rem;
+}
+
+.editorial-completo {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.texto-editorial p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.texto-editorial h2 {
+  color: var(--highlight);
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.texto-editorial blockquote {
+  margin: 2rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--highlight);
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.autor {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.header {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 12px;
 }
 
   transition: transform 0.2s ease;
@@ -388,4 +429,29 @@ button[type="submit"] {
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.comentarios {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 10px;
+  border: 1px solid var(--highlight);
+}
+
+.comentarios h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.comentarios input,
+.comentarios textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #000;
+  color: var(--text-color);
 }
