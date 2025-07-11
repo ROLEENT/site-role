@@ -22,20 +22,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid var(--highlight);
-}
-
-header img {
-  height: 40px;
-}
-
 .top-right {
   display: flex;
   align-items: center;
@@ -253,12 +239,15 @@ footer a {
 /* CABEÇALHO FIXO COM LOGO À ESQUERDA E MENUS CENTRALIZADOS */
 .header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
-  border-bottom: 1px solid var(--highlight);
-  height: 64px;
+  align-items: center;
   background-color: var(--bg-color);
+  border-bottom: 2px solid var(--highlight);
+  padding: 16px 32px;
+  flex-wrap: wrap;
+  z-index: 1000;
+  max-height: 90px;
+  height: auto;
 }
 
 .header-left {
@@ -268,15 +257,17 @@ footer a {
 }
 
 .header-left img {
-  height: 40px;
+  height: 42px;
+  max-height: 42px;
 }
 
 .header-center {
-  flex: 2;
   display: flex;
-  justify-content: center;
-  gap: 24px;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  flex-grow: 1;
 }
 
 .header-center a {
