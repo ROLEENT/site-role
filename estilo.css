@@ -328,3 +328,241 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+    :root {
+      --bg: #000;
+      --text: #f3f3f7;
+      --highlight: #c77dff;
+      --card: #151515;
+      --menu: #a95ce6;
+      --quadro: #fff;
+    }
+    body.light {
+      --bg: #ffffff;
+      --text: #2e2e2e;
+      --highlight: #c77dff;
+      --card: #f3f3f3;
+      --menu: #a95ce6;
+      --quadro: #000;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'League Spartan', sans-serif;
+      line-height: 1.5;
+    }
+   header {
+  border-bottom: 2px solid var(--highlight);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  flex-wrap: nowrap; /* NÃO usar wrap aqui */
+  gap: 1rem;
+}
+    @media (max-width: 480px) {
+  .editorial-completo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .embed-box {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+    .logo {
+      height: 40px;
+    }
+    .menus-wrapper {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background: var(--bg);
+      color: var(--text);
+      border: 2px solid var(--highlight);
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--card);
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: var(--text);
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .theme-toggle img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .content {
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: var(--highlight);
+    }
+    .autor {
+      text-align: center;
+      font-size: .9rem;
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+    .header {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(199,125,255,.2);
+      margin-bottom: 1rem;
+    }
+    .share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 2rem;
+    }
+    .share img {
+      width: 22px;
+      height: 22px;
+    }
+    footer {
+      text-align: center;
+      font-size: .8rem;
+      color: #aaa;
+      padding: 1rem;
+      border-top: 2px solid var(--highlight);
+    }
+    footer a {
+      color: var(--highlight);
+      margin: 0 .5rem;
+    }
+.comentarios {
+  background: var(--card);
+  padding: 2rem 1rem;
+  margin: 4rem auto;
+  border-radius: 8px;
+  max-width: 720px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.comentarios h2 {
+  color: var(--highlight);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.comentarios input,
+.comentarios textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 2px solid var(--highlight);
+  border-radius: 4px;
+  font-family: 'League Spartan', sans-serif;
+  resize: vertical;
+}
+
+.comentarios button {
+  background: var(--highlight);
+  color: var(--bg);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'League Spartan', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.comentarios button:hover {
+  background: #a95ce6;
+}
+
+.comment-list {
+  margin-top: 2rem;
+}
+
+    .embed {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.instagram-media {
+  max-width: 320px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  border: none !important;
+}
+    .editorial-completo {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.texto-editorial {
+  flex: 1 1 60%;
+  min-width: 300px;
+}
+
+.embed-box {
+  flex: 1 1 30%;
+  min-width: 280px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.embed {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-media {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  border: none !important;
+}
+    .embed-box h2 {
+  font-size: 1rem;
+  color: var(--highlight);
+  text-align: center;
+  margin-bottom: 1rem;
+}
