@@ -117,8 +117,10 @@ a:hover {
   text-decoration: underline;
 }
 
+/* LOGO */
 .logo {
-  height: 36px;
+  height: 50px;
+  margin-right: 20px;
 }
 
 .menus-wrapper {
@@ -129,24 +131,33 @@ a:hover {
   right: 2rem;
 }
 
+/* DROPDOWN MENU */
+.right-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .dropdown-button {
   background: none;
   border: none;
-  color: var(--highlight);
-  font-size: 1rem;
-  font-weight: 600;
+  color: #c77dff;
+  font-weight: 700;
+  font-size: 16px;
   cursor: pointer;
-  text-shadow: 0 0 3px rgba(199, 125, 255, 0.6);
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 20px;
+  top: 100%;
   background-color: #111;
-  padding: 0.5rem;
-  border: 1px solid var(--highlight);
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
+  min-width: 160px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  z-index: 1;
+  border-radius: 8px;
+  padding: 10px 0;
 }
 
 .dropdown.open .dropdown-content {
@@ -154,13 +165,20 @@ a:hover {
 }
 
 .dropdown-content a {
+  color: #f3f3f7;
+  padding: 10px 20px;
   display: block;
-  color: var(--text-color);
-  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .dropdown-content a:hover {
   background-color: #222;
+  color: #c77dff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .scroll-wrapper {
@@ -202,6 +220,11 @@ a:hover {
   display: none;
 }
 
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
 @media (max-width: 600px) {
   .menus-wrapper {
     flex-direction: column;
@@ -233,9 +256,18 @@ a:hover {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* LAMPADA */
 .lampada-toggle {
-  height: 36px;
+  height: 30px;
   cursor: pointer;
+}
+
+/* LINHA ROXA */
+.linha-topo {
+  border: none;
+  border-top: 1px solid #c77dff;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -257,10 +289,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* TOPO GERAL */
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
-  background-color: var(--background);
+  padding: 12px 20px;
+  position: relative;
+}
+
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons img {
+  height: 24px;
+  width: 24px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
 }
