@@ -46,7 +46,7 @@ a:hover {
   position: relative;
 }
 
-.dropbtn {
+.dropdown-button {
   background-color: var(--highlight);
   color: var(--bg-color);
   border: none;
