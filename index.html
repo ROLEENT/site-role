@@ -28,15 +28,24 @@
   </head>
 <body>
   <section class="bloco-topo">
-    <div class="container-topo">
-      <div class="header-top">
-        <!-- Logo -->
-        <img src="images/logo-role.png" alt="Logo ROLÊ" class="logo" />
+  <div class="container-topo">
+    <div class="header-top">
+      <!-- LOGO ESQUERDA -->
+      <img src="images/logo-role.png" alt="Logo ROLÊ" class="logo" />
 
-        <!-- Menu Dropdown -->
+      <!-- MENU + TEMA (LADO DIREITO) -->
+      <div class="right-top">
+        <!-- MENU DROPDOWN -->
         <div class="dropdown">
-          <button class="dropdown-button">Explorar ▼</button>
-          <div class="dropdown-content">
+<button
+  class="dropdown-button"
+  aria-haspopup="true"
+  aria-controls="menu-explorar"
+  aria-expanded="false"
+>
+  Explorar ▼
+</button>          
+<div class="dropdown-content" id="menu-explorar">
             <a href="index.html">Página Inicial</a>
             <a href="revista.html">Revista ROLÊ</a>
             <a href="descontos.html">Descontos</a>
@@ -45,11 +54,13 @@
           </div>
         </div>
 
-        <!-- Theme Toggle -->
+        <!-- TEMA -->
         <img src="images/theme-toggle.gif" alt="Lâmpada Theme Toggle" class="lampada-toggle" />
       </div>
     </div>
-  </section>
+    <hr class="linha-topo" />
+  </div>
+</section>
 
   <!-- Banner -->
   <div class="banner-wrapper">
@@ -128,35 +139,34 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Carrossel
-  const container = document.querySelector('.cards-container');
-  const cards = container.querySelectorAll('.card');
-  const totalCards = cards.length;
-  let currentIndex = 0;
+ const container = document.querySelector('.cards-container');
+const cards = container.querySelectorAll('.card');
+const totalCards = cards.length;
+let currentIndex = 0;
+const cardWidth = cards[0].getBoundingClientRect().width + 12;
 
-  function scrollToCard(index) {
-    if (index < 0) index = totalCards - 1;
-    if (index >= totalCards) index = 0;
-    currentIndex = index;
-    const cardWidth = cards[0].getBoundingClientRect().width + 12;
-    container.scrollTo({
-      left: cardWidth * index,
-      behavior: 'smooth'
-    });
-  }
-
-  const arrowLeft = document.querySelector('.scroll-arrow.left');
-  const arrowRight = document.querySelector('.scroll-arrow.right');
-
-  if (arrowLeft && arrowRight) {
-    arrowLeft.addEventListener('click', () => scrollToCard(currentIndex - 1));
-    arrowRight.addEventListener('click', () => scrollToCard(currentIndex + 1));
-  }
-
-  container.addEventListener('scroll', () => {
-    const cardWidth = cards[0].offsetWidth + 12;
-    const newIndex = Math.round(container.scrollLeft / cardWidth);
-    currentIndex = newIndex;
+function scrollToCard(index) {
+  if (index < 0) index = totalCards - 1;
+  if (index >= totalCards) index = 0;
+  currentIndex = index;
+  container.scrollTo({
+    left: cardWidth * index,
+    behavior: 'smooth'
   });
+}
+
+const arrowLeft = document.querySelector('.scroll-arrow.left');
+const arrowRight = document.querySelector('.scroll-arrow.right');
+
+if (arrowLeft && arrowRight) {
+  arrowLeft.addEventListener('click', () => scrollToCard(currentIndex - 1));
+  arrowRight.addEventListener('click', () => scrollToCard(currentIndex + 1));
+}
+
+container.addEventListener('scroll', () => {
+  const newIndex = Math.round(container.scrollLeft / cardWidth);
+  currentIndex = newIndex;
+});
 
   // Forçar scroll para POA ao carregar
   setTimeout(() => {
@@ -175,12 +185,33 @@ container.scrollTo({
 </script>
 </div> <!-- Fechamento correto da .carrossel aqui -->
 <footer>
-  © 2025 ROLÊ ENTRETENIMENTO ·
-  <a href="politica.html">Política de Privacidade</a> ·
-  <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-  <a href="termos-organizador.html">Termos do Organizador</a> ·
-  <a href="politica-spam.html">Política Antispam</a>
+  <div class="footer-links">
+    © 2025 ROLÊ ENTRETENIMENTO ·
+    <a href="politica.html">Política de Privacidade</a> ·
+    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+    <a href="termos-organizador.html">Termos do Organizador</a> ·
+    <a href="politica-spam.html">Política Antispam</a>
+  </div>
+  <div class="social-icons">
+    <a href="https://instagram.com/role.ent" target="_blank">
+      <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+    </a>
+    <a href="https://tiktok.com/@role.ent" target="_blank">
+      <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+    </a>
+    <a href="https://wa.me/5599999999999" target="_blank">
+      <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+    </a>
+  </div>
 </footer>
+  <script>
+  document.querySelector('.lampada-toggle').addEventListener('click', function () {
+    document.body.classList.toggle('light');
+    localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+  });
+</script>
+</body>
+</html>
 </body>
 </html>
 
