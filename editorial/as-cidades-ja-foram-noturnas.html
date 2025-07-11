@@ -13,136 +13,118 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/estilo.css" />
+  <link rel="stylesheet" href="/estilo.css" />
 </head>
 <body>
-  <header>
-    <img src="/images/logo-role.png" alt="ROLÊ" class="logo" />
-    <div class="menus-wrapper">
-      <div class="dropdown">
-        <button class="dropbtn">Leia também ▼</button>
-        <div class="dropdown-content">
-          <a href="#">Outro editorial</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Explorar ▼</button>
-                <div class="dropdown-content">
-          <a href="index.html">Página Inicial</a>
-          <a href="revista.html">Revista ROLÊ</a>
-          <a href="descontos.html">Descontos</a>
-          <a href="contato.html">Contato</a>
-          <a href="quem-somos.html">Quem Somos</a>
-        </div>
-      </div>
-      <div class="theme-toggle" onclick="toggleTheme()">
-        <img src="/images/theme-toggle.gif" alt="Trocar tema">
-      </div>
+ <header>
+<button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+  <img src="/images/logo-role.png" alt="ROLÊ" class="logo" />
+  <div class="menus-wrapper">
+  <div class="dropdown">
+    <button class="dropdown-button">Leia também ▼</button>
+    <div class="dropdown-content">
+      <a href="#">Outro editorial</a>
     </div>
-  </header>
+  </div>
+<div class="menus-wrapper" id="mobileMenu">
+  <div class="dropdown">
+    <button class="dropdown-button">Explorar ▼</button>
+    <div class="dropdown-content">
+      <a href="/index.html">Página Inicial</a>
+      <a href="/revista.html">Revista ROLÊ</a>
+      <a href="/descontos.html">Descontos</a>
+      <a href="/contato.html">Contato</a>
+      <a href="/quem-somos.html">Quem Somos</a>
+    </div>
+  </div>
+  <div class="theme-toggle">
+    <img src="/images/theme-toggle.gif" alt="Trocar tema" class="lampada-toggle" onclick="toggleTheme()" />
+  </div>
+</div>
+</div>
+</header>
 
-  <div class="content">
-<h1>As cidades já foram noturnas</h1>
+<div class="content container">
+    <h1>As cidades já foram noturnas</h1>
     <p class="autor">Por FIIH, Co-fundador do ROLÊ</p>
     <img src="/images/editorial-madrugada.png" alt="Capa" class="header" />
     <div class="editorial-completo">
-  <article class="texto-editorial">
-    <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
-    <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
-    <p>Neste primeiro editorial do ROLÊ, a gente se pergunta: o que aconteceu com a noite das cidades? E quem ainda sustenta o fôlego da cultura noturna?</p>
-    <h2>A cidade que silencia cedo</h2>
-    <p>Por décadas, o coração pulsante das cidades brasileiras batia mais forte quando o sol se escondia. Madrugada era sinônimo de liberdade, de experiências coletivas intensas, de vivência cultural espontânea. Era nesse horário que nasciam os movimentos, os encontros inesperados, os amores relâmpago e os surtos criativos.</p>
-    <p>Mas hoje, o cenário mudou. A repressão sonora cresceu. As festas independentes enfrentam cada vez mais burocracias, a fiscalização age como sensor de decibéis e vizinho virou gestor de decoro urbano. Até o after tem que acabar com CPF na nota e licença da prefeitura.</p>
-    <blockquote>“As cidades esqueceram como é pulsar no escuro.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
-    <h2>Quando a noite virou vitrine</h2>
-    <p>Com a ascensão das redes sociais e a estetização da vida, a presença virou conteúdo. A madrugada, que já foi espaço de transgressão e criação, agora corre o risco de ser só cenário pra selfie.</p>
-    <blockquote>“A madrugada virou vitrine de marca.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
-    <p>A lógica do engajamento invadiu a pista. Rolês passaram a ser planejados pensando em como vão aparecer no story, e não em como serão vividos. E nesse processo, muita coisa se perdeu: a escuta, o improviso, o erro bonito, o gesto espontâneo que não cabia no feed.</p>
-    <h2>O corpo decorativo e o som contido</h2>
-    <p>O corpo, que antes vibrava em liberdade na pista, agora muitas vezes performa uma presença domésticada. O som, que já era grito e manifesto, hoje precisa seguir as regras do “bom tom” do novo vizinho gourmet.</p>
-    <blockquote>“A vibe virou filtro. O corpo, decoração.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
-    <p>Com a gentrificação cultural acelerada, muitos espaços alternativos fecharam. Galpões, sedes de coletivo, ocupações artísticas e bares independentes foram substituídos por locais de consumo controlado, com line genérico, dresscode e patrocínio de bebida cara. A cidade perdeu o improviso. A madrugada, a coragem.</p>
-    <h2>Mas e quem ainda segura a noite?</h2>
-    <p>Calma. Ainda tem gente resistindo. Em raves de floresta, festas de garagem, pistas itinerantes e ocupações culturais, a madrugada continua viva mesmo que mais escondida, mesmo que mais frágil.</p>
-    <blockquote>“A cultura da noite resiste no improviso.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
-    <p>São coletivos que criam experiências culturais mesmo sem apoio. DJs que tocam sem line divulgado pra evitar repressão. Pessoas que dançam até o sol nascer em nome de algo maior que um story: a crença de que a noite ainda pode ser espaço de liberdade.</p>
-   </article>
-<div class="embed-box">
-  <h2>Leia mais no post do Instagram</h2>
-  <div class="embed">
-    <blockquote class="instagram-media"
-  data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL"
-  data-instgrm-version="14"
-  style="background: #FFF; border: 0; margin: 0 auto;"></blockquote>
-  </div>
-</div>
-</div> <!-- fechamento do editorial-completo -->
+      <article class="texto-editorial">
+        <p>As cidades já foram noturnas. E talvez você ainda lembre de como era.</p>
+        <p>Ruas movimentadas depois da meia-noite, festas que atravessavam o amanhecer, bares onde o som e a conversa só terminavam com o dia clareando. Era o tempo do improviso. Do encontro sem hora pra acabar. Hoje, muita gente sente: a madrugada sumiu. Ou pior, foi expulsa.</p>
+        <p>Neste primeiro editorial do ROLÊ, a gente se pergunta: o que aconteceu com a noite das cidades? E quem ainda sustenta o fôlego da cultura noturna?</p>
+        <h2>A cidade que silencia cedo</h2>
+        <p>Por décadas, o coração pulsante das cidades brasileiras batia mais forte quando o sol se escondia. Madrugada era sinônimo de liberdade, de experiências coletivas intensas, de vivência cultural espontânea. Era nesse horário que nasciam os movimentos, os encontros inesperados, os amores relâmpago e os surtos criativos.</p>
+        <p>Mas hoje, o cenário mudou. A repressão sonora cresceu. As festas independentes enfrentam cada vez mais burocracias, a fiscalização age como sensor de decibéis e vizinho virou gestor de decoro urbano. Até o after tem que acabar com CPF na nota e licença da prefeitura.</p>
+        <blockquote>“As cidades esqueceram como é pulsar no escuro.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
+        <h2>Quando a noite virou vitrine</h2>
+        <p>Com a ascensão das redes sociais e a estetização da vida, a presença virou conteúdo. A madrugada, que já foi espaço de transgressão e criação, agora corre o risco de ser só cenário pra selfie.</p>
+        <blockquote>“A madrugada virou vitrine de marca.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
+        <p>A lógica do engajamento invadiu a pista. Rolês passaram a ser planejados pensando em como vão aparecer no story, e não em como serão vividos. E nesse processo, muita coisa se perdeu: a escuta, o improviso, o erro bonito, o gesto espontâneo que não cabia no feed.</p>
+        <h2>O corpo decorativo e o som contido</h2>
+        <p>O corpo, que antes vibrava em liberdade na pista, agora muitas vezes performa uma presença domesticada. O som, que já era grito e manifesto, hoje precisa seguir as regras do “bom tom” do novo vizinho gourmet.</p>
+        <blockquote>“A vibe virou filtro. O corpo, decoração.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
+        <p>Com a gentrificação cultural acelerada, muitos espaços alternativos fecharam. Galpões, sedes de coletivo, ocupações artísticas e bares independentes foram substituídos por locais de consumo controlado, com line genérico, dresscode e patrocínio de bebida cara. A cidade perdeu o improviso. A madrugada, a coragem.</p>
+        <h2>Mas e quem ainda segura a noite?</h2>
+        <p>Calma. Ainda tem gente resistindo. Em raves de floresta, festas de garagem, pistas itinerantes e ocupações culturais, a madrugada continua viva mesmo que mais escondida, mesmo que mais frágil.</p>
+        <blockquote>“A cultura da noite resiste no improviso.”<br><em>— trecho do editorial ROLÊ</em></blockquote>
+        <p>São coletivos que criam experiências culturais mesmo sem apoio. DJs que tocam sem line divulgado pra evitar repressão. Pessoas que dançam até o sol nascer em nome de algo maior que um story: a crença de que a noite ainda pode ser espaço de liberdade.</p>
+      </article>
+      <div class="embed-box">
+        <h2>Leia mais no post do Instagram</h2>
+        <div class="embed">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJ2mpGfvPxL" data-instgrm-version="14" style="background: #FFF; border: 0; margin: 0 auto;"></blockquote>
+        </div>
+      </div>
+    </div>
 
     <div class="share">
-    <span>Compartilhe:</span>
-    <a href="#"><img src="/images/facebook.svg" alt="Facebook"></a>
-    <a href="#"><img src="/images/x.svg" alt="X"></a>
-    <a href="#"><img src="/images/whatsapp.svg" alt="WhatsApp"></a>
-    <a href="#"><img src="/images/instagram.svg" alt="Instagram"></a>
-  </div>
+      <span>Compartilhe:</span>
+      <a href="#"><img src="/images/facebook.svg" alt="Facebook"></a>
+      <a href="#"><img src="/images/x.svg" alt="X"></a>
+      <a href="#"><img src="/images/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="#"><img src="/images/instagram.svg" alt="Instagram"></a>
+    </div>
 
-  <!-- COMENTÁRIOS -->
-<section class="comentarios">
-  <h2>Deixe um comentário</h2>
- <form id="comment-form">
-  <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-  <textarea id="texto" name="texto" placeholder="Seu comentário" required></textarea>
-  <button type="submit">Enviar</button>
-</form>
-  <div id="sucesso" style="display:none; color: var(--highlight); text-align:center; margin-top: 1rem;">
-  Comentário enviado com sucesso!
-</div>
-  <div id="comment-list" class="comment-list"></div>
-</section>
+    <section class="comentarios">
+      <h2>Deixe um comentário</h2>
+      <form id="comment-form">
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        <textarea id="texto" name="texto" placeholder="Seu comentário" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="sucesso" style="display:none; color: var(--highlight); text-align:center; margin-top: 1rem;">
+        Comentário enviado com sucesso!
+      </div>
+      <div id="comment-list" class="comment-list"></div>
+    </section>
 
+    <footer>
+      <div class="footer-line"></div>
+      <p>© 2025 ROLÊ ENTRETENIMENTO ·
+        <a href="/politica.html">Política de Privacidade</a> ·
+        <a href="/termos-usuario.html">Termos do Rolezeiro</a> ·
+        <a href="/termos-organizador.html">Termos do Organizador</a> ·
+        <a href="/politica-spam.html">Política Antispam</a>
+      </p>
+    </footer>
+
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle('light');
+        localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+      }
+
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light');
+      }
+    </script>
+    <script async src="https://www.instagram.com/embed.js"></script>
 <script>
-  const form = document.getElementById("comment-form");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const nome = document.getElementById("nome").value;
-    const texto = document.getElementById("texto").value;
-
-    const resposta = await fetch("https://script.google.com/macros/s/AKfycbxajYv8JyEAnRkpJGmMb2rSbxWvwvWkf_Go0HS-AWerHuNHKwoQZvJ2zm6fKrbTOa8/exec", {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: `nome=${encodeURIComponent(nome)}&texto=${encodeURIComponent(texto)}`
-    });
-
-    form.reset();
-document.getElementById("sucesso").style.display = "block";
-setTimeout(() => {
-  document.getElementById("sucesso").style.display = "none";
-}, 3000);
-  });
-</script>
-
-  <footer>
-    © 2025 ROLÊ ENTRETENIMENTO ·
-    <a href="politica.html">Política de Privacidade</a> ·
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-    <a href="termos-organizador.html">Termos do Organizador</a> ·
-    <a href="politica-spam.html">Política Antispam</a>
-  </footer>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-    }
-  </script>
-  <script>
-  if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light');
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("show");
   }
 </script>
-<script async src="https://www.instagram.com/embed.js"></script>
-</body>
+  </body>
 </html>
