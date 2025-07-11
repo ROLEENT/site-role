@@ -223,19 +223,43 @@ h1 {
 .scroll-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.cards-container .card {
+  flex: 0 0 auto;
+  width: 240px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--highlight);
+  border-radius: 1rem;
+  padding: 1rem;
+  scroll-snap-align: start;
+  text-align: center;
+  color: var(--texto);
+}
 .scroll-arrow {
-  color: var(--highlight);
-  font-size: 24px;
-  cursor: pointer;
   background: transparent;
   border: none;
-  padding: 0 8px;
-  display: flex;
-  align-items: center;
+  font-size: 2rem;
+  color: var(--highlight);
+  cursor: pointer;
 }
+
 /* Cabeçalho */
 .header-container {
   display: flex;
@@ -572,8 +596,8 @@ footer a:hover {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 1rem;
-  padding: 1rem 0;
-  scrollbar-width: none;
+  padding: 2rem 1rem;
+  background-color: var(--bg);  scrollbar-width: none;
 }
 
 .carrossel::-webkit-scrollbar {
@@ -596,9 +620,18 @@ footer a:hover {
   text-align: center;
   margin-bottom: 1rem;
 }
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 100%;
+}
+
 .banner img {
-  display: block;
-  margin: 0 auto;
   max-width: 100%;
   height: auto;
+  display: block;
 }
