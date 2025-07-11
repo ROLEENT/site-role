@@ -561,6 +561,30 @@ footer a:hover {
   border: none !important;
 }
     .embed-box h2 {
+      .carrossel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carrossel::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.carrossel .card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 280px;
+  min-height: 360px;
+  background-color: var(--fundo-secundario);
+  border: 1px solid var(--highlight);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
   font-size: 1rem;
   color: var(--highlight);
   text-align: center;
