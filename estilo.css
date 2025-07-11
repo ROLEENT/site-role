@@ -40,11 +40,18 @@ footer {
 
 /* BANNER */
 
-.banner img {
-  max-width: 600px;
+.banner-container img {
   width: 100%;
+  max-width: 800px; /* novo limite */
   height: auto;
   display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .banner-container img {
+    max-width: 700px;
+  }
 }
 
 .banner-wrapper {
@@ -128,7 +135,9 @@ a:hover {
   border: none;
   color: var(--highlight);
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  text-shadow: 0 0 3px rgba(199, 125, 255, 0.6); /* leve glow */
 }
 
 .dropdown-content {
