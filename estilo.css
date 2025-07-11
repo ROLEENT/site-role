@@ -645,3 +645,11 @@ footer a:hover {
   max-width: 600px;
   height: auto;
 }
+header,
+footer {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 2px solid #c77dff; /* ou o tom exato da cor da barra */
+  padding-top: 20px;
+}
