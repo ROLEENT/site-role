@@ -250,3 +250,48 @@ footer a {
   display: flex;
   align-items: center;
 }
+/* CABEÇALHO FIXO COM LOGO À ESQUERDA E MENUS CENTRALIZADOS */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--highlight);
+  height: 64px;
+  background-color: var(--bg-color);
+}
+
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-left img {
+  height: 40px;
+}
+
+.header-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+}
+
+.header-center a {
+  color: var(--text-color);
+  font-family: var(--font);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header-center a:hover {
+  text-decoration: underline;
+}
+
+.theme-toggle {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
