@@ -34,11 +34,122 @@
     gtag('js', new Date());
     gtag('config', 'G-G8Z07V63HQ');
   </script>
+  <style>
+/* Cabeçalho */
+.header {
+  width: 100%;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.header-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: var(--text-color);
+  margin-left: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Logo */
+.logo-role {
+  height: 32px;
+}
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 12px;
+  margin-top: 40px;
+  padding: 16px;
+}
+
+.footer-line {
+  border-top: 2px solid var(--text-color);
+  margin-bottom: 12px;
+}
+
+/* Corrigir carrossel */
+.carousel-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding-bottom: 12px;
+  margin-top: 20px;
+}
+
+.carousel-container .card {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 16px;
+}
+
+/* Centralizar banner */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+}
+    .theme-toggle img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .cards-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding-bottom: 12px;
+  margin-top: 20px;
+}
+.cards-container .card {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 16px;
+}
+    root {
+  --highlight: #c77dff;
+  --text-color: #f3f3f7;
+}
+body.light {
+  --text-color: #2e2e2e;
+  background-color: #ffffff;
+}
+</style>
 </head>
 
 <body>
-  <!-- HEADER EXTERNO -->
-  <div id="header-container"></div>
+  <header class="header">
+  <div class="header-container">
+    <a href="index.html"><img src="images/logo-role.png" alt="ROLÊ" class="logo-role"></a>
+    <nav class="nav-menu">
+      <a href="index.html">Página Inicial</a>
+      <a href="revista.html">Revista ROLÊ</a>
+      <a href="descontos.html">Descontos</a>
+      <a href="contato.html">Contato</a>
+      <a href="quem-somos.html">Quem Somos</a>
+    </nav>
+   <div class="theme-toggle" onclick="toggleTheme()">
+  <img src="/images/theme-toggle.gif" alt="Trocar tema">
+</div>
+  </div> <!-- FECHAMENTO do .header-container -->
+</header>
 
   <div class="banner">
     <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
@@ -50,8 +161,8 @@
 
     <div class="scroll-wrapper">
       <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
-      <div class="cards-container">
-          <!-- Cards de cidades -->
+<div class="carousel-container">
+  <!-- Cards de cidades -->
   <div class="card">
   <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
   <p>A cena alternativa pulsa forte no Sul.</p>
@@ -82,58 +193,20 @@
       </div>
     </main>
 
-  <!-- FOOTER EXTERNO -->
-  <div id="footer-container"></div>
-
-  <!-- JS INTERNO -->
-  <script>
-    function toggleTheme(el) {
+  <footer class="footer">
+  <div class="footer-line"></div>
+  <p>© 2025 ROLÊ ENTRETENIMENTO • <a href="politica.html">Política de Privacidade</a> • <a href="termos-usuario.html">Termos do Rolezeiro</a> • <a href="termos-organizador.html">Termos do Organizador</a> • <a href="politica-spam.html">Política Antispam</a></p>
+</footer>
+    <script>
+    function toggleTheme() {
       document.body.classList.toggle('light');
-      el.setAttribute('aria-pressed', document.body.classList.contains('light'));
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
     }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // Dropdown, carrossel e scroll já estão certos — mantendo como está
-
-      // Scroll para POA ao carregar
-      const container = document.querySelector('.cards-container');
-      const cards = container.querySelectorAll('.card');
-      let currentIndex = 0;
-
-      function scrollToCard(index) {
-        if (index < 0) index = cards.length - 1;
-        if (index >= cards.length) index = 0;
-        currentIndex = index;
-        const cardWidth = cards[0].getBoundingClientRect().width + 12;
-        container.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
-      }
-
-      document.querySelector('.scroll-arrow.left')?.addEventListener('click', () => scrollToCard(currentIndex - 1));
-      document.querySelector('.scroll-arrow.right')?.addEventListener('click', () => scrollToCard(currentIndex + 1));
-
-      container.addEventListener('scroll', () => {
-        const cardWidth = cards[0].offsetWidth + 12;
-        currentIndex = Math.round(container.scrollLeft / cardWidth);
-      });
-
-      setTimeout(() => {
-        if (container && cards.length > 0) {
-          container.style.scrollBehavior = 'auto';
-          container.scrollTo({ left: 0 });
-          setTimeout(() => container.style.scrollBehavior = 'smooth', 50);
-        }
-      }, 300);
-    });
-
-    // Importa header e footer externos
-    async function loadHTML(id, url) {
-      const res = await fetch(url);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    }
-
-    loadHTML("header-container", "header.html");
-    loadHTML("footer-container", "footer.html");
   </script>
+  <script>
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+  }
+</script>
 </body>
 </html>
