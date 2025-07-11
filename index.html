@@ -1,216 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="eventos, cultura, rolê, arte, música, festa, entretenimento" />
-    <meta name="description" content="ROLÊ: Conectando cultura, arte e os rolês mais vivos do Brasil." />
-    <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Cultura, Arte e Diversão nas Cidades Brasileiras" />
-<meta property="og:description" content="Conectando cultura, arte e os rolês mais vivos do Brasil." />
-<meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://roleentretenimento.com" />
-        <script>
-  if (localStorage.getItem('theme') === 'light') {
-    document.documentElement.classList.add('light');
-    document.body.classList.add('light');
-  }
-</script>
-<title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
-<link rel="icon" href="images/favicon.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-    <noscript>
-      <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
-    </noscript>
-    <style>
-      :root {
-        --bg-color: #000;
-        --text-color: #f3f3f7;
-        --highlight: #c77dff;
-        --card-bg: #151515;
-      }
-      body.light {
-        --bg-color: #fff;
-        --text-color: #2e2e2e;
-        --card-bg: #eaeaea;
-      }
-      body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        font-family: 'League Spartan', sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      .banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 24px auto;
-  max-width: 100%;
-  padding: 0 16px;
-}
-      .banner img {
-        width: 100%;
-        max-width: 600px;
-      }
-      main.destaques {
-        padding: 0 16px;
-        text-align: center;
-      }
-      main.destaques h2 {
-        color: var(--highlight);
-        font-size: 24px;
-        text-transform: uppercase;
-      }
-      .cards-container {
-        display: flex;
-        overflow-x: auto;
-        gap: 12px;
-        padding: 8px 0 16px;
-scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        scroll-behavior: smooth;
-        justify-content: center;
-      }
-      .cards-container::-webkit-scrollbar {
-        display: none;
-      }
-      .cards-container {
-  justify-content: flex-start; /* força o início da rolagem pela esquerda */
-  scroll-padding-left: 0;      /* garante que a rolagem comece do início */
-}
-      .scroll-arrow {
-        color: var(--highlight);
-        font-size: 24px;
-        cursor: pointer;
-        background: transparent;
-        border: none;
-        padding: 0 8px;
-        display: flex;
-        align-items: center;
-      }
-      .scroll-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .card {
-        background-color: var(--card-bg);
-        border-radius: 16px;
-        padding: 12px;
-        min-width: 160px;
-        max-width: 160px;
-        flex: 0 0 auto;
-        scroll-snap-align: start;
-        text-align: center;
-      }
-      .card img {
-        width: 100%;
-        border-radius: 12px;
-        margin-bottom: 8px;
-      }
-      .card a {
-        color: var(--highlight);
-        font-weight: bold;
-        text-decoration: none;
-      }
-      footer {
-        text-align: center;
-        font-size: 14px;
-        padding: 24px 12px;
-      }
-      footer p {
-        color: white;
-      }
-      footer a {
-        color: var(--highlight);
-        text-decoration: none;
-        margin: 0 8px;
-      }
-      @media (max-width: 600px) {
-        header {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        nav {
-          flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
-        }
-        .search {
-          width: 100%;
-          margin-bottom: 8px;
-        }
-        .dropdown-content {
-          left: 0;
-          right: auto;
-        }
-        .card {
-          min-width: 70vw;
-          max-width: 70vw;
-        }
-      }
-      .scroll-arrow {
-  transition: transform 0.2s ease;
-}
-.scroll-arrow:hover {
-  transform: scale(1.2);
-}
-      .theme-toggle {
-  width: 32px;
-  height: 32px;
-  padding: 4px;
-  border-radius: 50%;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="eventos, cultura, rolê, arte, música, festa, entretenimento" />
+  <meta name="description" content="ROLÊ: Conectando cultura, arte e os rolês mais vivos do Brasil." />
+  <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Cultura, Arte e Diversão nas Cidades Brasileiras" />
+  <meta property="og:description" content="Conectando cultura, arte e os rolês mais vivos do Brasil." />
+  <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roleentretenimento.com" />
 
-.theme-toggle img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-    </style>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-G8Z07V63HQ');
-    </script>
-  </head>
-  <body>
-    <div class="header-container">
-  <div class="header-left">
-    <a href="index.html"><img src="images/logo-role.png" alt="ROLÊ" /></a>
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
+      document.body.classList.add('light');
+    }
+  </script>
+
+  <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilo.css" />
+
+  <noscript>
+    <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+  </noscript>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-G8Z07V63HQ');
+  </script>
+</head>
+
+<body>
+  <!-- HEADER EXTERNO -->
+  <div id="header-container"></div>
+
+  <div class="banner">
+    <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
   </div>
-  <div class="header-center">
-    <a href="index.html">Início</a>
-    <a href="editorial.html">Editorial</a>
-    <a href="vitrine-cultural.html">Vitrine</a>
-    <a href="revista.html">Revista</a>
-    <a href="quem-somos.html">Quem Somos</a>
-    <a href="contato.html">Contato</a>
-    <img src="images/theme-toggle.gif" alt="Alternar tema" class="theme-toggle" onclick="toggleTheme()" />
-  </div>
-</div>
 
-    <div class="banner">
-<img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
-    </div>
+  <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px; line-height: 1.7;">
+    <h1 style="color: var(--highlight);">Destaques da Semana</h1>
+    <p>Do Sul ao Norte, da beira-mar aos porões: a cena cultural tá fervendo. Rolezeiros de Porto Alegre, Floripa, Curitiba, São Paulo e Rio vão encontrar por aqui o que não dá pra perder essa semana.</p>
 
-    <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px; line-height: 1.7;">
-  <h1 style="color: var(--highlight);">Destaques da Semana</h1>
-  <p>Do Sul ao Norte, da beira-mar aos porões: a cena cultural tá fervendo. Rolezeiros de Porto Alegre, Floripa, Curitiba, São Paulo e Rio vão encontrar por aqui o que não dá pra perder essa semana.</p>
-      <div class="scroll-wrapper">
-        <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
-        <div class="cards-container">
+    <div class="scroll-wrapper">
+      <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
+      <div class="cards-container">
           <!-- Cards de cidades -->
   <div class="card">
   <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
@@ -242,90 +82,58 @@ scroll-snap-type: x mandatory;
       </div>
     </main>
 
-   <footer>
-  © 2025 ROLÊ ENTRETENIMENTO ·
-  <a href="politica.html">Política de Privacidade</a> ·
-  <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-  <a href="termos-organizador.html">Termos do Organizador</a> ·
-  <a href="politica-spam.html">Política Antispam</a>
-</footer>
-    <script>
-function toggleTheme(el) {
-  document.body.classList.toggle('light');
-  el.setAttribute('aria-pressed', document.body.classList.contains('light'));
-}
+  <!-- FOOTER EXTERNO -->
+  <div id="footer-container"></div>
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Dropdown Explorar
-  const dropdown = document.querySelector('.dropdown');
-  const button = dropdown.querySelector('.dropdown-button');
-  const content = dropdown.querySelector('.dropdown-content');
-
-  if (button && content) {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-    });
-
-    document.addEventListener('click', function (e) {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
-        button.setAttribute('aria-expanded', false);
-      }
-    });
-
-    content.addEventListener('click', function (e) {
-      e.stopPropagation();
-    });
-  }
-
-  // Carrossel
-  const container = document.querySelector('.cards-container');
-  const cards = container.querySelectorAll('.card');
-  const totalCards = cards.length;
-  let currentIndex = 0;
-
-  function scrollToCard(index) {
-    if (index < 0) index = totalCards - 1;
-    if (index >= totalCards) index = 0;
-    currentIndex = index;
-    const cardWidth = cards[0].getBoundingClientRect().width + 12;
-    container.scrollTo({
-      left: cardWidth * index,
-      behavior: 'smooth'
-    });
-  }
-
-  const arrowLeft = document.querySelector('.scroll-arrow.left');
-  const arrowRight = document.querySelector('.scroll-arrow.right');
-
-  if (arrowLeft && arrowRight) {
-    arrowLeft.addEventListener('click', () => scrollToCard(currentIndex - 1));
-    arrowRight.addEventListener('click', () => scrollToCard(currentIndex + 1));
-  }
-
-  container.addEventListener('scroll', () => {
-    const cardWidth = cards[0].offsetWidth + 12;
-    const newIndex = Math.round(container.scrollLeft / cardWidth);
-    currentIndex = newIndex;
-  });
-
-  // Forçar scroll para POA ao carregar
-  setTimeout(() => {
-    if (container && cards.length > 0) {
-      container.style.scrollBehavior = 'auto';
-container.scrollTo({
-  left: 0,
-  behavior: 'auto'
-});
-      setTimeout(() => {
-        container.style.scrollBehavior = 'smooth';
-      }, 50);
+  <!-- JS INTERNO -->
+  <script>
+    function toggleTheme(el) {
+      document.body.classList.toggle('light');
+      el.setAttribute('aria-pressed', document.body.classList.contains('light'));
     }
- }, 300);
-});
-</script>
-  </body>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Dropdown, carrossel e scroll já estão certos — mantendo como está
+
+      // Scroll para POA ao carregar
+      const container = document.querySelector('.cards-container');
+      const cards = container.querySelectorAll('.card');
+      let currentIndex = 0;
+
+      function scrollToCard(index) {
+        if (index < 0) index = cards.length - 1;
+        if (index >= cards.length) index = 0;
+        currentIndex = index;
+        const cardWidth = cards[0].getBoundingClientRect().width + 12;
+        container.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+      }
+
+      document.querySelector('.scroll-arrow.left')?.addEventListener('click', () => scrollToCard(currentIndex - 1));
+      document.querySelector('.scroll-arrow.right')?.addEventListener('click', () => scrollToCard(currentIndex + 1));
+
+      container.addEventListener('scroll', () => {
+        const cardWidth = cards[0].offsetWidth + 12;
+        currentIndex = Math.round(container.scrollLeft / cardWidth);
+      });
+
+      setTimeout(() => {
+        if (container && cards.length > 0) {
+          container.style.scrollBehavior = 'auto';
+          container.scrollTo({ left: 0 });
+          setTimeout(() => container.style.scrollBehavior = 'smooth', 50);
+        }
+      }, 300);
+    });
+
+    // Importa header e footer externos
+    async function loadHTML(id, url) {
+      const res = await fetch(url);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    loadHTML("header-container", "header.html");
+    loadHTML("footer-container", "footer.html");
+  </script>
+</body>
 </html>
