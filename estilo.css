@@ -561,17 +561,23 @@ footer a:hover {
   border: none !important;
 }
     .embed-box h2 {
-      .carrossel {
+  font-size: 1rem;
+  color: var(--highlight);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+    
+     .carrossel {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 1rem;
   padding: 1rem 0;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 .carrossel::-webkit-scrollbar {
-  display: none; /* Chrome */
+  display: none;
 }
 
 .carrossel .card {
@@ -579,7 +585,7 @@ footer a:hover {
   scroll-snap-align: start;
   width: 280px;
   min-height: 360px;
-  background-color: var(--fundo-secundario);
+  background-color: var(--card-bg);
   border: 1px solid var(--highlight);
   border-radius: 1rem;
   padding: 1rem;
@@ -589,4 +595,10 @@ footer a:hover {
   color: var(--highlight);
   text-align: center;
   margin-bottom: 1rem;
+}
+.banner img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
