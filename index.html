@@ -13,7 +13,6 @@
         <script>
   if (localStorage.getItem('theme') === 'light') {
     document.documentElement.classList.add('light');
-    document.body.classList.add('light');
   }
 </script>
 <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
@@ -31,7 +30,7 @@
   <div class="container-topo">
     <div class="header-top">
       <!-- LOGO ESQUERDA -->
-      <img src="images/logo-role.png" alt="Logo ROLÊ" class="logo" />
+      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
 
       <!-- MENU + TEMA (LADO DIREITO) -->
       <div class="right-top">
@@ -55,7 +54,12 @@
         </div>
 
         <!-- TEMA -->
-        <img src="images/theme-toggle.gif" alt="Lâmpada Theme Toggle" class="lampada-toggle" />
+<img src="/images/theme-toggle.gif"
+     alt="Alternar tema"
+     class="lampada-toggle"
+     role="button"
+     tabindex="0"
+     aria-pressed="false" />
       </div>
     </div>
     <hr class="linha-topo" />
@@ -69,34 +73,34 @@
     </div>
   </div>
 
-<div class="carrossel">
+<div class="carrossel fade-in delay">
   <main class="destaques" role="main">
       <h2>DESTAQUES DA SEMANA</h2>
       <div class="scroll-wrapper">
         <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
         <div class="cards-container">
           <!-- Cards de cidades -->
-          <div class="card">
+          <div class="card fade-in delay">
             <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
             <p>A cena alternativa pulsa forte no Sul.</p>
             <a href="https://www.instagram.com/p/DLz1gayuJFS/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
-          <div class="card">
+          <div class="card fade-in delay">
             <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
             <p>Beira-mar, eletrônica e coletivo.</p>
             <a href="https://www.instagram.com/p/DL7mjNhODps/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
-          <div class="card">
+          <div class="card fade-in delay">
             <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
             <p>Frio na rua, calor nas pistas.</p>
             <a href="https://www.instagram.com/p/DL3BmWrPPwt/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
-          <div class="card">
+          <div class="card fade-in delay">
             <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
             <p>A cidade que nunca dorme... nem para de dançar.</p>
             <a href="https://www.instagram.com/p/DL0P0JlvZJi/" target="_blank" rel="noopener noreferrer">Ver mais</a>
           </div>
-          <div class="card">
+          <div class="card fade-in delay">
             <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
             <p>Funk, favela, cor e calor cultural.</p>
             <a href="https://www.instagram.com/p/DL08nauuZUN/" target="_blank" rel="noopener noreferrer">Ver mais</a>
@@ -199,19 +203,43 @@ container.scrollTo({
     <a href="https://tiktok.com/@role.ent" target="_blank">
       <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
     </a>
-    <a href="https://wa.me/5599999999999" target="_blank">
+    <a href="https://wa.me/5551980704353" target="_blank">
       <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
     </a>
   </div>
 </footer>
-  <script>
-  document.querySelector('.lampada-toggle').addEventListener('click', function () {
-    document.body.classList.toggle('light');
-    localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-  });
+   <script>
+  const lampada = document.querySelector('.lampada-toggle');
+  const root = document.documentElement;
+
+  // Aplica o tema salvo ao carregar
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    root.style.setProperty('--bg', '#ffffff');
+    root.style.setProperty('--text-color', '#2e2e2e');
+  } else {
+    root.style.setProperty('--bg', '#000000');
+    root.style.setProperty('--text-color', '#f3f3f7');
+  }
+
+  // Alterna o tema ao clicar na lâmpada
+ lampada.addEventListener('click', () => {
+  const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+
+  if (currentBg === '#000000') {
+    // Modo claro
+    root.style.setProperty('--bg', '#ffffff');
+    root.style.setProperty('--text-color', '#2e2e2e');
+    lampada.setAttribute('aria-pressed', 'true');
+    localStorage.setItem('theme', 'light');
+  } else {
+    // Modo escuro
+    root.style.setProperty('--bg', '#000000');
+    root.style.setProperty('--text-color', '#f3f3f7');
+    lampada.setAttribute('aria-pressed', 'false');
+    localStorage.setItem('theme', 'dark');
+  }
+});
 </script>
 </body>
 </html>
-</body>
-</html>
-
