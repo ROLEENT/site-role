@@ -401,6 +401,7 @@ button[type="submit"] {
   background-color: #111;
   border-radius: 10px;
   border: 1px solid var(--highlight);
+  box-sizing: border-box;
 }
 
 .comentario button {
@@ -425,6 +426,41 @@ button[type="submit"] {
   border-radius: 5px;
   background-color: #000;
   color: var(--text-color);
+}
+
+.comentarios button[type="submit"] {
+  background-color: var(--highlight);
+  color: #000 !important;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.comentarios button[type="submit"]:hover {
+  background-color: #a44ce0;
+}
+
+.comentarios h2,
+.comentarios input,
+.comentarios textarea,
+.comentarios button,
+.comentario button {
+  color: #ffffff !important;
+}
+
+.comentarios input,
+.comentarios textarea {
+  background-color: #000;
+  border: 1px solid #444;
+  font-size: 1rem;
+}
+
+.comentarios input::placeholder,
+.comentarios textarea::placeholder {
+  color: #bbb;
 }
 
 html, body {
@@ -632,11 +668,27 @@ color: #f3f3f7;
   background-color: #a856d4;
 }
 
-  body,
+/* FORÇA A COR BRANCA DO TEXTO NO EDITORIAL */
+body,
 .editorial-completo,
+.texto-editorial,
 .texto-editorial p,
 .texto-editorial h1,
 .texto-editorial h2,
-.texto-editorial blockquote {
-  color: var(--text-color) !important;
+.texto-editorial blockquote,
+.comentarios,
+.comentarios h2,
+.comentarios input,
+.comentarios textarea,
+.comentarios button {
+  color: #f3f3f7 !important;
+}
+
+main,
+div.texto-editorial {
+  color: #f3f3f7 !important;
+}
+
+.texto-editorial * {
+  color: #f3f3f7 !important;
 }
