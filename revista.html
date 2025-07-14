@@ -1,253 +1,305 @@
-<!-- Estrutura esperada:
-- revista.html
-- /images (com todas as imagens do carrossel)
-- /scripts/topo.js e menu.js
-- estilo.css
--->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="description" content="Revista ROLÊ com editoriais e conteúdo cultural independente" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Revista ROLÊ com editoriais e conteúdo cultural independente" />
+  <meta property="og:title" content="Revista ROLÊ" />
+  <meta property="og:description" content="Editorial, entrevistas e cultura noturna com a linguagem do ROLÊ" />
+  <meta property="og:image" content="images/logo-role.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roleentretenimento.com/revista.html" />
   <title>Revista ROLÊ</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="estilo.css" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-G8Z07V63HQ');
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
+    }
   </script>
 </head>
-<body>
+<body class="fade-in">
 
-<header>
-  <img alt="Logo ROLÊ" src="images/logo-role.png" height="40" />
-  <div class="top-right">
-    <input class="search" type="text" placeholder="Buscar eventos, artistas, cidades..." aria-label="Buscar" />
-    <div class="dropdown">
-      <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">Explorar ▾</button>
-      <div class="dropdown-content">
-         <a href="index.html">Página Inicial</a>
-        <a href="vitrine-cultural.html">Vitrine Cultural</a>
-        <a href="descontos.html">Descontos</a>
-        <a href="contato.html">Contato</a>
-        <a href="quem-somos.html">Quem Somos</a>
+<!-- TOPO -->
+<section class="bloco-topo">
+  <div class="container-topo">
+    <div class="header-top">
+      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" loading="lazy"/>
+      <div class="right-top">
+        <div class="dropdown">
+          <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">Explorar ▼</button>
+          <div class="dropdown-content">
+            <a href="index.html">Página Inicial</a>
+            <a href="revista.html">Revista ROLÊ</a>
+            <a href="descontos.html">Descontos</a>
+            <a href="contato.html">Contato</a>
+            <a href="quem-somos.html">Quem Somos</a>
+          </div>
+        </div>
+        <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
       </div>
     </div>
+    <hr class="linha-topo" />
   </div>
-</header>
+</section>
 
-<main>
-  <h1>Revista ROLÊ</h1>
-
-  <h2>Editorial</h2>
-  <p>Textos instigantes que refletem a cena cultural noturna atual. Reflexões, provocações e debates sobre a cultura noturna e os movimentos da cena.</p>
- <div class="scroll-wrapper">
-  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
-  <div class="carousel">
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="carrossel">
+  <h2>EDITORIAL</h2>
+  <p class="container">Textos que refletem a cena noturna, com críticas, poesia e provocações do ROLÊ.</p>
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left">◀</button>
+    <div class="cards-container">
 <div class="card">
-  <img src="images/editorial-madrugada.png" alt="As cidades já foram noturnas">
+<img src="images/editorial-madrugada.png" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy">
   <strong>As cidades já foram noturnas</strong>
   <p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p>
   <a href="editorial/as-cidades-ja-foram-noturnas.html">Ler texto completo</a>
 </div>
 <div class="card">
-  <img src="images/editorial-dj-autor.png.png">
+<img src="images/editorial-dj-autor.png" alt="Arte de DJ como autor da pista" loading="lazy">
   <strong>DJs são novos autores</strong>
   <p>Quem escreve tua noite é o DJ. Já agradeceu?</p>
   <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html">Ler texto completo</a>
 </div>
 <div class="card">
-  <img src="images/editorial-teatros-vazios.png">
+<img src="images/editorial-teatros-vazios.png" alt="Arte com cadeiras vazias representando o teatro" loading="lazy">
   <strong>Por que os teatros estão vazios...</strong>
   <p>Teatro na era do feed: presença ou performance?</p>
   <a href="#" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/editorial-look-fala.png">
+<img src="images/editorial-look-fala.png" alt="Ilustração de look expressivo como identidade" loading="lazy">
   <strong>E se teu look falasse por ti?</strong>
   <p>Estética é política: o look também fala!</p>
   <a href="#" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/editorial-te-chamam-de-atracao.png">
+<img src="images/editorial-te-chamam-de-atracao.png" alt="Imagem de artista como destaque da festa" loading="lazy">
   <strong>Te chamam de atração...</strong>
   <p>Quem faz a noite vibrar também precisa viver dela.</p>
   <a href="#" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/editorial-fomo-cansaco.png">
+<img src="images/editorial-fomo-cansaco.png" alt="Arte representando cansaço e FOMO nos rolês" loading="lazy">
   <strong>Todo mundo cansado</strong>
   <p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p>
   <a href="#" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/editorial-rolezao.png">
+<img src="images/editorial-rolezao.png" alt="Imagem nostálgica de uma festa marcante" loading="lazy">
   <strong>Todo mundo já foi num rolê bom.</strong>
   <p>Rolêzão: quando vira lenda, não só festa.</p>
   <a href="https://www.instagram.com/p/DLlKtmDvjnV/" target="_blank">Ver post completo</a></div>
+    </div>
+    <button class="scroll-arrow right">▶</button>
   </div>
-  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
-</div>
     
-  <h2>Posfácio</h2>
-  <p>Encerramos a semana com textos fortes, críticos ou poéticos sobre a cena cultural atual.</p>
-<div class="scroll-wrapper">
-  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
-  <div class="carousel">
+  <h2>POSFÁCIO</h2>
+  <p class="container">Reflexões de encerramento da semana: textos críticos ou poéticos da cena.</p>
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left">◀</button>
+    <div class="cards-container">
 <div class="card">
-  <img src="images/posfacio-arte-nao-e-favor.png">
+<img src="images/posfacio-arte-nao-e-favor.png" alt="Frase arte não é favor em fundo gráfico" loading="lazy">
       <strong>Arte não é favor</strong>
       <p>Curte o rolê? Então fortalece quem faz a cena!</p>
       <a href="https://www.instagram.com/p/DKUvi7ftej4/" target="_blank">Ver post completo</a>
     </div>
 <div class="card">
-  <img src="images/posfacio-corpo-danca.png">
+<img src="images/posfacio-corpo-danca.png" alt="Imagem de corpo dançando em cena política" loading="lazy">
   <strong>Você já parou pra pensar que subir no palco é um ato político?</strong>
   <p>O palco também é trincheira. Vem entender por quê.</p>
   <a href="https://www.instagram.com/p/DKpNipHuHxT/" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/posfacio-som-autoral.png">
-  <strong>O FIM DO COVER: QUEREMOS SOM AUTORAL</strong>
+<img src="images/posfacio-som-autoral.png" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy">
+<strong>O FIM DO COVER: QUEREMOS SOM AUTORAL</strong>
   <p>Mesmas músicas em todo rolê? Hora de mudar o som.</p>
   <a href="https://www.instagram.com/p/DK76By9Pa6v/" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/posfacio-palco-politico.png">
+<img src="images/posfacio-palco-politico.png" alt="Dança como forma de resistência política" loading="lazy">
   <strong>O que teu corpo diz quando dança?</strong>
   <p>Se tem dança, tem revolução no corpo.</p>
   <a href="https://www.instagram.com/p/DLKu8KKO_xh/" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/posfacio-orgulho-rebeliao.png">
+<img src="images/posfacio-orgulho-rebeliao.png" alt="Orgulho LGBTQIAP+ como rebelião cultural" loading="lazy">
   <strong>Não foi por convite. Foi por rebelião.</strong>
   <p>Orgulho é rebelião: leia o novo Posfácio do ROLÊ!</p>
   <a href="https://www.instagram.com/p/DLdGOdOvozf/" target="_blank">Ver post completo</a></div>
+    </div>
+    <button class="scroll-arrow right">▶</button>
   </div>
-  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
-</div>
 
-  <h2>Dicas do ROLÊ</h2>
-  <p>Achadinhos, experiências, lugares e rolês imperdíveis mapeados pela equipe do ROLÊ.</p>
-<div class="scroll-wrapper">
-  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
-  <div class="carousel">
+  <h2>DICAS DO ROLÊ</h2>
+  <p class="container">Achados, experiências e rolês mapeados pela equipe do ROLÊ.</p>
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left">◀</button>
+    <div class="cards-container">
 <div class="card">
-  <img src="images/dica-celular-no-role.png">
+<img src="images/dica-celular-no-role.png" alt="Dica para levar o celular no rolê com segurança" loading="lazy">
   <strong>Tá indo pro rolê… mas nem sabe onde guardar o celular?</strong>
   <p>Celular no rolê: leve com estilo e segurança!</p>
   <a href="https://www.instagram.com/p/DKcwM01vOHG/" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/dica-dicionario-rolezeiro.png">
+<img src="images/dica-dicionario-rolezeiro.png" alt="Dicionário visual com gírias da cena" loading="lazy">
   <strong>Dicionário rolezeiro pra tu dominar a noite!</strong>
   <p>Gírias que só quem é da cena entende. Vem aprender!</p>
   <a href="https://www.instagram.com/p/DK0JECQvjlS/" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/dica-role-no-meio-da-semana.png">
+<img src="images/dica-role-no-meio-da-semana.png" alt="Arte incentivando rolês em dias úteis" loading="lazy">
   <strong>Rolê no meio da semana? Tá doido?</strong>
   <p>Rolê no meio da semana? Vem ver por que sim!</p>
   <a href="https://www.instagram.com/p/DLAXK7hOqyI/" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/dica-ta-caro.png">
+<img src="images/dica-ta-caro.png" alt="Arte crítica sobre preços altos nos rolês" loading="lazy">
   <strong>Tá caro? Tá mesmo.</strong>
   <p>Por que o rolê tá caro? Descubra e valorize a cena.</p>
   <a href="https://www.instagram.com/p/DLaMMB2uFzF/" target="_blank">Ver post completo</a></div>
-  </div>
-  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
 </div>
+    <button class="scroll-arrow right">▶</button>
+  </div>
 
-  <h2>Fala, ROLÊ</h2>
-  <p>Entrevistas com artistas independentes da cena cultural e noturna. Vozes que movimentam os palcos e as pistas.</p>
-<div class="scroll-wrapper">
-  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
-  <div class="carousel">
+<h2>FALA, ROLÊ</h2>
+  <p class="container">Entrevistas com artistas independentes e vozes da cena noturna.</p>
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left">◀</button>
+    <div class="cards-container">
 <div class="card">
-  <img src="images/fala-quem-faz-a-cena.png">
+<img src="images/fala-quem-faz-a-cena.png" alt="Chamada para conhecer artistas da cena cultural" loading="lazy">
   <strong>Você conhece mesmo quem faz a cena acontecer?</strong>
   <p>Quem faz o rolê ferver? Descubra no FALA, ROLÊ!</p>
   <a href="https://www.instagram.com/p/DKnSfFevJOO/" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/fala-jon-soares.png">
+<img src="images/fala-jon-soares.png" alt="Retrato do artista Jon Soares" loading="lazy">
   <strong>Jon Soares</strong>
   <p>Jon Soares no Fala, ROLÊ: som que conta histórias.</p>
   <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank">Ver post completo</a></div>
- </div>
-  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
-</div>
+    </div>
+    <button class="scroll-arrow right">▶</button>
+  </div>
 
-  <h2>ROLÊ.bpm</h2>
-  <p>Explorações sonoras e musicais: gêneros, artistas, produções e cenas que fazem o som girar.</p>
-<div class="scroll-wrapper">
-  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
-  <div class="carousel">
+ <h2>ROLÊ.BPM</h2>
+  <p class="container">Explorações musicais e gêneros que movem as pistas.</p>
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left">◀</button>
+    <div class="cards-container">
 <div class="card">
-  <img src="images/bpm-techno-resistencia.png">
+<img src="images/bpm-techno-resistencia.png" alt="Arte sobre o techno como resistência" loading="lazy">
   <strong>Quem tem medo do techno?</strong>
   <p>Techno é resistência: você sabe de onde veio?</p>
   <a href="https://www.instagram.com/p/DLFzcKQOfzP/" target="_blank">Ver post completo</a>
 </div>
 <div class="card">
-  <img src="images/bpm-funk-e-cultura.png">
+<img src="images/bpm-funk-e-cultura.png" alt="Funk retratado como cultura e identidade" loading="lazy">
   <strong>FUNK É CULTURA, SIM.</strong>
   <p>Do asfalto pro topo, sem pedir licença. Funk é cultura!</p>
   <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank">Ver post completo</a></div>
  </div>
-  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
-</div>
-
-  <h2>Achadinhos do ROLÊ</h2>
-  <p>Descobertas visuais, virais, referências culturais, vídeos, memes e tudo que pulsa criatividade.</p>
-<div class="scroll-wrapper">
-  <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
-  <div class="carousel">
+    <button class="scroll-arrow right">▶</button>
+  </div>
+  
+<h2>ACHADINHOS</h2>
+  <p class="container">Referências, virais, memes e achados culturais da semana.</p>
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left">◀</button>
+    <div class="cards-container">
 <div class="card">
-  <img src="images/achadinho-floripa-segredos.png">
+<img src="images/achadinho-floripa-segredos.png" alt="Segredos dos rolês underground em Florianópolis" loading="lazy">
   <strong>Qual é o segredo dos rolês de Floripa?</strong>
   <p>Achadinhos de Floripa que o Google não mostra!</p>
   <a href="https://www.instagram.com/p/DLavpxbv4BT/" target="_blank">Ver post completo</a></div>
+   </div>
+    <button class="scroll-arrow right">▶</button>
   </div>
-  <button class="scroll-arrow" onclick="scrollRight()">▶</button>
-</div>
 </main>
 
+<!-- RODAPÉ -->
 <footer>
-  <p>© 2025 ROLÊ ENTRETENIMENTO · 
-    <a href="politica.html">Política de Privacidade</a> · 
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> · 
-    <a href="termos-organizador.html">Termos do Organizador</a> · 
+  <div class="footer-links">
+    © 2025 ROLÊ ENTRETENIMENTO ·
+    <a href="politica.html">Política de Privacidade</a> ·
+    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+    <a href="termos-organizador.html">Termos do Organizador</a> ·
     <a href="politica-spam.html">Política Antispam</a>
-  </p>
+  </div>
+  <div class="social-icons">
+    <a href="https://instagram.com/role.ent" target="_blank"><img src="images/instagram.svg" alt="Instagram" /></a>
+    <a href="https://tiktok.com/@role.ent" target="_blank"><img src="images/tiktok.svg" alt="TikTok" /></a>
+    <a href="https://wa.me/5551980704353" target="_blank"><img src="images/whatsapp.svg" alt="WhatsApp" /></a>
+  </div>
 </footer>
 
-<button id="btn-topo" title="Voltar ao topo" class="hide">
-  <img src="images/seta-para-cima.png" alt="Voltar ao topo" />
-</button>
-<script src="scripts/topo.js"></script>
-<script src="scripts/menu.js"></script>
-<script src="scripts/carrossel.js"></script>
-  <script>
-  function scrollRight(carouselClass) {
-    const carousel = document.querySelector(carouselClass);
-    if (carousel) {
-      carousel.scrollBy({ left: 300, behavior: 'smooth' });
-    }
+<!-- SCRIPTS -->
+<script>
+  const lampada = document.querySelector('.lampada-toggle');
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    root.style.setProperty('--bg', '#ffffff');
+    root.style.setProperty('--text-color', '#2e2e2e');
+  } else {
+    root.style.setProperty('--bg', '#000000');
+    root.style.setProperty('--text-color', '#f3f3f7');
   }
 
-  function scrollLeft(carouselClass) {
-    const carousel = document.querySelector(carouselClass);
-    if (carousel) {
-      carousel.scrollBy({ left: -300, behavior: 'smooth' });
+  lampada.addEventListener('click', () => {
+    const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+    if (currentBg === '#000000') {
+      root.style.setProperty('--bg', '#ffffff');
+      root.style.setProperty('--text-color', '#2e2e2e');
+      lampada.setAttribute('aria-pressed', 'true');
+      localStorage.setItem('theme', 'light');
+    } else {
+      root.style.setProperty('--bg', '#000000');
+      root.style.setProperty('--text-color', '#f3f3f7');
+      lampada.setAttribute('aria-pressed', 'false');
+      localStorage.setItem('theme', 'dark');
     }
+  });
+
+  // DROPDOWN
+  const dropdown = document.querySelector('.dropdown');
+  const button = dropdown?.querySelector('.dropdown-button');
+  const content = dropdown?.querySelector('.dropdown-content');
+
+  if (button && content) {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+    });
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        button.setAttribute('aria-expanded', false);
+      }
+    });
+    content.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
   }
+
+  // SCROLL
+  const carrosseis = document.querySelectorAll('.scroll-wrapper');
+  carrosseis.forEach(wrapper => {
+    const container = wrapper.querySelector('.cards-container');
+    const left = wrapper.querySelector('.scroll-arrow.left');
+    const right = wrapper.querySelector('.scroll-arrow.right');
+    const scrollAmount = 300;
+
+    left.addEventListener('click', () => container.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+    right.addEventListener('click', () => container.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+  });
 </script>
+
 </body>
 </html>
