@@ -304,14 +304,17 @@ html {
 }
 
 .texto-editorial p {
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  line-height: 1.9;
+  margin-bottom: 1.4rem;
 }
 
 .texto-editorial h2 {
-  color: var(--highlight);
-  margin-top: 2rem;
-  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #c77dff;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.4rem;
 }
 
 .texto-editorial blockquote {
@@ -741,8 +744,38 @@ section.comentarios h2 {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+
+  .subtitulo-editorial {
+  font-size: 1.25rem;
+  color: #c77dff;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
 }
 
 #comment-form button:hover {
   background-color: #b566f0;
+}
+
+.destaque-frase {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #c77dff;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.frase-final {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #f3f3f7;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.separador-comentario {
+  border: none;
+  height: 1px;
+  background: #c77dff;
+  margin-bottom: 2rem;
 }
