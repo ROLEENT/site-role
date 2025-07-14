@@ -745,14 +745,6 @@ section.comentarios h2 {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-
-  .subtitulo-editorial {
-  font-size: 1.25rem;
-  color: #c77dff;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
 }
 
 #comment-form button:hover {
@@ -787,8 +779,11 @@ section.comentarios h2 {
   font-size: 2.5rem;
   color: #f3f3f7;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
+  margin: 0 auto 0.5rem auto;
+  margin-bottom: 0.8rem;
+  display: block;
+  width: 100%;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 /* Subtítulo editorial */
@@ -821,4 +816,25 @@ section.comentarios h2 {
   .subtitulo-editorial {
     font-size: 1rem;
   }
+}
+
+@media (max-width: 480px) {
+  .editorial-completo {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.editorial-completo,
+main {
+  text-align: center;
+}
+
+  .editorial-completo .texto-editorial {
+  margin-top: 2rem;
+}
+
+.keyword {
+  font-weight: bold;
+  color: var(--highlight);
 }
