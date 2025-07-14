@@ -307,7 +307,7 @@ html {
 .texto-editorial p {
   line-height: 1.9;
   margin-bottom: 1.4rem;
-  text-align: justify;
+  text-align: justify; !important;
 }
 
 .texto-editorial h2 {
@@ -758,6 +758,10 @@ section.comentarios h2 {
   color: #c77dff;
   text-align: center;
   margin: 2rem 0;
+}
+
+.editorial-texto p {
+  text-align: justify;
 }
 
 .frase-final {
