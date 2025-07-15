@@ -4,306 +4,194 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="ROLÊ: Vitrine Cultural com os eventos em destaque da cena independente." />
+  <meta property="og:title" content="Vitrine Cultural | ROLÊ ENTRETENIMENTO" />
+  <meta property="og:description" content="Os eventos mais quentes da cena alternativa, reunidos na Vitrine Cultural do ROLÊ" />
+  <meta property="og:image" content="images/logo-role.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roleentretenimento.com/vitrine-cultural.html" />
   <title>Vitrine Cultural | ROLÊ ENTRETENIMENTO</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-color: #000;
-      --text-color: #f3f3f7;
-      --highlight: #c77dff;
-      --card-bg: #151515;
-    }
-    body.light {
-      --bg-color: #fff;
-      --text-color: #2e2e2e;
-      --card-bg: #eaeaea;
-    }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'League Spartan', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 16px;
-      border-bottom: 1px solid var(--highlight);
-    }
-    header img.logo {
-      height: 40px;
-      margin-bottom: 8px;
-    }
-    .top-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-    }
-    .search {
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      max-width: 200px;
-    }
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 14px;
-      color: var(--highlight);
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-button {
-      background-color: var(--highlight);
-      border: none;
-      color: var(--bg-color);
-      font-size: 16px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .dropdown-button::after {
-      content: "▾";
-      margin-left: 6px;
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-    .dropdown.open .dropdown-button::after {
-      transform: rotate(180deg);
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: var(--card-bg);
-      border-radius: 8px;
-      margin-top: 8px;
-      min-width: 200px;
-      z-index: 1;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 12px;
-      color: var(--text-color);
-      text-decoration: none;
-    }
-    .dropdown.open .dropdown-content {
-      display: block;
-    }
-
-    .destaques {
-      padding: 0 16px;
-      text-align: center;
-    }
-    .destaques h2 {
-      color: var(--highlight);
-      font-size: 24px;
-      text-transform: uppercase;
-      margin-top: 32px;
-    }
-
-    .cards-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 12px;
-      padding: 16px 0 32px;
-      scroll-snap-type: x proximity;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      justify-content: center;
-    }
-    .cards-container::-webkit-scrollbar {
-      display: none;
-    }
-    .scroll-arrow {
-      color: var(--highlight);
-      font-size: 24px;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-      padding: 0 8px;
-      display: flex;
-      align-items: center;
-    }
-    .scroll-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .card {
-      background-color: var(--card-bg);
-      border-radius: 16px;
-      padding: 12px;
-      min-width: 220px;
-      max-width: 220px;
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 8px;
-    }
-    .card p {
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    .card a {
-      color: var(--highlight);
-      font-weight: bold;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      padding: 24px 12px;
-    }
-    footer p {
-      color: white;
-    }
-    footer a {
-      color: var(--highlight);
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .top-right {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
-      .search {
-        width: 100%;
-        margin-bottom: 8px;
-      }
-      .dropdown-content {
-        left: 0;
-        right: auto;
-      }
-      .card {
-        min-width: 70vw;
-        max-width: 70vw;
-      }
-    }
-    .return-btn {
-  text-align: center;
-  margin: 48px 0;
-}
-.return-btn a {
-  background-color: var(--highlight);
-  color: var(--bg-color);
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-  </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G8Z07V63HQ');
-</script>
+  <link rel="stylesheet" href="estilo.css" />
   <script>
-    function scrollRight() {
-      document.querySelector('.cards-container').scrollBy({ left: 300, behavior: 'smooth' });
-    }
-    function scrollLeft() {
-      document.querySelector('.cards-container').scrollBy({ left: -300, behavior: 'smooth' });
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
     }
   </script>
+  <noscript>
+    <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+  </noscript>
 </head>
-<body>
-  <header>
-    <img src="images/logo-role.png" alt="ROLÊ" class="logo" />
-    <div class="top-right">
-      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
-      <div class="dropdown">
-        <button class="dropdown-button">Explorar ▾</button>
-        <div class="dropdown-content">
-          <a href="index.html">Página Inicial</a>
-          <a href="revista.html">Revista ROLÊ</a>
-          <a href="descontos.html">Descontos</a>
-          <a href="contato.html">Contato</a>
-          <a href="quem-somos.html">Quem Somos</a>
-        </div>
-      </div>
-      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
-    </div>
-  </header>
+<body class="fade-in">
 
-  <section class="destaques">
-    <h2>NA VITRINE CULTURAL</h2>
-    <div class="scroll-wrapper">
-      <button class="scroll-arrow" onclick="scrollLeft()">◀</button>
-      <div class="cards-container">
-        <div class="card">
-          <img src="images/plano.png" alt="PLANO 8 ANOS" />
-          <p>Uma pista-portal te chama: Mercúrio em Transe, 05/07!</p>
-          <a href="https://www.instagram.com/p/DLfURN7uUYq/?img_index=1" target="_blank">Ver mais</a>
+<!-- TOPO -->
+<section class="bloco-topo">
+  <div class="container-topo">
+    <div class="header-top">
+      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+      <div class="right-top">
+        <div class="dropdown">
+          <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+            Explorar ▼
+          </button>
+          <div class="dropdown-content" id="menu-explorar">
+            <a href="index.html">Página Inicial</a>
+            <a href="revista.html">Revista ROLÊ</a>
+            <a href="descontos.html">Descontos</a>
+            <a href="contato.html">Contato</a>
+            <a href="quem-somos.html">Quem Somos</a>
+          </div>
         </div>
-        <div class="card">
-          <img src="images/Atrito.png" alt="Festa Atrito" />
-          <p>ATRITO: o after mais insano do Rio te espera!</p>
-          <a href="https://www.instagram.com/p/DLkhRnvuMpI/?img_index=1" target="_blank">Ver mais</a>
-        </div>
-        <div class="card">
-          <img src="images/Lovefool.png" alt="Festa Disco Love" />
-          <p>DISCO LOVE no Hum: glitter, hits e caos gostoso!</p>
-          <a href="https://www.instagram.com/p/DLlFJmzvzMh/?img_index=1" target="_blank">Ver mais</a>
-        </div>
-        <div class="card">
-          <img src="images/bolsinh4.png" alt="Festa Bolsinh4" />
-          <p>BOLSINH4: Uma rave pop que vai explodir no 63</p>
-          <a href="https://www.instagram.com/p/DLn3ci8v6-U/" target="_blank">Ver mais</a>
-        </div>
+        <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
       </div>
-      <button class="scroll-arrow" onclick="scrollRight()">▶</button>
     </div>
-  </section>
-<div class="return-btn">
-  <a href="index.html">Voltar para o início</a>
+    <hr class="linha-topo" />
+  </div>
+</section>
+
+<!-- BANNER -->
+<div class="banner-wrapper">
+  <div class="banner-container">
+    <img src="images/banner-home.png" alt="Vitrine Cultural do ROLÊ" loading="lazy" />
+  </div>
 </div>
 
-  <footer>
-    <p>
-      © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
-      <a href="politica.html">Política de Privacidade</a> ·
-      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-      <a href="termos-organizador.html">Termos do Organizador</a> ·
-      <a href="politica-spam.html">Política Antispam</a>
-    </p>
-  </footer>
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="carrossel fade-in delay">
+  <h2>NA VITRINE CULTURAL</h2>
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left" aria-label="Anterior">◀</button>
+    <div class="cards-container">
+      <div class="card fade-in delay">
+        <img src="images/plano.png" alt="PLANO 8 ANOS" />
+        <p>Uma pista-portal te chama: Mercúrio em Transe, 05/07!</p>
+        <a href="https://www.instagram.com/p/DLfURN7uUYq/?img_index=1" target="_blank">Ver mais</a>
+      </div>
+      <div class="card fade-in delay">
+        <img src="images/Atrito.png" alt="Festa Atrito" />
+        <p>ATRITO: o after mais insano do Rio te espera!</p>
+        <a href="https://www.instagram.com/p/DLkhRnvuMpI/?img_index=1" target="_blank">Ver mais</a>
+      </div>
+      <div class="card fade-in delay">
+        <img src="images/Lovefool.png" alt="Festa Disco Love" />
+        <p>DISCO LOVE no Hum: glitter, hits e caos gostoso!</p>
+        <a href="https://www.instagram.com/p/DLlFJmzvzMh/?img_index=1" target="_blank">Ver mais</a>
+      </div>
+      <div class="card fade-in delay">
+        <img src="images/bolsinh4.png" alt="Festa Bolsinh4" />
+        <p>BOLSINH4: Uma rave pop que vai explodir no 63</p>
+        <a href="https://www.instagram.com/p/DLn3ci8v6-U/" target="_blank">Ver mais</a>
+      </div>
+    </div>
+    <button class="scroll-arrow right" aria-label="Próxima">▶</button>
+  </div>
+</main>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const dropdown = document.querySelector('.dropdown');
-      const button = document.querySelector('.dropdown-button');
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    © 2025 ROLÊ ENTRETENIMENTO ·
+    <a href="politica.html">Política de Privacidade</a> ·
+    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+    <a href="termos-organizador.html">Termos do Organizador</a> ·
+    <a href="politica-spam.html">Política Antispam</a>
+  </div>
+  <div class="social-icons">
+    <a href="https://instagram.com/role.ent" target="_blank">
+      <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+    </a>
+    <a href="https://tiktok.com/@role.ent" target="_blank">
+      <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+    </a>
+    <a href="https://wa.me/5551980704353" target="_blank">
+      <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+    </a>
+  </div>
+</footer>
 
-      button.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('open');
-      });
+<!-- SCRIPTS -->
+<script>
+  const lampada = document.querySelector('.lampada-toggle');
+  const root = document.documentElement;
 
-      document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-        }
-      });
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    root.style.setProperty('--bg', '#ffffff');
+    root.style.setProperty('--text-color', '#2e2e2e');
+  } else {
+    root.style.setProperty('--bg', '#000000');
+    root.style.setProperty('--text-color', '#f3f3f7');
+  }
+
+  lampada.addEventListener('click', () => {
+    const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+    if (currentBg === '#000000') {
+      root.style.setProperty('--bg', '#ffffff');
+      root.style.setProperty('--text-color', '#2e2e2e');
+      lampada.setAttribute('aria-pressed', 'true');
+      localStorage.setItem('theme', 'light');
+    } else {
+      root.style.setProperty('--bg', '#000000');
+      root.style.setProperty('--text-color', '#f3f3f7');
+      lampada.setAttribute('aria-pressed', 'false');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+
+  // Dropdown
+  const dropdown = document.querySelector('.dropdown');
+  const button = dropdown?.querySelector('.dropdown-button');
+  const content = dropdown?.querySelector('.dropdown-content');
+
+  if (button && content) {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
     });
-  </script>
+
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        button.setAttribute('aria-expanded', false);
+      }
+    });
+
+    content.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  }
+
+  // Carrossel
+  const container = document.querySelector('.cards-container');
+  const cards = container.querySelectorAll('.card');
+  const totalCards = cards.length;
+  let currentIndex = 0;
+  const cardWidth = cards[0].getBoundingClientRect().width + 12;
+
+  function scrollToCard(index) {
+    if (index < 0) index = totalCards - 1;
+    if (index >= totalCards) index = 0;
+    currentIndex = index;
+    container.scrollTo({
+      left: cardWidth * index,
+      behavior: 'smooth'
+    });
+  }
+
+  const arrowLeft = document.querySelector('.scroll-arrow.left');
+  const arrowRight = document.querySelector('.scroll-arrow.right');
+
+  if (arrowLeft && arrowRight) {
+    arrowLeft.addEventListener('click', () => scrollToCard(currentIndex - 1));
+    arrowRight.addEventListener('click', () => scrollToCard(currentIndex + 1));
+  }
+
+  container.addEventListener('scroll', () => {
+    const newIndex = Math.round(container.scrollLeft / cardWidth);
+    currentIndex = newIndex;
+  });
+</script>
 </body>
 </html>
