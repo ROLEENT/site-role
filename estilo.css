@@ -40,7 +40,7 @@ footer {
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.9rem;
-  color: var(--text-color);
+  color: #f3f3f7;
   border-top: 1px solid var(--highlight);
   max-width: 1200px;
   margin: 0 auto;
@@ -949,4 +949,8 @@ body.quem-somos .embed-box iframe {
 
 .lista-contato a:hover {
   text-decoration: underline;
+}
+
+.lista-contato li span {
+  color: #f3f3f7;
 }
