@@ -880,3 +880,36 @@ body.quem-somos .embed-box iframe {
   border: none;
   overflow: hidden;
 }
+
+.campo-icon {
+  display: flex;
+  align-items: center;
+  background-color: #111;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+}
+
+.campo-icon input,
+.campo-icon textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f3f3f7;
+  font-size: 1rem;
+  padding-left: 1rem;
+  font-family: var(--font);
+  outline: none;
+}
+
+.campo-icon textarea {
+  resize: vertical;
+}
+
+.icon-form {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
