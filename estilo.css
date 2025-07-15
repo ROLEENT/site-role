@@ -913,3 +913,37 @@ body.quem-somos .embed-box iframe {
   flex-shrink: 0;
   opacity: 0.7;
 }
+
+.lista-contato {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lista-contato li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.icon-contato {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.lista-contato a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+.lista-contato a:hover {
+  text-decoration: underline;
+}
+
