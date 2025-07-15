@@ -2,356 +2,155 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Descontos exclusivos do ROLÊ para festas, eventos e experiências culturais. Cupom, lista e entrada grátis para quem tá por dentro." />
-<meta name="keywords" content="rolê, festas, descontos, cupom, eventos, cultura, música, ROLÊ ENTRETENIMENTO">
-  <title>Descontos — ROLÊ</title>
+  <meta name="keywords" content="rolê, festas, descontos, cupom, eventos, cultura, música, ROLÊ ENTRETENIMENTO" />
+  <meta property="og:title" content="Descontos | ROLÊ ENTRETENIMENTO" />
+  <meta property="og:description" content="Aproveite cupons, listas e condições especiais nos eventos mais quentes da cena cultural. Só no ROLÊ." />
+  <meta property="og:image" content="images/logo-role.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roleentretenimento.com/descontos.html" />
+  <title>Descontos | ROLÊ ENTRETENIMENTO</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" type="image/png" href="logo-role.png" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G8Z07V63HQ');
-</script>
-  <style>
-    body {
-      background-color: #000;
-      color: #f3f3f7;
-      font-family: 'League Spartan', sans-serif;
-      padding: 20px;
-      text-align: center;
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilo.css" />
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
     }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
-
-    header img {
-      height: 40px;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropbtn {
-      background-color: #c77dff;
-      color: black;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #111;
-      min-width: 160px;
-      z-index: 1;
-      border-radius: 8px;
-      overflow: hidden;
-      right: 0;
-    }
-
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #333;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    h1 {
-      color: #c77dff;
-      margin-bottom: 1em;
-    }
-
-    .intro {
-      max-width: 700px;
-      margin: 0 auto 2em auto;
-      line-height: 1.6;
-    }
-
-    .desconto-card {
-  background-color: #1a1a1a;
-  border: 1px solid #c77dff;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  text-align: left;
-}
-
-    .desconto-card h2 {
-      color: #c77dff;
-      margin-bottom: 10px;
-    }
-
-    .desconto-card p {
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-
-    .desconto-card a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #c77dff;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .desconto-card a:hover {
-      background-color: #a94fff;
-    }
-
-    .btn-voltar {
-      display: block;
-      margin-top: 3em;
-      color: #c77dff;
-      text-decoration: none;
-      font-size: 1em;
-    }
-  </style>
+  </script>
 </head>
-<body>
-  <header>
-    <a href="index.html"><img src="images/logo-role.png" alt="ROLÊ logo" /></a>
-    <div class="dropdown">
-      <button class="dropbtn">Explorar ▾</button>
-      <div class="dropdown-content">
-        <a href="revista.html">Revista ROLÊ</a>
-        <a href="vitrine-cultural.html">Vitrine Cultural</a>
-        <a href="descontos.html">Descontos</a>
-        <a href="contato.html">Contato</a>
-        <a href="quem-somos.html">Quem somos</a>
+<body class="fade-in">
+
+  <!-- TOPO -->
+  <section class="bloco-topo">
+    <div class="container-topo">
+      <div class="header-top">
+        <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+        <div class="right-top">
+          <div class="dropdown">
+            <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+              Explorar ▼
+            </button>
+            <div class="dropdown-content" id="menu-explorar">
+              <a href="index.html">Página Inicial</a>
+              <a href="revista.html">Revista ROLÊ</a>
+              <a href="vitrine-cultural.html">Vitrine Cultural</a>
+              <a href="descontos.html">Descontos</a>
+              <a href="contato.html">Contato</a>
+              <a href="quem-somos.html">Quem Somos</a>
+            </div>
+          </div>
+          <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+        </div>
+      </div>
+      <hr class="linha-topo" />
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="editorial-completo">
+    <div class="texto-editorial">
+      <h1 class="titulo-editorial">Descontos para Rolezeiros</h1>
+      <p class="subtitulo-editorial">Se tu chegou até aqui, parabéns. Esse espaço é só pros mais ligados no ROLÊ. Aproveita cupons, links promocionais e condições especiais pra curtir teus eventos favoritos pagando menos.</p>
+
+      <div class="desconto-card">
+        <h2>💥 Festa MIXÓRDIA (SP)</h2>
+        <p>Rolezeires têm 20% OFF usando o cupom <strong>ROLE</strong> no Sympla. Só até sexta!</p>
+        <a href="https://www.sympla.com.br/evento/mixordia-sp/xxx" target="_blank">Resgatar desconto</a>
+      </div>
+
+      <div class="desconto-card">
+        <h2>🌈 VULTO #29 (POA)</h2>
+        <p>Desconto na lista com código exclusivo "ROLEZINHO" — garante até 22h30!</p>
+        <a href="https://forms.gle/rolezin-vulto" target="_blank">Entrar na lista</a>
+      </div>
+
+      <div class="desconto-card">
+        <h2>🔥 VOLT – Liquid (SP)</h2>
+        <p>Entrada gratuita até 00h30. Chega cedo, avisa na porta que viu no ROLÊ!</p>
+        <a href="https://www.instagram.com/volt.soundsystem" target="_blank">Ver infos da festa</a>
       </div>
     </div>
-  </header>
+  </main>
 
-  <h1>Descontos para Rolezeiros</h1>
-  <p class="intro">Se tu chegou até aqui, parabéns! Esse espaço é só pros mais ligados no ROLÊ. Aproveita os cupons, links promocionais e condições especiais pra curtir teus eventos favoritos pagando menos.</p>
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button class="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Voltar ao topo">↑</button>
 
-  <div class="desconto-card">
-    <h2>💥 Festa MIXÓRDIA (SP)</h2>
-    <p>Rolezeires têm 20% OFF usando o cupom <strong>ROLE</strong> no Sympla. Só até sexta!</p>
-    <a href="https://www.sympla.com.br/evento/mixordia-sp/xxx" target="_blank">Resgatar desconto</a>
-  </div>
-
-  <div class="desconto-card">
-    <h2>🌈 VULTO #29 (POA)</h2>
-    <p>Desconto na lista com código exclusivo "ROLEZINHO" — garante até 22h30!</p>
-    <a href="https://forms.gle/rolezin-vulto" target="_blank">Entrar na lista</a>
-  </div>
-
-  <div class="desconto-card">
-    <h2>🔥 VOLT – Liquid (SP)</h2>
-    <p>Entrada gratuita até 00h30. Chega cedo, avisa na porta que viu no ROLÊ!</p>
-    <a href="https://www.instagram.com/volt.soundsystem" target="_blank">Ver infos da festa</a>
-  </div>
-
-  <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Descontos exclusivos do ROLÊ para festas, eventos e experiências culturais. Cupom, lista e entrada grátis para quem tá por dentro." />
-<meta name="keywords" content="rolê, festas, descontos, cupom, eventos, cultura, música, ROLÊ ENTRETENIMENTO">
-  <title>Descontos — ROLÊ</title>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" type="image/png" href="logo-role.png" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G8Z07V63HQ');
-</script>
-  <style>
-    body {
-      background-color: #000;
-      color: #f3f3f7;
-      font-family: 'League Spartan', sans-serif;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
-
-    header img {
-      height: 40px;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropbtn {
-      background-color: #c77dff;
-      color: black;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #111;
-      min-width: 160px;
-      z-index: 1;
-      border-radius: 8px;
-      overflow: hidden;
-      right: 0;
-    }
-
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #333;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    h1 {
-      color: #c77dff;
-      margin-bottom: 1em;
-    }
-
-    .intro {
-      max-width: 700px;
-      margin: 0 auto 2em auto;
-      line-height: 1.6;
-    }
-
-    .desconto-card {
-  background-color: #1a1a1a;
-  border: 1px solid #c77dff;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  text-align: left;
-}
-
-    .desconto-card h2 {
-      color: #c77dff;
-      margin-bottom: 10px;
-    }
-
-    .desconto-card p {
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-
-    .desconto-card a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #c77dff;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .desconto-card a:hover {
-      background-color: #a94fff;
-    }
-
-    .btn-voltar {
-      display: block;
-      margin-top: 3em;
-      color: #c77dff;
-      text-decoration: none;
-      font-size: 1em;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="index.html"><img src="images/logo-role.png" alt="ROLÊ logo" /></a>
-    <div class="dropdown">
-      <button class="dropbtn">Explorar ▾</button>
-      <div class="dropdown-content">
-        <a href="index.html">Página Inicial</a>
-        <a href="revista.html">Revista ROLÊ</a>
-        <a href="vitrine-cultural.html">Vitrine Cultural</a>
-        <a href="contato.html">Contato</a>
-        <a href="quem-somos.html">Quem somos</a>
-      </div>
-    </div>
-  </header>
-
-  <h1>Descontos para Rolezeiros</h1>
-  <p class="intro">Se tu chegou até aqui, parabéns! Esse espaço é só pros mais ligados no ROLÊ. Aproveita os cupons, links promocionais e condições especiais pra curtir teus eventos favoritos pagando menos.</p>
-
-  <div class="desconto-card">
-    <h2>💥 Festa MIXÓRDIA (SP)</h2>
-    <p>Rolezeires têm 20% OFF usando o cupom <strong>ROLE</strong> no Sympla. Só até sexta!</p>
-    <a href="https://www.sympla.com.br/evento/mixordia-sp/xxx" target="_blank">Resgatar desconto</a>
-  </div>
-
-  <div class="desconto-card">
-    <h2>🌈 VULTO #29 (POA)</h2>
-    <p>Desconto na lista com código exclusivo "ROLEZINHO" — garante até 22h30!</p>
-    <a href="https://forms.gle/rolezin-vulto" target="_blank">Entrar na lista</a>
-  </div>
-
-  <div class="desconto-card">
-    <h2>🔥 VOLT – Liquid (SP)</h2>
-    <p>Entrada gratuita até 00h30. Chega cedo, avisa na porta que viu no ROLÊ!</p>
-    <a href="https://www.instagram.com/volt.soundsystem" target="_blank">Ver infos da festa</a>
-  </div>
-
-  <a href="index.html" class="btn-voltar">← Voltar para a página inicial</a>
+  <!-- RODAPÉ -->
   <footer>
-  <p>
-    © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
-    <a href="politica.html">Política de Privacidade</a> ·
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-    <a href="termos-organizador.html">Termos do Organizador</a> ·
-    <a href="politica-spam.html">Política Antispam</a>
-  </p>
-</footer>
-</body>
-</html>
+    <div class="footer-links">
+      © 2025 ROLÊ ENTRETENIMENTO ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com/role.ent" target="_blank">
+        <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+      </a>
+      <a href="https://tiktok.com/@role.ent" target="_blank">
+        <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+      </a>
+      <a href="https://wa.me/5551980704353" target="_blank">
+        <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+      </a>
+    </div>
+  </footer>
 
-  
+  <!-- SCRIPTS -->
+  <script>
+    const lampada = document.querySelector('.lampada-toggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      root.style.setProperty('--bg', '#ffffff');
+      root.style.setProperty('--text-color', '#2e2e2e');
+    } else {
+      root.style.setProperty('--bg', '#000000');
+      root.style.setProperty('--text-color', '#f3f3f7');
+    }
+
+    lampada.addEventListener('click', () => {
+      const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+      if (currentBg === '#000000') {
+        root.style.setProperty('--bg', '#ffffff');
+        root.style.setProperty('--text-color', '#2e2e2e');
+        lampada.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.style.setProperty('--bg', '#000000');
+        root.style.setProperty('--text-color', '#f3f3f7');
+        lampada.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    const dropdown = document.querySelector('.dropdown');
+    const button = dropdown?.querySelector('.dropdown-button');
+    const content = dropdown?.querySelector('.dropdown-content');
+
+    if (button && content) {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+        button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          button.setAttribute('aria-expanded', false);
+        }
+      });
+
+      content.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    }
+  </script>
 </body>
 </html>
