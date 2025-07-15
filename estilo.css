@@ -128,7 +128,7 @@ a:hover {
 }
 
 /* LOGO */
-.logo {
+ {
   height: 50px;
   margin-right: 20px;
 }
@@ -838,3 +838,11 @@ section.comentarios h2 {
   font-weight: bold;
   color: var(--highlight);
 }
+
+.embed-box iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+}
+
