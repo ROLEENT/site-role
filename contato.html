@@ -1,183 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato - ROLÊ ENTRETENIMENTO</title>
+  <meta name="description" content="Entre em contato com o ROLÊ ENTRETENIMENTO – dúvidas, parcerias e colaborações." />
+  <meta property="og:title" content="Contato | ROLÊ ENTRETENIMENTO" />
+  <meta property="og:description" content="Fale com o time do ROLÊ: dúvidas, sugestões, parcerias e tudo mais." />
+  <meta property="og:image" content="https://roleentretenimento.com/images/logo-role.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roleentretenimento.com/contato.html" />
+  <title>Contato | ROLÊ ENTRETENIMENTO</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="images/logo-role.png" type="image/png" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G8Z07V63HQ');
-</script>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-color: #000;
-      color: #f3f3f7;
-      font-family: 'League Spartan', sans-serif;
-      padding: 0 20px;
-    }
-    header {
-      background-color: #000;
-      border-bottom: 1px solid #c77dff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header img {
-      height: 40px;
-    }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropbtn {
-      background-color: #c77dff;
-      color: black;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #111;
-      min-width: 160px;
-      z-index: 1;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #333;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    h1 {
-      text-align: center;
-      margin-top: 40px;
-      color: #c77dff;
-    }
-    form {
-      max-width: 600px;
-      margin: 30px auto;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 20px;
-      background-color: #111;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-    button {
-      width: 100%;
-      padding: 15px;
-      background-color: #c77dff;
-      border: none;
-      border-radius: 10px;
-      color: #000;
-      font-weight: bold;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    button:hover {
-      opacity: 0.9;
-    }
-    .voltar {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .voltar a {
-      color: #c77dff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 14px;
-      padding-bottom: 30px;
-    }
-    footer a {
-      color: #c77dff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="index.html"><img src="images/logo-role.png" alt="ROLÊ logo" /></a>
-    <div class="dropdown">
-  <button class="dropbtn">Explorar ▾</button>
-  <div class="dropdown-content">
-    <a href="index.html">Página Inicial</a>
-    <a href="revista.html">Revista ROLÊ</a>
-    <a href="vitrine-cultural.html">Vitrine Cultural</a>
-    <a href="descontos.html">Descontos</a>
-    <a href="quem-somos.html">Quem somos</a>
-  </div>
-</div>
-    </div>
-  </header>
-
-  <h1>Fala com a gente!</h1>
-  <form>
-    <input type="text" placeholder="Seu nome" required />
-    <input type="email" placeholder="Seu e-mail" required />
-    <textarea rows="5" placeholder="Escreve tua mensagem aqui" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-
-  <div class="voltar">
-    <a href="index.html">← Voltar para a página inicial</a>
-  </div>
-
-  <footer>
-    © 2025 ROLÊ ENTRETENIMENTO • 
-    <a href="politica.html">Política de Privacidade</a> • 
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> • 
-    <a href="termos-organizador.html">Termos do Organizador</a> • 
-    <a href="politica-spam.html">Política Antispam</a>
-  </footer>
+  <link rel="stylesheet" href="estilo.css" />
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.querySelector('.dropdown');
-    const button = document.querySelector('.dropbtn');
-    button.addEventListener('click', function (e) {
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-    });
-    document.addEventListener('click', function (e) {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
+    }
+  </script>
+</head>
+<body class="fade-in">
+
+  <!-- TOPO -->
+  <section class="bloco-topo">
+    <div class="container-topo">
+      <div class="header-top">
+        <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+        <div class="right-top">
+          <div class="dropdown">
+            <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+              Explorar ▼
+            </button>
+            <div class="dropdown-content" id="menu-explorar">
+              <a href="index.html">Página Inicial</a>
+              <a href="revista.html">Revista ROLÊ</a>
+              <a href="descontos.html">Descontos</a>
+              <a href="contato.html">Contato</a>
+              <a href="quem-somos.html">Quem Somos</a>
+            </div>
+          </div>
+          <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+        </div>
+      </div>
+      <hr class="linha-topo" />
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="editorial-completo">
+    <div class="texto-editorial">
+      <h1 class="titulo-editorial">Fala com a gente!</h1>
+      <p class="subtitulo-editorial">dúvidas, parcerias, sugestões ou só um alô: o rolê começa aqui</p>
+
+      <form class="formulario-comentario">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" rows="6" placeholder="Escreve tua mensagem aqui" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button class="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Voltar ao topo">↑</button>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-links">
+      © 2025 ROLÊ ENTRETENIMENTO ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com/role.ent" target="_blank">
+        <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+      </a>
+      <a href="https://tiktok.com/@role.ent" target="_blank">
+        <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+      </a>
+      <a href="https://wa.me/5551980704353" target="_blank">
+        <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+      </a>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    const lampada = document.querySelector('.lampada-toggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      root.style.setProperty('--bg', '#ffffff');
+      root.style.setProperty('--text-color', '#2e2e2e');
+    } else {
+      root.style.setProperty('--bg', '#000000');
+      root.style.setProperty('--text-color', '#f3f3f7');
+    }
+
+    lampada.addEventListener('click', () => {
+      const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+
+      if (currentBg === '#000000') {
+        root.style.setProperty('--bg', '#ffffff');
+        root.style.setProperty('--text-color', '#2e2e2e');
+        lampada.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.style.setProperty('--bg', '#000000');
+        root.style.setProperty('--text-color', '#f3f3f7');
+        lampada.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('theme', 'dark');
       }
     });
-  });
-</script>
+
+    // Dropdown
+    const dropdown = document.querySelector('.dropdown');
+    const button = dropdown?.querySelector('.dropdown-button');
+    const content = dropdown?.querySelector('.dropdown-content');
+
+    if (button && content) {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+        button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          button.setAttribute('aria-expanded', false);
+        }
+      });
+
+      content.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    }
+  </script>
 </body>
 </html>
