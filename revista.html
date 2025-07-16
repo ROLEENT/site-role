@@ -289,18 +289,35 @@
     });
   }
 
-  // SCROLL
-  const carrosseis = document.querySelectorAll('.scroll-wrapper');
-  carrosseis.forEach(wrapper => {
-    const container = wrapper.querySelector('.cards-container');
-    const left = wrapper.querySelector('.scroll-arrow.left');
-    const right = wrapper.querySelector('.scroll-arrow.right');
-    const scrollAmount = 300;
+// SCROLL COM LOOP INFINITO
+const carrosseis = document.querySelectorAll('.scroll-wrapper');
 
-    left.addEventListener('click', () => container.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
-    right.addEventListener('click', () => container.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+carrosseis.forEach(wrapper => {
+  const container = wrapper.querySelector('.cards-container');
+  const left = wrapper.querySelector('.scroll-arrow.left');
+  const right = wrapper.querySelector('.scroll-arrow.right');
+  const scrollAmount = 300;
+
+  left.addEventListener('click', () => {
+    if (container.scrollLeft <= 0) {
+      // Volta para o final
+      container.scrollBy({ left: container.scrollWidth, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
   });
-</script>
 
+  right.addEventListener('click', () => {
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    if (container.scrollLeft >= Math.floor(maxScrollLeft)) {
+      // Volta para o início
+      container.scrollBy({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  });
+});
+
+</script>
 </body>
 </html>
