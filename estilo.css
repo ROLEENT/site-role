@@ -1013,3 +1013,20 @@ a, button {
 .menu-vitrine a:hover {
   background-color: #222;
 }
+
+.btn-destaque {
+  display: inline-block;
+  background-color: #c77dff;
+  color: #0e0e0e;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+.btn-destaque:hover {
+  background-color: #a855f7;
+  color: #ffffff;
+}
+
