@@ -1044,3 +1044,29 @@ a, button {
 .btn-voltar:hover {
   color: #ffffff;
 }
+
+.cta-final {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-destaque {
+  background-color: var(--destaque);
+  color: var(--bg);
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  box-shadow: 0 0 0 2px var(--destaque);
+  transition: all 0.3s ease;
+}
+
+.btn-destaque:hover {
+  background-color: transparent;
+  color: var(--destaque);
+  box-shadow: 0 0 0 2px var(--destaque);
+}
