@@ -3,237 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Termos de uso da plataforma ROLÊ para produtores, coletivos e organizadores de eventos.">
-  <title>Termos do Organizador - ROLÊ</title>
+  <meta name="description" content="Termos de uso da plataforma ROLÊ para produtores, coletivos e organizadores de eventos." />
+  <title>ROLÊ ENTRETENIMENTO — Termos do Organizador</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="estilo.css" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    .return-btn {
-  text-align: center;
-  margin: 48px 0;
-}
-.return-btn a {
-  background-color: var(--highlight);
-  color: var(--bg-color);
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-    :root {
-      --bg-color: #000;
-      --text-color: #f3f3f7;
-      --highlight: #c77dff;
-      --card-bg: #151515;
-    }
-    body.light {
-      --bg-color: #fff;
-      --text-color: #2e2e2e;
-      --card-bg: #eaeaea;
-    }
-    body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'League Spartan', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 16px;
-      border-bottom: 1px solid var(--highlight);
-    }
-    header img.logo {
-      height: 40px;
-      margin-bottom: 8px;
-    }
-    .top-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-    }
-    .search {
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      max-width: 200px;
-    }
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 14px;
-      color: var(--highlight);
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-button {
-      background-color: var(--highlight);
-      border: none;
-      color: var(--bg-color);
-      font-size: 16px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .dropdown-button::after {
-      content: "▾";
-      margin-left: 6px;
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-    .dropdown.open .dropdown-button::after {
-      transform: rotate(180deg);
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: var(--card-bg);
-      border-radius: 8px;
-      margin-top: 8px;
-      min-width: 200px;
-      z-index: 1;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 12px;
-      color: var(--text-color);
-      text-decoration: none;
-    }
-    .dropdown.open .dropdown-content {
-      display: block;
-    }
-    main {
-      padding: 32px 24px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      color: var(--highlight);
-      font-size: 28px;
-      margin-bottom: 24px;
-    }
-    h2 {
-      font-size: 20px;
-      margin-top: 24px;
-    }
-    p {
-      line-height: 1.6;
-      margin-top: 8px;
-    }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      padding: 24px 12px;
-    }
-    footer p {
-      color: white;
-    }
-    footer a {
-      color: var(--highlight);
-      text-decoration: none;
-      margin: 0 8px;
-    }
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .top-right {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
-      .search {
-        width: 100%;
-        margin-bottom: 8px;
-      }
-      .dropdown-content {
-        left: 0;
-        right: auto;
-      }
-    }
-  </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G8Z07V63HQ');
-</script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const dropdown = document.querySelector('.dropdown');
-      const button = document.querySelector('.dropdown-button');
-      button.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('open');
-      });
-      document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-        }
-      });
-    });
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
+    }
   </script>
+  <noscript>
+    <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+  </noscript>
 </head>
+
 <body>
-  <header>
-    <img src="images/logo-role.png" alt="ROLÊ" class="logo" />
-    <div class="top-right">
-      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
-      <div class="dropdown">
-        <button class="dropdown-button">Explorar ▾</button>
-        <div class="dropdown-content">
-          <a href="index.html">Página Inicial</a>
-          <a href="revista.html">Revista ROLÊ</a>
-          <a href="vitrine-cultural.html">Vitrine Cultural</a>
-          <a href="descontos.html">Descontos</a>
-          <a href="contato.html">Contato</a>
-          <a href="quem-somos.html">Quem Somos</a>
+  <section class="bloco-topo">
+    <div class="container-topo">
+      <div class="header-top">
+        <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+        <div class="right-top">
+          <div class="dropdown">
+            <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+              Explorar ▼
+            </button>
+            <div class="dropdown-content" id="menu-explorar">
+              <a href="index.html">Página Inicial</a>
+              <a href="revista.html">Revista ROLÊ</a>
+              <a href="vitrine-cultural.html">Vitrine Cultural</a>
+              <a href="descontos.html">Descontos</a>
+              <a href="contato.html">Contato</a>
+              <a href="quem-somos.html">Quem Somos</a>
+            </div>
+          </div>
+          <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
         </div>
       </div>
-      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
+      <hr class="linha-topo" />
     </div>
-  </header>
+  </section>
 
-  <main>
-    <h1>Termos de Uso ao Organizador</h1>
-    <p>Estes Termos regulam a relação entre o ROLÊ ENTRETENIMENTO e os organizadores de eventos que utilizam nossa plataforma para promover suas produções culturais.</p>
+  <main class="editorial-completo fade-in">
+    <div class="texto-editorial">
+      <h1 class="titulo-editorial">Termos de Uso ao Organizador</h1>
+      <p class="subtitulo-editorial">condições para divulgar eventos na plataforma ROLÊ</p>
 
-    <h2>1. Cadastro e Envio de Informações</h2>
-    <p>Os organizadores devem fornecer informações precisas, atualizadas e verdadeiras sobre seus eventos. O ROLÊ poderá recusar conteúdos que não estejam de acordo com sua curadoria editorial.</p>
+      <p>Estes Termos regulam a relação entre o ROLÊ ENTRETENIMENTO e os organizadores de eventos que utilizam nossa plataforma para promover suas produções culturais.</p>
 
-    <h2>2. Responsabilidade pelos Eventos</h2>
-    <p>O organizador é o único responsável pela realização do evento, incluindo questões legais, segurança, licenciamento e estrutura. O ROLÊ não se responsabiliza por ocorrências durante os eventos.</p>
+      <h2>1. Cadastro e Envio de Informações</h2>
+      <p>Os organizadores devem fornecer informações precisas, atualizadas e verdadeiras sobre seus eventos. O ROLÊ poderá recusar conteúdos que não estejam de acordo com sua curadoria editorial.</p>
 
-    <h2>3. Direitos de Imagem e Divulgação</h2>
-    <p>Ao submeter materiais (fotos, textos, vídeos) para divulgação, o organizador declara ter os direitos sobre eles e autoriza o uso nas mídias do ROLÊ.</p>
+      <h2>2. Responsabilidade pelos Eventos</h2>
+      <p>O organizador é o único responsável pela realização do evento, incluindo questões legais, segurança, licenciamento e estrutura. O ROLÊ não se responsabiliza por ocorrências durante os eventos.</p>
 
-    <h2>4. Cancelamentos e Reembolsos</h2>
-    <p>Em caso de cancelamento de um evento divulgado, o organizador deve notificar imediatamente o ROLÊ. Não há reembolso das taxas de divulgação após a publicação do conteúdo, salvo exceções previamente acordadas.</p>
+      <h2>3. Direitos de Imagem e Divulgação</h2>
+      <p>Ao submeter materiais (fotos, textos, vídeos) para divulgação, o organizador declara ter os direitos sobre eles e autoriza o uso nas mídias do ROLÊ.</p>
 
-    <h2>5. Ética e Conduta</h2>
-    <p>O ROLÊ reserva-se o direito de encerrar parcerias com organizadores que desrespeitem públicos, artistas, espaços ou promovam discursos de ódio.</p>
+      <h2>4. Cancelamentos e Reembolsos</h2>
+      <p>Em caso de cancelamento de um evento divulgado, o organizador deve notificar imediatamente o ROLÊ. Não há reembolso das taxas de divulgação após a publicação do conteúdo, salvo exceções previamente acordadas.</p>
+
+      <h2>5. Ética e Conduta</h2>
+      <p>O ROLÊ reserva-se o direito de encerrar parcerias com organizadores que desrespeitem públicos, artistas, espaços ou promovam discursos de ódio.</p>
+    </div>
   </main>
 
   <footer>
-    <div class="return-btn">
-  <a href="index.html">Voltar para o início</a>
-</div>
-    <p>
-      © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
+    <div class="footer-links">
+      © 2025 ROLÊ ENTRETENIMENTO ·
       <a href="politica.html">Política de Privacidade</a> ·
       <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
       <a href="termos-organizador.html">Termos do Organizador</a> ·
       <a href="politica-spam.html">Política Antispam</a>
-    </p>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com/role.ent" target="_blank">
+        <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+      </a>
+      <a href="https://tiktok.com/@role.ent" target="_blank">
+        <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+      </a>
+      <a href="https://wa.me/5551980704353" target="_blank">
+        <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+      </a>
+    </div>
   </footer>
+
+  <script>
+    const lampada = document.querySelector('.lampada-toggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      root.style.setProperty('--bg', '#ffffff');
+      root.style.setProperty('--text-color', '#2e2e2e');
+    } else {
+      root.style.setProperty('--bg', '#000000');
+      root.style.setProperty('--text-color', '#f3f3f7');
+    }
+
+    lampada.addEventListener('click', () => {
+      const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+      if (currentBg === '#000000') {
+        root.style.setProperty('--bg', '#ffffff');
+        root.style.setProperty('--text-color', '#2e2e2e');
+        lampada.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.style.setProperty('--bg', '#000000');
+        root.style.setProperty('--text-color', '#f3f3f7');
+        lampada.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    const dropdown = document.querySelector('.dropdown');
+    const button = dropdown?.querySelector('.dropdown-button');
+    const content = dropdown?.querySelector('.dropdown-content');
+
+    if (button && content) {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+        button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          button.setAttribute('aria-expanded', false);
+        }
+      });
+
+      content.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    }
+  </script>
 </body>
 </html>
