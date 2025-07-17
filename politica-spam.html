@@ -3,259 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política Antispam - ROLÊ</title>
+  <title>Política Antispam | ROLÊ ENTRETENIMENTO</title>
+  <meta name="description" content="Entenda como o ROLÊ ENTRETENIMENTO se posiciona contra spam e garante uma comunicação ética com seus usuários.">
   <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="estilo.css" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8Z07V63HQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G8Z07V63HQ');
-</script>
-  <style>
-    :root {
-      --bg-color: #000;
-      --text-color: #f3f3f7;
-      --highlight: #c77dff;
-      --card-bg: #151515;
-    }
-    body.light {
-      --bg-color: #fff;
-      --text-color: #2e2e2e;
-      --card-bg: #eaeaea;
-    }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'League Spartan', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 16px;
-      border-bottom: 1px solid var(--highlight);
-    }
-    header img.logo {
-      height: 40px;
-      margin-bottom: 8px;
-    }
-    .top-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-    }
-    .search {
-      padding: 8px 12px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      max-width: 200px;
-    }
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 14px;
-      color: var(--highlight);
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-button {
-      background-color: var(--highlight);
-      border: none;
-      color: var(--bg-color);
-      font-size: 16px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .dropdown-button::after {
-      content: "▾";
-      margin-left: 6px;
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
-    .dropdown.open .dropdown-button::after {
-      transform: rotate(180deg);
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: var(--card-bg);
-      border-radius: 8px;
-      margin-top: 8px;
-      min-width: 200px;
-      z-index: 1;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 12px;
-      color: var(--text-color);
-      text-decoration: none;
-    }
-    .dropdown.open .dropdown-content {
-      display: block;
-    }
-
-    main {
-      padding: 32px 24px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h1 {
-      color: var(--highlight);
-      font-size: 28px;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin-top: 24px;
-    }
-
-    p {
-      line-height: 1.6;
-      margin-top: 8px;
-    }
-
-    a {
-      color: var(--highlight);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      padding: 24px 12px;
-    }
-
-    footer p {
-      color: white;
-    }
-
-    footer a {
-      color: var(--highlight);
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    .back-button {
-      text-align: center;
-      margin: 32px 0;
-    }
-
-    .back-button a {
-      background-color: var(--highlight);
-      color: var(--bg-color);
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .top-right {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
-      .search {
-        width: 100%;
-        margin-bottom: 8px;
-      }
-      .dropdown-content {
-        left: 0;
-        right: auto;
-      }
-    }
-  </style>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const dropdown = document.querySelector('.dropdown');
-      const button = document.querySelector('.dropdown-button');
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
+    }
+  </script>
+  <noscript>
+    <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+  </noscript>
+</head>
 
+<body>
+  <section class="bloco-topo">
+    <div class="container-topo">
+      <div class="header-top">
+        <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+        <div class="right-top">
+          <div class="dropdown">
+            <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+              Explorar ▼
+            </button>
+            <div class="dropdown-content" id="menu-explorar">
+              <a href="index.html">Página Inicial</a>
+              <a href="revista.html">Revista ROLÊ</a>
+              <a href="vitrine-cultural.html">Vitrine Cultural</a>
+              <a href="descontos.html">Descontos</a>
+              <a href="contato.html">Contato</a>
+              <a href="quem-somos.html">Quem Somos</a>
+            </div>
+          </div>
+          <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+        </div>
+      </div>
+      <hr class="linha-topo" />
+    </div>
+  </section>
+
+  <main class="editorial-completo fade-in">
+    <div class="texto-editorial">
+      <h1 class="titulo-editorial">Política Antispam</h1>
+      <p class="subtitulo-editorial">compromisso com comunicações éticas e respeitosas</p>
+
+      <p>Esta Política de Antispam estabelece os princípios e condutas adotados pelo ROLÊ ENTRETENIMENTO para garantir uma comunicação ética, transparente e respeitosa com seus usuários, parceiros e clientes.</p>
+
+      <h2>1. Compromisso com a Privacidade</h2>
+      <p>O ROLÊ ENTRETENIMENTO não envia mensagens não solicitadas. Toda comunicação realizada por e-mail, WhatsApp ou outros canais é feita mediante consentimento prévio ou relacionamento estabelecido.</p>
+
+      <h2>2. Conteúdo Relevante</h2>
+      <p>Nosso objetivo é fornecer conteúdo útil, informativo e relevante sobre eventos, cultura e entretenimento. O usuário pode solicitar a interrupção do recebimento a qualquer momento.</p>
+
+      <h2>3. Cadastro e Descadastro</h2>
+      <p>É possível se cadastrar voluntariamente para receber atualizações e, da mesma forma, se descadastrar a qualquer momento por meio de links ou mensagens de solicitação.</p>
+
+      <h2>4. Proteção de Dados</h2>
+      <p>Todos os dados coletados são protegidos de acordo com a <a href="politica.html">Política de Privacidade</a> vigente, respeitando a Lei Geral de Proteção de Dados (LGPD).</p>
+
+      <h2>5. Denúncia de Abusos</h2>
+      <p>Caso receba qualquer mensagem em nome do ROLÊ ENTRETENIMENTO que não esteja de acordo com esta política, entre em contato imediatamente pelo e-mail <a href="mailto:fiih@roleentretenimento.com">fiih@roleentretenimento.com</a>.</p>
+
+      <p>Nos comprometemos a tomar as medidas necessárias para investigar e interromper qualquer prática indevida.</p>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a class="voltar-btn" href="index.html">Voltar para o início</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      © 2025 ROLÊ ENTRETENIMENTO ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com/role.ent" target="_blank">
+        <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+      </a>
+      <a href="https://tiktok.com/@role.ent" target="_blank">
+        <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+      </a>
+      <a href="https://wa.me/5551980704353" target="_blank">
+        <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const lampada = document.querySelector('.lampada-toggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      root.style.setProperty('--bg', '#ffffff');
+      root.style.setProperty('--text-color', '#2e2e2e');
+    } else {
+      root.style.setProperty('--bg', '#000000');
+      root.style.setProperty('--text-color', '#f3f3f7');
+    }
+
+    lampada.addEventListener('click', () => {
+      const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+      if (currentBg === '#000000') {
+        root.style.setProperty('--bg', '#ffffff');
+        root.style.setProperty('--text-color', '#2e2e2e');
+        lampada.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.style.setProperty('--bg', '#000000');
+        root.style.setProperty('--text-color', '#f3f3f7');
+        lampada.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    const dropdown = document.querySelector('.dropdown');
+    const button = dropdown?.querySelector('.dropdown-button');
+    const content = dropdown?.querySelector('.dropdown-content');
+
+    if (button && content) {
       button.addEventListener('click', function (e) {
+        e.preventDefault();
         e.stopPropagation();
         dropdown.classList.toggle('open');
+        button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
       });
 
       document.addEventListener('click', function (e) {
         if (!dropdown.contains(e.target)) {
           dropdown.classList.remove('open');
+          button.setAttribute('aria-expanded', false);
         }
       });
-    });
+
+      content.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    }
   </script>
-</head>
-<body>
-  <header>
-    <img src="images/logo-role.png" alt="ROLÊ" class="logo" />
-    <div class="top-right">
-      <input type="text" class="search" placeholder="Buscar eventos, artistas, cidades..." />
-      <div class="dropdown">
-        <button class="dropdown-button">Explorar ▾</button>
-        <div class="dropdown-content">
-          <a href="index.html">Página Inicial</a>
-          <a href="revista.html">Revista ROLÊ</a>
-          <a href="vitrine-cultural.html">Vitrine Cultural</a>
-          <a href="descontos.html">Descontos</a>
-          <a href="contato.html">Contato</a>
-          <a href="quem-somos.html">Quem Somos</a>
-        </div>
-      </div>
-      <div class="theme-toggle" onclick="document.body.classList.toggle('light')">🌓</div>
-    </div>
-  </header>
-
-  <main>
-    <h1>Política de Antispam</h1>
-    <p>Esta Política de Antispam estabelece os princípios e condutas adotados pelo ROLÊ ENTRETENIMENTO para garantir uma comunicação ética, transparente e respeitosa com seus usuários, parceiros e clientes.</p>
-
-    <h2>1. Compromisso com a Privacidade</h2>
-    <p>O ROLÊ ENTRETENIMENTO não envia mensagens não solicitadas. Toda comunicação realizada por e-mail, WhatsApp ou outros canais é feita mediante consentimento prévio ou relacionamento estabelecido.</p>
-
-    <h2>2. Conteúdo Relevante</h2>
-    <p>Nosso objetivo é fornecer conteúdo útil, informativo e relevante sobre eventos, cultura e entretenimento. O usuário pode solicitar a interrupção do recebimento a qualquer momento.</p>
-
-    <h2>3. Cadastro e Descadastro</h2>
-    <p>É possível se cadastrar voluntariamente para receber atualizações e, da mesma forma, se descadastrar a qualquer momento por meio de links ou mensagens de solicitação.</p>
-
-    <h2>4. Proteção de Dados</h2>
-    <p>Todos os dados coletados são protegidos de acordo com a <a href="politica.html">Política de Privacidade</a> vigente, respeitando a Lei Geral de Proteção de Dados (LGPD).</p>
-
-    <h2>5. Denúncia de Abusos</h2>
-    <p>Caso receba qualquer mensagem em nome do ROLÊ ENTRETENIMENTO que não esteja de acordo com esta política, entre em contato imediatamente pelo e-mail <a href="mailto:fiih@roleentretenimento.com">fiih@roleentretenimento.com</a>.</p>
-
-    <p>Nos comprometemos a tomar as medidas necessárias para investigar e interromper qualquer prática indevida.</p>
-
-    <div class="back-button">
-      <a href="index.html">Voltar para o início</a>
-    </div>
-  </main>
-
-  <footer>
-    <p>
-      © 2025 <span style="color: white">ROLÊ ENTRETENIMENTO</span> ·
-      <a href="politica.html">Política de Privacidade</a> ·
-      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-      <a href="termos-organizador.html">Termos do Organizador</a> ·
-      <a href="politica-spam.html">Política Antispam</a>
-    </p>
-  </footer>
 </body>
 </html>
