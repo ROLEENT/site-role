@@ -1017,16 +1017,30 @@ a, button {
 .btn-destaque {
   display: inline-block;
   background-color: #c77dff;
-  color: #0e0e0e;
+  color: #0e0e0e; /* texto escuro no roxo claro */
   padding: 12px 24px;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.3s ease;
   margin-top: 20px;
-}
-.btn-destaque:hover {
-  background-color: #a855f7;
-  color: #ffffff;
+  font-size: 1rem;
 }
 
+.btn-destaque:hover {
+  background-color: #a855f7;
+  color: #ffffff; /* texto branco no hover */
+}
+
+.btn-voltar {
+  display: inline-block;
+  margin-top: 20px;
+  color: #c77dff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+.btn-voltar:hover {
+  color: #ffffff;
+}
