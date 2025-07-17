@@ -1015,16 +1015,16 @@ a, button {
 }
 
 .btn-destaque {
-  display: inline-block;
-  background-color: #c77dff;
-  color: #0e0e0e; /* texto escuro no roxo claro */
-  padding: 12px 24px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-  font-size: 1rem;
+  display: inline-block !important;
+  background-color: #c77dff !important;
+  color: #0e0e0e !important;
+  padding: 12px 24px !important;
+  border-radius: 30px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  margin-top: 20px !important;
+  font-size: 1rem !important;
 }
 
 .btn-destaque:hover {
