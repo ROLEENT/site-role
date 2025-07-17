@@ -989,124 +989,27 @@ a, button {
   transition: all 0.2s ease-in-out;
 }
 
-/* === ESTILO DAS NOVAS SEÇÕES DA VITRINE CULTURAL === */
-
-.hero-vitrine {
-  background: linear-gradient(to bottom, #111, #000);
-  padding: 4rem 1.5rem 3rem;
-  text-align: center;
+.menu-vitrine {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 2rem auto 3rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--highlight);
+  max-width: 1000px;
 }
 
-.hero-vitrine h1 {
-  font-size: 2.5rem;
-  color: #f3f3f7;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.hero-vitrine p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  color: #ccc;
-}
-
-.botao-vitrine {
-  background-color: var(--highlight);
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  font-weight: bold;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 1rem;
-}
-
-.botao-vitrine:hover {
-  background-color: #a44ce0;
-}
-
-.explicacao-vitrine,
-.beneficios-vitrine,
-.pacotes-vitrine,
-.faq-vitrine,
-.artigo-vitrine {
-  padding: 3rem 1.5rem;
-  background-color: #000;
-  border-top: 1px solid #222;
-}
-
-.explicacao-vitrine h2,
-.beneficios-vitrine h2,
-.pacotes-vitrine h2,
-.faq-vitrine h2,
-.artigo-vitrine h2 {
-  font-size: 2rem;
-  text-align: center;
+.menu-vitrine a {
   color: var(--highlight);
-  margin-bottom: 1.5rem;
-}
-
-.explicacao-vitrine p,
-.pacotes-vitrine p,
-.faq-vitrine p,
-.artigo-vitrine p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #ddd;
-  max-width: 800px;
-  margin: 0 auto 1.5rem;
-  text-align: center;
-}
-
-.beneficios-vitrine ul,
-.pacotes-vitrine ul {
-  max-width: 700px;
-  margin: 0 auto;
-  padding-left: 1rem;
-  list-style: disc;
-}
-
-.beneficios-vitrine li,
-.pacotes-vitrine li {
-  color: #f3f3f7;
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Artigo na Vitrine */
-.artigo-vitrine {
-  background-color: #111;
-}
-
-.artigo-vitrine blockquote {
-  background-color: #1a1a1a;
-  padding: 1rem;
-  border-left: 5px solid var(--highlight);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
   border-radius: 6px;
-  margin: 2rem auto;
-  max-width: 700px;
-  color: #ccc;
-  font-style: italic;
-  line-height: 1.6;
+  transition: background 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .hero-vitrine h1 {
-    font-size: 1.8rem;
-  }
-
-  .explicacao-vitrine h2,
-  .beneficios-vitrine h2,
-  .pacotes-vitrine h2,
-  .faq-vitrine h2,
-  .artigo-vitrine h2 {
-    font-size: 1.5rem;
-  }
+.menu-vitrine a:hover {
+  background-color: #222;
 }
