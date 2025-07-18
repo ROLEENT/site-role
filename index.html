@@ -1,49 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="eventos, cultura, rolê, arte, música, festa, entretenimento" />
-    <meta name="description" content="ROLÊ: Conectando cultura, arte e os rolês mais vivos do Brasil." />
-    <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Cultura, Arte e Diversão nas Cidades Brasileiras" />
-<meta property="og:description" content="Conectando cultura, arte e os rolês mais vivos do Brasil." />
-<meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://roleentretenimento.com" />
-        <script>
-  if (localStorage.getItem('theme') === 'light') {
-    document.documentElement.classList.add('light');
-  }
-</script>
-<title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
-<link rel="icon" href="images/favicon.png" type="image/png" />
-    <noscript>
-      <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
-    </noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilo.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Site oficial do ROLÊ ENTRETENIMENTO – agenda, editoriais, cultura noturna e muito mais." />
+  <title>ROLÊ ENTRETENIMENTO</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="estilo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
+    }
+  </script>
+</head>
+<body class="fade-in">
 
-  </head>
-<body>
-  <section class="bloco-topo">
+<section class="bloco-topo">
   <div class="container-topo">
     <div class="header-top">
-      <!-- LOGO ESQUERDA -->
-      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
-
-      <!-- MENU + TEMA (LADO DIREITO) -->
+      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" loading="lazy"/>
       <div class="right-top">
-        <!-- MENU DROPDOWN -->
         <div class="dropdown">
-<button
-  class="dropdown-button"
-  aria-haspopup="true"
-  aria-controls="menu-explorar"
-  aria-expanded="false"
->
-  Explorar ▼
-</button>          
-<div class="dropdown-content" id="menu-explorar">
+          <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">Explorar ▼</button>
+          <div class="dropdown-content">
             <a href="index.html">Página Inicial</a>
             <a href="revista.html">Revista ROLÊ</a>
             <a href="vitrine-cultural.html">Vitrine Cultural</a>
@@ -52,22 +32,89 @@
             <a href="quem-somos.html">Quem Somos</a>
           </div>
         </div>
-
-        <!-- TEMA -->
-<img src="/images/theme-toggle.gif"
-     alt="Alternar tema"
-     class="lampada-toggle"
-     role="button"
-     tabindex="0"
-     aria-pressed="false" />
+        <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
       </div>
     </div>
     <hr class="linha-topo" />
   </div>
 </section>
 
-  <!-- Banner -->
-  <div class="banner-wrapper">
+<!-- NOVO SCROLL EDITORIAL DE DESTAQUE -->
+<section class="editorial-slider"> 
+  <div class="slider-wrapper">
+    <article class="editorial-slide active">
+      <img src="images/editorial-madrugada.png" alt="As cidades já foram noturnas" />
+      <div class="editorial-info">
+        <span class="tag">Editorial</span>
+        <h2>As cidades já foram noturnas</h2>
+        <p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p>
+        <p class="autor-data">Por ROLÊ · 2025</p>
+        <a href="editorial/as-cidades-ja-foram-noturnas.html" class="leia">Ler texto completo</a>
+      </div>
+    </article>
+
+    <article class="editorial-slide">
+      <img src="images/editorial-dj-autor.png" alt="DJs são novos autores" />
+      <div class="editorial-info">
+        <span class="tag">Editorial</span>
+        <h2>DJs são novos autores</h2>
+        <p>Quem escreve tua noite é o DJ. Já agradeceu?</p>
+        <p class="autor-data">Por ROLÊ · 2025</p>
+        <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html" class="leia">Ler texto completo</a>
+      </div>
+    </article>
+
+    <article class="editorial-slide">
+      <img src="images/editorial-rolezao.png" alt="Todo mundo já foi num rolê bom" />
+      <div class="editorial-info">
+        <span class="tag">Editorial</span>
+        <h2>Todo mundo já foi num rolê bom</h2>
+        <p>Rolêzão: quando vira lenda, não só festa.</p>
+        <p class="autor-data">Por ROLÊ · 2025</p>
+        <a href="https://www.instagram.com/p/DLlKtmDvjnV/" class="leia" target="_blank">Ver post no Instagram</a>
+      </div>
+    </article>
+
+    <article class="editorial-slide">
+      <img src="images/editorial-novo-underground.png" alt="O novo underground" />
+      <div class="editorial-info">
+        <span class="tag">Editorial</span>
+        <h2>O novo underground</h2>
+        <p>Estética rave virou produto? E agora?</p>
+        <p class="autor-data">Por ROLÊ · 2025</p>
+        <a href="editorial/a-cena-alternativa-nao-e-mais-underground.html" class="leia">Ler texto completo</a>
+      </div>
+    </article>
+
+    <article class="editorial-slide">
+      <img src="images/editorial-groove-cultural.png" alt="Groove Cultural voltou" />
+      <div class="editorial-info">
+        <span class="tag">Editorial</span>
+        <h2>Groove Cultural voltou</h2>
+        <p>A arte de reinventar e resistir no 512.</p>
+        <p class="autor-data">Por ROLÊ · 2025</p>
+        <a href="editorial/groove-cultural-voltou.html" class="leia">Ler texto completo</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="slider-controls">
+    <button class="prev">←</button>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <button class="next">→</button>
+  </div>
+</section>
+
+<script src="scripts.js"></script>
+</body>
+</html>
+
     <div class="banner-container">
       <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
     </div>
@@ -75,40 +122,40 @@
 
 <div class="carrossel fade-in delay">
   <main class="destaques" role="main">
-      <h2>DESTAQUES DA SEMANA</h2>
-      <div class="scroll-wrapper">
-        <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
-        <div class="cards-container">
-          <!-- Cards de cidades -->
-          <div class="card fade-in delay">
-            <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
-            <p>A cena alternativa pulsa forte no Sul.</p>
-            <a href="https://www.instagram.com/p/DMFz6RjOons/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-          <div class="card fade-in delay">
-            <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
-            <p>Beira-mar, eletrônica e coletivo.</p>
-            <a href="https://www.instagram.com/p/DMIuANvuy9j/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-          <div class="card fade-in delay">
-            <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
-            <p>Frio na rua, calor nas pistas.</p>
-            <a href="https://www.instagram.com/p/DMIR-Jgu6us/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-          <div class="card fade-in delay">
-            <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
-            <p>A cidade que nunca dorme... nem para de dançar.</p>
-            <a href="https://www.instagram.com/p/DMGdZnZPWJO/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-          <div class="card fade-in delay">
-            <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
-            <p>Funk, favela, cor e calor cultural.</p>
-            <a href="https://www.instagram.com/p/DMGq6o8vLUx/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
+    <h2>DESTAQUES DA SEMANA</h2>
+    <div class="scroll-wrapper">
+      <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
+      <div class="cards-container">
+        <!-- Cards de cidades -->
+        <div class="card fade-in delay">
+          <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
+          <p>A cena alternativa pulsa forte no Sul.</p>
+          <a href="https://www.instagram.com/p/DMFz6RjOons/" target="_blank" rel="noopener noreferrer">Ver mais</a>
         </div>
-        <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
+        <div class="card fade-in delay">
+          <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
+          <p>Beira-mar, eletrônica e coletivo.</p>
+          <a href="https://www.instagram.com/p/DMIuANvuy9j/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+        </div>
+        <div class="card fade-in delay">
+          <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
+          <p>Frio na rua, calor nas pistas.</p>
+          <a href="https://www.instagram.com/p/DMIR-Jgu6us/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+        </div>
+        <div class="card fade-in delay">
+          <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
+          <p>A cidade que nunca dorme... nem para de dançar.</p>
+          <a href="https://www.instagram.com/p/DMGdZnZPWJO/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+        </div>
+        <div class="card fade-in delay">
+          <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
+          <p>Funk, favela, cor e calor cultural.</p>
+          <a href="https://www.instagram.com/p/DMGq6o8vLUx/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+        </div>
       </div>
-
+      <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
+    </div>
+ 
     <section class="posts-grid container">
   <h2 class="titulo-principal">Últimos editoriais</h2>
   <div class="cards-editoriais">
@@ -122,8 +169,8 @@
     <!-- Replicar outros posts -->
   </div>
 </section>
-
-    </main>
+ </main>
+</div>
 
     <script>
 function toggleTheme(el) {
