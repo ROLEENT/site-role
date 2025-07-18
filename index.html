@@ -1,166 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ROLÊ – Cultura e Noite</title>
-  <link rel="stylesheet" href="estilo.css">
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="eventos, cultura, rolê, arte, música, festa, entretenimento" />
+    <meta name="description" content="ROLÊ: Conectando cultura, arte e os rolês mais vivos do Brasil." />
+    <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Cultura, Arte e Diversão nas Cidades Brasileiras" />
+<meta property="og:description" content="Conectando cultura, arte e os rolês mais vivos do Brasil." />
+<meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://roleentretenimento.com" />
+        <script>
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.add('light');
+  }
+</script>
+<title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
+<link rel="icon" href="images/favicon.png" type="image/png" />
+    <noscript>
+      <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
+    
+    <link rel="stylesheet" href="estilo.css" />
+
+  </head>
 <body>
-  <!-- MENU LATERAL -->
-  <aside class="menu-lateral">
-    <img src="images/logo-role.png" alt="Logo ROLÊ" class="logo-lateral" />
-    <nav class="nav-lateral">
-      <a href="index.html">Início</a>
-      <a href="editorial.html">Revista ROLÊ</a>
-      <a href="vitrine-hero.html">Vitrine Cultural</a>
-      <a href="quem-somos.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-    <div class="icones-laterais">
-      <a href="https://www.instagram.com/role.ent" target="_blank">
-        <img src="images/instagram.png" alt="Instagram" />
-      </a>
-      <img src="images/theme-toggle.svg" alt="Toggle" class="lampada-toggle" onclick="toggleTheme()" />
-    </div>
-  </aside>
+  <section class="bloco-topo">
+  <div class="container-topo">
+    <div class="header-top">
+      <!-- LOGO ESQUERDA -->
+      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
 
-  <!-- HERO COM TÍTULO SOBREPOSTO -->
-  <section class="hero">
-    <img src="images/banner-logo.png" alt="Banner principal do ROLÊ" />
-    <div class="hero-texto">
-      <h2>A música conecta</h2>
-      <p>Explore os editoriais que fazem a noite pulsar</p>
-    </div>
-  </section>
+      <!-- MENU + TEMA (LADO DIREITO) -->
+      <div class="right-top">
+        <!-- MENU DROPDOWN -->
+        <div class="dropdown">
+<button
+  class="dropdown-button"
+  aria-haspopup="true"
+  aria-controls="menu-explorar"
+  aria-expanded="false"
+>
+  Explorar ▼
+</button>          
+<div class="dropdown-content" id="menu-explorar">
+            <a href="index.html">Página Inicial</a>
+            <a href="revista.html">Revista ROLÊ</a>
+            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+            <a href="descontos.html">Descontos</a>
+            <a href="contato.html">Contato</a>
+            <a href="quem-somos.html">Quem Somos</a>
+          </div>
+        </div>
 
-  <!-- DESTAQUES DA SEMANA -->
-  <section class="carrossel fade-in delay" role="region" aria-label="Destaques da semana por cidade">
-    <div class="destaques">
+        <!-- TEMA -->
+<img src="/images/theme-toggle.gif"
+     alt="Alternar tema"
+     class="lampada-toggle"
+     role="button"
+     tabindex="0"
+     aria-pressed="false" />
+      </div>
+    </div>
+    <hr class="linha-topo" />
+  </div>
+</section>
+
+  <!-- Banner -->
+  <div class="banner-wrapper">
+    <div class="banner-container">
+      <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
+    </div>
+  </div>
+
+<div class="carrossel fade-in delay">
+  <main class="destaques" role="main">
       <h2>DESTAQUES DA SEMANA</h2>
       <div class="scroll-wrapper">
         <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
         <div class="cards-container">
-
-  <!-- Porto Alegre -->
-        <div class="card fade-in delay">
-          <img src="images/poa.png" alt="Imagem de Porto Alegre com festas alternativas" loading="lazy" />
-          <p id="desc-poa">A cena alternativa pulsa forte no Sul.</p>
-          <a href="https://www.instagram.com/p/DMFz6RjOons/" target="_blank" rel="noopener noreferrer" aria-describedby="desc-poa">Ver mais</a>
+          <!-- Cards de cidades -->
+          <div class="card fade-in delay">
+            <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
+            <p>A cena alternativa pulsa forte no Sul.</p>
+            <a href="https://www.instagram.com/p/DMFz6RjOons/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+          </div>
+          <div class="card fade-in delay">
+            <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
+            <p>Beira-mar, eletrônica e coletivo.</p>
+            <a href="https://www.instagram.com/p/DMIuANvuy9j/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+          </div>
+          <div class="card fade-in delay">
+            <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
+            <p>Frio na rua, calor nas pistas.</p>
+            <a href="https://www.instagram.com/p/DMIR-Jgu6us/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+          </div>
+          <div class="card fade-in delay">
+            <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
+            <p>A cidade que nunca dorme... nem para de dançar.</p>
+            <a href="https://www.instagram.com/p/DMGdZnZPWJO/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+          </div>
+          <div class="card fade-in delay">
+            <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
+            <p>Funk, favela, cor e calor cultural.</p>
+            <a href="https://www.instagram.com/p/DMGq6o8vLUx/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+          </div>
         </div>
-
-        <!-- Florianópolis -->
-        <div class="card fade-in delay">
-          <img src="images/floripa.png" alt="Imagem de Florianópolis com cultura eletrônica" loading="lazy" />
-          <p id="desc-floripa">Beira-mar, eletrônica e coletivo.</p>
-          <a href="https://www.instagram.com/p/DMIuANvuy9j/" target="_blank" rel="noopener noreferrer" aria-describedby="desc-floripa">Ver mais</a>
-        </div>
-
-        <!-- Curitiba -->
-        <div class="card fade-in delay">
-          <img src="images/curitiba.png" alt="Imagem de Curitiba com festas underground" loading="lazy" />
-          <p id="desc-curitiba">Frio na rua, calor nas pistas.</p>
-          <a href="https://www.instagram.com/p/DMIR-Jgu6us/" target="_blank" rel="noopener noreferrer" aria-describedby="desc-curitiba">Ver mais</a>
-        </div>
-
-        <!-- São Paulo -->
-        <div class="card fade-in delay">
-          <img src="images/sao-paulo.png" alt="Imagem noturna de São Paulo com festa" loading="lazy" />
-          <p id="desc-sp">A cidade que nunca dorme... nem para de dançar.</p>
-          <a href="https://www.instagram.com/p/DMGdZnZPWJO/" target="_blank" rel="noopener noreferrer" aria-describedby="desc-sp">Ver mais</a>
-        </div>
-
-        <!-- Rio de Janeiro -->
-        <div class="card fade-in delay">
-          <img src="images/rio.png" alt="Imagem do Rio com festa e cultura funk" loading="lazy" />
-          <p id="desc-rj">Funk, favela, cor e calor cultural.</p>
-          <a href="https://www.instagram.com/p/DMGq6o8vLUx/" target="_blank" rel="noopener noreferrer" aria-describedby="desc-rj">Ver mais</a>
-        </div>
-
-       </div>
         <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
       </div>
-    </div>
-  </section>
+    </main>
 
-<!-- EDITORIAL SCROLL -->
-  <section class="editorial-scroll">
-    <h2 class="titulo-editorial">Editorial da Semana</h2>
-    <div class="editorial-scroll-container">
-      <a class="editorial-card" href="editorial/as-cidades-ja-foram-noturnas.html">
-        <img src="images/as-cidades-ja-foram-noturnas.png" alt="Capa do editorial" />
-        <div class="info-card">
-          <span class="tag">Editorial</span>
-          <h3>As cidades já foram noturnas</h3>
-          <p>Das cidades grandes à metageração? Descubra quem matou!</p>
-        </div>
-      </a>
-  <div class="swiper-slide">
-          <a class="card" href="editorial/djs-sao-os-novos-autores.html">
-            <img src="images/djs-sao-os-novos-autores.png" alt="Capa do editorial DJs são os novos autores" />
-            <span class="tag">Editorial</span>
-            <h2 class="title">DJs são os novos autores</h2>
-            <p class="desc">Quem escreve nas tracks do ROLÊ. Já agradeceu?</p>
-          </a>
-        </div>
+    <script>
+function toggleTheme(el) {
+  document.body.classList.toggle('light');
+  el.setAttribute('aria-pressed', document.body.classList.contains('light'));
+}
 
-        <div class="swiper-slide">
-          <a class="card" href="editorial/todo-mundo-ja-foi.html">
-            <img src="images/todo-mundo-ja-foi.png" alt="Capa do editorial Todo mundo já foi num rolê bom" />
-            <span class="tag">Editorial</span>
-            <h2 class="title">Todo mundo já foi num rolê bom</h2>
-            <p class="desc">Reflexão: quando vira texto, não sai de festa.</p>
-          </a>
-        </div>
+document.addEventListener('DOMContentLoaded', function () {
+  // Dropdown Explorar
+  const dropdown = document.querySelector('.dropdown');
+  const button = dropdown.querySelector('.dropdown-button');
+  const content = dropdown.querySelector('.dropdown-content');
 
-      </div>
-    </div>
+  if (button && content) {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        button.setAttribute('aria-expanded', false);
+      }
+    });
+
+    content.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  }
+
+  // Carrossel
+ const container = document.querySelector('.cards-container');
+const cards = container.querySelectorAll('.card');
+const totalCards = cards.length;
+let currentIndex = 0;
+const cardWidth = cards[0].getBoundingClientRect().width + 12;
+
+function scrollToCard(index) {
+  if (index < 0) index = totalCards - 1;
+  if (index >= totalCards) index = 0;
+  currentIndex = index;
+  container.scrollTo({
+    left: cardWidth * index,
+    behavior: 'smooth'
+  });
+}
+
+const arrowLeft = document.querySelector('.scroll-arrow.left');
+const arrowRight = document.querySelector('.scroll-arrow.right');
+
+if (arrowLeft && arrowRight) {
+  arrowLeft.addEventListener('click', () => scrollToCard(currentIndex - 1));
+  arrowRight.addEventListener('click', () => scrollToCard(currentIndex + 1));
+}
+
+container.addEventListener('scroll', () => {
+  const newIndex = Math.round(container.scrollLeft / cardWidth);
+  currentIndex = newIndex;
+});
+
+  // Forçar scroll para POA ao carregar
+  setTimeout(() => {
+    if (container && cards.length > 0) {
+      container.style.scrollBehavior = 'auto';
+container.scrollTo({
+  left: 0,
+  behavior: 'auto'
+});
+      setTimeout(() => {
+        container.style.scrollBehavior = 'smooth';
+      }, 50);
+    }
+ }, 300);
+});
+</script>
+</div> <!-- Fechamento correto da .carrossel aqui -->
+<footer>
+  <div class="footer-links">
+    © 2025 ROLÊ ENTRETENIMENTO ·
+    <a href="politica.html">Política de Privacidade</a> ·
+    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+    <a href="termos-organizador.html">Termos do Organizador</a> ·
+    <a href="politica-spam.html">Política Antispam</a>
   </div>
-</section>
+  <div class="social-icons">
+    <a href="https://instagram.com/role.ent" target="_blank">
+      <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+    </a>
+    <a href="https://tiktok.com/@role.ent" target="_blank">
+      <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+    </a>
+    <a href="https://wa.me/5551980704353" target="_blank">
+      <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+    </a>
+  </div>
+</footer>
+   <script>
+  const lampada = document.querySelector('.lampada-toggle');
+  const root = document.documentElement;
 
-<!-- ÚLTIMOS POSTS -->
-  <section class="posts-grid container" role="region" aria-label="Últimos editoriais publicados">
-    <h2 class="titulo-principal">Últimos editoriais</h2>
-    <div class="cards-editoriais">
-      <article class="post-card">
-        <a href="editorial/o-novo-underground.html">
-          <img src="images/editorial1.jpg" alt="O novo underground" class="post-thumb" />
-          <h3 class="post-card-title">O novo underground</h3>
-          <p class="post-excerpt">A estética rave virou mainstream? A cena responde.</p>
-        </a>
-      </article>
-      <!-- Outros artigos -->
-    </div>
-  </section>
+  // Aplica o tema salvo ao carregar
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    root.style.setProperty('--bg', '#ffffff');
+    root.style.setProperty('--text-color', '#2e2e2e');
+  } else {
+    root.style.setProperty('--bg', '#000000');
+    root.style.setProperty('--text-color', '#f3f3f7');
+  }
 
-  <!-- FOOTER -->
-  <footer class="footer-role">
-    <div class="footer-container">
-      <div class="footer-col manifesto">
-        <p><em>O ROLÊ conecta pessoas, ideias e cenas culturais.<br>Mais do que divulgar festas, nós registramos movimentos vivos.</em></p>
-      </div>
-      <div class="footer-col links">
-        <ul>
-          <li><a href="politica.html">Política de Privacidade</a></li>
-          <li><a href="termos-usuario.html">Termos do Rolezeiro</a></li>
-          <li><a href="termos-organizador.html">Termos do Organizador</a></li>
-          <li><a href="politica-spam.html">Política Antispam</a></li>
-          <li><a href="contato.html">Fale com a gente</a></li>
-        </ul>
-      </div>
-      <div class="footer-col social">
-        <div class="social-icons">
-          <a href="https://instagram.com/role.ent" target="_blank"><img src="images/instagram.svg" alt="Instagram" /></a>
-          <a href="https://tiktok.com/@role.ent" target="_blank"><img src="images/tiktok.svg" alt="TikTok" /></a>
-          <a href="https://wa.me/5551980704353" target="_blank"><img src="images/whatsapp.svg" alt="WhatsApp" /></a>
-        </div>
-        <p class="footer-copy">© 2025 ROLÊ ENTRETENIMENTO</p>
-      </div>
-    </div>
-  </footer>
+  // Alterna o tema ao clicar na lâmpada
+ lampada.addEventListener('click', () => {
+  const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
 
-  <!-- SCRIPTS -->
-  <script src="scripts.js"></script>
+  if (currentBg === '#000000') {
+    // Modo claro
+    root.style.setProperty('--bg', '#ffffff');
+    root.style.setProperty('--text-color', '#2e2e2e');
+    lampada.setAttribute('aria-pressed', 'true');
+    localStorage.setItem('theme', 'light');
+  } else {
+    // Modo escuro
+    root.style.setProperty('--bg', '#000000');
+    root.style.setProperty('--text-color', '#f3f3f7');
+    lampada.setAttribute('aria-pressed', 'false');
+    localStorage.setItem('theme', 'dark');
+  }
+});
+</script>
 </body>
 </html>
