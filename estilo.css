@@ -87,14 +87,7 @@ footer {
 
 /* CARROSSEL HORIZONTAL */
 .carrossel {
-  padding: 60px 20px;
-}
-
-.carrossel h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--highlight);
+  padding: 2rem 1rem;
 }
 
 .carrossel::-webkit-scrollbar {
@@ -103,18 +96,24 @@ footer {
 
 .card {
   flex: 0 0 auto;
-  background: var(--card-bg);
-  padding: 16px;
-  border-radius: 12px;
-  width: 240px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
+  scroll-snap-align: start;
+  width: 250px;
+  max-width: 90vw;
+  background-color: #111;
+  border-radius: 1rem;
+  border: 1px solid var(--highlight);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card img {
+.carrossel .card img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
-  margin-bottom: 10px;
+  object-fit: cover;
 }
 
 /* TEXTO CENTRALIZADO */
@@ -202,16 +201,19 @@ a:hover {
 .scroll-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
-  overflow: hidden;
-  position: relative;
+  gap: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 1rem;
 }
 
 .scroll-arrow {
-  font-size: 1.5rem;
   background: none;
   border: none;
   color: var(--highlight);
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -223,10 +225,15 @@ a:hover {
 
 .cards-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 12px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 16px;
-  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+  padding: 1rem 0;
+  max-width: 100%;
 }
 
 .cards-container::-webkit-scrollbar {
@@ -507,16 +514,12 @@ html, body {
 
 /* Esconde desktop no mobile */
 @media (max-width: 768px) {
-  .carrossel h2 {
-    font-size: 1.5rem;
-  }
-  
-  .menu-toggle {
-    display: block;
+  .menus-desktop {
+    display: none;
   }
 
-  .card {
-    width: 180px;
+  .menu-toggle {
+    display: block;
   }
 }
 
@@ -1057,192 +1060,59 @@ a, button {
   transition: all 0.3s ease;
 }
 
-.titulo-principal, h1, h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
-
 .btn-destaque:hover {
   background-color: transparent;
   color: var(--destaque);
   box-shadow: 0 0 0 2px var(--destaque);
 }
 
-.posts-grid {
-  padding: 4rem 1rem;
+
+/* Foco visível para navegação por teclado */
+:focus-visible {
+  outline: 2px dashed var(--highlight, #c77dff);
+  outline-offset: 4px;
 }
 
-.cards-editoriais {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+/* Melhorar contraste de botões e links */
+a, button, .scroll-arrow, .dropdown-button {
+  color: var(--text-color, #f3f3f7);
+  background-color: transparent;
+  transition: color 0.3s, background-color 0.3s;
 }
 
-.post-card {
-  background: #111;
-  padding: 1rem;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid #333;
+a:hover, button:hover, .scroll-arrow:hover, .dropdown-button:hover {
+  color: #ffffff;
+  background-color: var(--highlight, #c77dff);
 }
 
-.post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+/* Aumentar espaçamento de linhas para legibilidade */
+body, p, a, li, h1, h2, h3, h4 {
+  line-height: 1.6;
 }
 
-.post-thumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.post-card-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  margin-top: 1rem;
-  color: var(--text-color);
-}
-
-.post-excerpt {
-  font-size: 0.95rem;
-  color: #ccc;
-  margin-top: 0.5rem;
-}
-
-.footer-manifesto p {
+/* Aumentar padding e altura mínima de botões para toque confortável */
+button, .scroll-arrow, .dropdown-button {
+  padding: 12px 18px;
+  min-height: 44px;
   font-size: 1rem;
-  color: #999;
-  font-style: italic;
-  margin-bottom: 1rem;
 }
 
-
-.editorial-slider {
-  position: relative;
-  background-color: #800000; /* ou vermelho vibrante do print */
-  color: #fff;
-  overflow: hidden;
+/* Corrigir tamanho e legibilidade mínima para textos pequenos */
+small, .tag, .autor-data {
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
-.editorial-slide {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 4rem 2rem;
-  transition: opacity 0.5s;
-}
-
-.editorial-slide img {
-  width: 45%;
-  max-width: 600px;
-  object-fit: cover;
-}
-
-.editorial-info {
-  max-width: 500px;
-}
-
-.editorial-info h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  margin: 0.5rem 0;
-}
-
-.editorial-info .tag {
-  border: 2px solid #fff;
-  padding: 0.3rem 0.8rem;
-  border-radius: 30px;
+/* Garantir contraste forte nos elementos destacados */
+.tag {
+  background-color: var(--highlight, #c77dff);
+  color: #000000;
   font-weight: bold;
-  font-size: 0.9rem;
-  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
-.editorial-info p.autor-data {
-  font-size: 0.85rem;
-  margin-top: 1rem;
-  color: #ddd;
+/* Garantir espaçamento entre cards para toque */
+.card {
+  margin: 0 8px;
 }
-
-.slider-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.slider-controls .dot {
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  opacity: 0.5;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-.slider-controls .dot.active {
-  opacity: 1;
-}
-
-.menu-lateral {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 80%;
-  max-width: 320px;
-  height: 100%;
-  background-color: #ff1e1e; /* vermelho estilo Alataj */
-  z-index: 2000;
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-  transition: left 0.3s ease;
-}
-
-.menu-lateral.show {
-  left: 0;
-}
-
-.menu-lateral nav a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #000;
-  text-decoration: none;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.menu-lateral nav a::after {
-  content: "→";
-  font-size: 1.2rem;
-}
-
-.menu-toggle-esq {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 2100;
-  background: black;
-  color: white;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border: 1px solid white;
-  cursor: pointer;
-}
-
-.hero-banner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: block;
-}
-
