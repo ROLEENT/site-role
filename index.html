@@ -24,63 +24,70 @@
 </header>
   
 <!-- Menu lateral fixo estilo Alataj -->
-<aside class="menu-lateral">
-  <img src="images/logo-role.png" alt="ROLÊ Logo" class="logo-lateral" />
-  <nav class="nav-lateral">
-    <a href="index.html">Início</a>
-    <a href="revista.html">Revista ROLÊ</a>
-    <a href="vitrine-cultural.html">Vitrine Cultural</a>
-    <a href="descontos.html">Descontos</a>
-    <a href="contato.html">Contato</a>
-    <a href="quem-somos.html">Quem Somos</a>
-  </nav>
-  <div class="icones-laterais">
-    <a href="https://instagram.com/role.ent" target="_blank"><img src="images/instagram.svg" alt="Instagram" /></a>
-    <a href="https://tiktok.com/@role.ent" target="_blank"><img src="images/tiktok.svg" alt="TikTok" /></a>
-    <a href="https://wa.me/5551980704353" target="_blank"><img src="images/whatsapp.svg" alt="WhatsApp" /></a>
+<aside class="sidebar">
+  <div class="logo-area">
+    <a href="index.html">
+      <img src="images/logo-role.png" alt="Logo do ROLÊ" class="logo-role" />
+    </a>
   </div>
-  <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" />
+
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="revista.html">Revista ROLÊ</a></li>
+      <li><a href="vitrine-cultural.html">Vitrine Cultural</a></li>
+      <li><a href="descontos.html">Descontos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-social">
+    <a href="https://instagram.com/role.ent" target="_blank"><img src="images/instagram.svg" alt="Instagram ROLÊ" /></a>
+    <a href="https://tiktok.com/@role.ent" target="_blank"><img src="images/tiktok.svg" alt="TikTok ROLÊ" /></a>
+    <a href="https://wa.me/5551980704353" target="_blank"><img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" /></a>
+  </div>
+
+  <button class="theme-toggle" onclick="toggleTheme(this)" aria-pressed="false">
+    <img src="images/theme-toggle.gif" alt="Alternar tema" />
+  </button>
 </aside>
 
 <!-- Scroll editorial estilo Alataj -->
-<section class="editorial-scroll">
-  <h2 class="titulo-editorial">Na nossa revista</h2>
-  <div class="editorial-scroll-container">
-    
-    <article class="editorial-card">
-      <a href="editorial/as-cidades-ja-foram-noturnas.html">
-        <img src="images/as-cidades-ja-foram-noturnas.png" alt="Capa do editorial" />
-        <div class="info-card">
-          <span class="tag">Editorial</span>
-          <h3>As cidades já foram noturnas</h3>
-          <p>Das cidades grandes à metageração? Descubra quem matou!</p>
-        </div>
-      </a>
-    </article>
+<section class="posts-slider">
+  <div class="container">
+    <div class="swiper postsSwiper">
+      <div class="swiper-wrapper">
 
-    <article class="editorial-card">
-      <a href="editorial/djs-sao-os-novos-autores.html">
-        <img src="images/djs-sao-os-novos-autores.png" alt="Capa do editorial" />
-        <div class="info-card">
-          <span class="tag">Editorial</span>
-          <h3>DJs são os novos autores</h3>
-          <p>Quem escreve nas tracks do ROLÊ. Já agradeceu?</p>
+        <div class="swiper-slide">
+          <a class="card" href="editorial/as-cidades-ja-foram-noturnas.html">
+            <img src="images/as-cidades-ja-foram-noturnas.png" alt="Capa do editorial As cidades já foram noturnas" />
+            <span class="tag">Editorial</span>
+            <h2 class="title">As cidades já foram noturnas</h2>
+            <p class="desc">Das cidades grandes à metageração? Descubra quem matou!</p>
+          </a>
         </div>
-      </a>
-    </article>
 
-    <article class="editorial-card">
-      <a href="editorial/todo-mundo-ja-foi.html">
-        <img src="images/todo-mundo-ja-foi.png" alt="Capa do editorial" />
-        <div class="info-card">
-          <span class="tag">Editorial</span>
-          <h3>Todo mundo já foi num rolê bom</h3>
-          <p>Reflexão: quando vira texto, não sai de festa.</p>
+        <div class="swiper-slide">
+          <a class="card" href="editorial/djs-sao-os-novos-autores.html">
+            <img src="images/djs-sao-os-novos-autores.png" alt="Capa do editorial DJs são os novos autores" />
+            <span class="tag">Editorial</span>
+            <h2 class="title">DJs são os novos autores</h2>
+            <p class="desc">Quem escreve nas tracks do ROLÊ. Já agradeceu?</p>
+          </a>
         </div>
-      </a>
-    </article>
 
-    <!-- Adicione mais cards conforme desejar -->
+        <div class="swiper-slide">
+          <a class="card" href="editorial/todo-mundo-ja-foi.html">
+            <img src="images/todo-mundo-ja-foi.png" alt="Capa do editorial Todo mundo já foi num rolê bom" />
+            <span class="tag">Editorial</span>
+            <h2 class="title">Todo mundo já foi num rolê bom</h2>
+            <p class="desc">Reflexão: quando vira texto, não sai de festa.</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
@@ -228,29 +235,41 @@ container.scrollTo({
 </script>
 </div> <!-- Fechamento correto da .carrossel aqui -->
   
-<footer role="contentinfo" aria-label="Rodapé do site com links institucionais e redes sociais">
-  <div class="footer-manifesto">
-    <p><em>O ROLÊ conecta pessoas, ideias e cenas culturais. Mais do que divulgar festas, nós registramos movimentos vivos.</em></p>
-  </div>
-  <div class="footer-links">
-    © 2025 ROLÊ ENTRETENIMENTO ·
-    <a href="politica.html">Política de Privacidade</a> ·
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-    <a href="termos-organizador.html">Termos do Organizador</a> ·
-    <a href="politica-spam.html">Política Antispam</a>
-  </div>
-  <div class="social-icons" aria-label="Links para redes sociais">
-    <a href="https://instagram.com/role.ent" target="_blank" aria-label="Instagram do ROLÊ">
-      <img src="images/instagram.svg" alt="Instagram ROLÊ" />
-    </a>
-    <a href="https://tiktok.com/@role.ent" target="_blank" aria-label="TikTok do ROLÊ">
-      <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
-    </a>
-    <a href="https://wa.me/5551980704353" target="_blank" aria-label="WhatsApp do ROLÊ">
-      <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
-    </a>
+<footer class="footer-role">
+  <div class="footer-container">
+    
+    <div class="footer-col manifesto">
+      <p><em>O ROLÊ conecta pessoas, ideias e cenas culturais.<br>Mais do que divulgar festas, nós registramos movimentos vivos.</em></p>
+    </div>
+
+    <div class="footer-col links">
+      <ul>
+        <li><a href="politica.html">Política de Privacidade</a></li>
+        <li><a href="termos-usuario.html">Termos do Rolezeiro</a></li>
+        <li><a href="termos-organizador.html">Termos do Organizador</a></li>
+        <li><a href="politica-spam.html">Política Antispam</a></li>
+        <li><a href="contato.html">Fale com a gente</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col social">
+      <div class="social-icons">
+        <a href="https://instagram.com/role.ent" target="_blank" aria-label="Instagram ROLÊ">
+          <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+        </a>
+        <a href="https://tiktok.com/@role.ent" target="_blank" aria-label="TikTok ROLÊ">
+          <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+        </a>
+        <a href="https://wa.me/5551980704353" target="_blank" aria-label="WhatsApp ROLÊ">
+          <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+        </a>
+      </div>
+      <p class="footer-copy">© 2025 ROLÊ ENTRETENIMENTO</p>
+    </div>
+
   </div>
 </footer>
+  
   
    <script>
   const lampada = document.querySelector('.lampada-toggle');
