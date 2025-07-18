@@ -87,7 +87,14 @@ footer {
 
 /* CARROSSEL HORIZONTAL */
 .carrossel {
-  padding: 2rem 1rem;
+  padding: 60px 20px;
+}
+
+.carrossel h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--highlight);
 }
 
 .carrossel::-webkit-scrollbar {
@@ -96,24 +103,18 @@ footer {
 
 .card {
   flex: 0 0 auto;
-  scroll-snap-align: start;
-  width: 250px;
-  max-width: 90vw;
-  background-color: #111;
-  border-radius: 1rem;
-  border: 1px solid var(--highlight);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  width: 240px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-.carrossel .card img {
+.card img {
   width: 100%;
-  height: auto;
   border-radius: 8px;
-  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 /* TEXTO CENTRALIZADO */
@@ -201,19 +202,16 @@ a:hover {
 .scroll-wrapper {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  max-width: 100%;
-  margin: 0 auto;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 1rem;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .scroll-arrow {
+  font-size: 1.5rem;
   background: none;
   border: none;
   color: var(--highlight);
-  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -225,15 +223,10 @@ a:hover {
 
 .cards-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 12px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 1rem;
-  padding: 1rem 0;
-  max-width: 100%;
+  gap: 16px;
+  padding: 10px 0;
 }
 
 .cards-container::-webkit-scrollbar {
@@ -514,12 +507,16 @@ html, body {
 
 /* Esconde desktop no mobile */
 @media (max-width: 768px) {
-  .menus-desktop {
-    display: none;
+  .carrossel h2 {
+    font-size: 1.5rem;
   }
-
+  
   .menu-toggle {
     display: block;
+  }
+
+  .card {
+    width: 180px;
   }
 }
 
@@ -1122,3 +1119,130 @@ a, button {
   font-style: italic;
   margin-bottom: 1rem;
 }
+
+
+.editorial-slider {
+  position: relative;
+  background-color: #800000; /* ou vermelho vibrante do print */
+  color: #fff;
+  overflow: hidden;
+}
+
+.editorial-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  transition: opacity 0.5s;
+}
+
+.editorial-slide img {
+  width: 45%;
+  max-width: 600px;
+  object-fit: cover;
+}
+
+.editorial-info {
+  max-width: 500px;
+}
+
+.editorial-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin: 0.5rem 0;
+}
+
+.editorial-info .tag {
+  border: 2px solid #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.editorial-info p.autor-data {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: #ddd;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.slider-controls .dot {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  opacity: 0.5;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.slider-controls .dot.active {
+  opacity: 1;
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  background-color: #ff1e1e; /* vermelho estilo Alataj */
+  z-index: 2000;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: left 0.3s ease;
+}
+
+.menu-lateral.show {
+  left: 0;
+}
+
+.menu-lateral nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.menu-lateral nav a::after {
+  content: "→";
+  font-size: 1.2rem;
+}
+
+.menu-toggle-esq {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2100;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.hero-banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+
