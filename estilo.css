@@ -98,19 +98,52 @@ p {
 .lampada-toggle {
   width: 36px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* BANNER TOPO */
-.banner-central {
+.lampada-toggle:active {
+  transform: scale(0.9);
+}
+
+/* HERO EDITORIAL */
+.hero {
+  position: relative;
+  width: 100%;
   margin-left: 220px;
-  background: #000;
-  text-align: center;
-  padding: 2rem 0;
-  border-bottom: 1px solid #333;
+  margin-bottom: 2rem;
 }
 
-.banner-central img {
-  max-width: 280px;
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-texto {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  color: var(--text-color);
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  max-width: 600px;
+  line-height: 1.2;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 12px;
+  animation: fadeInUp 1s ease-out both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* EDITORIAL SCROLL */
@@ -194,10 +227,15 @@ p {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .card {
-  min-width: 240px;
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  min-width: 220px;
+  max-width: 280px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 12px;
@@ -297,35 +335,6 @@ footer {
   gap: 1rem;
 }
 
-/* HERO IMAGE COM TÍTULO SOBREPOSTO */
-.hero {
-  position: relative;
-  width: 100%;
-  margin-left: 220px;
-  margin-bottom: 2rem;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.hero-texto {
-  position: absolute;
-  bottom: 3rem;
-  left: 3rem;
-  color: var(--text-color);
-  font-family: var(--serif);
-  font-size: 2.5rem;
-  max-width: 600px;
-  line-height: 1.2;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1rem;
-  border-radius: 12px;
-}
-
 /* TÍTULOS DE SESSÃO COM LINHA */
 .titulo-sessao {
   font-family: var(--serif);
@@ -367,10 +376,7 @@ footer {
   .editorial-scroll,
   .carrossel,
   .posts-grid,
-  footer {
-    margin-left: 0;
-  }
-
+  footer,
   .hero {
     margin-left: 0;
   }
