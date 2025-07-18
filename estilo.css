@@ -1060,8 +1060,65 @@ a, button {
   transition: all 0.3s ease;
 }
 
+.titulo-principal, h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
 .btn-destaque:hover {
   background-color: transparent;
   color: var(--destaque);
   box-shadow: 0 0 0 2px var(--destaque);
+}
+
+.posts-grid {
+  padding: 4rem 1rem;
+}
+
+.cards-editoriais {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.post-card {
+  background: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #333;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.post-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.post-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
+.post-excerpt {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+.footer-manifesto p {
+  font-size: 1rem;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 1rem;
 }
