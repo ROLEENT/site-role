@@ -16,76 +16,77 @@
 </head>
 <body class="fade-in">
 
-<section class="bloco-topo" role="banner">
-  <div class="container-topo">
-    <div class="header-top">
-      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" loading="lazy" />
-      <div class="right-top">
-        <nav class="dropdown" aria-label="Menu de navegação principal">
-          <button class="dropdown-button" aria-haspopup="true" aria-expanded="false" aria-controls="menu-navegacao">Explorar ▼</button>
-          <div class="dropdown-content" id="menu-navegacao" role="menu">
-            <a href="index.html" role="menuitem">Página Inicial</a>
-            <a href="revista.html" role="menuitem">Revista ROLÊ</a>
-            <a href="vitrine-cultural.html" role="menuitem">Vitrine Cultural</a>
-            <a href="descontos.html" role="menuitem">Descontos</a>
-            <a href="contato.html" role="menuitem">Contato</a>
-            <a href="quem-somos.html" role="menuitem">Quem Somos</a>
-          </div>
-        </nav>
-        <img src="images/theme-toggle.gif" alt="Botão de alternar entre modo claro e escuro" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
-      </div>
-    </div>
-    <hr class="linha-topo" />
+  <!-- Banner topo centralizado -->
+  <header role="banner" class="banner-central">
+<section class="banner-central">
+  <img src="banner-logo.png" alt="Banner ROLÊ" />
+</section>
+</header>
+  
+<!-- Menu lateral fixo estilo Alataj -->
+<aside class="menu-lateral">
+  <img src="images/logo-role.png" alt="ROLÊ Logo" class="logo-lateral" />
+  <nav class="nav-lateral">
+    <a href="index.html">Início</a>
+    <a href="revista.html">Revista ROLÊ</a>
+    <a href="vitrine-cultural.html">Vitrine Cultural</a>
+    <a href="descontos.html">Descontos</a>
+    <a href="contato.html">Contato</a>
+    <a href="quem-somos.html">Quem Somos</a>
+  </nav>
+  <div class="icones-laterais">
+    <a href="https://instagram.com/role.ent" target="_blank"><img src="images/instagram.svg" alt="Instagram" /></a>
+    <a href="https://tiktok.com/@role.ent" target="_blank"><img src="images/tiktok.svg" alt="TikTok" /></a>
+    <a href="https://wa.me/5551980704353" target="_blank"><img src="images/whatsapp.svg" alt="WhatsApp" /></a>
   </div>
-</section>
+  <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" />
+</aside>
 
-<!-- Banner topo -->
-<section class="banner-topo">
-<img src="banner-logo.png" alt="Banner ROLÊ" loading="lazy" />
-</section>
-
-<section class="editorial-scroll" role="region" aria-label="Artigos em destaque na revista ROLÊ">
+<!-- Scroll editorial estilo Alataj -->
+<section class="editorial-scroll">
+  <h2 class="titulo-editorial">Na nossa revista</h2>
   <div class="editorial-scroll-container">
+    
+    <article class="editorial-card">
+      <a href="editorial/as-cidades-ja-foram-noturnas.html">
+        <img src="images/as-cidades-ja-foram-noturnas.png" alt="Capa do editorial" />
+        <div class="info-card">
+          <span class="tag">Editorial</span>
+          <h3>As cidades já foram noturnas</h3>
+          <p>Das cidades grandes à metageração? Descubra quem matou!</p>
+        </div>
+      </a>
+    </article>
 
-    <!-- Slide 1 -->
-    <div class="editorial-item">
-      <img src="images/as-cidades-ja-foram-noturnas.png" alt="Capa do editorial: As cidades já foram noturnas" />
-      <div class="editorial-texto">
-        <span class="tag">Editorial</span>
-        <h2 id="titulo-cidades">As cidades já foram noturnas</h2>
-        <p id="descricao-cidades">Das cidades grandes à metageração? Descubra quem matou!</p>
-        <a href="editorial/as-cidades-ja-foram-noturnas.html" aria-describedby="titulo-cidades descricao-cidades">Ler texto completo</a>
-      </div>
-    </div>
+    <article class="editorial-card">
+      <a href="editorial/djs-sao-os-novos-autores.html">
+        <img src="images/djs-sao-os-novos-autores.png" alt="Capa do editorial" />
+        <div class="info-card">
+          <span class="tag">Editorial</span>
+          <h3>DJs são os novos autores</h3>
+          <p>Quem escreve nas tracks do ROLÊ. Já agradeceu?</p>
+        </div>
+      </a>
+    </article>
 
-    <!-- Slide 2 -->
-    <div class="editorial-item">
-      <img src="images/djs-sao-os-novos-autores.png" alt="Capa do editorial: DJs são os novos autores" />
-      <div class="editorial-texto">
-        <span class="tag">Editorial</span>
-        <h2 id="titulo-djs">DJs são os novos autores</h2>
-        <p id="descricao-djs">Quem escreve nas tracks do ROLÊ. Já agradeceu?</p>
-        <a href="editorial/djs-sao-os-novos-autores.html" aria-describedby="titulo-djs descricao-djs">Ler texto completo</a>
-      </div>
-    </div>
+    <article class="editorial-card">
+      <a href="editorial/todo-mundo-ja-foi.html">
+        <img src="images/todo-mundo-ja-foi.png" alt="Capa do editorial" />
+        <div class="info-card">
+          <span class="tag">Editorial</span>
+          <h3>Todo mundo já foi num rolê bom</h3>
+          <p>Reflexão: quando vira texto, não sai de festa.</p>
+        </div>
+      </a>
+    </article>
 
-    <!-- Slide 3 -->
-    <div class="editorial-item">
-      <img src="images/todo-mundo-ja-foi.png" alt="Capa do editorial: Todo mundo já foi num rolê bom" />
-      <div class="editorial-texto">
-        <span class="tag">Editorial</span>
-        <h2 id="titulo-role-bom">Todo mundo já foi num rolê bom</h2>
-        <p id="descricao-role-bom">Reflexão: quando vira texto, não sai de festa.</p>
-        <a href="editorial/todo-mundo-ja-foi.html" aria-describedby="titulo-role-bom descricao-role-bom">Ver post no Instagram</a>
-      </div>
-    </div>
-
+    <!-- Adicione mais cards conforme desejar -->
   </div>
 </section>
 
   <main>
  <section class="carrossel fade-in delay" role="region" aria-label="Destaques da semana por cidade">
-  <main class="destaques" role="main">
+  <div class="destaques">
     <h2>DESTAQUES DA SEMANA</h2>
     <div class="scroll-wrapper">
       <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
