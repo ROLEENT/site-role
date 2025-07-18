@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Conheça os pacotes da Vitrine Cultural do ROLÊ e descubra qual é o ideal para o seu evento. Visibilidade real, com estética e curadoria editorial." />
+    <title>Pacotes — Vitrine Cultural | ROLÊ</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <a class="voltar" href="index.html">← Voltar</a>
+    </header>
+    <main class="container">
+      <h1 class="titulo-pagina">Pacotes disponíveis na Vitrine Cultural do ROLÊ</h1>
+      <p class="destaque">O palco é seu. A luz, a gente joga.</p>
+
+      <section>
+        <h2>🎯 Tá na hora do seu evento aparecer como merece</h2>
+        <p>Tem tanta festa boa por aí passando despercebida no feed que a gente até chora um lo-fi triste de fundo.</p>
+        <p>A verdade é uma só: ter um evento incrível não garante que ele será visto, desejado e comentado. O que faz isso acontecer é a forma como ele é contado. E aqui no ROLÊ, a gente sabe contar histórias de evento como ninguém.</p>
+        <p>Bem-vinde à Vitrine Cultural — o espaço editorial que transforma o seu rolê em desejo puro.</p>
+      </section>
+
+      <section>
+        <h2>💡 O que é a Vitrine Cultural (e por que ela funciona)</h2>
+        <p>A Vitrine Cultural é onde a gente apresenta, posiciona e impulsiona eventos com conteúdo autoral, visual de impacto e linguagem afiada.</p>
+        <p>A gente não te joga numa grade sem graça, nem trata seu flyer como figurante. A gente mergulha na alma do teu rolê, entende a proposta e cria uma entrega que gera curtida, clique, comentário — e principalmente presença no evento.</p>
+        <p>Você escolhe o formato. A gente entrega com narrativa, estética e estratégia.</p>
+        <p><strong>Formatos disponíveis:</strong></p>
+        <ul>
+          <li>📸 Carrossel editorial no feed</li>
+          <li>📲 Stories interativos com CTA</li>
+          <li>🎥 Reels (teasers ou cobertura)</li>
+          <li>🧩 Combo feed + stories</li>
+          <li>🔁 Pacotes mensais para coletivos, selos e produtoras</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>🔥 Escolha seu pacote e veja seu evento acontecer</h2>
+        <h3>🌀 CARROSSEL EDITORIAL NO FEED</h3>
+        <ul>
+          <li>Até 10 cards</li>
+          <li>Direção de arte inspirada na identidade do evento</li>
+          <li>Texto com storytelling do ROLÊ</li>
+          <li>Publicação no feed com destaque</li>
+          <li>Link nos stories + comentário fixado</li>
+        </ul>
+        <p><strong>💸 Valor:</strong> R$ 150</p>
+        <p><strong>📈 Alcance médio:</strong> 40 a 60 mil contas</p>
+
+        <h3>🔥 STORIES INTERATIVOS</h3>
+        <ul>
+          <li>Até 3 blocos de stories</li>
+          <li>Ambientação visual</li>
+          <li>Gatilhos de interação</li>
+          <li>Link direto pro evento</li>
+        </ul>
+        <p><strong>💸 Valor:</strong> R$ 60</p>
+        <p><strong>💳 Em combo com carrossel:</strong> R$ 42 (30% OFF)</p>
+
+        <h3>🌪️ COMBO CARROSSEL + STORIES</h3>
+        <p>💸 Valor promocional: R$ 180</p>
+
+        <h3>🎥 REELS OU COBERTURA EM VÍDEO</h3>
+        <p>💸 A partir de R$ 200</p>
+        <p>📸 Envio de orçamento personalizado</p>
+
+        <h3>♻️ PACOTE MENSAL OU RECORRENTE</h3>
+        <ul>
+          <li>Datas fixas garantidas</li>
+          <li>Descontos progressivos</li>
+          <li>Destaque editorial em sequência</li>
+        </ul>
+        <p>💸 Valor sob proposta</p>
+        <p>📩 Fale com a gente pra montar o ideal pro seu calendário</p>
+      </section>
+
+      <section>
+        <h2>😬 Objeções comuns (e por que elas não colam por aqui)</h2>
+        <p><strong>“Mas meu evento é pequeno, vale a pena?”</strong><br/>Vale sim! Nosso público ama rolê com identidade.</p>
+        <p><strong>“Já tenho meu social media…”</strong><br/>Perfeito. A Vitrine não substitui, ela amplifica.</p>
+        <p><strong>“Tô com grana curta…”</strong><br/>A gente entende. E por isso temos formatos a partir de R$ 60.</p>
+      </section>
+
+      <section>
+        <h2>🚀 Garanta sua data agora</h2>
+        <p>Se você quer garantir um dos espaços da semana:</p>
+        <ul>
+          <li>Escolha o pacote ideal</li>
+          <li>Manda as infos do evento</li>
+          <li>Faz o pagamento</li>
+          <li>E relaxa — o ROLÊ cuida do resto</li>
+        </ul>
+        <p>📲 <a href="#">Fale com a gente no WhatsApp</a></p>
+        <p>📥 <a href="#">Baixe nosso portfólio completo</a></p>
+        <p>📅 <a href="#">Veja a agenda com datas disponíveis</a> (em breve no site!)</p>
+      </section>
+
+      <section>
+        <h2>🧠 Bônus: O que você leva junto com o pacote</h2>
+        <ul>
+          <li>Design personalizado com a cara do seu evento</li>
+          <li>Texto que vende e engaja com identidade ROLÊ</li>
+          <li>Suporte por WhatsApp</li>
+          <li>Pós-venda com relatório de performance</li>
+          <li>Amor, estética, curadoria e verdade cultural 💜</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>🌈 Conclusão: Visibilidade não é só aparecer. É ser lembrado.</h2>
+        <p>A gente acredita em cultura viva. Em festas que têm alma. E em produtores que merecem ter seus eventos contados com respeito, afeto e força editorial.</p>
+        <p>Se o seu rolê tem verdade, ele tem espaço aqui.</p>
+        <p><strong>Nos vemos na Vitrine. Nos vemos no ROLÊ.</strong></p>
+      </section>
+    </main>
+<div class="cta-final">
+<a href="vitrine-cultural.html" class="btn-destaque">← Voltar para a Vitrine</a>
+</div>
+  
+  <footer>
+    <div class="footer-links">
+      © 2025 ROLÊ ENTRETENIMENTO ·
+      <a href="politica.html">Política de Privacidade</a> ·
+      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+      <a href="termos-organizador.html">Termos do Organizador</a> ·
+      <a href="politica-spam.html">Política Antispam</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com/role.ent" target="_blank"><img src="images/instagram.svg" alt="Instagram ROLÊ" /></a>
+      <a href="https://tiktok.com/@role.ent" target="_blank"><img src="images/tiktok.svg" alt="TikTok ROLÊ" /></a>
+      <a href="https://wa.me/5551980704353" target="_blank"><img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" /></a>
+    </div>
+  </footer>
+
+  <script>
+    const lampada = document.querySelector('.lampada-toggle');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      root.style.setProperty('--bg', '#ffffff');
+      root.style.setProperty('--text-color', '#2e2e2e');
+    } else {
+      root.style.setProperty('--bg', '#000000');
+      root.style.setProperty('--text-color', '#f3f3f7');
+    }
+
+    lampada.addEventListener('click', () => {
+      const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+      if (currentBg === '#000000') {
+        root.style.setProperty('--bg', '#ffffff');
+        root.style.setProperty('--text-color', '#2e2e2e');
+        lampada.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.style.setProperty('--bg', '#000000');
+        root.style.setProperty('--text-color', '#f3f3f7');
+        lampada.setAttribute('aria-pressed', 'false');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    const dropdown = document.querySelector('.dropdown');
+    const button = dropdown?.querySelector('.dropdown-button');
+    const content = dropdown?.querySelector('.dropdown-content');
+
+    if (button && content) {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+        button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          button.setAttribute('aria-expanded', false);
+        }
+      });
+
+      content.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    }
+  </script>
+</body>
+</html>
