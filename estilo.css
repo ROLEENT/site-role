@@ -1065,3 +1065,77 @@ a, button {
   color: var(--destaque);
   box-shadow: 0 0 0 2px var(--destaque);
 }
+
+    .destaque-frase {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--highlight);
+      text-align: center;
+      font-style: italic;
+      margin: 3rem auto;
+      background: linear-gradient(90deg, transparent 0%, #c77dff22 50%, transparent 100%);
+      padding: 1.2rem;
+      border-left: 4px solid var(--highlight);
+      border-radius: 6px;
+      max-width: 700px;
+    }
+    @media (max-width: 768px) {
+      .destaque-frase {
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
+    }
+
+    /* Ajustes visuais para a caixa de comentários */
+    .comentarios {
+      background-color: var(--bg);
+      padding: 2rem 1rem;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    .comentarios h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--highlight);
+      text-align: center;
+    }
+    .comentarios form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+    }
+    .comentarios input,
+    .comentarios textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      background-color: #fff;
+      color: #000;
+    }
+    .comentarios textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .comentarios button {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      background-color: var(--highlight);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .comentarios button:hover {
+      background-color: #b15be2;
+    }
+    #comentarios-lista {
+      margin-top: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
