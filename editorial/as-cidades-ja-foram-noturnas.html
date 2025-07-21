@@ -116,6 +116,21 @@
   </form>
   <div id="comentarios-lista"></div>
 </section>
+  <!-- Botão Voltar para o Topo -->
+<a href="#topo" class="btn-voltar-topo" title="Voltar ao topo">↑</a>
+
+<!-- Botão Voltar para Página Anterior -->
+<a href="javascript:history.back()" class="btn-voltar-anterior" title="Voltar">← Voltar</a>
+
+<script>
+  // Scroll suave para o topo se houver âncora
+  document.querySelectorAll('a[href^="#topo"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
 <footer>
   <div class="footer-links">
     © 2025 ROLÊ ENTRETENIMENTO ·
