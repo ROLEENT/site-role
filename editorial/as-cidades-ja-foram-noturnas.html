@@ -116,21 +116,7 @@
   </form>
   <div id="comentarios-lista"></div>
 </section>
-  <!-- Botão Voltar para o Topo -->
-<a href="#topo" class="btn-voltar-topo" title="Voltar ao topo">↑</a>
 
-<!-- Botão Voltar para Página Anterior -->
-<a href="javascript:history.back()" class="btn-voltar-anterior" title="Voltar">← Voltar</a>
-
-<script>
-  // Scroll suave para o topo se houver âncora
-  document.querySelectorAll('a[href^="#topo"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
-</script>
 <footer>
   <div class="footer-links">
     © 2025 ROLÊ ENTRETENIMENTO ·
@@ -191,5 +177,28 @@
     });
   }
 </script>
+<!-- Botões de Navegação -->
+<div class="botoes-flutuantes">
+  <button class="botao-flutuante" id="btn-voltar-topo" title="Voltar ao topo">
+    <img src="/images/seta-para-cima.svg" alt="Voltar ao topo" />
+  </button>
+  <button class="botao-flutuante" id="btn-voltar-anterior" title="Voltar à página anterior">
+    <img src="/images/seta-voltar.svg" alt="Voltar página anterior" />
+  </button>
+</div>
+
+<script>
+  // Voltar ao topo
+  document.getElementById('btn-voltar-topo').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Voltar à página anterior
+  document.getElementById('btn-voltar-anterior').addEventListener('click', () => {
+    window.history.back();
+  });
+</script>
+</body>
+</html>
 </body>
 </html>
