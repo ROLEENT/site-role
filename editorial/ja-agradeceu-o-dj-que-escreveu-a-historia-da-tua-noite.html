@@ -1,349 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>As cidades já foram noturnas – Revista ROLÊ</title>
-  <meta name="description" content="As cidades já foram noturnas? Neste editorial, o ROLÊ reflete sobre a perda da madrugada nas grandes cidades brasileiras e a resistência da cultura noturna." />
-  <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
-  <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
-  <meta property="og:description" content="Um texto sobre a repressão à vida noturna, a cultura da presença e a resistência dos que ainda fazem a cidade respirar." />
-  <meta property="og:image" content="https://seudominio.com/EDITORIAL1.png" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://seudominio.com/editorial/as-cidades-ja-foram-noturnas.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="../favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-color: #000;
-      --text-color: #f3f3f7;
-      --highlight: #c77dff;
-      --card-bg: #151515;
-    }
-    body {
-      margin: 0;
-      font-family: 'League Spartan', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding: 2rem;
-      line-height: 1.7;
-    }
-    a {
-      color: var(--highlight);
-      text-decoration: none;
-    }
-    h1 {
-      font-size: 2.2rem;
-      color: var(--highlight);
-      margin-bottom: 0.2rem;
-    }
-    .autor {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      color: #aaa;
-    }
-    .content {
-      max-width: 800px;
-      margin: auto;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 2.5rem;
-      background: var(--highlight);
-      color: var(--bg-color);
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-    .back-link:hover {
-      background-color: #a95ce6;
-    }
-    img.header {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      box-shadow: 0 0 15px rgba(199, 125, 255, 0.2);
-    }
-    p {
-      margin-bottom: 1.4rem;
-    }
-    .comentarios {
-  margin-top: 4rem;
-  background: #151515;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-}
-.comentarios h2 {
-  color: var(--highlight);
-}
-.comentarios input,
-.comentarios textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 0.5rem 0;
-  border: none;
-  border-radius: 8px;
-  background: #2e2e2e;
-  color: #f3f3f7;
-  font-family: 'League Spartan', sans-serif;
-}
-.comentarios button {
-  background: var(--highlight);
-  color: var(--bg-color);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.comentarios button:hover {
-  background: #a95ce6;
-}
-    .comentario {
-  background-color: #1c1c1c;
-  padding: 1rem;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  display: flex;
-  gap: 1rem;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.03);
-}
-
-.comentario:nth-child(even) {
-  background-color: #232323;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  background-color: var(--highlight);
-  color: #000;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.comentario-texto {
-  flex-grow: 1;
-}
-
-.comentario-texto .hora {
-  font-size: 0.85rem;
-  color: #aaa;
-  margin-left: 0.5rem;
-}
-    .comentario + .comentario::before {
-  content: '';
-  display: block;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.05);
-  margin: 1rem 0;
-}
-    .like-btn {
-  margin-top: 0.5rem;
-  background: transparent;
-  color: var(--highlight);
-  border: 1px solid var(--highlight);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.like-btn:hover {
-  background-color: #c77dff20;
-}
-    .comentarios-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.comentario-instagram {
-  flex: 1 1 300px;
-  max-width: 340px;
-}
-
-.comentarios {
-  flex: 1 1 460px;
-  max-width: 460px;
-  padding: 1.5rem;
-}
-.comentarios input,
-.comentarios textarea {
-  font-size: 0.9rem;
-  padding: 8px;
-}
-
-.comentarios button {
-  font-size: 0.9rem;
-  padding: 8px 14px;
-}
-    .instagram-desktop {
-  display: block;
-}
-.instagram-mobile {
-  display: none;
-}
-@media (max-width: 768px) {
-  .instagram-desktop {
-    display: none;
-  }
-  .instagram-mobile {
-    display: block;
-    text-align: center;
-  }
-}
-  </style>
+  <meta name="description" content="Por que DJs são os verdadeiros contadores de histórias da vida noturna" />
+  <meta property="og:title" content="DJs são os verdadeiros contadores de histórias da vida noturna" />
+  <meta property="og:description" content="A pista também é narrativa. E o DJ é o autor da história que você viveu sem nem perceber." />
+  <meta property="og:image" content="/editorial-djs.jpg" />
+  <title>DJs são os contadores de histórias da vida noturna — ROLÊ</title>
+  <link rel="stylesheet" href="/estilo.css" />
 </head>
-<body>
-<main class="content">
-<h1>Já agradeceu o DJ que escreveu a história da tua noite?</h1>
-<p class="autor">Por FIIH, CEO do ROLÊ ENTRETENIMENTO</p>
-<img src="../EDITORIAL2.png" alt="Capa do editorial sobre DJs e narrativas" class="header" />
+<body class="fade-in">
+  <header class="header">
+    <a href="/" class="logo">ROLÊ</a>
+    <nav class="nav">
+      <button id="menu-toggle" class="menu-toggle">☰</button>
+      <ul class="menu" id="menu">
+        <li><a href="/">Início</a></li>
+        <li><a href="/editorial.html">Revista</a></li>
+        <li><a href="/vitrine-hero.html">Vitrine Cultural</a></li>
+        <li><a href="/quem-somos.html">Quem Somos</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle">🌙</button>
+    </nav>
+  </header>
 
-<p>Tem set que a gente dança.<br>
-Tem set que a gente vive.<br>
-E tem set que a gente lembra pra sempre.</p>
-
-<p>Esse editorial é pra falar com (e sobre) quem escreve histórias com som.<br>
-Porque sim: o DJ não tá ali só apertando play. Tá te contando um enredo inteiro com tensão, respiro, clímax e catarse sem dizer uma palavra sequer.</p>
-
-<h2>DJ: Autor da experiência</h2>
-<p>Tocar é mais do que animar a pista. É narrar.<br>
-Cada track escolhida com cuidado é como uma frase bem escrita.<br>
-Cada transição bem feita é um parágrafo que prende o fôlego.<br>
-Cada virada de BPM pode ser um plot twist que muda tudo e você nem percebe como chegou até ali, mas tá sentindo tudo.</p>
-
-<p>No fundo, a gente sabe: existe ali uma dramaturgia invisível que só se revela em quem se permite sentir o som e não só ouvi-lo.<br>
-O DJ é um roteirista da madrugada. Um cronista do corpo coletivo. Um contador de histórias que usa graves no lugar de vírgulas.</p>
-
-<h2>Set também é resistência</h2>
-<p>Num tempo em que o sucesso se mede por número de plays e o algoritmo é quem decide quem merece atenção, tem muito DJ indo na contramão.<br>
-Estudando vinil. Garimpando relíquias no Bandcamp. Trocando referências por WhatsApp com DJs de outros países. Criando sets que não querem viralizar, querem ficar.</p>
-
-<p>E isso é resistência.</p>
-
-<p>A arte vai além do drop. Vai além do story. Vai além do momento de explosão na pista.<br>
-Tem pesquisa. Tem crítica. Tem política. Tem memória.<br>
-Tem DJ que coloca no set o que acredita e isso é mais valioso do que qualquer trend passageira.</p>
-
-<h2>Cria, mas acredita. E credita.</h2>
-<p>Se tem uma coisa que o ROLÊ bate na tecla é: cria, mas acredita.<br>
-Acredita que teu som é linguagem. Que tua mix é discurso.<br>
-E se você é quem dança, credite em quem cria a sua trilha.</p>
-
-<p>Já passou da hora da gente valorizar quem está por trás do que a gente sente.<br>
-Chega de tratar DJ como playlist humana. Chega de pedir “toca aquela” sem nem saber que aquela faixa foi escolhida com intenção.</p>
-
-<p>Marcar o DJ no story é o mínimo. Reconhecer o trampo é o básico.<br>
-Valorizar, ouvir, indicar, chamar pra tocar, remunerar bem e falar do set com amor é o que constrói cena.</p>
-
-<h2>Quem narra a pista também escreve história</h2>
-<p>Alguns sets mudam a noite. Outros mudam a gente.<br>
-E tem aqueles que, de tão bons, parecem que traduziram tudo o que você não conseguia dizer.</p>
-
-<p>Então a pergunta é simples:<br>
-Você já agradeceu o DJ que escreveu a história da tua noite?</p>
-
-<p>Se não, o momento é agora.<br>
-Marca essa pessoa aqui. Valoriza enquanto é tempo. E nunca esquece: a pista também é narrativa.</p>
-
-<div class="comentarios-wrapper">
-  <div class="comentario-instagram">
-  <div class="instagram-desktop">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DKIn4-cv4-8/" data-instgrm-version="14" style="border-radius: 12px;"></blockquote>
+  <div class="banner-wrapper">
+    <div class="banner-container">
+      <img src="/editorial-djs.jpg" alt="Banner do artigo sobre DJs como narradores da vida noturna" class="banner" />
+    </div>
   </div>
-  <div class="instagram-mobile">
-    <a href="https://www.instagram.com/p/DKIn4-cv4-8/" target="_blank" class="back-link" style="display: inline-block; margin-top: 1rem;">🔗 Ver post no Instagram</a>
-  </div>
-</div>
+
+  <main class="editorial-completo fade-in">
+    <h1>Por que DJs são os verdadeiros contadores de histórias da vida noturna</h1>
+    <p>Quando a pista vibra, o grave explode e a multidão se entrega em uníssono, algo maior do que uma sequência de músicas está acontecendo. É narrativa. É construção de sentido. É arte em estado bruto. E quem orquestra tudo isso, em silêncio e com precisão, é o DJ. Neste artigo, a gente propõe uma inversão de foco: menos holofotes no hype da festa e mais reconhecimento pra quem escreve, em BPM, os enredos da nossa memória afetiva.</p>
+
+    <h2>Muito além do play: o DJ como narrador sensorial</h2>
+    <p>A ideia de que DJs são apenas “animadores de pista” é tão ultrapassada quanto pedir “toca Raul” no fim da festa. O que um bom DJ faz vai muito além de apertar botões. Existe ali uma escuta ativa do ambiente, uma leitura de energia coletiva e, sobretudo, uma decisão estética e política sobre como conduzir a experiência de quem dança.</p>
+    <p>Cada set carrega um enredo: introdução, tensão, clímax e resolução. Os drops são pontos de virada, as transições são elipses sutis, e os silêncios — sim, os silêncios — funcionam como parênteses no meio da narrativa. Quem já se emocionou no meio da pista sabe do que estamos falando.</p>
+    <p class="destaque-frase">“Cada track escolhida, cada transição pensada, cada silêncio entre batidas é uma decisão narrativa.”</p>
+
+    <h2>A pista é uma página em branco</h2>
+    <p>Se cada festa é um livro, a pista é o papel em branco. E cabe ao DJ escrever com som, ritmo e intuição o que será vivido ali. O desafio não está apenas em fazer todo mundo dançar, mas em sustentar uma ideia. Uma estética. Um discurso musical coerente, mesmo em meio ao caos dos corpos, luzes e baforadas de gelo seco.</p>
+    <p>Essa construção não acontece por acaso. Leva tempo, estudo, pesquisa e experimentação. Muitos DJs passam horas garimpando sons em selos obscuros, revisitando rituais musicais de outras épocas ou mergulhando em culturas sonoras que desafiam o algoritmo. O resultado aparece na pista: um set que arrepia, que provoca, que surpreende. Uma história que se desenrola em tempo real, sem palavras — mas com muito conteúdo.</p>
+    <p class="destaque-frase">“Quem faz da pista um livro sensorial, narra com som e emociona com graves, merece mais que aplausos: merece escuta.”</p>
+
+    <h2>Narrativas sonoras em tempos de viralização</h2>
+    <p>Vivemos a era do conteúdo efêmero, onde tudo precisa viralizar rápido, render stories e alimentar a estética TikTokável da noite. Nesse cenário, o papel do DJ — principalmente aquele que se propõe a criar algo com densidade — corre o risco de ser reduzido a pano de fundo.</p>
+    <p>Mas o set que emociona raramente é o que viraliza. Porque a beleza está nos detalhes que a câmera não capta: o sutil encaixe entre dois discos, o momento em que a pista para pra respirar, o retorno de um vocal esquecido dos anos 90 que faz um grupo inteiro cantar junto.</p>
+    <p class="destaque-frase">“Em tempos onde tudo é sobre viralizar, tem muita gente esquecendo que existe pesquisa, curadoria e até posicionamento político por trás de cada batida.”</p>
+
+    <h2>Curadoria é posicionamento</h2>
+    <p>Escolher o que tocar é um ato político. E isso vale tanto para quem gira disco quanto para quem monta uma playlist de festa. O que você decide amplificar, repetir, misturar ou resgatar revela muito sobre sua visão de mundo.</p>
+    <p>Um DJ que mergulha na diáspora africana, que valoriza artistas LGBTQIAPN+, que incorpora ritmos periféricos ou que cria conexões inusitadas entre épocas e geografias está, sim, narrando algo maior do que apenas um momento dançante. Está propondo um imaginário coletivo. Está dizendo, com som, o que talvez o corpo não saiba nomear, mas sente profundamente.</p>
+    <p class="destaque-frase">“DJs são autores de experiências coletivas. São curadores de atmosferas, editores de tempo e espaço.”</p>
+
+    <h2>A técnica a serviço da emoção</h2>
+    <p>Há um romantismo bonito na ideia do DJ intuitivo, mas a verdade é que os melhores sets costumam ser aqueles construídos com técnica refinada. Beatmatching, equalização, mixagem harmônica, controle de dinâmicas — tudo isso está ali, mas com um objetivo claro: conduzir sensações.</p>
+    <p>É como na literatura: um escritor pode usar metáforas complexas ou frases simples, mas o que importa é o impacto no leitor. O DJ faz o mesmo, só que com beats, samples e viradas.</p>
+    <p class="destaque-frase">“Set bom é aquele que faz a alma dançar antes do corpo.”</p>
+
+    <h2>A memória sonora das festas inesquecíveis</h2>
+    <p>Quem nunca ouviu alguém dizer “nunca mais esqueci daquele set”? A memória da noite costuma ser mais sonora do que visual. A gente pode até não lembrar da roupa que usou, mas lembra da música que tocou quando beijou alguém, da virada que levantou a galera ou do momento exato em que o chão pareceu tremer junto com o subgrave.</p>
+    <p>Essas memórias não são aleatórias. São cuidadosamente esculpidas por quem entende que a pista é um ritual, e o som é o elo entre o íntimo e o coletivo. O DJ, nesse caso, é xamã urbano, maestro de experiências, contador de histórias que não precisam de legenda.</p>
+
+    <h2>E se a gente começasse a agradecer?</h2>
+    <p>Não é sobre idolatrar, mas reconhecer. Valorizar quem dedica horas ao ofício de nos fazer sentir algo. E se a gente começasse a agradecer mais, elogiar mais, marcar mais DJs nos posts? Se a gente desse espaço pra que essas histórias fossem contadas por quem as constrói?</p>
+    <p>Em tempos de playlists automatizadas e inteligência artificial criando faixas genéricas, lembrar que a música é feita por pessoas — com gosto, afeto, intenção e repertório — é quase um manifesto.</p>
+    <p class="destaque-frase">“Marque aqui o DJ que já te fez viver uma história sem palavras.”</p>
+
+    <h2>DJs independentes, festas independentes</h2>
+    <p>Vale lembrar que grande parte dos sets mais memoráveis que ouvimos não vêm de palcos gigantes nem de DJs hypados. Eles nascem em festas independentes, pistas alternativas, coletivos culturais e ocupações urbanas. São esses espaços que garantem a diversidade estética da noite e permitem que novos narradores sonoros surjam com voz (e volume) próprios.</p>
+
+    <h2>O que faz um DJ ser bom?</h2>
+    <p>Essa pergunta vale ouro. E não tem uma resposta só. Mas aqui vão alguns critérios que a pista costuma confirmar com o corpo:</p>
+    <ul>
+      <li><strong>Pesquisa:</strong> conhecer música além do hype, misturar referências, garimpar sonoridades pouco óbvias.</li>
+      <li><strong>Leitura de pista:</strong> saber sentir o clima da galera, dosar intensidade e criar conexão.</li>
+      <li><strong>Técnica:</strong> mixar com qualidade, fazer transições suaves ou surpreendentes, dominar a estrutura do set.</li>
+      <li><strong>Narrativa:</strong> contar uma história com começo, meio e fim — ou quebrar essa lógica de forma consciente.</li>
+      <li><strong>Afeto:</strong> tocar com intenção, com entrega, com amor pelo que faz.</li>
+    </ul>
+
+    <h2>DJ é profissão, é arte, é linguagem</h2>
+    <p>No fim das contas, talvez o maior erro seja tratar DJs como adereços de festa. Eles são a própria estrutura. O som que define o ambiente, o ritmo que sincroniza as emoções, a linguagem que diz o que a boca não consegue.</p>
+    <p>Num mundo saturado de estímulos visuais e distrações, o som ainda tem um poder bruto de nos trazer pro agora. De ativar memórias. De curar. E quem manipula esse som com maestria merece mais que um “boa noite”: merece ser reconhecido como autor.</p>
+
+    <h2>Conclusão: uma pista, mil histórias</h2>
+    <p>Este editorial não é só uma homenagem. É um chamado. Pra olharmos com mais atenção, escutarmos com mais cuidado e reconhecermos que a festa começa — e termina — no set.</p>
+    <p>Na próxima vez que você sair de um rolê com o coração quente e os pés doendo, pensa em quem escreveu esse roteiro invisível. Agradece. Valoriza. Compartilha. E, se puder, escuta de novo.</p>
+    <p class="destaque-frase">Porque a pista também é narrativa. E o DJ é o autor da história que você viveu sem nem perceber.</p>
+  </main>
+
   <section class="comentarios">
-    <h2>Deixe um comentário</h2>
-    <form id="form-comentario">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <textarea name="comentario" placeholder="Seu comentário" required></textarea>
+    <h2>Comente este editorial</h2>
+    <form id="comentario-form">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <textarea name="comentario" placeholder="Escreva seu comentário" required></textarea>
       <button type="submit">Enviar</button>
     </form>
-    <div id="mensagem-sucesso" style="display: none; margin-top: 1rem; color: var(--highlight); font-weight: bold;">
-      Comentário enviado com sucesso!
-    </div>
-    <div class="comentarios-lista" id="lista-comentarios" style="margin-top: 2rem;"></div>
+    <div id="comentarios-lista"></div>
   </section>
-</div>
-<script async src="//www.instagram.com/embed.js"></script>
 
-<script>
-  const endpoint = "https://script.google.com/macros/s/AKfycbwboSjFcza-EczqagywgYFSkatJp_7YjY6fLAXplpcTuGkSODABDfUmt-VaV4T2Sdo/exec";
+  <footer class="footer">
+    <p>&copy; 2025 ROLÊ ENTRETENIMENTO — Todos os direitos reservados.</p>
+    <nav>
+      <a href="/politica.html">Política de Privacidade</a>
+      <a href="/termos-usuario.html">Termos do Rolezeiro</a>
+      <a href="/termos-organizador.html">Termos do Organizador</a>
+      <a href="/politica-spam.html">Política Antispam</a>
+    </nav>
+  </footer>
 
-  document.getElementById('form-comentario').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const dados = new FormData(form);
-    fetch(endpoint, {
-      method: "POST",
-      body: dados
-    })
-    .then(res => res.text())
-    .then(() => {
-      form.reset();
-      document.getElementById('mensagem-sucesso').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('mensagem-sucesso').style.display = 'none';
-      }, 3000);
-      carregarComentarios();
-    });
-  });
-
-  function curtirComentario(index) {
-    fetch(`${endpoint}?like=${index}`)
-      .then(() => carregarComentarios());
-  }
-
-  function carregarComentarios() {
-    fetch(endpoint)
-      .then(response => response.json())
-      .then(data => {
-        const lista = document.getElementById('lista-comentarios');
-        lista.innerHTML = '';
-        data.reverse().forEach(c => {
-          const primeiraLetra = c.nome.trim().charAt(0).toUpperCase() || 'A';
-          const div = document.createElement('div');
-          div.className = 'comentario';
-          div.innerHTML = `
-            <div class="avatar">${primeiraLetra}</div>
-            <div class="comentario-texto">
-              <p><strong>${c.nome || 'Anônimo'}</strong><span class="hora"> (${c.data})</span></p>
-              <p>${c.comentario}</p>
-              <button onclick="curtirComentario(${c.index})" aria-label="Curtir comentário" style="background: transparent; border: none; color: var(--highlight); cursor: pointer; padding: 0; margin-top: 0.5rem;">
-                ❤️ Curtir (<span>${c.likes || 0}</span>)
-              </button>
-            </div>
-          `;
-          lista.appendChild(div);
-        });
-      });
-  }
-
-  carregarComentarios();
-</script>
-    <footer style="text-align: center; margin-top: 4rem;">
-  <a href="/revista.html" class="back-link" style="margin-right: 1rem;">← Voltar para a Revista ROLÊ</a>
-  <a href="/index.html" class="back-link">🏠 Ir para a Home</a>
-</footer>
-  </body>
+  <script src="/script.js"></script>
+</body>
 </html>
