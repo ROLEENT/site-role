@@ -107,14 +107,21 @@
 <p class="frase-final">As cidades já foram noturnas. Mas podem voltar a ser.</p>
   </div>
 </main>
+  <hr class="separador-comentario" />
 <section class="comentarios" id="comentarios">
   <h2>O que você achou do editorial?</h2>
   <form id="comment-form" name="comentario-form">
+  <div class="campo-icon">
+    <img src="/images/icon-user.svg" class="icon-form" alt="Ícone de usuário" />
     <input type="text" name="nome" placeholder="Seu nome ou @" required />
+  </div>
+  <div class="campo-icon">
+    <img src="/images/icon-comment.svg" class="icon-form" alt="Ícone de comentário" />
     <textarea name="comentario" placeholder="Escreva aqui seu comentário" required></textarea>
-    <button type="submit">Comentar</button>
-  </form>
-  <div id="comentarios-lista"></div>
+  </div>
+  <button type="submit">Comentar</button>
+</form>
+<div id="comentarios-lista" class="fade-in delay"></div>
 </section>
 
 <footer>
