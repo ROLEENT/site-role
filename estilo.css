@@ -449,7 +449,7 @@ button[type="submit"] {
 
 .comentarios button[type="submit"] {
   background-color: var(--highlight);
-  color: #000 !important;
+  color: var(--bg);
   border: none;
   padding: 10px 16px;
   border-radius: 5px;
@@ -750,7 +750,7 @@ section.comentarios h2 {
 #comment-form textarea {
   resize: vertical;
   min-height: 100px;
-  max-height: 200px;
+  max-height: 180px;
 }
 
 #comment-form button {
@@ -1151,13 +1151,13 @@ a, button {
 }
 
 .botao-flutuante {
-  background: var(--highlight);
-  border: none;
+  width: 44px;
+  height: 44px;
+  padding: 0.75rem;
+  background-color: var(--highlight);
   border-radius: 50%;
-  padding: 0.7rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .botao-flutuante:hover {
@@ -1167,4 +1167,20 @@ a, button {
 .botao-flutuante img {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 480px) {
+  .comentarios {
+    padding: 1.5rem 1rem;
+  }
+
+  #comment-form input,
+  #comment-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .comentarios button {
+    width: 100%;
+    padding: 0.8rem;
+  }
 }
