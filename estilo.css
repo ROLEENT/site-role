@@ -414,14 +414,15 @@ button[type="submit"] {
 }
 
 .comentarios {
-  max-width: 600px;
+  background-color: #0e0e0e;
+  border: 1px solid var(--highlight);
+  border-radius: 12px;
+  max-width: 480px;
   margin: 3rem auto;
   padding: 1.5rem;
-  background-color: #111;
-  border-radius: 10px;
-  border: 1px solid var(--highlight);
-  box-sizing: border-box;
+  box-shadow: 0 0 12px rgba(199, 125, 255, 0.15);
 }
+
 
 .comentario button {
   background: none;
@@ -756,14 +757,15 @@ section.comentarios h2 {
 form button {
   background-color: var(--highlight);
   color: black;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
+  margin-top: 0.5rem;
 }
 
 form button:hover {
@@ -890,11 +892,11 @@ body.quem-somos .embed-box iframe {
   align-items: center;
   background-color: #111111;
   border: 1px solid var(--highlight);
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
   margin-bottom: 1rem;
-  transition: all 0.3s ease;
 }
+
 
 .campo-icon:hover {
   background-color: #1a1a1a;
@@ -916,9 +918,15 @@ body.quem-somos .embed-box iframe {
   outline: none;
   color: var(--text);
   width: 100%;
-  font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.95rem;
   resize: none;
+  padding: 0.25rem 0;
+}
+
+.campo-icon textarea {
+  min-height: 80px;
+  max-height: 140px;
+  line-height: 1.4;
 }
 
 .icon-form {
@@ -1108,12 +1116,13 @@ a, button {
   box-shadow: 0 0 16px rgba(199, 125, 255, 0.15);
 }
 
-    .comentarios h2 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: var(--highlight);
-      text-align: center;
-    }
+.comentarios h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
     .comentarios form {
       display: flex;
       flex-direction: column;
