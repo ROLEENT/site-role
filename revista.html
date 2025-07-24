@@ -343,6 +343,11 @@
         </div>
     </footer>
 
+    <!-- Botão Voltar ao Topo -->
+    <button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo da página">
+        ↑
+    </button>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // ========== DROPDOWN EXPLORAR ==========
@@ -520,6 +525,35 @@
 
         // ========== SUAVIZAÇÃO ADICIONAL ==========
         document.body.style.transition = 'all 0.3s ease';
+
+        // ========== BOTÃO VOLTAR AO TOPO ==========
+        const voltarTopo = document.getElementById('voltarTopo');
+        
+        // Mostrar/ocultar botão baseado no scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                voltarTopo.style.opacity = '1';
+                voltarTopo.style.transform = 'translateY(0)';
+                voltarTopo.style.pointerEvents = 'auto';
+            } else {
+                voltarTopo.style.opacity = '0';
+                voltarTopo.style.transform = 'translateY(20px)';
+                voltarTopo.style.pointerEvents = 'none';
+            }
+        });
+
+        // Funcionalidade de voltar ao topo
+        voltarTopo.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Inicializar botão como oculto
+        voltarTopo.style.opacity = '0';
+        voltarTopo.style.transform = 'translateY(20px)';
+        voltarTopo.style.pointerEvents = 'none';
     </script>
 
     <style>
@@ -639,6 +673,47 @@
             border-top: 1px solid rgba(199, 125, 255, 0.1);
             margin-top: 2rem;
             padding-top: 2rem;
+        }
+
+        /* ========== BOTÃO VOLTAR AO TOPO ========== */
+        .voltar-topo {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(199, 125, 255, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .voltar-topo:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 30px rgba(199, 125, 255, 0.6);
+        }
+
+        .voltar-topo:active {
+            transform: translateY(-1px) scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .voltar-topo {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
         }
     </style>
 </body>
