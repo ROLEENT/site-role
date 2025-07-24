@@ -9,18 +9,19 @@
   <meta property="og:image" content="https://roleentretenimento.com/images/logo-role.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://roleentretenimento.com/contato.html" />
-  <title>Contato | ROLÊ ENTRETENIMENTO</title>
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="estilo.css" />
+  
   <script>
     if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.add('light');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   </script>
+  
+  <title>Contato | ROLÊ ENTRETENIMENTO</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="estilo.css" />
 </head>
-<body class="fade-in">
 
+<body class="fade-in">
   <!-- TOPO -->
   <section class="bloco-topo">
     <div class="container-topo">
@@ -48,50 +49,69 @@
   </section>
 
   <!-- CONTEÚDO PRINCIPAL -->
-<section class="contato-rapido centralizado">
-  <ul class="lista-contato">
-    <li>
-      <img src="images/whatsapp.svg" alt="WhatsApp" class="icon-contato" />
-      <span>WhatsApp:</span>
-      <a href="https://wa.me/5551980704353" target="_blank">+55 51 98070‑4353</a>
-    </li>
-    <li>
-      <img src="images/email.svg" alt="E-mail" class="icon-contato" />
-      <span>E-mail:</span>
-      <a href="mailto:contato@roleentretenimento.com">contato@roleentretenimento.com</a>
-    </li>
-    <li>
-      <img src="images/instagram.svg" alt="Instagram" class="icon-contato" />
-      <span>Instagram:</span>
-      <a href="https://instagram.com/role.ent" target="_blank">@role.ent</a>
-    </li>
-  </ul>
-</section>
+  <main class="editorial-completo">
+    <h1 class="titulo-editorial">ENTRE EM CONTATO</h1>
+    <p class="subtitulo-editorial">Conecte-se conosco! Dúvidas, parcerias, sugestões ou só um oi mesmo.</p>
 
-  <form class="formulario-comentario">
-  <div class="campo-icon">
-    <img src="images/nome.svg" alt="Ícone nome" class="icon-form" />
-    <input type="text" name="nome" placeholder="Seu nome" required />
-  </div>
+    <!-- CONTATO RÁPIDO -->
+    <section class="contato-rapido centralizado fade-in delay">
+      <ul class="lista-contato">
+        <li>
+          <img src="images/whatsapp.svg" alt="WhatsApp" class="icon-contato" />
+          <span>WhatsApp:</span>
+          <a href="https://wa.me/5551980704353" target="_blank">+55 51 98070‑4353</a>
+        </li>
+        <li>
+          <img src="images/email.svg" alt="E-mail" class="icon-contato" />
+          <span>E-mail:</span>
+          <a href="mailto:contato@roleentretenimento.com">contato@roleentretenimento.com</a>
+        </li>
+        <li>
+          <img src="images/instagram.svg" alt="Instagram" class="icon-contato" />
+          <span>Instagram:</span>
+          <a href="https://instagram.com/role.ent" target="_blank">@role.ent</a>
+        </li>
+      </ul>
+    </section>
 
-  <div class="campo-icon">
-    <img src="images/email.svg" alt="Ícone email" class="icon-form" />
-    <input type="email" name="email" placeholder="Seu e-mail" required />
-  </div>
+    <!-- FORMULÁRIO DE CONTATO -->
+    <section class="comentarios fade-in delay">
+      <h2>Manda tua mensagem!</h2>
+      <form class="formulario-comentario" id="contact-form">
+        <div class="campo-icon">
+          <img src="images/nome.svg" alt="Ícone nome" class="icon-form" />
+          <input type="text" name="nome" placeholder="Seu nome" required />
+        </div>
 
-  <div class="campo-icon">
-    <img src="images/assunto.svg" alt="Ícone assunto" class="icon-form" />
-    <input type="text" name="assunto" placeholder="Assunto" required />
-  </div>
+        <div class="campo-icon">
+          <img src="images/email.svg" alt="Ícone email" class="icon-form" />
+          <input type="email" name="email" placeholder="Seu e-mail" required />
+        </div>
 
-  <div class="campo-icon">
-    <img src="images/mensagem.svg" alt="Ícone mensagem" class="icon-form" />
-    <textarea name="mensagem" rows="6" placeholder="Escreve tua mensagem aqui" required></textarea>
-  </div>
+        <div class="campo-icon">
+          <img src="images/assunto.svg" alt="Ícone assunto" class="icon-form" />
+          <input type="text" name="assunto" placeholder="Assunto" required />
+        </div>
 
-  <button type="submit">Enviar</button>
-</form>
-</div>
+        <div class="campo-icon">
+          <img src="images/mensagem.svg" alt="Ícone mensagem" class="icon-form" />
+          <textarea name="mensagem" rows="6" placeholder="Escreve tua mensagem aqui..." required></textarea>
+        </div>
+
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+
+    <!-- SEÇÃO ADICIONAL -->
+    <div class="destaque-frase fade-in delay">
+      "Cada rolê é uma história, cada encontro uma nova aventura. Vamos construir juntos a cena cultural que o Brasil merece!"
+    </div>
+
+    <div class="cta-final">
+      <a href="https://instagram.com/role.ent" target="_blank" class="btn-destaque">
+        Segue a gente no Instagram
+      </a>
+    </div>
   </main>
 
   <!-- BOTÃO VOLTAR AO TOPO -->
@@ -121,58 +141,130 @@
 
   <!-- SCRIPTS -->
   <script>
-    const lampada = document.querySelector('.lampada-toggle');
-    const root = document.documentElement;
+    document.addEventListener('DOMContentLoaded', function () {
+      // ========== TOGGLE TEMA ==========
+      const lampada = document.querySelector('.lampada-toggle');
+      const root = document.documentElement;
 
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      root.style.setProperty('--bg', '#ffffff');
-      root.style.setProperty('--text-color', '#2e2e2e');
-    } else {
-      root.style.setProperty('--bg', '#000000');
-      root.style.setProperty('--text-color', '#f3f3f7');
-    }
-
-    lampada.addEventListener('click', () => {
-      const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
-
-      if (currentBg === '#000000') {
-        root.style.setProperty('--bg', '#ffffff');
-        root.style.setProperty('--text-color', '#2e2e2e');
+      // Aplicar tema salvo
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        root.setAttribute('data-theme', 'light');
         lampada.setAttribute('aria-pressed', 'true');
-        localStorage.setItem('theme', 'light');
       } else {
-        root.style.setProperty('--bg', '#000000');
-        root.style.setProperty('--text-color', '#f3f3f7');
+        root.removeAttribute('data-theme');
         lampada.setAttribute('aria-pressed', 'false');
-        localStorage.setItem('theme', 'dark');
       }
-    });
 
-    // Dropdown
-    const dropdown = document.querySelector('.dropdown');
-    const button = dropdown?.querySelector('.dropdown-button');
-    const content = dropdown?.querySelector('.dropdown-content');
-
-    if (button && content) {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        dropdown.classList.toggle('open');
-        button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-      });
-
-      document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-          button.setAttribute('aria-expanded', false);
+      // Alternar tema
+      lampada.addEventListener('click', () => {
+        if (root.hasAttribute('data-theme')) {
+          root.removeAttribute('data-theme');
+          lampada.setAttribute('aria-pressed', 'false');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          root.setAttribute('data-theme', 'light');
+          lampada.setAttribute('aria-pressed', 'true');
+          localStorage.setItem('theme', 'light');
         }
       });
 
-      content.addEventListener('click', function (e) {
-        e.stopPropagation();
+      // ========== DROPDOWN ==========
+      const dropdown = document.querySelector('.dropdown');
+      const button = dropdown?.querySelector('.dropdown-button');
+      const content = dropdown?.querySelector('.dropdown-content');
+
+      if (button && content) {
+        button.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+          button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            button.setAttribute('aria-expanded', false);
+          }
+        });
+
+        content.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      // ========== FORMULÁRIO DE CONTATO ==========
+      const contactForm = document.getElementById('contact-form');
+      
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Feedback visual para o usuário
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        
+        submitButton.textContent = 'Enviando...';
+        submitButton.disabled = true;
+        
+        // Simular envio (aqui você integraria com seu backend)
+        setTimeout(() => {
+          submitButton.textContent = 'Mensagem Enviada! ✓';
+          submitButton.style.background = '#4CAF50';
+          
+          // Reset após 3 segundos
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+            submitButton.style.background = '';
+            contactForm.reset();
+          }, 3000);
+        }, 1500);
       });
-    }
+
+      // ========== ANIMAÇÕES DE ENTRADA ==========
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observar elementos para animação
+      document.querySelectorAll('.fade-in').forEach((element, index) => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(element);
+      });
+
+      // ========== EFEITOS VISUAIS NOS CAMPOS ==========
+      const camposIcon = document.querySelectorAll('.campo-icon');
+      
+      camposIcon.forEach(campo => {
+        const input = campo.querySelector('input, textarea');
+        
+        input.addEventListener('focus', () => {
+          campo.style.borderColor = '#c77dff';
+          campo.style.boxShadow = '0 0 10px rgba(199, 125, 255, 0.3)';
+        });
+        
+        input.addEventListener('blur', () => {
+          campo.style.borderColor = '#c77dff';
+          campo.style.boxShadow = 'none';
+        });
+      });
+    });
+
+    // ========== SUAVIZAÇÃO ADICIONAL ==========
+    document.body.style.transition = 'all 0.3s ease';
   </script>
 </body>
 </html>
