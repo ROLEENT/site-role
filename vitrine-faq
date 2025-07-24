@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="faq, dúvidas, ajuda, rolê, entretenimento, cultura" />
+    <meta name="description" content="Perguntas frequentes sobre ROLÊ Entretenimento - tire suas dúvidas sobre eventos, cultura e muito mais." />
+    <meta property="og:title" content="FAQ - ROLÊ ENTRETENIMENTO" />
+    <meta property="og:description" content="Tire suas dúvidas sobre eventos, cultura e entretenimento no ROLÊ." />
+    <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://roleentretenimento.com/faq.html" />
+    
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+    
+    <title>FAQ - ROLÊ ENTRETENIMENTO | Perguntas Frequentes</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    
+    <noscript>
+        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
+    
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<body>
+    <section class="bloco-topo">
+        <div class="container-topo">
+            <div class="header-top">
+                <!-- LOGO ESQUERDA -->
+                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+
+                <!-- MENU + TEMA (LADO DIREITO) -->
+                <div class="right-top">
+                    <!-- MENU DROPDOWN -->
+                    <div class="dropdown">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+                            Explorar ▼
+                        </button>          
+                        <div class="dropdown-content" id="menu-explorar">
+                            <a href="index.html">Página Inicial</a>
+                            <a href="revista.html">Revista ROLÊ</a>
+                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                            <a href="descontos.html">Descontos</a>
+                            <a href="contato.html">Contato</a>
+                            <a href="quem-somos.html">Quem Somos</a>
+                        </div>
+                    </div>
+
+                    <!-- TEMA -->
+                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                </div>
+            </div>
+            <hr class="linha-topo" />
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <div class="editorial-completo">
+        <h1 class="titulo-editorial">FAQ - Perguntas Frequentes</h1>
+        <p class="subtitulo-editorial">Tire suas dúvidas sobre o ROLÊ Entretenimento, eventos culturais e nossa plataforma</p>
+
+        <!-- Menu Vitrine Cultural -->
+        <div class="menu-vitrine">
+            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+            <a href="faq.html" style="color: #c77dff;">FAQ</a>
+            <a href="guia-eventos.html">Guia de Eventos</a>
+            <a href="artistas.html">Artistas</a>
+        </div>
+
+        <main class="texto-editorial">
+            <div class="faq-container">
+                <!-- Seção Geral -->
+                <div class="faq-section">
+                    <h2>📌 Sobre o ROLÊ Entretenimento</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>O que é o ROLÊ Entretenimento?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O ROLÊ Entretenimento é uma plataforma que conecta cultura, arte e os rolês mais vivos do Brasil. Promovemos eventos, divulgamos artistas emergentes e criamos conteúdo cultural para aproximar pessoas das experiências mais autênticas de cada cidade.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Como vocês escolhem os eventos para divulgar?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Nossa curadoria busca eventos que representem a diversidade cultural brasileira, priorizando produções independentes, artistas emergentes e iniciativas que fortaleçam a cena cultural local. Valorizamos originalidade, qualidade e impacto social.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Quais cidades vocês cobrem?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Atualmente focamos nas principais capitais brasileiras: Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis, Belo Horizonte, Salvador, Recife, Fortaleza e Brasília. Estamos expandindo para outras cidades constantemente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção Eventos -->
+                <div class="faq-section">
+                    <h2>🎉 Eventos e Ingressos</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Como compro ingressos pelos canais do ROLÊ?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Não vendemos ingressos diretamente. Direcionamos nossos seguidores para os canais oficiais dos organizadores ou plataformas parceiras. Sempre verifique a autenticidade dos links e compre apenas em fontes confiáveis.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Posso divulgar meu evento no ROLÊ?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Entre em contato através do nosso WhatsApp ou Instagram. Analisamos cada proposta considerando nossa linha editorial e disponibilidade. Eventos alinhados com nossa curadoria cultural têm prioridade.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Vocês cobram para divulgar eventos?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Oferecemos tanto divulgação orgânica quanto parcerias comerciais. Eventos com impacto cultural relevante podem ser divulgados gratuitamente. Para campanhas estratégicas, temos planos personalizados.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção Artistas -->
+                <div class="faq-section">
+                    <h2>🎨 Para Artistas</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Como faço para aparecer na Vitrine Cultural?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Envie seu material através dos nossos canais de contato. Incluir: biografia, fotos profissionais, links das redes sociais, samples de trabalhos e informações sobre próximos projetos. Nossa equipe avalia e retorna em até 7 dias.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Que tipo de artista vocês apoiam?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Apoiamos artistas de todas as linguagens: música, artes visuais, performance, teatro, dança, literatura, cinema e cultura digital. Priorizamos talentos emergentes e projetos com identidade cultural brasileira.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Vocês oferecem mentoria ou consultoria para artistas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Eventualmente organizamos workshops e mentorias coletivas. Para consultoria individual, entre em contato para avaliarmos disponibilidade. Também conectamos artistas com profissionais do mercado através da nossa rede.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção Técnica -->
+                <div class="faq-section">
+                    <h2>💻 Suporte Técnico</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Por que não consigo acessar alguns links?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Alguns links podem expirar ou ser temporariamente indisponíveis. Se encontrar problemas, nos informe através do WhatsApp. Sempre atualizamos informações e corrigimos links quebrados rapidamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Como ativo as notificações para não perder eventos?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Siga nossas redes sociais (Instagram e TikTok) e ative as notificações. No Instagram, toque no sino ao lado do "Seguindo". Também temos um grupo no WhatsApp para avisos urgentes de eventos imperdíveis.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>O site funciona em todos os dispositivos?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Nosso site é responsivo e funciona perfeitamente em smartphones, tablets e computadores. Se encontrar algum problema de visualização, nos reporte para resolvermos rapidamente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção Parcerias -->
+                <div class="faq-section">
+                    <h2>🤝 Parcerias e Colaborações</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Como posso colaborar com o ROLÊ?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Existem várias formas: indicar eventos e artistas, criar conteúdo colaborativo, oferecer skills técnicas, ou propor parcerias comerciais. Entre em contato detalhando como gostaria de contribuir com nossa missão cultural.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Vocês trabalham com influenciadores e criadores de conteúdo?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Buscamos parcerias autênticas com criadores alinhados à cultura alternativa e independente. Se seu conteúdo dialoga com nossos valores, vamos conversar sobre possíveis colaborações.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Empresas podem patrocinar conteúdos do ROLÊ?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Aceitamos patrocínios de marcas que respeitam nossa independência editorial e valorizam a cultura brasileira. Priorizamos parcerias de longo prazo com empresas que genuinamente apoiam a cena cultural independente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="faq-cta">
+                    <h3>Não encontrou sua resposta?</h3>
+                    <p>Nossa equipe está sempre disponível para ajudar! Entre em contato através dos nossos canais:</p>
+                    
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/5551980704353" target="_blank" class="btn-destaque">
+                            WhatsApp
+                        </a>
+                        <a href="https://instagram.com/role.ent" target="_blank" class="btn-destaque">
+                            Instagram
+                        </a>
+                        <a href="contato.html" class="btn-destaque">
+                            Formulário de Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <a href="vitrine-cultural.html" class="btn-voltar">← Voltar à Vitrine Cultural</a>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            © 2025 ROLÊ ENTRETENIMENTO ·
+            <a href="politica.html">Política de Privacidade</a> ·
+            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+            <a href="termos-organizador.html">Termos do Organizador</a> ·
+            <a href="politica-spam.html">Política Antispam</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://instagram.com/role.ent" target="_blank">
+                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+            </a>
+            <a href="https://tiktok.com/@role.ent" target="_blank">
+                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            </a>
+            <a href="https://wa.me/5551980704353" target="_blank">
+                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            </a>
+        </div>
+    </footer>
+
+    <style>
+        /* Estilos específicos para FAQ */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            color: var(--highlight);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--highlight);
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--highlight);
+            box-shadow: 0 5px 15px rgba(199, 125, 255, 0.1);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--highlight);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--highlight);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .faq-cta {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+            border: 2px solid var(--highlight);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .faq-cta h3 {
+            color: var(--highlight);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-cta p {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .contact-buttons .btn-destaque {
+            margin: 0;
+            min-width: 150px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 1rem 1rem 1rem;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-buttons .btn-destaque {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown.querySelector('.dropdown-button');
+            const content = dropdown.querySelector('.dropdown-content');
+
+            if (button && content) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
+                    }
+                });
+
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
+        });
+
+        // ========== TOGGLE TEMA ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
+
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
+        }
+
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ========== FAQ TOGGLE ==========
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Fecha todos os outros itens
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Se não estava ativo, ativa este item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Suavização adicional
+        document.body.style.transition = 'all 0.3s ease';
+    </script>
+</body>
+</html>
