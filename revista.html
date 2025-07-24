@@ -1,350 +1,645 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Revista ROLÊ com editoriais e conteúdo cultural independente" />
-  <meta property="og:title" content="Revista ROLÊ" />
-  <meta property="og:description" content="Editorial, entrevistas e cultura noturna com a linguagem do ROLÊ" />
-  <meta property="og:image" content="images/logo-role.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://roleentretenimento.com/revista.html" />
-  <title>Revista ROLÊ</title>
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="estilo.css" />
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.add('light');
-    }
-  </script>
-</head>
-<body class="fade-in">
-
-<!-- TOPO -->
-<section class="bloco-topo">
-  <div class="container-topo">
-    <div class="header-top">
-      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" loading="lazy"/>
-      <div class="right-top">
-        <div class="dropdown">
-          <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">Explorar ▼</button>
-          <div class="dropdown-content">
-            <a href="index.html">Página Inicial</a>
-            <a href="revista.html">Revista ROLÊ</a>
-            <a href="vitrine-cultural.html">Vitrine Cultural</a>
-            <a href="descontos.html">Descontos</a>
-            <a href="contato.html">Contato</a>
-            <a href="quem-somos.html">Quem Somos</a>
-          </div>
-        </div>
-        <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
-      </div>
-    </div>
-    <hr class="linha-topo" />
-  </div>
-</section>
-
-<!-- CONTEÚDO PRINCIPAL -->
-<main class="carrossel">
-  <h2>EDITORIAL</h2>
-  <p class="container">Textos que refletem a cena noturna, com críticas, poesia e provocações do ROLÊ.</p>
-  <div class="scroll-wrapper">
-    <button class="scroll-arrow left">◀</button>
-    <div class="cards-container">
-<div class="card">
-<img src="images/editorial-madrugada.png" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy">
-  <strong>As cidades já foram noturnas</strong>
-  <p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p>
-  <a href="editorial/as-cidades-ja-foram-noturnas.html">Ler texto completo</a>
-</div>
-<div class="card">
-<img src="images/editorial-dj-autor.png" alt="Arte de DJ como autor da pista" loading="lazy">
-  <strong>DJs são novos autores</strong>
-  <p>Quem escreve tua noite é o DJ. Já agradeceu?</p>
-  <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html">Ler texto completo</a>
-</div>
-<div class="card">
-<img src="images/editorial-teatros-vazios.png" alt="Arte com cadeiras vazias representando o teatro" loading="lazy">
-  <strong>Por que os teatros estão vazios...</strong>
-  <p>Teatro na era do feed: presença ou performance?</p>
-  <a href="#" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/editorial-look-fala.png" alt="Ilustração de look expressivo como identidade" loading="lazy">
-  <strong>E se teu look falasse por ti?</strong>
-  <p>Estética é política: o look também fala!</p>
-  <a href="#" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/editorial-te-chamam-de-atracao.png" alt="Imagem de artista como destaque da festa" loading="lazy">
-  <strong>Te chamam de atração...</strong>
-  <p>Quem faz a noite vibrar também precisa viver dela.</p>
-  <a href="#" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/editorial-fomo-cansaco.png" alt="Arte representando cansaço e FOMO nos rolês" loading="lazy">
-  <strong>Todo mundo cansado</strong>
-  <p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p>
-  <a href="#" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/editorial-rolezao.png" alt="Imagem nostálgica de uma festa marcante" loading="lazy">
-  <strong>Todo mundo já foi num rolê bom.</strong>
-  <p>Rolêzão: quando vira lenda, não só festa.</p>
-  <a href="https://www.instagram.com/p/DLlKtmDvjnV/" target="_blank">Ver post completo</a></div>
-    </div>
-    <button class="scroll-arrow right">▶</button>
-  </div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="revista, editorial, cultura, música, arte, entretenimento, rolê" />
+    <meta name="description" content="Revista ROLÊ: Editorial, críticas, poesia e provocações da cena cultural brasileira" />
+    <meta property="og:title" content="Revista ROLÊ - Editorial e Cultura Independente" />
+    <meta property="og:description" content="Textos que refletem a cena noturna, com críticas, poesia e provocações do ROLÊ" />
+    <meta property="og:image" content="https://roleentretenimento.com/images/editorial-madrugada.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://roleentretenimento.com/revista.html" />
     
-  <h2>POSFÁCIO</h2>
-  <p class="container">Reflexões de encerramento da semana: textos críticos ou poéticos da cena.</p>
-  <div class="scroll-wrapper">
-    <button class="scroll-arrow left">◀</button>
-    <div class="cards-container">
-<div class="card">
-<img src="images/posfacio-arte-nao-e-favor.png" alt="Frase arte não é favor em fundo gráfico" loading="lazy">
-      <strong>Arte não é favor</strong>
-      <p>Curte o rolê? Então fortalece quem faz a cena!</p>
-      <a href="https://www.instagram.com/p/DKUvi7ftej4/" target="_blank">Ver post completo</a>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+    
+    <title>Revista ROLÊ | Editorial e Cultura Independente</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    
+    <noscript>
+        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
+    
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<body>
+    <section class="bloco-topo">
+        <div class="container-topo">
+            <div class="header-top">
+                <!-- LOGO ESQUERDA -->
+                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+
+                <!-- MENU + TEMA (LADO DIREITO) -->
+                <div class="right-top">
+                    <!-- MENU DROPDOWN -->
+                    <div class="dropdown">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+                            Explorar ▼
+                        </button>          
+                        <div class="dropdown-content" id="menu-explorar">
+                            <a href="index.html">Página Inicial</a>
+                            <a href="revista.html">Revista ROLÊ</a>
+                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                            <a href="descontos.html">Descontos</a>
+                            <a href="contato.html">Contato</a>
+                            <a href="quem-somos.html">Quem Somos</a>
+                        </div>
+                    </div>
+
+                    <!-- TEMA -->
+                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                </div>
+            </div>
+            <hr class="linha-topo" />
+        </div>
+    </section>
+
+    <!-- Hero Section para Revista -->
+    <div class="revista-hero fade-in">
+        <div class="container">
+            <h1 class="titulo-revista">REVISTA ROLÊ</h1>
+            <p class="subtitulo-revista">Textos que refletem a cena noturna, com críticas, poesia e provocações do ROLÊ</p>
+        </div>
     </div>
-<div class="card">
-<img src="images/posfacio-corpo-danca.png" alt="Imagem de corpo dançando em cena política" loading="lazy">
-  <strong>Você já parou pra pensar que subir no palco é um ato político?</strong>
-  <p>O palco também é trincheira. Vem entender por quê.</p>
-  <a href="https://www.instagram.com/p/DKpNipHuHxT/" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/posfacio-som-autoral.png" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy">
-<strong>O FIM DO COVER: QUEREMOS SOM AUTORAL</strong>
-  <p>Mesmas músicas em todo rolê? Hora de mudar o som.</p>
-  <a href="https://www.instagram.com/p/DK76By9Pa6v/" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/posfacio-palco-politico.png" alt="Dança como forma de resistência política" loading="lazy">
-  <strong>O que teu corpo diz quando dança?</strong>
-  <p>Se tem dança, tem revolução no corpo.</p>
-  <a href="https://www.instagram.com/p/DLKu8KKO_xh/" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/posfacio-orgulho-rebeliao.png" alt="Orgulho LGBTQIAP+ como rebelião cultural" loading="lazy">
-  <strong>Não foi por convite. Foi por rebelião.</strong>
-  <p>Orgulho é rebelião: leia o novo Posfácio do ROLÊ!</p>
-  <a href="https://www.instagram.com/p/DLdGOdOvozf/" target="_blank">Ver post completo</a></div>
+
+    <!-- EDITORIAL -->
+    <div class="carrossel fade-in delay">
+        <main class="destaques" role="main">
+            <h2>EDITORIAL</h2>
+            <p class="descricao-secao">Textos que refletem a cena noturna, com críticas, poesia e provocações do ROLÊ.</p>
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver editorial anterior">◀</button>
+                <div class="cards-container" data-section="editorial">
+                    <div class="card fade-in delay">
+                        <img src="images/editorial-madrugada.png" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy" />
+                        <h3>As cidades já foram noturnas</h3>
+                        <p>Sua cidade perdeu a madrugada? Descubra quem resiste!</p>
+                        <a href="editorial/as-cidades-ja-foram-noturnas.html" rel="noopener noreferrer">Ler texto completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/editorial-dj-autor.png" alt="Arte de DJ como autor da pista" loading="lazy" />
+                        <h3>DJs são novos autores</h3>
+                        <p>Quem escreve tua noite é o DJ. Já agradeceu?</p>
+                        <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html" rel="noopener noreferrer">Ler texto completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/editorial-teatros-vazios.png" alt="Arte com cadeiras vazias representando o teatro" loading="lazy" />
+                        <h3>Por que os teatros estão vazios...</h3>
+                        <p>Teatro na era do feed: presença ou performance?</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/editorial-look-fala.png" alt="Ilustração de look expressivo como identidade" loading="lazy" />
+                        <h3>E se teu look falasse por ti?</h3>
+                        <p>Estética é política: o look também fala!</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/editorial-te-chamam-de-atracao.png" alt="Imagem de artista como destaque da festa" loading="lazy" />
+                        <h3>Te chamam de atração...</h3>
+                        <p>Quem faz a noite vibrar também precisa viver dela.</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/editorial-fomo-cansaco.png" alt="Arte representando cansaço e FOMO nos rolês" loading="lazy" />
+                        <h3>Todo mundo cansado</h3>
+                        <p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/editorial-rolezao.png" alt="Imagem nostálgica de uma festa marcante" loading="lazy" />
+                        <h3>Todo mundo já foi num rolê bom.</h3>
+                        <p>Rolêzão: quando vira lenda, não só festa.</p>
+                        <a href="https://www.instagram.com/p/DLlKtmDvjnV/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próximo editorial">▶</button>
+                
+                <!-- Indicadores do carrossel -->
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                </div>
+            </div>
+        </main>
     </div>
-    <button class="scroll-arrow right">▶</button>
-  </div>
 
-  <h2>DICAS DO ROLÊ</h2>
-  <p class="container">Achados, experiências e rolês mapeados pela equipe do ROLÊ.</p>
-  <div class="scroll-wrapper">
-    <button class="scroll-arrow left">◀</button>
-    <div class="cards-container">
-<div class="card">
-<img src="images/dica-celular-no-role.png" alt="Dica para levar o celular no rolê com segurança" loading="lazy">
-  <strong>Tá indo pro rolê… mas nem sabe onde guardar o celular?</strong>
-  <p>Celular no rolê: leve com estilo e segurança!</p>
-  <a href="https://www.instagram.com/p/DKcwM01vOHG/" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/dica-dicionario-rolezeiro.png" alt="Dicionário visual com gírias da cena" loading="lazy">
-  <strong>Dicionário rolezeiro pra tu dominar a noite!</strong>
-  <p>Gírias que só quem é da cena entende. Vem aprender!</p>
-  <a href="https://www.instagram.com/p/DK0JECQvjlS/" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/dica-role-no-meio-da-semana.png" alt="Arte incentivando rolês em dias úteis" loading="lazy">
-  <strong>Rolê no meio da semana? Tá doido?</strong>
-  <p>Rolê no meio da semana? Vem ver por que sim!</p>
-  <a href="https://www.instagram.com/p/DLAXK7hOqyI/" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/dica-ta-caro.png" alt="Arte crítica sobre preços altos nos rolês" loading="lazy">
-  <strong>Tá caro? Tá mesmo.</strong>
-  <p>Por que o rolê tá caro? Descubra e valorize a cena.</p>
-  <a href="https://www.instagram.com/p/DLaMMB2uFzF/" target="_blank">Ver post completo</a></div>
-</div>
-    <button class="scroll-arrow right">▶</button>
-  </div>
-
-<h2>FALA, ROLÊ</h2>
-  <p class="container">Entrevistas com artistas independentes e vozes da cena noturna.</p>
-  <div class="scroll-wrapper">
-    <button class="scroll-arrow left">◀</button>
-    <div class="cards-container">
-<div class="card">
-<img src="images/fala-quem-faz-a-cena.png" alt="Chamada para conhecer artistas da cena cultural" loading="lazy">
-  <strong>Você conhece mesmo quem faz a cena acontecer?</strong>
-  <p>Quem faz o rolê ferver? Descubra no FALA, ROLÊ!</p>
-  <a href="https://www.instagram.com/p/DKnSfFevJOO/" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/fala-jon-soares.png" alt="Retrato do artista Jon Soares" loading="lazy">
-  <strong>Jon Soares</strong>
-  <p>Jon Soares no Fala, ROLÊ: som que conta histórias.</p>
-  <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank">Ver post completo</a></div>
+    <!-- POSFÁCIO -->
+    <div class="carrossel fade-in delay">
+        <main class="destaques" role="main">
+            <h2>POSFÁCIO</h2>
+            <p class="descricao-secao">Reflexões de encerramento da semana: textos críticos ou poéticos da cena.</p>
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver posfácio anterior">◀</button>
+                <div class="cards-container" data-section="posfacio">
+                    <div class="card fade-in delay">
+                        <img src="images/posfacio-arte-nao-e-favor.png" alt="Frase arte não é favor em fundo gráfico" loading="lazy" />
+                        <h3>Arte não é favor</h3>
+                        <p>Curte o rolê? Então fortalece quem faz a cena!</p>
+                        <a href="https://www.instagram.com/p/DKUvi7ftej4/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/posfacio-corpo-danca.png" alt="Imagem de corpo dançando em cena política" loading="lazy" />
+                        <h3>Você já parou pra pensar que subir no palco é um ato político?</h3>
+                        <p>O palco também é trincheira. Vem entender por quê.</p>
+                        <a href="https://www.instagram.com/p/DKpNipHuHxT/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/posfacio-som-autoral.png" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy" />
+                        <h3>O FIM DO COVER: QUEREMOS SOM AUTORAL</h3>
+                        <p>Mesmas músicas em todo rolê? Hora de mudar o som.</p>
+                        <a href="https://www.instagram.com/p/DK76By9Pa6v/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/posfacio-palco-politico.png" alt="Dança como forma de resistência política" loading="lazy" />
+                        <h3>O que teu corpo diz quando dança?</h3>
+                        <p>Se tem dança, tem revolução no corpo.</p>
+                        <a href="https://www.instagram.com/p/DLKu8KKO_xh/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/posfacio-orgulho-rebeliao.png" alt="Orgulho LGBTQIAP+ como rebelião cultural" loading="lazy" />
+                        <h3>Não foi por convite. Foi por rebelião.</h3>
+                        <p>Orgulho é rebelião: leia o novo Posfácio do ROLÊ!</p>
+                        <a href="https://www.instagram.com/p/DLdGOdOvozf/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próximo posfácio">▶</button>
+                
+                <!-- Indicadores do carrossel -->
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                </div>
+            </div>
+        </main>
     </div>
-    <button class="scroll-arrow right">▶</button>
-  </div>
 
- <h2>ROLÊ.BPM</h2>
-  <p class="container">Explorações musicais e gêneros que movem as pistas.</p>
-  <div class="scroll-wrapper">
-    <button class="scroll-arrow left">◀</button>
-    <div class="cards-container">
-<div class="card">
-<img src="images/bpm-techno-resistencia.png" alt="Arte sobre o techno como resistência" loading="lazy">
-  <strong>Quem tem medo do techno?</strong>
-  <p>Techno é resistência: você sabe de onde veio?</p>
-  <a href="https://www.instagram.com/p/DLFzcKQOfzP/" target="_blank">Ver post completo</a>
-</div>
-<div class="card">
-<img src="images/bpm-funk-e-cultura.png" alt="Funk retratado como cultura e identidade" loading="lazy">
-  <strong>FUNK É CULTURA, SIM.</strong>
-  <p>Do asfalto pro topo, sem pedir licença. Funk é cultura!</p>
-  <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank">Ver post completo</a></div>
- </div>
-    <button class="scroll-arrow right">▶</button>
-  </div>
-  
-<h2>ACHADINHOS</h2>
-  <p class="container">Referências, virais, memes e achados culturais da semana.</p>
-  <div class="scroll-wrapper">
-    <button class="scroll-arrow left">◀</button>
-    <div class="cards-container">
-<div class="card">
-<img src="images/achadinho-floripa-segredos.png" alt="Segredos dos rolês underground em Florianópolis" loading="lazy">
-  <strong>Qual é o segredo dos rolês de Floripa?</strong>
-  <p>Achadinhos de Floripa que o Google não mostra!</p>
-  <a href="https://www.instagram.com/p/DLavpxbv4BT/" target="_blank">Ver post completo</a></div>
-   </div>
-    <button class="scroll-arrow right">▶</button>
-  </div>
-</main>
+    <!-- DICAS DO ROLÊ -->
+    <div class="carrossel fade-in delay">
+        <main class="destaques" role="main">
+            <h2>DICAS DO ROLÊ</h2>
+            <p class="descricao-secao">Achados, experiências e rolês mapeados pela equipe do ROLÊ.</p>
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver dica anterior">◀</button>
+                <div class="cards-container" data-section="dicas">
+                    <div class="card fade-in delay">
+                        <img src="images/dica-celular-no-role.png" alt="Dica para levar o celular no rolê com segurança" loading="lazy" />
+                        <h3>Tá indo pro rolê… mas nem sabe onde guardar o celular?</h3>
+                        <p>Celular no rolê: leve com estilo e segurança!</p>
+                        <a href="https://www.instagram.com/p/DKcwM01vOHG/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/dica-dicionario-rolezeiro.png" alt="Dicionário visual com gírias da cena" loading="lazy" />
+                        <h3>Dicionário rolezeiro pra tu dominar a noite!</h3>
+                        <p>Gírias que só quem é da cena entende. Vem aprender!</p>
+                        <a href="https://www.instagram.com/p/DK0JECQvjlS/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/dica-role-no-meio-da-semana.png" alt="Arte incentivando rolês em dias úteis" loading="lazy" />
+                        <h3>Rolê no meio da semana? Tá doido?</h3>
+                        <p>Rolê no meio da semana? Vem ver por que sim!</p>
+                        <a href="https://www.instagram.com/p/DLAXK7hOqyI/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/dica-ta-caro.png" alt="Arte crítica sobre preços altos nos rolês" loading="lazy" />
+                        <h3>Tá caro? Tá mesmo.</h3>
+                        <p>Por que o rolê tá caro? Descubra e valorize a cena.</p>
+                        <a href="https://www.instagram.com/p/DLaMMB2uFzF/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próxima dica">▶</button>
+                
+                <!-- Indicadores do carrossel -->
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-<!-- RODAPÉ -->
-<footer>
-  <div class="footer-links">
-    © 2025 ROLÊ ENTRETENIMENTO ·
-    <a href="politica.html">Política de Privacidade</a> ·
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-    <a href="termos-organizador.html">Termos do Organizador</a> ·
-    <a href="politica-spam.html">Política Antispam</a>
-  </div>
-  <div class="social-icons">
-    <a href="https://instagram.com/role.ent" target="_blank"><img src="images/instagram.svg" alt="Instagram" /></a>
-    <a href="https://tiktok.com/@role.ent" target="_blank"><img src="images/tiktok.svg" alt="TikTok" /></a>
-    <a href="https://wa.me/5551980704353" target="_blank"><img src="images/whatsapp.svg" alt="WhatsApp" /></a>
-  </div>
-</footer>
+    <!-- FALA, ROLÊ -->
+    <div class="carrossel fade-in delay">
+        <main class="destaques" role="main">
+            <h2>FALA, ROLÊ</h2>
+            <p class="descricao-secao">Entrevistas com artistas independentes e vozes da cena noturna.</p>
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver entrevista anterior">◀</button>
+                <div class="cards-container" data-section="fala">
+                    <div class="card fade-in delay">
+                        <img src="images/fala-quem-faz-a-cena.png" alt="Chamada para conhecer artistas da cena cultural" loading="lazy" />
+                        <h3>Você conhece mesmo quem faz a cena acontecer?</h3>
+                        <p>Quem faz o rolê ferver? Descubra no FALA, ROLÊ!</p>
+                        <a href="https://www.instagram.com/p/DKnSfFevJOO/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/fala-jon-soares.png" alt="Retrato do artista Jon Soares" loading="lazy" />
+                        <h3>Jon Soares</h3>
+                        <p>Jon Soares no Fala, ROLÊ: som que conta histórias.</p>
+                        <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próxima entrevista">▶</button>
+                
+                <!-- Indicadores do carrossel -->
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active"></div>
+                    <div class="indicator-dot"></div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-<!-- SCRIPTS -->
-<script>
-  const lampada = document.querySelector('.lampada-toggle');
-  const root = document.documentElement;
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    root.style.setProperty('--bg', '#ffffff');
-    root.style.setProperty('--text-color', '#2e2e2e');
-  } else {
-    root.style.setProperty('--bg', '#000000');
-    root.style.setProperty('--text-color', '#f3f3f7');
-  }
+    <!-- ROLÊ.BPM -->
+    <div class="carrossel fade-in delay">
+        <main class="destaques" role="main">
+            <h2>ROLÊ.BPM</h2>
+            <p class="descricao-secao">Explorações musicais e gêneros que movem as pistas.</p>
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver BPM anterior">◀</button>
+                <div class="cards-container" data-section="bpm">
+                    <div class="card fade-in delay">
+                        <img src="images/bpm-techno-resistencia.png" alt="Arte sobre o techno como resistência" loading="lazy" />
+                        <h3>Quem tem medo do techno?</h3>
+                        <p>Techno é resistência: você sabe de onde veio?</p>
+                        <a href="https://www.instagram.com/p/DLFzcKQOfzP/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/bpm-funk-e-cultura.png" alt="Funk retratado como cultura e identidade" loading="lazy" />
+                        <h3>FUNK É CULTURA, SIM.</h3>
+                        <p>Do asfalto pro topo, sem pedir licença. Funk é cultura!</p>
+                        <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próximo BPM">▶</button>
+                
+                <!-- Indicadores do carrossel -->
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active"></div>
+                    <div class="indicator-dot"></div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-  lampada.addEventListener('click', () => {
-    const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
-    if (currentBg === '#000000') {
-      root.style.setProperty('--bg', '#ffffff');
-      root.style.setProperty('--text-color', '#2e2e2e');
-      lampada.setAttribute('aria-pressed', 'true');
-      localStorage.setItem('theme', 'light');
-    } else {
-      root.style.setProperty('--bg', '#000000');
-      root.style.setProperty('--text-color', '#f3f3f7');
-      lampada.setAttribute('aria-pressed', 'false');
-      localStorage.setItem('theme', 'dark');
-    }
-  });
+    <!-- ACHADINHOS -->
+    <div class="carrossel fade-in delay">
+        <main class="destaques" role="main">
+            <h2>ACHADINHOS</h2>
+            <p class="descricao-secao">Referências, virais, memes e achados culturais da semana.</p>
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver achadinho anterior">◀</button>
+                <div class="cards-container" data-section="achadinhos">
+                    <div class="card fade-in delay">
+                        <img src="images/achadinho-floripa-segredos.png" alt="Segredos dos rolês underground em Florianópolis" loading="lazy" />
+                        <h3>Qual é o segredo dos rolês de Floripa?</h3>
+                        <p>Achadinhos de Floripa que o Google não mostra!</p>
+                        <a href="https://www.instagram.com/p/DLavpxbv4BT/" target="_blank" rel="noopener noreferrer">Ver post completo</a>
+                    </div>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próximo achadinho">▶</button>
+                
+                <!-- Indicadores do carrossel -->
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active"></div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-  // DROPDOWN
-  const dropdown = document.querySelector('.dropdown');
-  const button = dropdown?.querySelector('.dropdown-button');
-  const content = dropdown?.querySelector('.dropdown-content');
+    <footer>
+        <div class="footer-links">
+            © 2025 ROLÊ ENTRETENIMENTO ·
+            <a href="politica.html">Política de Privacidade</a> ·
+            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+            <a href="termos-organizador.html">Termos do Organizador</a> ·
+            <a href="politica-spam.html">Política Antispam</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://instagram.com/role.ent" target="_blank">
+                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+            </a>
+            <a href="https://tiktok.com/@role.ent" target="_blank">
+                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            </a>
+            <a href="https://wa.me/5551980704353" target="_blank">
+                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            </a>
+        </div>
+    </footer>
 
-  if (button && content) {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-    });
-    document.addEventListener('click', function (e) {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
-        button.setAttribute('aria-expanded', false);
-      }
-    });
-    content.addEventListener('click', function (e) {
-      e.stopPropagation();
-    });
-  }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown.querySelector('.dropdown-button');
+            const content = dropdown.querySelector('.dropdown-content');
 
-// SCROLL COM LOOP INFINITO
-const carrosseis = document.querySelectorAll('.scroll-wrapper');
+            if (button && content) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
 
-carrosseis.forEach(wrapper => {
-  const container = wrapper.querySelector('.cards-container');
-  const left = wrapper.querySelector('.scroll-arrow.left');
-  const right = wrapper.querySelector('.scroll-arrow.right');
-  const scrollAmount = 300;
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
+                    }
+                });
 
-  left.addEventListener('click', () => {
-if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 5)
-      // Volta para o final
-      container.scrollBy({ left: container.scrollWidth, behavior: 'smooth' });
-    } else {
-      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    }
-  });
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
 
-  right.addEventListener('click', () => {
-    const maxScrollLeft = container.scrollWidth - container.clientWidth;
-    if (container.scrollLeft >= Math.floor(maxScrollLeft)) {
-      // Volta para o início
-      container.scrollBy({ left: 0, behavior: 'smooth' });
-    } else {
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  });
-});
+            // ========== CARROSSEIS INDEPENDENTES ==========
+            const carrosseis = document.querySelectorAll('.scroll-wrapper');
 
-</script>
-  <script>
-  const carrosseis = document.querySelectorAll('.scroll-wrapper');
+            carrosseis.forEach((wrapper, wrapperIndex) => {
+                const container = wrapper.querySelector('.cards-container');
+                const cards = container.querySelectorAll('.card');
+                const indicators = wrapper.querySelectorAll('.indicator-dot');
+                const arrowLeft = wrapper.querySelector('.scroll-arrow.left');
+                const arrowRight = wrapper.querySelector('.scroll-arrow.right');
+                
+                const totalCards = cards.length;
+                let currentIndex = 0;
+                let autoPlayInterval;
+                let isAutoPlaying = true;
 
-  carrosseis.forEach(wrapper => {
-    const container = wrapper.querySelector('.cards-container');
-    const left = wrapper.querySelector('.scroll-arrow.left');
-    const right = wrapper.querySelector('.scroll-arrow.right');
-    const scrollAmount = 300;
+                function updateIndicators() {
+                    indicators.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
 
-    left.addEventListener('click', () => {
-      if (container.scrollLeft <= 0) {
-        container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
-      } else {
-        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      }
-    });
+                function scrollToCard(index, smooth = true) {
+                    if (index < 0) index = totalCards - 1;
+                    if (index >= totalCards) index = 0;
+                    currentIndex = index;
+                    
+                    const cardWidth = cards[0].getBoundingClientRect().width + 20;
+                    container.scrollTo({
+                        left: cardWidth * index,
+                        behavior: smooth ? 'smooth' : 'auto'
+                    });
+                    
+                    updateIndicators();
+                }
 
-    right.addEventListener('click', () => {
-      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 5) {
-        container.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      }
-    });
-  });
-</script>
+                function startAutoPlay() {
+                    if (isAutoPlaying && totalCards > 1) {
+                        autoPlayInterval = setInterval(() => {
+                            scrollToCard(currentIndex + 1);
+                        }, 5000); // 5 segundos para revista
+                    }
+                }
 
+                function stopAutoPlay() {
+                    clearInterval(autoPlayInterval);
+                }
+
+                // Controles das setas
+                if (arrowLeft && arrowRight) {
+                    arrowLeft.addEventListener('click', () => {
+                        stopAutoPlay();
+                        scrollToCard(currentIndex - 1);
+                        setTimeout(startAutoPlay, 3000);
+                    });
+
+                    arrowRight.addEventListener('click', () => {
+                        stopAutoPlay();
+                        scrollToCard(currentIndex + 1);
+                        setTimeout(startAutoPlay, 3000);
+                    });
+                }
+
+                // Indicadores clicáveis
+                indicators.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        stopAutoPlay();
+                        scrollToCard(index);
+                        setTimeout(startAutoPlay, 3000);
+                    });
+                });
+
+                // Pausa auto-play ao hover
+                container.addEventListener('mouseenter', stopAutoPlay);
+                container.addEventListener('mouseleave', startAutoPlay);
+
+                // Detectar mudança manual de scroll
+                container.addEventListener('scroll', () => {
+                    const cardWidth = cards[0].getBoundingClientRect().width + 20;
+                    const newIndex = Math.round(container.scrollLeft / cardWidth);
+                    if (newIndex !== currentIndex && newIndex >= 0 && newIndex < totalCards) {
+                        currentIndex = newIndex;
+                        updateIndicators();
+                    }
+                });
+
+                // Inicializar carrossel
+                setTimeout(() => {
+                    if (container && cards.length > 0) {
+                        scrollToCard(0, false);
+                        startAutoPlay();
+                    }
+                }, 300 + (wrapperIndex * 100)); // Delay escalonado
+            });
+
+            // ========== ANIMAÇÕES DE ENTRADA ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observar todos os cards para animação
+            const allCards = document.querySelectorAll('.card');
+            allCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${(index % 7) * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+
+        // ========== TOGGLE TEMA MELHORADO ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
+
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
+        }
+
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                // Volta para modo escuro
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Vai para modo claro
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ========== SUAVIZAÇÃO ADICIONAL ==========
+        document.body.style.transition = 'all 0.3s ease';
+    </script>
+
+    <style>
+        /* ========== ESTILOS ESPECÍFICOS DA REVISTA ========== */
+        .revista-hero {
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+            border-bottom: 1px solid rgba(199, 125, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .titulo-revista {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitulo-revista {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .descricao-secao {
+            text-align: center;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========== TÍTULOS DOS CARDS COM H3 ========== */
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin: 1rem 0 0.5rem 0;
+            line-height: 1.3;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card:hover h3 {
+            color: var(--highlight);
+        }
+
+        /* ========== MELHORIAS RESPONSIVAS PARA REVISTA ========== */
+        @media (max-width: 768px) {
+            .revista-hero {
+                padding: 2rem 1rem 1rem;
+            }
+            
+            .titulo-revista {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+            
+            .subtitulo-revista {
+                font-size: 1rem;
+            }
+            
+            .descricao-secao {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* ========== CARROSSEL COM MENOS CARDS ========== */
+        .cards-container[data-section="fala"] .card,
+        .cards-container[data-section="bpm"] .card,
+        .cards-container[data-section="achadinhos"] .card {
+            flex: 0 0 300px;
+        }
+
+        @media (max-width: 480px) {
+            .cards-container[data-section="fala"] .card,
+            .cards-container[data-section="bpm"] .card,
+            .cards-container[data-section="achadinhos"] .card {
+                flex: 0 0 250px;
+            }
+        }
+
+        /* ========== ANIMAÇÕES ESCALONADAS ========== */
+        .carrossel:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+
+        .carrossel:nth-child(even) {
+            animation-delay: 0.4s;
+        }
+
+        /* ========== HOVER EFFECTS MELHORADOS ========== */
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px var(--shadow);
+        }
+
+        .card:hover::before {
+            opacity: 0.15;
+        }
+
+        /* ========== SEPARADORES VISUAIS ========== */
+        .carrossel + .carrossel {
+            border-top: 1px solid rgba(199, 125, 255, 0.1);
+            margin-top: 2rem;
+            padding-top: 2rem;
+        }
+    </style>
 </body>
 </html>
