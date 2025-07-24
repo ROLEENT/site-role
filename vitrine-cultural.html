@@ -12,12 +12,499 @@
   <title>Vitrine Cultural | ROLÊ ENTRETENIMENTO</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="estilo.css" />
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.add('light');
+  
+  <style>
+    :root {
+      --bg: #000000;
+      --text-color: #f3f3f7;
+      --accent-color: #ff6b35;
+      --secondary-color: #1a1a1a;
+      --border-color: #333;
+      --gradient-primary: linear-gradient(135deg, #ff6b35, #f7931e);
+      --gradient-secondary: linear-gradient(135deg, #667eea, #764ba2);
+      --shadow-light: 0 4px 20px rgba(255, 107, 53, 0.3);
+      --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
-  </script>
+
+    .light {
+      --bg: #ffffff;
+      --text-color: #2e2e2e;
+      --secondary-color: #f8f9fa;
+      --border-color: #e0e0e0;
+      --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'League Spartan', sans-serif;
+      background: var(--bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: all 0.3s ease;
+    }
+
+    /* Animações */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .delay {
+      animation-delay: 0.3s;
+    }
+
+    /* Header */
+    .bloco-topo {
+      background: var(--secondary-color);
+      border-bottom: 2px solid var(--border-color);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container-topo {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .logo {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .right-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Dropdown melhorado */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-button {
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-light);
+    }
+
+    .dropdown-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: var(--secondary-color);
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      padding: 1rem 0;
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-dark);
+      backdrop-filter: blur(10px);
+    }
+
+    .dropdown.open .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background: var(--gradient-primary);
+      color: white;
+      padding-left: 2rem;
+    }
+
+    /* Toggle tema melhorado */
+    .lampada-toggle {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 8px;
+      transition: all 0.3s ease;
+      background: var(--secondary-color);
+      border: 2px solid var(--border-color);
+    }
+
+    .lampada-toggle:hover {
+      transform: rotate(15deg) scale(1.1);
+      box-shadow: var(--shadow-light);
+    }
+
+    .linha-topo {
+      border: none;
+      height: 2px;
+      background: var(--gradient-primary);
+      border-radius: 1px;
+    }
+
+    /* Menu vitrine melhorado */
+    .menu-vitrine {
+      background: var(--secondary-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .menu-vitrine a {
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-vitrine a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .menu-vitrine a:hover::before {
+      left: 0;
+    }
+
+    .menu-vitrine a:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-destaque {
+      background: var(--gradient-primary) !important;
+      color: white !important;
+      box-shadow: var(--shadow-light);
+      animation: pulse 2s infinite;
+    }
+
+    /* Carrossel melhorado */
+    .carrossel {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .carrossel h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .scroll-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .scroll-arrow {
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-light);
+      z-index: 10;
+    }
+
+    .scroll-arrow:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+    }
+
+    .scroll-arrow:active {
+      transform: scale(0.95);
+    }
+
+    .cards-container {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 1rem 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      flex: 1;
+    }
+
+    .cards-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Cards melhorados */
+    .card {
+      min-width: 300px;
+      background: var(--secondary-color);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 1px solid var(--border-color);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-secondary);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .card:hover::before {
+      opacity: 0.1;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) rotateX(5deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: var(--accent-color);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card p {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-color);
+      z-index: 2;
+      position: relative;
+    }
+
+    .card a {
+      display: block;
+      margin: 0 1.5rem 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--gradient-primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      text-align: center;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+
+    .card a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+    }
+
+    /* Footer melhorado */
+    footer {
+      background: var(--secondary-color);
+      border-top: 1px solid var(--border-color);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer-links {
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-color);
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s ease;
+    }
+
+    .light .social-icons img {
+      filter: brightness(0) invert(0.2);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .container-topo {
+        padding: 1rem;
+      }
+
+      .header-top {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .menu-vitrine {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .carrossel h2 {
+        font-size: 2rem;
+      }
+
+      .scroll-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .scroll-arrow {
+        position: static;
+      }
+
+      .card {
+        min-width: 280px;
+      }
+
+      .cards-container {
+        justify-content: center;
+      }
+    }
+
+    /* Melhorias de acessibilidade */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Estados de foco */
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+  </style>
+
   <noscript>
     <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
   </noscript>
@@ -51,7 +538,7 @@
 </section>
 
 <nav class="menu-vitrine">
-<a href="vitrine-hero.html" class="btn-destaque">Descubra como funciona a Vitrine</a>
+  <a href="vitrine-hero.html" class="btn-destaque">Descubra como funciona a Vitrine</a>
   <a href="vitrine-por-que-anunciar.html">Por que anunciar?</a>
   <a href="vitrine-pacotes.html">Pacotes</a>
   <a href="vitrine-faq.html">FAQ</a>
@@ -60,32 +547,32 @@
 
 <!-- CONTEÚDO PRINCIPAL -->
 <main class="carrossel fade-in delay">
-  <h2>NA VITRINE CULTURAL</h2>
+  <h2>Na Vitrine Cultural</h2>
   <div class="scroll-wrapper">
-    <button class="scroll-arrow left" aria-label="Anterior">◀</button>
+    <button class="scroll-arrow left" aria-label="Evento anterior">◀</button>
     <div class="cards-container">
       <div class="card fade-in delay">
-        <img src="images/plano.png" alt="PLANO 8 ANOS" />
+        <img src="images/plano.png" alt="PLANO 8 ANOS - Evento Mercúrio em Transe" />
         <p>Uma pista-portal te chama: Mercúrio em Transe, 05/07!</p>
-        <a href="https://www.instagram.com/p/DLfURN7uUYq/?img_index=1" target="_blank">Ver mais</a>
+        <a href="https://www.instagram.com/p/DLfURN7uUYq/?img_index=1" target="_blank" rel="noopener">Ver mais</a>
       </div>
       <div class="card fade-in delay">
-        <img src="images/Atrito.png" alt="Festa Atrito" />
+        <img src="images/Atrito.png" alt="Festa Atrito - After mais insano do Rio" />
         <p>ATRITO: o after mais insano do Rio te espera!</p>
-        <a href="https://www.instagram.com/p/DLkhRnvuMpI/?img_index=1" target="_blank">Ver mais</a>
+        <a href="https://www.instagram.com/p/DLkhRnvuMpI/?img_index=1" target="_blank" rel="noopener">Ver mais</a>
       </div>
       <div class="card fade-in delay">
-        <img src="images/Lovefool.png" alt="Festa Disco Love" />
+        <img src="images/Lovefool.png" alt="Festa Disco Love - Glitter, hits e caos gostoso" />
         <p>DISCO LOVE no Hum: glitter, hits e caos gostoso!</p>
-        <a href="https://www.instagram.com/p/DLlFJmzvzMh/?img_index=1" target="_blank">Ver mais</a>
+        <a href="https://www.instagram.com/p/DLlFJmzvzMh/?img_index=1" target="_blank" rel="noopener">Ver mais</a>
       </div>
       <div class="card fade-in delay">
-        <img src="images/bolsinh4.png" alt="Festa Bolsinh4" />
+        <img src="images/bolsinh4.png" alt="Festa Bolsinh4 - Rave pop no 63" />
         <p>BOLSINH4: Uma rave pop que vai explodir no 63</p>
-        <a href="https://www.instagram.com/p/DLn3ci8v6-U/" target="_blank">Ver mais</a>
+        <a href="https://www.instagram.com/p/DLn3ci8v6-U/" target="_blank" rel="noopener">Ver mais</a>
       </div>
     </div>
-    <button class="scroll-arrow right" aria-label="Próxima">▶</button>
+    <button class="scroll-arrow right" aria-label="Próximo evento">▶</button>
   </div>
 </main>
 
@@ -99,102 +586,261 @@
     <a href="politica-spam.html">Política Antispam</a>
   </div>
   <div class="social-icons">
-    <a href="https://instagram.com/role.ent" target="_blank">
-      <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+    <a href="https://instagram.com/role.ent" target="_blank" rel="noopener" aria-label="Instagram ROLÊ">
+      <img src="images/instagram.svg" alt="Instagram" />
     </a>
-    <a href="https://tiktok.com/@role.ent" target="_blank">
-      <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+    <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener" aria-label="TikTok ROLÊ">
+      <img src="images/tiktok.svg" alt="TikTok" />
     </a>
-    <a href="https://wa.me/5551980704353" target="_blank">
-      <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+    <a href="https://wa.me/5551980704353" target="_blank" rel="noopener" aria-label="WhatsApp ROLÊ">
+      <img src="images/whatsapp.svg" alt="WhatsApp" />
     </a>
   </div>
 </footer>
 
 <!-- SCRIPTS -->
 <script>
-  const lampada = document.querySelector('.lampada-toggle');
-  const root = document.documentElement;
+  // Sistema de tema melhorado
+  class ThemeManager {
+    constructor() {
+      this.root = document.documentElement;
+      this.toggle = document.querySelector('.lampada-toggle');
+      this.init();
+    }
 
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    root.style.setProperty('--bg', '#ffffff');
-    root.style.setProperty('--text-color', '#2e2e2e');
-  } else {
-    root.style.setProperty('--bg', '#000000');
-    root.style.setProperty('--text-color', '#f3f3f7');
+    init() {
+      this.loadSavedTheme();
+      this.bindEvents();
+    }
+
+    loadSavedTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      this.applyTheme(savedTheme);
+    }
+
+    applyTheme(theme) {
+      if (theme === 'light') {
+        this.root.classList.add('light');
+        this.toggle?.setAttribute('aria-pressed', 'true');
+      } else {
+        this.root.classList.remove('light');
+        this.toggle?.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    toggleTheme() {
+      const isLight = this.root.classList.contains('light');
+      const newTheme = isLight ? 'dark' : 'light';
+      this.applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+
+    bindEvents() {
+      this.toggle?.addEventListener('click', () => this.toggleTheme());
+      this.toggle?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.toggleTheme();
+        }
+      });
+    }
   }
 
-  lampada.addEventListener('click', () => {
-    const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
-    if (currentBg === '#000000') {
-      root.style.setProperty('--bg', '#ffffff');
-      root.style.setProperty('--text-color', '#2e2e2e');
-      lampada.setAttribute('aria-pressed', 'true');
-      localStorage.setItem('theme', 'light');
-    } else {
-      root.style.setProperty('--bg', '#000000');
-      root.style.setProperty('--text-color', '#f3f3f7');
-      lampada.setAttribute('aria-pressed', 'false');
-      localStorage.setItem('theme', 'dark');
+  // Sistema de dropdown melhorado
+  class DropdownManager {
+    constructor() {
+      this.dropdown = document.querySelector('.dropdown');
+      this.button = this.dropdown?.querySelector('.dropdown-button');
+      this.content = this.dropdown?.querySelector('.dropdown-content');
+      this.init();
     }
-  });
 
-  // Dropdown
-  const dropdown = document.querySelector('.dropdown');
-  const button = dropdown?.querySelector('.dropdown-button');
-  const content = dropdown?.querySelector('.dropdown-content');
+    init() {
+      if (!this.dropdown || !this.button || !this.content) return;
+      this.bindEvents();
+    }
 
-  if (button && content) {
-    button.addEventListener('click', function (e) {
+    toggle(e) {
       e.preventDefault();
       e.stopPropagation();
-      dropdown.classList.toggle('open');
-      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-    });
+      const isOpen = this.dropdown.classList.contains('open');
+      this.dropdown.classList.toggle('open');
+      this.button.setAttribute('aria-expanded', !isOpen);
+    }
 
-    document.addEventListener('click', function (e) {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
-        button.setAttribute('aria-expanded', false);
-      }
-    });
+    close() {
+      this.dropdown.classList.remove('open');
+      this.button.setAttribute('aria-expanded', 'false');
+    }
 
-    content.addEventListener('click', function (e) {
-      e.stopPropagation();
-    });
+    bindEvents() {
+      this.button.addEventListener('click', (e) => this.toggle(e));
+      
+      document.addEventListener('click', (e) => {
+        if (!this.dropdown.contains(e.target)) {
+          this.close();
+        }
+      });
+
+      this.content.addEventListener('click', (e) => e.stopPropagation());
+
+      // Navegação por teclado
+      this.button.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.toggle(e);
+        }
+      });
+    }
   }
 
-  // Carrossel
-  const container = document.querySelector('.cards-container');
-  const cards = container.querySelectorAll('.card');
-  const totalCards = cards.length;
-  let currentIndex = 0;
-  const cardWidth = cards[0].getBoundingClientRect().width + 12;
+  // Sistema de carrossel melhorado
+  class CarouselManager {
+    constructor() {
+      this.container = document.querySelector('.cards-container');
+      this.cards = this.container?.querySelectorAll('.card');
+      this.arrowLeft = document.querySelector('.scroll-arrow.left');
+      this.arrowRight = document.querySelector('.scroll-arrow.right');
+      this.currentIndex = 0;
+      this.isScrolling = false;
+      this.init();
+    }
 
-  function scrollToCard(index) {
-    if (index < 0) index = totalCards - 1;
-    if (index >= totalCards) index = 0;
-    currentIndex = index;
-    container.scrollTo({
-      left: cardWidth * index,
-      behavior: 'smooth'
-    });
+    init() {
+      if (!this.container || !this.cards.length) return;
+      this.calculateDimensions();
+      this.bindEvents();
+      this.setupIntersectionObserver();
+    }
+
+    calculateDimensions() {
+      const firstCard = this.cards[0];
+      const style = window.getComputedStyle(firstCard);
+      const gap = parseInt(window.getComputedStyle(this.container).gap) || 24;
+      this.cardWidth = firstCard.getBoundingClientRect().width + gap;
+    }
+
+    scrollToCard(index) {
+      if (this.isScrolling) return;
+      
+      if (index < 0) index = this.cards.length - 1;
+      if (index >= this.cards.length) index = 0;
+      
+      this.currentIndex = index;
+      this.isScrolling = true;
+      
+      this.container.scrollTo({
+        left: this.cardWidth * index,
+        behavior: 'smooth'
+      });
+
+      setTimeout(() => {
+        this.isScrolling = false;
+      }, 500);
+    }
+
+    setupIntersectionObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+      });
+
+      this.cards.forEach(card => observer.observe(card));
+    }
+
+    bindEvents() {
+      this.arrowLeft?.addEventListener('click', () => {
+        this.scrollToCard(this.currentIndex - 1);
+      });
+
+      this.arrowRight?.addEventListener('click', () => {
+        this.scrollToCard(this.currentIndex + 1);
+      });
+
+      // Navegação por teclado
+      this.container.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          this.scrollToCard(this.currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          this.scrollToCard(this.currentIndex + 1);
+        }
+      });
+
+      // Touch/swipe support
+      let startX = 0;
+      let startY = 0;
+      let isTouch = false;
+
+      this.container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isTouch = true;
+      });
+
+      this.container.addEventListener('touchend', (e) => {
+        if (!isTouch) return;
+        
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const diffX = startX - endX;
+        const diffY = startY - endY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+          if (diffX > 0) {
+            this.scrollToCard(this.currentIndex + 1);
+          } else {
+            this.scrollToCard(this.currentIndex - 1);
+          }
+        }
+        isTouch = false;
+      });
+
+      // Redimensionamento
+      window.addEventListener('resize', () => {
+        this.calculateDimensions();
+      });
+    }
   }
 
-  const arrowLeft = document.querySelector('.scroll-arrow.left');
-  const arrowRight = document.querySelector('.scroll-arrow.right');
-
-  if (arrowLeft && arrowRight) {
-    arrowLeft.addEventListener('click', () => scrollToCard(currentIndex - 1));
-    arrowRight.addEventListener('click', () => scrollToCard(currentIndex + 1));
-  }
-
-  container.addEventListener('scroll', () => {
-    const newIndex = Math.round(container.scrollLeft / cardWidth);
-    currentIndex = newIndex;
+  // Inicialização
+  document.addEventListener('DOMContentLoaded', () => {
+    new ThemeManager();
+    new DropdownManager();
+    new CarouselManager();
   });
 
+  // Performance e acessibilidade
+  if ('IntersectionObserver' in window) {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove('lazy');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+  }
+
+  // Prevenção de scroll horizontal indesejado
+  document.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 1) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 </script>
 </body>
 </html>
