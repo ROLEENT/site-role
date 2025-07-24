@@ -10,15 +10,181 @@
   <meta property="og:image" content="images/logo-role.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://roleentretenimento.com/descontos.html" />
+  
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+  
   <title>Descontos | ROLÊ ENTRETENIMENTO</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="estilo.css" />
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.add('light');
+  
+  <style>
+    /* Estilos específicos para cards de desconto */
+    .descontos-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
     }
-  </script>
+    
+    .descontos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .desconto-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .desconto-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+    
+    .desconto-card:hover::before {
+      opacity: 0.1;
+    }
+    
+    .desconto-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px var(--shadow);
+      border-color: var(--highlight);
+    }
+    
+    .desconto-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--highlight);
+      position: relative;
+      z-index: 2;
+      font-weight: 700;
+    }
+    
+    .desconto-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+      color: var(--text-color);
+    }
+    
+    .desconto-card .cupom-code {
+      background: var(--gradient);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-family: monospace;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin: 0.5rem 0;
+    }
+    
+    .desconto-card .btn-desconto {
+      background: var(--gradient);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 15px rgba(199, 125, 255, 0.3);
+    }
+    
+    .desconto-card .btn-desconto:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(199, 125, 255, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+    
+    .destaque-especial {
+      border: 2px solid var(--highlight);
+      background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+    }
+    
+    .destaque-especial::after {
+      content: '🔥 HOT';
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: var(--gradient);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: 3;
+    }
+    
+    .info-adicional {
+      background: rgba(199, 125, 255, 0.1);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 3rem 0;
+      text-align: center;
+      border: 1px solid rgba(199, 125, 255, 0.3);
+    }
+    
+    .info-adicional h3 {
+      color: var(--highlight);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .fade-in-card {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .fade-in-card:nth-child(2) { animation-delay: 0.1s; }
+    .fade-in-card:nth-child(3) { animation-delay: 0.2s; }
+    .fade-in-card:nth-child(4) { animation-delay: 0.3s; }
+    
+    @media (max-width: 768px) {
+      .descontos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+      }
+      
+      .descontos-container {
+        padding: 2rem 1rem;
+      }
+      
+      .desconto-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body class="fade-in">
 
@@ -49,27 +215,66 @@
   </section>
 
   <!-- CONTEÚDO PRINCIPAL -->
-  <main class="editorial-completo">
-    <div class="texto-editorial">
+  <main class="descontos-container">
+    <div class="container">
       <h1 class="titulo-editorial">Descontos para Rolezeiros</h1>
       <p class="subtitulo-editorial">Se tu chegou até aqui, parabéns. Esse espaço é só pros mais ligados no ROLÊ. Aproveita cupons, links promocionais e condições especiais pra curtir teus eventos favoritos pagando menos.</p>
 
-      <div class="desconto-card">
-        <h2>💥 Festa MIXÓRDIA (SP)</h2>
-        <p>Rolezeires têm 20% OFF usando o cupom <strong>ROLE</strong> no Sympla. Só até sexta!</p>
-        <a href="https://www.sympla.com.br/evento/mixordia-sp/xxx" target="_blank">Resgatar desconto</a>
+      <div class="descontos-grid">
+        <!-- Card 1 - Destaque especial -->
+        <div class="desconto-card destaque-especial fade-in-card">
+          <h3>💥 Festa MIXÓRDIA (SP)</h3>
+          <p>Rolezeires têm <strong>20% OFF</strong> usando o cupom na compra do ingresso. Válido até sexta-feira!</p>
+          <div class="cupom-code">ROLE20</div>
+          <br>
+          <a href="https://www.sympla.com.br/evento/mixordia-sp/xxx" target="_blank" class="btn-desconto">Resgatar desconto</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="desconto-card fade-in-card">
+          <h3>🌈 VULTO #29 (POA)</h3>
+          <p>Desconto na lista com código exclusivo — garante entrada especial até 22h30!</p>
+          <div class="cupom-code">ROLEZINHO</div>
+          <br>
+          <a href="https://forms.gle/rolezin-vulto" target="_blank" class="btn-desconto">Entrar na lista</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="desconto-card fade-in-card">
+          <h3>🔥 VOLT – Liquid (SP)</h3>
+          <p><strong>Entrada gratuita</strong> até 00h30. Chega cedo e avisa na porta que viu no ROLÊ!</p>
+          <a href="https://www.instagram.com/volt.soundsystem" target="_blank" class="btn-desconto">Ver infos da festa</a>
+        </div>
+
+        <!-- Card 4 - Novo -->
+        <div class="desconto-card fade-in-card">
+          <h3>✨ Coletivo MAMBA (RJ)</h3>
+          <p>Lista especial ROLÊ com <strong>50% OFF</strong> até meia-noite. Experiência única na Zona Sul!</p>
+          <div class="cupom-code">MAMBA50</div>
+          <br>
+          <a href="#" target="_blank" class="btn-desconto">Garantir desconto</a>
+        </div>
+
+        <!-- Card 5 - Novo -->
+        <div class="desconto-card fade-in-card">
+          <h3>🎵 Festival BRASA (BH)</h3>
+          <p>Lote promocional exclusivo para leitores do ROLÊ. Lineup com o que há de melhor na música brasileira!</p>
+          <a href="#" target="_blank" class="btn-desconto">Ver programação</a>
+        </div>
+
+        <!-- Card 6 - Novo -->
+        <div class="desconto-card fade-in-card">
+          <h3>🌙 Noite LUNAR (Floripa)</h3>
+          <p>Open bar por <strong>2h</strong> para quem chegar com a pulseira ROLÊ. Retirada na entrada!</p>
+          <a href="#" target="_blank" class="btn-desconto">Garantir pulseira</a>
+        </div>
       </div>
 
-      <div class="desconto-card">
-        <h2>🌈 VULTO #29 (POA)</h2>
-        <p>Desconto na lista com código exclusivo "ROLEZINHO" — garante até 22h30!</p>
-        <a href="https://forms.gle/rolezin-vulto" target="_blank">Entrar na lista</a>
-      </div>
-
-      <div class="desconto-card">
-        <h2>🔥 VOLT – Liquid (SP)</h2>
-        <p>Entrada gratuita até 00h30. Chega cedo, avisa na porta que viu no ROLÊ!</p>
-        <a href="https://www.instagram.com/volt.soundsystem" target="_blank">Ver infos da festa</a>
+      <!-- Informações adicionais -->
+      <div class="info-adicional fade-in-card">
+        <h3>📱 Como funciona?</h3>
+        <p>Os descontos são atualizados semanalmente e válidos apenas para seguidores do ROLÊ. Acompanha nosso Instagram e TikTok para não perder nenhuma promoção exclusiva!</p>
+        <p><strong>Dica:</strong> Alguns eventos têm vagas limitadas para desconto. Corre atrás!</p>
       </div>
     </div>
   </main>
@@ -101,56 +306,100 @@
 
   <!-- SCRIPTS -->
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // ========== DROPDOWN EXPLORAR ==========
+      const dropdown = document.querySelector('.dropdown');
+      const button = dropdown?.querySelector('.dropdown-button');
+      const content = dropdown?.querySelector('.dropdown-content');
+
+      if (button && content) {
+        button.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+          button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            button.setAttribute('aria-expanded', false);
+          }
+        });
+
+        content.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      // ========== ANIMAÇÕES DOS CARDS ==========
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observar cards para animação de entrada
+      const cards = document.querySelectorAll('.fade-in-card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+      });
+
+      // ========== EFEITOS DE HOVER NOS CARDS ==========
+      const descontoCards = document.querySelectorAll('.desconto-card');
+      descontoCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+    });
+
+    // ========== TOGGLE TEMA ==========
     const lampada = document.querySelector('.lampada-toggle');
     const root = document.documentElement;
 
+    // Aplica o tema salvo ao carregar
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
-      root.style.setProperty('--bg', '#ffffff');
-      root.style.setProperty('--text-color', '#2e2e2e');
+      root.setAttribute('data-theme', 'light');
+      lampada.setAttribute('aria-pressed', 'true');
     } else {
-      root.style.setProperty('--bg', '#000000');
-      root.style.setProperty('--text-color', '#f3f3f7');
+      root.removeAttribute('data-theme');
+      lampada.setAttribute('aria-pressed', 'false');
     }
 
+    // Alterna o tema ao clicar na lâmpada
     lampada.addEventListener('click', () => {
-      const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
-      if (currentBg === '#000000') {
-        root.style.setProperty('--bg', '#ffffff');
-        root.style.setProperty('--text-color', '#2e2e2e');
-        lampada.setAttribute('aria-pressed', 'true');
-        localStorage.setItem('theme', 'light');
-      } else {
-        root.style.setProperty('--bg', '#000000');
-        root.style.setProperty('--text-color', '#f3f3f7');
+      if (root.hasAttribute('data-theme')) {
+        // Volta para modo escuro
+        root.removeAttribute('data-theme');
         lampada.setAttribute('aria-pressed', 'false');
         localStorage.setItem('theme', 'dark');
+      } else {
+        // Vai para modo claro
+        root.setAttribute('data-theme', 'light');
+        lampada.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('theme', 'light');
       }
     });
 
-    const dropdown = document.querySelector('.dropdown');
-    const button = dropdown?.querySelector('.dropdown-button');
-    const content = dropdown?.querySelector('.dropdown-content');
-
-    if (button && content) {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        dropdown.classList.toggle('open');
-        button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-      });
-
-      document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-          button.setAttribute('aria-expanded', false);
-        }
-      });
-
-      content.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
-    }
+    // ========== SUAVIZAÇÃO ADICIONAL ==========
+    document.body.style.transition = 'all 0.3s ease';
   </script>
 </body>
 </html>
