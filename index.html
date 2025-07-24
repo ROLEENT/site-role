@@ -1,245 +1,313 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="eventos, cultura, rolê, arte, música, festa, entretenimento" />
     <meta name="description" content="ROLÊ: Conectando cultura, arte e os rolês mais vivos do Brasil." />
     <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Cultura, Arte e Diversão nas Cidades Brasileiras" />
-<meta property="og:description" content="Conectando cultura, arte e os rolês mais vivos do Brasil." />
-<meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://roleentretenimento.com" />
-        <script>
-  if (localStorage.getItem('theme') === 'light') {
-    document.documentElement.classList.add('light');
-  }
-</script>
-<title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
-<link rel="icon" href="images/favicon.png" type="image/png" />
+    <meta property="og:description" content="Conectando cultura, arte e os rolês mais vivos do Brasil." />
+    <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://roleentretenimento.com" />
+    
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+    
+    <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    
     <noscript>
-      <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
     </noscript>
     
     <link rel="stylesheet" href="estilo.css" />
+</head>
 
-  </head>
 <body>
-  <section class="bloco-topo">
-  <div class="container-topo">
-    <div class="header-top">
-      <!-- LOGO ESQUERDA -->
-      <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+    <section class="bloco-topo">
+        <div class="container-topo">
+            <div class="header-top">
+                <!-- LOGO ESQUERDA -->
+                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
 
-      <!-- MENU + TEMA (LADO DIREITO) -->
-      <div class="right-top">
-        <!-- MENU DROPDOWN -->
-        <div class="dropdown">
-<button
-  class="dropdown-button"
-  aria-haspopup="true"
-  aria-controls="menu-explorar"
-  aria-expanded="false"
->
-  Explorar ▼
-</button>          
-<div class="dropdown-content" id="menu-explorar">
-            <a href="index.html">Página Inicial</a>
-            <a href="revista.html">Revista ROLÊ</a>
-            <a href="vitrine-cultural.html">Vitrine Cultural</a>
-            <a href="descontos.html">Descontos</a>
-            <a href="contato.html">Contato</a>
-            <a href="quem-somos.html">Quem Somos</a>
-          </div>
+                <!-- MENU + TEMA (LADO DIREITO) -->
+                <div class="right-top">
+                    <!-- MENU DROPDOWN -->
+                    <div class="dropdown">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+                            Explorar ▼
+                        </button>          
+                        <div class="dropdown-content" id="menu-explorar">
+                            <a href="index.html">Página Inicial</a>
+                            <a href="revista.html">Revista ROLÊ</a>
+                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                            <a href="descontos.html">Descontos</a>
+                            <a href="contato.html">Contato</a>
+                            <a href="quem-somos.html">Quem Somos</a>
+                        </div>
+                    </div>
+
+                    <!-- TEMA -->
+                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                </div>
+            </div>
+            <hr class="linha-topo" />
         </div>
+    </section>
 
-        <!-- TEMA -->
-<img src="/images/theme-toggle.gif"
-     alt="Alternar tema"
-     class="lampada-toggle"
-     role="button"
-     tabindex="0"
-     aria-pressed="false" />
-      </div>
-    </div>
-    <hr class="linha-topo" />
-  </div>
-</section>
-
-  <!-- Banner -->
-  <div class="banner-wrapper">
-    <div class="banner-container">
-      <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
-    </div>
-  </div>
-
-<div class="carrossel fade-in delay">
-  <main class="destaques" role="main">
-      <h2>DESTAQUES DA SEMANA</h2>
-      <div class="scroll-wrapper">
-        <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
-        <div class="cards-container">
-          <!-- Cards de cidades -->
-          <div class="card fade-in delay">
-            <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
-            <p>A cena alternativa pulsa forte no Sul.</p>
-            <a href="https://www.instagram.com/p/DMYO9FwOVmN/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-          <div class="card fade-in delay">
-            <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
-            <p>Beira-mar, eletrônica e coletivo.</p>
-            <a href="https://www.instagram.com/p/DMIuANvuy9j/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-          <div class="card fade-in delay">
-            <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
-            <p>Frio na rua, calor nas pistas.</p>
-            <a href="https://www.instagram.com/p/DMIR-Jgu6us/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-          <div class="card fade-in delay">
-            <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
-            <p>A cidade que nunca dorme... nem para de dançar.</p>
-            <a href="https://www.instagram.com/p/DMYfC68voVq/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
-          <div class="card fade-in delay">
-            <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
-            <p>Funk, favela, cor e calor cultural.</p>
-            <a href="https://www.instagram.com/p/DMGq6o8vLUx/" target="_blank" rel="noopener noreferrer">Ver mais</a>
-          </div>
+    <!-- Banner -->
+    <div class="banner-wrapper">
+        <div class="banner-container">
+            <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
         </div>
-        <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
-      </div>
-    </main>
+    </div>
+
+    <!-- Carrossel com melhorias -->
+    <div class="carrossel fade-in delay">
+        <main class="destaques" role="main">
+            <h2>DESTAQUES DA SEMANA</h2>
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
+                <div class="cards-container">
+                    <!-- Cards de cidades -->
+                    <div class="card fade-in delay">
+                        <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
+                        <p>A cena alternativa pulsa forte no Sul.</p>
+                        <a href="https://www.instagram.com/p/DMYO9FwOVmN/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
+                        <p>Beira-mar, eletrônica e coletivo.</p>
+                        <a href="https://www.instagram.com/p/DMIuANvuy9j/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
+                        <p>Frio na rua, calor nas pistas.</p>
+                        <a href="https://www.instagram.com/p/DMIR-Jgu6us/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
+                        <p>A cidade que nunca dorme... nem para de dançar.</p>
+                        <a href="https://www.instagram.com/p/DMYfC68voVq/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
+                        <p>Funk, favela, cor e calor cultural.</p>
+                        <a href="https://www.instagram.com/p/DMGq6o8vLUx/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
+                
+                <!-- Indicadores do carrossel -->
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            © 2025 ROLÊ ENTRETENIMENTO ·
+            <a href="politica.html">Política de Privacidade</a> ·
+            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+            <a href="termos-organizador.html">Termos do Organizador</a> ·
+            <a href="politica-spam.html">Política Antispam</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://instagram.com/role.ent" target="_blank">
+                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+            </a>
+            <a href="https://tiktok.com/@role.ent" target="_blank">
+                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            </a>
+            <a href="https://wa.me/5551980704353" target="_blank">
+                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            </a>
+        </div>
+    </footer>
 
     <script>
-function toggleTheme(el) {
-  document.body.classList.toggle('light');
-  el.setAttribute('aria-pressed', document.body.classList.contains('light'));
-}
+        document.addEventListener('DOMContentLoaded', function () {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown.querySelector('.dropdown-button');
+            const content = dropdown.querySelector('.dropdown-content');
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Dropdown Explorar
-  const dropdown = document.querySelector('.dropdown');
-  const button = dropdown.querySelector('.dropdown-button');
-  const content = dropdown.querySelector('.dropdown-content');
+            if (button && content) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
 
-  if (button && content) {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-    });
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
+                    }
+                });
 
-    document.addEventListener('click', function (e) {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
-        button.setAttribute('aria-expanded', false);
-      }
-    });
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
 
-    content.addEventListener('click', function (e) {
-      e.stopPropagation();
-    });
-  }
+            // ========== CARROSSEL SUPER MELHORADO ==========
+            const container = document.querySelector('.cards-container');
+            const cards = container.querySelectorAll('.card');
+            const indicators = document.querySelectorAll('.indicator-dot');
+            const totalCards = cards.length;
+            let currentIndex = 0;
+            let autoPlayInterval;
+            let isAutoPlaying = true;
 
-  // Carrossel
- const container = document.querySelector('.cards-container');
-const cards = container.querySelectorAll('.card');
-const totalCards = cards.length;
-let currentIndex = 0;
-const cardWidth = cards[0].getBoundingClientRect().width + 12;
+            function updateIndicators() {
+                indicators.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
 
-function scrollToCard(index) {
-  if (index < 0) index = totalCards - 1;
-  if (index >= totalCards) index = 0;
-  currentIndex = index;
-  container.scrollTo({
-    left: cardWidth * index,
-    behavior: 'smooth'
-  });
-}
+            function scrollToCard(index, smooth = true) {
+                if (index < 0) index = totalCards - 1;
+                if (index >= totalCards) index = 0;
+                currentIndex = index;
+                
+                const cardWidth = cards[0].getBoundingClientRect().width + 20;
+                container.scrollTo({
+                    left: cardWidth * index,
+                    behavior: smooth ? 'smooth' : 'auto'
+                });
+                
+                updateIndicators();
+            }
 
-const arrowLeft = document.querySelector('.scroll-arrow.left');
-const arrowRight = document.querySelector('.scroll-arrow.right');
+            function startAutoPlay() {
+                if (isAutoPlaying) {
+                    autoPlayInterval = setInterval(() => {
+                        scrollToCard(currentIndex + 1);
+                    }, 4000); // 4 segundos
+                }
+            }
 
-if (arrowLeft && arrowRight) {
-  arrowLeft.addEventListener('click', () => scrollToCard(currentIndex - 1));
-  arrowRight.addEventListener('click', () => scrollToCard(currentIndex + 1));
-}
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
 
-container.addEventListener('scroll', () => {
-  const newIndex = Math.round(container.scrollLeft / cardWidth);
-  currentIndex = newIndex;
-});
+            // Controles do carrossel
+            const arrowLeft = document.querySelector('.scroll-arrow.left');
+            const arrowRight = document.querySelector('.scroll-arrow.right');
 
-  // Forçar scroll para POA ao carregar
-  setTimeout(() => {
-    if (container && cards.length > 0) {
-      container.style.scrollBehavior = 'auto';
-container.scrollTo({
-  left: 0,
-  behavior: 'auto'
-});
-      setTimeout(() => {
-        container.style.scrollBehavior = 'smooth';
-      }, 50);
-    }
- }, 300);
-});
-</script>
-</div> <!-- Fechamento correto da .carrossel aqui -->
-<footer>
-  <div class="footer-links">
-    © 2025 ROLÊ ENTRETENIMENTO ·
-    <a href="politica.html">Política de Privacidade</a> ·
-    <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-    <a href="termos-organizador.html">Termos do Organizador</a> ·
-    <a href="politica-spam.html">Política Antispam</a>
-  </div>
-  <div class="social-icons">
-    <a href="https://instagram.com/role.ent" target="_blank">
-      <img src="images/instagram.svg" alt="Instagram ROLÊ" />
-    </a>
-    <a href="https://tiktok.com/@role.ent" target="_blank">
-      <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
-    </a>
-    <a href="https://wa.me/5551980704353" target="_blank">
-      <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
-    </a>
-  </div>
-</footer>
-   <script>
-  const lampada = document.querySelector('.lampada-toggle');
-  const root = document.documentElement;
+            if (arrowLeft && arrowRight) {
+                arrowLeft.addEventListener('click', () => {
+                    stopAutoPlay();
+                    scrollToCard(currentIndex - 1);
+                    setTimeout(startAutoPlay, 3000); // Retoma depois de 3s
+                });
 
-  // Aplica o tema salvo ao carregar
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    root.style.setProperty('--bg', '#ffffff');
-    root.style.setProperty('--text-color', '#2e2e2e');
-  } else {
-    root.style.setProperty('--bg', '#000000');
-    root.style.setProperty('--text-color', '#f3f3f7');
-  }
+                arrowRight.addEventListener('click', () => {
+                    stopAutoPlay();
+                    scrollToCard(currentIndex + 1);
+                    setTimeout(startAutoPlay, 3000);
+                });
+            }
 
-  // Alterna o tema ao clicar na lâmpada
- lampada.addEventListener('click', () => {
-  const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
+            // Indicadores clicáveis
+            indicators.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    stopAutoPlay();
+                    scrollToCard(index);
+                    setTimeout(startAutoPlay, 3000);
+                });
+            });
 
-  if (currentBg === '#000000') {
-    // Modo claro
-    root.style.setProperty('--bg', '#ffffff');
-    root.style.setProperty('--text-color', '#2e2e2e');
-    lampada.setAttribute('aria-pressed', 'true');
-    localStorage.setItem('theme', 'light');
-  } else {
-    // Modo escuro
-    root.style.setProperty('--bg', '#000000');
-    root.style.setProperty('--text-color', '#f3f3f7');
-    lampada.setAttribute('aria-pressed', 'false');
-    localStorage.setItem('theme', 'dark');
-  }
-});
-</script>
+            // Pausa auto-play ao hover
+            container.addEventListener('mouseenter', stopAutoPlay);
+            container.addEventListener('mouseleave', startAutoPlay);
+
+            // Detectar mudança de scroll manual
+            container.addEventListener('scroll', () => {
+                const cardWidth = cards[0].getBoundingClientRect().width + 20;
+                const newIndex = Math.round(container.scrollLeft / cardWidth);
+                if (newIndex !== currentIndex) {
+                    currentIndex = newIndex;
+                    updateIndicators();
+                }
+            });
+
+            // Inicializar carrossel
+            setTimeout(() => {
+                if (container && cards.length > 0) {
+                    scrollToCard(0, false);
+                    startAutoPlay();
+                }
+            }, 300);
+
+            // ========== ANIMAÇÕES DE ENTRADA ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observar cards para animação de entrada
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+
+        // ========== TOGGLE TEMA MELHORADO ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
+
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
+        }
+
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                // Volta para modo escuro
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Vai para modo claro
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ========== SUAVIZAÇÃO ADICIONAL ==========
+        // Previne flash de tema incorreto
+        document.body.style.transition = 'all 0.3s ease';
+    </script>
 </body>
 </html>
