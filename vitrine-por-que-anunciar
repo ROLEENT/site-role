@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="anúncio, publicidade, marketing cultural, eventos, arte, música, divulgação" />
+    <meta name="description" content="Anuncie com o ROLÊ e conecte sua marca à cultura mais autêntica do Brasil. Alcance um público engajado e apaixonado por arte, música e entretenimento." />
+    <meta property="og:title" content="Porque Anunciar com o ROLÊ - Marketing Cultural Autêntico" />
+    <meta property="og:description" content="Conecte sua marca à cultura mais viva do Brasil. Anuncie com o ROLÊ e alcance um público jovem, engajado e apaixonado por experiências autênticas." />
+    <meta property="og:image" content="https://roleentretenimento.com/images/banner-anunciar.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://roleentretenimento.com/porque-anunciar.html" />
+    
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+    
+    <title>Porque Anunciar com o ROLÊ | Marketing Cultural Autêntico</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    
+    <noscript>
+        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
+    
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<body>
+    <section class="bloco-topo">
+        <div class="container-topo">
+            <div class="header-top">
+                <!-- LOGO ESQUERDA -->
+                <a href="index.html">
+                    <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+                </a>
+
+                <!-- MENU + TEMA (LADO DIREITO) -->
+                <div class="right-top">
+                    <!-- MENU DROPDOWN -->
+                    <div class="dropdown">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+                            Explorar ▼
+                        </button>          
+                        <div class="dropdown-content" id="menu-explorar">
+                            <a href="index.html">Página Inicial</a>
+                            <a href="revista.html">Revista ROLÊ</a>
+                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                            <a href="descontos.html">Descontos</a>
+                            <a href="contato.html">Contato</a>
+                            <a href="quem-somos.html">Quem Somos</a>
+                        </div>
+                    </div>
+
+                    <!-- TEMA -->
+                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                </div>
+            </div>
+            <hr class="linha-topo" />
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="editorial-completo">
+        <h1 class="titulo-editorial">PORQUE ANUNCIAR COM O ROLÊ</h1>
+        <p class="subtitulo-editorial">Conecte sua marca à cultura mais autêntica e vibrante do Brasil</p>
+
+        <div class="texto-editorial">
+            <p>O ROLÊ não é apenas uma plataforma de entretenimento - somos um movimento cultural que conecta marcas autênticas com um público apaixonado por experiências genuínas. Quando você anuncia conosco, não está apenas comprando espaço publicitário: está se tornando parte de uma comunidade que valoriza arte, música, cultura alternativa e diversidade.</p>
+
+            <div class="destaque-frase">
+                "Seu público não quer apenas produtos. Eles querem marcas que compartilhem seus valores e façam parte de suas experiências mais marcantes."
+            </div>
+
+            <h2>🎯 NOSSO PÚBLICO</h2>
+            <p>Conectamos você com uma audiência única e altamente engajada:</p>
+            
+            <blockquote>
+                <strong>• Jovens de 18 a 35 anos</strong> apaixonados por cultura alternativa<br>
+                <strong>• Frequentadores assíduos</strong> de eventos, festivais e shows<br>
+                <strong>• Consumidores conscientes</strong> que valorizam autenticidade<br>
+                <strong>• Influenciadores culturais</strong> em suas comunidades<br>
+                <strong>• Pessoas com alto poder de engajamento</strong> nas redes sociais
+            </blockquote>
+
+            <h2>🚀 NOSSO ALCANCE</h2>
+            <p>O ROLÊ está presente nas principais cidades culturais do Brasil, conectando diferentes cenas e movimentos. Nossa presença digital cresce exponencialmente, com conteúdo que gera conversas e inspira ações.</p>
+
+            <p>Trabalhamos com <span class="keyword">marketing de influência cultural</span>, onde cada post, cada evento divulgado e cada interação carrega o peso da credibilidade que construímos junto à nossa comunidade.</p>
+
+            <h2>💜 POR QUE ESCOLHER O ROLÊ</h2>
+            
+            <p><strong>AUTENTICIDADE GARANTIDA:</strong> Não fazemos propaganda genérica. Cada parceria é cuidadosamente alinhada com nossos valores e com o que nossa audiência realmente busca.</p>
+
+            <p><strong>ENGAJAMENTO REAL:</strong> Nosso público não apenas consome conteúdo - eles participam, compartilham, comentam e se tornam embaixadores das marcas que apoiamos.</p>
+
+            <p><strong>DIVERSIDADE DE FORMATOS:</strong> De posts orgânicos a eventos exclusivos, criamos experiências memoráveis que conectam sua marca aos momentos mais especiais da vida cultural brasileira.</p>
+
+            <p><strong>MÉTRICAS QUE IMPORTAM:</strong> Não medimos apenas views e cliques. Acompanhamos engajamento, sentimento da audiência, share of voice cultural e, principalmente, conversões reais.</p>
+
+            <div class="destaque-frase">
+                "No ROLÊ, sua marca não interrompe a experiência cultural - ela a enriquece."
+            </div>
+
+            <h2>🎨 FORMATOS DE PARCERIA</h2>
+            
+            <p><strong>CONTEÚDO EDITORIAL:</strong> Matérias especiais, entrevistas e reportagens que posicionam sua marca como parte da narrativa cultural.</p>
+            
+            <p><strong>PATROCÍNIO DE EVENTOS:</strong> Associe sua marca aos rolês mais esperados das principais cidades brasileiras.</p>
+            
+            <p><strong>CAMPANHAS INTEGRADAS:</strong> Estratégias que conectam digital e físico, criando jornadas completas de brand experience.</p>
+            
+            <p><strong>INFLUÊNCIA CULTURAL:</strong> Parcerias com curadores, DJs, artistas e formadores de opinião que fazem parte do nosso ecossistema.</p>
+
+            <h2>🌟 CASES DE SUCESSO</h2>
+            <p>Nossas parcerias já geraram buzz orgânico, aumentaram participação em eventos, criaram conexões emocionais duradouras e, principalmente, converteram audiência em comunidade.</p>
+
+            <p>Trabalhamos com marcas que entendem que <span class="keyword">marketing cultural</span> não é sobre vender produtos - é sobre criar significado, gerar pertencimento e construir relacionamentos genuínos.</p>
+
+            <div class="destaque-frase">
+                "Quando sua marca vira parte da cultura, ela se torna inesquecível."
+            </div>
+
+            <h2>📈 VAMOS CONVERSAR?</h2>
+            <p>Se sua marca busca conexão autêntica com um público apaixonado por cultura, arte e experiências únicas, o ROLÊ é o parceiro ideal.</p>
+
+            <p>Não fazemos apenas publicidade - criamos pontes entre marcas e movimentos culturais, gerando valor real para todos os envolvidos.</p>
+
+            <div class="cta-final">
+                <a href="contato.html" class="btn-destaque">QUERO ANUNCIAR COM O ROLÊ</a>
+            </div>
+
+            <div class="frase-final">
+                Sua marca merece estar onde a cultura acontece de verdade. <br>
+                <span class="keyword">ROLÊ ENTRETENIMENTO</span> - Conectando marcas à cultura mais viva do Brasil.
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção de Comentários -->
+    <section class="comentarios">
+        <h2>O que você achou? Deixe sua opinião!</h2>
+        <form id="comment-form">
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <textarea id="comentario" placeholder="Sua opinião sobre anunciar com o ROLÊ..." required></textarea>
+            <button type="submit">Enviar Comentário</button>
+        </form>
+        <div id="comentarios-lista"></div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            © 2025 ROLÊ ENTRETENIMENTO ·
+            <a href="politica.html">Política de Privacidade</a> ·
+            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+            <a href="termos-organizador.html">Termos do Organizador</a> ·
+            <a href="politica-spam.html">Política Antispam</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://instagram.com/role.ent" target="_blank">
+                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+            </a>
+            <a href="https://tiktok.com/@role.ent" target="_blank">
+                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            </a>
+            <a href="https://wa.me/5551980704353" target="_blank">
+                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown.querySelector('.dropdown-button');
+            const content = dropdown.querySelector('.dropdown-content');
+
+            if (button && content) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
+                    }
+                });
+
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
+
+            // ========== SISTEMA DE COMENTÁRIOS ==========
+            const commentForm = document.getElementById('comment-form');
+            const commentsList = document.getElementById('comentarios-lista');
+            let comments = [];
+
+            function renderComments() {
+                commentsList.innerHTML = comments.map((comment, index) => `
+                    <div class="comentario" style="background: #1a1a1a; padding: 1rem; margin: 1rem 0; border-radius: 8px; border-left: 3px solid var(--highlight);">
+                        <strong style="color: var(--highlight);">${comment.nome}</strong>
+                        <p style="margin: 0.5rem 0; color: #f3f3f7;">${comment.texto}</p>
+                        <small style="color: #888;">${comment.data}</small>
+                    </div>
+                `).join('');
+            }
+
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const nome = document.getElementById('nome').value.trim();
+                const comentario = document.getElementById('comentario').value.trim();
+                
+                if (nome && comentario) {
+                    const novoComentario = {
+                        nome: nome,
+                        texto: comentario,
+                        data: new Date().toLocaleDateString('pt-BR')
+                    };
+                    
+                    comments.unshift(novoComentario);
+                    renderComments();
+                    
+                    // Limpar formulário
+                    document.getElementById('nome').value = '';
+                    document.getElementById('comentario').value = '';
+                    
+                    // Feedback visual
+                    const button = commentForm.querySelector('button');
+                    const originalText = button.textContent;
+                    button.textContent = 'Comentário enviado!';
+                    button.style.background = '#4CAF50';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                    }, 2000);
+                }
+            });
+
+            // ========== ANIMAÇÕES DE ENTRADA ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observar elementos para animação
+            document.querySelectorAll('.texto-editorial h2, .destaque-frase, .comentarios').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease';
+                observer.observe(element);
+            });
+        });
+
+        // ========== TOGGLE TEMA ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
+
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
+        }
+
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ========== BOTÃO VOLTAR AO TOPO ==========
+        const voltarTopo = document.createElement('button');
+        voltarTopo.className = 'voltar-topo';
+        voltarTopo.innerHTML = '↑';
+        voltarTopo.setAttribute('aria-label', 'Voltar ao topo');
+        voltarTopo.style.display = 'none';
+        document.body.appendChild(voltarTopo);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                voltarTopo.style.display = 'block';
+            } else {
+                voltarTopo.style.display = 'none';
+            }
+        });
+
+        voltarTopo.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
