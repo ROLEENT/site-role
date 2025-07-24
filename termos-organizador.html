@@ -1,145 +1,429 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Termos de uso da plataforma ROLÊ para produtores, coletivos e organizadores de eventos." />
-  <title>ROLÊ ENTRETENIMENTO — Termos do Organizador</title>
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link rel="stylesheet" href="estilo.css" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.add('light');
-    }
-  </script>
-  <noscript>
-    <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
-  </noscript>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Termos de uso da plataforma ROLÊ para produtores, coletivos e organizadores de eventos culturais." />
+    <meta name="keywords" content="termos organizador, produtores, coletivos, eventos, cultura, parceria, divulgação" />
+    <meta property="og:title" content="ROLÊ ENTRETENIMENTO — Termos do Organizador" />
+    <meta property="og:description" content="Condições para divulgar eventos na plataforma ROLÊ - Para produtores e organizadores culturais" />
+    <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://roleentretenimento.com/termos-organizador.html" />
+    
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+    
+    <title>ROLÊ ENTRETENIMENTO — Termos do Organizador</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    
+    <noscript>
+        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
+    
+    <link rel="stylesheet" href="estilo.css" />
 </head>
 
 <body>
-  <section class="bloco-topo">
-    <div class="container-topo">
-      <div class="header-top">
-        <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
-        <div class="right-top">
-          <div class="dropdown">
-            <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-              Explorar ▼
-            </button>
-            <div class="dropdown-content" id="menu-explorar">
-              <a href="index.html">Página Inicial</a>
-              <a href="revista.html">Revista ROLÊ</a>
-              <a href="vitrine-cultural.html">Vitrine Cultural</a>
-              <a href="descontos.html">Descontos</a>
-              <a href="contato.html">Contato</a>
-              <a href="quem-somos.html">Quem Somos</a>
+    <section class="bloco-topo">
+        <div class="container-topo">
+            <div class="header-top">
+                <!-- LOGO ESQUERDA -->
+                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+
+                <!-- MENU + TEMA (LADO DIREITO) -->
+                <div class="right-top">
+                    <!-- MENU DROPDOWN -->
+                    <div class="dropdown">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+                            Explorar ▼
+                        </button>          
+                        <div class="dropdown-content" id="menu-explorar">
+                            <a href="index.html">Página Inicial</a>
+                            <a href="revista.html">Revista ROLÊ</a>
+                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                            <a href="descontos.html">Descontos</a>
+                            <a href="contato.html">Contato</a>
+                            <a href="quem-somos.html">Quem Somos</a>
+                        </div>
+                    </div>
+
+                    <!-- TEMA -->
+                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                </div>
             </div>
-          </div>
-          <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+            <hr class="linha-topo" />
         </div>
-      </div>
-      <hr class="linha-topo" />
-    </div>
-  </section>
+    </section>
 
-  <main class="editorial-completo fade-in">
-    <div class="texto-editorial">
-      <h1 class="titulo-editorial">Termos de Uso ao Organizador</h1>
-      <p class="subtitulo-editorial">condições para divulgar eventos na plataforma ROLÊ</p>
+    <!-- Conteúdo Principal -->
+    <main class="editorial-completo fade-in">
+        <div class="texto-editorial">
+            <h1 class="titulo-editorial">Termos do Organizador</h1>
+            <p class="subtitulo-editorial">condições para divulgar eventos na plataforma ROLÊ</p>
 
-      <p>Estes Termos regulam a relação entre o ROLÊ ENTRETENIMENTO e os organizadores de eventos que utilizam nossa plataforma para promover suas produções culturais.</p>
+            <div class="destaque-frase">
+                "Juntos, fortalecemos a cena cultural brasileira com transparência e parceria."
+            </div>
 
-      <h2>1. Cadastro e Envio de Informações</h2>
-      <p>Os organizadores devem fornecer informações precisas, atualizadas e verdadeiras sobre seus eventos. O ROLÊ poderá recusar conteúdos que não estejam de acordo com sua curadoria editorial.</p>
+            <p>Estes Termos regulam a relação entre o <strong class="keyword">ROLÊ ENTRETENIMENTO</strong> e os organizadores de eventos que utilizam nossa plataforma para promover suas produções culturais.</p>
 
-      <h2>2. Responsabilidade pelos Eventos</h2>
-      <p>O organizador é o único responsável pela realização do evento, incluindo questões legais, segurança, licenciamento e estrutura. O ROLÊ não se responsabiliza por ocorrências durante os eventos.</p>
+            <p>Se você é <strong class="keyword">produtor</strong>, <strong class="keyword">coletivo</strong>, <strong class="keyword">casa de shows</strong> ou <strong class="keyword">artista independente</strong>, estes termos definem como podemos trabalhar juntos para levar cultura de qualidade ao público brasileiro.</p>
 
-      <h2>3. Direitos de Imagem e Divulgação</h2>
-      <p>Ao submeter materiais (fotos, textos, vídeos) para divulgação, o organizador declara ter os direitos sobre eles e autoriza o uso nas mídias do ROLÊ.</p>
+            <h2>1. Cadastro e Envio de Informações</h2>
+            <p>Para fazer parte da nossa rede de parceiros culturais, os organizadores devem:</p>
 
-      <h2>4. Cancelamentos e Reembolsos</h2>
-      <p>Em caso de cancelamento de um evento divulgado, o organizador deve notificar imediatamente o ROLÊ. Não há reembolso das taxas de divulgação após a publicação do conteúdo, salvo exceções previamente acordadas.</p>
+            <blockquote>
+                • Fornecer informações <strong>precisas, atualizadas e verdadeiras</strong> sobre seus eventos<br>
+                • Submeter materiais promocionais de alta qualidade<br>
+                • Respeitar prazos de envio estabelecidos<br>
+                • Manter dados de contato sempre atualizados<br>
+                • Seguir as diretrizes de formato e conteúdo
+            </blockquote>
 
-      <h2>5. Ética e Conduta</h2>
-      <p>O ROLÊ reserva-se o direito de encerrar parcerias com organizadores que desrespeitem públicos, artistas, espaços ou promovam discursos de ódio.</p>
-    </div>
-  </main>
+            <p>O ROLÊ se reserva o direito de <strong class="keyword">curadoria editorial</strong>, podendo recusar conteúdos que não estejam alinhados com nossa linha editorial ou que não atendam aos padrões de qualidade estabelecidos.</p>
 
-  <footer>
-    <div class="footer-links">
-      © 2025 ROLÊ ENTRETENIMENTO ·
-      <a href="politica.html">Política de Privacidade</a> ·
-      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-      <a href="termos-organizador.html">Termos do Organizador</a> ·
-      <a href="politica-spam.html">Política Antispam</a>
-    </div>
-    <div class="social-icons">
-      <a href="https://instagram.com/role.ent" target="_blank">
-        <img src="images/instagram.svg" alt="Instagram ROLÊ" />
-      </a>
-      <a href="https://tiktok.com/@role.ent" target="_blank">
-        <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
-      </a>
-      <a href="https://wa.me/5551980704353" target="_blank">
-        <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
-      </a>
-    </div>
-  </footer>
+            <div class="destaque-frase">
+                "Qualidade é nossa prioridade, não quantidade."
+            </div>
 
-  <script>
-    const lampada = document.querySelector('.lampada-toggle');
-    const root = document.documentElement;
+            <h2>2. Processo de Curadoria</h2>
+            <p>Nossa equipe editorial analisa cada submissão considerando:</p>
 
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      root.style.setProperty('--bg', '#ffffff');
-      root.style.setProperty('--text-color', '#2e2e2e');
-    } else {
-      root.style.setProperty('--bg', '#000000');
-      root.style.setProperty('--text-color', '#f3f3f7');
-    }
+            <blockquote>
+                • <strong>Relevância cultural:</strong> Alinhamento com a cena alternativa<br>
+                • <strong>Qualidade artística:</strong> Nível dos artistas e produção<br>
+                • <strong>Originalidade:</strong> Proposta diferenciada no mercado<br>
+                • <strong>Impacto social:</strong> Contribuição para a comunidade<br>
+                • <strong>Viabilidade:</strong> Capacidade de realização do evento
+            </blockquote>
 
-    lampada.addEventListener('click', () => {
-      const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
-      if (currentBg === '#000000') {
-        root.style.setProperty('--bg', '#ffffff');
-        root.style.setProperty('--text-color', '#2e2e2e');
-        lampada.setAttribute('aria-pressed', 'true');
-        localStorage.setItem('theme', 'light');
-      } else {
-        root.style.setProperty('--bg', '#000000');
-        root.style.setProperty('--text-color', '#f3f3f7');
-        lampada.setAttribute('aria-pressed', 'false');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
+            <p>A aprovação não é automática e depende da disponibilidade de espaço editorial e alinhamento estratégico.</p>
 
-    const dropdown = document.querySelector('.dropdown');
-    const button = dropdown?.querySelector('.dropdown-button');
-    const content = dropdown?.querySelector('.dropdown-content');
+            <h2>3. Responsabilidade pelos Eventos</h2>
+            <p>O organizador é o <strong class="keyword">único responsável</strong> pela realização do evento, incluindo mas não se limitando a:</p>
 
-    if (button && content) {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        dropdown.classList.toggle('open');
-        button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-      });
+            <blockquote>
+                • <strong>Questões legais:</strong> Licenças, alvarás e documentação<br>
+                • <strong>Segurança:</strong> Estrutura adequada e planos de emergência<br>
+                • <strong>Infraestrutura:</strong> Som, iluminação e espaço físico<br>
+                • <strong>Equipe:</strong> Staff, segurança e produção<br>
+                • <strong>Compliance:</strong> Cumprimento de normas sanitárias e municipais
+            </blockquote>
 
-      document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-          button.setAttribute('aria-expanded', false);
+            <p><strong>Importante:</strong> O ROLÊ atua exclusivamente como <strong class="keyword">plataforma de divulgação</strong> e não se responsabiliza por ocorrências, acidentes, prejuízos ou problemas durante os eventos.</p>
+
+            <h2>4. Direitos de Imagem e Divulgação</h2>
+            <p>Ao submeter materiais para divulgação, o organizador:</p>
+
+            <blockquote>
+                • <strong>Declara ter todos os direitos</strong> sobre fotos, textos, vídeos e artes<br>
+                • <strong>Autoriza o uso</strong> nas mídias digitais do ROLÊ<br>
+                • <strong>Garante não violação</strong> de direitos autorais de terceiros<br>
+                • <strong>Permite adaptações</strong> para adequação ao formato da plataforma<br>
+                • <strong>Concede licença</strong> para uso em peças promocionais do ROLÊ
+            </blockquote>
+
+            <p>Esta autorização é <strong class="keyword">gratuita e irrevogável</strong> para fins de divulgação cultural, respeitando sempre a autoria original.</p>
+
+            <h2>5. Política de Cancelamentos</h2>
+            <p>Em caso de cancelamento de evento já divulgado:</p>
+
+            <blockquote>
+                • <strong>Notificação imediata:</strong> Avisar o ROLÊ o mais rápido possível<br>
+                • <strong>Justificativa:</strong> Explicar o motivo do cancelamento<br>
+                • <strong>Comunicação:</strong> Auxiliar na comunicação ao público<br>
+                • <strong>Responsabilidade:</strong> Assumir todas as consequências<br>
+                • <strong>Reputação:</strong> Manter transparência com o público
+            </blockquote>
+
+            <p><strong>Atenção:</strong> Não há reembolso de taxas de divulgação após a publicação do conteúdo, salvo exceções previamente acordadas por escrito.</p>
+
+            <h2>6. Ética e Conduta Profissional</h2>
+            <p>Esperamos que todos os parceiros mantenham os mais altos padrões éticos. O ROLÊ se reserva o direito de <strong class="keyword">encerrar parcerias</strong> com organizadores que:</p>
+
+            <blockquote>
+                • Desrespeitem públicos, artistas ou colaboradores<br>
+                • Promovam discursos de ódio ou discriminação<br>
+                • Pratiquem assédio de qualquer natureza<br>
+                • Danifiquem espaços ou equipamentos<br>
+                • Tenham práticas trabalhistas inadequadas<br>
+                • Violem direitos autorais ou propriedade intelectual
+            </blockquote>
+
+            <div class="destaque-frase">
+                "Respeito e profissionalismo são inegociáveis."
+            </div>
+
+            <h2>7. Política de Parceria</h2>
+            <p>Oferecemos diferentes níveis de parceria:</p>
+
+            <blockquote>
+                • <strong>Parceria Básica:</strong> Divulgação pontual de eventos<br>
+                • <strong>Parceria Estratégica:</strong> Cobertura editorial completa<br>
+                • <strong>Parceria Premium:</strong> Produção de conteúdo exclusivo<br>
+                • <strong>Parceria Institucional:</strong> Colaboração de longo prazo
+            </blockquote>
+
+            <p>Cada nível tem benefícios específicos e critérios de elegibilidade diferenciados.</p>
+
+            <h2>8. Propriedade Intelectual</h2>
+            <p>O organizador garante que:</p>
+
+            <blockquote>
+                • Possui todos os direitos sobre o conteúdo enviado<br>
+                • Não viola propriedade intelectual de terceiros<br>
+                • Tem autorização para uso de imagens de pessoas<br>
+                • Respeita direitos autorais de músicas e obras<br>
+                • Assume responsabilidade por eventuais violações
+            </blockquote>
+
+            <h2>9. Modificações e Atualizações</h2>
+            <p>Estes termos podem ser atualizados periodicamente. Mudanças significativas serão comunicadas através de:</p>
+
+            <blockquote>
+                • E-mail para organizadores cadastrados<br>
+                • Aviso em nossas redes sociais<br>
+                • Comunicação direta via WhatsApp<br>
+                • Publicação destacada no site
+            </blockquote>
+
+            <h2>10. Contato e Suporte para Organizadores</h2>
+            <p>Dúvidas sobre parcerias ou quer divulgar seu evento? Entre em contato:</p>
+
+            <ul class="lista-contato">
+                <li>
+                    <img src="images/whatsapp.svg" alt="WhatsApp" class="icon-contato" />
+                    <a href="https://wa.me/5551980704353" target="_blank">WhatsApp: (51) 98070-4353</a>
+                </li>
+                <li>
+                    <img src="images/instagram.svg" alt="Instagram" class="icon-contato" />
+                    <a href="https://instagram.com/role.ent" target="_blank">@role.ent</a>
+                </li>
+                <li>
+                    <span>📧 Ou acesse nossa <a href="contato.html">página de contato</a></span>
+                </li>
+            </ul>
+
+            <p><strong>Para organizadores:</strong> Ao entrar em contato, mencione que você é um organizador de eventos e deseja saber sobre parcerias. Isso agilizará nosso atendimento!</p>
+
+            <div class="frase-final">
+                Vamos juntos fortalecer a cena cultural brasileira! 🎭✨🎵
+            </div>
+
+            <div class="cta-final">
+                <a href="contato.html" class="btn-destaque">Quero ser Parceiro</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <footer>
+        <div class="footer-links">
+            © 2025 ROLÊ ENTRETENIMENTO ·
+            <a href="politica.html">Política de Privacidade</a> ·
+            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+            <a href="termos-organizador.html">Termos do Organizador</a> ·
+            <a href="politica-spam.html">Política Antispam</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+            </a>
+            <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer">
+                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            </a>
+            <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer">
+                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown?.querySelector('.dropdown-button');
+            const content = dropdown?.querySelector('.dropdown-content');
+
+            if (button && content) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
+                    }
+                });
+
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
+
+            // ========== ANIMAÇÕES DE ENTRADA ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observar elementos para animação
+            const fadeElements = document.querySelectorAll('.fade-in, h2, blockquote');
+            fadeElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(element);
+            });
+
+            // ========== SCROLL SUAVE PARA SEÇÕES ==========
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // ========== DESTACAR SEÇÕES IMPORTANTES ==========
+            const importantSections = document.querySelectorAll('h2');
+            importantSections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.textShadow = '0 0 20px rgba(199, 125, 255, 0.8)';
+                });
+                
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.textShadow = '0 0 20px rgba(199, 125, 255, 0.5)';
+                });
+            });
+        });
+
+        // ========== TOGGLE TEMA ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
+
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
         }
-      });
 
-      content.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
-    }
-  </script>
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                // Volta para modo escuro
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Vai para modo claro
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ========== EFEITO DE DIGITAÇÃO NO TÍTULO ==========
+        const titulo = document.querySelector('.titulo-editorial');
+        if (titulo) {
+            const textoOriginal = titulo.textContent;
+            titulo.textContent = '';
+            let i = 0;
+            
+            function digitarTitulo() {
+                if (i < textoOriginal.length) {
+                    titulo.textContent += textoOriginal.charAt(i);
+                    i++;
+                    setTimeout(digitarTitulo, 120);
+                }
+            }
+            
+            setTimeout(digitarTitulo, 500);
+        }
+
+        // ========== PROGRESSO DE LEITURA ==========
+        const progressBar = document.createElement('div');
+        progressBar.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #c77dff, #e0aaff);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        `;
+        document.body.appendChild(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+
+        // ========== CONTADOR DE PARCEIROS (ANIMAÇÃO) ==========
+        const criarContador = () => {
+            const contadorDiv = document.createElement('div');
+            contadorDiv.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                right: 20px;
+                background: rgba(199, 125, 255, 0.9);
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                font-weight: bold;
+                font-size: 14px;
+                z-index: 1000;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                max-width: 200px;
+                text-align: center;
+            `;
+            contadorDiv.innerHTML = '🎭 +500 Organizadores<br>confiam no ROLÊ';
+            document.body.appendChild(contadorDiv);
+            
+            // Remove depois de 5 segundos
+            setTimeout(() => {
+                contadorDiv.style.opacity = '0';
+                contadorDiv.style.transform = 'translateY(20px)';
+                setTimeout(() => contadorDiv.remove(), 300);
+            }, 5000);
+        };
+
+        // Mostra contador após 3 segundos
+        setTimeout(criarContador, 3000);
+    </script>
 </body>
 </html>
