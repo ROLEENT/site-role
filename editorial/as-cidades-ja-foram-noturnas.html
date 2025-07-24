@@ -1,209 +1,279 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="O editorial do ROLÊ investiga o desaparecimento da madrugada nas grandes cidades e celebra quem ainda resiste na cultura noturna. Um manifesto sobre festas independentes, repressão sonora, gentrificação e política urbana." />
-  <meta name="keywords" content="cultura noturna, repressão sonora, gentrificação cultural, festas independentes, madrugada nas cidades, vida noturna Brasil, política urbana, rolês alternativos, editorial ROLÊ, resistência cultural" />
-  <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
-  <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
-  <meta property="og:description" content="Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras. Uma reflexão sobre cultura noturna, repressão sonora e a resistência dos rolês alternativos." />
-  <meta property="og:image" content="https://roleentretenimento.com/images/editorial-madrugada.png" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
-  <link rel="icon" href="/images/favicon.png" type="image/png" />
-  <title>As cidades já foram noturnas – Revista ROLÊ</title>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/estilo.css" />
-  <style>
-    .destaque-frase {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--highlight);
-      text-align: center;
-      font-style: italic;
-      margin: 3rem auto;
-      background: linear-gradient(90deg, transparent 0%, #c77dff22 50%, transparent 100%);
-      padding: 1.2rem;
-      border-left: 4px solid var(--highlight);
-      border-radius: 6px;
-      max-width: 700px;
-    }
-    @media (max-width: 768px) {
-      .destaque-frase {
-        font-size: 1.2rem;
-        padding: 1rem;
-      }
-    }
-  </style>
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.add('light');
-    }
-  </script>
-  <noscript>
-    <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
-  </noscript>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="O editorial do ROLÊ investiga o desaparecimento da madrugada nas grandes cidades e celebra quem ainda resiste na cultura noturna. Um manifesto sobre festas independentes, repressão sonora, gentrificação e política urbana." />
+    <meta name="keywords" content="cultura noturna, repressão sonora, gentrificação cultural, festas independentes, madrugada nas cidades, vida noturna Brasil, política urbana, rolês alternativos, editorial ROLÊ, resistência cultural" />
+    <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
+    <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
+    <meta property="og:description" content="Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras. Uma reflexão sobre cultura noturna, repressão sonora e a resistência dos rolês alternativos." />
+    <meta property="og:image" content="https://roleentretenimento.com/images/editorial-madrugada.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+    
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+    
+    <title>As cidades já foram noturnas – Revista ROLÊ</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/estilo.css" />
+    
+    <noscript>
+        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
 </head>
+
 <body class="fade-in">
-<section class="bloco-topo">
-  <div class="container-topo">
-    <div class="header-top">
-      <img src="/images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
-      <div class="right-top">
-        <div class="dropdown">
-          <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">Explorar ▼</button>
-          <div class="dropdown-content" id="menu-explorar">
-            <a href="/index.html">Página Inicial</a>
-            <a href="/revista.html">Revista ROLÊ</a>
-            <a href="/vitrine-cultural.html">Vitrine Cultural</a>
-            <a href="/descontos.html">Descontos</a>
-            <a href="/contato.html">Contato</a>
-            <a href="/quem-somos.html">Quem Somos</a>
-          </div>
+    <section class="bloco-topo">
+        <div class="container-topo">
+            <div class="header-top">
+                <!-- LOGO ESQUERDA -->
+                <img src="/images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+
+                <!-- MENU + TEMA (LADO DIREITO) -->
+                <div class="right-top">
+                    <!-- MENU DROPDOWN -->
+                    <div class="dropdown">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+                            Explorar ▼
+                        </button>          
+                        <div class="dropdown-content" id="menu-explorar">
+                            <a href="/index.html">Página Inicial</a>
+                            <a href="/revista.html">Revista ROLÊ</a>
+                            <a href="/vitrine-cultural.html">Vitrine Cultural</a>
+                            <a href="/descontos.html">Descontos</a>
+                            <a href="/contato.html">Contato</a>
+                            <a href="/quem-somos.html">Quem Somos</a>
+                        </div>
+                    </div>
+
+                    <!-- TEMA -->
+                    <img src="/images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                </div>
+            </div>
+            <hr class="linha-topo" />
         </div>
-        <img src="/images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
-      </div>
+    </section>
+
+    <!-- Banner -->
+    <div class="banner-wrapper">
+        <div class="banner-container">
+            <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" loading="lazy" />
+        </div>
     </div>
-    <hr class="linha-topo" />
-  </div>
-</section>
-<div class="banner-wrapper">
-  <div class="banner-container">
-    <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" loading="lazy" />
-  </div>
-</div>
-<main class="editorial-completo fade-in">
-  <div class="texto-editorial">
-    <h1 class="titulo-editorial">O fim da madrugada</h1>
-    <p class="subtitulo-editorial">como a cultura noturna foi sendo silenciada nas grandes cidades brasileiras</p>
-    <p class="autor">Por FIIH, cofundador do ROLÊ ENTRETENIMENTO</p>
-    <p>As cidades já foram noturnas. E talvez você ainda lembre de como era. Ruas que respiravam depois da meia-noite, postes de luz que pareciam fazer parte do cenário e não da vigilância, bares que não se apressavam em fechar as portas, festas que ignoravam o relógio e dançavam até o sol nascer. Havia uma vibração particular na madrugada. Um tipo de energia que não se produzia com patrocínio, mas com presença. Com encontros não programados. Com corpos dispostos a errar o passo e se jogar no improviso. E era justamente nesse improviso que nasciam os melhores rolês. Aqueles que você não planejou, mas que viraram história.</p>
-<div class="destaque-frase">“As cidades esqueceram como é pulsar no escuro.”</div>
-<p>Só que alguma coisa se perdeu no caminho. A madrugada foi ficando cada vez mais silenciosa. As luzes ainda acendem, mas brilham para vitrines fechadas. Os bares ainda existem, mas obedecem a um limite de decibéis cada vez mais rigoroso. As festas ainda acontecem, mas precisam caber num story e respeitar o novo “bom tom” dos bairros gourmetizados. O que antes era tempo livre virou infração. O que era liberdade virou distúrbio. E a cidade, essa senhora que já foi boêmia, agora quer dormir cedo e não gosta de ser incomodada.</p>
-<div class="destaque-frase">“A madrugada foi silenciada por leis, grades e likes.”</div>
-<p>Esse editorial nasce como um chamado. Um mapeamento afetivo. Uma tentativa de entender por que a cultura da madrugada está desaparecendo das grandes cidades brasileiras. E, mais importante: quem ainda a sustenta. Porque se é verdade que a noite perdeu espaço, também é verdade que tem gente resistindo. Dançando contra o relógio. Mantendo o fôlego da cidade nas margens. E isso merece ser contado.</p>
-<div class="destaque-frase">“O improviso virou infração. A liberdade, distúrbio.”</div>
-<p>A repressão sonora é, sem dúvida, uma das faces mais evidentes dessa mudança. Basta conversar com qualquer produtor de evento independente e você vai ouvir as mesmas queixas: licenças difíceis, fiscalização abusiva, vizinhos organizados em grupos de WhatsApp que denunciam até ensaio com violão. Em muitas cidades, a simples tentativa de promover uma festa alternativa já é vista como um problema em potencial. E não estamos falando de megaeventos. Estamos falando de encontros locais, culturais, coletivos, muitas vezes realizados com estrutura mínima e propósito máximo. O som que sai da caixa, nesses casos, carrega mais do que batidas. Carrega manifestação artística, afirmação de identidade, exercício de pertencimento.</p>
-<div class="destaque-frase">“A repressão sonora é só a superfície de um apagamento mais profundo.”</div>
-<p>Mas o som incomoda. Incomoda quem transformou a cidade em patrimônio privado. Incomoda quem quer silêncio absoluto após as 22h, mas não se importa com helicóptero da polícia sobrevoando a madrugada. Incomoda porque não segue o roteiro da urbanização higienista que, aos poucos, tomou conta dos bairros antes criativos. A gentrificação, afinal, não leva apenas os aluguéis às alturas. Ela redefine o que é aceitável e a madrugada, com seu improviso e seu excesso, deixou de ser.</p>
-<div class="destaque-frase">“Gentrificação também se mede em BPMs silenciados.”</div>
-<p>Enquanto isso, o que vemos crescer é a cultura da performance. A presença virou conteúdo. A experiência, vitrine. A festa, produto. Hoje em dia, muitos rolês são organizados com mais preocupação com o cenário do que com a música. A pista virou plano de fundo para selfie. O DJ, um algoritmo humano. O público, uma plateia de stories. E assim, aos poucos, a vivência real vai sendo substituída por sua imagem. A curadoria cede lugar ao viral. O risco cede lugar ao filtro. A conexão cede lugar ao engajamento. A madrugada, essa entidade imprevisível e generosa, virou estratégia de branding.</p>
-<div class="destaque-frase">“A festa virou vitrine. O som, algoritmo. A pista, cenário.”</div>
-<p>Não se trata aqui de nostalgia ou purismo. O ROLÊ não tem saudade de tempos “melhores” nem quer voltar a um passado idealizado. A gente sabe que o tempo muda, e que as formas de sociabilidade também mudam com ele. Mas é preciso reconhecer quando as mudanças deixam de ser evolução e passam a ser apagamento. Quando o novo não é mais expressão, mas normatização. Quando a pista perde sua potência de transformação e vira apenas decoração de feed.</p>
-<div class="destaque-frase">“Não é sobre saudade. É sobre reconhecer o que estamos perdendo agora.”</div>
-<p>Afinal, o que faz a noite ser noite? Não é só o escuro, nem o som alto. É o que acontece quando a cidade suspende suas amarras e permite que a vida aconteça fora do script. É o gesto espontâneo, a troca não prevista, a liberdade de errar e recomeçar. A madrugada é onde a cidade se revela ou pelo menos, onde ela se permitia ser múltipla. Quando esse tempo desaparece, o que se perde é mais do que festa. É linguagem. É criação. É resistência.</p>
-<div class="destaque-frase">“A madrugada deixou de ser tempo livre e virou ruído proibido.”</div>
-<p>Sim, resistência. Porque a noite sempre foi lugar de expressão política, especialmente para os corpos que não cabem no dia. Pessoas LGBTQIAP+, artistas independentes, trabalhadores da cultura, juventudes periféricas — todos esses grupos encontraram na madrugada um espaço para existir com menos controle. Não é coincidência que as mesmas políticas que criminalizam festas também criminalizam corpos. A guerra contra o som é também uma guerra contra a diferença. E é por isso que o silêncio imposto não é neutro. Ele tem lado. Ele tem alvo.</p>
-<div class="destaque-frase">“A guerra contra o som é também uma guerra contra o corpo que dança.”</div>
-<p>Mas nem tudo está perdido. A cidade ainda pulsa — mesmo que em ritmos subterrâneos. Ainda tem rolê acontecendo em garagem, pista improvisada em galpão, festa itinerante avisada de última hora, ocupação cultural que mistura arte, política e dança. Ainda tem gente que acredita na noite como espaço de criação. Ainda tem quem use o corpo como ferramenta narrativa. Ainda tem DJ que pesquisa vinil, que cria set com sentido, que entende a pista como lugar de enredo. Ainda tem coletivo que organiza evento sem patrocínio, que banca o risco, que segura a bronca. Ainda tem pista onde a música não é só trilha, mas discurso.</p>
-<div class="destaque-frase">“Ainda tem gente que transforma o silêncio imposto em batida coletiva.”</div>
-<p>Esses espaços são preciosos. E frágeis. Precisam de apoio. De reconhecimento. De visibilidade. Porque enquanto a cidade insiste em silenciar a madrugada, é nessas brechas que a vida insiste em acontecer. E se há algo que a história da cultura urbana nos ensina é que a arte sempre encontra um jeito de escapar.</p>
-<div class="destaque-frase">“Quando o som incomoda, é porque ele ainda tem potência.”</div>
-<p>Por isso, o ROLÊ propõe um pacto. Um mapeamento coletivo. Um compromisso afetivo com quem ainda mantém a cidade respirando à noite. Queremos saber: qual é o rolê que ainda pulsa na tua cidade? Que festa te fez sentir vivo às 3h da manhã? Que pista te abraçou quando o mundo parecia hostil? Que som te deu vontade de existir?</p>
-<div class="destaque-frase">“Nem toda cidade dorme. Algumas apenas se escondem na margem.”</div>
-<p>Marca, comenta, compartilha. Vamos cartografar juntos esses pontos de luz. Porque a madrugada não pode desaparecer sem luta. E porque, no fim das contas, defender a cultura noturna é defender o direito à cidade. À invenção. Ao improviso. Ao encontro. Ao prazer.</p>
-<div class="destaque-frase">“Defender a madrugada é defender o direito de existir fora do expediente.”</div>
-<p class="frase-final">As cidades já foram noturnas. Mas podem voltar a ser.</p>
-  </div>
-</main>
-  <hr class="separador-comentario" />
-<section class="comentarios" id="comentarios">
-  <h2>O que você achou do editorial?</h2>
-  <form id="comment-form" name="comentario-form">
-  <div class="campo-icon">
-    <img src="/images/icon-user.svg" class="icon-form" alt="Ícone de usuário" />
-    <input type="text" name="nome" placeholder="Seu nome ou @" required />
-  </div>
-  <div class="campo-icon">
-    <img src="/images/icon-comment.svg" class="icon-form" alt="Ícone de comentário" />
-    <textarea name="comentario" placeholder="Escreva aqui seu comentário" required></textarea>
-  </div>
-  <button type="submit">Comentar</button>
-</form>
-<div id="comentarios-lista" class="fade-in delay"></div>
-</section>
 
-<footer>
-  <div class="footer-links">
-    © 2025 ROLÊ ENTRETENIMENTO ·
-    <a href="/politica.html">Política de Privacidade</a> ·
-    <a href="/termos-usuario.html">Termos do Rolezeiro</a> ·
-    <a href="/termos-organizador.html">Termos do Organizador</a> ·
-    <a href="/politica-spam.html">Política Antispam</a>
-  </div>
-  <div class="social-icons">
-    <a href="https://instagram.com/role.ent" target="_blank"><img src="/images/instagram.svg" alt="Instagram ROLÊ" /></a>
-    <a href="https://tiktok.com/@role.ent" target="_blank"><img src="/images/tiktok.svg" alt="TikTok ROLÊ" /></a>
-    <a href="https://wa.me/5551980704353" target="_blank"><img src="/images/whatsapp.svg" alt="WhatsApp ROLÊ" /></a>
-  </div>
-</footer>
-<script>
-  const lampada = document.querySelector('.lampada-toggle');
-  const root = document.documentElement;
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    root.style.setProperty('--bg', '#ffffff');
-    root.style.setProperty('--text-color', '#2e2e2e');
-  } else {
-    root.style.setProperty('--bg', '#000000');
-    root.style.setProperty('--text-color', '#f3f3f7');
-  }
-  lampada.addEventListener('click', () => {
-    const currentBg = getComputedStyle(root).getPropertyValue('--bg').trim();
-    if (currentBg === '#000000') {
-      root.style.setProperty('--bg', '#ffffff');
-      root.style.setProperty('--text-color', '#2e2e2e');
-      lampada.setAttribute('aria-pressed', 'true');
-      localStorage.setItem('theme', 'light');
-    } else {
-      root.style.setProperty('--bg', '#000000');
-      root.style.setProperty('--text-color', '#f3f3f7');
-      lampada.setAttribute('aria-pressed', 'false');
-      localStorage.setItem('theme', 'dark');
-    }
-  });
-  const dropdown = document.querySelector('.dropdown');
-  const button = dropdown?.querySelector('.dropdown-button');
-  const content = dropdown?.querySelector('.dropdown-content');
-  if (button && content) {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-      button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-    });
-    document.addEventListener('click', function (e) {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
-        button.setAttribute('aria-expanded', false);
-      }
-    });
-    content.addEventListener('click', function (e) {
-      e.stopPropagation();
-    });
-  }
-</script>
-<!-- Botões de Navegação -->
-<div class="botoes-flutuantes">
-  <button class="botao-flutuante" id="btn-voltar-topo" title="Voltar ao topo">
-    <img src="/images/seta-para-cima.svg" alt="Voltar ao topo" />
-  </button>
-  <button class="botao-flutuante" id="btn-voltar-anterior" title="Voltar à página anterior">
-    <img src="/images/seta-voltar.svg" alt="Voltar página anterior" />
-  </button>
-</div>
+    <!-- Conteúdo Editorial -->
+    <main class="editorial-completo fade-in">
+        <div class="texto-editorial">
+            <h1 class="titulo-editorial">O fim da madrugada</h1>
+            <p class="subtitulo-editorial">como a cultura noturna foi sendo silenciada nas grandes cidades brasileiras</p>
+            <p class="autor">Por FIIH, cofundador do ROLÊ ENTRETENIMENTO</p>
 
-<script>
-  // Voltar ao topo
-  document.getElementById('btn-voltar-topo').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+            <p>As cidades já foram noturnas. E talvez você ainda lembre de como era. Ruas que respiravam depois da meia-noite, postes de luz que pareciam fazer parte do cenário e não da vigilância, bares que não se apressavam em fechar as portas, festas que ignoravam o relógio e dançavam até o sol nascer. Havia uma vibração particular na madrugada. Um tipo de energia que não se produzia com patrocínio, mas com presença. Com encontros não programados. Com corpos dispostos a errar o passo e se jogar no improviso. E era justamente nesse improviso que nasciam os melhores rolês. Aqueles que você não planejou, mas que viraram história.</p>
 
-  // Voltar à página anterior
-  document.getElementById('btn-voltar-anterior').addEventListener('click', () => {
-    window.history.back();
-  });
-</script>
+            <div class="destaque-frase">"As cidades esqueceram como é pulsar no escuro."</div>
+
+            <p>Só que alguma coisa se perdeu no caminho. A madrugada foi ficando cada vez mais silenciosa. As luzes ainda acendem, mas brilham para vitrines fechadas. Os bares ainda existem, mas obedecem a um limite de decibéis cada vez mais rigoroso. As festas ainda acontecem, mas precisam caber num story e respeitar o novo "bom tom" dos bairros gourmetizados. O que antes era tempo livre virou infração. O que era liberdade virou distúrbio. E a cidade, essa senhora que já foi boêmia, agora quer dormir cedo e não gosta de ser incomodada.</p>
+
+            <div class="destaque-frase">"A madrugada foi silenciada por leis, grades e likes."</div>
+
+            <p>Esse editorial nasce como um chamado. Um mapeamento afetivo. Uma tentativa de entender por que a cultura da madrugada está desaparecendo das grandes cidades brasileiras. E, mais importante: quem ainda a sustenta. Porque se é verdade que a noite perdeu espaço, também é verdade que tem gente resistindo. Dançando contra o relógio. Mantendo o fôlego da cidade nas margens. E isso merece ser contado.</p>
+
+            <div class="destaque-frase">"O improviso virou infração. A liberdade, distúrbio."</div>
+
+            <p>A repressão sonora é, sem dúvida, uma das faces mais evidentes dessa mudança. Basta conversar com qualquer produtor de evento independente e você vai ouvir as mesmas queixas: licenças difíceis, fiscalização abusiva, vizinhos organizados em grupos de WhatsApp que denunciam até ensaio com violão. Em muitas cidades, a simples tentativa de promover uma festa alternativa já é vista como um problema em potencial. E não estamos falando de megaeventos. Estamos falando de encontros locais, culturais, coletivos, muitas vezes realizados com estrutura mínima e propósito máximo. O som que sai da caixa, nesses casos, carrega mais do que batidas. Carrega manifestação artística, afirmação de identidade, exercício de pertencimento.</p>
+
+            <div class="destaque-frase">"A repressão sonora é só a superfície de um apagamento mais profundo."</div>
+
+            <p>Mas o som incomoda. Incomoda quem transformou a cidade em patrimônio privado. Incomoda quem quer silêncio absoluto após as 22h, mas não se importa com helicóptero da polícia sobrevoando a madrugada. Incomoda porque não segue o roteiro da urbanização higienista que, aos poucos, tomou conta dos bairros antes criativos. A gentrificação, afinal, não leva apenas os aluguéis às alturas. Ela redefine o que é aceitável e a madrugada, com seu improviso e seu excesso, deixou de ser.</p>
+
+            <div class="destaque-frase">"Gentrificação também se mede em BPMs silenciados."</div>
+
+            <p>Enquanto isso, o que vemos crescer é a cultura da performance. A presença virou conteúdo. A experiência, vitrine. A festa, produto. Hoje em dia, muitos rolês são organizados com mais preocupação com o cenário do que com a música. A pista virou plano de fundo para selfie. O DJ, um algoritmo humano. O público, uma plateia de stories. E assim, aos poucos, a vivência real vai sendo substituída por sua imagem. A curadoria cede lugar ao viral. O risco cede lugar ao filtro. A conexão cede lugar ao engajamento. A madrugada, essa entidade imprevisível e generosa, virou estratégia de branding.</p>
+
+            <div class="destaque-frase">"A festa virou vitrine. O som, algoritmo. A pista, cenário."</div>
+
+            <p>Não se trata aqui de nostalgia ou purismo. O ROLÊ não tem saudade de tempos "melhores" nem quer voltar a um passado idealizado. A gente sabe que o tempo muda, e que as formas de sociabilidade também mudam com ele. Mas é preciso reconhecer quando as mudanças deixam de ser evolução e passam a ser apagamento. Quando o novo não é mais expressão, mas normatização. Quando a pista perde sua potência de transformação e vira apenas decoração de feed.</p>
+
+            <div class="destaque-frase">"Não é sobre saudade. É sobre reconhecer o que estamos perdendo agora."</div>
+
+            <p>Afinal, o que faz a noite ser noite? Não é só o escuro, nem o som alto. É o que acontece quando a cidade suspende suas amarras e permite que a vida aconteça fora do script. É o gesto espontâneo, a troca não prevista, a liberdade de errar e recomeçar. A madrugada é onde a cidade se revela ou pelo menos, onde ela se permitia ser múltipla. Quando esse tempo desaparece, o que se perde é mais do que festa. É linguagem. É criação. É resistência.</p>
+
+            <div class="destaque-frase">"A madrugada deixou de ser tempo livre e virou ruído proibido."</div>
+
+            <p>Sim, resistência. Porque a noite sempre foi lugar de expressão política, especialmente para os corpos que não cabem no dia. Pessoas LGBTQIAP+, artistas independentes, trabalhadores da cultura, juventudes periféricas — todos esses grupos encontraram na madrugada um espaço para existir com menos controle. Não é coincidência que as mesmas políticas que criminalizam festas também criminalizam corpos. A guerra contra o som é também uma guerra contra a diferença. E é por isso que o silêncio imposto não é neutro. Ele tem lado. Ele tem alvo.</p>
+
+            <div class="destaque-frase">"A guerra contra o som é também uma guerra contra o corpo que dança."</div>
+
+            <p>Mas nem tudo está perdido. A cidade ainda pulsa — mesmo que em ritmos subterrâneos. Ainda tem rolê acontecendo em garagem, pista improvisada em galpão, festa itinerante avisada de última hora, ocupação cultural que mistura arte, política e dança. Ainda tem gente que acredita na noite como espaço de criação. Ainda tem quem use o corpo como ferramenta narrativa. Ainda tem DJ que pesquisa vinil, que cria set com sentido, que entende a pista como lugar de enredo. Ainda tem coletivo que organiza evento sem patrocínio, que banca o risco, que segura a bronca. Ainda tem pista onde a música não é só trilha, mas discurso.</p>
+
+            <div class="destaque-frase">"Ainda tem gente que transforma o silêncio imposto em batida coletiva."</div>
+
+            <p>Esses espaços são preciosos. E frágeis. Precisam de apoio. De reconhecimento. De visibilidade. Porque enquanto a cidade insiste em silenciar a madrugada, é nessas brechas que a vida insiste em acontecer. E se há algo que a história da cultura urbana nos ensina é que a arte sempre encontra um jeito de escapar.</p>
+
+            <div class="destaque-frase">"Quando o som incomoda, é porque ele ainda tem potência."</div>
+
+            <p>Por isso, o ROLÊ propõe um pacto. Um mapeamento coletivo. Um compromisso afetivo com quem ainda mantém a cidade respirando à noite. Queremos saber: qual é o rolê que ainda pulsa na tua cidade? Que festa te fez sentir vivo às 3h da manhã? Que pista te abraçou quando o mundo parecia hostil? Que som te deu vontade de existir?</p>
+
+            <div class="destaque-frase">"Nem toda cidade dorme. Algumas apenas se escondem na margem."</div>
+
+            <p>Marca, comenta, compartilha. Vamos cartografar juntos esses pontos de luz. Porque a madrugada não pode desaparecer sem luta. E porque, no fim das contas, defender a cultura noturna é defender o direito à cidade. À invenção. Ao improviso. Ao encontro. Ao prazer.</p>
+
+            <div class="destaque-frase">"Defender a madrugada é defender o direito de existir fora do expediente."</div>
+
+            <p class="frase-final">As cidades já foram noturnas. Mas podem voltar a ser.</p>
+        </div>
+    </main>
+
+    <!-- Separador -->
+    <hr class="separador-comentario" />
+
+    <!-- Seção de Comentários -->
+    <section class="comentarios" id="comentarios">
+        <h2>O que você achou do editorial?</h2>
+        <form id="comment-form" name="comentario-form">
+            <div class="campo-icon">
+                <img src="/images/icon-user.svg" class="icon-form" alt="Ícone de usuário" />
+                <input type="text" name="nome" placeholder="Seu nome ou @" required />
+            </div>
+            <div class="campo-icon">
+                <img src="/images/icon-comment.svg" class="icon-form" alt="Ícone de comentário" />
+                <textarea name="comentario" placeholder="Escreva aqui seu comentário" required></textarea>
+            </div>
+            <button type="submit">Comentar</button>
+        </form>
+        <div id="comentarios-lista" class="fade-in delay"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            © 2025 ROLÊ ENTRETENIMENTO ·
+            <a href="/politica.html">Política de Privacidade</a> ·
+            <a href="/termos-usuario.html">Termos do Rolezeiro</a> ·
+            <a href="/termos-organizador.html">Termos do Organizador</a> ·
+            <a href="/politica-spam.html">Política Antispam</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://instagram.com/role.ent" target="_blank">
+                <img src="/images/instagram.svg" alt="Instagram ROLÊ" />
+            </a>
+            <a href="https://tiktok.com/@role.ent" target="_blank">
+                <img src="/images/tiktok.svg" alt="TikTok ROLÊ" />
+            </a>
+            <a href="https://wa.me/5551980704353" target="_blank">
+                <img src="/images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            </a>
+        </div>
+    </footer>
+
+    <!-- Botões de Navegação -->
+    <div class="botoes-flutuantes">
+        <button class="botao-flutuante" id="btn-voltar-topo" title="Voltar ao topo">
+            <img src="/images/seta-para-cima.svg" alt="Voltar ao topo" />
+        </button>
+        <button class="botao-flutuante" id="btn-voltar-anterior" title="Voltar à página anterior">
+            <img src="/images/seta-voltar.svg" alt="Voltar página anterior" />
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown?.querySelector('.dropdown-button');
+            const content = dropdown?.querySelector('.dropdown-content');
+
+            if (button && content) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
+                    }
+                });
+
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
+
+            // ========== ANIMAÇÕES DE ENTRADA ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observar elementos para animação
+            const animatedElements = document.querySelectorAll('.fade-in');
+            animatedElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(element);
+            });
+
+            // ========== VOLTAR AO TOPO E NAVEGAÇÃO ==========
+            document.getElementById('btn-voltar-topo').addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            document.getElementById('btn-voltar-anterior').addEventListener('click', () => {
+                window.history.back();
+            });
+        });
+
+        // ========== TOGGLE TEMA MELHORADO ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
+
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
+        }
+
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                // Volta para modo escuro
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Vai para modo claro
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ========== SUAVIZAÇÃO ADICIONAL ==========
+        document.body.style.transition = 'all 0.3s ease';
+    </script>
 </body>
 </html>
