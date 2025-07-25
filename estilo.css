@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@400;700&display=swap');
 
 /* ========== VARIÁVEIS E BASE ========== */
 :root {
@@ -1418,6 +1419,23 @@ section.comentarios h2 {
   border: 1px solid #444;
   font-size: 1rem;
 }
+
+.titulo-anton {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--highlight);
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(199, 125, 255, 0.4);
+}
+
+.titulo-anton.gradiente {
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 .comentarios input::placeholder,
 .comentarios textarea::placeholder {
