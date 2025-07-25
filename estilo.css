@@ -261,14 +261,11 @@ h2 {
   text-align: center;
   font-size: clamp(1.8rem, 4vw, 3rem);
   margin-bottom: 3rem;
-  background: var(--gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Pode causar bug */
-  font-family: 'Arial Black', sans-serif; /* fonte mais segura */
-  background-clip: text;
+  font-family: 'Anton', sans-serif;
+  color: var(--highlight);
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(199, 125, 255, 0.4);
   position: relative;
-  animation: pulse 2s ease-in-out infinite alternate;
 }
 
 h2::after {
