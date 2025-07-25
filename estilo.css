@@ -261,8 +261,10 @@ h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
   margin-bottom: 3rem;
   background: var(--gradient);
+  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; /* Pode causar bug */
+  font-family: 'Arial Black', sans-serif; /* fonte mais segura */
   background-clip: text;
   position: relative;
   animation: pulse 2s ease-in-out infinite alternate;
