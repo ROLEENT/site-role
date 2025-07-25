@@ -11,156 +11,19 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roleentretenimento.com/revista.html">
     <title>Revista ROLÊ | Editorial e Cultura Independente</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+    
+    <!-- Conectando ao estilo.css -->
+    <link rel="stylesheet" href="estilo.css" />
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-        :root {
-            --bg: #000000;
-            --text-color: #f3f3f7;
-            --highlight: #c77dff;
-            --font: 'Inter', Arial, sans-serif;
-            --card-bg: #111111;
-            --card-border: #333;
-            --shadow: rgba(199, 125, 255, 0.2);
-            --gradient: linear-gradient(135deg, #c77dff, #e0aaff);
-            --success: #00ff88;
-            --warning: #ff6b35;
-        }
-
-        :root[data-theme="light"] {
-            --bg: #ffffff;
-            --text-color: #2e2e2e;
-            --card-bg: #f8f8f8;
-            --card-border: #e0e0e0;
-            --shadow: rgba(199, 125, 255, 0.15);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text-color);
-            font-family: var(--font);
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: all 0.3s ease;
-        }
-
-        /* ========== HEADER MELHORADO ========== */
-        .bloco-topo {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(15px);
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 1px solid var(--highlight);
-        }
-
-        :root[data-theme="light"] .bloco-topo {
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            height: 45px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 0 10px var(--highlight));
-        }
-
-        .right-top {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-button {
-            background: var(--gradient);
-            border: none;
-            color: white;
-            font-weight: 600;
-            font-size: 14px;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(199, 125, 255, 0.3);
-        }
-
-        .dropdown-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(199, 125, 255, 0.5);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 120%;
-            background: rgba(17, 17, 17, 0.98);
-            backdrop-filter: blur(15px);
-            min-width: 220px;
-            border-radius: 15px;
-            padding: 15px 0;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            border: 1px solid var(--highlight);
-            z-index: 1001;
-        }
-
-        .dropdown.open .dropdown-content {
-            display: block;
-            animation: fadeInScale 0.3s ease;
-        }
-
-        .dropdown-content a {
-            color: var(--text-color);
-            padding: 12px 20px;
-            display: block;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-        }
-
-        .dropdown-content a:hover {
-            background: rgba(199, 125, 255, 0.1);
-            color: var(--highlight);
-            border-left-color: var(--highlight);
-            transform: translateX(5px);
-        }
-
-        .lampada-toggle {
-            height: 35px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 0 5px var(--highlight));
-        }
-
-        .lampada-toggle:hover {
-            transform: scale(1.2) rotate(15deg);
-        }
-
-        /* ========== HERO SECTION APRIMORADA ========== */
+        /* Estilos específicos da página Revista */
         .revista-hero {
             padding: 6rem 2rem 4rem;
             text-align: center;
@@ -252,7 +115,6 @@
             margin-top: 0.5rem;
         }
 
-        /* ========== CARROSSEL SUPER MELHORADO ========== */
         .carrossel {
             padding: 4rem 1rem;
             position: relative;
@@ -284,53 +146,13 @@
             font-weight: 500;
         }
 
-        .scroll-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--highlight), transparent);
+            margin: 4rem 0;
+            opacity: 0.3;
         }
 
-        .scroll-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            background: var(--gradient);
-            border: none;
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(199, 125, 255, 0.4);
-        }
-
-        .scroll-arrow:hover {
-            transform: translateY(-50%) scale(1.15);
-            box-shadow: 0 12px 30px rgba(199, 125, 255, 0.6);
-        }
-
-        .scroll-arrow.left { left: -30px; }
-        .scroll-arrow.right { right: -30px; }
-
-        .cards-container {
-            display: flex;
-            gap: 25px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-            padding: 25px 60px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .cards-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* ========== CARDS REDESENHADOS ========== */
         .card {
             flex: 0 0 320px;
             scroll-snap-align: center;
@@ -443,171 +265,18 @@
             transform: translateX(3px);
         }
 
-        /* ========== INDICADORES MELHORADOS ========== */
-        .carousel-indicator {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 2rem;
-        }
-
-        .indicator-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(199, 125, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .indicator-dot.active {
-            background: var(--highlight);
-            transform: scale(1.3);
-            box-shadow: 0 0 10px rgba(199, 125, 255, 0.5);
-        }
-
-        .indicator-dot:hover {
-            background: var(--highlight);
-            transform: scale(1.1);
-        }
-
-        /* ========== SEÇÕES ESPECIAIS ========== */
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--highlight), transparent);
-            margin: 4rem 0;
-            opacity: 0.3;
-        }
-
-        /* ========== FOOTER APRIMORADO ========== */
-        footer {
-            margin-top: 6rem;
-            padding: 4rem 2rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(199, 125, 255, 0.05), transparent);
-            border-top: 1px solid rgba(199, 125, 255, 0.2);
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer-links {
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .footer-links a {
-            color: var(--highlight);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            text-shadow: 0 0 5px var(--highlight);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .social-icons img {
-            height: 35px;
-            width: 35px;
-            transition: all 0.3s ease;
-            opacity: 0.8;
-        }
-
-        .social-icons a:hover img {
-            transform: translateY(-5px) scale(1.1);
-            filter: brightness(1.2) drop-shadow(0 0 10px var(--highlight));
-            opacity: 1;
-        }
-
-        /* ========== BOTÃO VOLTAR AO TOPO ========== */
-        .voltar-topo {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--gradient);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 55px;
-            height: 55px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(199, 125, 255, 0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-        }
-
-        .voltar-topo.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .voltar-topo:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 35px rgba(199, 125, 255, 0.6);
-        }
-
-        /* ========== LOADING STATES ========== */
-        .card.loading {
-            background: linear-gradient(90deg, var(--card-bg) 25%, rgba(199, 125, 255, 0.1) 50%, var(--card-bg) 75%);
-            background-size: 200% 100%;
-            animation: loading 2s infinite;
-        }
-
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9) translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
         @keyframes pulse {
             from { box-shadow: 0 0 20px rgba(199, 125, 255, 0.5); }
             to { box-shadow: 0 0 30px rgba(199, 125, 255, 0.8); }
         }
 
-        /* ========== RESPONSIVO AVANÇADO ========== */
-        @media (max-width: 1200px) {
-            .scroll-arrow { display: none; }
-            .cards-container { padding: 25px 20px; }
-        }
-
+        /* Responsivo específico para revista */
         @media (max-width: 768px) {
-            .header-top { padding: 1rem; }
             .revista-hero { padding: 4rem 1rem 3rem; }
             .titulo-revista { font-size: 2.5rem; letter-spacing: 1px; }
             .stats-revista { gap: 2rem; }
             .carrossel { padding: 3rem 0.5rem; }
             .card { flex: 0 0 280px; }
-            .cards-container { gap: 15px; }
-            .voltar-topo { bottom: 1.5rem; right: 1.5rem; width: 50px; height: 50px; }
         }
 
         @media (max-width: 480px) {
@@ -619,28 +288,7 @@
             .stat-number { font-size: 1.5rem; }
         }
 
-        /* ========== ACESSIBILIDADE ========== */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        /* ========== MODO CLARO ========== */
+        /* Modo claro */
         :root[data-theme="light"] .card {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
@@ -648,37 +296,36 @@
         :root[data-theme="light"] .card:hover {
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
         }
-
-        :root[data-theme="light"] .dropdown-content {
-            background: rgba(248, 248, 248, 0.98);
-        }
     </style>
 </head>
 
 <body>
-    <header class="bloco-topo">
-        <div class="header-top">
-            <img src="https://via.placeholder.com/120x45/c77dff/ffffff?text=ROLÊ" alt="Logotipo da marca ROLÊ Entretenimento" class="logo">
-            
-            <div class="right-top">
-                <nav class="dropdown" role="navigation">
-                    <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-                        Explorar ▼
-                    </button>          
-                    <div class="dropdown-content" id="menu-explorar">
-                        <a href="index.html">Página Inicial</a>
-                        <a href="revista.html">Revista ROLÊ</a>
-                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                        <a href="descontos.html">Descontos</a>
-                        <a href="contato.html">Contato</a>
-                        <a href="quem-somos.html">Quem Somos</a>
-                    </div>
-                </nav>
+    <section class="bloco-topo">
+        <div class="container-topo">
+            <div class="header-top">
+                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo">
+                
+                <div class="right-top">
+                    <nav class="dropdown" role="navigation">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+                            Explorar ▼
+                        </button>          
+                        <div class="dropdown-content" id="menu-explorar">
+                            <a href="index.html">Página Inicial</a>
+                            <a href="revista.html">Revista ROLÊ</a>
+                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                            <a href="descontos.html">Descontos</a>
+                            <a href="contato.html">Contato</a>
+                            <a href="quem-somos.html">Quem Somos</a>
+                        </div>
+                    </nav>
 
-                <img src="https://via.placeholder.com/35x35/c77dff/ffffff?text=💡" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false">
+                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false">
+                </div>
             </div>
+            <hr class="linha-topo" />
         </div>
-    </header>
+    </section>
 
     <section class="revista-hero">
         <div class="container">
@@ -687,11 +334,11 @@
             
             <div class="stats-revista">
                 <div class="stat-item">
-                    <span class="stat-number">150+</span>
+                    <span class="stat-number">25+</span>
                     <span class="stat-label">Artigos</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">50K+</span>
+                    <span class="stat-number">1.5M+</span>
                     <span class="stat-label">Leitores</span>
                 </div>
                 <div class="stat-item">
@@ -890,13 +537,13 @@
         </div>
         <div class="social-icons">
             <a href="https://instagram.com/role.ent" target="_blank" rel="noopener" aria-label="Instagram ROLÊ">
-                <img src="https://via.placeholder.com/35x35/c77dff/ffffff?text=IG" alt="Instagram">
+                <img src="images/instagram.svg" alt="Instagram">
             </a>
             <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener" aria-label="TikTok ROLÊ">
-                <img src="https://via.placeholder.com/35x35/c77dff/ffffff?text=TT" alt="TikTok">
+                <img src="images/tiktok.svg" alt="TikTok">
             </a>
             <a href="https://wa.me/5551980704353" target="_blank" rel="noopener" aria-label="WhatsApp ROLÊ">
-                <img src="https://via.placeholder.com/35x35/c77dff/ffffff?text=WA" alt="WhatsApp">
+                <img src="images/whatsapp.svg" alt="WhatsApp">
             </a>
         </div>
     </footer>
@@ -906,219 +553,150 @@
     </button>
 
     <script>
-        class RevistaROLE {
-            constructor() {
-                this.init();
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown.querySelector('.dropdown-button');
+            const content = dropdown.querySelector('.dropdown-content');
 
-            init() {
-                this.setupTheme();
-                this.setupDropdown();
-                this.setupCarousels();
-                this.setupScrollToTop();
-                this.setupIntersectionObserver();
-                this.setupKeyboardNavigation();
-            }
-
-            // ========== TEMA ==========
-            setupTheme() {
-                const lampada = document.querySelector('.lampada-toggle');
-                const root = document.documentElement;
-
-                // Aplicar tema salvo
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'light') {
-                    root.setAttribute('data-theme', 'light');
-                    lampada.setAttribute('aria-pressed', 'true');
-                }
-
-                // Toggle do tema
-                lampada.addEventListener('click', () => {
-                    const isLight = root.hasAttribute('data-theme');
-                    
-                    if (isLight) {
-                        root.removeAttribute('data-theme');
-                        lampada.setAttribute('aria-pressed', 'false');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        root.setAttribute('data-theme', 'light');
-                        lampada.setAttribute('aria-pressed', 'true');
-                        localStorage.setItem('theme', 'light');
-                    }
-                });
-
-                // Suporte a tecla Enter
-                lampada.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        lampada.click();
-                    }
-                });
-            }
-
-            // ========== DROPDOWN ==========
-            setupDropdown() {
-                const dropdown = document.querySelector('.dropdown');
-                const button = dropdown.querySelector('.dropdown-button');
-                const content = dropdown.querySelector('.dropdown-content');
-
-                button.addEventListener('click', (e) => {
+            if (button && content) {
+                button.addEventListener('click', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    
-                    const isOpen = dropdown.classList.contains('open');
                     dropdown.classList.toggle('open');
-                    button.setAttribute('aria-expanded', !isOpen);
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
                 });
 
-                // Fechar ao clicar fora
-                document.addEventListener('click', (e) => {
+                document.addEventListener('click', function (e) {
                     if (!dropdown.contains(e.target)) {
                         dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', 'false');
+                        button.setAttribute('aria-expanded', false);
                     }
                 });
 
-                // Fechar com Escape
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && dropdown.classList.contains('open')) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', 'false');
-                        button.focus();
-                    }
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
                 });
             }
 
             // ========== CARROSSEIS ==========
-            setupCarousels() {
-                const carousels = document.querySelectorAll('.scroll-wrapper');
+            const carousels = document.querySelectorAll('.scroll-wrapper');
 
-                carousels.forEach((wrapper) => {
-                    const container = wrapper.querySelector('.cards-container');
-                    const cards = container.querySelectorAll('.card');
-                    const indicators = wrapper.querySelectorAll('.indicator-dot');
-                    const leftArrow = wrapper.querySelector('.scroll-arrow.left');
-                    const rightArrow = wrapper.querySelector('.scroll-arrow.right');
+            carousels.forEach((wrapper) => {
+                const container = wrapper.querySelector('.cards-container');
+                const cards = container.querySelectorAll('.card');
+                const indicators = wrapper.querySelectorAll('.indicator-dot');
+                const leftArrow = wrapper.querySelector('.scroll-arrow.left');
+                const rightArrow = wrapper.querySelector('.scroll-arrow.right');
 
-                    let currentIndex = 0;
-                    let autoPlayInterval;
-                    let isAutoPlaying = true;
+                let currentIndex = 0;
+                let autoPlayInterval;
+                let isAutoPlaying = true;
 
-                    const updateIndicators = () => {
-                        indicators.forEach((dot, index) => {
-                            dot.classList.toggle('active', index === currentIndex);
-                            dot.setAttribute('aria-pressed', index === currentIndex);
-                        });
-                    };
-
-                    const scrollToCard = (index, smooth = true) => {
-                        const totalCards = cards.length;
-                        if (index < 0) index = totalCards - 1;
-                        if (index >= totalCards) index = 0;
-                        
-                        currentIndex = index;
-                        const cardWidth = cards[0].getBoundingClientRect().width + 25;
-                        
-                        container.scrollTo({
-                            left: cardWidth * index,
-                            behavior: smooth ? 'smooth' : 'auto'
-                        });
-                        
-                        updateIndicators();
-                        this.announceSlideChange(index + 1, totalCards);
-                    };
-
-                    const startAutoPlay = () => {
-                        if (isAutoPlaying && cards.length > 1) {
-                            autoPlayInterval = setInterval(() => {
-                                scrollToCard(currentIndex + 1);
-                            }, 6000);
-                        }
-                    };
-
-                    const stopAutoPlay = () => {
-                        clearInterval(autoPlayInterval);
-                    };
-
-                    // Controles das setas
-                    if (leftArrow && rightArrow) {
-                        leftArrow.addEventListener('click', () => {
-                            stopAutoPlay();
-                            scrollToCard(currentIndex - 1);
-                            setTimeout(startAutoPlay, 4000);
-                        });
-
-                        rightArrow.addEventListener('click', () => {
-                            stopAutoPlay();
-                            scrollToCard(currentIndex + 1);
-                            setTimeout(startAutoPlay, 4000);
-                        });
-                    }
-
-                    // Indicadores
+                const updateIndicators = () => {
                     indicators.forEach((dot, index) => {
-                        dot.addEventListener('click', () => {
-                            stopAutoPlay();
-                            scrollToCard(index);
-                            setTimeout(startAutoPlay, 4000);
-                        });
+                        dot.classList.toggle('active', index === currentIndex);
+                        dot.setAttribute('aria-pressed', index === currentIndex);
+                    });
+                };
 
-                        // Suporte a teclado
-                        dot.addEventListener('keydown', (e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                                e.preventDefault();
-                                dot.click();
-                            }
-                        });
+                const scrollToCard = (index, smooth = true) => {
+                    const totalCards = cards.length;
+                    if (index < 0) index = totalCards - 1;
+                    if (index >= totalCards) index = 0;
+                    
+                    currentIndex = index;
+                    const cardWidth = cards[0].getBoundingClientRect().width + 25;
+                    
+                    container.scrollTo({
+                        left: cardWidth * index,
+                        behavior: smooth ? 'smooth' : 'auto'
+                    });
+                    
+                    updateIndicators();
+                };
+
+                const startAutoPlay = () => {
+                    if (isAutoPlaying && cards.length > 1) {
+                        autoPlayInterval = setInterval(() => {
+                            scrollToCard(currentIndex + 1);
+                        }, 6000);
+                    }
+                };
+
+                const stopAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                };
+
+                // Controles das setas
+                if (leftArrow && rightArrow) {
+                    leftArrow.addEventListener('click', () => {
+                        stopAutoPlay();
+                        scrollToCard(currentIndex - 1);
+                        setTimeout(startAutoPlay, 4000);
                     });
 
-                    // Pausar no hover
-                    container.addEventListener('mouseenter', stopAutoPlay);
-                    container.addEventListener('mouseleave', startAutoPlay);
+                    rightArrow.addEventListener('click', () => {
+                        stopAutoPlay();
+                        scrollToCard(currentIndex + 1);
+                        setTimeout(startAutoPlay, 4000);
+                    });
+                }
 
-                    // Pausar no foco
-                    container.addEventListener('focusin', stopAutoPlay);
-                    container.addEventListener('focusout', (e) => {
-                        // Só reinicia se o foco saiu completamente do container
-                        setTimeout(() => {
-                            if (!container.contains(document.activeElement)) {
-                                startAutoPlay();
-                            }
-                        }, 100);
+                // Indicadores
+                indicators.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        stopAutoPlay();
+                        scrollToCard(index);
+                        setTimeout(startAutoPlay, 4000);
                     });
 
-                    // Detecção de scroll manual
-                    let scrollTimeout;
-                    container.addEventListener('scroll', () => {
-                        clearTimeout(scrollTimeout);
-                        scrollTimeout = setTimeout(() => {
-                            const cardWidth = cards[0].getBoundingClientRect().width + 25;
-                            const newIndex = Math.round(container.scrollLeft / cardWidth);
-                            if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
-                                currentIndex = newIndex;
-                                updateIndicators();
-                            }
-                        }, 150);
+                    // Suporte a teclado
+                    dot.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            dot.click();
+                        }
                     });
+                });
 
-                    // Inicializar
+                // Pausar no hover
+                container.addEventListener('mouseenter', stopAutoPlay);
+                container.addEventListener('mouseleave', startAutoPlay);
+
+                // Pausar no foco
+                container.addEventListener('focusin', stopAutoPlay);
+                container.addEventListener('focusout', (e) => {
                     setTimeout(() => {
-                        if (cards.length > 0) {
-                            scrollToCard(0, false);
+                        if (!container.contains(document.activeElement)) {
                             startAutoPlay();
                         }
                     }, 100);
-
-                    // Suporte a touch/swipe
-                    this.setupTouchNavigation(container, scrollToCard, () => {
-                        stopAutoPlay();
-                        setTimeout(startAutoPlay, 4000);
-                    });
                 });
-            }
 
-            // ========== NAVEGAÇÃO TOUCH ==========
-            setupTouchNavigation(container, scrollToCard, onInteraction) {
+                // Detecção de scroll manual
+                let scrollTimeout;
+                container.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const cardWidth = cards[0].getBoundingClientRect().width + 25;
+                        const newIndex = Math.round(container.scrollLeft / cardWidth);
+                        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < cards.length) {
+                            currentIndex = newIndex;
+                            updateIndicators();
+                        }
+                    }, 150);
+                });
+
+                // Inicializar
+                setTimeout(() => {
+                    if (cards.length > 0) {
+                        scrollToCard(0, false);
+                        startAutoPlay();
+                    }
+                }, 100);
+
+                // Suporte a touch/swipe
                 let startX = 0;
                 let startY = 0;
                 let isScrolling = false;
@@ -1146,35 +724,40 @@
                     const endX = e.changedTouches[0].clientX;
                     const diffX = startX - endX;
 
-                    if (Math.abs(diffX) > 50) { // Mínimo de 50px para registrar swipe
-                        onInteraction();
+                    if (Math.abs(diffX) > 50) {
+                        stopAutoPlay();
                         
-                        const currentIndex = Math.round(container.scrollLeft / (container.querySelector('.card').getBoundingClientRect().width + 25));
+                        const currentScrollIndex = Math.round(container.scrollLeft / (container.querySelector('.card').getBoundingClientRect().width + 25));
                         
                         if (diffX > 0) {
                             // Swipe para esquerda - próximo
-                            scrollToCard(currentIndex + 1);
+                            scrollToCard(currentScrollIndex + 1);
                         } else {
                             // Swipe para direita - anterior
-                            scrollToCard(currentIndex - 1);
+                            scrollToCard(currentScrollIndex - 1);
                         }
+                        
+                        setTimeout(startAutoPlay, 4000);
                     }
 
                     startX = 0;
                     startY = 0;
                     isScrolling = false;
                 }, { passive: true });
-            }
+            });
 
             // ========== VOLTAR AO TOPO ==========
-            setupScrollToTop() {
-                const button = document.getElementById('voltarTopo');
-                
+            const voltarTopo = document.getElementById('voltarTopo');
+            
+            if (voltarTopo) {
                 // Throttle do scroll
                 let ticking = false;
                 const updateScrollButton = () => {
                     const shouldShow = window.pageYOffset > 400;
-                    button.classList.toggle('visible', shouldShow);
+                    voltarTopo.classList.toggle('visible', shouldShow);
+                    voltarTopo.style.opacity = shouldShow ? '1' : '0';
+                    voltarTopo.style.transform = shouldShow ? 'translateY(0)' : 'translateY(20px)';
+                    voltarTopo.style.pointerEvents = shouldShow ? 'auto' : 'none';
                     ticking = false;
                 };
 
@@ -1185,7 +768,7 @@
                     }
                 });
 
-                button.addEventListener('click', () => {
+                voltarTopo.addEventListener('click', () => {
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
@@ -1194,114 +777,108 @@
             }
 
             // ========== INTERSECTION OBSERVER ==========
-            setupIntersectionObserver() {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                            
-                            // Lazy loading para imagens
-                            const img = entry.target.querySelector('img[data-src]');
-                            if (img) {
-                                img.src = img.dataset.src;
-                                img.removeAttribute('data-src');
-                            }
-                        }
-                    });
-                }, observerOptions);
-
-                // Observar seções e cards
-                document.querySelectorAll('.carrossel, .card').forEach(el => {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(30px)';
-                    el.style.transition = 'all 0.8s ease';
-                    observer.observe(el);
-                });
-            }
-
-            // ========== NAVEGAÇÃO POR TECLADO ==========
-            setupKeyboardNavigation() {
-                document.addEventListener('keydown', (e) => {
-                    // Alt + seta para navegar entre seções
-                    if (e.altKey) {
-                        const sections = document.querySelectorAll('.carrossel');
-                        const currentSection = Array.from(sections).find(section => {
-                            const rect = section.getBoundingClientRect();
-                            return rect.top <= 100 && rect.bottom >= 100;
-                        });
-
-                        if (currentSection) {
-                            const currentIndex = Array.from(sections).indexOf(currentSection);
-                            let nextIndex;
-
-                            if (e.key === 'ArrowDown' && currentIndex < sections.length - 1) {
-                                nextIndex = currentIndex + 1;
-                            } else if (e.key === 'ArrowUp' && currentIndex > 0) {
-                                nextIndex = currentIndex - 1;
-                            }
-
-                            if (nextIndex !== undefined) {
-                                e.preventDefault();
-                                sections[nextIndex].scrollIntoView({ 
-                                    behavior: 'smooth', 
-                                    block: 'start' 
-                                });
-                            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Lazy loading para imagens
+                        const img = entry.target.querySelector('img[data-src]');
+                        if (img) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
                         }
                     }
                 });
-            }
+            }, observerOptions);
 
-            // ========== ANÚNCIOS PARA SCREEN READERS ==========
-            announceSlideChange(current, total) {
-                const announcement = document.createElement('div');
-                announcement.setAttribute('aria-live', 'polite');
-                announcement.setAttribute('aria-atomic', 'true');
-                announcement.className = 'sr-only';
-                announcement.textContent = `Slide ${current} de ${total}`;
-                
-                document.body.appendChild(announcement);
-                setTimeout(() => {
-                    document.body.removeChild(announcement);
-                }, 1000);
-            }
+            // Observar seções e cards
+            document.querySelectorAll('.carrossel, .card').forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = `all 0.8s ease ${index * 0.1}s`;
+                observer.observe(el);
+            });
 
-            // ========== LAZY LOADING DE IMAGENS ==========
-            setupLazyLoading() {
-                const images = document.querySelectorAll('img[loading="lazy"]');
-                
-                if ('IntersectionObserver' in window) {
-                    const imageObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                const img = entry.target;
-                                img.src = img.dataset.src || img.src;
-                                img.classList.remove('loading');
-                                imageObserver.unobserve(img);
-                            }
-                        });
+            // ========== NAVEGAÇÃO POR TECLADO ==========
+            document.addEventListener('keydown', (e) => {
+                // Alt + seta para navegar entre seções
+                if (e.altKey) {
+                    const sections = document.querySelectorAll('.carrossel');
+                    const currentSection = Array.from(sections).find(section => {
+                        const rect = section.getBoundingClientRect();
+                        return rect.top <= 100 && rect.bottom >= 100;
                     });
 
-                    images.forEach(img => {
-                        img.classList.add('loading');
-                        imageObserver.observe(img);
-                    });
+                    if (currentSection) {
+                        const currentIndex = Array.from(sections).indexOf(currentSection);
+                        let nextIndex;
+
+                        if (e.key === 'ArrowDown' && currentIndex < sections.length - 1) {
+                            nextIndex = currentIndex + 1;
+                        } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                            nextIndex = currentIndex - 1;
+                        }
+
+                        if (nextIndex !== undefined) {
+                            e.preventDefault();
+                            sections[nextIndex].scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start' 
+                            });
+                        }
+                    }
                 }
-            }
-        }
-
-        // Inicializar quando o DOM estiver pronto
-        document.addEventListener('DOMContentLoaded', () => {
-            new RevistaROLE();
+            });
         });
 
-        // Service Worker para cache (opcional)
+        // ========== TOGGLE TEMA ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
+
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
+        }
+
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                // Volta para modo escuro
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Vai para modo claro
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Suporte a tecla Enter para o toggle do tema
+        lampada.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                lampada.click();
+            }
+        });
+
+        // ========== SUAVIZAÇÃO ADICIONAL ==========
+        document.body.style.transition = 'all 0.3s ease';
+
+        // ========== SERVICE WORKER (OPCIONAL) ==========
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
