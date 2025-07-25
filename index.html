@@ -25,6 +25,263 @@
     </noscript>
     
     <link rel="stylesheet" href="estilo.css" />
+    
+    <style>
+        /* Novos estilos para o conteúdo adicional */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            margin-bottom: 2rem;
+        }
+
+        .btn-hero {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(199, 125, 255, 0.4);
+        }
+
+        .como-funciona {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.05), transparent);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .como-funciona-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .como-funciona h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--highlight);
+        }
+
+        .como-funciona p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .stats-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(199, 125, 255, 0.03);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 3rem auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--highlight);
+            display: block;
+            margin-bottom: 0.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .revista-destaque {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .revista-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .revista-destaque h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--highlight);
+        }
+
+        .revista-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-revista {
+            background: transparent;
+            color: var(--highlight);
+            padding: 12px 30px;
+            border: 2px solid var(--highlight);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-revista:hover {
+            background: var(--highlight);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .newsletter-section {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem auto;
+            max-width: 400px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(243, 243, 247, 0.5);
+        }
+
+        .btn-newsletter {
+            background: var(--gradient);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-newsletter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(199, 125, 255, 0.4);
+        }
+
+        /* Espaço reservado para depoimentos */
+        .depoimentos-placeholder {
+            padding: 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-style: italic;
+            background: rgba(199, 125, 255, 0.02);
+            border: 2px dashed rgba(199, 125, 255, 0.2);
+            border-radius: 15px;
+            margin: 4rem 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -59,6 +316,18 @@
         </div>
     </section>
 
+    <!-- Hero Section -->
+    <section class="hero-section fade-in">
+        <h1 class="hero-title">Curadoria Independente de Cultura e Experiências</h1>
+        <p class="hero-description">
+            O ROLÊ é uma curadoria independente de eventos, cultura e experiências. 
+            A gente vive a cena pra te mostrar o que realmente importa com estética, presença e muita opinião.
+        </p>
+        <div class="hero-cta">
+            <a href="#destaques" class="btn-hero">Descubra o ROLÊ na sua cidade</a>
+        </div>
+    </section>
+
     <!-- Banner -->
     <div class="banner-wrapper">
         <div class="banner-container">
@@ -67,7 +336,7 @@
     </div>
 
     <!-- Carrossel com melhorias -->
-    <div class="carrossel fade-in delay">
+    <div class="carrossel fade-in delay" id="destaques">
         <main class="destaques" role="main">
             <h2>DESTAQUES DA SEMANA</h2>
             <div class="scroll-wrapper">
@@ -113,6 +382,70 @@
             </div>
         </main>
     </div>
+
+    <!-- Como Funciona -->
+    <section class="como-funciona fade-in">
+        <div class="como-funciona-content">
+            <h2>Como Funciona</h2>
+            <p>
+                Aqui você encontra festas, shows e experiências que valem o seu tempo. 
+                A gente não vende ingresso, a gente te mostra o que faz sentido viver.
+            </p>
+        </div>
+    </section>
+
+    <!-- Revista ROLÊ Destaque -->
+    <section class="revista-destaque fade-in">
+        <div class="revista-content">
+            <h2>Revista ROLÊ</h2>
+            <p class="revista-description">
+                Editorial semanal com as melhores histórias, entrevistas e conteúdos da cena cultural brasileira. 
+                Uma visão autêntica e sem filtro do que acontece nas ruas.
+            </p>
+            <a href="revista.html" class="btn-revista">Ler Revista</a>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="stats-section fade-in">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--highlight);">O ROLÊ em Números</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">+500k</span>
+                <span class="stat-label">Contas Alcançadas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+2M</span>
+                <span class="stat-label">Visualizações Mensais</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Cidades Ativas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+22k</span>
+                <span class="stat-label">Seguidores no Instagram</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espaço reservado para depoimentos -->
+    <div class="depoimentos-placeholder fade-in">
+        <h3 style="color: var(--highlight); margin-bottom: 1rem;">O que dizem por aí sobre o ROLÊ</h3>
+        <p>Em breve: depoimentos de artistas, rolezeiros e produtores sobre a experiência ROLÊ</p>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section fade-in">
+        <div class="newsletter-content">
+            <h2>Não perca o melhor do ROLÊ</h2>
+            <p>Assine a newsletter e receba semanalmente o que tem de mais relevante na cena cultural.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+                <button type="submit" class="btn-newsletter">Assinar</button>
+            </form>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-links">
@@ -267,12 +600,31 @@
                 });
             }, observerOptions);
 
-            // Observar cards para animação de entrada
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                observer.observe(card);
+            // Observar elementos para animação de entrada
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `all 0.8s ease ${index * 0.1}s`;
+                observer.observe(element);
+            });
+
+            // ========== NEWSLETTER FORM ==========
+            const newsletterForm = document.getElementById('newsletter-form');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                alert(`Obrigado! ${email} foi cadastrado com sucesso na nossa newsletter.`);
+                this.querySelector('input').value = '';
+            });
+
+            // ========== SMOOTH SCROLL PARA CTA ==========
+            const heroButton = document.querySelector('.btn-hero');
+            heroButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('destaques').scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
