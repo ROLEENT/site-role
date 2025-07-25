@@ -216,7 +216,7 @@
             z-index: 2;
         }
 
-        .card h3 {
+        .card h3, .card strong {
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--text-color);
@@ -334,7 +334,7 @@
             
             <div class="stats-revista">
                 <div class="stat-item">
-                    <span class="stat-number">25+</span>
+                    <span class="stat-number">35+</span>
                     <span class="stat-label">Artigos</span>
                 </div>
                 <div class="stat-item">
@@ -359,25 +359,25 @@
                 <button class="scroll-arrow left" aria-label="Ver editorial anterior">◀</button>
                 <div class="cards-container" data-section="editorial">
                     <article class="card">
-                        <img src="https://via.placeholder.com/320x220/c77dff/ffffff?text=Madrugada" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy">
+                        <img src="images/editorial-madrugada.png" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy">
                         <div class="card-content">
                             <h3>As cidades já foram noturnas</h3>
                             <p>Sua cidade perdeu a madrugada? Descubra quem resiste na cena noturna brasileira!</p>
-                            <a href="#" aria-label="Ler artigo completo sobre cidades noturnas">Ler completo</a>
+                            <a href="editorial/as-cidades-ja-foram-noturnas.html" aria-label="Ler artigo completo sobre cidades noturnas">Ler completo</a>
                         </div>
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/320x220/e0aaff/ffffff?text=DJ+Autor" alt="Arte de DJ como autor da pista" loading="lazy">
+                        <img src="images/editorial-dj-autor.png" alt="Arte de DJ como autor da pista" loading="lazy">
                         <div class="card-content">
                             <h3>DJs são novos autores</h3>
                             <p>Quem escreve tua noite é o DJ. Já agradeceu hoje?</p>
-                            <a href="#" aria-label="Ler artigo completo sobre DJs autores">Ler completo</a>
+                            <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html" aria-label="Ler artigo completo sobre DJs autores">Ler completo</a>
                         </div>
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/320x220/b19cd9/ffffff?text=Teatro" alt="Arte com cadeiras vazias representando o teatro" loading="lazy">
+                        <img src="images/editorial-teatros-vazios.png" alt="Arte com cadeiras vazias representando o teatro" loading="lazy">
                         <div class="card-content">
                             <h3>Por que os teatros estão vazios</h3>
                             <p>Teatro na era do feed: presença ou performance?</p>
@@ -386,11 +386,38 @@
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/320x220/c77dff/ffffff?text=Look" alt="Ilustração de look expressivo como identidade" loading="lazy">
+                        <img src="images/editorial-look-fala.png" alt="Ilustração de look expressivo como identidade" loading="lazy">
                         <div class="card-content">
                             <h3>E se teu look falasse por ti?</h3>
                             <p>Estética é política: o look também fala!</p>
                             <a href="#" aria-label="Ler artigo completo sobre look e identidade">Ler completo</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/editorial-te-chamam-de-atracao.png" alt="Imagem de artista como destaque da festa" loading="lazy">
+                        <div class="card-content">
+                            <h3>Te chamam de atração...</h3>
+                            <p>Quem faz a noite vibrar também precisa viver dela.</p>
+                            <a href="#" aria-label="Ler artigo completo sobre artistas e remuneração">Ler completo</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/editorial-fomo-cansaco.png" alt="Arte representando cansaço e FOMO nos rolês" loading="lazy">
+                        <div class="card-content">
+                            <h3>Todo mundo cansado</h3>
+                            <p>FOMO, likes e cansaço: um rolê sem filtro no ar.</p>
+                            <a href="#" aria-label="Ler artigo completo sobre cansaço e FOMO">Ler completo</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/editorial-rolezao.png" alt="Imagem nostálgica de uma festa marcante" loading="lazy">
+                        <div class="card-content">
+                            <h3>Todo mundo já foi num rolê bom</h3>
+                            <p>Rolêzão: quando vira lenda, não só festa.</p>
+                            <a href="https://www.instagram.com/p/DLlKtmDvjnV/" target="_blank" aria-label="Ver post completo sobre rolês marcantes">Ver post completo</a>
                         </div>
                     </article>
                 </div>
@@ -401,127 +428,73 @@
                     <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para artigo 2"></div>
                     <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para artigo 3"></div>
                     <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para artigo 4"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para artigo 5"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para artigo 6"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para artigo 7"></div>
                 </div>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- POSFÁCIO -->
+        <!-- ROLÊ.BPM -->
         <section class="carrossel">
-            <h2>POSFÁCIO</h2>
-            <p class="descricao-secao">Reflexões de encerramento da semana: textos críticos ou poéticos da cena.</p>
+            <h2>ROLÊ.BPM</h2>
+            <p class="descricao-secao">Explorações musicais e gêneros que movem as pistas.</p>
             
             <div class="scroll-wrapper">
-                <button class="scroll-arrow left" aria-label="Ver posfácio anterior">◀</button>
-                <div class="cards-container" data-section="posfacio">
+                <button class="scroll-arrow left" aria-label="Ver BPM anterior">◀</button>
+                <div class="cards-container" data-section="bpm">
                     <article class="card">
-                        <img src="https://via.placeholder.com/320x220/ff6b35/ffffff?text=Arte+%21Favor" alt="Frase arte não é favor em fundo gráfico" loading="lazy">
+                        <img src="images/bpm-techno-resistencia.png" alt="Arte sobre o techno como resistência" loading="lazy">
                         <div class="card-content">
-                            <h3>Arte não é favor</h3>
-                            <p>Curte o rolê? Então fortalece quem faz a cena!</p>
-                            <a href="#" aria-label="Ler posfácio completo sobre valorizar arte">Ler completo</a>
+                            <h3>Quem tem medo do techno?</h3>
+                            <p>Techno é resistência: você sabe de onde veio?</p>
+                            <a href="https://www.instagram.com/p/DLFzcKQOfzP/" target="_blank" aria-label="Ver post completo sobre techno">Ver post completo</a>
                         </div>
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/320x220/00ff88/ffffff?text=Palco+Político" alt="Imagem de corpo dançando em cena política" loading="lazy">
+                        <img src="images/bpm-funk-e-cultura.png" alt="Funk retratado como cultura e identidade" loading="lazy">
                         <div class="card-content">
-                            <h3>Subir no palco é um ato político</h3>
-                            <p>O palco também é trincheira. Vem entender por quê.</p>
-                            <a href="#" aria-label="Ler posfácio completo sobre palco político">Ler completo</a>
-                        </div>
-                    </article>
-                    
-                    <article class="card">
-                        <img src="https://via.placeholder.com/320x220/c77dff/ffffff?text=Som+Autoral" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy">
-                        <div class="card-content">
-                            <h3>O FIM DO COVER: QUEREMOS SOM AUTORAL</h3>
-                            <p>Mesmas músicas em todo rolê? Hora de mudar o som.</p>
-                            <a href="#" aria-label="Ler posfácio completo sobre som autoral">Ler completo</a>
+                            <h3>FUNK É CULTURA, SIM.</h3>
+                            <p>Do asfalto pro topo, sem pedir licença. Funk é cultura!</p>
+                            <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank" aria-label="Ver post completo sobre funk como cultura">Ver post completo</a>
                         </div>
                     </article>
                 </div>
-                <button class="scroll-arrow right" aria-label="Ver próximo posfácio">▶</button>
+                <button class="scroll-arrow right" aria-label="Ver próximo BPM">▶</button>
                 
                 <div class="carousel-indicator">
-                    <div class="indicator-dot active" tabindex="0" role="button" aria-label="Ir para posfácio 1"></div>
-                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para posfácio 2"></div>
-                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para posfácio 3"></div>
+                    <div class="indicator-dot active" tabindex="0" role="button" aria-label="Ir para BPM 1"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para BPM 2"></div>
                 </div>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- DICAS DO ROLÊ -->
+        <!-- ACHADINHOS -->
         <section class="carrossel">
-            <h2>DICAS DO ROLÊ</h2>
-            <p class="descricao-secao">Achados, experiências e rolês mapeados pela equipe do ROLÊ.</p>
+            <h2>ACHADINHOS</h2>
+            <p class="descricao-secao">Referências, virais, memes e achados culturais da semana.</p>
             
             <div class="scroll-wrapper">
-                <button class="scroll-arrow left" aria-label="Ver dica anterior">◀</button>
-                <div class="cards-container" data-section="dicas">
+                <button class="scroll-arrow left" aria-label="Ver achadinho anterior">◀</button>
+                <div class="cards-container" data-section="achadinhos">
                     <article class="card">
-                        <img src="https://via.placeholder.com/320x220/b19cd9/ffffff?text=Celular+Seguro" alt="Dica para levar o celular no rolê com segurança" loading="lazy">
+                        <img src="images/achadinho-floripa-segredos.png" alt="Segredos dos rolês underground em Florianópolis" loading="lazy">
                         <div class="card-content">
-                            <h3>Celular no rolê: como levar com segurança</h3>
-                            <p>Celular no rolê: leve com estilo e segurança!</p>
-                            <a href="#" aria-label="Ver dica completa sobre celular no rolê">Ver dica</a>
-                        </div>
-                    </article>
-                    
-                    <article class="card">
-                        <img src="https://via.placeholder.com/320x220/e0aaff/ffffff?text=Dicionário" alt="Dicionário visual com gírias da cena" loading="lazy">
-                        <div class="card-content">
-                            <h3>Dicionário rolezeiro</h3>
-                            <p>Gírias que só quem é da cena entende. Vem aprender!</p>
-                            <a href="#" aria-label="Ver dicionário completo da cena">Ver dica</a>
+                            <h3>Qual é o segredo dos rolês de Floripa?</h3>
+                            <p>Achadinhos de Floripa que o Google não mostra!</p>
+                            <a href="https://www.instagram.com/p/DLavpxbv4BT/" target="_blank" aria-label="Ver achadinho completo sobre Floripa">Ver post completo</a>
                         </div>
                     </article>
                 </div>
-                <button class="scroll-arrow right" aria-label="Ver próxima dica">▶</button>
+                <button class="scroll-arrow right" aria-label="Ver próximo achadinho">▶</button>
                 
                 <div class="carousel-indicator">
-                    <div class="indicator-dot active" tabindex="0" role="button" aria-label="Ir para dica 1"></div>
-                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para dica 2"></div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- FALA, ROLÊ -->
-        <section class="carrossel">
-            <h2>FALA, ROLÊ</h2>
-            <p class="descricao-secao">Entrevistas com artistas independentes e vozes da cena noturna.</p>
-            
-            <div class="scroll-wrapper">
-                <button class="scroll-arrow left" aria-label="Ver entrevista anterior">◀</button>
-                <div class="cards-container" data-section="fala">
-                    <article class="card">
-                        <img src="https://via.placeholder.com/320x220/ff6b35/ffffff?text=Quem+Faz" alt="Chamada para conhecer artistas da cena cultural" loading="lazy">
-                        <div class="card-content">
-                            <h3>Você conhece quem faz a cena?</h3>
-                            <p>Quem faz o rolê ferver? Descubra no FALA, ROLÊ!</p>
-                            <a href="#" aria-label="Ver entrevista completa">Ver entrevista</a>
-                        </div>
-                    </article>
-                    
-                    <article class="card">
-                        <img src="https://via.placeholder.com/320x220/00ff88/ffffff?text=Jon+Soares" alt="Retrato do artista Jon Soares" loading="lazy">
-                        <div class="card-content">
-                            <h3>Jon Soares</h3>
-                            <p>Jon Soares no Fala, ROLÊ: som que conta histórias.</p>
-                            <a href="#" aria-label="Ver entrevista completa com Jon Soares">Ver entrevista</a>
-                        </div>
-                    </article>
-                </div>
-                <button class="scroll-arrow right" aria-label="Ver próxima entrevista">▶</button>
-                
-                <div class="carousel-indicator">
-                    <div class="indicator-dot active" tabindex="0" role="button" aria-label="Ir para entrevista 1"></div>
-                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para entrevista 2"></div>
+                    <div class="indicator-dot active" tabindex="0" role="button" aria-label="Ir para achadinho 1"></div>
                 </div>
             </div>
         </section>
@@ -892,4 +865,165 @@
         }
     </script>
 </body>
-</html>
+</html>divider"></div>
+
+        <!-- POSFÁCIO -->
+        <section class="carrossel">
+            <h2>POSFÁCIO</h2>
+            <p class="descricao-secao">Reflexões de encerramento da semana: textos críticos ou poéticos da cena.</p>
+            
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver posfácio anterior">◀</button>
+                <div class="cards-container" data-section="posfacio">
+                    <article class="card">
+                        <img src="images/posfacio-arte-nao-e-favor.png" alt="Frase arte não é favor em fundo gráfico" loading="lazy">
+                        <div class="card-content">
+                            <h3>Arte não é favor</h3>
+                            <p>Curte o rolê? Então fortalece quem faz a cena!</p>
+                            <a href="https://www.instagram.com/p/DKUvi7ftej4/" target="_blank" aria-label="Ver posfácio completo sobre valorizar arte">Ver post completo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card">
+                        <img src="images/posfacio-corpo-danca.png" alt="Imagem de corpo dançando em cena política" loading="lazy">
+                        <div class="card-content">
+                            <h3>Subir no palco é um ato político</h3>
+                            <p>O palco também é trincheira. Vem entender por quê.</p>
+                            <a href="https://www.instagram.com/p/DKpNipHuHxT/" target="_blank" aria-label="Ver posfácio completo sobre palco político">Ver post completo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card">
+                        <img src="images/posfacio-som-autoral.png" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy">
+                        <div class="card-content">
+                            <h3>O FIM DO COVER: QUEREMOS SOM AUTORAL</h3>
+                            <p>Mesmas músicas em todo rolê? Hora de mudar o som.</p>
+                            <a href="https://www.instagram.com/p/DK76By9Pa6v/" target="_blank" aria-label="Ver posfácio completo sobre som autoral">Ver post completo</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/posfacio-palco-politico.png" alt="Dança como forma de resistência política" loading="lazy">
+                        <div class="card-content">
+                            <h3>O que teu corpo diz quando dança?</h3>
+                            <p>Se tem dança, tem revolução no corpo.</p>
+                            <a href="https://www.instagram.com/p/DLKu8KKO_xh/" target="_blank" aria-label="Ver posfácio completo sobre dança e resistência">Ver post completo</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/posfacio-orgulho-rebeliao.png" alt="Orgulho LGBTQIAP+ como rebelião cultural" loading="lazy">
+                        <div class="card-content">
+                            <h3>Não foi por convite. Foi por rebelião.</h3>
+                            <p>Orgulho é rebelião: leia o novo Posfácio do ROLÊ!</p>
+                            <a href="https://www.instagram.com/p/DLdGOdOvozf/" target="_blank" aria-label="Ver posfácio completo sobre orgulho e rebelião">Ver post completo</a>
+                        </div>
+                    </article>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próximo posfácio">▶</button>
+                
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active" tabindex="0" role="button" aria-label="Ir para posfácio 1"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para posfácio 2"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para posfácio 3"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para posfácio 4"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para posfácio 5"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- DICAS DO ROLÊ -->
+        <section class="carrossel">
+            <h2>DICAS DO ROLÊ</h2>
+            <p class="descricao-secao">Achados, experiências e rolês mapeados pela equipe do ROLÊ.</p>
+            
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver dica anterior">◀</button>
+                <div class="cards-container" data-section="dicas">
+                    <article class="card">
+                        <img src="images/dica-celular-no-role.png" alt="Dica para levar o celular no rolê com segurança" loading="lazy">
+                        <div class="card-content">
+                            <h3>Celular no rolê: como levar com segurança</h3>
+                            <p>Celular no rolê: leve com estilo e segurança!</p>
+                            <a href="https://www.instagram.com/p/DKcwM01vOHG/" target="_blank" aria-label="Ver dica completa sobre celular no rolê">Ver dica</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card">
+                        <img src="images/dica-dicionario-rolezeiro.png" alt="Dicionário visual com gírias da cena" loading="lazy">
+                        <div class="card-content">
+                            <h3>Dicionário rolezeiro</h3>
+                            <p>Gírias que só quem é da cena entende. Vem aprender!</p>
+                            <a href="https://www.instagram.com/p/DK0JECQvjlS/" target="_blank" aria-label="Ver dicionário completo da cena">Ver dica</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/dica-role-no-meio-da-semana.png" alt="Arte incentivando rolês em dias úteis" loading="lazy">
+                        <div class="card-content">
+                            <h3>Rolê no meio da semana? Tá doido?</h3>
+                            <p>Rolê no meio da semana? Vem ver por que sim!</p>
+                            <a href="https://www.instagram.com/p/DLAXK7hOqyI/" target="_blank" aria-label="Ver dica completa sobre rolês no meio da semana">Ver dica</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/dica-ta-caro.png" alt="Arte crítica sobre preços altos nos rolês" loading="lazy">
+                        <div class="card-content">
+                            <h3>Tá caro? Tá mesmo.</h3>
+                            <p>Por que o rolê tá caro? Descubra e valorize a cena.</p>
+                            <a href="https://www.instagram.com/p/DLaMMB2uFzF/" target="_blank" aria-label="Ver dica completa sobre preços nos rolês">Ver dica</a>
+                        </div>
+                    </article>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próxima dica">▶</button>
+                
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active" tabindex="0" role="button" aria-label="Ir para dica 1"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para dica 2"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para dica 3"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para dica 4"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- FALA, ROLÊ -->
+        <section class="carrossel">
+            <h2>FALA, ROLÊ</h2>
+            <p class="descricao-secao">Entrevistas com artistas independentes e vozes da cena noturna.</p>
+            
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver entrevista anterior">◀</button>
+                <div class="cards-container" data-section="fala">
+                    <article class="card">
+                        <img src="images/fala-quem-faz-a-cena.png" alt="Chamada para conhecer artistas da cena cultural" loading="lazy">
+                        <div class="card-content">
+                            <h3>Você conhece quem faz a cena?</h3>
+                            <p>Quem faz o rolê ferver? Descubra no FALA, ROLÊ!</p>
+                            <a href="https://www.instagram.com/p/DKnSfFevJOO/" target="_blank" aria-label="Ver entrevista completa">Ver entrevista</a>
+                        </div>
+                    </article>
+                    
+                    <article class="card">
+                        <img src="images/fala-jon-soares.png" alt="Retrato do artista Jon Soares" loading="lazy">
+                        <div class="card-content">
+                            <h3>Jon Soares</h3>
+                            <p>Jon Soares no Fala, ROLÊ: som que conta histórias.</p>
+                            <a href="https://www.instagram.com/p/DLV11mSv0Wl/" target="_blank" aria-label="Ver entrevista completa com Jon Soares">Ver entrevista</a>
+                        </div>
+                    </article>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próxima entrevista">▶</button>
+                
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active" tabindex="0" role="button" aria-label="Ir para entrevista 1"></div>
+                    <div class="indicator-dot" tabindex="0" role="button" aria-label="Ir para entrevista 2"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-
