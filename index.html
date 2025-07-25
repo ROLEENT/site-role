@@ -611,23 +611,23 @@
 
             // ========== NEWSLETTER FORM ==========
             const newsletterForm = document.getElementById('newsletter-form');
-           newsletterForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = this.querySelector('input').value;
+          newsletterForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = this.querySelector('input').value;
 
-    fetch('https://script.google.com/macros/s/AKfycbzrW0kxiAMEaFIUtm7007Ppui_svqHcvHSNrpnj_gCwdW0IeN5DrL3FUdCSl9qXWyU/exec', {
-        method: 'POST',
-        body: new URLSearchParams({ email })
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert(`Obrigado! ${data.email} foi cadastrado com sucesso na nossa newsletter.`);
-        newsletterForm.reset();
-    })
-    .catch(error => {
-        alert('Ocorreu um erro ao cadastrar. Tente novamente mais tarde.');
-        console.error('Erro:', error);
-    });
+  fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
+    method: 'POST',
+    body: new URLSearchParams({ email })
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert(`Obrigado! ${data.email} foi cadastrado com sucesso na nossa newsletter.`);
+    newsletterForm.reset();
+  })
+  .catch(error => {
+    alert('Ocorreu um erro ao cadastrar. Tente novamente mais tarde.');
+    console.error('Erro:', error);
+  });
 });
 
             // ========== SMOOTH SCROLL PARA CTA ==========
