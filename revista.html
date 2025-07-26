@@ -23,56 +23,90 @@
     <link rel="stylesheet" href="estilo.css" />
     
     <style>
-        /* Estilos específicos da página Revista - alinhados com o index */
+        /* Estilos específicos da página Revista - OTIMIZADOS */
         .revista-hero {
             padding: 4rem 2rem 3rem;
             text-align: center;
-            background: var(--bg);
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(199, 125, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(224, 170, 255, 0.08) 0%, transparent 50%),
+                var(--bg);
             position: relative;
-            margin-top: 0;
+            overflow: hidden;
+            margin-top: 0; /* Remove espaço extra do topo */
+        }
+
+        .revista-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23c77dff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.2;
+            z-index: 0;
         }
 
         .revista-hero .container {
-            max-width: 800px;
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .titulo-revista {
-            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            position: relative;
             line-height: 1.2;
         }
 
+        .titulo-revista::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
         .subtitulo-revista {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
             color: var(--text-color);
             font-weight: 500;
             line-height: 1.6;
             opacity: 0.9;
-            margin-bottom: 2.5rem;
-        }
-
-        .stats-revista {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            max-width: 600px;
+            margin-bottom: 2rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        .stats-revista {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
         .stat-item {
             text-align: center;
+            opacity: 0.8;
         }
 
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--highlight);
             display: block;
@@ -83,101 +117,95 @@
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-top: 0.5rem;
-            opacity: 0.8;
+            color: var(--text-color);
+            opacity: 0.7;
         }
 
-        /* Seções de carrossel simplificadas e alinhadas com o index */
+        /* Carrossel específico da revista - usando as classes do estilo.css */
         .carrossel {
-            padding: 4rem 1rem;
-            max-width: 1200px;
+            padding: 3rem 1rem;
+            position: relative;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .carrossel h2 {
             text-align: center;
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            margin-bottom: 1rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
             background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
         }
 
         .descricao-secao {
             text-align: center;
             color: var(--text-color);
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
             opacity: 0.8;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
         }
 
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--highlight), transparent);
-            margin: 4rem auto;
-            opacity: 0.3;
-            max-width: 800px;
+            background: linear-gradient(90deg, transparent, rgba(199, 125, 255, 0.3), transparent);
+            margin: 3rem auto;
+            opacity: 0.5;
+            max-width: 600px;
         }
 
-        /* Cards simplificados e alinhados com o estilo do index */
-        .cards-container {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-            padding: 20px 50px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .cards-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .card {
+        /* Cards específicos da revista - mantendo compatibilidade com estilo.css */
+        .cards-container .card {
             flex: 0 0 300px;
-            scroll-snap-align: center;
             background: var(--card-bg);
             border-radius: 20px;
             border: 1px solid var(--card-border);
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-            position: relative;
             overflow: hidden;
             cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px var(--shadow);
-            border-color: var(--highlight);
+        .cards-container .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(199, 125, 255, 0.15),
+                0 0 0 1px rgba(199, 125, 255, 0.2);
         }
 
-        .card img {
+        .cards-container .card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 20px 20px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        .cards-container .card:hover img {
+            filter: brightness(1.1) saturate(1.1);
         }
 
         .card-content {
             padding: 1.5rem;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+            min-height: 160px;
         }
 
-        .card h3 {
+        .cards-container .card h3 {
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-color);
@@ -185,129 +213,110 @@
             line-height: 1.4;
         }
 
-        .card p {
+        .cards-container .card p {
             font-size: 0.9rem;
             line-height: 1.5;
             color: var(--text-color);
             opacity: 0.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             flex-grow: 1;
         }
 
-        .card a {
+        .cards-container .card a {
             color: var(--highlight);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: color 0.3s ease;
-        }
-
-        .card:hover a {
-            color: white;
-        }
-
-        /* Controles do carrossel simplificados */
-        .scroll-wrapper {
-            position: relative;
-        }
-
-        .scroll-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            background: var(--gradient);
-            border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1rem;
-            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(199, 125, 255, 0.3);
+            padding: 0.7rem 1rem;
+            background: rgba(199, 125, 255, 0.08);
+            border-radius: 10px;
+            border: 1px solid rgba(199, 125, 255, 0.2);
         }
 
-        .scroll-arrow:hover {
-            transform: translateY(-50%) scale(1.1);
+        .cards-container .card a::after {
+            content: '→';
+            transition: transform 0.3s ease;
         }
 
-        .scroll-arrow.left {
-            left: 10px;
-        }
-
-        .scroll-arrow.right {
-            right: 10px;
-        }
-
-        .carousel-indicator {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 2rem;
-        }
-
-        .indicator-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(199, 125, 255, 0.3);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .indicator-dot.active {
+        .cards-container .card:hover a {
             background: var(--highlight);
-            transform: scale(1.2);
+            color: white;
+            transform: translateY(-1px);
         }
 
-        /* Responsivo */
+        .cards-container .card:hover a::after {
+            transform: translateX(2px);
+        }
+
+        /* Responsivo específico para revista */
         @media (max-width: 768px) {
             .revista-hero { 
-                padding: 3rem 1rem 2rem; 
+                padding: 3rem 1rem 2.5rem; 
             }
-            
+            .titulo-revista { 
+                font-size: 2.2rem; 
+                letter-spacing: 1px; 
+            }
             .stats-revista { 
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem; 
+                gap: 2rem; 
             }
-            
             .carrossel { 
-                padding: 3rem 0.5rem; 
+                padding: 2.5rem 0.5rem; 
             }
-            
-            .card { 
-                flex: 0 0 260px; 
-            }
-            
-            .scroll-arrow {
-                display: none;
-            }
-            
-            .cards-container {
-                padding: 20px 10px;
+            .cards-container .card { 
+                flex: 0 0 280px; 
             }
         }
 
         @media (max-width: 480px) {
+            .revista-hero { 
+                padding: 2.5rem 1rem 2rem; 
+            }
+            .cards-container .card { 
+                flex: 0 0 260px; 
+            }
+            .cards-container .card img { 
+                height: 180px; 
+            }
+            .card-content { 
+                padding: 1.2rem; 
+            }
             .stats-revista { 
-                grid-template-columns: 1fr;
-                gap: 1rem; 
+                gap: 1.5rem; 
             }
-            
-            .card { 
-                flex: 0 0 240px; 
-            }
-            
-            .card img { 
-                height: 160px; 
-            }
-            
             .stat-number { 
                 font-size: 1.5rem; 
             }
+        }
+
+        /* Modo claro */
+        :root[data-theme="light"] .cards-container .card {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        :root[data-theme="light"] .cards-container .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fix para posicionamento inicial */
+        body {
+            scroll-behavior: smooth;
+        }
+
+        /* Otimização de performance - reduz animações complexas */
+        .card::before {
+            display: none; /* Remove animação complexa que causa lag */
+        }
+
+        /* Simplifica hover effects */
+        .card:hover::before {
+            display: none;
         }
     </style>
 </head>
@@ -372,7 +381,7 @@
                 <button class="scroll-arrow left" aria-label="Ver editorial anterior">◀</button>
                 <div class="cards-container" data-section="editorial">
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/c77dff/ffffff?text=Madrugada" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/c77dff/ffffff?text=Madrugada" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy">
                         <div class="card-content">
                             <h3>As cidades já foram noturnas</h3>
                             <p>Sua cidade perdeu a madrugada? Descubra quem resiste na cena noturna brasileira!</p>
@@ -381,7 +390,7 @@
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/e0aaff/ffffff?text=DJ+Autor" alt="Arte de DJ como autor da pista" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/e0aaff/ffffff?text=DJ+Autor" alt="Arte de DJ como autor da pista" loading="lazy">
                         <div class="card-content">
                             <h3>DJs são novos autores</h3>
                             <p>Quem escreve tua noite é o DJ. Já agradeceu hoje?</p>
@@ -390,7 +399,7 @@
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/b19cd9/ffffff?text=Teatro" alt="Arte com cadeiras vazias representando o teatro" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/b19cd9/ffffff?text=Teatro" alt="Arte com cadeiras vazias representando o teatro" loading="lazy">
                         <div class="card-content">
                             <h3>Por que os teatros estão vazios</h3>
                             <p>Teatro na era do feed: presença ou performance?</p>
@@ -399,7 +408,7 @@
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/c77dff/ffffff?text=Look" alt="Ilustração de look expressivo como identidade" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/c77dff/ffffff?text=Look" alt="Ilustração de look expressivo como identidade" loading="lazy">
                         <div class="card-content">
                             <h3>E se teu look falasse por ti?</h3>
                             <p>Estética é política: o look também fala!</p>
@@ -429,7 +438,7 @@
                 <button class="scroll-arrow left" aria-label="Ver posfácio anterior">◀</button>
                 <div class="cards-container" data-section="posfacio">
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/ff6b35/ffffff?text=Arte+%21Favor" alt="Frase arte não é favor em fundo gráfico" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/ff6b35/ffffff?text=Arte+%21Favor" alt="Frase arte não é favor em fundo gráfico" loading="lazy">
                         <div class="card-content">
                             <h3>Arte não é favor</h3>
                             <p>Curte o rolê? Então fortalece quem faz a cena!</p>
@@ -438,7 +447,7 @@
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/00ff88/ffffff?text=Palco+Político" alt="Imagem de corpo dançando em cena política" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/00ff88/ffffff?text=Palco+Político" alt="Imagem de corpo dançando em cena política" loading="lazy">
                         <div class="card-content">
                             <h3>Subir no palco é um ato político</h3>
                             <p>O palco também é trincheira. Vem entender por quê.</p>
@@ -447,7 +456,7 @@
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/c77dff/ffffff?text=Som+Autoral" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/c77dff/ffffff?text=Som+Autoral" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy">
                         <div class="card-content">
                             <h3>O FIM DO COVER: QUEREMOS SOM AUTORAL</h3>
                             <p>Mesmas músicas em todo rolê? Hora de mudar o som.</p>
@@ -476,7 +485,7 @@
                 <button class="scroll-arrow left" aria-label="Ver dica anterior">◀</button>
                 <div class="cards-container" data-section="dicas">
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/b19cd9/ffffff?text=Celular+Seguro" alt="Dica para levar o celular no rolê com segurança" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/b19cd9/ffffff?text=Celular+Seguro" alt="Dica para levar o celular no rolê com segurança" loading="lazy">
                         <div class="card-content">
                             <h3>Celular no rolê: como levar com segurança</h3>
                             <p>Celular no rolê: leve com estilo e segurança!</p>
@@ -485,7 +494,7 @@
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/e0aaff/ffffff?text=Dicionário" alt="Dicionário visual com gírias da cena" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/e0aaff/ffffff?text=Dicionário" alt="Dicionário visual com gírias da cena" loading="lazy">
                         <div class="card-content">
                             <h3>Dicionário rolezeiro</h3>
                             <p>Gírias que só quem é da cena entende. Vem aprender!</p>
@@ -513,7 +522,7 @@
                 <button class="scroll-arrow left" aria-label="Ver entrevista anterior">◀</button>
                 <div class="cards-container" data-section="fala">
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/ff6b35/ffffff?text=Quem+Faz" alt="Chamada para conhecer artistas da cena cultural" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/ff6b35/ffffff?text=Quem+Faz" alt="Chamada para conhecer artistas da cena cultural" loading="lazy">
                         <div class="card-content">
                             <h3>Você conhece quem faz a cena?</h3>
                             <p>Quem faz o rolê ferver? Descubra no FALA, ROLÊ!</p>
@@ -522,7 +531,7 @@
                     </article>
                     
                     <article class="card">
-                        <img src="https://via.placeholder.com/300x200/00ff88/ffffff?text=Jon+Soares" alt="Retrato do artista Jon Soares" loading="lazy">
+                        <img src="https://via.placeholder.com/320x220/00ff88/ffffff?text=Jon+Soares" alt="Retrato do artista Jon Soares" loading="lazy">
                         <div class="card-content">
                             <h3>Jon Soares</h3>
                             <p>Jon Soares no Fala, ROLÊ: som que conta histórias.</p>
@@ -567,6 +576,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Scroll para o topo imediatamente
+            window.scrollTo(0, 0);
+            
             // ========== DROPDOWN EXPLORAR ==========
             const dropdown = document.querySelector('.dropdown');
             const button = dropdown.querySelector('.dropdown-button');
@@ -586,9 +598,13 @@
                         button.setAttribute('aria-expanded', false);
                     }
                 });
+
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
             }
 
-            // ========== CARROSSEIS SIMPLIFICADOS ==========
+            // ========== CARROSSEIS OTIMIZADOS ==========
             const carousels = document.querySelectorAll('.scroll-wrapper');
 
             carousels.forEach((wrapper) => {
@@ -599,14 +615,17 @@
                 const rightArrow = wrapper.querySelector('.scroll-arrow.right');
 
                 let currentIndex = 0;
+                let autoPlayInterval;
+                const isAutoPlaying = true;
 
                 const updateIndicators = () => {
                     indicators.forEach((dot, index) => {
                         dot.classList.toggle('active', index === currentIndex);
+                        dot.setAttribute('aria-pressed', index === currentIndex);
                     });
                 };
 
-                const scrollToCard = (index) => {
+                const scrollToCard = (index, smooth = true) => {
                     const totalCards = cards.length;
                     if (index < 0) index = totalCards - 1;
                     if (index >= totalCards) index = 0;
@@ -616,27 +635,45 @@
                     
                     container.scrollTo({
                         left: cardWidth * index,
-                        behavior: 'smooth'
+                        behavior: smooth ? 'smooth' : 'auto'
                     });
                     
                     updateIndicators();
                 };
 
+                const startAutoPlay = () => {
+                    if (isAutoPlaying && cards.length > 1) {
+                        autoPlayInterval = setInterval(() => {
+                            scrollToCard(currentIndex + 1);
+                        }, 5000); // Aumentado para 5s
+                    }
+                };
+
+                const stopAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                };
+
                 // Controles das setas
                 if (leftArrow && rightArrow) {
                     leftArrow.addEventListener('click', () => {
+                        stopAutoPlay();
                         scrollToCard(currentIndex - 1);
+                        setTimeout(startAutoPlay, 3000);
                     });
 
                     rightArrow.addEventListener('click', () => {
+                        stopAutoPlay();
                         scrollToCard(currentIndex + 1);
+                        setTimeout(startAutoPlay, 3000);
                     });
                 }
 
                 // Indicadores
                 indicators.forEach((dot, index) => {
                     dot.addEventListener('click', () => {
+                        stopAutoPlay();
                         scrollToCard(index);
+                        setTimeout(startAutoPlay, 3000);
                     });
 
                     dot.addEventListener('keydown', (e) => {
@@ -647,7 +684,21 @@
                     });
                 });
 
-                // Detecção de scroll manual
+                // Pausar no hover
+                container.addEventListener('mouseenter', stopAutoPlay);
+                container.addEventListener('mouseleave', startAutoPlay);
+
+                // Pausar no foco
+                container.addEventListener('focusin', stopAutoPlay);
+                container.addEventListener('focusout', (e) => {
+                    setTimeout(() => {
+                        if (!container.contains(document.activeElement)) {
+                            startAutoPlay();
+                        }
+                    }, 100);
+                });
+
+                // Detecção de scroll manual - OTIMIZADA
                 let scrollTimeout;
                 container.addEventListener('scroll', () => {
                     clearTimeout(scrollTimeout);
@@ -658,22 +709,62 @@
                             currentIndex = newIndex;
                             updateIndicators();
                         }
-                    }, 150);
+                    }, 100); // Reduzido para melhor performance
                 });
 
-                // Inicializar
+                // Inicializar - SEM DELAY
                 if (cards.length > 0) {
-                    updateIndicators();
+                    scrollToCard(0, false);
+                    startAutoPlay();
                 }
+
+                // Suporte a touch/swipe - SIMPLIFICADO
+                let startX = 0;
+                let isScrolling = false;
+
+                container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isScrolling = false;
+                }, { passive: true });
+
+                container.addEventListener('touchmove', (e) => {
+                    if (!startX) return;
+                    const diffX = startX - e.touches[0].clientX;
+                    if (Math.abs(diffX) > 20) {
+                        isScrolling = true;
+                    }
+                }, { passive: true });
+
+                container.addEventListener('touchend', (e) => {
+                    if (!isScrolling || !startX) return;
+
+                    const endX = e.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+
+                    if (Math.abs(diffX) > 50) {
+                        stopAutoPlay();
+                        
+                        if (diffX > 0) {
+                            scrollToCard(currentIndex + 1);
+                        } else {
+                            scrollToCard(currentIndex - 1);
+                        }
+                        
+                        setTimeout(startAutoPlay, 3000);
+                    }
+
+                    startX = 0;
+                    isScrolling = false;
+                }, { passive: true });
             });
 
-            // ========== VOLTAR AO TOPO ==========
+            // ========== VOLTAR AO TOPO OTIMIZADO ==========
             const voltarTopo = document.getElementById('voltarTopo');
             
             if (voltarTopo) {
                 let ticking = false;
                 const updateScrollButton = () => {
-                    const shouldShow = window.pageYOffset > 400;
+                    const shouldShow = window.pageYOffset > 300;
                     voltarTopo.style.opacity = shouldShow ? '1' : '0';
                     voltarTopo.style.transform = shouldShow ? 'translateY(0)' : 'translateY(20px)';
                     voltarTopo.style.pointerEvents = shouldShow ? 'auto' : 'none';
@@ -694,6 +785,29 @@
                     });
                 });
             }
+
+            // ========== INTERSECTION OBSERVER SIMPLIFICADO ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -20px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observar apenas seções principais
+            document.querySelectorAll('.carrossel').forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = `all 0.6s ease ${index * 0.05}s`;
+                observer.observe(el);
+            });
         });
 
         // ========== TOGGLE TEMA ==========
@@ -730,6 +844,46 @@
                 lampada.click();
             }
         });
+
+        // ========== PERFORMANCE OTIMIZATIONS ==========
+        
+        // Lazy loading para imagens que não estão visíveis
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Debounce para scroll
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Reduzir animações em dispositivos com pouca performance
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReducedMotion.matches) {
+            document.documentElement.style.setProperty('--animation-duration', '0.1s');
+        }
     </script>
 </body>
 </html>
