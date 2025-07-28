@@ -3,52 +3,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="O editorial do ROLÊ investiga o desaparecimento da madrugada nas grandes cidades e celebra quem ainda resiste na cultura noturna. Um manifesto sobre festas independentes, repressão sonora, gentrificação e política urbana." />
-    <meta name="keywords" content="cultura noturna, repressão sonora, gentrificação cultural, festas independentes, madrugada nas cidades, vida noturna Brasil, política urbana, rolês alternativos, editorial ROLÊ, resistência cultural" />
+    <meta name="description" content="O editorial do ROLÊ investiga o desaparecimento da madrugada nas grandes cidades e celebra quem ainda resiste na cultura noturna." />
+    <meta name="keywords" content="cultura noturna, repressão sonora, gentrificação cultural, festas independentes, madrugada nas cidades, vida noturna Brasil" />
     <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
-    <meta property="og:description" content="Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras. Uma reflexão sobre cultura noturna, repressão sonora e a resistência dos rolês alternativos." />
+    <meta property="og:description" content="Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras." />
     <meta property="og:image" content="https://roleentretenimento.com/images/editorial-madrugada.png" />
-    <meta property="og:type" content="article" />
     <meta property="og:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html">
-    <meta property="twitter:title" content="As cidades já foram noturnas | Revista ROLÊ">
-    <meta property="twitter:description" content="Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras.">
-    <meta property="twitter:image" content="https://roleentretenimento.com/images/editorial-madrugada.png">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "As cidades já foram noturnas",
-        "description": "Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras",
-        "author": {
-            "@type": "Person",
-            "name": "FIIH"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "ROLÊ ENTRETENIMENTO",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://roleentretenimento.com/images/logo-role.png"
-            }
-        },
-        "datePublished": "2024-12-01",
-        "dateModified": "2024-12-01",
-        "image": "https://roleentretenimento.com/images/editorial-madrugada.png",
-        "mainEntityOfPage": "https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html"
-    }
-    </script>
-    
-    <link rel="canonical" href="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
+    <title>As cidades já foram noturnas – Revista ROLÊ</title>
     <link rel="icon" href="/images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/estilo.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
         if (localStorage.getItem('theme') === 'light') {
@@ -56,36 +24,28 @@
         }
     </script>
     
-    <title>As cidades já foram noturnas – Revista ROLÊ</title>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/estilo.css" />
-    
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        /* ========== MELHORIAS ESPECÍFICAS DO EDITORIAL ========== */
+        /* ========== MELHORIAS ESSENCIAIS ========== */
         
-        /* Header do artigo com video background */
-        .article-header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="citynight" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23c77dff" opacity="0.3"/><circle cx="40" cy="30" r="0.5" fill="%23c77dff" opacity="0.5"/><circle cx="20" cy="50" r="1.5" fill="%23c77dff" opacity="0.2"/></pattern></defs><rect width="100%" height="100%" fill="url(%23citynight)"/></svg>');
-            padding: 4rem 0;
-            margin-top: 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-header::before {
-            content: '';
-            position: absolute;
+        /* Progress bar de leitura */
+        .reading-progress {
+            position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
-            animation: pulse 4s ease-in-out infinite alternate;
+            width: 0%;
+            height: 3px;
+            background: var(--gradient);
+            z-index: 10000;
+            transition: width 0.1s ease;
+        }
+
+        /* Header melhorado */
+        .article-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                        radial-gradient(circle at 30% 70%, rgba(199, 125, 255, 0.1), transparent);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
         }
 
         .article-meta-info {
@@ -95,17 +55,14 @@
             gap: 2rem;
             margin: 1.5rem 0;
             font-size: 0.9rem;
-            opacity: 0.9;
             flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
         }
 
         .article-meta-info span {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(17, 17, 17, 0.8);
+            background: rgba(17, 17, 17, 0.7);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             border: 1px solid rgba(199, 125, 255, 0.3);
@@ -115,46 +72,9 @@
             color: var(--highlight);
         }
 
-        .reading-time {
-            color: var(--highlight);
-            font-weight: 600;
-        }
-
-        /* Playlist do editorial */
-        .editorial-playlist {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .playlist-title {
-            font-size: 1.1rem;
-            color: var(--highlight);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .playlist-description {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 1rem;
-        }
-
-        .spotify-embed {
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        /* Seções do artigo com ícones */
+        /* Seções organizadas */
         .article-section {
             margin: 3rem 0;
-            position: relative;
         }
 
         .section-header {
@@ -167,47 +87,29 @@
         }
 
         .section-icon {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--highlight);
         }
 
         .section-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--highlight);
             font-weight: 700;
             margin: 0;
         }
 
-        /* Mapa colaborativo */
+        /* Mapa colaborativo simplificado */
         .mapa-colaborativo {
-            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.08), transparent);
             border: 2px solid var(--highlight);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 2.5rem;
             margin: 3rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mapa-colaborativo::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23c77dff" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="%23c77dff" opacity="0.2"/><circle cx="60" cy="80" r="1.5" fill="%23c77dff" opacity="0.15"/></svg>');
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .mapa-content {
-            position: relative;
-            z-index: 2;
         }
 
         .mapa-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--highlight);
             margin-bottom: 1rem;
             display: flex;
@@ -224,13 +126,7 @@
             gap: 1rem;
         }
 
-        .form-group {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .form-input {
-            flex: 1;
+        .form-input, .form-textarea {
             padding: 12px 16px;
             background: rgba(17, 17, 17, 0.8);
             border: 1px solid rgba(199, 125, 255, 0.3);
@@ -239,19 +135,12 @@
             font-family: inherit;
         }
 
-        .form-input::placeholder {
+        .form-input::placeholder, .form-textarea::placeholder {
             color: rgba(243, 243, 247, 0.5);
         }
 
         .form-textarea {
-            width: 100%;
-            min-height: 100px;
-            padding: 12px 16px;
-            background: rgba(17, 17, 17, 0.8);
-            border: 1px solid rgba(199, 125, 255, 0.3);
-            border-radius: 8px;
-            color: var(--text-color);
-            font-family: inherit;
+            min-height: 80px;
             resize: vertical;
         }
 
@@ -264,8 +153,6 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .form-submit:hover {
@@ -273,235 +160,85 @@
             box-shadow: 0 8px 20px rgba(199, 125, 255, 0.4);
         }
 
-        /* Galeria de imagens */
-        .imagem-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white;
-            padding: 1rem;
-            font-size: 0.9rem;
-        }
-
-        /* Depoimentos */
-        .depoimentos-section {
-            background: rgba(199, 125, 255, 0.05);
-            border-radius: 20px;
+        /* Compartilhamento limpo */
+        .share-section {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.05), transparent);
             padding: 2rem;
             margin: 3rem 0;
-        }
-
-        .depoimento {
-            background: var(--card-bg);
-            border-left: 4px solid var(--highlight);
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 0 15px 15px 0;
-            position: relative;
-        }
-
-        .depoimento::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 15px;
-            font-size: 3rem;
-            color: var(--highlight);
-            opacity: 0.3;
-            font-family: Georgia, serif;
-        }
-
-        .depoimento-texto {
-            font-style: italic;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .depoimento-autor {
-            color: var(--highlight);
-            font-weight: 600;
-            text-align: right;
-        }
-
-        /* Contador de leituras e interações */
-        .article-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            padding: 1rem;
-            background: rgba(199, 125, 255, 0.05);
             border-radius: 15px;
-            font-size: 0.9rem;
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .stat-number {
-            color: var(--highlight);
-            font-weight: 700;
-        }
-
-        /* Botões de compartilhamento melhorados */
-        .share-section {
-            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
-            padding: 2.5rem;
-            margin: 3rem 0;
-            border-radius: 20px;
-            border: 1px solid rgba(199, 125, 255, 0.2);
             text-align: center;
-            position: relative;
         }
 
         .share-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            display: flex;
+            justify-content: center;
             gap: 1rem;
-            margin: 2rem 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
         }
 
         .share-btn {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
-            padding: 12px 20px;
+            padding: 10px 20px;
             border: none;
             border-radius: 25px;
-            text-decoration: none;
             color: white;
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s ease;
             cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            text-decoration: none;
         }
 
         .share-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .share-btn.facebook {
-            background: linear-gradient(135deg, #1877f2, #42a5f5);
-        }
+        .share-btn.facebook { background: #1877f2; }
+        .share-btn.twitter { background: #1da1f2; }
+        .share-btn.whatsapp { background: #25d366; }
+        .share-btn.copy-link { background: var(--highlight); }
+        .share-btn.copy-link.copied { background: #4caf50; }
 
-        .share-btn.twitter {
-            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
-        }
-
-        .share-btn.whatsapp {
-            background: linear-gradient(135deg, #25d366, #128c7e);
-        }
-
-        .share-btn.copy-link {
-            background: linear-gradient(135deg, var(--highlight), #a64de6);
-        }
-
-        .share-btn.copy-link.copied {
-            background: linear-gradient(135deg, #4caf50, #45a049);
-        }
-
-        /* Call to action aprimorado */
-        .cta-mapeamento {
-            background: linear-gradient(135deg, var(--highlight), #a64de6);
-            color: white;
-            padding: 3rem 2rem;
-            margin: 4rem 0;
-            border-radius: 25px;
+        /* Tags melhoradas */
+        .article-tags {
+            margin: 2rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .cta-mapeamento::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/><circle cx="150" cy="100" r="1" fill="white" opacity="0.15"/><circle cx="100" cy="150" r="1.5" fill="white" opacity="0.08"/></svg>');
-            animation: float 8s ease-in-out infinite;
+        .article-tags h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
         }
 
-        .cta-content {
-            position: relative;
-            z-index: 2;
+        .tags-list {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
-        /* Animações */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            25% { transform: translateY(-10px) translateX(5px); }
-            50% { transform: translateY(0px) translateX(10px); }
-            75% { transform: translateY(10px) translateX(5px); }
+        .tag {
+            background: rgba(199, 125, 255, 0.1);
+            color: var(--highlight);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border: 1px solid rgba(199, 125, 255, 0.3);
+            transition: all 0.3s ease;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.8; }
+        .tag:hover {
+            background: var(--highlight);
+            color: white;
         }
 
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .article-meta-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .form-group {
-                flex-direction: column;
-            }
-
-            .share-buttons {
-                grid-template-columns: 1fr;
-                max-width: 300px;
-            }
-
-            .article-stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .imagem-gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Toast de notificação */
+        /* Toast simples */
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -522,97 +259,37 @@
             transform: translateX(-50%) translateY(-10px);
         }
 
-        /* Melhorias nas frases de destaque */
-        .destaque-frase {
-            position: relative;
-            background: linear-gradient(90deg, transparent 0%, rgba(199, 125, 255, 0.1) 50%, transparent 100%);
-            padding: 2rem;
-            margin: 3rem auto;
-            border-radius: 15px;
-            border-left: 4px solid var(--highlight);
-            font-size: 1.3rem;
-            font-style: italic;
-            text-align: center;
-            max-width: 600px;
-        }
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .article-meta-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
 
-        .destaque-frase::before {
-            content: '"';
-            position: absolute;
-            top: -5px;
-            left: 20px;
-            font-size: 4rem;
-            color: var(--highlight);
-            opacity: 0.3;
-            font-family: Georgia, serif;
-        }
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        /* Progress bar de leitura */
-        .reading-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: var(--gradient);
-            z-index: 10000;
-            transition: width 0.1s ease;
-        }
-
-        /* Botão de áudio */
-        .audio-player {
-            background: var(--card-bg);
-            border: 1px solid var(--highlight);
-            border-radius: 15px;
-            padding: 1rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .audio-controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .play-btn {
-            background: var(--highlight);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .play-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(199, 125, 255, 0.5);
+            .share-btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
         }
     </style>
-    
-    <noscript>
-        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
-    </noscript>
 </head>
 
 <body class="fade-in">
     <!-- Progress bar de leitura -->
     <div class="reading-progress" id="reading-progress"></div>
 
-    <!-- Header mantém a estrutura do site -->
+    <!-- Header -->
     <section class="bloco-topo">
         <div class="container-topo">
             <div class="header-top">
-                <!-- LOGO ESQUERDA -->
                 <img src="/images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
-
-                <!-- MENU + TEMA (LADO DIREITO) -->
                 <div class="right-top">
-                    <!-- MENU DROPDOWN -->
                     <div class="dropdown">
                         <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
                             Explorar ▼
@@ -626,8 +303,6 @@
                             <a href="/quem-somos.html">Quem Somos</a>
                         </div>
                     </div>
-
-                    <!-- TEMA -->
                     <img src="/images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
                 </div>
             </div>
@@ -635,7 +310,7 @@
         </div>
     </section>
 
-    <!-- Header do Artigo Melhorado -->
+    <!-- Header do Artigo -->
     <header class="article-header">
         <div class="editorial-completo">
             <h1 class="titulo-editorial">O fim da madrugada</h1>
@@ -644,24 +319,8 @@
             <div class="article-meta-info">
                 <span><i class="fas fa-user"></i> Por FIIH, cofundador do ROLÊ</span>
                 <span><i class="fas fa-calendar"></i> 1 de dezembro, 2024</span>
-                <span><i class="fas fa-clock"></i> <span class="reading-time">8 min de leitura</span></span>
+                <span><i class="fas fa-clock"></i> 8 min de leitura</span>
                 <span><i class="fas fa-tag"></i> Editorial</span>
-            </div>
-
-            <!-- Estatísticas do artigo -->
-            <div class="article-stats">
-                <div class="stat-item">
-                    <i class="fas fa-eye"></i>
-                    <span><span class="stat-number" id="view-count">2.847</span> visualizações</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-heart"></i>
-                    <span><span class="stat-number" id="like-count">394</span> curtidas</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-share"></i>
-                    <span><span class="stat-number" id="share-count">127</span> compartilhamentos</span>
-                </div>
             </div>
         </div>
     </header>
@@ -669,41 +328,7 @@
     <!-- Banner -->
     <div class="banner-wrapper">
         <div class="banner-container">
-            <img src="/images/editorial-madrugada.png" alt="Cena noturna urbana com luzes neon e pessoas nas ruas - Editorial sobre cultura noturna" loading="lazy" />
-        </div>
-    </div>
-
-    <!-- Playlist Temática -->
-    <div class="editorial-playlist">
-        <div class="playlist-title">
-            <i class="fas fa-music"></i>
-            Trilha Sonora: Madrugada Resistente
-        </div>
-        <p class="playlist-description">
-            Sons que embalam a reflexão. Curadoria musical que dialoga com o editorial.
-        </p>
-        <iframe 
-            class="spotify-embed"
-            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd?utm_source=generator&theme=0" 
-            width="100%" 
-            height="152" 
-            frameborder="0" 
-            allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy">
-        </iframe>
-    </div>
-
-    <!-- Player de Áudio do Artigo -->
-    <div class="audio-player">
-        <p style="margin-bottom: 1rem; color: var(--highlight); font-weight: 600;">
-            <i class="fas fa-headphones"></i> Ouça este editorial
-        </p>
-        <div class="audio-controls">
-            <button class="play-btn" id="audio-play-btn">
-                <i class="fas fa-play"></i>
-            </button>
-            <span style="opacity: 0.8;">Narração por voz sintética - 8 minutos</span>
+            <img src="/images/editorial-madrugada.png" alt="Capa do editorial As cidades já foram noturnas" loading="lazy" />
         </div>
     </div>
 
@@ -711,7 +336,7 @@
     <main class="editorial-completo fade-in">
         <article class="texto-editorial">
             
-            <!-- Seção 1: Introdução -->
+            <!-- Seção 1 -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-moon section-icon"></i>
@@ -720,22 +345,10 @@
                 
                 <p>As cidades já foram noturnas. E talvez você ainda lembre de como era. Ruas que respiravam depois da meia-noite, postes de luz que pareciam fazer parte do cenário e não da vigilância, bares que não se apressavam em fechar as portas, festas que ignoravam o relógio e dançavam até o sol nascer. Havia uma vibração particular na madrugada. Um tipo de energia que não se produzia com patrocínio, mas com presença. Com encontros não programados. Com corpos dispostos a errar o passo e se jogar no improviso. E era justamente nesse improviso que nasciam os melhores rolês. Aqueles que você não planejou, mas que viraram história.</p>
 
-                <div class="destaque-frase">"As cidades esqueceram como é pulsar no escuro."</div>
+                <div class="destaque-frase">"O improviso virou infração. A liberdade, distúrbio."</div>
             </div>
 
-            <!-- Galeria de Imagens: Antes e Depois -->
-            <div class="imagem-gallery">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop" alt="Vida noturna urbana dos anos 90" loading="lazy" />
-                    <div class="gallery-caption">São Paulo, anos 90: ruas que não dormiam</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&h=400&fit=crop" alt="Ruas vazias da cidade moderna à noite" loading="lazy" />
-                    <div class="gallery-caption">Hoje: silêncio imposto pela gentrificação</div>
-                </div>
-            </div>
-
-            <!-- Seção 2: O Silenciamento -->
+            <!-- Seção 2 -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-volume-mute section-icon"></i>
@@ -744,12 +357,10 @@
 
                 <p>Só que alguma coisa se perdeu no caminho. A madrugada foi ficando cada vez mais silenciosa. As luzes ainda acendem, mas brilham para vitrines fechadas. Os bares ainda existem, mas obedecem a um limite de decibéis cada vez mais rigoroso. As festas ainda acontecem, mas precisam caber num story e respeitar o novo "bom tom" dos bairros gourmetizados. O que antes era tempo livre virou infração. O que era liberdade virou distúrbio. E a cidade, essa senhora que já foi boêmia, agora quer dormir cedo e não gosta de ser incomodada.</p>
 
-                <div class="destaque-frase">"A madrugada foi silenciada por leis, grades e likes."</div>
-
                 <p>Esse editorial nasce como um chamado. Um mapeamento afetivo. Uma tentativa de entender por que a cultura da madrugada está desaparecendo das grandes cidades brasileiras. E, mais importante: quem ainda a sustenta. Porque se é verdade que a noite perdeu espaço, também é verdade que tem gente resistindo. Dançando contra o relógio. Mantendo o fôlego da cidade nas margens. E isso merece ser contado.</p>
             </div>
 
-            <!-- Seção 3: Repressão Sonora -->
+            <!-- Seção 3 -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-ban section-icon"></i>
@@ -759,30 +370,9 @@
                 <p>A repressão sonora é, sem dúvida, uma das faces mais evidentes dessa mudança. Basta conversar com qualquer produtor de evento independente e você vai ouvir as mesmas queixas: licenças difíceis, fiscalização abusiva, vizinhos organizados em grupos de WhatsApp que denunciam até ensaio com violão. Em muitas cidades, a simples tentativa de promover uma festa alternativa já é vista como um problema em potencial. E não estamos falando de megaeventos. Estamos falando de encontros locais, culturais, coletivos, muitas vezes realizados com estrutura mínima e propósito máximo. O som que sai da caixa, nesses casos, carrega mais do que batidas. Carrega manifestação artística, afirmação de identidade, exercício de pertencimento.</p>
 
                 <div class="destaque-frase">"A repressão sonora é só a superfície de um apagamento mais profundo."</div>
-
-                <!-- Depoimentos de Produtores -->
-                <div class="depoimentos-section">
-                    <h3 style="color: var(--highlight); margin-bottom: 1.5rem; text-align: center;">
-                        <i class="fas fa-quote-left"></i> Vozes da Resistência
-                    </h3>
-                    
-                    <div class="depoimento">
-                        <p class="depoimento-texto">
-                            "Hoje em dia, organizar uma festa underground é como planejar uma operação militar. Você precisa de advogado, segurança privada e ainda torcer pra não ter vizinho fiscal no grupo do WhatsApp."
-                        </p>
-                        <p class="depoimento-autor">— Marina Santos, produtora cultural, São Paulo</p>
-                    </div>
-
-                    <div class="depoimento">
-                        <p class="depoimento-texto">
-                            "A gente costumava fazer rolê em galpão que durava até 8h da manhã. Agora, depois das 22h, já tem polícia na porta. O som da cidade virou crime."
-                        </p>
-                        <p class="depoimento-autor">— Carlos Drummond, coletivo Margem Sul, Porto Alegre</p>
-                    </div>
-                </div>
             </div>
 
-            <!-- Seção 4: Gentrificação -->
+            <!-- Seção 4 -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-building section-icon"></i>
@@ -794,7 +384,7 @@
                 <div class="destaque-frase">"Gentrificação também se mede em BPMs silenciados."</div>
             </div>
 
-            <!-- Seção 5: Cultura da Performance -->
+            <!-- Seção 5 -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-camera section-icon"></i>
@@ -806,7 +396,7 @@
                 <div class="destaque-frase">"A festa virou vitrine. O som, algoritmo. A pista, cenário."</div>
             </div>
 
-            <!-- Seção 6: Não é Nostalgia -->
+            <!-- Seção 6 -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-balance-scale section-icon"></i>
@@ -815,22 +405,10 @@
 
                 <p>Não se trata aqui de nostalgia ou purismo. O ROLÊ não tem saudade de tempos "melhores" nem quer voltar a um passado idealizado. A gente sabe que o tempo muda, e que as formas de sociabilidade também mudam com ele. Mas é preciso reconhecer quando as mudanças deixam de ser evolução e passam a ser apagamento. Quando o novo não é mais expressão, mas normatização. Quando a pista perde sua potência de transformação e vira apenas decoração de feed.</p>
 
-                <div class="destaque-frase">"Não é sobre saudade. É sobre reconhecer o que estamos perdendo agora."</div>
-            </div>
-
-            <!-- Seção 7: O que faz a noite ser noite -->
-            <div class="article-section">
-                <div class="section-header">
-                    <i class="fas fa-star section-icon"></i>
-                    <h2 class="section-title">A essência da madrugada</h2>
-                </div>
-
                 <p>Afinal, o que faz a noite ser noite? Não é só o escuro, nem o som alto. É o que acontece quando a cidade suspende suas amarras e permite que a vida aconteça fora do script. É o gesto espontâneo, a troca não prevista, a liberdade de errar e recomeçar. A madrugada é onde a cidade se revela ou pelo menos, onde ela se permitia ser múltipla. Quando esse tempo desaparece, o que se perde é mais do que festa. É linguagem. É criação. É resistência.</p>
-
-                <div class="destaque-frase">"A madrugada deixou de ser tempo livre e virou ruído proibido."</div>
             </div>
 
-            <!-- Seção 8: Resistência Política -->
+            <!-- Seção 7 -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-fist-raised section-icon"></i>
@@ -842,7 +420,7 @@
                 <div class="destaque-frase">"A guerra contra o som é também uma guerra contra o corpo que dança."</div>
             </div>
 
-            <!-- Seção 9: Ainda tem esperança -->
+            <!-- Seção 8 -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-heart section-icon"></i>
@@ -851,14 +429,12 @@
 
                 <p>Mas nem tudo está perdido. A cidade ainda pulsa — mesmo que em ritmos subterrâneos. Ainda tem rolê acontecendo em garagem, pista improvisada em galpão, festa itinerante avisada de última hora, ocupação cultural que mistura arte, política e dança. Ainda tem gente que acredita na noite como espaço de criação. Ainda tem quem use o corpo como ferramenta narrativa. Ainda tem DJ que pesquisa vinil, que cria set com sentido, que entende a pista como lugar de enredo. Ainda tem coletivo que organiza evento sem patrocínio, que banca o risco, que segura a bronca. Ainda tem pista onde a música não é só trilha, mas discurso.</p>
 
-                <div class="destaque-frase">"Ainda tem gente que transforma o silêncio imposto em batida coletiva."</div>
-
                 <p>Esses espaços são preciosos. E frágeis. Precisam de apoio. De reconhecimento. De visibilidade. Porque enquanto a cidade insiste em silenciar a madrugada, é nessas brechas que a vida insiste em acontecer. E se há algo que a história da cultura urbana nos ensina é que a arte sempre encontra um jeito de escapar.</p>
 
                 <div class="destaque-frase">"Quando o som incomoda, é porque ele ainda tem potência."</div>
             </div>
 
-            <!-- Seção 10: O Pacto -->
+            <!-- Seção Final -->
             <div class="article-section">
                 <div class="section-header">
                     <i class="fas fa-handshake section-icon"></i>
@@ -866,8 +442,6 @@
                 </div>
 
                 <p>Por isso, o ROLÊ propõe um pacto. Um mapeamento coletivo. Um compromisso afetivo com quem ainda mantém a cidade respirando à noite. Queremos saber: qual é o rolê que ainda pulsa na tua cidade? Que festa te fez sentir vivo às 3h da manhã? Que pista te abraçou quando o mundo parecia hostil? Que som te deu vontade de existir?</p>
-
-                <div class="destaque-frase">"Nem toda cidade dorme. Algumas apenas se escondem na margem."</div>
 
                 <p>Marca, comenta, compartilha. Vamos cartografar juntos esses pontos de luz. Porque a madrugada não pode desaparecer sem luta. E porque, no fim das contas, defender a cultura noturna é defender o direito à cidade. À invenção. Ao improviso. Ao encontro. Ao prazer.</p>
 
@@ -879,38 +453,29 @@
 
         <!-- Mapa Colaborativo -->
         <div class="mapa-colaborativo">
-            <div class="mapa-content">
-                <h2 class="mapa-title">
-                    <i class="fas fa-map-marked-alt"></i>
-                    Mapeamento Colaborativo da Resistência
-                </h2>
-                <p style="margin-bottom: 2rem; font-size: 1.1rem;">
-                    Conte sua história. Mapeie o rolê que ainda pulsa na sua cidade. 
-                    Juntos, vamos cartografar os pontos de luz que resistem ao silenciamento.
-                </p>
-                
-                <form class="contribuicao-form" id="mapeamento-form">
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Seu nome/coletivo" required>
-                        <input type="text" class="form-input" placeholder="Cidade" required>
-                    </div>
-                    <input type="text" class="form-input" placeholder="Nome do rolê/festa/espaço" required>
-                    <textarea class="form-textarea" placeholder="Conte a história desse lugar... O que ele representa? Por que ele resiste? O que acontece lá que não acontece em outros lugares?" required></textarea>
-                    <button type="submit" class="form-submit">
-                        <i class="fas fa-map-pin"></i>
-                        Adicionar ao Mapa
-                    </button>
-                </form>
-                
-                <div id="contribuicoes-lista" style="margin-top: 2rem;">
-                    <!-- Contribuições aparecerão aqui -->
-                </div>
-            </div>
+            <h2 class="mapa-title">
+                <i class="fas fa-map-marked-alt"></i>
+                Mapeamento da Resistência
+            </h2>
+            <p style="margin-bottom: 2rem;">
+                Conte sua história. Mapeie o rolê que ainda pulsa na sua cidade.
+            </p>
+            
+            <form class="contribuicao-form" id="mapeamento-form">
+                <input type="text" class="form-input" placeholder="Seu nome" required>
+                <input type="text" class="form-input" placeholder="Cidade" required>
+                <input type="text" class="form-input" placeholder="Nome do rolê/festa/espaço" required>
+                <textarea class="form-textarea" placeholder="Conte a história desse lugar..." required></textarea>
+                <button type="submit" class="form-submit">
+                    <i class="fas fa-map-pin"></i>
+                    Adicionar ao Mapa
+                </button>
+            </form>
         </div>
 
-        <!-- Tags do Artigo -->
+        <!-- Tags -->
         <div class="article-tags">
-            <h3>Temas relacionados:</h3>
+            <h3>Temas relacionados</h3>
             <div class="tags-list">
                 <a href="#" class="tag">Cultura Noturna</a>
                 <a href="#" class="tag">Repressão Sonora</a>
@@ -918,20 +483,15 @@
                 <a href="#" class="tag">Festas Independentes</a>
                 <a href="#" class="tag">Política Urbana</a>
                 <a href="#" class="tag">Resistência Cultural</a>
-                <a href="#" class="tag">Vida Noturna</a>
-                <a href="#" class="tag">Madrugada</a>
             </div>
         </div>
 
-        <!-- Seção de Compartilhamento Melhorada -->
+        <!-- Compartilhamento -->
         <div class="share-section">
-            <h2 class="share-title">
-                <i class="fas fa-bullhorn"></i>
-                Amplifique esta resistência
+            <h2 style="color: var(--highlight); margin-bottom: 1rem;">
+                <i class="fas fa-share"></i>
+                Compartilhe este editorial
             </h2>
-            <p style="margin-bottom: 2rem; opacity: 0.9;">
-                Compartilhe este editorial e ajude a espalhar a reflexão sobre o direito à cidade noturna.
-            </p>
             <div class="share-buttons">
                 <button class="share-btn facebook" onclick="shareOnFacebook()">
                     <i class="fab fa-facebook-f"></i>
@@ -950,55 +510,13 @@
                     Copiar Link
                 </button>
             </div>
-            
-            <!-- Frases prontas para compartilhamento -->
-            <div style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">
-                <p><strong>Frases para compartilhar:</strong></p>
-                <p style="font-style: italic; cursor: pointer; padding: 0.5rem; background: rgba(199, 125, 255, 0.1); border-radius: 8px; margin: 0.5rem 0;" onclick="copyQuote(this)">
-                    "A guerra contra o som é também uma guerra contra o corpo que dança." 🎵
-                </p>
-                <p style="font-style: italic; cursor: pointer; padding: 0.5rem; background: rgba(199, 125, 255, 0.1); border-radius: 8px; margin: 0.5rem 0;" onclick="copyQuote(this)">
-                    "Defender a madrugada é defender o direito de existir fora do expediente." 🌙
-                </p>
-            </div>
         </div>
 
-        <!-- Call to Action Final -->
-        <div class="cta-mapeamento">
-            <div class="cta-content">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-                    <i class="fas fa-users"></i>
-                    Junte-se à Resistência Cultural
-                </h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-                    Acompanhe o ROLÊ nas redes sociais e seja parte da curadoria independente 
-                    que mapeia os rolês que realmente importam.
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://instagram.com/role.ent" 
-                       style="background: white; color: var(--highlight); padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;"
-                       target="_blank"
-                       onmouseover="this.style.transform='translateY(-2px)'"
-                       onmouseout="this.style.transform='translateY(0)'">
-                        <i class="fab fa-instagram"></i>
-                        Seguir no Instagram
-                    </a>
-                    <a href="/revista.html" 
-                       style="background: transparent; color: white; padding: 12px 24px; border: 2px solid white; border-radius: 25px; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;"
-                       onmouseover="this.style.background='white'; this.style.color='var(--highlight)'"
-                       onmouseout="this.style.background='transparent'; this.style.color='white'">
-                        <i class="fas fa-newspaper"></i>
-                        Ler mais editoriais
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navegação entre artigos -->
+        <!-- Navegação -->
         <nav class="article-navigation">
             <a href="#" class="nav-article">
                 <div class="nav-label">← Anterior</div>
-                <div class="nav-title">A Morte do Underground</div>
+                <div class="nav-title">Artigo anterior</div>
             </a>
             <a href="/revista.html" class="nav-article">
                 <div class="nav-label">Revista</div>
@@ -1006,7 +524,7 @@
             </a>
             <a href="#" class="nav-article">
                 <div class="nav-label">Próximo →</div>
-                <div class="nav-title">Coletivos em Resistência</div>
+                <div class="nav-title">Próximo artigo</div>
             </a>
         </nav>
     </main>
@@ -1014,16 +532,9 @@
     <!-- Separador -->
     <hr class="separador-comentario" />
 
-    <!-- Seção de Comentários Melhorada -->
+    <!-- Comentários -->
     <section class="comentarios" id="comentarios">
-        <h2>
-            <i class="fas fa-comments"></i>
-            Participe da Conversa
-        </h2>
-        <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">
-            Qual é a sua experiência com a cultura noturna? Conte sua história.
-        </p>
-        
+        <h2>O que você achou do editorial?</h2>
         <form id="comment-form">
             <div class="campo-icon">
                 <img src="/images/icon-user.svg" class="icon-form" alt="Ícone de usuário" />
@@ -1031,28 +542,11 @@
             </div>
             <div class="campo-icon">
                 <img src="/images/icon-comment.svg" class="icon-form" alt="Ícone de comentário" />
-                <textarea name="comentario" placeholder="Compartilhe sua experiência com a cultura noturna, conte sobre um rolê marcante, ou reflita sobre as questões levantadas no editorial..." required></textarea>
+                <textarea name="comentario" placeholder="Escreva aqui seu comentário" required></textarea>
             </div>
-            <button type="submit">
-                <i class="fas fa-paper-plane"></i>
-                Publicar Comentário
-            </button>
+            <button type="submit">Comentar</button>
         </form>
-        
-        <div id="comentarios-lista" class="fade-in delay">
-            <!-- Comentários de exemplo -->
-            <div class="comentario" style="background: var(--card-bg); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border-left: 3px solid var(--highlight);">
-                <strong style="color: var(--highlight);">@madrugadaResiste</strong>
-                <p style="margin: 0.5rem 0; line-height: 1.6;">Cara, esse texto me arrepeiou todo. Lembro de quando a Augusta era realmente alternativa, antes de virar shopping de rua. A gente fazia festa até 8h da manhã e ninguém reclamava. Hoje, um violão no parque já é caso de polícia.</p>
-                <small style="opacity: 0.7;">há 2 horas</small>
-            </div>
-            
-            <div class="comentario" style="background: var(--card-bg); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border-left: 3px solid var(--highlight);">
-                <strong style="color: var(--highlight);">Júlia Santos</strong>
-                <p style="margin: 0.5rem 0; line-height: 1.6;">Produtora independente aqui do Rio. Podem confirmar: organizar festa underground hoje é igual planejamento de guerra. Advogado, seguro, licença para tudo. O pior é que a galera nova nem sabe como era antes. Acham que isso é normal.</p>
-                <small style="opacity: 0.7;">há 4 horas</small>
-            </div>
-        </div>
+        <div id="comentarios-lista" class="fade-in delay"></div>
     </section>
 
     <!-- Footer -->
@@ -1077,7 +571,7 @@
         </div>
     </footer>
 
-    <!-- Botões de Navegação -->
+    <!-- Botões flutuantes -->
     <div class="botoes-flutuantes">
         <button class="botao-flutuante" id="btn-voltar-topo" title="Voltar ao topo">
             <img src="/images/seta-para-cima.svg" alt="Voltar ao topo" />
@@ -1087,12 +581,12 @@
         </button>
     </div>
 
-    <!-- Toast para feedback -->
+    <!-- Toast -->
     <div id="toast" class="toast"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // ========== PROGRESS BAR DE LEITURA ==========
+            // Progress bar de leitura
             const progressBar = document.getElementById('reading-progress');
             const article = document.querySelector('.texto-editorial');
             
@@ -1112,7 +606,7 @@
             window.addEventListener('scroll', updateProgress);
             updateProgress();
 
-            // ========== DROPDOWN EXPLORAR ==========
+            // Dropdown menu
             const dropdown = document.querySelector('.dropdown');
             const button = dropdown?.querySelector('.dropdown-button');
             const content = dropdown?.querySelector('.dropdown-content');
@@ -1131,71 +625,53 @@
                         button.setAttribute('aria-expanded', false);
                     }
                 });
+            }
 
-                content.addEventListener('click', function (e) {
-                    e.stopPropagation();
+            // Formulário de mapeamento
+            const mapeamentoForm = document.getElementById('mapeamento-form');
+            if (mapeamentoForm) {
+                mapeamentoForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showToast('Obrigado pela contribuição! Em breve implementaremos o mapa colaborativo.');
+                    this.reset();
                 });
             }
 
-            // ========== AUDIO PLAYER ==========
-            const playBtn = document.getElementById('audio-play-btn');
-            let isPlaying = false;
-            
-            playBtn.addEventListener('click', function() {
-                if (!isPlaying) {
-                    // Simular início da reprodução
-                    this.innerHTML = '<i class="fas fa-pause"></i>';
-                    isPlaying = true;
-                    showToast('🎧 Reprodução de áudio iniciada (funcionalidade em desenvolvimento)');
-                    
-                    // Simular pausa após alguns segundos
-                    setTimeout(() => {
-                        this.innerHTML = '<i class="fas fa-play"></i>';
-                        isPlaying = false;
-                    }, 5000);
-                } else {
-                    this.innerHTML = '<i class="fas fa-play"></i>';
-                    isPlaying = false;
-                    showToast('Reprodução pausada');
-                }
+            // Navegação
+            document.getElementById('btn-voltar-topo').addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // ========== FORMULÁRIO DE MAPEAMENTO ==========
-            const mapeamentoForm = document.getElementById('mapeamento-form');
-            const contribuicoesList = document.getElementById('contribuicoes-lista');
+            document.getElementById('btn-voltar-anterior').addEventListener('click', () => {
+                window.history.back();
+            });
 
-            mapeamentoForm.addEventListener('submit', function(e) {
+            // Formulário de comentários
+            const commentForm = document.getElementById('comment-form');
+            const commentsList = document.getElementById('comentarios-lista');
+
+            commentForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                const formData = new FormData(this);
-                const nome = this.querySelector('input[placeholder*="nome"]').value;
-                const cidade = this.querySelector('input[placeholder="Cidade"]').value;
-                const role = this.querySelector('input[placeholder*="rolê"]').value;
-                const historia = this.querySelector('textarea').value;
+                const nome = this.querySelector('input[name="nome"]').value;
+                const comentario = this.querySelector('textarea[name="comentario"]').value;
 
-                // Adicionar contribuição à lista
-                addContribuicao(nome, cidade, role, historia);
-                this.reset();
-                showToast('🗺️ Contribuição adicionada ao mapa da resistência!');
-            });
-
-            function addContribuicao(nome, cidade, role, historia) {
-                const contribuicaoElement = document.createElement('div');
-                contribuicaoElement.className = 'depoimento fade-in';
-                contribuicaoElement.innerHTML = `
-                    <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 15px; margin: 1rem 0; border-left: 4px solid var(--highlight);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <strong style="color: var(--highlight);">${role}</strong>
-                            <span style="font-size: 0.8rem; opacity: 0.7;"><i class="fas fa-map-marker-alt"></i> ${cidade}</span>
-                        </div>
-                        <p style="margin: 0.5rem 0; line-height: 1.6; font-style: italic;">"${historia}"</p>
-                        <p style="text-align: right; margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">— ${nome}</p>
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comentario fade-in';
+                commentElement.innerHTML = `
+                    <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border-left: 3px solid var(--highlight);">
+                        <strong style="color: var(--highlight);">${nome}</strong>
+                        <p style="margin: 0.5rem 0 0 0; line-height: 1.6;">${comentario}</p>
+                        <small style="opacity: 0.7;">agora mesmo</small>
                     </div>
                 `;
-                contribuicoesList.appendChild(contribuicaoElement);
-            }
+                commentsList.appendChild(commentElement);
+                
+                this.reset();
+                showToast('Comentário adicionado com sucesso!');
+            });
 
-            // ========== ANIMAÇÕES DE ENTRADA ==========
+            // Animações
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -1210,7 +686,6 @@
                 });
             }, observerOptions);
 
-            // Observar elementos para animação
             const animatedElements = document.querySelectorAll('.fade-in');
             animatedElements.forEach((element, index) => {
                 element.style.opacity = '0';
@@ -1218,121 +693,45 @@
                 element.style.transition = `all 0.6s ease ${index * 0.1}s`;
                 observer.observe(element);
             });
-
-            // ========== NAVEGAÇÃO ==========
-            document.getElementById('btn-voltar-topo').addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            document.getElementById('btn-voltar-anterior').addEventListener('click', () => {
-                window.history.back();
-            });
-
-            // ========== FORMULÁRIO DE COMENTÁRIOS ==========
-            const commentForm = document.getElementById('comment-form');
-            const commentsList = document.getElementById('comentarios-lista');
-
-            commentForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const nome = this.querySelector('input[name="nome"]').value;
-                const comentario = this.querySelector('textarea[name="comentario"]').value;
-
-                addComment(nome, comentario);
-                this.reset();
-                showToast('💬 Comentário adicionado com sucesso!');
-            });
-
-            function addComment(nome, comentario) {
-                const commentElement = document.createElement('div');
-                commentElement.className = 'comentario fade-in';
-                commentElement.innerHTML = `
-                    <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border-left: 3px solid var(--highlight);">
-                        <strong style="color: var(--highlight);">${nome}</strong>
-                        <p style="margin: 0.5rem 0 0 0; line-height: 1.6;">${comentario}</p>
-                        <small style="opacity: 0.7;">agora mesmo</small>
-                    </div>
-                `;
-                commentsList.appendChild(commentElement);
-            }
-
-            // ========== ESTATÍSTICAS DINÂMICAS ==========
-            function updateStats() {
-                const viewCount = document.getElementById('view-count');
-                const likeCount = document.getElementById('like-count');
-                const shareCount = document.getElementById('share-count');
-                
-                // Simular incremento de visualizações
-                let currentViews = parseInt(viewCount.textContent.replace(/\D/g, ''));
-                viewCount.textContent = (currentViews + Math.floor(Math.random() * 5)).toLocaleString();
-            }
-
-            // Atualizar stats a cada 30 segundos
-            setInterval(updateStats, 30000);
-
-            // ========== TEMPO DE LEITURA ==========
-            function calculateReadingTime() {
-                const article = document.querySelector('.texto-editorial');
-                const text = article.textContent;
-                const wordsPerMinute = 200;
-                const wordCount = text.trim().split(/\s+/).length;
-                const readingTime = Math.ceil(wordCount / wordsPerMinute);
-                
-                const readingTimeElement = document.querySelector('.reading-time');
-                if (readingTimeElement) {
-                    readingTimeElement.textContent = `${readingTime} min de leitura`;
-                }
-            }
-
-            calculateReadingTime();
-
-            // ========== ANALYTICS SIMULATION ==========
-            let startTime = Date.now();
-            let maxScroll = 0;
-
-            window.addEventListener('scroll', () => {
-                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-                maxScroll = Math.max(maxScroll, scrollPercent);
-            });
-
-            window.addEventListener('beforeunload', () => {
-                const timeSpent = Math.round((Date.now() - startTime) / 1000);
-                console.log(`Tempo no artigo: ${timeSpent}s, Scroll máximo: ${maxScroll}%`);
-                // Enviar dados para analytics aqui
-            });
         });
 
-        // ========== FUNÇÕES DE COMPARTILHAMENTO ==========
+        // Funções de compartilhamento
         function shareOnFacebook() {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent('As cidades já foram noturnas - Editorial ROLÊ sobre resistência cultural');
+            const title = encodeURIComponent(document.title);
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`, '_blank', 'width=600,height=400');
-            updateShareCount();
         }
 
         function shareOnTwitter() {
             const url = encodeURIComponent(window.location.href);
-            const title = encodeURIComponent('As cidades já foram noturnas - Um manifesto sobre cultura noturna e resistência urbana por @role.ent');
-            const hashtags = 'culturanoturna,resistencia,madrugada,role';
+            const title = encodeURIComponent('As cidades já foram noturnas - Editorial ROLÊ sobre cultura noturna');
+            const hashtags = 'culturanoturna,role,resistencia';
             window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`, '_blank', 'width=600,height=400');
-            updateShareCount();
         }
 
         function shareOnWhatsApp() {
             const url = encodeURIComponent(window.location.href);
             const title = encodeURIComponent('As cidades já foram noturnas - Editorial ROLÊ');
-            const text = `${title}%0A%0A"A guerra contra o som é também uma guerra contra o corpo que dança."%0A%0A${url}`;
+            const text = `${title} ${url}`;
             
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 window.open(`whatsapp://send?text=${text}`, '_blank');
             } else {
                 window.open(`https://web.whatsapp.com/send?text=${text}`, '_blank');
             }
-            updateShareCount();
         }
 
         function copyLink() {
-            copyToClipboard(window.location.href);
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(window.location.href);
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = window.location.href;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            }
             
             const copyBtn = document.getElementById('copyBtn');
             copyBtn.classList.add('copied');
@@ -1343,35 +742,7 @@
                 copyBtn.innerHTML = '<i class="fas fa-link"></i> Copiar Link';
             }, 2000);
             
-            showToast('🔗 Link copiado! Cole onde quiser compartilhar.');
-            updateShareCount();
-        }
-
-        function copyQuote(element) {
-            const quote = element.textContent;
-            copyToClipboard(quote);
-            showToast('📝 Frase copiada! Cole nas suas redes sociais.');
-        }
-
-        function copyToClipboard(text) {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(text);
-            } else {
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-            }
-        }
-
-        function updateShareCount() {
-            const shareCount = document.getElementById('share-count');
-            if (shareCount) {
-                let current = parseInt(shareCount.textContent);
-                shareCount.textContent = current + 1;
-            }
+            showToast('Link copiado para a área de transferência!');
         }
 
         function showToast(message) {
@@ -1384,7 +755,7 @@
             }, 3000);
         }
 
-        // ========== TOGGLE TEMA ==========
+        // Toggle tema
         const lampada = document.querySelector('.lampada-toggle');
         const root = document.documentElement;
 
@@ -1408,88 +779,6 @@
                 localStorage.setItem('theme', 'light');
             }
         });
-
-        // ========== KEYBOARD SHORTCUTS ==========
-        document.addEventListener('keydown', function(e) {
-            // Ctrl/Cmd + K para copiar link
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                copyLink();
-            }
-            
-            // Esc para voltar ao topo
-            if (e.key === 'Escape') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-
-        // ========== LAZY LOADING MELHORADO ==========
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        if (img.dataset.src) {
-                            img.src = img.dataset.src;
-                            img.removeAttribute('data-src');
-                        }
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // ========== PERFORMANCE MONITORING ==========
-        if ('PerformanceObserver' in window) {
-            const observer = new PerformanceObserver((list) => {
-                for (const entry of list.getEntries()) {
-                    if (entry.entryType === 'largest-contentful-paint') {
-                        console.log('LCP:', entry.startTime);
-                    }
-                }
-            });
-            observer.observe({entryTypes: ['largest-contentful-paint']});
-        }
-
-        // ========== EASTER EGG ==========
-        let konamiCode = [];
-        const konamiSequence = [
-            'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
-            'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
-            'KeyB', 'KeyA'
-        ];
-
-        document.addEventListener('keydown', function(e) {
-            konamiCode.push(e.code);
-            if (konamiCode.length > konamiSequence.length) {
-                konamiCode.shift();
-            }
-            
-            if (konamiCode.join(',') === konamiSequence.join(',')) {
-                showToast('🎉 Código descoberto! A resistência cultural agradece.');
-                document.body.style.animation = 'pulse 2s ease-in-out 3';
-                konamiCode = [];
-            }
-        });
-
-        // ========== PREVENT COMMON ERRORS ==========
-        window.addEventListener('error', function(e) {
-            console.warn('Erro capturado:', e.error);
-            // Não quebrar a experiência do usuário
-        });
-
-        // ========== SERVICE WORKER REGISTRATION ==========
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                console.log('SW registrado:', registration.scope);
-            }).catch(function(error) {
-                console.log('SW falhou:', error);
-            });
-        }
     </script>
 </body>
 </html>
