@@ -1,3 +1,57 @@
+image.png
+
+estilo (6).css
+2.432 linhas
+
+css
+
+
+as-cidades-ja-foram-noturnas (3).html
+2.312 linhas
+
+html
+
+
+index (3).html
+679 linhas
+
+html
+
+por que tem isso no inicio da pagina? Gravar na memória que todas as páginas do site do ROLÊ são conectados ao estilo.css e sempre terão a mesma estrutura do index, que é a base do site.
+
+Editar
+Esse texto no início da página é provavelmente CSS inline que está sendo exibido como texto, quando deveria estar oculto dentro das tags <style> ou referenciado corretamente no arquivo CSS.
+
+Isso pode estar acontecendo por alguns motivos:
+
+🔍 Possíveis Causas:
+Tag <style> mal fechada - O CSS está "vazando" para fora das tags
+Problema no arquivo estilo.css - Conflito entre CSS externo e inline
+Erro de sintaxe no CSS que está quebrando a renderização
+Cache do navegador mostrando versão antiga/corrompida
+🛠️ Como Corrigir:
+
+Correção da Página ROLÊ - CSS Fix
+Artefato interativo 
+📝 Principais Correções Aplicadas:
+🔧 CSS Organizado - Todo CSS inline agora está dentro das tags <style> corretas
+⚡ Carregamento Otimizado - CSS externo (estilo.css) carrega primeiro, depois o específico da página
+🎯 Estrutura ROLÊ Mantida - Header, navegação e footer seguem o padrão do site
+✨ Funcionalidades Preservadas - Sistema de reações, progress bar e toggle de tema funcionais
+🚀 Como Implementar:
+Substitua o HTML atual por esta versão corrigida
+Verifique se o arquivo estilo.css está no local correto
+Teste o carregamento da página
+Limpe o cache do navegador se necessário
+A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem conflitos de CSS! 🎨
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -238,24 +292,256 @@
     <!-- Conteúdo Editorial -->
     <main class="editorial-completo">
         <article class="texto-editorial">
-            <p>As cidades já foram noturnas. E talvez você ainda lembre de como era. Ruas que respiravam depois da meia-noite, postes de luz que pareciam fazer parte do cenário e não da vigilância, bares que não se apressavam em fechar as portas, festas que ignoravam o relógio e dançavam até o sol nascer.</p>
+            
+            <!-- Introdução -->
+            <p>As cidades já foram noturnas. E talvez você ainda lembre de como era. Ruas que respiravam depois da meia-noite, postes de luz que pareciam fazer parte do cenário e não da vigilância, bares que não se apressavam em fechar as portas, festas que ignoravam o relógio e dançavam até o sol nascer. Havia uma vibração particular na madrugada. Um tipo de energia que não se produzia com patrocínio, mas com presença. Com encontros não programados. Com corpos dispostos a errar o passo e se jogar no improviso. E era justamente nesse improviso que nasciam os melhores rolês. Aqueles que você não planejou, mas que viraram história.</p>
 
-            <div class="destaque-frase">
-                O improviso virou infração. A liberdade, distúrbio.
+            <div class="destaque-frase shareable-quote" onclick="shareQuote(this)">O improviso virou infração. A liberdade, distúrbio.</div>
+
+            <!-- Seção 1: O Silenciamento -->
+            <div class="section-break">
+                <i class="fas fa-volume-mute section-icon"></i>
+                <h2 class="section-title">O Silenciamento Progressivo</h2>
             </div>
 
-            <p>Só que alguma coisa se perdeu no caminho. A madrugada foi ficando cada vez mais silenciosa. As luzes ainda acendem, mas brilham para vitrines fechadas. Os bares ainda existem, mas obedecem a um limite de decibéis cada vez mais rigoroso.</p>
+            <p>Só que alguma coisa se perdeu no caminho. A madrugada foi ficando cada vez mais silenciosa. As luzes ainda acendem, mas brilham para vitrines fechadas. Os bares ainda existem, mas obedecem a um limite de decibéis cada vez mais rigoroso. As festas ainda acontecem, mas precisam caber num story e respeitar o novo "bom tom" dos bairros gourmetizados. O que antes era tempo livre virou infração. O que era liberdade virou distúrbio. E a cidade, essa senhora que já foi boêmia, agora quer dormir cedo e não gosta de ser incomodada.</p>
 
-            <p>A repressão sonora é, sem dúvida, uma das faces mais evidentes dessa mudança. Basta conversar com qualquer produtor de evento independente e você vai ouvir as mesmas queixas: licenças difíceis, fiscalização abusiva, vizinhos organizados em grupos de WhatsApp que denunciam até ensaio com violão.</p>
-
-            <div class="destaque-frase">
-                Defender a madrugada é defender o direito de existir fora do expediente.
+            <div class="texto-chamada">
+                <strong>Este editorial nasce como um chamado.</strong> Um mapeamento afetivo. Uma tentativa de entender por que a cultura da madrugada está desaparecendo das grandes cidades brasileiras. E, mais importante: quem ainda a sustenta.
             </div>
+
+            <p>Porque se é verdade que a noite perdeu espaço, também é verdade que tem gente resistindo. Dançando contra o relógio. Mantendo o fôlego da cidade nas margens. E isso merece ser contado.</p>
+
+            <!-- Seção 2: Repressão Sonora -->
+            <div class="section-break">
+                <i class="fas fa-ban section-icon"></i>
+                <h2 class="section-title">A Guerra Contra o Som</h2>
+            </div>
+
+            <p>A repressão sonora é, sem dúvida, uma das faces mais evidentes dessa mudança. Basta conversar com qualquer produtor de evento independente e você vai ouvir as mesmas queixas: licenças difíceis, fiscalização abusiva, vizinhos organizados em grupos de WhatsApp que denunciam até ensaio com violão. Em muitas cidades, a simples tentativa de promover uma festa alternativa já é vista como um problema em potencial.</p>
+
+            <p>E não estamos falando de megaeventos. Estamos falando de encontros locais, culturais, coletivos, muitas vezes realizados com estrutura mínima e propósito máximo. O som que sai da caixa, nesses casos, carrega mais do que batidas. Carrega manifestação artística, afirmação de identidade, exercício de pertencimento.</p>
+
+            <div class="destaque-frase shareable-quote" onclick="shareQuote(this)">A repressão sonora é só a superfície de um apagamento mais profundo.</div>
+
+            <!-- Seção 3: Gentrificação -->
+            <div class="section-break">
+                <i class="fas fa-building section-icon"></i>
+                <h2 class="section-title">Gentrificação em BPMs</h2>
+            </div>
+
+            <p>Mas o som incomoda. Incomoda quem transformou a cidade em patrimônio privado. Incomoda quem quer silêncio absoluto após as 22h, mas não se importa com helicóptero da polícia sobrevoando a madrugada. Incomoda porque não segue o roteiro da urbanização higienista que, aos poucos, tomou conta dos bairros antes criativos.</p>
+
+            <p>A gentrificação, afinal, não leva apenas os aluguéis às alturas. Ela redefine o que é aceitável e a madrugada, com seu improviso e seu excesso, deixou de ser.</p>
+
+            <div class="destaque-frase">Gentrificação também se mede em BPMs silenciados.</div>
+
+            <!-- Seção 4: Cultura da Performance -->
+            <div class="section-break">
+                <i class="fas fa-camera section-icon"></i>
+                <h2 class="section-title">Quando a Festa Virou Vitrine</h2>
+            </div>
+
+            <p>Enquanto isso, o que vemos crescer é a cultura da performance. A presença virou conteúdo. A experiência, vitrine. A festa, produto. Hoje em dia, muitos rolês são organizados com mais preocupação com o cenário do que com a música. A pista virou plano de fundo para selfie. O DJ, um algoritmo humano. O público, uma plateia de stories.</p>
+
+            <p>E assim, aos poucos, a vivência real vai sendo substituída por sua imagem. A curadoria cede lugar ao viral. O risco cede lugar ao filtro. A conexão cede lugar ao engajamento. A madrugada, essa entidade imprevisível e generosa, virou estratégia de branding.</p>
+
+            <div class="destaque-frase">A festa virou vitrine. O som, algoritmo. A pista, cenário.</div>
+
+            <!-- Seção 5: Evolução vs Apagamento -->
+            <div class="section-break">
+                <i class="fas fa-balance-scale section-icon"></i>
+                <h2 class="section-title">Evolução ou Apagamento?</h2>
+            </div>
+
+            <p>Não se trata aqui de nostalgia ou purismo. O ROLÊ não tem saudade de tempos "melhores" nem quer voltar a um passado idealizado. A gente sabe que o tempo muda, e que as formas de sociabilidade também mudam com ele. Mas é preciso reconhecer quando as mudanças deixam de ser evolução e passam a ser apagamento. Quando o novo não é mais expressão, mas normatização. Quando a pista perde sua potência de transformação e vira apenas decoração de feed.</p>
+
+            <p>Afinal, o que faz a noite ser noite? Não é só o escuro, nem o som alto. É o que acontece quando a cidade suspende suas amarras e permite que a vida aconteça fora do script. É o gesto espontâneo, a troca não prevista, a liberdade de errar e recomeçar. A madrugada é onde a cidade se revela ou pelo menos, onde ela se permitia ser múltipla. Quando esse tempo desaparece, o que se perde é mais do que festa. É linguagem. É criação. É resistência.</p>
+
+            <!-- Seção 6: Resistência Política -->
+            <div class="section-break">
+                <i class="fas fa-fist-raised section-icon"></i>
+                <h2 class="section-title">Corpos que Dançam, Corpos que Resistem</h2>
+            </div>
+
+            <p>Sim, resistência. Porque a noite sempre foi lugar de expressão política, especialmente para os corpos que não cabem no dia. Pessoas LGBTQIAP+, artistas independentes, trabalhadores da cultura, juventudes periféricas — todos esses grupos encontraram na madrugada um espaço para existir com menos controle.</p>
+
+            <p>Não é coincidência que as mesmas políticas que criminalizam festas também criminalizam corpos. A guerra contra o som é também uma guerra contra a diferença. E é por isso que o silêncio imposto não é neutro. Ele tem lado. Ele tem alvo.</p>
+
+            <div class="destaque-frase">A guerra contra o som é também uma guerra contra o corpo que dança.</div>
+
+            <!-- Seção 7: Ainda Há Esperança -->
+            <div class="section-break">
+                <i class="fas fa-heart section-icon"></i>
+                <h2 class="section-title">Pulsos Subterrâneos</h2>
+            </div>
+
+            <p>Mas nem tudo está perdido. A cidade ainda pulsa — mesmo que em ritmos subterrâneos. Ainda tem rolê acontecendo em garagem, pista improvisada em galpão, festa itinerante avisada de última hora, ocupação cultural que mistura arte, política e dança. Ainda tem gente que acredita na noite como espaço de criação. Ainda tem quem use o corpo como ferramenta narrativa.</p>
+
+            <p>Ainda tem DJ que pesquisa vinil, que cria set com sentido, que entende a pista como lugar de enredo. Ainda tem coletivo que organiza evento sem patrocínio, que banca o risco, que segura a bronca. Ainda tem pista onde a música não é só trilha, mas discurso.</p>
+
+            <div class="destaque-frase">Quando o som incomoda, é porque ele ainda tem potência.</div>
+
+            <p>Esses espaços são preciosos. E frágeis. Precisam de apoio. De reconhecimento. De visibilidade. Porque enquanto a cidade insiste em silenciar a madrugada, é nessas brechas que a vida insiste em acontecer. E se há algo que a história da cultura urbana nos ensina é que a arte sempre encontra um jeito de escapar.</p>
+
+            <!-- Seção Final: O Pacto -->
+            <div class="section-break">
+                <i class="fas fa-handshake section-icon"></i>
+                <h2 class="section-title">Um Pacto pela Madrugada</h2>
+            </div>
+
+            <p>Por isso, o ROLÊ propõe um pacto. Um mapeamento coletivo. Um compromisso afetivo com quem ainda mantém a cidade respirando à noite. Queremos saber: qual é o rolê que ainda pulsa na tua cidade? Que festa te fez sentir vivo às 3h da manhã? Que pista te abraçou quando o mundo parecia hostil? Que som te deu vontade de existir?</p>
+
+            <div class="texto-chamada">
+                <strong>Marca, comenta, compartilha.</strong> Vamos cartografar juntos esses pontos de luz. Porque a madrugada não pode desaparecer sem luta.
+            </div>
+
+            <p>E porque, no fim das contas, defender a cultura noturna é defender o direito à cidade. À invenção. Ao improviso. Ao encontro. Ao prazer.</p>
+
+            <div class="destaque-frase">Defender a madrugada é defender o direito de existir fora do expediente.</div>
 
             <p class="frase-final"><strong>As cidades já foram noturnas. Mas podem voltar a ser.</strong></p>
         </article>
+
+        <!-- Mapa Colaborativo Avançado -->
+        <div class="mapa-colaborativo">
+            <div class="mapa-content">
+                <h2 class="mapa-title">
+                    <i class="fas fa-map-marked-alt"></i>
+                    Mapeamento Colaborativo da Resistência
+                </h2>
+                <p class="mapa-description">
+                    Conte sua história. Mapeie o rolê que ainda pulsa na sua cidade. 
+                    Juntos, vamos cartografar os pontos de luz que resistem ao silenciamento.
+                </p>
+                
+                <form class="contribuicao-form" id="mapeamento-form">
+                    <div class="form-row">
+                        <input type="text" class="form-input" placeholder="Seu nome/coletivo" required>
+                        <input type="text" class="form-input" placeholder="Cidade" required>
+                    </div>
+                    <input type="text" class="form-input" placeholder="Nome do rolê/festa/espaço" required>
+                    <textarea class="form-textarea" placeholder="Conte a história desse lugar... O que ele representa? Por que ele resiste? O que acontece lá que não acontece em outros lugares?" required></textarea>
+                    <button type="submit" class="form-submit">
+                        <i class="fas fa-map-pin"></i>
+                        Adicionar ao Mapa
+                    </button>
+                </form>
+                
+                <div class="contribuicoes-lista" id="contribuicoes-lista">
+                    <div class="contribuicoes-header">
+                        <div class="contribuicoes-counter">
+                            <i class="fas fa-users"></i>
+                            <span id="total-contribuicoes">12</span> histórias mapeadas
+                        </div>
+                        <p style="opacity: 0.8;">Conheça os espaços de resistência cultural pelo Brasil</p>
+                    </div>
+                    
+                    <!-- Contribuições de exemplo -->
+                    <div class="contribuicao-item">
+                        <div class="contribuicao-header">
+                            <div class="contribuicao-local">Galpão do Circo</div>
+                            <div class="contribuicao-cidade">
+                                <i class="fas fa-map-marker-alt"></i>
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <p class="contribuicao-historia">
+                            "Um espaço que resiste há 15 anos no centro de SP. Todo sábado rola festa até as 6h da manhã, com lineup sempre underground. O que mais me marca é que aqui a galera dança de verdade, não performa para stories. É um dos últimos lugares onde você pode ser quem é sem julgamento."
+                        </p>
+                        <p class="contribuicao-autor">— Coletivo Margem</p>
+                    </div>
+
+                    <div class="contribuicao-item">
+                        <div class="contribuicao-header">
+                            <div class="contribuicao-local">Casa Selvagem</div>
+                            <div class="contribuicao-cidade">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Porto Alegre, RS
+                            </div>
+                        </div>
+                        <p class="contribuicao-historia">
+                            "Ocupação cultural que funciona numa casa antiga no bairro Cidade Baixa. Rola música experimental, performance art e festa queer toda primeira sexta do mês. O lugar abraça corpos dissidentes e mantém viva a cena alternativa da cidade."
+                        </p>
+                        <p class="contribuicao-autor">— @resistepoaqueer</p>
+                    </div>
+
+                    <div class="contribuicao-item">
+                        <div class="contribuicao-header">
+                            <div class="contribuicao-local">Festa da Laje</div>
+                            <div class="contribuicao-cidade">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Rio de Janeiro, RJ
+                            </div>
+                        </div>
+                        <p class="contribuicao-historia">
+                            "Acontece numa laje na Lapa, sempre em local diferente por segurança. É organizada por moleques da própria comunidade e toca funk, trap e beats autorais. A vista da cidade de madrugada é surreal, e a energia é pura resistência."
+                        </p>
+                        <p class="contribuicao-autor">— DJ Quebrada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article-tags">
+            <h3>Temas relacionados</h3>
+            <div class="tags-list">
+                <a href="#" class="tag">Cultura Noturna</a>
+                <a href="#" class="tag">Repressão Sonora</a>
+                <a href="#" class="tag">Gentrificação</a>
+                <a href="#" class="tag">Festas Independentes</a>
+                <a href="#" class="tag">Política Urbana</a>
+                <a href="#" class="tag">Resistência Cultural</a>
+                <a href="#" class="tag">Madrugada</a>
+            </div>
+        </div>
+
+        <!-- Compartilhamento -->
+        <div class="share-section">
+            <h2 class="share-title">
+                <i class="fas fa-bullhorn"></i>
+                Amplifique esta resistência
+            </h2>
+            <p class="share-description">
+                Compartilhe este editorial e ajude a espalhar a reflexão sobre o direito à cidade noturna.
+            </p>
+            <div class="share-buttons">
+                <button class="share-btn facebook" onclick="shareOnFacebook()">
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook
+                </button>
+                <button class="share-btn twitter" onclick="shareOnTwitter()">
+                    <i class="fab fa-twitter"></i>
+                    Twitter
+                </button>
+                <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </button>
+                <button class="share-btn copy-link" onclick="copyLink()" id="copyBtn">
+                    <i class="fas fa-link"></i>
+                    Copiar Link
+                </button>
+            </div>
+        </div>
+
+        <!-- Navegação -->
+        <nav class="article-navigation">
+            <a href="#" class="nav-article">
+                <div class="nav-label">← Anterior</div>
+                <div class="nav-title">Artigo anterior</div>
+            </a>
+            <a href="/revista.html" class="nav-article">
+                <div class="nav-label">Revista</div>
+                <div class="nav-title">Todos os artigos</div>
+            </a>
+            <a href="#" class="nav-article">
+                <div class="nav-label">Próximo →</div>
+                <div class="nav-title">Próximo artigo</div>
+            </a>
+        </nav>
     </main>
 
+  
     <!-- Footer padrão ROLÊ -->
     <footer>
         <div class="footer-links">
