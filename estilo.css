@@ -1428,6 +1428,7 @@ section.comentarios h2 {
   overflow: hidden;
 }
 
+
 /* ========== CORREÇÃO 1: TIMELINE - BOLINHAS SOBREPOSTAS ========== */
 
 /* Remove completamente as bolinhas dos números */
@@ -1447,7 +1448,20 @@ section.comentarios h2 {
   background: var(--highlight);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--bg);
-  z-index: 3;
+  z-index: 1; /* Fica atrás dos cards */
+}
+
+/* Garante que os cards fiquem na frente das bolinhas */
+.timeline-content {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid var(--card-border);
+  margin: 0 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2; /* Fica na frente das bolinhas */
 }
 
 /* Estilização dos números sem interferência */
@@ -1458,10 +1472,10 @@ section.comentarios h2 {
   font-weight: 700;
   color: var(--highlight);
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Fica na frente das bolinhas */
 }
 
-/* Garante que a linha central fique atrás */
+/* Garante que a linha central fique atrás de tudo */
 .timeline::before {
   content: '';
   position: absolute;
@@ -1471,7 +1485,7 @@ section.comentarios h2 {
   width: 2px;
   background: var(--gradient);
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 0; /* Mais baixo z-index */
 }
 
 /* ========== CORREÇÃO 2: ESTATÍSTICAS - NÚMEROS CORTADOS ========== */
