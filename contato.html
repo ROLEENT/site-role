@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Entre em contato com o ROLÊ ENTRETENIMENTO – dúvidas, parcerias e colaborações." />
+  <meta name="description" content="Entre em contato com o ROLÊ ENTRETENIMENTO – dúvidas, parcerias e colaborações. Conectando cultura, arte e diversão." />
+  <meta name="keywords" content="contato, rolê, entretenimento, parcerias, cultura, eventos, colaboração" />
   <meta property="og:title" content="Contato | ROLÊ ENTRETENIMENTO" />
-  <meta property="og:description" content="Fale com o time do ROLÊ: dúvidas, sugestões, parcerias e tudo mais." />
+  <meta property="og:description" content="Fale com o time do ROLÊ: dúvidas, sugestões, parcerias e colaborações culturais." />
   <meta property="og:image" content="https://roleentretenimento.com/images/logo-role.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://roleentretenimento.com/contato.html" />
@@ -19,6 +20,430 @@
   <title>Contato | ROLÊ ENTRETENIMENTO</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="stylesheet" href="estilo.css" />
+
+  <style>
+    /* Estilos específicos para a página de contato */
+    .contato-hero {
+      text-align: center;
+      padding: 3rem 2rem 2rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .contato-info {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contato-info::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient);
+      opacity: 0.05;
+      transition: opacity 0.3s ease;
+    }
+
+    .contato-info:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px var(--shadow);
+      border-color: var(--highlight);
+    }
+
+    .contato-info:hover::before {
+      opacity: 0.1;
+    }
+
+    .contato-info h3 {
+      font-size: 1.8rem;
+      color: var(--highlight);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .lista-contato-moderna {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .lista-contato-moderna li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(199, 125, 255, 0.05);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .lista-contato-moderna li:hover {
+      background: rgba(199, 125, 255, 0.1);
+      transform: translateX(5px);
+    }
+
+    .icon-contato-moderno {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) saturate(100%) invert(71%) sepia(46%) saturate(6658%) hue-rotate(268deg) brightness(103%) contrast(101%);
+      flex-shrink: 0;
+    }
+
+    .contato-item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .contato-label {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+
+    .contato-value a {
+      color: var(--highlight);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contato-value a:hover {
+      color: white;
+      text-shadow: 0 0 10px var(--highlight);
+    }
+
+    .formulario-secao {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .formulario-secao::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient);
+      opacity: 0.05;
+    }
+
+    .formulario-secao h3 {
+      font-size: 1.8rem;
+      color: var(--highlight);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .formulario-moderno {
+      position: relative;
+      z-index: 2;
+    }
+
+    .campo-moderno {
+      margin-bottom: 1.5rem;
+    }
+
+    .campo-moderno label {
+      display: block;
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      background: rgba(17, 17, 17, 0.8);
+      border: 2px solid var(--card-border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .input-wrapper:focus-within {
+      border-color: var(--highlight);
+      background: rgba(17, 17, 17, 0.9);
+      box-shadow: 0 0 0 3px rgba(199, 125, 255, 0.1);
+    }
+
+    .input-wrapper input,
+    .input-wrapper textarea {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-color);
+      width: 100%;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: none;
+    }
+
+    .input-wrapper input::placeholder,
+    .input-wrapper textarea::placeholder {
+      color: rgba(243, 243, 247, 0.5);
+    }
+
+    .input-wrapper .input-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.75rem;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .textarea-wrapper {
+      min-height: 120px;
+      align-items: flex-start;
+      padding-top: 1rem;
+    }
+
+    .textarea-wrapper textarea {
+      min-height: 100px;
+      max-height: 200px;
+      resize: vertical;
+    }
+
+    .btn-enviar {
+      background: var(--gradient);
+      color: white;
+      border: none;
+      padding: 15px 35px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-enviar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(199, 125, 255, 0.4);
+    }
+
+    .btn-enviar:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .horario-info {
+      background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .horario-info h4 {
+      color: var(--highlight);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .horario-info p {
+      color: var(--text-color);
+      opacity: 0.8;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .social-destaque {
+      background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 4rem auto;
+      max-width: 800px;
+    }
+
+    .social-destaque h3 {
+      font-size: 2rem;
+      color: var(--highlight);
+      margin-bottom: 1rem;
+    }
+
+    .social-destaque p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--card-bg);
+      border: 2px solid var(--highlight);
+      color: var(--highlight);
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      background: var(--highlight);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(199, 125, 255, 0.3);
+    }
+
+    .social-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .faq-section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .faq-section h3 {
+      font-size: 2rem;
+      color: var(--highlight);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 15px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--highlight);
+    }
+
+    .faq-question {
+      background: transparent;
+      border: none;
+      color: var(--text-color);
+      padding: 1.5rem;
+      width: 100%;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question:hover {
+      color: var(--highlight);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      color: var(--text-color);
+      opacity: 0.9;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+      }
+
+      .contato-info,
+      .formulario-secao {
+        padding: 2rem;
+      }
+
+      .social-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contato-hero {
+        padding: 2rem 1rem;
+      }
+
+      .contato-info,
+      .formulario-secao {
+        padding: 1.5rem;
+      }
+
+      .lista-contato-moderna li {
+        padding: 0.75rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="fade-in">
@@ -48,71 +473,167 @@
     </div>
   </section>
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class="editorial-completo">
-    <h1 class="titulo-editorial">ENTRE EM CONTATO</h1>
-    <p class="subtitulo-editorial">Conecte-se conosco! Dúvidas, parcerias, sugestões ou só um oi mesmo.</p>
+  <!-- HERO SECTION -->
+  <section class="contato-hero fade-in">
+    <h1 class="hero-title">ENTRE EM CONTATO</h1>
+    <p class="hero-description">
+      Conecte-se conosco! Dúvidas, parcerias, sugestões ou só um oi mesmo. 
+      A gente quer ouvir sua voz e construir junto a cena cultural que o Brasil merece.
+    </p>
+  </section>
 
-    <!-- CONTATO RÁPIDO -->
-    <section class="contato-rapido centralizado fade-in delay">
-      <ul class="lista-contato">
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="contato-grid fade-in delay">
+    <!-- INFORMAÇÕES DE CONTATO -->
+    <div class="contato-info">
+      <h3>Nossos Canais</h3>
+      <ul class="lista-contato-moderna">
         <li>
-          <img src="images/whatsapp.svg" alt="WhatsApp" class="icon-contato" />
-          <span>WhatsApp:</span>
-          <a href="https://wa.me/5551980704353" target="_blank">+55 51 98070‑4353</a>
+          <img src="images/whatsapp.svg" alt="WhatsApp" class="icon-contato-moderno" />
+          <div class="contato-item-info">
+            <span class="contato-label">WhatsApp</span>
+            <div class="contato-value">
+              <a href="https://wa.me/5551980704353" target="_blank">+55 51 98070‑4353</a>
+            </div>
+          </div>
         </li>
         <li>
-          <img src="images/email.svg" alt="E-mail" class="icon-contato" />
-          <span>E-mail:</span>
-          <a href="mailto:contato@roleentretenimento.com">contato@roleentretenimento.com</a>
+          <img src="images/email.svg" alt="E-mail" class="icon-contato-moderno" />
+          <div class="contato-item-info">
+            <span class="contato-label">E-mail</span>
+            <div class="contato-value">
+              <a href="mailto:contato@roleentretenimento.com">contato@roleentretenimento.com</a>
+            </div>
+          </div>
         </li>
         <li>
-          <img src="images/instagram.svg" alt="Instagram" class="icon-contato" />
-          <span>Instagram:</span>
-          <a href="https://instagram.com/role.ent" target="_blank">@role.ent</a>
+          <img src="images/instagram.svg" alt="Instagram" class="icon-contato-moderno" />
+          <div class="contato-item-info">
+            <span class="contato-label">Instagram</span>
+            <div class="contato-value">
+              <a href="https://instagram.com/role.ent" target="_blank">@role.ent</a>
+            </div>
+          </div>
         </li>
       </ul>
-    </section>
+
+      <div class="horario-info">
+        <h4>⏰ Horário de Atendimento</h4>
+        <p>Segunda à Sexta: 9h às 18h</p>
+        <p>Resposta em até 24h úteis</p>
+      </div>
+    </div>
 
     <!-- FORMULÁRIO DE CONTATO -->
-    <section class="comentarios fade-in delay">
-      <h2>Manda tua mensagem!</h2>
-      <form class="formulario-comentario" id="contact-form">
-        <div class="campo-icon">
-          <img src="images/nome.svg" alt="Ícone nome" class="icon-form" />
-          <input type="text" name="nome" placeholder="Seu nome" required />
+    <div class="formulario-secao">
+      <h3>Manda tua mensagem!</h3>
+      <form class="formulario-moderno" id="contact-form">
+        <div class="campo-moderno">
+          <label for="nome">Nome completo</label>
+          <div class="input-wrapper">
+            <img src="images/nome.svg" alt="" class="input-icon" />
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+          </div>
         </div>
 
-        <div class="campo-icon">
-          <img src="images/email.svg" alt="Ícone email" class="icon-form" />
-          <input type="email" name="email" placeholder="Seu e-mail" required />
+        <div class="campo-moderno">
+          <label for="email">E-mail</label>
+          <div class="input-wrapper">
+            <img src="images/email.svg" alt="" class="input-icon" />
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+          </div>
         </div>
 
-        <div class="campo-icon">
-          <img src="images/assunto.svg" alt="Ícone assunto" class="icon-form" />
-          <input type="text" name="assunto" placeholder="Assunto" required />
+        <div class="campo-moderno">
+          <label for="assunto">Assunto</label>
+          <div class="input-wrapper">
+            <img src="images/assunto.svg" alt="" class="input-icon" />
+            <input type="text" id="assunto" name="assunto" placeholder="Sobre o que você quer falar?" required />
+          </div>
         </div>
 
-        <div class="campo-icon">
-          <img src="images/mensagem.svg" alt="Ícone mensagem" class="icon-form" />
-          <textarea name="mensagem" rows="6" placeholder="Escreve tua mensagem aqui..." required></textarea>
+        <div class="campo-moderno">
+          <label for="mensagem">Mensagem</label>
+          <div class="input-wrapper textarea-wrapper">
+            <img src="images/mensagem.svg" alt="" class="input-icon" />
+            <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreve tua mensagem aqui... Conta pra gente o que tá rolando!" required></textarea>
+          </div>
         </div>
 
-        <button type="submit">Enviar Mensagem</button>
+        <button type="submit" class="btn-enviar">Enviar Mensagem</button>
       </form>
-    </section>
-
-    <!-- SEÇÃO ADICIONAL -->
-    <div class="destaque-frase fade-in delay">
-      "Cada rolê é uma história, cada encontro uma nova aventura. Vamos construir juntos a cena cultural que o Brasil merece!"
-    </div>
-
-    <div class="cta-final">
-      <a href="https://instagram.com/role.ent" target="_blank" class="btn-destaque">
-        Segue a gente no Instagram
-      </a>
     </div>
   </main>
+
+  <!-- REDES SOCIAIS DESTAQUE -->
+  <section class="social-destaque fade-in delay">
+    <h3>Segue a gente nas redes!</h3>
+    <p>Acompanha o movimento cultural em tempo real e não perde nenhum rolê</p>
+    <div class="social-buttons">
+      <a href="https://instagram.com/role.ent" target="_blank" class="social-btn">
+        <img src="images/instagram.svg" alt="Instagram" />
+        <span>Instagram</span>
+      </a>
+      <a href="https://tiktok.com/@role.ent" target="_blank" class="social-btn">
+        <img src="images/tiktok.svg" alt="TikTok" />
+        <span>TikTok</span>
+      </a>
+      <a href="https://wa.me/5551980704353" target="_blank" class="social-btn">
+        <img src="images/whatsapp.svg" alt="WhatsApp" />
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section fade-in delay">
+    <h3>Perguntas Frequentes</h3>
+    
+    <div class="faq-item">
+      <button class="faq-question">
+        Como posso divulgar meu evento no ROLÊ?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Entre em contato conosco através do WhatsApp ou e-mail. Analisamos cada evento com base na nossa curadoria e linha editorial. Priorizamos eventos com propostas culturais autênticas e que agregam valor à cena.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Vocês fazem parcerias com artistas e produtores?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Sim! Estamos sempre abertos a parcerias estratégicas. Se você é artista, produtor ou organizador de eventos e tem uma proposta alinhada com nossos valores, nos manda uma mensagem!</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Como funciona a Revista ROLÊ?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>A Revista ROLÊ é nosso editorial semanal com entrevistas, reportagens e conteúdos exclusivos sobre a cena cultural brasileira. Publicamos sempre conteúdo autoral e com nossa visão única da cultura.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Vocês atendem em quais cidades?
+        <span class="faq-icon">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Atualmente estamos ativos em Porto Alegre, São Paulo, Rio de Janeiro, Florianópolis e Curitiba. Mas sempre de olho em expandir para outras cidades com cenas culturais vibrantes!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASE DE DESTAQUE -->
+  <div class="destaque-frase fade-in delay">
+    "Cada rolê é uma história, cada encontro uma nova aventura. Vamos construir juntos a cena cultural que o Brasil merece!"
+  </div>
 
   <!-- BOTÃO VOLTAR AO TOPO -->
   <button class="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Voltar ao topo">↑</button>
@@ -185,7 +706,7 @@
         document.addEventListener('click', function (e) {
           if (!dropdown.contains(e.target)) {
             dropdown.classList.remove('open');
-            button.setAttribute('aria-expanded', false);
+            button.setAttribute('aria-expanded', 'false');
           }
         });
 
@@ -207,10 +728,10 @@
         submitButton.textContent = 'Enviando...';
         submitButton.disabled = true;
         
-        // Simular envio (aqui você integraria com seu backend)
+        // Simular envio
         setTimeout(() => {
           submitButton.textContent = 'Mensagem Enviada! ✓';
-          submitButton.style.background = '#4CAF50';
+          submitButton.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
           
           // Reset após 3 segundos
           setTimeout(() => {
@@ -220,6 +741,25 @@
             contactForm.reset();
           }, 3000);
         }, 1500);
+      });
+
+      // ========== FAQ ACCORDION ==========
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          // Fechar outros items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle do item atual
+          item.classList.toggle('active');
+        });
       });
 
       // ========== ANIMAÇÕES DE ENTRADA ==========
@@ -245,25 +785,29 @@
         observer.observe(element);
       });
 
-      // ========== EFEITOS VISUAIS NOS CAMPOS ==========
-      const camposIcon = document.querySelectorAll('.campo-icon');
+      // ========== EFEITOS VISUAIS NOS INPUTS ==========
+      const inputWrappers = document.querySelectorAll('.input-wrapper');
       
-      camposIcon.forEach(campo => {
-        const input = campo.querySelector('input, textarea');
+      inputWrappers.forEach(wrapper => {
+        const input = wrapper.querySelector('input, textarea');
         
         input.addEventListener('focus', () => {
-          campo.style.borderColor = '#c77dff';
-          campo.style.boxShadow = '0 0 10px rgba(199, 125, 255, 0.3)';
+          wrapper.style.borderColor = '#c77dff';
+          wrapper.style.background = 'rgba(17, 17, 17, 0.9)';
+          wrapper.style.boxShadow = '0 0 0 3px rgba(199, 125, 255, 0.1)';
         });
         
         input.addEventListener('blur', () => {
-          campo.style.borderColor = '#c77dff';
-          campo.style.boxShadow = 'none';
+          if (!input.value) {
+            wrapper.style.borderColor = 'var(--card-border)';
+            wrapper.style.background = 'rgba(17, 17, 17, 0.8)';
+            wrapper.style.boxShadow = 'none';
+          }
         });
       });
     });
 
-    // ========== SUAVIZAÇÃO ADICIONAL ==========
+    // ========== SMOOTH SCROLL ==========
     document.body.style.transition = 'all 0.3s ease';
   </script>
 </body>
