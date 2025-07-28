@@ -58,12 +58,18 @@
     </p>
   </section>
 
-  <!-- Banner com foto do fundador -->
-  <div class="banner-wrapper">
-    <div class="banner-container">
-      <img src="images/fiih.png" alt="FIIH, fundador do ROLÊ Entretenimento" loading="lazy" />
+  <!-- Foto do fundador -->
+  <section class="fundador-section fade-in">
+    <div class="container">
+      <div class="fundador-content">
+        <img src="images/fiih.png" alt="FIIH, fundador do ROLÊ Entretenimento" class="foto-fundador" loading="lazy" />
+        <div class="fundador-info">
+          <h3>FIIH</h3>
+          <p>Fundador e criador do ROLÊ Entretenimento. Visionário da cultura urbana independente e curador da cena noturna brasileira.</p>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- Timeline Visual -->
   <section class="timeline-section fade-in delay">
@@ -334,7 +340,62 @@
   </script>
 
   <style>
-    /* ========== ESTILOS ESPECÍFICOS DA PÁGINA QUEM SOMOS ========== */
+    /* ========== SEÇÃO FUNDADOR ========== */
+    .fundador-section {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, rgba(199, 125, 255, 0.03), transparent);
+    }
+
+    .fundador-content {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .foto-fundador {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--highlight);
+      box-shadow: 0 8px 25px rgba(199, 125, 255, 0.3);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .foto-fundador:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 35px rgba(199, 125, 255, 0.5);
+    }
+
+    .fundador-info {
+      flex: 1;
+    }
+
+    .fundador-info h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--highlight);
+      margin-bottom: 1rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fundador-info p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      opacity: 0.9;
+    }
     .hero-section {
       text-align: center;
       padding: 3rem 2rem;
@@ -566,6 +627,21 @@
 
     /* ========== RESPONSIVO ========== */
     @media (max-width: 768px) {
+      .fundador-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .foto-fundador {
+        width: 150px;
+        height: 150px;
+      }
+
+      .fundador-info h3 {
+        font-size: 2rem;
+      }
+
       .timeline::before {
         left: 30px;
       }
@@ -605,6 +681,23 @@
     }
 
     @media (max-width: 480px) {
+      .fundador-content {
+        padding: 2rem;
+      }
+
+      .foto-fundador {
+        width: 120px;
+        height: 120px;
+      }
+
+      .fundador-info h3 {
+        font-size: 1.5rem;
+      }
+
+      .fundador-info p {
+        font-size: 1rem;
+      }
+
       .timeline-content {
         padding: 1.5rem;
       }
