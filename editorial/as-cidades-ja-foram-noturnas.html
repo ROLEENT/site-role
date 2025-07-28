@@ -1,84 +1,206 @@
-image.png
-
-estilo (6).css
-2.432 linhas
-
-css
-
-
-as-cidades-ja-foram-noturnas (3).html
-2.312 linhas
-
-html
-
-
-index (3).html
-679 linhas
-
-html
-
-por que tem isso no inicio da pagina? Gravar na memória que todas as páginas do site do ROLÊ são conectados ao estilo.css e sempre terão a mesma estrutura do index, que é a base do site.
-
-Editar
-Esse texto no início da página é provavelmente CSS inline que está sendo exibido como texto, quando deveria estar oculto dentro das tags <style> ou referenciado corretamente no arquivo CSS.
-
-Isso pode estar acontecendo por alguns motivos:
-
-🔍 Possíveis Causas:
-Tag <style> mal fechada - O CSS está "vazando" para fora das tags
-Problema no arquivo estilo.css - Conflito entre CSS externo e inline
-Erro de sintaxe no CSS que está quebrando a renderização
-Cache do navegador mostrando versão antiga/corrompida
-🛠️ Como Corrigir:
-
-Correção da Página ROLÊ - CSS Fix
-Artefato interativo 
-📝 Principais Correções Aplicadas:
-🔧 CSS Organizado - Todo CSS inline agora está dentro das tags <style> corretas
-⚡ Carregamento Otimizado - CSS externo (estilo.css) carrega primeiro, depois o específico da página
-🎯 Estrutura ROLÊ Mantida - Header, navegação e footer seguem o padrão do site
-✨ Funcionalidades Preservadas - Sistema de reações, progress bar e toggle de tema funcionais
-🚀 Como Implementar:
-Substitua o HTML atual por esta versão corrigida
-Verifique se o arquivo estilo.css está no local correto
-Teste o carregamento da página
-Limpe o cache do navegador se necessário
-A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem conflitos de CSS! 🎨
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROLÊ ENTRETENIMENTO | O fim da madrugada</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="O editorial do ROLÊ investiga o desaparecimento da madrugada nas grandes cidades e celebra quem ainda resiste na cultura noturna." />
+    <meta name="keywords" content="cultura noturna, repressão sonora, gentrificação cultural, festas independentes, madrugada nas cidades, vida noturna Brasil" />
+    <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
     
-    <!-- CSS EXTERNO PRIMEIRO -->
-    <link rel="stylesheet" href="estilo.css">
+    <!-- Open Graph -->
+    <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
+    <meta property="og:description" content="Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras." />
+    <meta property="og:image" content="https://roleentretenimento.com/images/editorial-madrugada.png" />
+    <meta property="og:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
     
-    <!-- CSS ESPECÍFICO DA PÁGINA (SEM CONFLITOS) -->
+    <title>As cidades já foram noturnas | Revista ROLÊ</title>
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* ========== CORREÇÃO: CSS INLINE ORGANIZADO ========== */
+        /* ========== CSS COMPLETO INCORPORADO ========== */
         
-        /* Progress bar de leitura */
+        /* Reset e Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #000000;
+            --text-color: #f3f3f7;
+            --highlight: #c77dff;
+            --font: 'Inter', sans-serif;
+            --card-bg: #111111;
+            --card-border: #333;
+            --shadow: rgba(199, 125, 255, 0.2);
+            --gradient: linear-gradient(135deg, #c77dff, #e0aaff);
+        }
+
+        :root[data-theme="light"] {
+            --bg: #ffffff;
+            --text-color: #2e2e2e;
+            --highlight: #c77dff;
+            --card-bg: #f8f8f8;
+            --card-border: #e0e0e0;
+            --shadow: rgba(199, 125, 255, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-color);
+            font-family: var(--font);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        body[data-theme="dark"] {
+            background: linear-gradient(to bottom, #000000 0%, #111111 100%);
+        }
+
+        body[data-theme="light"] {
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+        }
+
+        /* Progress Bar */
         .reading-progress {
             position: fixed;
             top: 0;
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(90deg, var(--highlight), #a64de6);
+            background: var(--gradient);
             z-index: 10000;
             transition: width 0.2s ease;
         }
 
-        /* Header do artigo melhorado */
+        /* Header */
+        .bloco-topo {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid var(--highlight);
+        }
+
+        :root[data-theme="light"] .bloco-topo {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .right-top {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-button {
+            background: var(--gradient);
+            border: none;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(199, 125, 255, 0.3);
+        }
+
+        .dropdown-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(199, 125, 255, 0.4);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 120%;
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            min-width: 200px;
+            border-radius: 15px;
+            padding: 15px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--highlight);
+            z-index: 1001;
+        }
+
+        :root[data-theme="light"] .dropdown-content {
+            background: rgba(248, 248, 248, 0.95);
+        }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 20px;
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(199, 125, 255, 0.1);
+            color: var(--highlight);
+        }
+
+        /* Toggle Tema */
+        .lampada-toggle {
+            height: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 5px var(--highlight));
+        }
+
+        .lampada-toggle:hover {
+            transform: scale(1.2);
+        }
+
+        .linha-topo {
+            border: none;
+            border-top: 1px solid var(--highlight);
+            margin: 0;
+        }
+
+        /* Article Header */
         .article-header {
             background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
                         radial-gradient(circle at 30% 70%, rgba(199, 125, 255, 0.15), transparent);
@@ -86,6 +208,24 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
             text-align: center;
             position: relative;
             margin-bottom: 2rem;
+        }
+
+        .titulo-editorial {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: #f3f3f7;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .subtitulo-editorial {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--highlight);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .article-meta-info {
@@ -96,7 +236,6 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
             margin: 2rem 0;
             font-size: 0.9rem;
             flex-wrap: wrap;
-            opacity: 0.9;
         }
 
         .article-meta-info span {
@@ -114,64 +253,7 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
             color: var(--highlight);
         }
 
-        .reading-time {
-            color: var(--highlight);
-            font-weight: 600;
-        }
-
-        /* Otimizações de performance */
-        .editorial-completo img,
-        .spotify-embed,
-        .contribuicao-item,
-        .reaction-btn,
-        .share-btn {
-            will-change: transform;
-        }
-
-        /* Lazy loading placeholder */
-        .lazy-placeholder {
-            background: linear-gradient(90deg, rgba(199, 125, 255, 0.1) 25%, rgba(199, 125, 255, 0.2) 50%, rgba(199, 125, 255, 0.1) 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        /* Reduce motion para acessibilidade */
-        @media (prefers-reduced-motion: reduce) {
-            .fade-in,
-            .reaction-btn,
-            .share-btn,
-            .contribuicao-item {
-                transition: none;
-                animation: none;
-            }
-            
-            .editorial-playlist::before,
-            .mapa-colaborativo::before {
-                animation: none;
-            }
-        }
-
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .destaque-frase {
-                border-left-width: 6px;
-                background: rgba(199, 125, 255, 0.2);
-            }
-            
-            .reaction-btn,
-            .share-btn {
-                border: 2px solid currentColor;
-            }
-        }
-
-        /* ========== COMPONENTES ESPECÍFICOS ========== */
-        
-        /* Sistema de reações */
+        /* Sistema de Reações */
         .article-reactions {
             display: flex;
             justify-content: center;
@@ -210,10 +292,338 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
             border-color: var(--highlight);
         }
 
-        .reaction-count {
+        /* Banner */
+        .banner-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
+        .banner-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Editorial Content */
+        .editorial-completo {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .texto-editorial {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .texto-editorial p {
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: var(--text-color);
+        }
+
+        /* Destaque Frases */
+        .destaque-frase {
+            font-size: 1.4rem;
             font-weight: 600;
-            min-width: 20px;
+            color: var(--highlight);
             text-align: center;
+            font-style: italic;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.08), transparent);
+            border-left: 4px solid var(--highlight);
+            border-radius: 0 15px 15px 0;
+            max-width: 700px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .destaque-frase::before {
+            content: '"';
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--highlight);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        /* Seções */
+        .section-break {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 3.5rem 0 2rem 0;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid rgba(199, 125, 255, 0.2);
+        }
+
+        .section-icon {
+            font-size: 1.4rem;
+            color: var(--highlight);
+            min-width: 24px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--highlight);
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Playlist */
+        .editorial-playlist {
+            background: var(--card-bg);
+            border: 2px solid var(--highlight);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .playlist-title {
+            font-size: 1.3rem;
+            color: var(--highlight);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            font-weight: 700;
+        }
+
+        .spotify-embed {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Mapa Colaborativo */
+        .mapa-colaborativo {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.08), transparent);
+            border: 2px solid var(--highlight);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .mapa-title {
+            font-size: 1.6rem;
+            color: var(--highlight);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Compartilhamento */
+        .share-section {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.08), transparent);
+            padding: 2.5rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+            border: 1px solid rgba(199, 125, 255, 0.2);
+            text-align: center;
+        }
+
+        .share-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .share-btn.facebook { background: linear-gradient(135deg, #1877f2, #42a5f5); }
+        .share-btn.twitter { background: linear-gradient(135deg, #1da1f2, #0d8bd9); }
+        .share-btn.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+        .share-btn.copy-link { background: var(--gradient); }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-color);
+            border-top: 1px solid var(--highlight);
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: var(--highlight);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-icons img {
+            height: 30px;
+            width: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover img {
+            transform: translateY(-3px);
+            filter: brightness(1.2) drop-shadow(0 0 10px var(--highlight));
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--highlight);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-10px);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-top {
+                padding: 1rem;
+            }
+            
+            .logo {
+                height: 40px;
+            }
+            
+            .article-meta-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .destaque-frase {
+                font-size: 1.2rem;
+                padding: 1.5rem;
+                margin: 2rem auto;
+            }
+            
+            .share-buttons {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+            
+            .editorial-playlist {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+            
+            .mapa-colaborativo {
+                padding: 2rem;
+                margin: 3rem 0;
+            }
+            
+            .editorial-completo {
+                padding: 1.5rem 1rem;
+            }
+            
+            .article-reactions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .reaction-btn {
+                width: 100%;
+                max-width: 200px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .destaque-frase {
+                font-size: 1.1rem;
+                padding: 1rem;
+            }
+            
+            .section-icon {
+                font-size: 1.2rem;
+            }
+            
+            .mapa-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
         }
     </style>
 </head>
@@ -222,30 +632,28 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
     <!-- Progress bar de leitura -->
     <div class="reading-progress" id="reading-progress"></div>
 
-    <!-- Header estrutural do ROLÊ (padrão do site) -->
+    <!-- Header -->
     <section class="bloco-topo">
-        <div class="container-topo">
-            <div class="header-top">
-                <img src="/images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
-                <div class="right-top">
-                    <div class="dropdown">
-                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-                            Explorar ▼
-                        </button>          
-                        <div class="dropdown-content" id="menu-explorar">
-                            <a href="/index.html">Página Inicial</a>
-                            <a href="/revista.html">Revista ROLÊ</a>
-                            <a href="/vitrine-cultural.html">Vitrine Cultural</a>
-                            <a href="/descontos.html">Descontos</a>
-                            <a href="/contato.html">Contato</a>
-                            <a href="/quem-somos.html">Quem Somos</a>
-                        </div>
+        <div class="header-top">
+            <img src="/images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+            <div class="right-top">
+                <div class="dropdown">
+                    <button class="dropdown-button" aria-haspopup="true" aria-expanded="false">
+                        Explorar ▼
+                    </button>          
+                    <div class="dropdown-content">
+                        <a href="/index.html">Página Inicial</a>
+                        <a href="/revista.html">Revista ROLÊ</a>
+                        <a href="/vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="/descontos.html">Descontos</a>
+                        <a href="/contato.html">Contato</a>
+                        <a href="/quem-somos.html">Quem Somos</a>
                     </div>
-                    <img src="/images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
                 </div>
+                <img src="/images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" />
             </div>
-            <hr class="linha-topo" />
         </div>
+        <hr class="linha-topo" />
     </section>
 
     <!-- Header do Artigo -->
@@ -257,7 +665,7 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
             <div class="article-meta-info">
                 <span><i class="fas fa-user"></i> Por FIIH, cofundador do ROLÊ</span>
                 <span><i class="fas fa-calendar"></i> 1 de dezembro, 2024</span>
-                <span><i class="fas fa-clock"></i> <span class="reading-time">6 min de leitura</span></span>
+                <span><i class="fas fa-clock"></i> 6 min de leitura</span>
                 <span><i class="fas fa-tag"></i> Editorial</span>
             </div>
 
@@ -289,16 +697,35 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
         </div>
     </div>
 
+    <!-- Playlist Temática -->
+    <div class="editorial-playlist">
+        <h2 class="playlist-title">
+            <i class="fas fa-music"></i>
+            Trilha Sonora: Madrugada Resistente
+        </h2>
+        <p style="margin-bottom: 1.5rem; opacity: 0.9;">
+            Sons que embalam a reflexão sobre a cultura noturna urbana.
+        </p>
+        <iframe 
+            class="spotify-embed"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd?utm_source=generator&theme=0" 
+            width="100%" 
+            height="152" 
+            frameborder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+
     <!-- Conteúdo Editorial -->
     <main class="editorial-completo">
         <article class="texto-editorial">
             
-            <!-- Introdução -->
             <p>As cidades já foram noturnas. E talvez você ainda lembre de como era. Ruas que respiravam depois da meia-noite, postes de luz que pareciam fazer parte do cenário e não da vigilância, bares que não se apressavam em fechar as portas, festas que ignoravam o relógio e dançavam até o sol nascer. Havia uma vibração particular na madrugada. Um tipo de energia que não se produzia com patrocínio, mas com presença. Com encontros não programados. Com corpos dispostos a errar o passo e se jogar no improviso. E era justamente nesse improviso que nasciam os melhores rolês. Aqueles que você não planejou, mas que viraram história.</p>
 
-            <div class="destaque-frase shareable-quote" onclick="shareQuote(this)">O improviso virou infração. A liberdade, distúrbio.</div>
+            <div class="destaque-frase">O improviso virou infração. A liberdade, distúrbio.</div>
 
-            <!-- Seção 1: O Silenciamento -->
             <div class="section-break">
                 <i class="fas fa-volume-mute section-icon"></i>
                 <h2 class="section-title">O Silenciamento Progressivo</h2>
@@ -306,13 +733,8 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
 
             <p>Só que alguma coisa se perdeu no caminho. A madrugada foi ficando cada vez mais silenciosa. As luzes ainda acendem, mas brilham para vitrines fechadas. Os bares ainda existem, mas obedecem a um limite de decibéis cada vez mais rigoroso. As festas ainda acontecem, mas precisam caber num story e respeitar o novo "bom tom" dos bairros gourmetizados. O que antes era tempo livre virou infração. O que era liberdade virou distúrbio. E a cidade, essa senhora que já foi boêmia, agora quer dormir cedo e não gosta de ser incomodada.</p>
 
-            <div class="texto-chamada">
-                <strong>Este editorial nasce como um chamado.</strong> Um mapeamento afetivo. Uma tentativa de entender por que a cultura da madrugada está desaparecendo das grandes cidades brasileiras. E, mais importante: quem ainda a sustenta.
-            </div>
-
             <p>Porque se é verdade que a noite perdeu espaço, também é verdade que tem gente resistindo. Dançando contra o relógio. Mantendo o fôlego da cidade nas margens. E isso merece ser contado.</p>
 
-            <!-- Seção 2: Repressão Sonora -->
             <div class="section-break">
                 <i class="fas fa-ban section-icon"></i>
                 <h2 class="section-title">A Guerra Contra o Som</h2>
@@ -320,11 +742,8 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
 
             <p>A repressão sonora é, sem dúvida, uma das faces mais evidentes dessa mudança. Basta conversar com qualquer produtor de evento independente e você vai ouvir as mesmas queixas: licenças difíceis, fiscalização abusiva, vizinhos organizados em grupos de WhatsApp que denunciam até ensaio com violão. Em muitas cidades, a simples tentativa de promover uma festa alternativa já é vista como um problema em potencial.</p>
 
-            <p>E não estamos falando de megaeventos. Estamos falando de encontros locais, culturais, coletivos, muitas vezes realizados com estrutura mínima e propósito máximo. O som que sai da caixa, nesses casos, carrega mais do que batidas. Carrega manifestação artística, afirmação de identidade, exercício de pertencimento.</p>
+            <div class="destaque-frase">A repressão sonora é só a superfície de um apagamento mais profundo.</div>
 
-            <div class="destaque-frase shareable-quote" onclick="shareQuote(this)">A repressão sonora é só a superfície de um apagamento mais profundo.</div>
-
-            <!-- Seção 3: Gentrificação -->
             <div class="section-break">
                 <i class="fas fa-building section-icon"></i>
                 <h2 class="section-title">Gentrificação em BPMs</h2>
@@ -332,11 +751,8 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
 
             <p>Mas o som incomoda. Incomoda quem transformou a cidade em patrimônio privado. Incomoda quem quer silêncio absoluto após as 22h, mas não se importa com helicóptero da polícia sobrevoando a madrugada. Incomoda porque não segue o roteiro da urbanização higienista que, aos poucos, tomou conta dos bairros antes criativos.</p>
 
-            <p>A gentrificação, afinal, não leva apenas os aluguéis às alturas. Ela redefine o que é aceitável e a madrugada, com seu improviso e seu excesso, deixou de ser.</p>
-
             <div class="destaque-frase">Gentrificação também se mede em BPMs silenciados.</div>
 
-            <!-- Seção 4: Cultura da Performance -->
             <div class="section-break">
                 <i class="fas fa-camera section-icon"></i>
                 <h2 class="section-title">Quando a Festa Virou Vitrine</h2>
@@ -344,21 +760,6 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
 
             <p>Enquanto isso, o que vemos crescer é a cultura da performance. A presença virou conteúdo. A experiência, vitrine. A festa, produto. Hoje em dia, muitos rolês são organizados com mais preocupação com o cenário do que com a música. A pista virou plano de fundo para selfie. O DJ, um algoritmo humano. O público, uma plateia de stories.</p>
 
-            <p>E assim, aos poucos, a vivência real vai sendo substituída por sua imagem. A curadoria cede lugar ao viral. O risco cede lugar ao filtro. A conexão cede lugar ao engajamento. A madrugada, essa entidade imprevisível e generosa, virou estratégia de branding.</p>
-
-            <div class="destaque-frase">A festa virou vitrine. O som, algoritmo. A pista, cenário.</div>
-
-            <!-- Seção 5: Evolução vs Apagamento -->
-            <div class="section-break">
-                <i class="fas fa-balance-scale section-icon"></i>
-                <h2 class="section-title">Evolução ou Apagamento?</h2>
-            </div>
-
-            <p>Não se trata aqui de nostalgia ou purismo. O ROLÊ não tem saudade de tempos "melhores" nem quer voltar a um passado idealizado. A gente sabe que o tempo muda, e que as formas de sociabilidade também mudam com ele. Mas é preciso reconhecer quando as mudanças deixam de ser evolução e passam a ser apagamento. Quando o novo não é mais expressão, mas normatização. Quando a pista perde sua potência de transformação e vira apenas decoração de feed.</p>
-
-            <p>Afinal, o que faz a noite ser noite? Não é só o escuro, nem o som alto. É o que acontece quando a cidade suspende suas amarras e permite que a vida aconteça fora do script. É o gesto espontâneo, a troca não prevista, a liberdade de errar e recomeçar. A madrugada é onde a cidade se revela ou pelo menos, onde ela se permitia ser múltipla. Quando esse tempo desaparece, o que se perde é mais do que festa. É linguagem. É criação. É resistência.</p>
-
-            <!-- Seção 6: Resistência Política -->
             <div class="section-break">
                 <i class="fas fa-fist-raised section-icon"></i>
                 <h2 class="section-title">Corpos que Dançam, Corpos que Resistem</h2>
@@ -370,7 +771,6 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
 
             <div class="destaque-frase">A guerra contra o som é também uma guerra contra o corpo que dança.</div>
 
-            <!-- Seção 7: Ainda Há Esperança -->
             <div class="section-break">
                 <i class="fas fa-heart section-icon"></i>
                 <h2 class="section-title">Pulsos Subterrâneos</h2>
@@ -384,7 +784,6 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
 
             <p>Esses espaços são preciosos. E frágeis. Precisam de apoio. De reconhecimento. De visibilidade. Porque enquanto a cidade insiste em silenciar a madrugada, é nessas brechas que a vida insiste em acontecer. E se há algo que a história da cultura urbana nos ensina é que a arte sempre encontra um jeito de escapar.</p>
 
-            <!-- Seção Final: O Pacto -->
             <div class="section-break">
                 <i class="fas fa-handshake section-icon"></i>
                 <h2 class="section-title">Um Pacto pela Madrugada</h2>
@@ -392,7 +791,7 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
 
             <p>Por isso, o ROLÊ propõe um pacto. Um mapeamento coletivo. Um compromisso afetivo com quem ainda mantém a cidade respirando à noite. Queremos saber: qual é o rolê que ainda pulsa na tua cidade? Que festa te fez sentir vivo às 3h da manhã? Que pista te abraçou quando o mundo parecia hostil? Que som te deu vontade de existir?</p>
 
-            <div class="texto-chamada">
+            <div style="background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent); padding: 1.5rem; border-radius: 12px; border-left: 3px solid var(--highlight); margin: 2.5rem 0; font-weight: 500;">
                 <strong>Marca, comenta, compartilha.</strong> Vamos cartografar juntos esses pontos de luz. Porque a madrugada não pode desaparecer sem luta.
             </div>
 
@@ -400,37 +799,37 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
 
             <div class="destaque-frase">Defender a madrugada é defender o direito de existir fora do expediente.</div>
 
-            <p class="frase-final"><strong>As cidades já foram noturnas. Mas podem voltar a ser.</strong></p>
+            <p style="font-weight: bold; font-size: 1.2rem; text-align: center; margin: 3rem 0;"><strong>As cidades já foram noturnas. Mas podem voltar a ser.</strong></p>
         </article>
 
-        <!-- Mapa Colaborativo Avançado -->
+        <!-- Mapa Colaborativo -->
         <div class="mapa-colaborativo">
-            <div class="mapa-content">
+            <div style="text-align: center;">
                 <h2 class="mapa-title">
                     <i class="fas fa-map-marked-alt"></i>
                     Mapeamento Colaborativo da Resistência
                 </h2>
-                <p class="mapa-description">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; line-height: 1.6;">
                     Conte sua história. Mapeie o rolê que ainda pulsa na sua cidade. 
                     Juntos, vamos cartografar os pontos de luz que resistem ao silenciamento.
                 </p>
                 
-                <form class="contribuicao-form" id="mapeamento-form">
-                    <div class="form-row">
-                        <input type="text" class="form-input" placeholder="Seu nome/coletivo" required>
-                        <input type="text" class="form-input" placeholder="Cidade" required>
+                <form style="max-width: 600px; margin: 0 auto 2rem auto; display: flex; flex-direction: column; gap: 1rem;" id="mapeamento-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <input type="text" placeholder="Seu nome/coletivo" required style="padding: 14px 18px; background: rgba(17, 17, 17, 0.8); border: 1px solid rgba(199, 125, 255, 0.3); border-radius: 12px; color: var(--text-color); font-family: inherit; font-size: 1rem;">
+                        <input type="text" placeholder="Cidade" required style="padding: 14px 18px; background: rgba(17, 17, 17, 0.8); border: 1px solid rgba(199, 125, 255, 0.3); border-radius: 12px; color: var(--text-color); font-family: inherit; font-size: 1rem;">
                     </div>
-                    <input type="text" class="form-input" placeholder="Nome do rolê/festa/espaço" required>
-                    <textarea class="form-textarea" placeholder="Conte a história desse lugar... O que ele representa? Por que ele resiste? O que acontece lá que não acontece em outros lugares?" required></textarea>
-                    <button type="submit" class="form-submit">
+                    <input type="text" placeholder="Nome do rolê/festa/espaço" required style="padding: 14px 18px; background: rgba(17, 17, 17, 0.8); border: 1px solid rgba(199, 125, 255, 0.3); border-radius: 12px; color: var(--text-color); font-family: inherit; font-size: 1rem;">
+                    <textarea placeholder="Conte a história desse lugar... O que ele representa? Por que ele resiste?" required style="padding: 14px 18px; background: rgba(17, 17, 17, 0.8); border: 1px solid rgba(199, 125, 255, 0.3); border-radius: 12px; color: var(--text-color); font-family: inherit; font-size: 1rem; min-height: 100px; resize: vertical;"></textarea>
+                    <button type="submit" style="background: var(--gradient); color: white; border: none; padding: 16px 32px; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
                         <i class="fas fa-map-pin"></i>
                         Adicionar ao Mapa
                     </button>
                 </form>
                 
-                <div class="contribuicoes-lista" id="contribuicoes-lista">
-                    <div class="contribuicoes-header">
-                        <div class="contribuicoes-counter">
+                <div style="margin-top: 3rem;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <div style="color: var(--highlight); font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">
                             <i class="fas fa-users"></i>
                             <span id="total-contribuicoes">12</span> histórias mapeadas
                         </div>
@@ -438,70 +837,58 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
                     </div>
                     
                     <!-- Contribuições de exemplo -->
-                    <div class="contribuicao-item">
-                        <div class="contribuicao-header">
-                            <div class="contribuicao-local">Galpão do Circo</div>
-                            <div class="contribuicao-cidade">
+                    <div style="background: var(--card-bg); border: 1px solid rgba(199, 125, 255, 0.2); border-radius: 15px; padding: 1.5rem; margin: 1rem 0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div style="font-weight: 700; color: var(--highlight); font-size: 1.1rem;">Galpão do Circo</div>
+                            <div style="font-size: 0.9rem; opacity: 0.7; display: flex; align-items: center; gap: 0.3rem;">
                                 <i class="fas fa-map-marker-alt"></i>
                                 São Paulo, SP
                             </div>
                         </div>
-                        <p class="contribuicao-historia">
+                        <p style="line-height: 1.6; margin-bottom: 1rem; font-style: italic;">
                             "Um espaço que resiste há 15 anos no centro de SP. Todo sábado rola festa até as 6h da manhã, com lineup sempre underground. O que mais me marca é que aqui a galera dança de verdade, não performa para stories. É um dos últimos lugares onde você pode ser quem é sem julgamento."
                         </p>
-                        <p class="contribuicao-autor">— Coletivo Margem</p>
+                        <p style="text-align: right; font-size: 0.9rem; color: var(--highlight); font-weight: 600;">— Coletivo Margem</p>
                     </div>
 
-                    <div class="contribuicao-item">
-                        <div class="contribuicao-header">
-                            <div class="contribuicao-local">Casa Selvagem</div>
-                            <div class="contribuicao-cidade">
+                    <div style="background: var(--card-bg); border: 1px solid rgba(199, 125, 255, 0.2); border-radius: 15px; padding: 1.5rem; margin: 1rem 0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div style="font-weight: 700; color: var(--highlight); font-size: 1.1rem;">Casa Selvagem</div>
+                            <div style="font-size: 0.9rem; opacity: 0.7; display: flex; align-items: center; gap: 0.3rem;">
                                 <i class="fas fa-map-marker-alt"></i>
                                 Porto Alegre, RS
                             </div>
                         </div>
-                        <p class="contribuicao-historia">
+                        <p style="line-height: 1.6; margin-bottom: 1rem; font-style: italic;">
                             "Ocupação cultural que funciona numa casa antiga no bairro Cidade Baixa. Rola música experimental, performance art e festa queer toda primeira sexta do mês. O lugar abraça corpos dissidentes e mantém viva a cena alternativa da cidade."
                         </p>
-                        <p class="contribuicao-autor">— @resistepoaqueer</p>
+                        <p style="text-align: right; font-size: 0.9rem; color: var(--highlight); font-weight: 600;">— @resistepoaqueer</p>
                     </div>
 
-                    <div class="contribuicao-item">
-                        <div class="contribuicao-header">
-                            <div class="contribuicao-local">Festa da Laje</div>
-                            <div class="contribuicao-cidade">
+                    <div style="background: var(--card-bg); border: 1px solid rgba(199, 125, 255, 0.2); border-radius: 15px; padding: 1.5rem; margin: 1rem 0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div style="font-weight: 700; color: var(--highlight); font-size: 1.1rem;">Festa da Laje</div>
+                            <div style="font-size: 0.9rem; opacity: 0.7; display: flex; align-items: center; gap: 0.3rem;">
                                 <i class="fas fa-map-marker-alt"></i>
                                 Rio de Janeiro, RJ
                             </div>
                         </div>
-                        <p class="contribuicao-historia">
+                        <p style="line-height: 1.6; margin-bottom: 1rem; font-style: italic;">
                             "Acontece numa laje na Lapa, sempre em local diferente por segurança. É organizada por moleques da própria comunidade e toca funk, trap e beats autorais. A vista da cidade de madrugada é surreal, e a energia é pura resistência."
                         </p>
-                        <p class="contribuicao-autor">— DJ Quebrada</p>
+                        <p style="text-align: right; font-size: 0.9rem; color: var(--highlight); font-weight: 600;">— DJ Quebrada</p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="article-tags">
-            <h3>Temas relacionados</h3>
-            <div class="tags-list">
-                <a href="#" class="tag">Cultura Noturna</a>
-                <a href="#" class="tag">Repressão Sonora</a>
-                <a href="#" class="tag">Gentrificação</a>
-                <a href="#" class="tag">Festas Independentes</a>
-                <a href="#" class="tag">Política Urbana</a>
-                <a href="#" class="tag">Resistência Cultural</a>
-                <a href="#" class="tag">Madrugada</a>
             </div>
         </div>
 
         <!-- Compartilhamento -->
         <div class="share-section">
-            <h2 class="share-title">
+            <h2 style="font-size: 1.4rem; color: var(--highlight); margin-bottom: 1rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
                 <i class="fas fa-bullhorn"></i>
                 Amplifique esta resistência
             </h2>
-            <p class="share-description">
+            <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1rem;">
                 Compartilhe este editorial e ajude a espalhar a reflexão sobre o direito à cidade noturna.
             </p>
             <div class="share-buttons">
@@ -523,31 +910,16 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
                 </button>
             </div>
         </div>
-
-        <!-- Navegação -->
-        <nav class="article-navigation">
-            <a href="#" class="nav-article">
-                <div class="nav-label">← Anterior</div>
-                <div class="nav-title">Artigo anterior</div>
-            </a>
-            <a href="/revista.html" class="nav-article">
-                <div class="nav-label">Revista</div>
-                <div class="nav-title">Todos os artigos</div>
-            </a>
-            <a href="#" class="nav-article">
-                <div class="nav-label">Próximo →</div>
-                <div class="nav-title">Próximo artigo</div>
-            </a>
-        </nav>
     </main>
 
-  
-    <!-- Footer padrão ROLÊ -->
+    <!-- Footer -->
     <footer>
         <div class="footer-links">
             © 2025 ROLÊ ENTRETENIMENTO ·
             <a href="/politica.html">Política de Privacidade</a> ·
-            <a href="/termos-usuario.html">Termos do Rolezeiro</a>
+            <a href="/termos-usuario.html">Termos do Rolezeiro</a> ·
+            <a href="/termos-organizador.html">Termos do Organizador</a> ·
+            <a href="/politica-spam.html">Política Antispam</a>
         </div>
         <div class="social-icons">
             <a href="https://instagram.com/role.ent" target="_blank">
@@ -556,14 +928,18 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
             <a href="https://tiktok.com/@role.ent" target="_blank">
                 <img src="/images/tiktok.svg" alt="TikTok ROLÊ" />
             </a>
+            <a href="https://wa.me/5551980704353" target="_blank">
+                <img src="/images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            </a>
         </div>
     </footer>
 
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
     <script>
-        // ========== SCRIPTS ESSENCIAIS ROLÊ ========== 
-        
         document.addEventListener('DOMContentLoaded', function () {
-            // Dropdown menu (padrão do site)
+            // Dropdown menu
             const dropdown = document.querySelector('.dropdown');
             const button = dropdown?.querySelector('.dropdown-button');
             const content = dropdown?.querySelector('.dropdown-content');
@@ -573,6 +949,14 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
                     e.preventDefault();
                     e.stopPropagation();
                     dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
+                    }
                 });
             }
 
@@ -598,7 +982,7 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
             window.addEventListener('scroll', updateProgress);
             updateProgress();
 
-            // Toggle tema (padrão ROLÊ)
+            // Toggle tema
             const lampada = document.querySelector('.lampada-toggle');
             const root = document.documentElement;
 
@@ -606,18 +990,46 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
                 const savedTheme = localStorage.getItem('theme');
                 if (savedTheme === 'light') {
                     root.setAttribute('data-theme', 'light');
+                    lampada.setAttribute('aria-pressed', 'true');
+                } else {
+                    root.removeAttribute('data-theme');
+                    lampada.setAttribute('aria-pressed', 'false');
                 }
 
                 lampada.addEventListener('click', () => {
                     if (root.hasAttribute('data-theme')) {
                         root.removeAttribute('data-theme');
+                        lampada.setAttribute('aria-pressed', 'false');
                         localStorage.setItem('theme', 'dark');
                     } else {
                         root.setAttribute('data-theme', 'light');
+                        lampada.setAttribute('aria-pressed', 'true');
                         localStorage.setItem('theme', 'light');
                     }
                 });
             }
+
+            // Formulário de mapeamento
+            const mapeamentoForm = document.getElementById('mapeamento-form');
+            if (mapeamentoForm) {
+                mapeamentoForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showToast('🗺️ História adicionada ao mapa da resistência!');
+                    this.reset();
+                    
+                    // Atualizar contador
+                    const totalContribuicoes = document.getElementById('total-contribuicoes');
+                    let count = parseInt(totalContribuicoes.textContent);
+                    totalContribuicoes.textContent = count + 1;
+                });
+            }
+
+            // Carregar reações salvas
+            const userReactions = JSON.parse(localStorage.getItem('article-reactions') || '{}');
+            Object.keys(userReactions).forEach(type => {
+                const btn = document.querySelector(`[data-reaction="${type}"]`);
+                if (btn) btn.classList.add('active');
+            });
         });
 
         // Sistema de reações
@@ -632,14 +1044,85 @@ A estrutura agora está limpa, otimizada e mantém a identidade visual ROLÊ sem
                 btn.classList.remove('active');
                 count--;
                 delete userReactions[type];
+                showToast('Reação removida');
             } else {
                 btn.classList.add('active');
                 count++;
                 userReactions[type] = true;
+                const emojis = { 'fire': '🔥', 'heart': '❤️', 'clap': '👏', 'think': '🤔', 'fist': '✊' };
+                showToast(`Reação ${emojis[type]} adicionada!`);
             }
             
             countElement.textContent = count;
             localStorage.setItem('article-reactions', JSON.stringify(userReactions));
+        }
+
+        // Funções de compartilhamento
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('As cidades já foram noturnas - Editorial ROLÊ sobre cultura noturna');
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`, '_blank', 'width=600,height=400');
+            showToast('📘 Compartilhado no Facebook!');
+        }
+
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('As cidades já foram noturnas - Um manifesto sobre cultura noturna e resistência urbana');
+            const hashtags = 'culturanoturna,resistencia,madrugada';
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`, '_blank', 'width=600,height=400');
+            showToast('🐦 Compartilhado no Twitter!');
+        }
+
+        function shareOnWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('As cidades já foram noturnas - Editorial ROLÊ');
+            const quote = encodeURIComponent('"A guerra contra o som é também uma guerra contra o corpo que dança."');
+            const text = `${title}%0A%0A${quote}%0A%0A${url}`;
+            
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                window.open(`whatsapp://send?text=${text}`, '_blank');
+            } else {
+                window.open(`https://web.whatsapp.com/send?text=${text}`, '_blank');
+            }
+            showToast('💚 Compartilhado no WhatsApp!');
+        }
+
+        function copyLink() {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(window.location.href);
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = window.location.href;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            }
+            
+            const copyBtn = document.getElementById('copyBtn');
+            if (copyBtn) {
+                copyBtn.classList.add('copied');
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                    copyBtn.innerHTML = '<i class="fas fa-link"></i> Copiar Link';
+                }, 2000);
+            }
+            
+            showToast('🔗 Link copiado para a área de transferência!');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         }
     </script>
 </body>
