@@ -1421,3 +1421,9 @@ section.comentarios h2 {
 .comentarios textarea::placeholder {
   color: #bbb;
 }
+
+.adsbygoogle {
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
