@@ -1,418 +1,1031 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Descontos exclusivos do ROLÊ para festas, eventos e experiências culturais. Cupom, lista e entrada grátis para quem tá por dentro." />
-  <meta name="keywords" content="rolê, festas, descontos, cupom, eventos, cultura, música, ROLÊ ENTRETENIMENTO" />
-  <meta property="og:title" content="Descontos | ROLÊ ENTRETENIMENTO" />
-  <meta property="og:description" content="Aproveite cupons, listas e condições especiais nos eventos mais quentes da cena cultural. Só no ROLÊ." />
-  <meta property="og:image" content="images/logo-role.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://roleentretenimento.com/descontos.html" />
-  
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-    }
-  </script>
-  
-  <title>Descontos | ROLÊ ENTRETENIMENTO</title>
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="estilo.css" />
-  
-  <style>
-    /* Estilos específicos para cards de desconto */
-    .descontos-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="descontos, cupons, eventos, cultura, rolê, arte, música, festa, entretenimento" />
+    <meta name="description" content="Descontos exclusivos do ROLÊ para festas, eventos e experiências culturais. Cupons e condições especiais para rolezeiros." />
+    <meta property="og:title" content="Descontos Exclusivos | ROLÊ ENTRETENIMENTO" />
+    <meta property="og:description" content="Cupons, listas e condições especiais nos eventos mais quentes da cena cultural brasileira." />
+    <meta property="og:image" content="https://roleentretenimento.com/images/banner-descontos.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://roleentretenimento.com/descontos.html" />
     
-    .descontos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
     
-    .desconto-card {
-      background: var(--card-bg);
-      border-radius: 20px;
-      border: 1px solid var(--card-border);
-      padding: 2rem;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
+    <title>Descontos Exclusivos | ROLÊ ENTRETENIMENTO</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
     
-    .desconto-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--gradient);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 1;
-    }
+    <noscript>
+        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
     
-    .desconto-card:hover::before {
-      opacity: 0.1;
-    }
+    <link rel="stylesheet" href="estilo.css" />
     
-    .desconto-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 40px var(--shadow);
-      border-color: var(--highlight);
-    }
-    
-    .desconto-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--highlight);
-      position: relative;
-      z-index: 2;
-      font-weight: 700;
-    }
-    
-    .desconto-card p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 2;
-      color: var(--text-color);
-    }
-    
-    .desconto-card .cupom-code {
-      background: var(--gradient);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      font-weight: 700;
-      font-family: monospace;
-      letter-spacing: 1px;
-      display: inline-block;
-      margin: 0.5rem 0;
-    }
-    
-    .desconto-card .btn-desconto {
-      background: var(--gradient);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      display: inline-block;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 4px 15px rgba(199, 125, 255, 0.3);
-    }
-    
-    .desconto-card .btn-desconto:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(199, 125, 255, 0.4);
-      color: white;
-      text-decoration: none;
-    }
-    
-    .destaque-especial {
-      border: 2px solid var(--highlight);
-      background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
-    }
-    
-    .destaque-especial::after {
-      content: '🔥 HOT';
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      background: var(--gradient);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      z-index: 3;
-    }
-    
-    .info-adicional {
-      background: rgba(199, 125, 255, 0.1);
-      border-radius: 15px;
-      padding: 2rem;
-      margin: 3rem 0;
-      text-align: center;
-      border: 1px solid rgba(199, 125, 255, 0.3);
-    }
-    
-    .info-adicional h3 {
-      color: var(--highlight);
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-    
-    .fade-in-card {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    
-    .fade-in-card:nth-child(2) { animation-delay: 0.1s; }
-    .fade-in-card:nth-child(3) { animation-delay: 0.2s; }
-    .fade-in-card:nth-child(4) { animation-delay: 0.3s; }
-    
-    @media (max-width: 768px) {
-      .descontos-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
-      }
-      
-      .descontos-container {
-        padding: 2rem 1rem;
-      }
-      
-      .desconto-card {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+    <style>
+        /* Estilos específicos para a página de descontos */
+        .descontos-hero {
+            text-align: center;
+            padding: 4rem 2rem 2rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .descontos-hero::before {
+            content: '🎉';
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            opacity: 0.3;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-title-descontos {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle-descontos {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-descontos {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item-desconto {
+            text-align: center;
+        }
+
+        .stat-number-desconto {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--highlight);
+            display: block;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label-desconto {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Cards de desconto modernos */
+        .descontos-section {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .filtros-descontos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filtro-btn {
+            background: transparent;
+            border: 2px solid var(--highlight);
+            color: var(--highlight);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filtro-btn:hover,
+        .filtro-btn.active {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(199, 125, 255, 0.3);
+        }
+
+        .descontos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        .desconto-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+        }
+
+        .desconto-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .desconto-card:hover::before {
+            opacity: 0.08;
+        }
+
+        .desconto-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(199, 125, 255, 0.25);
+            border-color: var(--highlight);
+        }
+
+        .card-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+            position: relative;
+            z-index: 2;
+            line-height: 1.3;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            flex-grow: 1;
+        }
+
+        .card-discount-info {
+            background: rgba(199, 125, 255, 0.15);
+            border: 1px solid rgba(199, 125, 255, 0.3);
+            border-radius: 15px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cupom-code {
+            background: var(--gradient);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(199, 125, 255, 0.3);
+        }
+
+        .discount-percentage {
+            color: var(--highlight);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-desconto {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 20px rgba(199, 125, 255, 0.3);
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-desconto:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(199, 125, 255, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .card-city {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: rgba(199, 125, 255, 0.2);
+            color: var(--highlight);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .card-hot {
+            position: relative;
+        }
+
+        .card-hot::after {
+            content: '🔥 HOT';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            z-index: 3;
+            animation: pulse 2s infinite;
+        }
+
+        .card-exclusive {
+            border: 2px solid var(--highlight);
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+        }
+
+        /* Seção de instruções */
+        .instrucoes-section {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.08), transparent);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            margin: 4rem auto;
+            max-width: 1000px;
+            text-align: center;
+            border: 1px solid rgba(199, 125, 255, 0.2);
+        }
+
+        .instrucoes-title {
+            font-size: 2rem;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .instrucoes-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .social-promo {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(199, 125, 255, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Newsletter específica para descontos */
+        .newsletter-descontos {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 4rem auto;
+            max-width: 800px;
+            border: 1px solid rgba(199, 125, 255, 0.3);
+        }
+
+        .newsletter-descontos h3 {
+            color: var(--highlight);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form-descontos {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem auto;
+            max-width: 500px;
+        }
+
+        .newsletter-input-descontos {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .btn-newsletter-descontos {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-newsletter-descontos:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(199, 125, 255, 0.4);
+        }
+
+        /* Animações */
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .fade-in-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-card:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in-card:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in-card:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in-card:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in-card:nth-child(5) { animation-delay: 0.5s; }
+        .fade-in-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .descontos-hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero-title-descontos {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle-descontos {
+                font-size: 1.1rem;
+            }
+            
+            .stats-descontos {
+                gap: 2rem;
+            }
+            
+            .descontos-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            .desconto-card {
+                padding: 2rem 1.5rem;
+                min-height: auto;
+            }
+            
+            .filtros-descontos {
+                gap: 0.5rem;
+            }
+            
+            .filtro-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+            
+            .newsletter-form-descontos {
+                flex-direction: column;
+            }
+            
+            .social-promo {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .descontos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .desconto-card {
+                padding: 1.5rem;
+            }
+            
+            .card-title {
+                font-size: 1.2rem;
+            }
+            
+            .card-description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
-<body class="fade-in">
 
-  <!-- TOPO -->
-  <section class="bloco-topo">
-    <div class="container-topo">
-      <div class="header-top">
-        <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
-        <div class="right-top">
-          <div class="dropdown">
-            <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-              Explorar ▼
-            </button>
-            <div class="dropdown-content" id="menu-explorar">
-              <a href="index.html">Página Inicial</a>
-              <a href="revista.html">Revista ROLÊ</a>
-              <a href="vitrine-cultural.html">Vitrine Cultural</a>
-              <a href="descontos.html">Descontos</a>
-              <a href="contato.html">Contato</a>
-              <a href="quem-somos.html">Quem Somos</a>
+<body>
+    <section class="bloco-topo">
+        <div class="container-topo">
+            <div class="header-top">
+                <!-- LOGO ESQUERDA -->
+                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+
+                <!-- MENU + TEMA (LADO DIREITO) -->
+                <div class="right-top">
+                    <!-- MENU DROPDOWN -->
+                    <div class="dropdown">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
+                            Explorar ▼
+                        </button>          
+                        <div class="dropdown-content" id="menu-explorar">
+                            <a href="index.html">Página Inicial</a>
+                            <a href="revista.html">Revista ROLÊ</a>
+                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                            <a href="descontos.html">Descontos</a>
+                            <a href="contato.html">Contato</a>
+                            <a href="quem-somos.html">Quem Somos</a>
+                        </div>
+                    </div>
+
+                    <!-- TEMA -->
+                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                </div>
             </div>
-          </div>
-          <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+            <hr class="linha-topo" />
         </div>
-      </div>
-      <hr class="linha-topo" />
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class="descontos-container">
-    <div class="container">
-      <h1 class="titulo-editorial">Descontos para Rolezeiros</h1>
-      <p class="subtitulo-editorial">Se tu chegou até aqui, parabéns. Esse espaço é só pros mais ligados no ROLÊ. Aproveita cupons, links promocionais e condições especiais pra curtir teus eventos favoritos pagando menos.</p>
-
-      <div class="descontos-grid">
-        <!-- Card 1 - Destaque especial -->
-        <div class="desconto-card destaque-especial fade-in-card">
-          <h3>🥁 Festa Tamborzão (RJ)</h3>
-          <p>O som que faz a galera pirar! Desconto especial usando a chave promocional do ROLÊ.</p>
-          <div class="cupom-code">ROLE</div>
-          <br>
-          <a href="https://embedstore.ingresse.com/tickets/www.ingresse.com/event/84295?passkey=ROLE" target="_blank" class="btn-desconto">Garantir ingresso</a>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="desconto-card fade-in-card">
-          <h3>☕ Social Club no Coffeeshop (Floripa)</h3>
-          <p>Vibe única em Floripa com <strong>10% OFF</strong> exclusivo para rolezeiros!</p>
-          <div class="cupom-code">ROLE10</div>
-          <br>
-          <a href="https://www.pensanoevento.com.br/eventos/83672/social-club-social?cupom=ROLE10" target="_blank" class="btn-desconto">Usar cupom</a>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="desconto-card fade-in-card">
-          <h3>🌊 Trip to Deep no Terraza (Floripa)</h3>
-          <p>Deep house com vista para o mar! Condições especiais via link promocional.</p>
-          <a href="https://www.blueticket.com.br/evento/38380/?c=role" target="_blank" class="btn-desconto">Comprar ingresso</a>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="desconto-card fade-in-card">
-          <h3>🎵 Veronica Electronica no Club63 (RJ)</h3>
-          <p>A noite mais eletrizante do Rio com desconto exclusivo ROLÊ!</p>
-          <div class="cupom-code">ROLE</div>
-          <br>
-          <a href="https://shotgun.live/pt-br/events/night-of-veronica-electronica" target="_blank" class="btn-desconto">Garantir desconto</a>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="desconto-card fade-in-card">
-          <h3>🌙 Amnesia no Cabaret (POA)</h3>
-          <p>16 anos de história! Desconto especial para aniversário da festa mais icônica de Porto Alegre.</p>
-          <div class="cupom-code">ROLE</div>
-          <br>
-          <a href="https://www.sympla.com.br/evento/amnesia-16-anos-sabado-26-07-cabaret-poa/3023277?d=ROLE" target="_blank" class="btn-desconto">Comprar com desconto</a>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="desconto-card fade-in-card">
-          <h3>🔥 Mordisco Club Kaos (RJ)</h3>
-          <p>Na histórica Gafieira Elite! Energia pura com cupom exclusivo do ROLÊ.</p>
-          <div class="cupom-code">ROLE</div>
-          <br>
-          <a href="https://shotgun.live/pt-br/events/mordisco-club-kaos" target="_blank" class="btn-desconto">Usar cupom</a>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="desconto-card fade-in-card">
-          <h3>🐴 Pônei Rosa Club (SP)</h3>
-          <p>Wand & Rabbit na Augusta Hi-Fi! A festa mais underground de São Paulo com desconto ROLÊ.</p>
-          <div class="cupom-code">ROLE</div>
-          <br>
-          <a href="https://shotgun.live/pt-br/events/ponei-rosa-club-wand-rabbit" target="_blank" class="btn-desconto">Garantir entrada</a>
-        </div>
-      </div>
-
-      <!-- Informações adicionais -->
-      <div class="info-adicional fade-in-card">
-        <h3>📱 Como funciona?</h3>
-        <p>Os descontos são atualizados semanalmente e válidos apenas para seguidores do ROLÊ. Acompanha nosso Instagram e TikTok para não perder nenhuma promoção exclusiva!</p>
-        <p><strong>Dica:</strong> Alguns eventos têm vagas limitadas para desconto. Corre atrás!</p>
-      </div>
-    </div>
-  </main>
-
-  <!-- BOTÃO VOLTAR AO TOPO -->
-  <button class="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Voltar ao topo">↑</button>
-
-  <!-- RODAPÉ -->
-  <footer>
-    <div class="footer-links">
-      © 2025 ROLÊ ENTRETENIMENTO ·
-      <a href="politica.html">Política de Privacidade</a> ·
-      <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-      <a href="termos-organizador.html">Termos do Organizador</a> ·
-      <a href="politica-spam.html">Política Antispam</a>
-    </div>
-    <div class="social-icons">
-      <a href="https://instagram.com/role.ent" target="_blank">
-        <img src="images/instagram.svg" alt="Instagram ROLÊ" />
-      </a>
-      <a href="https://tiktok.com/@role.ent" target="_blank">
-        <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
-      </a>
-      <a href="https://wa.me/5551980704353" target="_blank">
-        <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
-      </a>
-    </div>
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // ========== DROPDOWN EXPLORAR ==========
-      const dropdown = document.querySelector('.dropdown');
-      const button = dropdown?.querySelector('.dropdown-button');
-      const content = dropdown?.querySelector('.dropdown-content');
-
-      if (button && content) {
-        button.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          dropdown.classList.toggle('open');
-          button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
-            button.setAttribute('aria-expanded', false);
-          }
-        });
-
-        content.addEventListener('click', function (e) {
-          e.stopPropagation();
-        });
-      }
-
-      // ========== ANIMAÇÕES DOS CARDS ==========
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, observerOptions);
-
-      // Observar cards para animação de entrada
-      const cards = document.querySelectorAll('.fade-in-card');
-      cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-        observer.observe(card);
-      });
-
-      // ========== EFEITOS DE HOVER NOS CARDS ==========
-      const descontoCards = document.querySelectorAll('.desconto-card');
-      descontoCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
+    <!-- Hero Section -->
+    <section class="descontos-hero fade-in">
+        <h1 class="hero-title-descontos">Descontos Exclusivos</h1>
+        <p class="hero-subtitle-descontos">
+            Cupons, listas VIP e condições especiais nos eventos mais quentes da cena cultural. 
+            Só quem tá ligado no ROLÊ tem acesso a essas promoções.
+        </p>
         
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0) scale(1)';
+        <div class="stats-descontos">
+            <div class="stat-item-desconto">
+                <span class="stat-number-desconto">15+</span>
+                <span class="stat-label-desconto">Eventos Ativos</span>
+            </div>
+            <div class="stat-item-desconto">
+                <span class="stat-number-desconto">40%</span>
+                <span class="stat-label-desconto">Desconto Médio</span>
+            </div>
+            <div class="stat-item-desconto">
+                <span class="stat-number-desconto">5</span>
+                <span class="stat-label-desconto">Cidades</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="descontos-section">
+        <div class="filtros-descontos">
+            <button class="filtro-btn active" data-filter="todos">Todos</button>
+            <button class="filtro-btn" data-filter="rio">Rio de Janeiro</button>
+            <button class="filtro-btn" data-filter="sao-paulo">São Paulo</button>
+            <button class="filtro-btn" data-filter="floripa">Florianópolis</button>
+            <button class="filtro-btn" data-filter="poa">Porto Alegre</button>
+            <button class="filtro-btn" data-filter="curitiba">Curitiba</button>
+        </div>
+
+        <!-- Grid de Descontos -->
+        <div class="descontos-grid">
+            <!-- Card 1 - Destaque -->
+            <div class="desconto-card card-hot card-exclusive fade-in-card" data-city="rio">
+                <div class="card-city">RJ</div>
+                <span class="card-emoji">🥁</span>
+                <h3 class="card-title">Festa Tamborzão</h3>
+                <p class="card-description">O som que faz a galera pirar na histórica Lapa! Desconto especial usando a chave promocional exclusiva do ROLÊ.</p>
+                
+                <div class="card-discount-info">
+                    <div class="cupom-code">ROLE</div>
+                    <div class="discount-percentage">Condições Especiais</div>
+                </div>
+                
+                <a href="https://embedstore.ingresse.com/tickets/www.ingresse.com/event/84295?passkey=ROLE" target="_blank" class="btn-desconto">Garantir Ingresso</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="desconto-card fade-in-card" data-city="floripa">
+                <div class="card-city">Floripa</div>
+                <span class="card-emoji">☕</span>
+                <h3 class="card-title">Social Club no Coffeeshop</h3>
+                <p class="card-description">Vibe única em Floripa com ambiente aconchegante e música eletrônica de qualidade. Desconto exclusivo para rolezeiros!</p>
+                
+                <div class="card-discount-info">
+                    <div class="cupom-code">ROLE10</div>
+                    <div class="discount-percentage">10% OFF</div>
+                </div>
+                
+                <a href="https://www.pensanoevento.com.br/eventos/83672/social-club-social?cupom=ROLE10" target="_blank" class="btn-desconto">Usar Cupom</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="desconto-card fade-in-card" data-city="floripa">
+                <div class="card-city">Floripa</div>
+                <span class="card-emoji">🌊</span>
+                <h3 class="card-title">Trip to Deep no Terraza</h3>
+                <p class="card-description">Deep house com vista privilegiada para o mar! Uma experiência única que combina música eletrônica e paisagem natural.</p>
+                
+                <div class="card-discount-info">
+                    <div class="cupom-code">ROLE</div>
+                    <div class="discount-percentage">Link Promocional</div>
+                </div>
+                
+                <a href="https://www.blueticket.com.br/evento/38380/?c=role" target="_blank" class="btn-desconto">Comprar Ingresso</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="desconto-card fade-in-card" data-city="rio">
+                <div class="card-city">RJ</div>
+                <span class="card-emoji">🎵</span>
+                <h3 class="card-title">Veronica Electronica no Club63</h3>
+                <p class="card-description">A noite mais eletrizante do Rio com DJs internacionais e uma produção visual de outro mundo. Imperdível!</p>
+                
+                <div class="card-discount-info">
+                    <div class="cupom-code">ROLE</div>
+                    <div class="discount-percentage">Desconto Exclusivo</div>
+                </div>
+                
+                <a href="https://shotgun.live/pt-br/events/night-of-veronica-electronica" target="_blank" class="btn-desconto">Garantir Desconto</a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="desconto-card card-exclusive fade-in-card" data-city="poa">
+                <div class="card-city">POA</div>
+                <span class="card-emoji">🌙</span>
+                <h3 class="card-title">Amnesia 16 Anos no Cabaret</h3>
+                <p class="card-description">Celebrando 16 anos da festa mais icônica de Porto Alegre! Uma noite histórica no lendário Cabaret com lineup especial.</p>
+                
+                <div class="card-discount-info">
+                    <div class="cupom-code">ROLE</div>
+                    <div class="discount-percentage">Aniversário Especial</div>
+                </div>
+                
+                <a href="https://www.sympla.com.br/evento/amnesia-16-anos-sabado-26-07-cabaret-poa/3023277?d=ROLE" target="_blank" class="btn-desconto">Comprar com Desconto</a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="desconto-card fade-in-card" data-city="rio">
+                <div class="card-city">RJ</div>
+                <span class="card-emoji">🔥</span>
+                <h3 class="card-title">Mordisco Club Kaos</h3>
+                <p class="card-description">Na histórica Gafieira Elite! Energia pura, som pesado e a galera mais alternativa do Rio se encontra aqui.</p>
+                
+                <div class="card-discount-info">
+                    <div class="cupom-code">ROLE</div>
+                    <div class="discount-percentage">Cupom Exclusivo</div>
+                </div>
+                
+                <a href="https://shotgun.live/pt-br/events/mordisco-club-kaos" target="_blank" class="btn-desconto">Usar Cupom</a>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="desconto-card fade-in-card" data-city="sao-paulo">
+                <div class="card-city">SP</div>
+                <span class="card-emoji">🐴</span>
+                <h3 class="card-title">Pônei Rosa Club</h3>
+                <p class="card-description">Wand & Rabbit na Augusta Hi-Fi! A festa mais underground de São Paulo com uma produção impecável e som de primeira.</p>
+                
+                <div class="card-discount-info">
+                    <div class="cupom-code">ROLE</div>
+                    <div class="discount-percentage">Underground Special</div>
+                </div>
+                
+                <a href="https://shotgun.live/pt-br/events/ponei-rosa-club-wand-rabbit" target="_blank" class="btn-desconto">Garantir Entrada</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instruções -->
+    <section class="instrucoes-section fade-in">
+        <h3 class="instrucoes-title">📱 Como Funciona</h3>
+        <p class="instrucoes-text">
+            Os descontos são atualizados semanalmente e válidos apenas para seguidores do ROLÊ. 
+            Acompanha nossas redes sociais para não perder nenhuma promoção exclusiva e ficar por dentro dos eventos mais quentes!
+        </p>
+        <p class="instrucoes-text">
+            <strong>⚡ Dica Pro:</strong> Alguns eventos têm vagas limitadas para desconto. Quando rolar a promo, corre atrás!
+        </p>
+        
+        <div class="social-promo">
+            <a href="https://instagram.com/role.ent" target="_blank" class="social-link">
+                📸 Seguir no Instagram
+            </a>
+            <a href="https://tiktok.com/@role.ent" target="_blank" class="social-link">
+                🎵 Seguir no TikTok
+            </a>
+        </div>
+    </section>
+
+    <!-- Newsletter Descontos -->
+    <section class="newsletter-descontos fade-in">
+        <h3>🎯 Alerta de Descontos</h3>
+        <p>Seja o primeiro a saber quando rolar promoção nova! Cadastra teu e-mail e recebe as oportunidades na hora.</p>
+        <form class="newsletter-form-descontos" id="newsletter-descontos-form">
+            <input type="email" class="newsletter-input-descontos" placeholder="Seu melhor e-mail" required>
+            <button type="submit" class="btn-newsletter-descontos">Quero Alertas</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            © 2025 ROLÊ ENTRETENIMENTO ·
+            <a href="politica.html">Política de Privacidade</a> ·
+            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+            <a href="termos-organizador.html">Termos do Organizador</a> ·
+            <a href="politica-spam.html">Política Antispam</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://instagram.com/role.ent" target="_blank">
+                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+            </a>
+            <a href="https://tiktok.com/@role.ent" target="_blank">
+                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            </a>
+            <a href="https://wa.me/5551980704353" target="_blank">
+                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown.querySelector('.dropdown-button');
+            const content = dropdown.querySelector('.dropdown-content');
+
+            if (button && content) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
+                    }
+                });
+
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
+
+            // ========== FILTROS DE CIDADE ==========
+            const filtros = document.querySelectorAll('.filtro-btn');
+            const cards = document.querySelectorAll('.desconto-card');
+
+            filtros.forEach(filtro => {
+                filtro.addEventListener('click', function() {
+                    // Remove active de todos os filtros
+                    filtros.forEach(f => f.classList.remove('active'));
+                    // Adiciona active no filtro clicado
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        if (filterValue === 'todos') {
+                            card.style.display = 'flex';
+                            card.style.animation = 'fadeInUp 0.6s ease forwards';
+                        } else {
+                            const cardCity = card.getAttribute('data-city');
+                            if (cardCity === filterValue) {
+                                card.style.display = 'flex';
+                                card.style.animation = 'fadeInUp 0.6s ease forwards';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+
+            // ========== ANIMAÇÕES DE ENTRADA ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observar elementos para animação de entrada
+            const fadeElements = document.querySelectorAll('.fade-in, .fade-in-card');
+            fadeElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `all 0.8s ease ${index * 0.1}s`;
+                observer.observe(element);
+            });
+
+            // ========== EFEITOS DE HOVER NOS CARDS ==========
+            const descontoCards = document.querySelectorAll('.desconto-card');
+            descontoCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.03)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // ========== NEWSLETTER FORM ==========
+            const newsletterForm = document.getElementById('newsletter-descontos-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input').value;
+
+                    fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
+                        method: 'POST',
+                        body: new URLSearchParams({ 
+                            email: email,
+                            tipo: 'descontos' 
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(`🎉 Sucesso! ${data.email} foi cadastrado para receber alertas de descontos.`);
+                        newsletterForm.reset();
+                    })
+                    .catch(error => {
+                        alert('⚠️ Ocorreu um erro ao cadastrar. Tente novamente mais tarde.');
+                        console.error('Erro:', error);
+                    });
+                });
+            }
+
+            // ========== SMOOTH SCROLL PARA BOTÕES ==========
+            const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+            smoothScrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // ========== COPY CUPOM AO CLICAR ==========
+            const cupomCodes = document.querySelectorAll('.cupom-code');
+            cupomCodes.forEach(cupom => {
+                cupom.addEventListener('click', function() {
+                    const code = this.textContent;
+                    navigator.clipboard.writeText(code).then(() => {
+                        // Feedback visual
+                        const originalText = this.textContent;
+                        this.textContent = '✓ COPIADO!';
+                        this.style.background = 'linear-gradient(45deg, #4CAF50, #66BB6A)';
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.background = 'var(--gradient)';
+                        }, 2000);
+                    }).catch(() => {
+                        // Fallback para navegadores mais antigos
+                        const textArea = document.createElement('textarea');
+                        textArea.value = code;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textArea);
+                        
+                        const originalText = this.textContent;
+                        this.textContent = '✓ COPIADO!';
+                        this.style.background = 'linear-gradient(45deg, #4CAF50, #66BB6A)';
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.background = 'var(--gradient)';
+                        }, 2000);
+                    });
+                });
+                
+                // Adiciona cursor pointer e título
+                cupom.style.cursor = 'pointer';
+                cupom.title = 'Clique para copiar o cupom';
+            });
+
+            // ========== STATS COUNTER ANIMATION ==========
+            const statsNumbers = document.querySelectorAll('.stat-number-desconto');
+            const animateStats = () => {
+                statsNumbers.forEach(stat => {
+                    const finalValue = stat.textContent;
+                    const numericValue = parseInt(finalValue.replace(/\D/g, ''));
+                    const suffix = finalValue.replace(/[\d]/g, '');
+                    let currentValue = 0;
+                    const increment = numericValue / 30;
+                    
+                    const timer = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= numericValue) {
+                            stat.textContent = finalValue;
+                            clearInterval(timer);
+                        } else {
+                            stat.textContent = Math.floor(currentValue) + suffix;
+                        }
+                    }, 50);
+                });
+            };
+
+            // Observar stats para animar quando aparecerem na tela
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(animateStats, 500);
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            });
+
+            const statsSection = document.querySelector('.stats-descontos');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
         });
-      });
-    });
 
-    // ========== TOGGLE TEMA ==========
-    const lampada = document.querySelector('.lampada-toggle');
-    const root = document.documentElement;
+        // ========== TOGGLE TEMA ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
 
-    // Aplica o tema salvo ao carregar
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      root.setAttribute('data-theme', 'light');
-      lampada.setAttribute('aria-pressed', 'true');
-    } else {
-      root.removeAttribute('data-theme');
-      lampada.setAttribute('aria-pressed', 'false');
-    }
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
+        }
 
-    // Alterna o tema ao clicar na lâmpada
-    lampada.addEventListener('click', () => {
-      if (root.hasAttribute('data-theme')) {
-        // Volta para modo escuro
-        root.removeAttribute('data-theme');
-        lampada.setAttribute('aria-pressed', 'false');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        // Vai para modo claro
-        root.setAttribute('data-theme', 'light');
-        lampada.setAttribute('aria-pressed', 'true');
-        localStorage.setItem('theme', 'light');
-      }
-    });
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                // Volta para modo escuro
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Vai para modo claro
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
+            }
+        });
 
-    // ========== SUAVIZAÇÃO ADICIONAL ==========
-    document.body.style.transition = 'all 0.3s ease';
-  </script>
+        // ========== BOTÃO VOLTAR AO TOPO ==========
+        const voltarTopo = document.createElement('button');
+        voltarTopo.className = 'voltar-topo';
+        voltarTopo.innerHTML = '↑';
+        voltarTopo.title = 'Voltar ao topo';
+        voltarTopo.style.display = 'none';
+        document.body.appendChild(voltarTopo);
+
+        voltarTopo.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mostrar/esconder botão baseado no scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                voltarTopo.style.display = 'block';
+            } else {
+                voltarTopo.style.display = 'none';
+            }
+        });
+
+        // ========== PREVENÇÃO DE SPAM NOS LINKS ==========
+        const linksBotao = document.querySelectorAll('.btn-desconto');
+        linksBotao.forEach(link => {
+            let lastClick = 0;
+            link.addEventListener('click', function(e) {
+                const now = Date.now();
+                if (now - lastClick < 2000) { // 2 segundos entre cliques
+                    e.preventDefault();
+                    return false;
+                }
+                lastClick = now;
+                
+                // Feedback visual de loading
+                const originalText = this.textContent;
+                this.textContent = 'Redirecionando...';
+                this.style.opacity = '0.7';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.opacity = '1';
+                }, 1500);
+            });
+        });
+
+        // ========== SUAVIZAÇÃO ADICIONAL ==========
+        document.body.style.transition = 'all 0.3s ease';
+    </script>
 </body>
 </html>
