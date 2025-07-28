@@ -6,11 +6,48 @@
     <meta name="description" content="O editorial do ROLÊ investiga o desaparecimento da madrugada nas grandes cidades e celebra quem ainda resiste na cultura noturna. Um manifesto sobre festas independentes, repressão sonora, gentrificação e política urbana." />
     <meta name="keywords" content="cultura noturna, repressão sonora, gentrificação cultural, festas independentes, madrugada nas cidades, vida noturna Brasil, política urbana, rolês alternativos, editorial ROLÊ, resistência cultural" />
     <meta name="author" content="FIIH, Co-fundador do ROLÊ" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="As cidades já foram noturnas | Revista ROLÊ" />
     <meta property="og:description" content="Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras. Uma reflexão sobre cultura noturna, repressão sonora e a resistência dos rolês alternativos." />
     <meta property="og:image" content="https://roleentretenimento.com/images/editorial-madrugada.png" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html">
+    <meta property="twitter:title" content="As cidades já foram noturnas | Revista ROLÊ">
+    <meta property="twitter:description" content="Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras.">
+    <meta property="twitter:image" content="https://roleentretenimento.com/images/editorial-madrugada.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "As cidades já foram noturnas",
+        "description": "Editorial do ROLÊ sobre o fim da madrugada nas cidades brasileiras",
+        "author": {
+            "@type": "Person",
+            "name": "FIIH"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ROLÊ ENTRETENIMENTO",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://roleentretenimento.com/images/logo-role.png"
+            }
+        },
+        "datePublished": "2024-12-01",
+        "dateModified": "2024-12-01",
+        "image": "https://roleentretenimento.com/images/editorial-madrugada.png",
+        "mainEntityOfPage": "https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html"
+    }
+    </script>
+    
+    <link rel="canonical" href="https://roleentretenimento.com/editorial/as-cidades-ja-foram-noturnas.html" />
     <link rel="icon" href="/images/favicon.png" type="image/png" />
     
     <script>
@@ -23,12 +60,341 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/estilo.css" />
     
+    <!-- Font Awesome para ícones de compartilhamento -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Estilos específicos para artigos */
+        .article-header {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+            padding: 2rem 0;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .article-meta-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            flex-wrap: wrap;
+        }
+
+        .article-meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-meta-info i {
+            color: var(--highlight);
+        }
+
+        .reading-time {
+            color: var(--highlight);
+            font-weight: 600;
+        }
+
+        /* Botões de compartilhamento */
+        .share-section {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.05), transparent);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            border: 1px solid rgba(199, 125, 255, 0.2);
+            text-align: center;
+        }
+
+        .share-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--highlight);
+            font-weight: 700;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-btn.facebook {
+            background: linear-gradient(135deg, #1877f2, #42a5f5);
+        }
+
+        .share-btn.twitter {
+            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+        }
+
+        .share-btn.whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .share-btn.instagram {
+            background: linear-gradient(135deg, #e4405f, #fd1d1d, #fcb045);
+        }
+
+        .share-btn.copy-link {
+            background: linear-gradient(135deg, var(--highlight), #a64de6);
+        }
+
+        .share-btn.copy-link.copied {
+            background: linear-gradient(135deg, #4caf50, #45a049);
+        }
+
+        /* Navegação entre artigos */
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 4rem 0 2rem 0;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--card-border);
+            gap: 2rem;
+        }
+
+        .nav-article {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .nav-article:hover {
+            background: rgba(199, 125, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-article .nav-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--highlight);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .nav-article .nav-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Melhorias nas frases de destaque */
+        .destaque-frase {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .destaque-frase::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 4rem;
+            color: var(--highlight);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        /* Tags do artigo */
+        .article-tags {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .article-tags h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+            font-weight: 600;
+        }
+
+        .tags-list {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(199, 125, 255, 0.1);
+            color: var(--highlight);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border: 1px solid rgba(199, 125, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: var(--highlight);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Call to action melhorado */
+        .cta-section {
+            background: linear-gradient(135deg, var(--highlight), #a64de6);
+            color: white;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: white;
+            color: var(--highlight);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .share-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .share-btn {
+                justify-content: center;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .article-navigation {
+                flex-direction: column;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .article-meta-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Toast para feedback */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--highlight);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-10px);
+        }
+    </style>
+    
     <noscript>
         <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
     </noscript>
 </head>
 
 <body class="fade-in">
+    <!-- Header mantém a estrutura do site -->
     <section class="bloco-topo">
         <div class="container-topo">
             <div class="header-top">
@@ -60,6 +426,21 @@
         </div>
     </section>
 
+    <!-- Header do Artigo -->
+    <header class="article-header">
+        <div class="editorial-completo">
+            <h1 class="titulo-editorial">O fim da madrugada</h1>
+            <p class="subtitulo-editorial">como a cultura noturna foi sendo silenciada nas grandes cidades brasileiras</p>
+            
+            <div class="article-meta-info">
+                <span><i class="fas fa-user"></i> Por FIIH, cofundador do ROLÊ</span>
+                <span><i class="fas fa-calendar"></i> 1 de dezembro, 2024</span>
+                <span><i class="fas fa-clock"></i> <span class="reading-time">8 min de leitura</span></span>
+                <span><i class="fas fa-tag"></i> Editorial</span>
+            </div>
+        </div>
+    </header>
+
     <!-- Banner -->
     <div class="banner-wrapper">
         <div class="banner-container">
@@ -69,11 +450,7 @@
 
     <!-- Conteúdo Editorial -->
     <main class="editorial-completo fade-in">
-        <div class="texto-editorial">
-            <h1 class="titulo-editorial">O fim da madrugada</h1>
-            <p class="subtitulo-editorial">como a cultura noturna foi sendo silenciada nas grandes cidades brasileiras</p>
-            <p class="autor">Por FIIH, cofundador do ROLÊ ENTRETENIMENTO</p>
-
+        <article class="texto-editorial">
             <p>As cidades já foram noturnas. E talvez você ainda lembre de como era. Ruas que respiravam depois da meia-noite, postes de luz que pareciam fazer parte do cenário e não da vigilância, bares que não se apressavam em fechar as portas, festas que ignoravam o relógio e dançavam até o sol nascer. Havia uma vibração particular na madrugada. Um tipo de energia que não se produzia com patrocínio, mas com presença. Com encontros não programados. Com corpos dispostos a errar o passo e se jogar no improviso. E era justamente nesse improviso que nasciam os melhores rolês. Aqueles que você não planejou, mas que viraram história.</p>
 
             <div class="destaque-frase">"As cidades esqueceram como é pulsar no escuro."</div>
@@ -127,7 +504,83 @@
             <div class="destaque-frase">"Defender a madrugada é defender o direito de existir fora do expediente."</div>
 
             <p class="frase-final">As cidades já foram noturnas. Mas podem voltar a ser.</p>
+        </article>
+
+        <!-- Tags do Artigo -->
+        <div class="article-tags">
+            <h3>Temas relacionados:</h3>
+            <div class="tags-list">
+                <a href="#" class="tag">Cultura Noturna</a>
+                <a href="#" class="tag">Repressão Sonora</a>
+                <a href="#" class="tag">Gentrificação</a>
+                <a href="#" class="tag">Festas Independentes</a>
+                <a href="#" class="tag">Política Urbana</a>
+                <a href="#" class="tag">Resistência Cultural</a>
+            </div>
         </div>
+
+        <!-- Seção de Compartilhamento -->
+        <div class="share-section">
+            <h2 class="share-title">Compartilhe este editorial</h2>
+            <div class="share-buttons">
+                <button class="share-btn facebook" onclick="shareOnFacebook()">
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook
+                </button>
+                <button class="share-btn twitter" onclick="shareOnTwitter()">
+                    <i class="fab fa-twitter"></i>
+                    Twitter
+                </button>
+                <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </button>
+                <button class="share-btn instagram" onclick="shareOnInstagram()">
+                    <i class="fab fa-instagram"></i>
+                    Instagram
+                </button>
+                <button class="share-btn copy-link" onclick="copyLink()" id="copyBtn">
+                    <i class="fas fa-link"></i>
+                    Copiar Link
+                </button>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2 class="cta-title">Faça parte da resistência cultural</h2>
+                <p class="cta-description">
+                    Acompanhe o ROLÊ nas redes sociais e ajude a mapear os rolês que ainda fazem a cidade pulsar.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://instagram.com/role.ent" class="cta-btn" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        Seguir no Instagram
+                    </a>
+                    <a href="/revista.html" class="cta-btn">
+                        <i class="fas fa-newspaper"></i>
+                        Ler mais editoriais
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegação entre artigos -->
+        <nav class="article-navigation">
+            <a href="#" class="nav-article">
+                <div class="nav-label">← Anterior</div>
+                <div class="nav-title">Artigo anterior</div>
+            </a>
+            <a href="/revista.html" class="nav-article">
+                <div class="nav-label">Revista</div>
+                <div class="nav-title">Todos os artigos</div>
+            </a>
+            <a href="#" class="nav-article">
+                <div class="nav-label">Próximo →</div>
+                <div class="nav-title">Próximo artigo</div>
+            </a>
+        </nav>
     </main>
 
     <!-- Separador -->
@@ -181,6 +634,9 @@
             <img src="/images/seta-voltar.svg" alt="Voltar página anterior" />
         </button>
     </div>
+
+    <!-- Toast para feedback -->
+    <div id="toast" class="toast"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -241,7 +697,126 @@
             document.getElementById('btn-voltar-anterior').addEventListener('click', () => {
                 window.history.back();
             });
+
+            // ========== FORMULÁRIO DE COMENTÁRIOS ==========
+            const commentForm = document.getElementById('comment-form');
+            const commentsList = document.getElementById('comentarios-lista');
+
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const nome = this.querySelector('input[name="nome"]').value;
+                const comentario = this.querySelector('textarea[name="comentario"]').value;
+
+                // Aqui você pode integrar com seu backend
+                // Por agora, vamos apenas adicionar o comentário localmente
+                addComment(nome, comentario);
+                this.reset();
+                showToast('Comentário adicionado com sucesso!');
+            });
+
+            function addComment(nome, comentario) {
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comentario fade-in';
+                commentElement.innerHTML = `
+                    <div style="background: var(--card-bg); padding: 1rem; border-radius: 10px; margin-bottom: 1rem; border-left: 3px solid var(--highlight);">
+                        <strong style="color: var(--highlight);">${nome}</strong>
+                        <p style="margin: 0.5rem 0 0 0; line-height: 1.5;">${comentario}</p>
+                        <small style="opacity: 0.7;">Agora mesmo</small>
+                    </div>
+                `;
+                commentsList.appendChild(commentElement);
+            }
+
+            // ========== TEMPO DE LEITURA ==========
+            function calculateReadingTime() {
+                const article = document.querySelector('.texto-editorial');
+                const text = article.textContent;
+                const wordsPerMinute = 200;
+                const wordCount = text.trim().split(/\s+/).length;
+                const readingTime = Math.ceil(wordCount / wordsPerMinute);
+                
+                const readingTimeElement = document.querySelector('.reading-time');
+                if (readingTimeElement) {
+                    readingTimeElement.textContent = `${readingTime} min de leitura`;
+                }
+            }
+
+            calculateReadingTime();
         });
+
+        // ========== FUNÇÕES DE COMPARTILHAMENTO ==========
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('As cidades já foram noturnas - Editorial ROLÊ sobre cultura noturna e resistência urbana');
+            const hashtags = 'culturanoturna,role,resistencia';
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}&hashtags=${hashtags}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('As cidades já foram noturnas - Editorial ROLÊ');
+            const text = `${title} ${url}`;
+            
+            // Detectar se é mobile
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                window.open(`whatsapp://send?text=${text}`, '_blank');
+            } else {
+                window.open(`https://web.whatsapp.com/send?text=${text}`, '_blank');
+            }
+        }
+
+        function shareOnInstagram() {
+            // Instagram não permite compartilhamento direto de links via web
+            // Vamos copiar o link e dar uma instrução
+            copyToClipboard(window.location.href);
+            showToast('Link copiado! Cole no Instagram Stories ou em uma DM.');
+        }
+
+        function copyLink() {
+            copyToClipboard(window.location.href);
+            
+            const copyBtn = document.getElementById('copyBtn');
+            copyBtn.classList.add('copied');
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+            
+            setTimeout(() => {
+                copyBtn.classList.remove('copied');
+                copyBtn.innerHTML = '<i class="fas fa-link"></i> Copiar Link';
+            }, 2000);
+            
+            showToast('Link copiado para a área de transferência!');
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text);
+            } else {
+                // Fallback para navegadores mais antigos
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
 
         // ========== TOGGLE TEMA MELHORADO ==========
         const lampada = document.querySelector('.lampada-toggle');
@@ -272,8 +847,73 @@
             }
         });
 
-        // ========== SUAVIZAÇÃO ADICIONAL ==========
-        document.body.style.transition = 'all 0.3s ease';
+        // ========== ANALYTICS E TRACKING ==========
+        // Rastrear tempo na página
+        let startTime = Date.now();
+        let maxScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            maxScroll = Math.max(maxScroll, scrollPercent);
+        });
+
+        window.addEventListener('beforeunload', () => {
+            const timeSpent = Math.round((Date.now() - startTime) / 1000);
+            console.log(`Tempo na página: ${timeSpent}s, Scroll máximo: ${maxScroll}%`);
+            // Aqui você pode enviar esses dados para seu analytics
+        });
+
+        // ========== COMPARTILHAMENTO NATIVO (WEB SHARE API) ==========
+        if (navigator.share) {
+            // Adicionar botão de compartilhamento nativo se disponível
+            const shareButtons = document.querySelector('.share-buttons');
+            const nativeShareBtn = document.createElement('button');
+            nativeShareBtn.className = 'share-btn copy-link';
+            nativeShareBtn.innerHTML = '<i class="fas fa-share"></i> Compartilhar';
+            nativeShareBtn.onclick = async () => {
+                try {
+                    await navigator.share({
+                        title: document.title,
+                        text: 'As cidades já foram noturnas - Editorial ROLÊ',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Compartilhamento cancelado');
+                }
+            };
+            shareButtons.appendChild(nativeShareBtn);
+        }
+
+        // ========== SEO E STRUCTURED DATA ==========
+        // Adicionar breadcrumb dynamically
+        const breadcrumb = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "ROLÊ",
+                    "item": "https://roleentretenimento.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Revista",
+                    "item": "https://roleentretenimento.com/revista.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "As cidades já foram noturnas"
+                }
+            ]
+        };
+
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(breadcrumb);
+        document.head.appendChild(script);
     </script>
 </body>
 </html>
