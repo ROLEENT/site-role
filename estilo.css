@@ -1430,22 +1430,27 @@ section.comentarios h2 {
 
 /* ========== CORREÇÃO 1: TIMELINE - BOLINHAS SOBREPOSTAS ========== */
 
-/* Ajuste do posicionamento das bolinhas no timeline */
+/* Remove completamente as bolinhas dos números */
 .timeline-date::after {
+  display: none !important;
+}
+
+/* Cria bolinhas na linha central independentes dos números */
+.timeline-item::before {
   content: '';
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
   background: var(--highlight);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--bg);
-  z-index: 1; /* Garante que a bolinha fique atrás do texto */
+  z-index: 3;
 }
 
-/* Garante que o número fique na frente da bolinha */
+/* Estilização dos números sem interferência */
 .timeline-date {
   flex: 0 0 150px;
   text-align: center;
@@ -1453,27 +1458,10 @@ section.comentarios h2 {
   font-weight: 700;
   color: var(--highlight);
   position: relative;
-  z-index: 2; /* Número fica na frente */
-  background: var(--bg); /* Fundo para cobrir a bolinha */
-  padding: 10px 20px; /* Espaçamento para não colar na bolinha */
-  border-radius: 10px; /* Suaviza as bordas do fundo */
+  z-index: 2;
 }
 
-/* Alternativa: Mover a bolinha para não sobrepor o número */
-.timeline-date::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -60px; /* Move a bolinha para a direita do número */
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background: var(--highlight);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--bg);
-}
-
-/* Ajuste da linha central para conectar com as novas bolinhas */
+/* Garante que a linha central fique atrás */
 .timeline::before {
   content: '';
   position: absolute;
@@ -1483,7 +1471,7 @@ section.comentarios h2 {
   width: 2px;
   background: var(--gradient);
   transform: translateX(-50%);
-  z-index: 0; /* Linha fica atrás de tudo */
+  z-index: 1;
 }
 
 /* ========== CORREÇÃO 2: ESTATÍSTICAS - NÚMEROS CORTADOS ========== */
@@ -1543,17 +1531,25 @@ section.comentarios h2 {
 /* ========== RESPONSIVO PARA AS CORREÇÕES ========== */
 
 @media (max-width: 768px) {
-  /* Timeline mobile */
-  .timeline-date {
-    flex: 0 0 80px;
-    font-size: 1.5rem;
-    padding: 8px 15px;
+  /* Timeline mobile - ajusta posição das bolinhas */
+  .timeline::before {
+    left: 30px;
   }
   
-  .timeline-date::after {
-    right: -40px;
+  .timeline-item::before {
+    left: 30px;
+    transform: translate(-50%, -50%);
     width: 16px;
     height: 16px;
+  }
+  
+  .timeline-date {
+    flex: 0 0 60px;
+    font-size: 1.5rem;
+  }
+  
+  .timeline-content {
+    margin: 0 0 0 2rem;
   }
   
   /* Estatísticas mobile */
@@ -1580,16 +1576,19 @@ section.comentarios h2 {
 
 @media (max-width: 480px) {
   /* Timeline muito pequeno */
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item::before {
+    left: 30px;
+    width: 14px;
+    height: 14px;
+  }
+  
   .timeline-date {
     flex: 0 0 60px;
     font-size: 1.2rem;
-    padding: 6px 10px;
-  }
-  
-  .timeline-date::after {
-    right: -30px;
-    width: 14px;
-    height: 14px;
   }
   
   /* Estatísticas muito pequeno */
@@ -1612,46 +1611,3 @@ section.comentarios h2 {
     max-width: 100px;
   }
 }
-
-/* ========== SOLUÇÃO ALTERNATIVA PARA TIMELINE ========== */
-/* Se preferir manter as bolinhas no centro, use esta versão: */
-
-/*
-.timeline-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4rem;
-  position: relative;
-}
-
-.timeline-date {
-  flex: 0 0 150px;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--highlight);
-  position: relative;
-  z-index: 3;
-  background: var(--bg);
-  padding: 15px 25px;
-  border-radius: 15px;
-  border: 2px solid var(--highlight);
-  margin: 0 20px;
-}
-
-.timeline-date::after {
-  display: none;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--gradient);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-*/
