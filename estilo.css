@@ -1427,3 +1427,231 @@ section.comentarios h2 {
   border-radius: 12px;
   overflow: hidden;
 }
+
+/* ========== CORREÇÃO 1: TIMELINE - BOLINHAS SOBREPOSTAS ========== */
+
+/* Ajuste do posicionamento das bolinhas no timeline */
+.timeline-date::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: var(--highlight);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--bg);
+  z-index: 1; /* Garante que a bolinha fique atrás do texto */
+}
+
+/* Garante que o número fique na frente da bolinha */
+.timeline-date {
+  flex: 0 0 150px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--highlight);
+  position: relative;
+  z-index: 2; /* Número fica na frente */
+  background: var(--bg); /* Fundo para cobrir a bolinha */
+  padding: 10px 20px; /* Espaçamento para não colar na bolinha */
+  border-radius: 10px; /* Suaviza as bordas do fundo */
+}
+
+/* Alternativa: Mover a bolinha para não sobrepor o número */
+.timeline-date::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -60px; /* Move a bolinha para a direita do número */
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--highlight);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+/* Ajuste da linha central para conectar com as novas bolinhas */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient);
+  transform: translateX(-50%);
+  z-index: 0; /* Linha fica atrás de tudo */
+}
+
+/* ========== CORREÇÃO 2: ESTATÍSTICAS - NÚMEROS CORTADOS ========== */
+
+/* Ajuste do container das estatísticas */
+.stats-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+  text-align: center;
+  overflow: visible; /* Garante que nada seja cortado */
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem 0; /* Adiciona padding para evitar cortes */
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem 1rem; /* Aumenta o padding horizontal */
+  min-height: 120px; /* Garante altura mínima */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--highlight);
+  margin-bottom: 0.5rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1.2; /* Ajusta altura da linha */
+  overflow: visible; /* Garante que o texto não seja cortado */
+  white-space: nowrap; /* Evita quebra de linha nos números */
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 150px; /* Limita largura para melhor quebra de linha */
+}
+
+/* ========== RESPONSIVO PARA AS CORREÇÕES ========== */
+
+@media (max-width: 768px) {
+  /* Timeline mobile */
+  .timeline-date {
+    flex: 0 0 80px;
+    font-size: 1.5rem;
+    padding: 8px 15px;
+  }
+  
+  .timeline-date::after {
+    right: -40px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Estatísticas mobile */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .stat-item {
+    padding: 1.5rem 0.5rem;
+    min-height: 100px;
+  }
+  
+  .stat-number {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Timeline muito pequeno */
+  .timeline-date {
+    flex: 0 0 60px;
+    font-size: 1.2rem;
+    padding: 6px 10px;
+  }
+  
+  .timeline-date::after {
+    right: -30px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* Estatísticas muito pequeno */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    padding: 1rem 0.5rem;
+    min-height: 80px;
+  }
+  
+  .stat-number {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    max-width: 100px;
+  }
+}
+
+/* ========== SOLUÇÃO ALTERNATIVA PARA TIMELINE ========== */
+/* Se preferir manter as bolinhas no centro, use esta versão: */
+
+/*
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.timeline-date {
+  flex: 0 0 150px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--highlight);
+  position: relative;
+  z-index: 3;
+  background: var(--bg);
+  padding: 15px 25px;
+  border-radius: 15px;
+  border: 2px solid var(--highlight);
+  margin: 0 20px;
+}
+
+.timeline-date::after {
+  display: none;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+*/
