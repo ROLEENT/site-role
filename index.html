@@ -836,7 +836,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // ========== UTILITÁRIOS MELHORADOS ==========
+            // ========== UTILITÁRIOS SIMPLES ==========
             const $ = (selector) => document.querySelector(selector);
             const $ = (selector) => document.querySelectorAll(selector);
             
@@ -854,7 +854,7 @@
             };
 
             // ========== DROPDOWN EXPLORAR SIMPLIFICADO ==========
-            const dropdown = query('.dropdown');
+            const dropdown = $('.dropdown');
             const button = dropdown?.querySelector('.dropdown-button');
             const content = dropdown?.querySelector('.dropdown-content');
 
@@ -919,6 +919,527 @@
                 if (currentCard) {
                     const cityName = currentCard.querySelector('img')?.alt || '';
                     showToast(`Visualizando: ${cityName}`, 2000);
+                }
+            }
+
+            function startAutoPlay() {
+                if (isAutoPlaying && !isPaused) {
+                    autoPlayInterval = setInterval(() => {
+                        scrollToCard(currentIndex + 1);
+                    }, 4000);
+                }
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            function pauseAutoPlay() {
+                isPaused = true;
+                stopAutoPlay();
+            }
+
+            function resumeAutoPlay() {
+                isPaused = false;
+                if (isAutoPlaying) {
+                    setTimeout(startAutoPlay, 1000);
+                }
+            }
+
+            // Controles do carrossel
+            const arrowLeft = $('.scroll-arrow.left');
+            const arrowRight = $('.scroll-arrow.right');
+
+            if (arrowLeft && arrowRight) {
+                arrowLeft.addEventListener('click', () => {
+                    pauseAutoPlay();
+                    scrollToCard(currentIndex - 1);
+                    setTimeout(resumeAutoPlay, 3000);
+                });
+
+                arrowRight.addEventListener('click', () => {
+                    pauseAutoPlay();
+                    scrollToCard(currentIndex + 1);
+                    setTimeout(resumeAutoPlay, 3000);
+                });
+
+                // Navegação por teclado nas setas
+                [arrowLeft, arrowRight].forEach(arrow => {
+                    arrow.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            arrow.click();
+                        }
+                    });
+                });
+            }
+
+            // Indicadores clicáveis
+            indicators.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    pauseAutoPlay();
+                    scrollToCard(index);
+                    setTimeout(resumeAutoPlay, 3000);
+                });
+
+                // Navegação por teclado nos indicadores
+                dot.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        dot.click();
+                    }
+                });
+            });
+
+            // Pausa auto-play ao hover ou foco
+            if (container) {
+                container.addEventListener('mouseenter', pauseAutoPlay);
+                container.addEventListener('mouseleave', resumeAutoPlay);
+                container.addEventListener('focusin', pauseAutoPlay);
+                container.addEventListener('focusout', resumeAutoPlay);
+
+                // Detectar mudança de scroll manual
+                container.addEventListener('scroll', debounce(() => {
+                    if (cards[0]) {
+                        const cardWidth = cards[0].getBoundingClientRect().width + 20;
+                        const newIndex = Math.round(container.scrollLeft / cardWidth);
+                        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < totalCards) {
+                            currentIndex = newIndex;
+                            updateIndicators();
+                        }
+                    }
+                }, 100));
+
+                // Suporte a touch/swipe
+                let startX = 0;
+                let isDragging = false;
+
+                container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                    pauseAutoPlay();
+                }, { passive: true });
+
+                container.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                }, { passive: false });
+
+                container.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) {
+                            scrollToCard(currentIndex + 1);
+                        } else {
+                            scrollToCard(currentIndex - 1);
+                        }
+                    }
+                    
+                    setTimeout(resumeAutoPlay, 3000);
+                }, { passive: true });
+            }
+
+            // Inicializar carrossel
+            if (container && cards.length > 0) {
+                setTimeout(() => {
+                    scrollToCard(0, false);
+                    startAutoPlay();
+                }, 300);
+            }
+
+            // ========== ANIMAÇÕES DE ENTRADA MELHORADAS ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Trigger counter animation for stats
+                        if (entry.target.classList.contains('stat-item')) {
+                            animateCounter(entry.target.querySelector('.stat-number'));
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observar elementos para animação de entrada
+            const fadeElements = $('.fade-in');
+            fadeElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.1}s`;
+                observer.observe(element);
+            });
+
+            // ========== ANIMAÇÃO DE CONTADOR ==========
+            function animateCounter(element) {
+                if (!element || element.hasAttribute('data-animated')) return;
+                
+                element.setAttribute('data-animated', 'true');
+                const text = element.textContent;
+                const number = parseInt(text.replace(/[^\d]/g, '')) || 0;
+                const suffix = text.replace(/[\d]/g, '');
+                const duration = 2000;
+                const steps = 60;
+                const increment = number / steps;
+                let current = 0;
+                let step = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    step++;
+                    
+                    if (step >= steps) {
+                        current = number;
+                        clearInterval(timer);
+                    }
+                    
+                    element.textContent = Math.floor(current) + suffix;
+                }, duration / steps);
+            }
+
+            // ========== NEWSLETTER FORM MELHORADO ==========
+            const newsletterForm = $('#newsletter-form');
+            const newsletterInput = newsletterForm?.querySelector('input');
+            const newsletterButton = newsletterForm?.querySelector('button');
+
+            if (newsletterForm && newsletterInput && newsletterButton) {
+                newsletterForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const email = newsletterInput.value.trim();
+                    
+                    // Validação de email
+                    if (!isValidEmail(email)) {
+                        showToast('Por favor, insira um email válido.', 3000, 'error');
+                        newsletterInput.focus();
+                        return;
+                    }
+
+                    // Loading state
+                    const originalText = newsletterButton.textContent;
+                    newsletterButton.textContent = 'Enviando...';
+                    newsletterButton.disabled = true;
+                    newsletterInput.disabled = true;
+
+                    try {
+                        const response = await fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
+                            method: 'POST',
+                            body: new URLSearchParams({ email }),
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            }
+                        });
+
+                        if (!response.ok) throw new Error('Network error');
+                        
+                        const data = await response.json();
+                        
+                        showToast(`Obrigado! ${email} foi cadastrado com sucesso.`, 4000, 'success');
+                        newsletterForm.reset();
+                        
+                    } catch (error) {
+                        console.error('Newsletter error:', error);
+                        showToast('Erro ao cadastrar. Tente novamente mais tarde.', 4000, 'error');
+                    } finally {
+                        // Reset loading state
+                        newsletterButton.textContent = originalText;
+                        newsletterButton.disabled = false;
+                        newsletterInput.disabled = false;
+                    }
+                });
+
+                // Real-time validation
+                newsletterInput.addEventListener('input', debounce(() => {
+                    const email = newsletterInput.value.trim();
+                    if (email && !isValidEmail(email)) {
+                        newsletterInput.style.borderColor = '#ff4444';
+                        newsletterInput.setAttribute('aria-invalid', 'true');
+                    } else {
+                        newsletterInput.style.borderColor = '';
+                        newsletterInput.setAttribute('aria-invalid', 'false');
+                    }
+                }, 300));
+            }
+
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            // ========== SMOOTH SCROLL MELHORADO ==========
+            const heroButton = $('.btn-hero');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = $('#destaques');
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Focus management para acessibilidade
+                        setTimeout(() => {
+                            target.setAttribute('tabindex', '-1');
+                            target.focus();
+                            target.addEventListener('blur', () => {
+                                target.removeAttribute('tabindex');
+                            }, { once: true });
+                        }, 500);
+                    }
+                });
+            }
+
+            // ========== SCROLL PROGRESS INDICATOR ==========
+            const scrollIndicator = $('.scroll-indicator');
+            if (scrollIndicator) {
+                const updateScrollProgress = debounce(() => {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (winScroll / height) * 100;
+                    scrollIndicator.style.width = scrolled + '%';
+                }, 10);
+
+                window.addEventListener('scroll', updateScrollProgress);
+            }
+
+            // ========== BACK TO TOP BUTTON ==========
+            const backToTopButton = $('.back-to-top');
+            if (backToTopButton) {
+                const toggleBackToTop = debounce(() => {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('visible');
+                    } else {
+                        backToTopButton.classList.remove('visible');
+                    }
+                }, 100);
+
+                window.addEventListener('scroll', toggleBackToTop);
+
+                backToTopButton.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Focus management
+                    setTimeout(() => {
+                        const skipLink = $('.skip-link');
+                        if (skipLink) skipLink.focus();
+                    }, 500);
+                });
+            }
+
+            // ========== TOAST SYSTEM ==========
+            function showToast(message, duration = 3000, type = 'info') {
+                const toast = $('#toast');
+                if (!toast) return;
+
+                toast.textContent = message;
+                toast.className = `toast ${type}`;
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, duration);
+            }
+
+            // ========== TOGGLE TEMA MELHORADO ==========
+            const lampada = $('.lampada-toggle');
+            const root = document.documentElement;
+
+            if (lampada) {
+                // Aplica o tema salvo ao carregar
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                
+                if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+                    root.setAttribute('data-theme', 'light');
+                    lampada.setAttribute('aria-pressed', 'true');
+                } else {
+                    root.removeAttribute('data-theme');
+                    lampada.setAttribute('aria-pressed', 'false');
+                }
+
+                // Alterna o tema ao clicar na lâmpada
+                const toggleTheme = () => {
+                    const isLight = root.hasAttribute('data-theme');
+                    
+                    if (isLight) {
+                        // Volta para modo escuro
+                        root.removeAttribute('data-theme');
+                        lampada.setAttribute('aria-pressed', 'false');
+                        localStorage.setItem('theme', 'dark');
+                        showToast('Tema escuro ativado', 2000);
+                    } else {
+                        // Vai para modo claro
+                        root.setAttribute('data-theme', 'light');
+                        lampada.setAttribute('aria-pressed', 'true');
+                        localStorage.setItem('theme', 'light');
+                        showToast('Tema claro ativado', 2000);
+                    }
+                };
+
+                lampada.addEventListener('click', toggleTheme);
+                
+                // Suporte a teclado
+                lampada.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleTheme();
+                    }
+                });
+
+                // Escutar mudanças de preferência do sistema
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                    if (!localStorage.getItem('theme')) {
+                        if (e.matches) {
+                            root.removeAttribute('data-theme');
+                            lampada.setAttribute('aria-pressed', 'false');
+                        } else {
+                            root.setAttribute('data-theme', 'light');
+                            lampada.setAttribute('aria-pressed', 'true');
+                        }
+                    }
+                });
+            }
+
+            // ========== LAZY LOADING MELHORADO ==========
+            const lazyImages = $('img[loading="lazy"]');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            
+                            // Add loading skeleton
+                            img.classList.add('loading-skeleton');
+                            
+                            img.addEventListener('load', () => {
+                                img.classList.remove('loading-skeleton');
+                            }, { once: true });
+                            
+                            img.addEventListener('error', () => {
+                                img.classList.remove('loading-skeleton');
+                                img.alt = 'Imagem não pôde ser carregada';
+                            }, { once: true });
+                            
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+
+            // ========== KEYBOARD SHORTCUTS ==========
+            document.addEventListener('keydown', (e) => {
+                // Ctrl/Cmd + K para focar na busca (se houver)
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    const searchInput = $('input[type="search"], input[type="email"]');
+                    if (searchInput) {
+                        searchInput.focus();
+                        showToast('Campo de busca focado', 2000);
+                    }
+                }
+                
+                // Escape para fechar modais/dropdowns
+                if (e.key === 'Escape') {
+                    const openDropdown = $('.dropdown.open');
+                    if (openDropdown) {
+                        openDropdown.classList.remove('open');
+                        openDropdown.querySelector('.dropdown-button')?.focus();
+                    }
+                }
+            });
+
+            // ========== PERFORMANCE MONITORING ==========
+            if ('PerformanceObserver' in window) {
+                const observer = new PerformanceObserver((list) => {
+                    list.getEntries().forEach((entry) => {
+                        if (entry.entryType === 'largest-contentful-paint') {
+                            console.log('LCP:', entry.startTime);
+                        }
+                    });
+                });
+                
+                observer.observe({ type: 'largest-contentful-paint', buffered: true });
+            }
+
+            // ========== ERROR HANDLING ==========
+            window.addEventListener('error', (e) => {
+                console.error('JavaScript Error:', e.error);
+                showToast('Algo deu errado. Recarregue a página.', 5000, 'error');
+            });
+
+            window.addEventListener('unhandledrejection', (e) => {
+                console.error('Unhandled Promise Rejection:', e.reason);
+                showToast('Erro de conexão. Verifique sua internet.', 5000, 'error');
+            });
+
+            // ========== SUAVIZAÇÃO ADICIONAL ==========
+            // Previne flash de tema incorreto
+            document.body.style.transition = 'all 0.3s ease';
+            
+            // Remove loading class quando tudo carregou
+            window.addEventListener('load', () => {
+                document.body.classList.add('loaded');
+                
+                // Preload next likely pages
+                const importantLinks = $('a[href^="revista"], a[href^="vitrine"]');
+                importantLinks.forEach(link => {
+                    const prefetchLink = document.createElement('link');
+                    prefetchLink.rel = 'prefetch';
+                    prefetchLink.href = link.href;
+                    document.head.appendChild(prefetchLink);
+                });
+            });
+
+            // ========== ANALYTICS TRACKING (se necessário) ==========
+            function trackEvent(action, category = 'User Interaction', label = '') {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', action, {
+                        event_category: category,
+                        event_label: label
+                    });
+                }
+            }
+
+            // Track important interactions
+            if (heroButton) {
+                heroButton.addEventListener('click', () => {
+                    trackEvent('CTA Click', 'Hero Section', 'Discover ROLÊ');
+                });
+            }
+
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', () => {
+                    trackEvent('Newsletter Signup', 'Engagement', 'Footer Newsletter');
+                });
+            }
+
+            console.log('🎉 ROLÊ site loaded successfully!');
+        });
+
+        // ========== SERVICE WORKER REGISTRATION ==========
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .catch(err => console.log('SW registration failed'));
+            });
+        }
+    </script>ast(`Visualizando: ${cityName}`, 2000);
                 }
             }
 
