@@ -853,128 +853,29 @@
                 };
             };
 
-            // ========== DROPDOWN EXPLORAR CORRIGIDO ==========
+            // ========== DROPDOWN EXPLORAR SIMPLIFICADO ==========
             const dropdown = query('.dropdown');
             const button = dropdown?.querySelector('.dropdown-button');
             const content = dropdown?.querySelector('.dropdown-content');
 
             if (button && content) {
-                let isOpen = false;
-                let closeTimeout = null;
-
-                function openMenu() {
-                    if (closeTimeout) {
-                        clearTimeout(closeTimeout);
-                        closeTimeout = null;
-                    }
-                    isOpen = true;
-                    dropdown.classList.add('open');
-                    button.setAttribute('aria-expanded', 'true');
-                }
-
-                function closeMenu(delay = 0) {
-                    if (closeTimeout) {
-                        clearTimeout(closeTimeout);
-                    }
-                    closeTimeout = setTimeout(() => {
-                        isOpen = false;
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', 'false');
-                        closeTimeout = null;
-                    }, delay);
-                }
-
-                // Click no botão
+                // Toggle no click do botão
                 button.addEventListener('click', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    
-                    if (isOpen) {
-                        closeMenu();
-                    } else {
-                        openMenu();
-                    }
+                    dropdown.classList.toggle('open');
                 });
 
-                // Hover events para desktop
-                dropdown.addEventListener('mouseenter', function() {
-                    openMenu();
-                });
-
-                dropdown.addEventListener('mouseleave', function() {
-                    closeMenu(200);
-                });
-
-                // Eventos de foco
-                dropdown.addEventListener('focusin', function() {
-                    openMenu();
-                });
-
-                dropdown.addEventListener('focusout', function(e) {
-                    // Só fechar se o foco sair completamente do dropdown
-                    setTimeout(() => {
-                        if (!dropdown.contains(document.activeElement)) {
-                            closeMenu();
-                        }
-                    }, 100);
-                });
-
-                // Clique fora para fechar
+                // Fechar ao clicar fora
                 document.addEventListener('click', function (e) {
                     if (!dropdown.contains(e.target)) {
-                        closeMenu();
+                        dropdown.classList.remove('open');
                     }
                 });
 
-                // Navegação por teclado
-                dropdown.addEventListener('keydown', function(e) {
-                    const links = [...content.querySelectorAll('a')];
-                    const currentIndex = links.findIndex(link => link === document.activeElement);
-                    
-                    switch(e.key) {
-                        case 'ArrowDown':
-                            e.preventDefault();
-                            if (!isOpen) {
-                                openMenu();
-                                setTimeout(() => links[0]?.focus(), 50);
-                            } else {
-                                const nextIndex = currentIndex < links.length - 1 ? currentIndex + 1 : 0;
-                                links[nextIndex]?.focus();
-                            }
-                            break;
-                        case 'ArrowUp':
-                            e.preventDefault();
-                            if (!isOpen) {
-                                openMenu();
-                                setTimeout(() => links[links.length - 1]?.focus(), 50);
-                            } else {
-                                const prevIndex = currentIndex > 0 ? currentIndex - 1 : links.length - 1;
-                                links[prevIndex]?.focus();
-                            }
-                            break;
-                        case 'Escape':
-                            e.preventDefault();
-                            closeMenu();
-                            button.focus();
-                            break;
-                        case 'Tab':
-                            // Deixar o Tab funcionar naturalmente
-                            if (!e.shiftKey && currentIndex === links.length - 1) {
-                                closeMenu();
-                            } else if (e.shiftKey && document.activeElement === button) {
-                                closeMenu();
-                            }
-                            break;
-                    }
-                });
-
-                // Prevenir propagação de cliques nos links
+                // Permitir cliques nos links
                 content.addEventListener('click', function (e) {
                     e.stopPropagation();
-                    // Fechar após navegação
-                    if (e.target.tagName === 'A') {
-                        setTimeout(() => closeMenu(), 100);
-                    }
                 });
             }
 
