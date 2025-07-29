@@ -768,7 +768,7 @@
             };
 
             // ========== DROPDOWN EXPLORAR MELHORADO ==========
-            const dropdown = $('.dropdown');
+            const dropdown = query('.dropdown');
             const button = dropdown?.querySelector('.dropdown-button');
             const content = dropdown?.querySelector('.dropdown-content');
 
@@ -890,8 +890,8 @@
             }
 
             // Controles do carrossel
-            const arrowLeft = $('.scroll-arrow.left');
-            const arrowRight = $('.scroll-arrow.right');
+            const arrowLeft = query('.scroll-arrow.left');
+            const arrowRight = query('.scroll-arrow.right');
 
             if (arrowLeft && arrowRight) {
                 arrowLeft.addEventListener('click', () => {
@@ -1052,7 +1052,7 @@
             }
 
             // ========== NEWSLETTER FORM MELHORADO ==========
-            const newsletterForm = $('#newsletter-form');
+            const newsletterForm = query('#newsletter-form');
             const newsletterInput = newsletterForm?.querySelector('input');
             const newsletterButton = newsletterForm?.querySelector('button');
 
@@ -1120,11 +1120,11 @@
             }
 
             // ========== SMOOTH SCROLL MELHORADO ==========
-            const heroButton = $('.btn-hero');
+            const heroButton = query('.btn-hero');
             if (heroButton) {
                 heroButton.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const target = $('#destaques');
+                    const target = query('#destaques');
                     if (target) {
                         target.scrollIntoView({
                             behavior: 'smooth',
@@ -1144,7 +1144,7 @@
             }
 
             // ========== SCROLL PROGRESS INDICATOR ==========
-            const scrollIndicator = $('.scroll-indicator');
+            const scrollIndicator = query('.scroll-indicator');
             if (scrollIndicator) {
                 const updateScrollProgress = debounce(() => {
                     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -1157,7 +1157,7 @@
             }
 
             // ========== BACK TO TOP BUTTON ==========
-            const backToTopButton = $('.back-to-top');
+            const backToTopButton = query('.back-to-top');
             if (backToTopButton) {
                 const toggleBackToTop = debounce(() => {
                     if (window.pageYOffset > 300) {
@@ -1177,7 +1177,7 @@
                     
                     // Focus management
                     setTimeout(() => {
-                        const skipLink = $('.skip-link');
+                        const skipLink = query('.skip-link');
                         if (skipLink) skipLink.focus();
                     }, 500);
                 });
@@ -1185,7 +1185,7 @@
 
             // ========== TOAST SYSTEM ==========
             function showToast(message, duration = 3000, type = 'info') {
-                const toast = $('#toast');
+                const toast = query('#toast');
                 if (!toast) return;
 
                 toast.textContent = message;
@@ -1198,7 +1198,7 @@
             }
 
             // ========== TOGGLE TEMA MELHORADO ==========
-            const lampada = $('.lampada-toggle');
+            const lampada = query('.lampada-toggle');
             const root = document.documentElement;
 
             if (lampada) {
@@ -1290,7 +1290,7 @@
                 // Ctrl/Cmd + K para focar na busca (se houver)
                 if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                     e.preventDefault();
-                    const searchInput = $('input[type="search"], input[type="email"]');
+                    const searchInput = query('input[type="search"], input[type="email"]');
                     if (searchInput) {
                         searchInput.focus();
                         showToast('Campo de busca focado', 2000);
@@ -1299,7 +1299,7 @@
                 
                 // Escape para fechar modais/dropdowns
                 if (e.key === 'Escape') {
-                    const openDropdown = $('.dropdown.open');
+                    const openDropdown = query('.dropdown.open');
                     if (openDropdown) {
                         openDropdown.classList.remove('open');
                         openDropdown.querySelector('.dropdown-button')?.focus();
