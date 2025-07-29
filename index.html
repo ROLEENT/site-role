@@ -773,23 +773,52 @@
             const content = dropdown?.querySelector('.dropdown-content');
 
             if (button && content) {
+                let isOpen = false;
+
                 // Toggle dropdown
                 button.addEventListener('click', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const isOpen = dropdown.classList.toggle('open');
+                    
+                    isOpen = !isOpen;
+                    dropdown.classList.toggle('open', isOpen);
                     button.setAttribute('aria-expanded', isOpen);
                     
                     if (isOpen) {
-                        content.querySelector('a')?.focus();
+                        // Dar um pequeno delay para o menu aparecer
+                        setTimeout(() => {
+                            const firstLink = content.querySelector('a');
+                            if (firstLink) firstLink.focus();
+                        }, 100);
                     }
                 });
 
-                // Fechar dropdown ao clicar fora
+                // Fechar dropdown ao clicar fora - com delay
                 document.addEventListener('click', function (e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', false);
+                    // Não fechar se clicar no dropdown ou seus filhos
+                    if (dropdown.contains(e.target)) {
+                        return;
+                    }
+                    
+                    // Fechar apenas se estiver aberto
+                    if (isOpen) {
+                        setTimeout(() => {
+                            isOpen = false;
+                            dropdown.classList.remove('open');
+                            button.setAttribute('aria-expanded', false);
+                        }, 150);
+                    }
+                });
+
+                // Fechar ao clicar em um link do menu
+                content.addEventListener('click', function (e) {
+                    if (e.target.tagName === 'A') {
+                        // Permitir que o link funcione normalmente
+                        setTimeout(() => {
+                            isOpen = false;
+                            dropdown.classList.remove('open');
+                            button.setAttribute('aria-expanded', false);
+                        }, 100);
                     }
                 });
 
@@ -810,15 +839,43 @@
                             links[prevIndex]?.focus();
                             break;
                         case 'Escape':
+                            e.preventDefault();
+                            isOpen = false;
                             dropdown.classList.remove('open');
                             button.setAttribute('aria-expanded', false);
                             button.focus();
                             break;
+                        case 'Enter':
+                            // Permitir que o Enter funcione nos links
+                            if (e.target.tagName === 'A') {
+                                setTimeout(() => {
+                                    isOpen = false;
+                                    dropdown.classList.remove('open');
+                                    button.setAttribute('aria-expanded', false);
+                                }, 100);
+                            }
+                            break;
                     }
                 });
 
-                content.addEventListener('click', function (e) {
-                    e.stopPropagation();
+                // Hover para desktop
+                dropdown.addEventListener('mouseenter', function() {
+                    if (!isOpen) {
+                        isOpen = true;
+                        dropdown.classList.add('open');
+                        button.setAttribute('aria-expanded', true);
+                    }
+                });
+
+                dropdown.addEventListener('mouseleave', function() {
+                    // Só fechar se não tiver foco em nenhum elemento do dropdown
+                    setTimeout(() => {
+                        if (!dropdown.contains(document.activeElement)) {
+                            isOpen = false;
+                            dropdown.classList.remove('open');
+                            button.setAttribute('aria-expanded', false);
+                        }
+                    }, 100);
                 });
             }
 
