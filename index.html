@@ -11,285 +11,281 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com" />
     
-    <!-- Preload recursos críticos -->
-    <link rel="preload" href="images/logo-role.png" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#c77dff">
-    
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580"
      crossorigin="anonymous"></script>
     <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
     
+    <noscript>
+        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+    </noscript>
+    
     <link rel="stylesheet" href="estilo.css" />
     
     <style>
-        /* Progress bar de scroll */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
+        /* Novos estilos para o conteúdo adicional */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
             background: var(--gradient);
-            z-index: 10001;
-            transition: width 0.1s ease;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
         }
 
-        /* Loading states para cards */
-        .card-skeleton {
-            background: linear-gradient(90deg, 
-                rgba(199, 125, 255, 0.1) 25%, 
-                rgba(199, 125, 255, 0.2) 50%, 
-                rgba(199, 125, 255, 0.1) 75%);
-            background-size: 200% 100%;
-            animation: skeleton-loading 1.5s infinite;
-            border-radius: 20px;
-            height: 350px;
-            min-width: 280px;
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: var(--text-color);
+            opacity: 0.9;
         }
 
-        @keyframes skeleton-loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+        .hero-cta {
+            margin-bottom: 2rem;
         }
 
-        /* Toast notifications melhoradas */
-        .toast {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
+        .btn-hero {
             background: var(--gradient);
             color: white;
-            padding: 1rem 2rem;
+            padding: 15px 35px;
             border-radius: 30px;
-            font-weight: 600;
-            z-index: 10000;
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 10px 30px rgba(199, 125, 255, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            max-width: 90vw;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(199, 125, 255, 0.4);
+        }
+
+        .como-funciona {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.05), transparent);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .como-funciona-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .toast.success {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-        }
-
-        .toast.error {
-            background: linear-gradient(135deg, #f44336, #da190b);
-        }
-
-        /* Botão de favoritos */
-        .favorite-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-            backdrop-filter: blur(10px);
-        }
-
-        .favorite-btn:hover {
-            background: rgba(199, 125, 255, 0.8);
-            transform: scale(1.1);
-        }
-
-        .favorite-btn.active {
-            background: var(--gradient);
-            animation: heartbeat 0.6s ease;
-        }
-
-        .favorite-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-            transition: all 0.3s ease;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        /* Estados de loading para formulários */
-        .loading {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .loading::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
-            animation: loading-shimmer 1.5s infinite;
-        }
-
-        @keyframes loading-shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        /* Filtros de eventos */
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-            padding: 0 1rem;
-        }
-
-        .filter-btn {
-            padding: 0.7rem 1.5rem;
-            background: transparent;
-            border: 2px solid var(--highlight);
+        .como-funciona h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--highlight);
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .filter-btn:hover,
-        .filter-btn.active {
+        .como-funciona p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .stats-section {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(199, 125, 255, 0.03);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 3rem auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--highlight);
+            display: block;
+            margin-bottom: 0.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .revista-destaque {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .revista-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .revista-destaque h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--highlight);
+        }
+
+        .revista-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-revista {
+            background: transparent;
+            color: var(--highlight);
+            padding: 12px 30px;
+            border: 2px solid var(--highlight);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-revista:hover {
             background: var(--highlight);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(199, 125, 255, 0.3);
         }
 
-        /* Contador de favoritos */
-        .favorites-counter {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
+        .newsletter-section {
+            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem auto;
+            max-width: 400px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(243, 243, 247, 0.5);
+        }
+
+        .btn-newsletter {
             background: var(--gradient);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
             font-weight: 700;
-            z-index: 1000;
-            opacity: 0;
-            transform: scale(0);
-            transition: all 0.3s ease;
-        }
-
-        .favorites-counter.show {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Melhorias no carrossel */
-        .cards-container {
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .card {
-            scroll-snap-align: center;
-            position: relative;
-            user-select: none;
-        }
-
-        /* Indicadores melhorados */
-        .carousel-indicator {
-            position: relative;
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .indicator-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(199, 125, 255, 0.3);
-            transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
-        .indicator-dot.active {
-            background: var(--highlight);
-            transform: scale(1.3);
-            box-shadow: 0 0 15px rgba(199, 125, 255, 0.6);
+        .btn-newsletter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(199, 125, 255, 0.4);
         }
 
-        .indicator-dot::after {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            border-radius: 50%;
-            background: transparent;
+        /* Espaço reservado para depoimentos */
+        .depoimentos-placeholder {
+            padding: 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-style: italic;
+            background: rgba(199, 125, 255, 0.02);
+            border: 2px dashed rgba(199, 125, 255, 0.2);
+            border-radius: 15px;
+            margin: 4rem 2rem;
         }
 
-        /* Responsividade aprimorada */
         @media (max-width: 768px) {
-            .filters {
-                gap: 0.5rem;
+            .hero-title {
+                font-size: 2.2rem;
             }
             
-            .filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
+            .hero-description {
+                font-size: 1.1rem;
             }
-            
-            .favorites-counter {
-                top: 0.5rem;
-                right: 0.5rem;
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Barra de progresso de scroll -->
-    <div class="scroll-progress" id="scroll-progress"></div>
-    
-    <!-- Contador de favoritos -->
-    <div class="favorites-counter" id="favorites-counter">
-        ❤️ <span id="favorites-count">0</span>
-    </div>
-
     <section class="bloco-topo">
         <div class="container-topo">
             <div class="header-top">
@@ -300,10 +296,10 @@
                 <div class="right-top">
                     <!-- MENU DROPDOWN -->
                     <div class="dropdown">
-                        <button class="dropdown-button" aria-expanded="false">
+                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
                             Explorar ▼
                         </button>          
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" id="menu-explorar">
                             <a href="index.html">Página Inicial</a>
                             <a href="revista.html">Revista ROLÊ</a>
                             <a href="vitrine-cultural.html">Vitrine Cultural</a>
@@ -314,7 +310,7 @@
                     </div>
 
                     <!-- TEMA -->
-                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" />
+                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
                 </div>
             </div>
             <hr class="linha-topo" />
@@ -322,197 +318,159 @@
     </section>
 
     <!-- Hero Section -->
-    <main>
-        <section class="hero-section">
-            <h1 class="hero-title">Curadoria Independente de Cultura e Experiências</h1>
-            <p class="hero-description">
-                O ROLÊ é uma curadoria independente de eventos, cultura e experiências. 
-                A gente vive a cena pra te mostrar o que realmente importa com estética, presença e muita opinião.
+    <section class="hero-section fade-in">
+        <h1 class="hero-title">Curadoria Independente de Cultura e Experiências</h1>
+        <p class="hero-description">
+            O ROLÊ é uma curadoria independente de eventos, cultura e experiências. 
+            A gente vive a cena pra te mostrar o que realmente importa com estética, presença e muita opinião.
+        </p>
+        <div class="hero-cta">
+            <a href="#destaques" class="btn-hero">Descubra o ROLÊ na sua cidade</a>
+        </div>
+    </section>
+
+    <!-- Banner -->
+    <div class="banner-wrapper">
+        <div class="banner-container">
+            <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
+        </div>
+    </div>
+
+    <!-- Carrossel com melhorias -->
+    <div class="carrossel fade-in delay" id="destaques">
+        <main class="destaques" role="main">
+            <h2>DESTAQUES DA SEMANA</h2>
+            <div class="scroll-wrapper">
+                <button class="scroll-arrow left" aria-label="Ver cidade anterior">◀</button>
+                <div class="cards-container">
+                    <!-- Cards de cidades -->
+                    <div class="card fade-in delay">
+                        <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
+                        <p>A cena alternativa pulsa forte no Sul.</p>
+                        <a href="https://www.instagram.com/p/DMYO9FwOVmN/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
+                        <p>Beira-mar, eletrônica e coletivo.</p>
+                        <a href="https://www.instagram.com/p/DMa6OlSPBW6/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
+                        <p>Frio na rua, calor nas pistas.</p>
+                        <a href="https://www.instagram.com/p/DMajqWpuDFu/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
+                        <p>A cidade que nunca dorme... nem para de dançar.</p>
+                        <a href="https://www.instagram.com/p/DMYfC68voVq/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                    <div class="card fade-in delay">
+                        <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
+                        <p>Funk, favela, cor e calor cultural.</p>
+                        <a href="https://www.instagram.com/p/DMaYkkeunCs/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+                    </div>
+                </div>
+                <button class="scroll-arrow right" aria-label="Ver próxima cidade">▶</button>
+                
+                <!-- Indicadores do carrossel -->
+                <div class="carousel-indicator">
+                    <div class="indicator-dot active"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                    <div class="indicator-dot"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+<!-- Anúncio abaixo do carrossel -->
+<div style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem; text-align: center;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2898945215492580"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+    <!-- Como Funciona -->
+    <section class="como-funciona fade-in">
+        <div class="como-funciona-content">
+            <h2>Como Funciona</h2>
+            <p>
+                Aqui você encontra festas, shows e experiências que valem o seu tempo. 
+                A gente não vende ingresso, a gente te mostra o que faz sentido viver.
             </p>
-            <div class="hero-cta">
-                <a href="#destaques" class="btn-hero">
-                    Descubra o ROLÊ na sua cidade
-                </a>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Banner -->
-        <div class="banner-wrapper">
-            <div class="banner-container">
-                <img src="images/banner-home.png" alt="Banner do site ROLÊ com destaque cultural" loading="lazy" />
+    <!-- Revista ROLÊ Destaque -->
+    <section class="revista-destaque fade-in">
+        <div class="revista-content">
+            <h2>Revista ROLÊ</h2>
+            <p class="revista-description">
+                Editorial semanal com as melhores histórias, entrevistas e conteúdos da cena cultural brasileira. 
+                Uma visão autêntica e sem filtro do que acontece nas ruas.
+            </p>
+            <a href="revista.html" class="btn-revista">Ler Revista</a>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="stats-section fade-in">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--highlight);">O ROLÊ em Números</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">+500k</span>
+                <span class="stat-label">Contas Alcançadas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+2M</span>
+                <span class="stat-label">Visualizações Mensais</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Cidades Ativas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+22k</span>
+                <span class="stat-label">Seguidores no Instagram</span>
             </div>
         </div>
+    </section>
 
+    <!-- Espaço reservado para depoimentos -->
+    <div class="depoimentos-placeholder fade-in">
+        <h3 style="color: var(--highlight); margin-bottom: 1rem;">O que dizem por aí sobre o ROLÊ</h3>
+        <p>Em breve: depoimentos de artistas, rolezeiros e produtores sobre a experiência ROLÊ</p>
+    </div>
 
-
-        <!-- Carrossel -->
-        <div class="carrossel" id="destaques">
-            <section class="destaques">
-                <h2>DESTAQUES DA SEMANA</h2>
-                <div class="scroll-wrapper">
-                    <button class="scroll-arrow left" aria-label="Voltar cards">◀</button>
-                    <div class="cards-container" id="cards-container">
-                        <!-- Cards de cidades -->
-                        <div class="card" data-city="poa">
-                            <button class="favorite-btn" data-id="poa-1" aria-label="Adicionar aos favoritos">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                </svg>
-                            </button>
-                            <img src="images/poa.png" alt="Cultura alternativa e festas em Porto Alegre" loading="lazy" />
-                            <p>A cena alternativa pulsa forte no Sul.</p>
-                            <a href="https://www.instagram.com/p/DMYO9FwOVmN/" target="_blank" rel="noopener">Ver mais</a>
-                        </div>
-                        <div class="card" data-city="floripa">
-                            <button class="favorite-btn" data-id="floripa-1" aria-label="Adicionar aos favoritos">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                </svg>
-                            </button>
-                            <img src="images/floripa.png" alt="Cultura alternativa e festas em Florianópolis" loading="lazy" />
-                            <p>Beira-mar, eletrônica e coletivo.</p>
-                            <a href="https://www.instagram.com/p/DMa6OlSPBW6/" target="_blank" rel="noopener">Ver mais</a>
-                        </div>
-                        <div class="card" data-city="curitiba">
-                            <button class="favorite-btn" data-id="curitiba-1" aria-label="Adicionar aos favoritos">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                </svg>
-                            </button>
-                            <img src="images/curitiba.png" alt="Cultura alternativa e festas em Curitiba" loading="lazy" />
-                            <p>Frio na rua, calor nas pistas.</p>
-                            <a href="https://www.instagram.com/p/DMajqWpuDFu/" target="_blank" rel="noopener">Ver mais</a>
-                        </div>
-                        <div class="card" data-city="sao-paulo">
-                            <button class="favorite-btn" data-id="sp-1" aria-label="Adicionar aos favoritos">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                </svg>
-                            </button>
-                            <img src="images/sao-paulo.png" alt="Cultura alternativa e festas em São Paulo" loading="lazy" />
-                            <p>A cidade que nunca dorme... nem para de dançar.</p>
-                            <a href="https://www.instagram.com/p/DMYfC68voVq/" target="_blank" rel="noopener">Ver mais</a>
-                        </div>
-                        <div class="card" data-city="rio">
-                            <button class="favorite-btn" data-id="rio-1" aria-label="Adicionar aos favoritos">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                </svg>
-                            </button>
-                            <img src="images/rio.png" alt="Cultura alternativa e festas no Rio de Janeiro" loading="lazy" />
-                            <p>Funk, favela, cor e calor cultural.</p>
-                            <a href="https://www.instagram.com/p/DMaYkkeunCs/" target="_blank" rel="noopener">Ver mais</a>
-                        </div>
-                    </div>
-                    <button class="scroll-arrow right" aria-label="Próximos cards">▶</button>
-                    
-                    <!-- Indicadores do carrossel -->
-                    <div class="carousel-indicator">
-                        <div class="indicator-dot active" data-index="0"></div>
-                        <div class="indicator-dot" data-index="1"></div>
-                        <div class="indicator-dot" data-index="2"></div>
-                        <div class="indicator-dot" data-index="3"></div>
-                        <div class="indicator-dot" data-index="4"></div>
-                    </div>
-                </div>
-            </section>
+    <!-- Newsletter -->
+    <section class="newsletter-section fade-in">
+        <div class="newsletter-content">
+            <h2>Não perca o melhor do ROLÊ</h2>
+            <p>Assine a newsletter e receba semanalmente o que tem de mais relevante na cena cultural.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+                <button type="submit" class="btn-newsletter">Assinar</button>
+            </form>
         </div>
-
-        <!-- Anúncio abaixo do carrossel -->
-        <div style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem; text-align: center;">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-2898945215492580"
-               data-ad-slot="1234567890"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
-
-        <!-- Como Funciona -->
-        <section class="como-funciona">
-            <div class="como-funciona-content">
-                <h2>Como Funciona</h2>
-                <p>
-                    Aqui você encontra festas, shows e experiências que valem o seu tempo. 
-                    A gente não vende ingresso, a gente te mostra o que faz sentido viver.
-                </p>
-            </div>
-        </section>
-
-        <!-- Revista ROLÊ Destaque -->
-        <section class="revista-destaque">
-            <div class="revista-content">
-                <h2>Revista ROLÊ</h2>
-                <p class="revista-description">
-                    Editorial semanal com as melhores histórias, entrevistas e conteúdos da cena cultural brasileira. 
-                    Uma visão autêntica e sem filtro do que acontece nas ruas.
-                </p>
-                <a href="revista.html" class="btn-revista">Ler Revista</a>
-            </div>
-        </section>
-
-        <!-- Estatísticas -->
-        <section class="stats-section">
-            <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--highlight);">O ROLÊ em Números</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">+500k</span>
-                    <span class="stat-label">Contas Alcançadas</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">+2M</span>
-                    <span class="stat-label">Visualizações Mensais</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Cidades Ativas</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">+22k</span>
-                    <span class="stat-label">Seguidores no Instagram</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Espaço reservado para depoimentos -->
-        <div class="depoimentos-placeholder">
-            <h3 style="color: var(--highlight); margin-bottom: 1rem;">O que dizem por aí sobre o ROLÊ</h3>
-            <p>Em breve: depoimentos de artistas, rolezeiros e produtores sobre a experiência ROLÊ</p>
-        </div>
-
-        <!-- Newsletter -->
-        <section class="newsletter-section">
-            <div class="newsletter-content">
-                <h2>Não perca o melhor do ROLÊ</h2>
-                <p>Assine a newsletter e receba semanalmente o que tem de mais relevante na cena cultural.</p>
-                <form class="newsletter-form" id="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
-                    <button type="submit" class="btn-newsletter">
-                        <span class="btn-text">Assinar</span>
-                    </button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Anúncio no rodapé -->
-        <div style="max-width: 1000px; margin: 4rem auto 2rem; padding: 0 1rem; text-align: center;">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-2898945215492580"
-               data-ad-slot="1234567890"
-               data-ad-format="horizontal"
-               data-full-width-responsive="true"></ins>
-          <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
-    </main>
-
-    <!-- Toast notifications -->
-    <div class="toast" id="toast"></div>
+    </section>
+<!-- Anúncio no rodapé -->
+<div style="max-width: 1000px; margin: 4rem auto 2rem; padding: 0 1rem; text-align: center;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2898945215492580"
+       data-ad-slot="1234567890"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
     <footer>
         <div class="footer-links">
@@ -523,388 +481,141 @@
             <a href="politica-spam.html">Política Antispam</a>
         </div>
         <div class="social-icons">
-            <a href="https://instagram.com/role.ent" target="_blank" rel="noopener">
+            <a href="https://instagram.com/role.ent" target="_blank">
                 <img src="images/instagram.svg" alt="Instagram ROLÊ" />
             </a>
-            <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener">
+            <a href="https://tiktok.com/@role.ent" target="_blank">
                 <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
             </a>
-            <a href="https://wa.me/5551980704353" target="_blank" rel="noopener">
+            <a href="https://wa.me/5551980704353" target="_blank">
                 <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
             </a>
         </div>
     </footer>
 
-    <!-- JavaScript Avançado -->
     <script>
-        // ========== SISTEMA COMPLETO DE FUNCIONALIDADES ==========
-        
-        class ROLEApp {
-            constructor() {
-                this.favorites = JSON.parse(localStorage.getItem('role_favorites') || '[]');
-                this.init();
-            }
+        document.addEventListener('DOMContentLoaded', function () {
+            // ========== DROPDOWN EXPLORAR ==========
+            const dropdown = document.querySelector('.dropdown');
+            const button = dropdown.querySelector('.dropdown-button');
+            const content = dropdown.querySelector('.dropdown-content');
 
-            init() {
-                this.setupDropdown();
-                this.setupCarousel();
-                this.setupNewsletter();
-                this.setupTheme();
-                this.setupScrollProgress();
-                this.setupFavorites();
-                this.setupFilters();
-                this.setupTouchGestures();
-                this.updateFavoritesCounter();
-                
-                console.log('🎪 ROLÊ App carregado com sucesso!');
-            }
-
-            // ========== DROPDOWN ==========
-            setupDropdown() {
-                const dropdownButton = document.querySelector('.dropdown-button');
-                const dropdown = document.querySelector('.dropdown');
-                
-                if (dropdownButton && dropdown) {
-                    dropdownButton.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const isOpen = dropdown.classList.toggle('open');
-                        dropdownButton.setAttribute('aria-expanded', isOpen);
-                    });
-                    
-                    document.addEventListener('click', (e) => {
-                        if (!dropdown.contains(e.target)) {
-                            dropdown.classList.remove('open');
-                            dropdownButton.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                }
-            }
-
-            // ========== CARROSSEL AVANÇADO ==========
-            setupCarousel() {
-                const container = document.querySelector('.cards-container');
-                const leftArrow = document.querySelector('.scroll-arrow.left');
-                const rightArrow = document.querySelector('.scroll-arrow.right');
-                const indicators = document.querySelectorAll('.indicator-dot');
-                
-                if (!container) return;
-
-                // Navegação por setas
-                leftArrow?.addEventListener('click', () => {
-                    container.scrollBy({ left: -320, behavior: 'smooth' });
-                });
-                
-                rightArrow?.addEventListener('click', () => {
-                    container.scrollBy({ left: 320, behavior: 'smooth' });
-                });
-
-                // Indicadores clicáveis
-                indicators.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        const cardWidth = 320;
-                        container.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
-                    });
-                });
-
-                // Atualizar indicadores no scroll
-                const updateIndicators = () => {
-                    const scrollLeft = container.scrollLeft;
-                    const cardWidth = 320;
-                    const activeIndex = Math.round(scrollLeft / cardWidth);
-                    
-                    indicators.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === activeIndex);
-                    });
-                };
-
-                container.addEventListener('scroll', updateIndicators);
-            }
-
-            // ========== TOUCH GESTURES ==========
-            setupTouchGestures() {
-                const container = document.querySelector('.cards-container');
-                if (!container) return;
-
-                let startX = 0;
-                let startTime = 0;
-
-                container.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                    startTime = Date.now();
-                }, { passive: true });
-
-                container.addEventListener('touchend', (e) => {
-                    const endX = e.changedTouches[0].clientX;
-                    const endTime = Date.now();
-                    const diff = startX - endX;
-                    const timeDiff = endTime - startTime;
-                    
-                    // Detectar swipe (mínimo 50px em menos de 300ms)
-                    if (Math.abs(diff) > 50 && timeDiff < 300) {
-                        if (diff > 0) {
-                            container.scrollBy({ left: 320, behavior: 'smooth' });
-                        } else {
-                            container.scrollBy({ left: -320, behavior: 'smooth' });
-                        }
-                    }
-                }, { passive: true });
-            }
-
-            // ========== NEWSLETTER AVANÇADA ==========
-            setupNewsletter() {
-                const form = document.getElementById('newsletter-form');
-                if (!form) return;
-
-                form.addEventListener('submit', async (e) => {
+            if (button && content) {
+                button.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const button = form.querySelector('button');
-                    const input = form.querySelector('input');
-                    const email = input.value;
-                    
-                    if (!this.validateEmail(email)) {
-                        this.showToast('Por favor, insira um e-mail válido', 'error');
-                        return;
-                    }
+                    e.stopPropagation();
+                    dropdown.classList.toggle('open');
+                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+                });
 
-                    // Estado de loading
-                    button.classList.add('loading');
-                    button.querySelector('.btn-text').textContent = 'Carregando...';
-                    button.disabled = true;
-
-                    try {
-                        // Simular API call
-                        await this.delay(1500);
-                        
-                        // Salvar email localmente
-                        const subscribers = JSON.parse(localStorage.getItem('role_subscribers') || '[]');
-                        if (!subscribers.includes(email)) {
-                            subscribers.push(email);
-                            localStorage.setItem('role_subscribers', JSON.stringify(subscribers));
-                        }
-                        
-                        // Estado de sucesso
-                        button.querySelector('.btn-text').textContent = '✓ Inscrito!';
-                        button.style.background = '#4CAF50';
-                        form.reset();
-                        
-                        this.showToast('Newsletter assinada com sucesso! 🎉', 'success');
-                        
-                        // Resetar botão após 3 segundos
-                        setTimeout(() => {
-                            button.querySelector('.btn-text').textContent = 'Assinar';
-                            button.style.background = '';
-                            button.disabled = false;
-                            button.classList.remove('loading');
-                        }, 3000);
-                        
-                    } catch (error) {
-                        button.querySelector('.btn-text').textContent = 'Tentar novamente';
-                        button.disabled = false;
-                        button.classList.remove('loading');
-                        this.showToast('Erro ao assinar. Tente novamente.', 'error');
+                document.addEventListener('click', function (e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                        button.setAttribute('aria-expanded', false);
                     }
                 });
-            }
 
-            // ========== SISTEMA DE FAVORITOS ==========
-            setupFavorites() {
-                const favButtons = document.querySelectorAll('.favorite-btn');
-                
-                favButtons.forEach(btn => {
-                    const id = btn.dataset.id;
-                    
-                    // Atualizar estado visual baseado no localStorage
-                    if (this.favorites.includes(id)) {
-                        btn.classList.add('active');
-                    }
-                    
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        this.toggleFavorite(id, btn);
-                    });
+                content.addEventListener('click', function (e) {
+                    e.stopPropagation();
                 });
             }
 
-            toggleFavorite(id, btn) {
-                const index = this.favorites.indexOf(id);
-                
-                if (index > -1) {
-                    // Remover dos favoritos
-                    this.favorites.splice(index, 1);
-                    btn.classList.remove('active');
-                    this.showToast('Removido dos favoritos', 'error');
-                } else {
-                    // Adicionar aos favoritos
-                    this.favorites.push(id);
-                    btn.classList.add('active');
-                    this.showToast('Adicionado aos favoritos! ❤️', 'success');
-                }
-                
-                localStorage.setItem('role_favorites', JSON.stringify(this.favorites));
-                this.updateFavoritesCounter();
-            }
+            // ========== CARROSSEL SUPER MELHORADO ==========
+            const container = document.querySelector('.cards-container');
+            const cards = container.querySelectorAll('.card');
+            const indicators = document.querySelectorAll('.indicator-dot');
+            const totalCards = cards.length;
+            let currentIndex = 0;
+            let autoPlayInterval;
+            let isAutoPlaying = true;
 
-            updateFavoritesCounter() {
-                const counter = document.getElementById('favorites-counter');
-                const count = document.getElementById('favorites-count');
-                
-                if (counter && count) {
-                    count.textContent = this.favorites.length;
-                    counter.classList.toggle('show', this.favorites.length > 0);
-                }
-            }
-
-            // ========== FILTROS DE EVENTOS ==========
-            setupFilters() {
-                const filterBtns = document.querySelectorAll('.filter-btn');
-                const cards = document.querySelectorAll('.card');
-                
-                filterBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        // Atualizar botões ativos
-                        filterBtns.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                        
-                        const filter = btn.dataset.filter;
-                        
-                        // Filtrar cards
-                        cards.forEach(card => {
-                            const city = card.dataset.city;
-                            const shouldShow = filter === 'all' || city === filter;
-                            
-                            if (shouldShow) {
-                                card.style.display = 'flex';
-                                card.style.animation = 'fadeInScale 0.5s ease forwards';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        });
-                        
-                        this.showToast(`Filtro: ${btn.textContent}`, 'success');
-                    });
+            function updateIndicators() {
+                indicators.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
                 });
             }
 
-            // ========== PROGRESS BAR DE SCROLL ==========
-            setupScrollProgress() {
-                const progressBar = document.getElementById('scroll-progress');
-                if (!progressBar) return;
-
-                window.addEventListener('scroll', () => {
-                    const scrolled = window.pageYOffset;
-                    const maxScroll = document.body.scrollHeight - window.innerHeight;
-                    const progress = (scrolled / maxScroll) * 100;
-                    
-                    progressBar.style.width = `${Math.min(progress, 100)}%`;
+            function scrollToCard(index, smooth = true) {
+                if (index < 0) index = totalCards - 1;
+                if (index >= totalCards) index = 0;
+                currentIndex = index;
+                
+                const cardWidth = cards[0].getBoundingClientRect().width + 20;
+                container.scrollTo({
+                    left: cardWidth * index,
+                    behavior: smooth ? 'smooth' : 'auto'
                 });
+                
+                updateIndicators();
             }
 
-            // ========== TEMA ==========
-            setupTheme() {
-                const lampada = document.querySelector('.lampada-toggle');
-                if (!lampada) return;
-
-                // Carregar tema salvo
-                const savedTheme = localStorage.getItem('role_theme');
-                if (savedTheme) {
-                    document.documentElement.setAttribute('data-theme', savedTheme);
-                }
-
-                lampada.addEventListener('click', () => {
-                    const currentTheme = document.documentElement.getAttribute('data-theme');
-                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                    
-                    document.documentElement.setAttribute('data-theme', newTheme);
-                    localStorage.setItem('role_theme', newTheme);
-                    
-                    this.showToast(`Tema ${newTheme === 'light' ? 'claro' : 'escuro'} ativado`, 'success');
-                });
-            }
-
-            // ========== SCROLL SUAVE ==========
-            setupSmoothScroll() {
-                const heroButton = document.querySelector('.btn-hero');
-                if (heroButton) {
-                    heroButton.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        document.getElementById('destaques').scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    });
+            function startAutoPlay() {
+                if (isAutoPlaying) {
+                    autoPlayInterval = setInterval(() => {
+                        scrollToCard(currentIndex + 1);
+                    }, 4000); // 4 segundos
                 }
             }
 
-            // ========== TOAST NOTIFICATIONS ==========
-            showToast(message, type = 'success') {
-                const toast = document.getElementById('toast');
-                if (!toast) return;
-
-                toast.textContent = message;
-                toast.className = `toast ${type}`;
-                toast.classList.add('show');
-
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3000);
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
             }
 
-            // ========== UTILIDADES ==========
-            validateEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
+            // Controles do carrossel
+            const arrowLeft = document.querySelector('.scroll-arrow.left');
+            const arrowRight = document.querySelector('.scroll-arrow.right');
 
-            delay(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
-        }
+            if (arrowLeft && arrowRight) {
+                arrowLeft.addEventListener('click', () => {
+                    stopAutoPlay();
+                    scrollToCard(currentIndex - 1);
+                    setTimeout(startAutoPlay, 3000); // Retoma depois de 3s
+                });
 
-        // ========== INICIALIZAÇÃO ==========
-        document.addEventListener('DOMContentLoaded', () => {
-            // Registrar Service Worker para PWA
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('SW registrado:', registration))
-                    .catch(error => console.log('SW falha:', error));
-            }
-
-            // Inicializar app
-            window.roleApp = new ROLEApp();
-
-            // Analytics básico (substitua pelo seu)
-            if (typeof gtag !== 'undefined') {
-                gtag('config', 'GA_MEASUREMENT_ID', {
-                    page_title: 'ROLÊ - Página Inicial',
-                    page_location: window.location.href
+                arrowRight.addEventListener('click', () => {
+                    stopAutoPlay();
+                    scrollToCard(currentIndex + 1);
+                    setTimeout(startAutoPlay, 3000);
                 });
             }
-        });
 
-        // ========== KEYBOARD SHORTCUTS ==========
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey || e.metaKey) {
-                switch(e.key) {
-                    case 'k':
-                        e.preventDefault();
-                        document.querySelector('.dropdown-button').click();
-                        break;
-                    case 'f':
-                        e.preventDefault();
-                        document.querySelector('.filter-btn').focus();
-                        break;
+            // Indicadores clicáveis
+            indicators.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    stopAutoPlay();
+                    scrollToCard(index);
+                    setTimeout(startAutoPlay, 3000);
+                });
+            });
+
+            // Pausa auto-play ao hover
+            container.addEventListener('mouseenter', stopAutoPlay);
+            container.addEventListener('mouseleave', startAutoPlay);
+
+            // Detectar mudança de scroll manual
+            container.addEventListener('scroll', () => {
+                const cardWidth = cards[0].getBoundingClientRect().width + 20;
+                const newIndex = Math.round(container.scrollLeft / cardWidth);
+                if (newIndex !== currentIndex) {
+                    currentIndex = newIndex;
+                    updateIndicators();
                 }
-            }
-            
-            // Esc para fechar dropdown
-            if (e.key === 'Escape') {
-                document.querySelector('.dropdown').classList.remove('open');
-            }
-        });
+            });
 
-        // ========== INTERSECTION OBSERVER PARA ANIMAÇÕES ==========
-        if ('IntersectionObserver' in window) {
+            // Inicializar carrossel
+            setTimeout(() => {
+                if (container && cards.length > 0) {
+                    scrollToCard(0, false);
+                    startAutoPlay();
+                }
+            }, 300);
+
+            // ========== ANIMAÇÕES DE ENTRADA ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -912,56 +623,81 @@
                         entry.target.style.transform = 'translateY(0)';
                     }
                 });
-            }, { threshold: 0.1 });
+            }, observerOptions);
 
-            // Observar elementos para animação
-            document.querySelectorAll('.stat-item, .card, .hero-section').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
+            // Observar elementos para animação de entrada
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `all 0.8s ease ${index * 0.1}s`;
+                observer.observe(element);
             });
+
+            // ========== NEWSLETTER FORM ==========
+         const newsletterForm = document.getElementById('newsletter-form');
+
+newsletterForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = this.querySelector('input').value;
+
+  fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
+    method: 'POST',
+    body: new URLSearchParams({ email })
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert(`Obrigado! ${data.email} foi cadastrado com sucesso na nossa newsletter.`);
+    newsletterForm.reset();
+  })
+  .catch(error => {
+    alert('Ocorreu um erro ao cadastrar. Tente novamente mais tarde.');
+    console.error('Erro:', error);
+  });
+});
+
+            // ========== SMOOTH SCROLL PARA CTA ==========
+            const heroButton = document.querySelector('.btn-hero');
+            heroButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('destaques').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // ========== TOGGLE TEMA MELHORADO ==========
+        const lampada = document.querySelector('.lampada-toggle');
+        const root = document.documentElement;
+
+        // Aplica o tema salvo ao carregar
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            lampada.setAttribute('aria-pressed', 'true');
+        } else {
+            root.removeAttribute('data-theme');
+            lampada.setAttribute('aria-pressed', 'false');
         }
 
-        // ========== ERROR HANDLING GLOBAL ==========
-        window.addEventListener('error', (e) => {
-            console.error('Erro capturado:', e.error);
-            if (window.roleApp) {
-                window.roleApp.showToast('Ops! Algo deu errado. Recarregue a página.', 'error');
+        // Alterna o tema ao clicar na lâmpada
+        lampada.addEventListener('click', () => {
+            if (root.hasAttribute('data-theme')) {
+                // Volta para modo escuro
+                root.removeAttribute('data-theme');
+                lampada.setAttribute('aria-pressed', 'false');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Vai para modo claro
+                root.setAttribute('data-theme', 'light');
+                lampada.setAttribute('aria-pressed', 'true');
+                localStorage.setItem('theme', 'light');
             }
         });
 
-        // ========== PRELOAD PRÓXIMAS PÁGINAS ==========
-        const prefetchLinks = document.querySelectorAll('a[href^="/"], a[href^="./"]');
-        prefetchLinks.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                const linkEl = document.createElement('link');
-                linkEl.rel = 'prefetch';
-                linkEl.href = link.href;
-                document.head.appendChild(linkEl);
-            }, { once: true });
-        });
-    </script>
-
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ROLÊ Entretenimento",
-        "description": "Curadoria independente de eventos, cultura e experiências no Brasil",
-        "url": "https://roleentretenimento.com",
-        "logo": "https://roleentretenimento.com/images/logo-role.png",
-        "sameAs": [
-            "https://instagram.com/role.ent",
-            "https://tiktok.com/@role.ent"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+55-51-98070-4353",
-            "contactType": "customer service"
-        }
-    }
+        // ========== SUAVIZAÇÃO ADICIONAL ==========
+        // Previne flash de tema incorreto
+        document.body.style.transition = 'all 0.3s ease';
     </script>
 </body>
 </html>
