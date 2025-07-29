@@ -99,55 +99,136 @@
             </nav>
         </div>
 
-        <!-- Hero Section da Revista -->
+        <!-- Hero Section -->
         <section class="app-hero-section">
             <h1 class="app-hero-title">REVISTA ROLÊ</h1>
             <p class="app-hero-description">
                 Textos que refletem a cena noturna, com críticas, poesia e provocações do ROLÊ
             </p>
-            
-            <!-- Stats da Revista -->
-            <div class="app-stats-grid" style="margin-top: 2rem; margin-bottom: 0;">
-                <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="25">0</span>
-                    <span class="app-stat-label">Artigos</span>
-                </div>
-                <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="1.5">0</span>
-                    <span class="app-stat-label">Milhões de leitores</span>
-                </div>
-                <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="6">0</span>
-                    <span class="app-stat-label">Seções</span>
-                </div>
+            <div class="app-hero-cta">
+                <a href="#editorial" class="app-btn-hero">Descubra nossos textos</a>
             </div>
         </section>
 
-        <!-- Ad Container -->
-        <div class="app-ad-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2898945215492580"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <!-- Stats Section -->
+        <div class="app-section-header">
+            <h2 class="app-section-title">REVISTA EM NÚMEROS</h2>
+        </div>
+        <div class="app-stats-grid">
+            <div class="app-stat-item">
+                <span class="app-stat-number" data-target="25">0</span>
+                <span class="app-stat-label">Artigos publicados</span>
+            </div>
+            <div class="app-stat-item">
+                <span class="app-stat-number" data-target="1.5">0</span>
+                <span class="app-stat-label">Milhões de leitores</span>
+            </div>
+            <div class="app-stat-item">
+                <span class="app-stat-number" data-target="6">0</span>
+                <span class="app-stat-label">Seções ativas</span>
+            </div>
+            <div class="app-stat-item">
+                <span class="app-stat-number" data-target="15">0</span>
+                <span class="app-stat-label">Entrevistas realizadas</span>
+            </div>
         </div>
 
         <!-- EDITORIAL -->
-        <div class="app-section-header">
+        <div class="app-section-header" id="editorial">
             <h2 class="app-section-title">EDITORIAL</h2>
-            <span style="color: var(--text-secondary); font-size: 14px;">Textos críticos e provocações da cena</span>
+            <a href="#" class="app-see-all">Ver todos</a>
         </div>
 
         <div class="app-recommendations">
             <div class="app-cards-scroll">
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
+                        <div class="app-card-badge">Destaque</div>
+                        <img src="images/editorial-madrugada.png" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">As cidades já foram noturnas</h3>
+                        <p class="app-card-description">Sua cidade perdeu a madrugada? Descubra quem resiste na cena noturna brasileira!</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span>📝</span>
+                                <span>Editorial</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span>⏱️</span>
+                                <span>5 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">5.0</span>
+                            </div>
+                            <a href="editorial/as-cidades-ja-foram-noturnas.html" class="app-card-link">Ler completo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Popular</div>
+                        <img src="images/editorial-dj-autor.png" alt="Arte de DJ como autor da pista" loading="lazy" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">DJs são novos autores</h3>
+                        <p class="app-card-description">Quem escreve tua noite é o DJ. Já agradeceu hoje?</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span>📝</span>
+                                <span>Editorial</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span>⏱️</span>
+                                <span>4 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.9</span>
+                            </div>
+                            <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html" class="app-card-link">Ler completo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Novo</div>
+                        <img src="images/editorial-teatros-vazios.png" alt="Arte com cadeiras vazias representando o teatro" loading="lazy" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Por que os teatros estão vazios</h3>
+                        <p class="app-card-description">Teatro na era do feed: presença ou performance?</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span>📝</span>
+                                <span>Editorial</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span>⏱️</span>
+                                <span>6 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.6</span>
+                            </div>
+                            <a href="https://www.instagram.com/p/DK0JECQvjlS/" target="_blank" class="app-card-link">Ver dica</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
                         <div class="app-card-badge">Lifestyle</div>
-                        <img src="images/dica-role-no-meio-da-semana.png" alt="Arte incentivando rolês em dias úteis" loading="lazy">
+                        <img src="images/dica-role-no-meio-da-semana.png" alt="Arte incentivando rolês em dias úteis" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Rolê no meio da semana? Tá doido?</h3>
@@ -175,7 +256,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Economia</div>
-                        <img src="images/dica-ta-caro.png" alt="Arte crítica sobre preços altos nos rolês" loading="lazy">
+                        <img src="images/dica-ta-caro.png" alt="Arte crítica sobre preços altos nos rolês" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Tá caro? Tá mesmo.</h3>
@@ -205,7 +286,7 @@
         <!-- FALA, ROLÊ -->
         <div class="app-section-header">
             <h2 class="app-section-title">FALA, ROLÊ</h2>
-            <span style="color: var(--text-secondary); font-size: 14px;">Entrevistas com artistas independentes</span>
+            <a href="#" class="app-see-all">Ver todas</a>
         </div>
 
         <div class="app-recommendations">
@@ -213,7 +294,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Entrevista</div>
-                        <img src="images/fala-quem-faz-a-cena.png" alt="Chamada para conhecer artistas da cena cultural" loading="lazy">
+                        <img src="images/fala-quem-faz-a-cena.png" alt="Chamada para conhecer artistas da cena cultural" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Você conhece quem faz a cena?</h3>
@@ -241,7 +322,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Artista</div>
-                        <img src="images/fala-jon-soares.png" alt="Retrato do artista Jon Soares" loading="lazy">
+                        <img src="images/fala-jon-soares.png" alt="Retrato do artista Jon Soares" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Jon Soares</h3>
@@ -271,7 +352,7 @@
         <!-- ROLÊ.BPM -->
         <div class="app-section-header">
             <h2 class="app-section-title">ROLÊ.BPM</h2>
-            <span style="color: var(--text-secondary); font-size: 14px;">Explorações musicais e gêneros das pistas</span>
+            <a href="#" class="app-see-all">Ver todos</a>
         </div>
 
         <div class="app-recommendations">
@@ -279,7 +360,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Techno</div>
-                        <img src="images/bpm-techno-resistencia.png" alt="Arte sobre o techno como resistência" loading="lazy">
+                        <img src="images/bpm-techno-resistencia.png" alt="Arte sobre o techno como resistência" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Quem tem medo do techno?</h3>
@@ -307,7 +388,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Funk</div>
-                        <img src="images/bpm-funk-e-cultura.png" alt="Funk retratado como cultura e identidade" loading="lazy">
+                        <img src="images/bpm-funk-e-cultura.png" alt="Funk retratado como cultura e identidade" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">FUNK É CULTURA, SIM.</h3>
@@ -337,7 +418,7 @@
         <!-- ACHADINHOS -->
         <div class="app-section-header">
             <h2 class="app-section-title">ACHADINHOS</h2>
-            <span style="color: var(--text-secondary); font-size: 14px;">Referências, virais e achados culturais</span>
+            <a href="#" class="app-see-all">Ver todos</a>
         </div>
 
         <div class="app-recommendations">
@@ -345,7 +426,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Underground</div>
-                        <img src="images/achadinho-floripa-segredos.png" alt="Segredos dos rolês underground em Florianópolis" loading="lazy">
+                        <img src="images/achadinho-floripa-segredos.png" alt="Segredos dos rolês underground em Florianópolis" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Qual é o segredo dos rolês de Floripa?</h3>
@@ -463,7 +544,7 @@
     <!-- JavaScript -->
     <script src="js/app.js"></script>
     <script>
-        // Inline critical JavaScript
+        // Inline critical JavaScript - EXATAMENTE como no index.html
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile menu functionality
             const menuToggle = document.querySelector('.menu-toggle');
@@ -531,6 +612,21 @@
                         submitBtn.disabled = false;
                         btnText.style.display = 'inline';
                         btnLoading.style.display = 'none';
+                    }
+                });
+            }
+
+            // Smooth scroll for hero CTA
+            const heroButton = document.querySelector('.app-btn-hero');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.getElementById('editorial');
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 });
             }
@@ -652,83 +748,7 @@
         });
     </script>
 </body>
-</html>card-image">
-                        <div class="app-card-badge">Destaque</div>
-                        <img src="images/editorial-madrugada.png" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy">
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">As cidades já foram noturnas</h3>
-                        <p class="app-card-description">Sua cidade perdeu a madrugada? Descubra quem resiste na cena noturna brasileira!</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span>📝</span>
-                                <span>Editorial</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span>⏱️</span>
-                                <span>5 min</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars">⭐⭐⭐⭐⭐</div>
-                                <span class="rating-text">5.0</span>
-                            </div>
-                            <a href="editorial/as-cidades-ja-foram-noturnas.html" class="app-card-link">Ler completo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="app-recommendation-card">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Popular</div>
-                        <img src="images/editorial-dj-autor.png" alt="Arte de DJ como autor da pista" loading="lazy">
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">DJs são novos autores</h3>
-                        <p class="app-card-description">Quem escreve tua noite é o DJ. Já agradeceu hoje?</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span>📝</span>
-                                <span>Editorial</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span>⏱️</span>
-                                <span>4 min</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars">⭐⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.9</span>
-                            </div>
-                            <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html" class="app-card-link">Ler completo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="app-recommendation-card">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Novo</div>
-                        <img src="images/editorial-teatros-vazios.png" alt="Arte com cadeiras vazias representando o teatro" loading="lazy">
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">Por que os teatros estão vazios</h3>
-                        <p class="app-card-description">Teatro na era do feed: presença ou performance?</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span>📝</span>
-                                <span>Editorial</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span>⏱️</span>
-                                <span>6 min</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars">⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.7</span>
+</html>rating-text">4.7</span>
                             </div>
                             <a href="#" class="app-card-link">Ler completo</a>
                         </div>
@@ -738,7 +758,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Tendência</div>
-                        <img src="images/editorial-look-fala.png" alt="Ilustração de look expressivo como identidade" loading="lazy">
+                        <img src="images/editorial-look-fala.png" alt="Ilustração de look expressivo como identidade" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">E se teu look falasse por ti?</h3>
@@ -766,7 +786,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Debate</div>
-                        <img src="images/editorial-te-chamam-de-atracao.png" alt="Imagem de artista como destaque da festa" loading="lazy">
+                        <img src="images/editorial-te-chamam-de-atracao.png" alt="Imagem de artista como destaque da festa" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Te chamam de atração...</h3>
@@ -794,7 +814,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Reflexão</div>
-                        <img src="images/editorial-fomo-cansaco.png" alt="Arte representando cansaço e FOMO nos rolês" loading="lazy">
+                        <img src="images/editorial-fomo-cansaco.png" alt="Arte representando cansaço e FOMO nos rolês" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Todo mundo cansado</h3>
@@ -822,7 +842,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Lenda</div>
-                        <img src="images/editorial-rolezao.png" alt="Imagem nostálgica de uma festa marcante" loading="lazy">
+                        <img src="images/editorial-rolezao.png" alt="Imagem nostálgica de uma festa marcante" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Todo mundo já foi num rolê bom</h3>
@@ -849,10 +869,23 @@
             </div>
         </div>
 
+        <!-- Ad Container -->
+        <div class="app-ad-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2898945215492580"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
         <!-- POSFÁCIO -->
         <div class="app-section-header">
             <h2 class="app-section-title">POSFÁCIO</h2>
-            <span style="color: var(--text-secondary); font-size: 14px;">Reflexões de encerramento da semana</span>
+            <a href="#" class="app-see-all">Ver todos</a>
         </div>
 
         <div class="app-recommendations">
@@ -860,7 +893,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Manifesto</div>
-                        <img src="images/posfacio-arte-nao-e-favor.png" alt="Frase arte não é favor em fundo gráfico" loading="lazy">
+                        <img src="images/posfacio-arte-nao-e-favor.png" alt="Frase arte não é favor em fundo gráfico" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Arte não é favor</h3>
@@ -888,7 +921,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Política</div>
-                        <img src="images/posfacio-corpo-danca.png" alt="Imagem de corpo dançando em cena política" loading="lazy">
+                        <img src="images/posfacio-corpo-danca.png" alt="Imagem de corpo dançando em cena política" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Subir no palco é um ato político</h3>
@@ -916,7 +949,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Música</div>
-                        <img src="images/posfacio-som-autoral.png" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy">
+                        <img src="images/posfacio-som-autoral.png" alt="Imagem crítica ao cover e valorização do som autoral" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">O FIM DO COVER: QUEREMOS SOM AUTORAL</h3>
@@ -944,7 +977,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Resistência</div>
-                        <img src="images/posfacio-palco-politico.png" alt="Dança como forma de resistência política" loading="lazy">
+                        <img src="images/posfacio-palco-politico.png" alt="Dança como forma de resistência política" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">O que teu corpo diz quando dança?</h3>
@@ -972,7 +1005,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Orgulho</div>
-                        <img src="images/posfacio-orgulho-rebeliao.png" alt="Orgulho LGBTQIAP+ como rebelião cultural" loading="lazy">
+                        <img src="images/posfacio-orgulho-rebeliao.png" alt="Orgulho LGBTQIAP+ como rebelião cultural" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Não foi por convite. Foi por rebelião.</h3>
@@ -1002,7 +1035,7 @@
         <!-- DICAS DO ROLÊ -->
         <div class="app-section-header">
             <h2 class="app-section-title">DICAS DO ROLÊ</h2>
-            <span style="color: var(--text-secondary); font-size: 14px;">Achados e experiências mapeadas</span>
+            <a href="#" class="app-see-all">Ver todas</a>
         </div>
 
         <div class="app-recommendations">
@@ -1010,7 +1043,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Segurança</div>
-                        <img src="images/dica-celular-no-role.png" alt="Dica para levar o celular no rolê com segurança" loading="lazy">
+                        <img src="images/dica-celular-no-role.png" alt="Dica para levar o celular no rolê com segurança" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Celular no rolê: como levar com segurança</h3>
@@ -1038,7 +1071,7 @@
                 <article class="app-recommendation-card">
                     <div class="app-card-image">
                         <div class="app-card-badge">Glossário</div>
-                        <img src="images/dica-dicionario-rolezeiro.png" alt="Dicionário visual com gírias da cena" loading="lazy">
+                        <img src="images/dica-dicionario-rolezeiro.png" alt="Dicionário visual com gírias da cena" loading="lazy" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Dicionário rolezeiro</h3>
@@ -1056,12 +1089,4 @@
                         <div class="app-card-footer">
                             <div class="app-card-rating">
                                 <div class="stars">⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.6</span>
-                            </div>
-                            <a href="https://www.instagram.com/p/DK0JECQvjlS/" target="_blank" class="app-card-link">Ver dica</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="app-recommendation-card">
-                    <div class="app-
+                                <span class="
