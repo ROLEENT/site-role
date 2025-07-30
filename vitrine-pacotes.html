@@ -11,6 +11,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com/pacotes.html" />
     
+    <!-- Anti-cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
     <script>
         if (localStorage.getItem('theme') === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
@@ -19,374 +24,493 @@
     
     <title>Pacotes — Vitrine Cultural | ROLÊ</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="estilo.css" />
     
     <noscript>
-        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+        <div class="no-js-message">
+            Para uma melhor experiência, ative o JavaScript no seu navegador.
+        </div>
     </noscript>
-    
-    <link rel="stylesheet" href="estilo.css" />
 </head>
 
 <body>
-    <section class="bloco-topo">
-        <div class="container-topo">
-            <div class="header-top">
-                <!-- LOGO ESQUERDA -->
-                <a href="index.html">
-                    <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="app-header-content">
+                <a href="index.html" class="app-logo-container">
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" />
                 </a>
+                <div class="app-header-actions">
+                    <!-- Desktop Menu -->
+                    <nav class="desktop-menu">
+                        <a href="index.html">Home</a>
+                        <a href="revista.html">Revista</a>
+                        <a href="vitrine-cultural.html" class="active">Vitrine Cultural</a>
+                        <a href="descontos.html">Descontos</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="quem-somos.html">Quem Somos</a>
+                    </nav>
 
-                <!-- MENU + TEMA (LADO DIREITO) -->
-                <div class="right-top">
-                    <!-- MENU DROPDOWN -->
-                    <div class="dropdown">
-                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-                            Explorar ▼
-                        </button>          
-                        <div class="dropdown-content" id="menu-explorar">
-                            <a href="index.html">Página Inicial</a>
-                            <a href="revista.html">Revista ROLÊ</a>
-                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                            <a href="descontos.html">Descontos</a>
-                            <a href="contato.html">Contato</a>
-                            <a href="quem-somos.html">Quem Somos</a>
-                        </div>
+                    <!-- Mobile Menu Button -->
+                    <button class="menu-toggle" aria-label="Abrir menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" aria-label="Alternar tema">
+                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" />
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <nav class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" />
+                    <button class="menu-close" aria-label="Fechar menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-menu-list">
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link active">🎨 Vitrine Cultural</a></li>
+                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
+                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
+                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
+                </ul>
+                <div class="mobile-menu-footer">
+                    <div class="mobile-menu-social">
+                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener">
+                            <img src="images/instagram.svg" alt="Instagram" />
+                        </a>
+                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener">
+                            <img src="images/tiktok.svg" alt="TikTok" />
+                        </a>
+                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener">
+                            <img src="images/whatsapp.svg" alt="WhatsApp" />
+                        </a>
                     </div>
-
-                    <!-- TEMA -->
-                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
                 </div>
-            </div>
-            <hr class="linha-topo" />
+            </nav>
         </div>
-    </section>
 
-    <!-- Hero Section -->
-    <div class="banner-wrapper">
-        <div class="banner-container">
-            <div class="hero-content fade-in">
-                <h1 class="titulo-editorial">Pacotes da Vitrine Cultural</h1>
-                <p class="subtitulo-editorial">O palco é seu. A luz, a gente joga.</p>
+        <!-- Hero Section -->
+        <section class="app-hero-section">
+            <h1 class="app-hero-title">Pacotes da Vitrine Cultural</h1>
+            <p class="app-hero-description">
+                O palco é seu. A luz, a gente joga. Transforme seu evento em desejo puro com nossos pacotes de divulgação.
+            </p>
+        </section>
+
+        <!-- Banner -->
+        <div class="app-banner-wrapper">
+            <div class="app-banner-container">
+                <img src="images/banner-vitrine.png" alt="Banner Vitrine Cultural - Pacotes de divulgação" loading="lazy" />
             </div>
         </div>
-    </div>
 
-    <main class="container">
         <!-- Introdução -->
-        <section class="fade-in delay">
-            <div class="destaque-frase">
-                🎯 Tá na hora do seu evento aparecer como merece
+        <section class="content-card">
+            <div class="intro-highlight">
+                🎯 <strong>Tá na hora do seu evento aparecer como merece</strong>
             </div>
-            <div class="editorial-completo">
-                <div class="texto-editorial">
-                    <p>Tem tanta festa boa por aí passando despercebida no feed que a gente até chora um lo-fi triste de fundo.</p>
-                    <p>A verdade é uma só: ter um evento incrível não garante que ele será visto, desejado e comentado. O que faz isso acontecer é a forma como ele é contado. E aqui no ROLÊ, a gente sabe contar histórias de evento como ninguém.</p>
-                    <p><strong>Bem-vinde à Vitrine Cultural — o espaço editorial que transforma o seu rolê em desejo puro.</strong></p>
-                </div>
-            </div>
+            <p>Tem tanta festa boa por aí passando despercebida no feed que a gente até chora um lo-fi triste de fundo.</p>
+            <p>A verdade é uma só: ter um evento incrível não garante que ele será visto, desejado e comentado. O que faz isso acontecer é a forma como ele é contado. E aqui no ROLÊ, a gente sabe contar histórias de evento como ninguém.</p>
+            <p><strong>Bem-vinde à Vitrine Cultural — o espaço editorial que transforma o seu rolê em desejo puro.</strong></p>
         </section>
 
         <!-- O que é a Vitrine -->
-        <section class="fade-in delay">
-            <div class="destaque-frase">
-                💡 O que é a Vitrine Cultural (e por que ela funciona)
+        <section class="content-card">
+            <div class="intro-highlight">
+                💡 <strong>O que é a Vitrine Cultural (e por que ela funciona)</strong>
             </div>
-            <div class="editorial-completo">
-                <div class="texto-editorial">
-                    <p>A Vitrine Cultural é onde a gente apresenta, posiciona e impulsiona eventos com conteúdo autoral, visual de impacto e linguagem afiada.</p>
-                    <p>A gente não te joga numa grade sem graça, nem trata seu flyer como figurante. A gente mergulha na alma do teu rolê, entende a proposta e cria uma entrega que gera curtida, clique, comentário — e principalmente presença no evento.</p>
-                    <p><strong>Você escolhe o formato. A gente entrega com narrativa, estética e estratégia.</strong></p>
-                </div>
-            </div>
+            <p>A Vitrine Cultural é onde a gente apresenta, posiciona e impulsiona eventos com conteúdo autoral, visual de impacto e linguagem afiada.</p>
+            <p>A gente não te joga numa grade sem graça, nem trata seu flyer como figurante. A gente mergulha na alma do teu rolê, entende a proposta e cria uma entrega que gera curtida, clique, comentário — e principalmente presença no evento.</p>
+            <p><strong>Você escolhe o formato. A gente entrega com narrativa, estética e estratégia.</strong></p>
         </section>
 
         <!-- Formatos Disponíveis -->
-        <section class="fade-in delay">
-            <h2>Formatos Disponíveis</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-icon">📸</div>
-                    <h3>Carrossel Editorial</h3>
-                    <p>Feed com até 10 cards, direção de arte personalizada e storytelling exclusivo</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📲</div>
-                    <h3>Stories Interativos</h3>
-                    <p>Até 3 blocos com ambientação visual e gatilhos de interação</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🎥</div>
-                    <h3>Reels & Vídeos</h3>
-                    <p>Teasers ou cobertura em vídeo com edição profissional</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🧩</div>
-                    <h3>Combo Completo</h3>
-                    <p>Feed + Stories em pacote promocional</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔁</div>
-                    <h3>Pacote Mensal</h3>
-                    <p>Para coletivos, selos e produtoras com datas fixas</p>
-                </div>
+        <div class="app-section-header">
+            <h2 class="app-section-title">Formatos Disponíveis</h2>
+        </div>
+        
+        <div class="app-recommendations">
+            <div class="app-cards-scroll">
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">📸</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Carrossel Editorial</h3>
+                        <p class="app-card-description">Feed com até 10 cards, direção de arte personalizada e storytelling exclusivo</p>
+                    </div>
+                </article>
+
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">📲</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Stories Interativos</h3>
+                        <p class="app-card-description">Até 3 blocos com ambientação visual e gatilhos de interação</p>
+                    </div>
+                </article>
+
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">🎥</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Reels & Vídeos</h3>
+                        <p class="app-card-description">Teasers ou cobertura em vídeo com edição profissional</p>
+                    </div>
+                </article>
+
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">🧩</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Combo Completo</h3>
+                        <p class="app-card-description">Feed + Stories em pacote promocional</p>
+                    </div>
+                </article>
+
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">🔁</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Pacote Mensal</h3>
+                        <p class="app-card-description">Para coletivos, selos e produtoras com datas fixas</p>
+                    </div>
+                </article>
             </div>
-        </section>
+        </div>
 
         <!-- Pacotes e Preços -->
-        <section class="fade-in delay">
-            <div class="destaque-frase">
-                🔥 Escolha seu pacote e veja seu evento acontecer
+        <div class="app-section-header">
+            <h2 class="app-section-title">🔥 Escolha seu pacote e veja seu evento acontecer</h2>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Carrossel Editorial -->
+            <div class="pricing-card featured">
+                <div class="pricing-badge">MAIS POPULAR</div>
+                <div class="pricing-header">
+                    <div class="pricing-icon">🌀</div>
+                    <h3 class="pricing-title">CARROSSEL EDITORIAL</h3>
+                    <div class="pricing-price">R$ 150</div>
+                    <div class="pricing-reach">40 a 60 mil contas</div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>✓ Até 10 cards</li>
+                        <li>✓ Direção de arte inspirada na identidade do evento</li>
+                        <li>✓ Texto com storytelling do ROLÊ</li>
+                        <li>✓ Publicação no feed com destaque</li>
+                        <li>✓ Link nos stories + comentário fixado</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/5551980704353?text=Oi! Quero contratar o Carrossel Editorial por R$ 150" target="_blank" class="pricing-button">Contratar Agora</a>
             </div>
-            
-            <div class="pacotes-grid">
-                <!-- Carrossel Editorial -->
-                <div class="pacote-card destaque">
-                    <div class="pacote-header">
-                        <h3>🌀 CARROSSEL EDITORIAL</h3>
-                        <div class="preco">R$ 150</div>
-                        <div class="alcance">40 a 60 mil contas</div>
-                    </div>
-                    <div class="pacote-features">
-                        <ul>
-                            <li>Até 10 cards</li>
-                            <li>Direção de arte inspirada na identidade do evento</li>
-                            <li>Texto com storytelling do ROLÊ</li>
-                            <li>Publicação no feed com destaque</li>
-                            <li>Link nos stories + comentário fixado</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Stories Interativos -->
-                <div class="pacote-card">
-                    <div class="pacote-header">
-                        <h3>🔥 STORIES INTERATIVOS</h3>
-                        <div class="preco">R$ 60</div>
-                        <div class="preco-combo">Em combo: R$ 42 (30% OFF)</div>
-                    </div>
-                    <div class="pacote-features">
-                        <ul>
-                            <li>Até 3 blocos de stories</li>
-                            <li>Ambientação visual</li>
-                            <li>Gatilhos de interação</li>
-                            <li>Link direto pro evento</li>
-                        </ul>
-                    </div>
+            <!-- Stories Interativos -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="pricing-icon">🔥</div>
+                    <h3 class="pricing-title">STORIES INTERATIVOS</h3>
+                    <div class="pricing-price">R$ 60</div>
+                    <div class="pricing-combo">Em combo: R$ 42 (30% OFF)</div>
                 </div>
-
-                <!-- Combo -->
-                <div class="pacote-card combo">
-                    <div class="pacote-header">
-                        <h3>🌪️ COMBO CARROSSEL + STORIES</h3>
-                        <div class="preco promocional">R$ 180</div>
-                        <div class="economia">Economia de R$ 30</div>
-                    </div>
-                    <div class="pacote-features">
-                        <p>Máxima visibilidade com feed + stories em pacote promocional</p>
-                    </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>✓ Até 3 blocos de stories</li>
+                        <li>✓ Ambientação visual</li>
+                        <li>✓ Gatilhos de interação</li>
+                        <li>✓ Link direto pro evento</li>
+                    </ul>
                 </div>
-
-                <!-- Reels -->
-                <div class="pacote-card">
-                    <div class="pacote-header">
-                        <h3>🎥 REELS OU COBERTURA</h3>
-                        <div class="preco">A partir de R$ 200</div>
-                        <div class="personalizado">Orçamento personalizado</div>
-                    </div>
-                    <div class="pacote-features">
-                        <p>Produção de vídeo sob medida para seu evento</p>
-                    </div>
-                </div>
-
-                <!-- Pacote Mensal -->
-                <div class="pacote-card">
-                    <div class="pacote-header">
-                        <h3>♻️ PACOTE MENSAL</h3>
-                        <div class="preco">Sob proposta</div>
-                    </div>
-                    <div class="pacote-features">
-                        <ul>
-                            <li>Datas fixas garantidas</li>
-                            <li>Descontos progressivos</li>
-                            <li>Destaque editorial em sequência</li>
-                        </ul>
-                    </div>
-                </div>
+                <a href="https://wa.me/5551980704353?text=Oi! Quero contratar os Stories Interativos por R$ 60" target="_blank" class="pricing-button">Contratar Agora</a>
             </div>
-        </section>
+
+            <!-- Combo -->
+            <div class="pricing-card combo">
+                <div class="pricing-badge">ECONOMIA R$ 30</div>
+                <div class="pricing-header">
+                    <div class="pricing-icon">🌪️</div>
+                    <h3 class="pricing-title">COMBO CARROSSEL + STORIES</h3>
+                    <div class="pricing-price special">R$ 180</div>
+                    <div class="pricing-original">De R$ 210</div>
+                </div>
+                <div class="pricing-features">
+                    <p>Máxima visibilidade com feed + stories em pacote promocional</p>
+                </div>
+                <a href="https://wa.me/5551980704353?text=Oi! Quero contratar o Combo Carrossel + Stories por R$ 180" target="_blank" class="pricing-button">Contratar Agora</a>
+            </div>
+
+            <!-- Reels -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="pricing-icon">🎥</div>
+                    <h3 class="pricing-title">REELS OU COBERTURA</h3>
+                    <div class="pricing-price">A partir de R$ 200</div>
+                    <div class="pricing-custom">Orçamento personalizado</div>
+                </div>
+                <div class="pricing-features">
+                    <p>Produção de vídeo sob medida para seu evento</p>
+                </div>
+                <a href="https://wa.me/5551980704353?text=Oi! Quero orçamento para Reels/Cobertura" target="_blank" class="pricing-button">Solicitar Orçamento</a>
+            </div>
+
+            <!-- Pacote Mensal -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="pricing-icon">♻️</div>
+                    <h3 class="pricing-title">PACOTE MENSAL</h3>
+                    <div class="pricing-price">Sob proposta</div>
+                </div>
+                <div class="pricing-features">
+                    <ul>
+                        <li>✓ Datas fixas garantidas</li>
+                        <li>✓ Descontos progressivos</li>
+                        <li>✓ Destaque editorial em sequência</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/5551980704353?text=Oi! Quero uma proposta para Pacote Mensal" target="_blank" class="pricing-button">Fazer Proposta</a>
+            </div>
+        </div>
 
         <!-- Objeções -->
-        <section class="fade-in delay">
-            <div class="destaque-frase">
-                😬 Objeções comuns (e por que elas não colam por aqui)
+        <section class="content-card">
+            <div class="intro-highlight">
+                😬 <strong>Objeções comuns (e por que elas não colam por aqui)</strong>
             </div>
-            <div class="editorial-completo">
-                <div class="texto-editorial">
-                    <blockquote>
-                        <strong>"Mas meu evento é pequeno, vale a pena?"</strong><br/>
-                        Vale sim! Nosso público ama rolê com identidade.
-                    </blockquote>
-                    <blockquote>
-                        <strong>"Já tenho meu social media…"</strong><br/>
-                        Perfeito. A Vitrine não substitui, ela amplifica.
-                    </blockquote>
-                    <blockquote>
-                        <strong>"Tô com grana curta…"</strong><br/>
-                        A gente entende. E por isso temos formatos a partir de R$ 60.
-                    </blockquote>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>"Mas meu evento é pequeno, vale a pena?"</h4>
+                    <p>Vale sim! Nosso público ama rolê com identidade.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>"Já tenho meu social media…"</h4>
+                    <p>Perfeito. A Vitrine não substitui, ela amplifica.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>"Tô com grana curta…"</h4>
+                    <p>A gente entende. E por isso temos formatos a partir de R$ 60.</p>
                 </div>
             </div>
         </section>
 
         <!-- Bônus -->
-        <section class="fade-in delay">
-            <div class="destaque-frase">
-                🧠 Bônus: O que você leva junto com o pacote
+        <div class="app-section-header">
+            <h2 class="app-section-title">🧠 Bônus: O que você leva junto com o pacote</h2>
+        </div>
+
+        <div class="app-stats-grid">
+            <div class="app-stat-item">
+                <div class="bonus-icon">🎨</div>
+                <h4>Design Personalizado</h4>
+                <p>Com a cara do seu evento</p>
             </div>
-            <div class="bonus-grid">
-                <div class="bonus-item">
-                    <div class="bonus-icon">🎨</div>
-                    <h4>Design Personalizado</h4>
-                    <p>Com a cara do seu evento</p>
-                </div>
-                <div class="bonus-item">
-                    <div class="bonus-icon">✍️</div>
-                    <h4>Texto que Vende</h4>
-                    <p>E engaja com identidade ROLÊ</p>
-                </div>
-                <div class="bonus-item">
-                    <div class="bonus-icon">💬</div>
-                    <h4>Suporte WhatsApp</h4>
-                    <p>Durante todo o processo</p>
-                </div>
-                <div class="bonus-item">
-                    <div class="bonus-icon">📊</div>
-                    <h4>Relatório Performance</h4>
-                    <p>Pós-venda completo</p>
-                </div>
-                <div class="bonus-item">
-                    <div class="bonus-icon">💜</div>
-                    <h4>Amor & Curadoria</h4>
-                    <p>Estética e verdade cultural</p>
-                </div>
+            <div class="app-stat-item">
+                <div class="bonus-icon">✍️</div>
+                <h4>Texto que Vende</h4>
+                <p>E engaja com identidade ROLÊ</p>
             </div>
-        </section>
+            <div class="app-stat-item">
+                <div class="bonus-icon">💬</div>
+                <h4>Suporte WhatsApp</h4>
+                <p>Durante todo o processo</p>
+            </div>
+            <div class="app-stat-item">
+                <div class="bonus-icon">📊</div>
+                <h4>Relatório Performance</h4>
+                <p>Pós-venda completo</p>
+            </div>
+            <div class="app-stat-item">
+                <div class="bonus-icon">💜</div>
+                <h4>Amor & Curadoria</h4>
+                <p>Estética e verdade cultural</p>
+            </div>
+        </div>
 
         <!-- Como Contratar -->
-        <section class="fade-in delay">
-            <div class="destaque-frase">
-                🚀 Garanta sua data agora
+        <section class="content-card">
+            <div class="intro-highlight">
+                🚀 <strong>Garanta sua data agora</strong>
             </div>
-            <div class="editorial-completo">
-                <div class="texto-editorial">
-                    <p>Se você quer garantir um dos espaços da semana:</p>
-                    <div class="passos-contratacao">
-                        <div class="passo">
-                            <div class="passo-numero">1</div>
-                            <p>Escolha o pacote ideal</p>
-                        </div>
-                        <div class="passo">
-                            <div class="passo-numero">2</div>
-                            <p>Manda as infos do evento</p>
-                        </div>
-                        <div class="passo">
-                            <div class="passo-numero">3</div>
-                            <p>Faz o pagamento</p>
-                        </div>
-                        <div class="passo">
-                            <div class="passo-numero">4</div>
-                            <p>Relaxa — o ROLÊ cuida do resto</p>
-                        </div>
-                    </div>
+            <p>Se você quer garantir um dos espaços da semana:</p>
+            
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Escolha o pacote ideal</h4>
+                    <p>Veja qual formato combina mais com seu evento</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Manda as infos do evento</h4>
+                    <p>Data, local, lineup e tudo que precisamos saber</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Faz o pagamento</h4>
+                    <p>PIX, cartão ou transferência - como preferir</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>Relaxa — o ROLÊ cuida do resto</h4>
+                    <p>A gente produz, publica e te manda o relatório</p>
                 </div>
             </div>
         </section>
 
         <!-- CTAs -->
-        <section class="cta-section fade-in delay">
+        <section class="cta-section">
             <div class="cta-grid">
-                <a href="https://wa.me/5551980704353" target="_blank" class="btn-destaque">
+                <a href="https://wa.me/5551980704353" target="_blank" class="app-btn-hero">
                     📲 Fale com a gente no WhatsApp
                 </a>
-                <a href="#" class="btn-destaque">
+                <a href="#" class="app-btn-hero">
                     📥 Baixe nosso portfólio completo
                 </a>
-                <a href="#" class="btn-destaque">
+                <a href="#" class="app-btn-hero">
                     📅 Veja datas disponíveis
                 </a>
             </div>
         </section>
 
-        <!-- Conclusão -->
-        <section class="fade-in delay">
-            <div class="destaque-frase">
-                🌈 Conclusão: Visibilidade não é só aparecer. É ser lembrado.
-            </div>
-            <div class="editorial-completo">
-                <div class="texto-editorial">
-                    <p>A gente acredita em cultura viva. Em festas que têm alma. E em produtores que merecem ter seus eventos contados com respeito, afeto e força editorial.</p>
-                    <p>Se o seu rolê tem verdade, ele tem espaço aqui.</p>
-                    <div class="frase-final">
-                        <strong>Nos vemos na Vitrine. Nos vemos no ROLÊ.</strong>
-                    </div>
+        <!-- Featured Banner - Conclusão -->
+        <div class="app-featured-banner">
+            <div class="app-banner-content">
+                <div class="app-banner-tag">VISIBILIDADE REAL</div>
+                <h3 class="app-banner-title">Visibilidade não é só aparecer. É ser lembrado.</h3>
+                <p class="app-banner-subtitle">A gente acredita em cultura viva. Em festas que têm alma. E em produtores que merecem ter seus eventos contados com respeito, afeto e força editorial.</p>
+                <div class="conclusion-text">
+                    <strong>Nos vemos na Vitrine. Nos vemos no ROLÊ.</strong>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <div class="cta-final">
-        <a href="vitrine-cultural.html" class="btn-destaque">← Voltar para a Vitrine</a>
+        <!-- Back to Vitrine -->
+        <div class="back-navigation">
+            <a href="vitrine-cultural.html" class="app-btn-hero">← Voltar para a Vitrine</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="app-footer-links">
+                © 2025 ROLÊ ENTRETENIMENTO ·
+                <a href="politica.html">Política de Privacidade</a> ·
+                <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+                <a href="termos-organizador.html">Termos do Organizador</a> ·
+                <a href="politica-spam.html">Política Antispam</a>
+            </div>
+            <div class="app-social-icons">
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer">
+                    <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+                </a>
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer">
+                    <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+                </a>
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer">
+                    <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+                </a>
+            </div>
+        </footer>
+
+        <!-- Bottom Navigation -->
+        <nav class="app-bottom-nav">
+            <a href="index.html" class="app-nav-item">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
+            </a>
+            <a href="vitrine-cultural.html" class="app-nav-item active">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span class="app-nav-label">Buscar</span>
+            </a>
+            <a href="revista.html" class="app-nav-item">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span class="app-nav-label">Revista</span>
+            </a>
+            <a href="descontos.html" class="app-nav-item">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                <span class="app-nav-label">Descontos</span>
+            </a>
+            <a href="contato.html" class="app-nav-item">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span class="app-nav-label">Contato</span>
+            </a>
+        </nav>
     </div>
 
-    <footer>
-        <div class="footer-links">
-            © 2025 ROLÊ ENTRETENIMENTO ·
-            <a href="politica.html">Política de Privacidade</a> ·
-            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-            <a href="termos-organizador.html">Termos do Organizador</a> ·
-            <a href="politica-spam.html">Política Antispam</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://instagram.com/role.ent" target="_blank">
-                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
-            </a>
-            <a href="https://tiktok.com/@role.ent" target="_blank">
-                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
-            </a>
-            <a href="https://wa.me/5551980704353" target="_blank">
-                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
-            </a>
-        </div>
-    </footer>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // ========== DROPDOWN EXPLORAR ==========
-            const dropdown = document.querySelector('.dropdown');
-            const button = dropdown.querySelector('.dropdown-button');
-            const content = dropdown.querySelector('.dropdown-content');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.menu-close');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-            if (button && content) {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dropdown.classList.toggle('open');
-                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-                });
+            function openMenu() {
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
-                document.addEventListener('click', function (e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', false);
+            function closeMenu() {
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            menuToggle?.addEventListener('click', openMenu);
+            menuClose?.addEventListener('click', closeMenu);
+            
+            mobileMenuOverlay?.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    closeMenu();
+                }
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.querySelector('.theme-toggle-app');
+            const root = document.documentElement;
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                root.setAttribute('data-theme', 'light');
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (root.hasAttribute('data-theme')) {
+                        root.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        root.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
                     }
-                });
-
-                content.addEventListener('click', function (e) {
-                    e.stopPropagation();
                 });
             }
 
-            // ========== ANIMAÇÕES DE ENTRADA ==========
+            // Scroll animations
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -401,247 +525,546 @@
                 });
             }, observerOptions);
 
-            // Observar elementos para animação
-            document.querySelectorAll('.fade-in').forEach((element, index) => {
+            // Animate elements on scroll
+            const animatedElements = document.querySelectorAll('.content-card, .pricing-card, .app-recommendation-card, .app-stat-item');
+            animatedElements.forEach((element, index) => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
                 element.style.transition = `all 0.8s ease ${index * 0.1}s`;
                 observer.observe(element);
             });
 
-            // Observar cards dos pacotes
-            document.querySelectorAll('.pacote-card').forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `all 0.6s ease ${index * 0.15}s`;
-                observer.observe(card);
+            // Pricing card hover effects
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            pricingCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
             });
-        });
 
-        // ========== TOGGLE TEMA ==========
-        const lampada = document.querySelector('.lampada-toggle');
-        const root = document.documentElement;
-
-        // Aplica o tema salvo ao carregar
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            root.setAttribute('data-theme', 'light');
-            lampada.setAttribute('aria-pressed', 'true');
-        } else {
-            root.removeAttribute('data-theme');
-            lampada.setAttribute('aria-pressed', 'false');
-        }
-
-        // Alterna o tema ao clicar na lâmpada
-        lampada.addEventListener('click', () => {
-            if (root.hasAttribute('data-theme')) {
-                // Volta para modo escuro
-                root.removeAttribute('data-theme');
-                lampada.setAttribute('aria-pressed', 'false');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                // Vai para modo claro
-                root.setAttribute('data-theme', 'light');
-                lampada.setAttribute('aria-pressed', 'true');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // ========== EFEITOS ESPECIAIS NOS PACOTES ==========
-        document.querySelectorAll('.pacote-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
+
+            // Navigation active state management
+            const navItems = document.querySelectorAll('.app-nav-item, .desktop-menu a, .mobile-menu-link');
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+            navItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (href && (href.includes('vitrine') || href.includes('pacotes'))) {
+                    item.classList.add('active');
+                } else if (href === currentPage) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
             });
+
+            // Add pulse animation to featured card
+            const featuredCard = document.querySelector('.pricing-card.featured');
+            if (featuredCard) {
+                setInterval(() => {
+                    featuredCard.style.boxShadow = '0 0 30px rgba(139, 92, 246, 0.5)';
+                    setTimeout(() => {
+                        featuredCard.style.boxShadow = '0 0 20px rgba(139, 92, 246, 0.3)';
+                    }, 1000);
+                }, 3000);
+            }
+
+            // Touch/swipe support for format cards
+            let startX = 0;
+            let scrollContainer = document.querySelector('.app-cards-scroll');
+            
+            if (scrollContainer) {
+                scrollContainer.addEventListener('touchstart', function(e) {
+                    startX = e.touches[0].clientX;
+                }, { passive: true });
+
+                scrollContainer.addEventListener('touchend', function(e) {
+                    const endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) {
+                            this.scrollBy({ left: 300, behavior: 'smooth' });
+                        } else {
+                            this.scrollBy({ left: -300, behavior: 'smooth' });
+                        }
+                    }
+                }, { passive: true });
+            }
         });
     </script>
 
     <style>
         /* Estilos específicos para a página de pacotes */
-        .hero-content {
-            text-align: center;
-            padding: 4rem 2rem;
+        .intro-highlight {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            border-left: 4px solid var(--accent-purple);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
         }
 
-        .pacotes-grid {
+        @media (min-width: 769px) {
+            .intro-highlight {
+                font-size: 20px;
+                padding: 20px 24px;
+            }
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 24px;
+            margin: 32px 20px;
         }
 
-        .pacote-card {
-            background: var(--card-bg);
-            border: 2px solid var(--card-border);
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                max-width: 1200px;
+                margin: 48px auto;
+                padding: 0 40px;
+            }
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 32px 24px;
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
             cursor: pointer;
+            box-shadow: var(--shadow-sm);
         }
 
-        .pacote-card.destaque {
-            border-color: var(--highlight);
-            box-shadow: 0 0 20px rgba(199, 125, 255, 0.3);
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-purple);
         }
 
-        .pacote-card.combo {
-            background: linear-gradient(135deg, rgba(199, 125, 255, 0.1), transparent);
+        .pricing-card.featured {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+            transform: scale(1.05);
         }
 
-        .pacote-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(199, 125, 255, 0.2);
-            border-color: var(--highlight);
+        .pricing-card.combo {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
         }
 
-        .pacote-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--highlight);
+        .pricing-badge {
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 0 0 12px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .preco {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--text-color);
-            margin-bottom: 0.5rem;
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 32px;
         }
 
-        .preco.promocional {
-            background: var(--gradient);
+        .pricing-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .pricing-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (min-width: 769px) {
+            .pricing-title {
+                font-size: 20px;
+            }
+        }
+
+        .pricing-price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        @media (min-width: 769px) {
+            .pricing-price {
+                font-size: 42px;
+            }
+        }
+
+        .pricing-price.special {
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .alcance, .preco-combo, .economia, .personalizado {
-            font-size: 0.9rem;
-            color: var(--highlight);
-            font-weight: 500;
-            margin-bottom: 1rem;
+        .pricing-reach, 
+        .pricing-combo, 
+        .pricing-original,
+        .pricing-custom {
+            font-size: 14px;
+            color: var(--accent-purple);
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        .pacote-features ul {
+        .pricing-original {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            margin-bottom: 32px;
+        }
+
+        .pricing-features ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
-        .pacote-features li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(199, 125, 255, 0.2);
-            position: relative;
-            padding-left: 1.5rem;
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            font-size: 15px;
+            line-height: 1.5;
         }
 
-        .pacote-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--highlight);
-            font-weight: bold;
+        .pricing-features li:last-child {
+            border-bottom: none;
         }
 
-        .bonus-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+        .pricing-features p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        .bonus-item {
+        .pricing-button {
+            width: 100%;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
             text-align: center;
-            padding: 2rem 1rem;
-            background: var(--card-bg);
-            border-radius: 15px;
-            border: 1px solid var(--card-border);
+            display: block;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .bonus-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--highlight);
+        .pricing-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
         }
 
-        .bonus-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .bonus-item h4 {
-            color: var(--highlight);
-            margin-bottom: 0.5rem;
-        }
-
-        .passos-contratacao {
+        /* FAQ Grid */
+        .faq-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 24px;
+            margin-top: 24px;
         }
 
-        .passo {
-            text-align: center;
-            padding: 1.5rem 1rem;
+        @media (min-width: 769px) {
+            .faq-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
         }
 
-        .passo-numero {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient);
+        .faq-item {
+            background: rgba(139, 92, 246, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .faq-item h4 {
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        @media (min-width: 769px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .step-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 18px;
+            font-weight: 800;
             color: white;
-            margin: 0 auto 1rem auto;
+            flex-shrink: 0;
         }
 
+        .step-item h4 {
+            color: var(--accent-purple);
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .step-item p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        /* Bonus styling */
+        .bonus-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .app-stat-item h4 {
+            color: var(--accent-purple);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .app-stat-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* CTA Section */
         .cta-section {
-            margin: 4rem 0;
+            margin: 48px 20px;
+        }
+
+        @media (min-width: 769px) {
+            .cta-section {
+                max-width: 1000px;
+                margin: 64px auto;
+                padding: 0 40px;
+            }
         }
 
         .cta-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .card h3 {
-            color: var(--highlight);
-            margin-bottom: 1rem;
-            text-align: center;
+            gap: 16px;
         }
 
         @media (max-width: 768px) {
-            .pacotes-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .bonus-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-            
-            .passos-contratacao {
-                grid-template-columns: 1fr;
-            }
-            
             .cta-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .cta-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+        }
+
+        /* Back Navigation */
+        .back-navigation {
+            text-align: center;
+            margin: 48px 20px 32px 20px;
+        }
+
+        @media (min-width: 769px) {
+            .back-navigation {
+                margin: 64px auto 48px auto;
+                max-width: 1200px;
+                padding: 0 40px;
+            }
+        }
+
+        /* Conclusion styling */
+        .conclusion-text {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .conclusion-text strong {
+            font-size: 18px;
+            color: white;
+        }
+
+        @media (min-width: 769px) {
+            .conclusion-text strong {
+                font-size: 20px;
+            }
+        }
+
+        /* Custom scrollbar for horizontal scroll */
+        .app-cards-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-purple) var(--bg-secondary);
+        }
+
+        .app-cards-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .app-cards-scroll::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+            border-radius: 3px;
+        }
+
+        .app-cards-scroll::-webkit-scrollbar-thumb {
+            background: var(--accent-purple);
+            border-radius: 3px;
+        }
+
+        .app-cards-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-pink);
+        }
+
+        /* Format cards specific styling */
+        .app-recommendation-card .app-card-image {
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+        }
+
+        .app-recommendation-card .app-card-badge {
+            position: static;
+            background: none;
+            font-size: 48px;
+            color: white;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .pricing-card {
+                padding: 24px 20px;
+            }
+            
+            .pricing-title {
+                font-size: 16px;
+            }
+            
+            .pricing-price {
+                font-size: 28px;
+            }
+            
+            .intro-highlight {
+                font-size: 16px;
+                padding: 14px 16px;
+            }
+        }
+
+        /* Dark mode specific adjustments */
+        :root[data-theme="light"] .pricing-card.featured {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        }
+
+        :root[data-theme="light"] .faq-item {
+            background: rgba(139, 92, 246, 0.03);
+        }
+
+        :root[data-theme="light"] .intro-highlight {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.03));
+        }
+
+        /* Animation keyframes */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.5); }
+        }
+
+        .pricing-card.featured {
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        /* Hover states for touch devices */
+        @media (hover: none) {
+            .pricing-card:hover {
+                transform: none;
+            }
+            
+            .pricing-card:active {
+                transform: scale(0.98);
             }
         }
     </style>
