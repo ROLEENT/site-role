@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Entenda como o ROLÊ ENTRETENIMENTO coleta, armazena e utiliza seus dados. Política de Privacidade atualizada com base na LGPD." />
     <meta name="keywords" content="política privacidade, LGPD, proteção dados, cookies, direitos usuário, segurança" />
     <meta property="og:title" content="ROLÊ ENTRETENIMENTO — Política de Privacidade" />
@@ -10,435 +10,588 @@
     <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com/politica.html" />
-    
+
+    <!-- Anti-cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <script>
         if (localStorage.getItem('theme') === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
         }
     </script>
-    
+
     <title>Política de Privacidade | ROLÊ ENTRETENIMENTO</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
-    
-    <noscript>
-        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
-    </noscript>
-    
     <link rel="stylesheet" href="estilo.css" />
+
+    <noscript>
+        <div class="no-js-message">
+            Para uma melhor experiência, ative o JavaScript no seu navegador.
+        </div>
+    </noscript>
 </head>
 
 <body>
-    <section class="bloco-topo">
-        <div class="container-topo">
-            <div class="header-top">
-                <!-- LOGO ESQUERDA -->
-                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+    <div class="app-container page-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="app-header-content">
+                <a href="index.html" class="app-logo-container">
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" />
+                </a>
+                <div class="app-header-actions">
+                    <!-- Desktop Menu -->
+                    <nav class="desktop-menu">
+                        <a href="index.html">Home</a>
+                        <a href="revista.html">Revista</a>
+                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="descontos.html">Descontos</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="quem-somos.html">Quem Somos</a>
+                    </nav>
 
-                <!-- MENU + TEMA (LADO DIREITO) -->
-                <div class="right-top">
-                    <!-- MENU DROPDOWN -->
-                    <div class="dropdown">
-                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-                            Explorar ▼
-                        </button>          
-                        <div class="dropdown-content" id="menu-explorar">
-                            <a href="index.html">Página Inicial</a>
-                            <a href="revista.html">Revista ROLÊ</a>
-                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                            <a href="descontos.html">Descontos</a>
-                            <a href="contato.html">Contato</a>
-                            <a href="quem-somos.html">Quem Somos</a>
-                        </div>
-                    </div>
-
-                    <!-- TEMA -->
-                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                    <!-- Mobile Menu Button -->
+                    <button class="menu-toggle" aria-label="Abrir menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" aria-label="Alternar tema">
+                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" />
+                    </button>
                 </div>
             </div>
-            <hr class="linha-topo" />
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <nav class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" />
+                    <button class="menu-close" aria-label="Fechar menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-menu-list">
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
+                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
+                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
+                </ul>
+                <div class="mobile-menu-footer">
+                    <div class="mobile-menu-social">
+                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener">
+                            <img src="images/instagram.svg" alt="Instagram" />
+                        </a>
+                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener">
+                            <img src="images/tiktok.svg" alt="TikTok" />
+                        </a>
+                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener">
+                            <img src="images/whatsapp.svg" alt="WhatsApp" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </section>
 
-    <!-- Conteúdo Principal -->
-    <main class="editorial-completo fade-in">
-        <div class="texto-editorial">
-            <h1 class="titulo-editorial">Política de Privacidade</h1>
-            <p class="subtitulo-editorial">como protegemos seus dados na plataforma ROLÊ</p>
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Política de Privacidade</h1>
+            <p class="page-subtitle">
+                como protegemos seus dados na plataforma ROLÊ
+            </p>
+        </div>
 
-            <div class="destaque-frase">
+        <!-- Destaque Principal -->
+        <section class="content-card privacy-hero">
+            <div class="privacy-quote">
                 "Sua privacidade é sagrada. Transparência é nossa política."
             </div>
+        </section>
 
-            <p>Esta Política de Privacidade descreve como o <strong class="keyword">ROLÊ ENTRETENIMENTO LTDA</strong> coleta, usa e protege os dados pessoais dos usuários da plataforma e demais canais oficiais.</p>
+        <!-- Informações Básicas -->
+        <section class="content-card">
+            <p>Esta Política de Privacidade descreve como o <strong>ROLÊ ENTRETENIMENTO LTDA</strong> coleta, usa e protege os dados pessoais dos usuários da plataforma e demais canais oficiais.</p>
 
-            <p>Estamos comprometidos com a <strong class="keyword">Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018)</strong> e acreditamos que você tem o direito de saber exatamente como seus dados são tratados.</p>
+            <p>Estamos comprometidos com a <strong>Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018)</strong> e acreditamos que você tem o direito de saber exatamente como seus dados são tratados.</p>
 
-            <blockquote>
-                <strong>Data da última atualização:</strong> Janeiro de 2025<br>
-                <strong>Empresa responsável:</strong> ROLÊ ENTRETENIMENTO LTDA<br>
-                <strong>Encarregado de dados:</strong> fiih@roleentretenimento.com
-            </blockquote>
+            <div class="info-box">
+                <p><strong>Data da última atualização:</strong> Janeiro de 2025</p>
+                <p><strong>Empresa responsável:</strong> ROLÊ ENTRETENIMENTO LTDA</p>
+                <p><strong>Encarregado de dados:</strong> <a href="mailto:fiih@roleentretenimento.com">fiih@roleentretenimento.com</a></p>
+            </div>
+        </section>
 
-            <h2>1. Quais Dados Coletamos</h2>
+        <!-- Dados Coletados -->
+        <section class="content-card">
+            <h2 class="app-section-title">1. Quais Dados Coletamos</h2>
             <p>Coletamos informações de diferentes formas para oferecer a melhor experiência cultural:</p>
 
-            <h3>📝 Dados Fornecidos Voluntariamente:</h3>
-            <blockquote>
-                • <strong>Nome e contato:</strong> Quando você preenche formulários<br>
-                • <strong>E-mail:</strong> Para comunicações e newsletters<br>
-                • <strong>Mensagens:</strong> Conteúdo de contatos via site ou redes sociais<br>
-                • <strong>Localização:</strong> Cidade informada para eventos regionais<br>
-                • <strong>Preferências:</strong> Estilos musicais e tipos de eventos de interesse
-            </blockquote>
+            <div class="data-category">
+                <h3>📝 Dados Fornecidos Voluntariamente:</h3>
+                <ul class="data-list">
+                    <li><strong>Nome e contato:</strong> Quando você preenche formulários</li>
+                    <li><strong>E-mail:</strong> Para comunicações e newsletters</li>
+                    <li><strong>Mensagens:</strong> Conteúdo de contatos via site ou redes sociais</li>
+                    <li><strong>Localização:</strong> Cidade informada para eventos regionais</li>
+                    <li><strong>Preferências:</strong> Estilos musicais e tipos de eventos de interesse</li>
+                </ul>
+            </div>
 
-            <h3>🔍 Dados Coletados Automaticamente:</h3>
-            <blockquote>
-                • <strong>Informações técnicas:</strong> IP, navegador, dispositivo<br>
-                • <strong>Comportamento de navegação:</strong> Páginas visitadas, tempo de permanência<br>
-                • <strong>Interações:</strong> Cliques, downloads, compartilhamentos<br>
-                • <strong>Cookies:</strong> Preferências de tema, sessão do usuário
-            </blockquote>
+            <div class="data-category">
+                <h3>🔍 Dados Coletados Automaticamente:</h3>
+                <ul class="data-list">
+                    <li><strong>Informações técnicas:</strong> IP, navegador, dispositivo</li>
+                    <li><strong>Comportamento de navegação:</strong> Páginas visitadas, tempo de permanência</li>
+                    <li><strong>Interações:</strong> Cliques, downloads, compartilhamentos</li>
+                    <li><strong>Cookies:</strong> Preferências de tema, sessão do usuário</li>
+                </ul>
+            </div>
 
-            <div class="destaque-frase">
+            <div class="privacy-quote small">
                 "Coletamos apenas o necessário para melhorar sua experiência cultural."
             </div>
+        </section>
 
-            <h2>2. Como Usamos Seus Dados</h2>
+        <!-- Como Usamos -->
+        <section class="content-card">
+            <h2 class="app-section-title">2. Como Usamos Seus Dados</h2>
             <p>Seus dados têm finalidades específicas e legítimas:</p>
 
-            <h3>🎯 Finalidades Principais:</h3>
-            <blockquote>
-                • <strong>Comunicação:</strong> Responder seus contatos e dúvidas<br>
-                • <strong>Curadoria personalizada:</strong> Sugerir eventos do seu interesse<br>
-                • <strong>Newsletter:</strong> Enviar conteúdo cultural relevante<br>
-                • <strong>Melhorias no site:</strong> Análise de usabilidade e performance<br>
-                • <strong>Relacionamento:</strong> Construir uma comunidade cultural
-            </blockquote>
+            <div class="usage-grid">
+                <div class="usage-item">
+                    <div class="usage-icon">🎯</div>
+                    <h3>Finalidades Principais</h3>
+                    <ul>
+                        <li>Comunicação: Responder seus contatos e dúvidas</li>
+                        <li>Curadoria personalizada: Sugerir eventos do seu interesse</li>
+                        <li>Newsletter: Enviar conteúdo cultural relevante</li>
+                        <li>Melhorias no site: Análise de usabilidade e performance</li>
+                        <li>Relacionamento: Construir uma comunidade cultural</li>
+                    </ul>
+                </div>
 
-            <h3>📊 Análises e Estatísticas:</h3>
-            <blockquote>
-                • Entender quais conteúdos são mais populares<br>
-                • Identificar problemas técnicos no site<br>
-                • Medir o alcance de nossas campanhas<br>
-                • Criar relatórios agregados e anônimos
-            </blockquote>
+                <div class="usage-item">
+                    <div class="usage-icon">📊</div>
+                    <h3>Análises e Estatísticas</h3>
+                    <ul>
+                        <li>Entender quais conteúdos são mais populares</li>
+                        <li>Identificar problemas técnicos no site</li>
+                        <li>Medir o alcance de nossas campanhas</li>
+                        <li>Criar relatórios agregados e anônimos</li>
+                    </ul>
+                </div>
+            </div>
 
-            <p><strong>Importante:</strong> Nunca usamos seus dados para <strong class="keyword">spam</strong>, venda para terceiros ou finalidades não relacionadas à cultura e entretenimento.</p>
+            <div class="warning-box">
+                <p><strong>Importante:</strong> Nunca usamos seus dados para <strong>spam</strong>, venda para terceiros ou finalidades não relacionadas à cultura e entretenimento.</p>
+            </div>
+        </section>
 
-            <h2>3. Base Legal para Tratamento</h2>
+        <!-- Base Legal -->
+        <section class="content-card">
+            <h2 class="app-section-title">3. Base Legal para Tratamento</h2>
             <p>Tratamos seus dados com base nas seguintes hipóteses legais da LGPD:</p>
 
-            <blockquote>
-                • <strong>Consentimento:</strong> Quando você autoriza expressamente<br>
-                • <strong>Legítimo interesse:</strong> Para melhorar nossos serviços<br>
-                • <strong>Execução de contrato:</strong> Para prestação de serviços solicitados<br>
-                • <strong>Cumprimento de obrigação legal:</strong> Quando exigido por lei
-            </blockquote>
+            <div class="legal-grid">
+                <div class="legal-item">
+                    <div class="legal-icon">✅</div>
+                    <div>
+                        <h4>Consentimento</h4>
+                        <p>Quando você autoriza expressamente</p>
+                    </div>
+                </div>
+                <div class="legal-item">
+                    <div class="legal-icon">⚖️</div>
+                    <div>
+                        <h4>Legítimo interesse</h4>
+                        <p>Para melhorar nossos serviços</p>
+                    </div>
+                </div>
+                <div class="legal-item">
+                    <div class="legal-icon">📋</div>
+                    <div>
+                        <h4>Execução de contrato</h4>
+                        <p>Para prestação de serviços solicitados</p>
+                    </div>
+                </div>
+                <div class="legal-item">
+                    <div class="legal-icon">📜</div>
+                    <div>
+                        <h4>Cumprimento de obrigação legal</h4>
+                        <p>Quando exigido por lei</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <h2>4. Compartilhamento de Dados</h2>
-            <p>Somos <strong class="keyword">extremamente restritivos</strong> com o compartilhamento de dados:</p>
+        <!-- Compartilhamento -->
+        <section class="content-card">
+            <h2 class="app-section-title">4. Compartilhamento de Dados</h2>
+            <p>Somos <strong>extremamente restritivos</strong> com o compartilhamento de dados:</p>
 
-            <h3>✅ Quando Compartilhamos:</h3>
-            <blockquote>
-                • <strong>Parceiros técnicos:</strong> Hospedagem, e-mail marketing (sob contrato de confidencialidade)<br>
-                • <strong>Obrigações legais:</strong> Quando exigido por autoridades competentes<br>
-                • <strong>Proteção de direitos:</strong> Para proteger nossos direitos ou de terceiros<br>
-                • <strong>Eventos específicos:</strong> Com organizadores, apenas dados necessários
-            </blockquote>
+            <div class="sharing-section">
+                <div class="sharing-allowed">
+                    <h3>✅ Quando Compartilhamos:</h3>
+                    <ul>
+                        <li><strong>Parceiros técnicos:</strong> Hospedagem, e-mail marketing (sob contrato de confidencialidade)</li>
+                        <li><strong>Obrigações legais:</strong> Quando exigido por autoridades competentes</li>
+                        <li><strong>Proteção de direitos:</strong> Para proteger nossos direitos ou de terceiros</li>
+                        <li><strong>Eventos específicos:</strong> Com organizadores, apenas dados necessários</li>
+                    </ul>
+                </div>
 
-            <h3>❌ Nunca Compartilhamos Para:</h3>
-            <blockquote>
-                • Venda ou aluguel de listas de e-mail<br>
-                • Marketing de terceiros não relacionados<br>
-                • Empresas sem contrato de proteção de dados<br>
-                • Finalidades diferentes das informadas
-            </blockquote>
+                <div class="sharing-forbidden">
+                    <h3>❌ Nunca Compartilhamos Para:</h3>
+                    <ul>
+                        <li>Venda ou aluguel de listas de e-mail</li>
+                        <li>Marketing de terceiros não relacionados</li>
+                        <li>Empresas sem contrato de proteção de dados</li>
+                        <li>Finalidades diferentes das informadas</li>
+                    </ul>
+                </div>
+            </div>
 
-            <div class="destaque-frase">
+            <div class="privacy-quote small">
                 "Seus dados não são produtos. São confiança."
             </div>
+        </section>
 
-            <h2>5. Segurança e Proteção</h2>
+        <!-- Segurança -->
+        <section class="content-card">
+            <h2 class="app-section-title">5. Segurança e Proteção</h2>
             <p>Implementamos múltiplas camadas de proteção:</p>
 
-            <h3>🔒 Medidas Técnicas:</h3>
-            <blockquote>
-                • <strong>Criptografia:</strong> SSL/TLS em todas as comunicações<br>
-                • <strong>Servidores seguros:</strong> Infraestrutura com certificações de segurança<br>
-                • <strong>Backup regular:</strong> Proteção contra perda de dados<br>
-                • <strong>Monitoramento:</strong> Detecção de tentativas de invasão<br>
-                • <strong>Atualizações constantes:</strong> Correção de vulnerabilidades
-            </blockquote>
+            <div class="security-grid">
+                <div class="security-category">
+                    <h3>🔒 Medidas Técnicas:</h3>
+                    <ul>
+                        <li><strong>Criptografia:</strong> SSL/TLS em todas as comunicações</li>
+                        <li><strong>Servidores seguros:</strong> Infraestrutura com certificações de segurança</li>
+                        <li><strong>Backup regular:</strong> Proteção contra perda de dados</li>
+                        <li><strong>Monitoramento:</strong> Detecção de tentativas de invasão</li>
+                        <li><strong>Atualizações constantes:</strong> Correção de vulnerabilidades</li>
+                    </ul>
+                </div>
 
-            <h3>👥 Medidas Organizacionais:</h3>
-            <blockquote>
-                • Acesso restrito aos dados (apenas equipe autorizada)<br>
-                • Treinamento da equipe sobre proteção de dados<br>
-                • Políticas internas de segurança<br>
-                • Contratos de confidencialidade com prestadores
-            </blockquote>
+                <div class="security-category">
+                    <h3>👥 Medidas Organizacionais:</h3>
+                    <ul>
+                        <li>Acesso restrito aos dados (apenas equipe autorizada)</li>
+                        <li>Treinamento da equipe sobre proteção de dados</li>
+                        <li>Políticas internas de segurança</li>
+                        <li>Contratos de confidencialidade com prestadores</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            <h2>6. Seus Direitos (LGPD)</h2>
-            <p>Você tem <strong class="keyword">controle total</strong> sobre seus dados:</p>
+        <!-- Seus Direitos -->
+        <section class="content-card">
+            <h2 class="app-section-title">6. Seus Direitos (LGPD)</h2>
+            <p>Você tem <strong>controle total</strong> sobre seus dados:</p>
 
-            <h3>📋 Direitos Disponíveis:</h3>
-            <blockquote>
-                • <strong>Confirmação:</strong> Saber se tratamos seus dados<br>
-                • <strong>Acesso:</strong> Obter cópia dos dados que possuímos<br>
-                • <strong>Correção:</strong> Atualizar dados incompletos ou incorretos<br>
-                • <strong>Anonimização/Exclusão:</strong> Quando tecnicamente possível<br>
-                • <strong>Portabilidade:</strong> Transferir dados para outro fornecedor<br>
-                • <strong>Informação:</strong> Saber com quem compartilhamos seus dados<br>
-                • <strong>Revogação:</strong> Retirar consentimento a qualquer momento
-            </blockquote>
+            <div class="rights-grid">
+                <div class="rights-list">
+                    <h3>📋 Direitos Disponíveis:</h3>
+                    <ul>
+                        <li><strong>Confirmação:</strong> Saber se tratamos seus dados</li>
+                        <li><strong>Acesso:</strong> Obter cópia dos dados que possuímos</li>
+                        <li><strong>Correção:</strong> Atualizar dados incompletos ou incorretos</li>
+                        <li><strong>Anonimização/Exclusão:</strong> Quando tecnicamente possível</li>
+                        <li><strong>Portabilidade:</strong> Transferir dados para outro fornecedor</li>
+                        <li><strong>Informação:</strong> Saber com quem compartilhamos seus dados</li>
+                        <li><strong>Revogação:</strong> Retirar consentimento a qualquer momento</li>
+                    </ul>
+                </div>
 
-            <h3>⚡ Como Exercer Seus Direitos:</h3>
-            <blockquote>
-                1. Entre em contato via <strong>fiih@roleentretenimento.com</strong><br>
-                2. Identifique-se e especifique o direito que deseja exercer<br>
-                3. Aguarde nossa resposta em até <strong>15 dias úteis</strong><br>
-                4. Receba a confirmação e/ou os dados solicitados
-            </blockquote>
+                <div class="rights-process">
+                    <h3>⚡ Como Exercer Seus Direitos:</h3>
+                    <ol>
+                        <li>Entre em contato via <strong>fiih@roleentretenimento.com</strong></li>
+                        <li>Identifique-se e especifique o direito que deseja exercer</li>
+                        <li>Aguarde nossa resposta em até <strong>15 dias úteis</strong></li>
+                        <li>Receba a confirmação e/ou os dados solicitados</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
 
-            <h2>7. Cookies e Tecnologias</h2>
+        <!-- Cookies -->
+        <section class="content-card">
+            <h2 class="app-section-title">7. Cookies e Tecnologias</h2>
             <p>Utilizamos cookies para melhorar sua experiência:</p>
 
-            <h3>🍪 Tipos de Cookies:</h3>
-            <blockquote>
-                • <strong>Essenciais:</strong> Funcionamento básico do site<br>
-                • <strong>Preferências:</strong> Tema claro/escuro, idioma<br>
-                • <strong>Análise:</strong> Google Analytics (dados agregados)<br>
-                • <strong>Funcionalidade:</strong> Lembrar suas configurações
-            </blockquote>
+            <div class="cookies-info">
+                <div class="cookie-types">
+                    <h3>🍪 Tipos de Cookies:</h3>
+                    <ul>
+                        <li><strong>Essenciais:</strong> Funcionamento básico do site</li>
+                        <li><strong>Preferências:</strong> Tema claro/escuro, idioma</li>
+                        <li><strong>Análise:</strong> Google Analytics (dados agregados)</li>
+                        <li><strong>Funcionalidade:</strong> Lembrar suas configurações</li>
+                    </ul>
+                </div>
 
-            <h3>⚙️ Gerenciar Cookies:</h3>
-            <blockquote>
-                • Configure seu navegador para bloquear cookies<br>
-                • Use navegação privada/incógnita<br>
-                • Limpe cookies regularmente<br>
-                • Use extensões de bloqueio de rastreamento
-            </blockquote>
-
-            <p><strong>Nota:</strong> Alguns cookies são essenciais para o funcionamento do site. Bloqueá-los pode afetar a experiência de navegação.</p>
-
-            <h2>8. Retenção de Dados</h2>
-            <p>Mantemos seus dados pelo tempo necessário:</p>
-
-            <blockquote>
-                • <strong>Dados de contato:</strong> Até você solicitar exclusão<br>
-                • <strong>Cookies técnicos:</strong> Sessão do navegador<br>
-                • <strong>Análises agregadas:</strong> Dados anonimizados (sem prazo)<br>
-                • <strong>Obrigações legais:</strong> Conforme exigido por lei<br>
-                • <strong>Newsletter:</strong> Até o descadastro
-            </blockquote>
-
-            <h2>9. Transferência Internacional</h2>
-            <p>Alguns serviços podem envolver transferência de dados:</p>
-
-            <blockquote>
-                • <strong>Redes sociais:</strong> Instagram, TikTok (servidores globais)<br>
-                • <strong>Hospedagem:</strong> Servidores podem estar fora do Brasil<br>
-                • <strong>Proteção:</strong> Todos com cláusulas contratuais de proteção<br>
-                • <strong>Adequação:</strong> Países com nível adequado de proteção
-            </blockquote>
-
-            <h2>10. Menores de Idade</h2>
-            <p>Cuidado especial com dados de menores:</p>
-
-            <blockquote>
-                • Não coletamos intencionalmente dados de menores de 13 anos<br>
-                • Para menores entre 13-18 anos, exigimos consentimento dos responsáveis<br>
-                • Caso identifiquemos dados de menores, excluiremos imediatamente<br>
-                • Pais podem solicitar informações sobre dados de seus filhos
-            </blockquote>
-
-            <h2>11. Alterações nesta Política</h2>
-            <p>Esta política pode ser atualizada para refletir mudanças em nossos serviços ou na legislação:</p>
-
-            <blockquote>
-                • <strong>Comunicação prévia:</strong> Avisaremos sobre mudanças significativas<br>
-                • <strong>Canais de aviso:</strong> Site, e-mail, redes sociais<br>
-                • <strong>Prazo:</strong> Mínimo de 10 dias antes da vigência<br>
-                • <strong>Histórico:</strong> Versões anteriores disponíveis sob solicitação
-            </blockquote>
-
-            <div class="destaque-frase">
-                "Recomendamos revisão periódica desta política para se manter informado."
+                <div class="cookie-management">
+                    <h3>⚙️ Gerenciar Cookies:</h3>
+                    <ul>
+                        <li>Configure seu navegador para bloquear cookies</li>
+                        <li>Use navegação privada/incógnita</li>
+                        <li>Limpe cookies regularmente</li>
+                        <li>Use extensões de bloqueio de rastreamento</li>
+                    </ul>
+                </div>
             </div>
 
-            <h2>12. Incidentes de Segurança</h2>
-            <p>No caso improvável de um incidente:</p>
+            <div class="info-box">
+                <p><strong>Nota:</strong> Alguns cookies são essenciais para o funcionamento do site. Bloqueá-los pode afetar a experiência de navegação.</p>
+            </div>
+        </section>
 
-            <blockquote>
-                • <strong>Comunicação imediata:</strong> Avisaremos em até 72h<br>
-                • <strong>Transparência total:</strong> Explicaremos o que aconteceu<br>
-                • <strong>Medidas corretivas:</strong> Ações para mitigar o problema<br>
-                • <strong>Prevenção:</strong> Melhorias para evitar reincidências<br>
-                • <strong>Autoridades:</strong> Comunicação à ANPD quando necessário
-            </blockquote>
-
-            <h2>13. Contato e Suporte</h2>
+        <!-- Contato -->
+        <section class="content-card contact-section">
+            <h2 class="app-section-title">Contato e Suporte</h2>
             <p>Para exercer seus direitos ou esclarecer dúvidas sobre privacidade:</p>
 
-            <ul class="lista-contato">
-                <li>
-                    <span>📧 <strong>Encarregado de Dados:</strong></span>
-                    <a href="mailto:fiih@roleentretenimento.com">fiih@roleentretenimento.com</a>
-                </li>
-                <li>
-                    <img src="images/whatsapp.svg" alt="WhatsApp" class="icon-contato" />
-                    <a href="https://wa.me/5551980704353" target="_blank">WhatsApp: (51) 98070-4353</a>
-                </li>
-                <li>
-                    <span>📍 <strong>Endereço:</strong> Porto Alegre/RS - Brasil</span>
-                </li>
-                <li>
-                    <span>⚖️ <strong>Autoridade:</strong> <a href="https://www.gov.br/anpd" target="_blank">ANPD - Autoridade Nacional de Proteção de Dados</a></span>
-                </li>
-            </ul>
-
-            <div class="frase-final">
-                Sua confiança move nossa cultura! 🔒✨
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <h4>Encarregado de Dados</h4>
+                        <a href="mailto:fiih@roleentretenimento.com">fiih@roleentretenimento.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/5551980704353" target="_blank">(51) 98070-4353</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Endereço</h4>
+                        <p>Porto Alegre/RS - Brasil</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">⚖️</div>
+                    <div>
+                        <h4>Autoridade</h4>
+                        <a href="https://www.gov.br/anpd" target="_blank">ANPD - Autoridade Nacional de Proteção de Dados</a>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="cta-final">
-                <a href="index.html" class="btn-destaque">Voltar à Página Inicial</a>
+        <!-- CTA Final -->
+        <section class="content-card cta-section">
+            <div class="cta-content">
+                <div class="privacy-final-message">
+                    Sua confiança move nossa cultura! 🔒✨
+                </div>
+                <div class="cta-buttons">
+                    <a href="index.html" class="app-btn-hero">Voltar à Página Inicial</a>
+                    <a href="contato.html" class="app-btn-hero secondary">Fale Conosco</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cookie Banner -->
+        <div id="cookie-banner" class="cookie-banner">
+            <div class="cookie-content">
+                <p>🍪 Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de cookies.</p>
+                <div class="cookie-buttons">
+                    <button onclick="aceitarCookies()" class="cookie-btn accept">Aceitar</button>
+                    <button onclick="rejeitarCookies()" class="cookie-btn reject">Rejeitar</button>
+                </div>
             </div>
         </div>
-    </main>
 
-    <!-- Botão Voltar ao Topo -->
-    <button class="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo">
-        ↑
-    </button>
+        <!-- Progress Bar -->
+        <div id="reading-progress"></div>
 
-    <!-- Widget de Consentimento de Cookies -->
-    <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(17,17,17,0.95); padding: 20px; border-top: 2px solid #c77dff; z-index: 10000; text-align: center;">
-        <p style="margin: 0 0 15px 0; color: #f3f3f7;">
-            🍪 Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de cookies.
-        </p>
-        <button onclick="aceitarCookies()" style="background: #c77dff; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">
-            Aceitar
-        </button>
-        <button onclick="rejeitarCookies()" style="background: transparent; color: #c77dff; border: 1px solid #c77dff; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-            Rejeitar
-        </button>
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="app-footer-links">
+                © 2025 ROLÊ ENTRETENIMENTO ·
+                <a href="politica.html">Política de Privacidade</a> ·
+                <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+                <a href="termos-organizador.html">Termos do Organizador</a> ·
+                <a href="politica-spam.html">Política Antispam</a>
+            </div>
+            <div class="app-social-icons">
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
+                    <img src="images/instagram.svg" alt="Instagram" width="24" height="24" />
+                </a>
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
+                    <img src="images/tiktok.svg" alt="TikTok" width="24" height="24" />
+                </a>
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
+                    <img src="images/whatsapp.svg" alt="WhatsApp" width="24" height="24" />
+                </a>
+            </div>
+        </footer>
+
+        <!-- Bottom Navigation -->
+        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal">
+            <a href="index.html" class="app-nav-item" aria-label="Página inicial">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
+            </a>
+            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span class="app-nav-label">Buscar</span>
+            </a>
+            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span class="app-nav-label">Revista</span>
+            </a>
+            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                <span class="app-nav-label">Descontos</span>
+            </a>
+            <a href="contato.html" class="app-nav-item" aria-label="Contato">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span class="app-nav-label">Contato</span>
+            </a>
+        </nav>
     </div>
 
-    <footer>
-        <div class="footer-links">
-            © 2025 ROLÊ ENTRETENIMENTO ·
-            <a href="politica.html">Política de Privacidade</a> ·
-            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-            <a href="termos-organizador.html">Termos do Organizador</a> ·
-            <a href="politica-spam.html">Política Antispam</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer">
-                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
-            </a>
-            <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer">
-                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
-            </a>
-            <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer">
-                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
-            </a>
-        </div>
-    </footer>
-
+    <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // ========== DROPDOWN EXPLORAR ==========
-            const dropdown = document.querySelector('.dropdown');
-            const button = dropdown?.querySelector('.dropdown-button');
-            const content = dropdown?.querySelector('.dropdown-content');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.menu-close');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-            if (button && content) {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dropdown.classList.toggle('open');
-                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-                });
+            function openMenu() {
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
-                document.addEventListener('click', function (e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', false);
+            function closeMenu() {
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            menuToggle?.addEventListener('click', openMenu);
+            menuClose?.addEventListener('click', closeMenu);
+            
+            mobileMenuOverlay?.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    closeMenu();
+                }
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.querySelector('.theme-toggle-app');
+            const root = document.documentElement;
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                root.setAttribute('data-theme', 'light');
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (root.hasAttribute('data-theme')) {
+                        root.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        root.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
                     }
-                });
-
-                content.addEventListener('click', function (e) {
-                    e.stopPropagation();
                 });
             }
 
-            // ========== ANIMAÇÕES DE ENTRADA ==========
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+            // Cookie banner
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            const cookieBanner = document.getElementById('cookie-banner');
+            
+            if (!cookieConsent && cookieBanner) {
+                setTimeout(() => {
+                    cookieBanner.style.display = 'block';
+                }, 2000);
+            }
 
-            const observer = new IntersectionObserver((entries) => {
+            // Card animations on scroll
+            const fadeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.1 });
 
-            // Observar elementos para animação
-            const fadeElements = document.querySelectorAll('.fade-in, h2, h3, blockquote');
+            const fadeElements = document.querySelectorAll('.content-card');
             fadeElements.forEach((element, index) => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
-                element.style.transition = `all 0.6s ease ${index * 0.05}s`;
-                observer.observe(element);
+                element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                fadeObserver.observe(element);
             });
 
-            // ========== BANNER DE COOKIES ==========
-            const cookieConsent = localStorage.getItem('cookieConsent');
-            if (!cookieConsent) {
-                setTimeout(() => {
-                    document.getElementById('cookie-banner').style.display = 'block';
-                }, 2000);
+            // Reading progress bar
+            const progressBar = document.getElementById('reading-progress');
+            if (progressBar) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                    progressBar.style.width = scrolled + '%';
+                });
             }
 
-            // ========== ÍNDICE FLUTUANTE ==========
-            criarIndiceFlutuante();
+            // Navigation active state management
+            const navItems = document.querySelectorAll('.app-nav-item');
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            navItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (href === currentPage) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Smooth scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
 
-        // ========== TOGGLE TEMA ==========
-        const lampada = document.querySelector('.lampada-toggle');
-        const root = document.documentElement;
-
-        // Aplica o tema salvo ao carregar
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            root.setAttribute('data-theme', 'light');
-            lampada.setAttribute('aria-pressed', 'true');
-        } else {
-            root.removeAttribute('data-theme');
-            lampada.setAttribute('aria-pressed', 'false');
-        }
-
-        // Alterna o tema ao clicar na lâmpada
-        lampada.addEventListener('click', () => {
-            if (root.hasAttribute('data-theme')) {
-                // Volta para modo escuro
-                root.removeAttribute('data-theme');
-                lampada.setAttribute('aria-pressed', 'false');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                // Vai para modo claro
-                root.setAttribute('data-theme', 'light');
-                lampada.setAttribute('aria-pressed', 'true');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // ========== FUNÇÕES DE COOKIES ==========
+        // Cookie functions
         function aceitarCookies() {
             localStorage.setItem('cookieConsent', 'accepted');
             document.getElementById('cookie-banner').style.display = 'none';
@@ -456,134 +609,558 @@
             document.cookie = '_ga=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
             document.cookie = '_gid=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
         }
+    </script>
 
-        // ========== PROGRESSO DE LEITURA ==========
-        const progressBar = document.createElement('div');
-        progressBar.style.cssText = `
+    <style>
+        /* Estilos específicos para a página de política */
+        .privacy-hero {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .privacy-quote {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            font-style: italic;
+            line-height: 1.4;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .privacy-quote.small {
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.02));
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .info-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .info-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .data-category {
+            margin: 2rem 0;
+        }
+
+        .data-category h3 {
+            color: var(--accent-purple);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .data-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .data-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .data-list li:last-child {
+            border-bottom: none;
+        }
+
+        .data-list li::before {
+            content: '•';
+            color: var(--accent-purple);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .usage-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition-normal);
+        }
+
+        .usage-item:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .usage-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .usage-item h3 {
+            color: var(--accent-purple);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .usage-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .usage-item li {
+            padding: 0.3rem 0;
+            color: var(--text-secondary);
+        }
+
+        .usage-item li::before {
+            content: '→';
+            color: var(--accent-purple);
+            margin-right: 0.5rem;
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .legal-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+        }
+
+        .legal-item:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-2px);
+        }
+
+        .legal-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .legal-item h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .sharing-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .sharing-allowed,
+        .sharing-forbidden {
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sharing-allowed {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .sharing-forbidden {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .sharing-allowed h3,
+        .sharing-forbidden h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .sharing-allowed ul,
+        .sharing-forbidden ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sharing-allowed li,
+        .sharing-forbidden li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sharing-allowed li:last-child,
+        .sharing-forbidden li:last-child {
+            border-bottom: none;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .security-category {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .security-category h3 {
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .security-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .security-category li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .security-category li:last-child {
+            border-bottom: none;
+        }
+
+        .security-category li::before {
+            content: '🔐';
+            margin-right: 0.5rem;
+        }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .rights-list,
+        .rights-process {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .rights-list {
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .rights-process {
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .rights-list h3,
+        .rights-process h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rights-list ul,
+        .rights-process ol {
+            padding-left: 1rem;
+        }
+
+        .rights-list li,
+        .rights-process li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .cookies-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .cookie-types,
+        .cookie-management {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .cookie-types h3,
+        .cookie-management h3 {
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.02));
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-pink);
+            text-decoration: underline;
+        }
+
+        .privacy-final-message {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem;
+            z-index: 10000;
+            display: none;
+            animation: slideInUp 0.5s ease;
+        }
+
+        :root[data-theme="light"] .cookie-banner {
+            background: rgba(248, 249, 250, 0.98);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-content p {
+            margin: 0;
+            color: var(--text-secondary);
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: none;
+        }
+
+        .cookie-btn.accept {
+            background: var(--accent-purple);
+            color: white;
+        }
+
+        .cookie-btn.accept:hover {
+            background: var(--accent-pink);
+            transform: translateY(-1px);
+        }
+
+        .cookie-btn.reject {
+            background: transparent;
+            color: var(--accent-purple);
+            border: 1px solid var(--accent-purple);
+        }
+
+        .cookie-btn.reject:hover {
+            background: var(--accent-purple);
+            color: white;
+        }
+
+        #reading-progress {
             position: fixed;
             top: 0;
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(90deg, #c77dff, #e0aaff);
+            background: var(--gradient-primary);
             z-index: 9999;
             transition: width 0.1s ease;
-        `;
-        document.body.appendChild(progressBar);
-
-        window.addEventListener('scroll', () => {
-            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            progressBar.style.width = scrolled + '%';
-        });
-
-        // ========== ÍNDICE DE NAVEGAÇÃO FLUTUANTE ==========
-        function criarIndiceFlutuante() {
-            const headers = document.querySelectorAll('h2');
-            if (headers.length === 0) return;
-
-            const indice = document.createElement('div');
-            indice.style.cssText = `
-                position: fixed;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-                background: rgba(17,17,17,0.9);
-                border: 1px solid #c77dff;
-                border-radius: 10px;
-                padding: 15px;
-                max-width: 200px;
-                z-index: 1000;
-                display: none;
-            `;
-
-            const titulo = document.createElement('h4');
-            titulo.textContent = 'Navegação';
-            titulo.style.cssText = 'color: #c77dff; margin: 0 0 10px 0; font-size: 14px;';
-            indice.appendChild(titulo);
-
-            headers.forEach((header, index) => {
-                const link = document.createElement('a');
-                link.textContent = header.textContent;
-                link.href = '#';
-                link.style.cssText = `
-                    display: block;
-                    color: #f3f3f7;
-                    text-decoration: none;
-                    font-size: 12px;
-                    padding: 5px 0;
-                    border-bottom: 1px solid #333;
-                    transition: color 0.3s;
-                `;
-                
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    header.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
-
-                link.addEventListener('mouseenter', () => {
-                    link.style.color = '#c77dff';
-                });
-
-                link.addEventListener('mouseleave', () => {
-                    link.style.color = '#f3f3f7';
-                });
-
-                indice.appendChild(link);
-            });
-
-            document.body.appendChild(indice);
-
-            // Mostrar/esconder índice baseado no scroll
-            let scrollTimeout;
-            window.addEventListener('scroll', () => {
-                clearTimeout(scrollTimeout);
-                if (window.scrollY > 300) {
-                    indice.style.display = 'block';
-                    indice.style.opacity = '1';
-                }
-                
-                scrollTimeout = setTimeout(() => {
-                    if (window.scrollY > 300) {
-                        indice.style.opacity = '0.7';
-                    } else {
-                        indice.style.display = 'none';
-                    }
-                }, 3000);
-            });
         }
 
-        // ========== PROTEÇÃO DE DADOS VISUAL ==========
-        const criarIconeProtecao = () => {
-            const icone = document.createElement('div');
-            icone.innerHTML = '🔒';
-            icone.style.cssText = `
-                position: fixed;
-                bottom: 140px;
-                left: 20px;
-                font-size: 30px;
-                background: rgba(199, 125, 255, 0.9);
-                padding: 10px;
-                border-radius: 50%;
-                z-index: 1000;
-                cursor: pointer;
-                transition: transform 0.3s;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            `;
-            
-            icone.addEventListener('click', () => {
-                alert('🔒 Seus dados estão protegidos pela LGPD!\n\n• Criptografia SSL/TLS\n• Acesso restrito\n• Backups seguros\n• Monitoramento 24/7');
-            });
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-            document.body.appendChild(icone);
+        /* Responsivo Mobile */
+        @media (max-width: 768px) {
+            .privacy-quote {
+                font-size: 1.2rem;
+            }
 
-            // Animação de pulsação
-            setInterval(() => {
-                icone.style.transform = 'scale(1.1)';
-                setTimeout(() => icone.style.transform = 'scale(1)', 200);
-            }, 5000);
-        };
+            .usage-grid,
+            .legal-grid,
+            .sharing-section,
+            .security-grid,
+            .rights-grid,
+            .cookies-info,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
 
-        setTimeout(criarIconeProtecao, 3000);
-    </script>
-</body>
-</html>
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-buttons {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .cookie-btn {
+                flex: 1;
+                max-width: 150px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .app-btn-hero {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-hero {
+                padding: 2rem 1rem;
+            }
+
+            .privacy-quote {
+                font-size: 1rem;
+            }
+
+            .contact-item,
+            .usage-item,
+            .legal-item {
+                padding: 1rem;
+            }
+
+            .cookie-banner {
+                padding: 1rem;
+            }
+        }
+    </style>
