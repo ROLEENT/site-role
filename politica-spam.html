@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="política antispam, ROLÊ, comunicação ética, privacidade" />
     <meta name="description" content="Política Antispam do ROLÊ ENTRETENIMENTO - Compromisso com comunicações éticas e respeitosas" />
     <meta property="og:title" content="Política Antispam | ROLÊ ENTRETENIMENTO" />
@@ -19,186 +19,501 @@
     
     <title>Política Antispam | ROLÊ ENTRETENIMENTO</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="estilo.css" />
     
     <noscript>
-        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+        <div class="no-js-message">
+            Para uma melhor experiência, ative o JavaScript no seu navegador.
+        </div>
     </noscript>
-    
-    <link rel="stylesheet" href="estilo.css" />
 </head>
 
 <body>
-    <section class="bloco-topo">
-        <div class="container-topo">
-            <div class="header-top">
-                <!-- LOGO ESQUERDA -->
-                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="app-header-content">
+                <a href="index.html" class="app-logo-container">
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" />
+                </a>
+                <div class="app-header-actions">
+                    <!-- Desktop Menu -->
+                    <nav class="desktop-menu">
+                        <a href="index.html">Home</a>
+                        <a href="revista.html">Revista</a>
+                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="descontos.html">Descontos</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="quem-somos.html">Quem Somos</a>
+                    </nav>
 
-                <!-- MENU + TEMA (LADO DIREITO) -->
-                <div class="right-top">
-                    <!-- MENU DROPDOWN -->
-                    <div class="dropdown">
-                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-                            Explorar ▼
-                        </button>          
-                        <div class="dropdown-content" id="menu-explorar">
-                            <a href="index.html">Página Inicial</a>
-                            <a href="revista.html">Revista ROLÊ</a>
-                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                            <a href="descontos.html">Descontos</a>
-                            <a href="contato.html">Contato</a>
-                            <a href="quem-somos.html">Quem Somos</a>
-                        </div>
-                    </div>
-
-                    <!-- TEMA -->
-                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                    <!-- Mobile Menu Button -->
+                    <button class="menu-toggle" aria-label="Abrir menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" aria-label="Alternar tema">
+                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" />
+                    </button>
                 </div>
             </div>
-            <hr class="linha-topo" />
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <nav class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" />
+                    <button class="menu-close" aria-label="Fechar menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-menu-list">
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
+                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
+                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
+                </ul>
+                <div class="mobile-menu-footer">
+                    <div class="mobile-menu-social">
+                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener">
+                            <img src="images/instagram.svg" alt="Instagram" />
+                        </a>
+                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener">
+                            <img src="images/tiktok.svg" alt="TikTok" />
+                        </a>
+                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener">
+                            <img src="images/whatsapp.svg" alt="WhatsApp" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </section>
 
-    <!-- Conteúdo Principal -->
-    <main class="editorial-completo fade-in">
-        <div class="texto-editorial">
-            <h1 class="titulo-editorial">Política Antispam</h1>
-            <p class="subtitulo-editorial">compromisso com comunicações éticas e respeitosas</p>
-
-            <div class="destaque-frase">
-                O ROLÊ ENTRETENIMENTO valoriza a confiança de seus usuários e se compromete com práticas de comunicação transparentes e respeitosas.
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Política Antispam</h1>
+                <p class="page-subtitle">Compromisso com comunicações éticas e respeitosas</p>
             </div>
 
-            <p>Esta Política de Antispam estabelece os princípios e condutas adotados pelo <span class="keyword">ROLÊ ENTRETENIMENTO</span> para garantir uma comunicação ética, transparente e respeitosa com seus usuários, parceiros e clientes.</p>
-
-            <h2>1. Compromisso com a Privacidade</h2>
-            <p>O ROLÊ ENTRETENIMENTO não envia mensagens não solicitadas. Toda comunicação realizada por e-mail, WhatsApp ou outros canais é feita mediante consentimento prévio ou relacionamento estabelecido.</p>
-
-            <blockquote>
-                "Respeitamos sua escolha de receber ou não nossas comunicações. Sua privacidade é nossa prioridade."
-            </blockquote>
-
-            <h2>2. Conteúdo Relevante</h2>
-            <p>Nosso objetivo é fornecer conteúdo útil, informativo e relevante sobre eventos, cultura e entretenimento. O usuário pode solicitar a interrupção do recebimento a qualquer momento.</p>
-
-            <p>Nossos envios incluem apenas:</p>
-            <p>• Informações sobre eventos culturais e entretenimento<br>
-            • Atualizações da Revista ROLÊ<br>
-            • Descontos exclusivos para rolezeiros<br>
-            • Conteúdo da Vitrine Cultural</p>
-
-            <h2>3. Cadastro e Descadastro</h2>
-            <p>É possível se cadastrar voluntariamente para receber atualizações e, da mesma forma, se descadastrar a qualquer momento por meio de links de cancelamento ou mensagens de solicitação direta.</p>
-
-            <div class="destaque-frase">
-                Liberdade total para entrar e sair quando quiser - sem complicações!
+            <!-- Trust Banner -->
+            <div class="app-featured-banner">
+                <div class="app-banner-content">
+                    <div class="app-banner-tag">COMPROMISSO ÉTICO</div>
+                    <h3 class="app-banner-title">🛡️ Sua privacidade é nossa prioridade</h3>
+                    <p class="app-banner-subtitle">O ROLÊ ENTRETENIMENTO valoriza a confiança de seus usuários e se compromete com práticas de comunicação transparentes e respeitosas.</p>
+                </div>
             </div>
 
-            <h2>4. Proteção de Dados</h2>
-            <p>Todos os dados coletados são protegidos de acordo com a <a href="politica.html">Política de Privacidade</a> vigente, respeitando rigorosamente a Lei Geral de Proteção de Dados (LGPD).</p>
-
-            <p>Garantimos que seus dados pessoais:</p>
-            <p>• Nunca são compartilhados com terceiros sem autorização<br>
-            • São utilizados exclusivamente para comunicação direta<br>
-            • Podem ser removidos mediante solicitação<br>
-            • São armazenados com segurança</p>
-
-            <h2>5. Canais de Comunicação Autorizados</h2>
-            <p>O ROLÊ ENTRETENIMENTO comunica-se oficialmente através dos seguintes canais:</p>
-            
-            <ul class="lista-contato">
-                <li>
-                    <img src="images/instagram.svg" alt="Instagram" class="icon-contato" />
-                    <a href="https://instagram.com/role.ent" target="_blank">@role.ent</a>
-                </li>
-                <li>
-                    <img src="images/whatsapp.svg" alt="WhatsApp" class="icon-whatsapp" />
-                    <a href="https://wa.me/5551980704353" target="_blank">(51) 98070-4353</a>
-                </li>
-                <li>
-                    <span>📧</span>
-                    <a href="mailto:fiih@roleentretenimento.com">fiih@roleentretenimento.com</a>
-                </li>
-            </ul>
-
-            <h2>6. Denúncia de Abusos</h2>
-            <p>Caso receba qualquer mensagem suspeita em nome do ROLÊ ENTRETENIMENTO que não esteja de acordo com esta política, entre em contato imediatamente pelo e-mail <a href="mailto:fiih@roleentretenimento.com" class="keyword">fiih@roleentretenimento.com</a>.</p>
-
-            <blockquote>
-                Nos comprometemos a investigar e tomar as medidas necessárias para interromper qualquer prática indevida em até 48 horas após a denúncia.
-            </blockquote>
-
-            <h2>7. Frequência de Comunicação</h2>
-            <p>Nossos envios seguem uma frequência respeitosa:</p>
-            <p>• Newsletter semanal com destaques culturais<br>
-            • Comunicados especiais sobre eventos importantes<br>
-            • Máximo de 3 mensagens por semana<br>
-            • Pausas durante feriados e períodos sensíveis</p>
-
-            <div class="frase-final">
-                Acreditamos que comunicação de qualidade fortalece nossa comunidade cultural. Juntos, construímos um ambiente digital mais saudável e respeitoso.
+            <!-- Introduction -->
+            <div class="content-card">
+                <p>Esta Política de Antispam estabelece os princípios e condutas adotados pelo <strong style="color: var(--accent-purple);">ROLÊ ENTRETENIMENTO</strong> para garantir uma comunicação ética, transparente e respeitosa com seus usuários, parceiros e clientes.</p>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <a class="btn-destaque" href="index.html">Voltar para o início</a>
+            <!-- Privacy Commitment -->
+            <div class="content-card">
+                <h2 style="color: var(--accent-green); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 24px;">🔒</span>
+                    1. Compromisso com a Privacidade
+                </h2>
+                
+                <p>O ROLÊ ENTRETENIMENTO não envia mensagens não solicitadas. Toda comunicação realizada por e-mail, WhatsApp ou outros canais é feita mediante consentimento prévio ou relacionamento estabelecido.</p>
+
+                <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 4px solid var(--accent-green);">
+                    <p style="margin: 0; font-style: italic; color: var(--accent-green); font-weight: 600;">
+                        "Respeitamos sua escolha de receber ou não nossas comunicações. Sua privacidade é nossa prioridade."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Relevant Content -->
+            <div class="content-card">
+                <h2 style="color: var(--accent-blue); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 24px;">📬</span>
+                    2. Conteúdo Relevante
+                </h2>
+                
+                <p>Nosso objetivo é fornecer conteúdo útil, informativo e relevante sobre eventos, cultura e entretenimento. O usuário pode solicitar a interrupção do recebimento a qualquer momento.</p>
+
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h3 style="color: var(--accent-blue); margin-bottom: 16px; font-size: 16px;">Nossos envios incluem apenas:</h3>
+                    <div style="display: grid; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-card); border-radius: 8px;">
+                            <span style="color: var(--accent-purple); font-size: 20px;">🎭</span>
+                            <span>Informações sobre eventos culturais e entretenimento</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-card); border-radius: 8px;">
+                            <span style="color: var(--accent-pink); font-size: 20px;">📰</span>
+                            <span>Atualizações da Revista ROLÊ</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-card); border-radius: 8px;">
+                            <span style="color: var(--accent-orange); font-size: 20px;">💰</span>
+                            <span>Descontos exclusivos para rolezeiros</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-card); border-radius: 8px;">
+                            <span style="color: var(--accent-green); font-size: 20px;">🎨</span>
+                            <span>Conteúdo da Vitrine Cultural</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Freedom Quote -->
+            <div style="text-align: center; padding: 24px 20px; margin: 32px 20px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05)); border-radius: 16px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <h3 style="color: var(--accent-purple); font-size: 24px; margin-bottom: 8px;">"Liberdade total para entrar e sair quando quiser - sem complicações!"</h3>
+            </div>
+
+            <!-- Registration and Unsubscribe -->
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 24px;">✅</span>
+                    3. Cadastro e Descadastro
+                </h2>
+                
+                <p>É possível se cadastrar voluntariamente para receber atualizações e, da mesma forma, se descadastrar a qualquer momento por meio de links de cancelamento ou mensagens de solicitação direta.</p>
+
+                <div class="app-stats-grid" style="margin: 24px 0;">
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));">
+                        <span style="font-size: 32px; margin-bottom: 8px;">📝</span>
+                        <span style="font-weight: 600; color: var(--accent-green);">Cadastro Simples</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Processo voluntário e transparente</span>
+                    </div>
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));">
+                        <span style="font-size: 32px; margin-bottom: 8px;">🚪</span>
+                        <span style="font-weight: 600; color: var(--accent-purple);">Saída Fácil</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Descadastro a qualquer momento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Protection -->
+            <div class="content-card">
+                <h2 style="color: var(--accent-orange); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 24px;">🛡️</span>
+                    4. Proteção de Dados
+                </h2>
+                
+                <p>Todos os dados coletados são protegidos de acordo com a <a href="politica.html" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">Política de Privacidade</a> vigente, respeitando rigorosamente a Lei Geral de Proteção de Dados (LGPD).</p>
+
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 12px; margin: 20px 0;">
+                    <h3 style="color: var(--accent-orange); margin-bottom: 16px; font-size: 16px;">Garantimos que seus dados pessoais:</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="color: var(--accent-red); font-size: 18px;">🚫</span>
+                            <span><strong>Nunca são compartilhados</strong> com terceiros sem autorização</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="color: var(--accent-blue); font-size: 18px;">🎯</span>
+                            <span><strong>São utilizados exclusivamente</strong> para comunicação direta</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="color: var(--accent-green); font-size: 18px;">🗑️</span>
+                            <span><strong>Podem ser removidos</strong> mediante solicitação</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="color: var(--accent-purple); font-size: 18px;">🔐</span>
+                            <span><strong>São armazenados com segurança</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Channels -->
+            <div class="content-card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.05)); border: 1px solid rgba(59, 130, 246, 0.2);">
+                <h2 style="color: var(--accent-blue); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 24px;">📢</span>
+                    5. Canais de Comunicação Autorizados
+                </h2>
+                
+                <p style="margin-bottom: 20px;">O ROLÊ ENTRETENIMENTO comunica-se oficialmente através dos seguintes canais:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 16px; margin: 20px 0;">
+                    <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" 
+                       style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <img src="images/instagram.svg" alt="Instagram" style="width: 24px; height: 24px;" />
+                        <div>
+                            <strong>Instagram:</strong> @role.ent
+                            <div style="font-size: 12px; color: var(--text-secondary);">Canal principal de comunicação visual</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer"
+                       style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <img src="images/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px;" />
+                        <div>
+                            <strong>WhatsApp:</strong> (51) 98070-4353
+                            <div style="font-size: 12px; color: var(--text-secondary);">Atendimento direto e suporte</div>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:fiih@roleentretenimento.com"
+                       style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <span style="font-size: 20px;">📧</span>
+                        <div>
+                            <strong>E-mail:</strong> fiih@roleentretenimento.com
+                            <div style="font-size: 12px; color: var(--text-secondary);">Comunicação oficial e denúncias</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Report Abuse -->
+            <div class="content-card">
+                <h2 style="color: var(--accent-red); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 24px;">🚨</span>
+                    6. Denúncia de Abusos
+                </h2>
+                
+                <p>Caso receba qualquer mensagem suspeita em nome do ROLÊ ENTRETENIMENTO que não esteja de acordo com esta política, entre em contato imediatamente pelo e-mail <a href="mailto:fiih@roleentretenimento.com" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">fiih@roleentretenimento.com</a>.</p>
+
+                <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05)); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 4px solid var(--accent-red);">
+                    <p style="margin: 0; font-weight: 600; color: var(--accent-red);">
+                        ⚡ Nos comprometemos a investigar e tomar as medidas necessárias para interromper qualquer prática indevida em até 48 horas após a denúncia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Communication Frequency -->
+            <div class="content-card">
+                <h2 style="color: var(--accent-green); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 24px;">📅</span>
+                    7. Frequência de Comunicação
+                </h2>
+                
+                <p style="margin-bottom: 20px;">Nossos envios seguem uma frequência respeitosa:</p>
+
+                <div class="app-stats-grid" style="margin: 24px 0;">
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));">
+                        <span style="font-size: 20px; margin-bottom: 8px;">📰</span>
+                        <span style="font-weight: 600; color: var(--accent-purple);">Newsletter Semanal</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Destaques culturais</span>
+                    </div>
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));">
+                        <span style="font-size: 20px; margin-bottom: 8px;">🎯</span>
+                        <span style="font-weight: 600; color: var(--accent-orange);">Comunicados Especiais</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Eventos importantes</span>
+                    </div>
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));">
+                        <span style="font-size: 20px; margin-bottom: 8px;">📊</span>
+                        <span style="font-weight: 600; color: var(--accent-green);">Máximo 3x</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Por semana</span>
+                    </div>
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));">
+                        <span style="font-size: 20px; margin-bottom: 8px;">🏖️</span>
+                        <span style="font-weight: 600; color: var(--accent-blue);">Pausas Respeitosas</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Feriados e períodos sensíveis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Message -->
+            <div style="text-align: center; margin: 40px 20px;">
+                <div style="font-size: 48px; margin-bottom: 16px;">🤝</div>
+                <h3 style="color: var(--accent-purple); font-size: 24px; margin-bottom: 16px;">Construindo um ambiente digital mais saudável</h3>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px auto; line-height: 1.6;">
+                    Acreditamos que comunicação de qualidade fortalece nossa comunidade cultural. Juntos, construímos um ambiente digital mais saudável e respeitoso.
+                </p>
+                <a href="index.html" 
+                   style="background: var(--gradient-primary); color: white; padding: 16px 32px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 16px; display: inline-block; transition: var(--transition-normal); text-transform: uppercase; letter-spacing: 0.5px;"
+                   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(139, 92, 246, 0.4)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    Voltar para o início
+                </a>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="content-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.05)); border: 1px solid rgba(16, 185, 129, 0.2);">
+                <h3 style="color: var(--accent-green); margin-bottom: 16px; text-align: center;">⚡ Ações Rápidas</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                    <a href="mailto:fiih@roleentretenimento.com?subject=Solicitação de Descadastro"
+                       style="display: flex; flex-direction: column; align-items: center; padding: 20px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <span style="font-size: 32px; margin-bottom: 8px;">🚪</span>
+                        <strong>Descadastrar</strong>
+                        <span style="font-size: 12px; color: var(--text-secondary); text-align: center;">Sair da newsletter</span>
+                    </a>
+                    
+                    <a href="mailto:fiih@roleentretenimento.com?subject=Denúncia de Spam"
+                       style="display: flex; flex-direction: column; align-items: center; padding: 20px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <span style="font-size: 32px; margin-bottom: 8px;">🚨</span>
+                        <strong>Denunciar</strong>
+                        <span style="font-size: 12px; color: var(--text-secondary); text-align: center;">Reportar abuso</span>
+                    </a>
+                    
+                    <a href="politica.html"
+                       style="display: flex; flex-direction: column; align-items: center; padding: 20px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <span style="font-size: 32px; margin-bottom: 8px;">📋</span>
+                        <strong>Privacidade</strong>
+                        <span style="font-size: 12px; color: var(--text-secondary); text-align: center;">Ver política completa</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </main>
 
-    <!-- Botão voltar ao topo -->
-    <button class="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Voltar ao topo">
-        ↑
-    </button>
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="app-footer-links">
+                © 2025 ROLÊ ENTRETENIMENTO ·
+                <a href="politica.html">Política de Privacidade</a> ·
+                <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+                <a href="termos-organizador.html">Termos do Organizador</a> ·
+                <a href="politica-spam.html">Política Antispam</a>
+            </div>
+            <div class="app-social-icons">
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
+                    <img src="images/instagram.svg" alt="Instagram" width="24" height="24" />
+                </a>
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
+                    <img src="images/tiktok.svg" alt="TikTok" width="24" height="24" />
+                </a>
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
+                    <img src="images/whatsapp.svg" alt="WhatsApp" width="24" height="24" />
+                </a>
+            </div>
+        </footer>
 
-    <footer>
-        <div class="footer-links">
-            © 2025 ROLÊ ENTRETENIMENTO ·
-            <a href="politica.html">Política de Privacidade</a> ·
-            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-            <a href="termos-organizador.html">Termos do Organizador</a> ·
-            <a href="politica-spam.html">Política Antispam</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://instagram.com/role.ent" target="_blank">
-                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+        <!-- Bottom Navigation (Mobile) -->
+        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal">
+            <a href="index.html" class="app-nav-item" aria-label="Página inicial">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
             </a>
-            <a href="https://tiktok.com/@role.ent" target="_blank">
-                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span class="app-nav-label">Buscar</span>
             </a>
-            <a href="https://wa.me/5551980704353" target="_blank">
-                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span class="app-nav-label">Revista</span>
             </a>
-        </div>
-    </footer>
+            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                <span class="app-nav-label">Descontos</span>
+            </a>
+            <a href="contato.html" class="app-nav-item active" aria-label="Contato">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span class="app-nav-label">Contato</span>
+            </a>
+        </nav>
 
+        <!-- Back to Top Button -->
+        <button style="position: fixed; bottom: 120px; right: 20px; background: var(--gradient-primary); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; box-shadow: var(--shadow-lg); transition: var(--transition-normal); z-index: 1000; opacity: 0; visibility: hidden;" 
+                id="backToTop" 
+                aria-label="Voltar ao topo"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            ↑
+        </button>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // ========== DROPDOWN EXPLORAR ==========
-            const dropdown = document.querySelector('.dropdown');
-            const button = dropdown?.querySelector('.dropdown-button');
-            const content = dropdown?.querySelector('.dropdown-content');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.menu-close');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-            if (button && content) {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dropdown.classList.toggle('open');
-                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-                });
+            function openMenu() {
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
-                document.addEventListener('click', function (e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', false);
+            function closeMenu() {
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            menuToggle?.addEventListener('click', openMenu);
+            menuClose?.addEventListener('click', closeMenu);
+            
+            // Close menu when clicking overlay
+            mobileMenuOverlay?.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    closeMenu();
+                }
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.querySelector('.theme-toggle-app');
+            const root = document.documentElement;
+
+            // Apply saved theme on load
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                root.setAttribute('data-theme', 'light');
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (root.hasAttribute('data-theme')) {
+                        root.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        root.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
                     }
-                });
-
-                content.addEventListener('click', function (e) {
-                    e.stopPropagation();
                 });
             }
 
-            // ========== ANIMAÇÕES DE ENTRADA ==========
+            // Smooth scroll for internal links
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.style.opacity = '1';
+                    backToTopButton.style.visibility = 'visible';
+                } else {
+                    backToTopButton.style.opacity = '0';
+                    backToTopButton.style.visibility = 'hidden';
+                }
+            });
+
+            // Scroll animations
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -213,47 +528,163 @@
                 });
             }, observerOptions);
 
-            // Observar elementos para animação
-            const elementsToAnimate = document.querySelectorAll('.fade-in, h2, .destaque-frase, blockquote');
-            elementsToAnimate.forEach((element, index) => {
+            // Observe content cards for animation
+            const fadeElements = document.querySelectorAll('.content-card, .app-featured-banner');
+            fadeElements.forEach((element, index) => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
                 element.style.transition = `all 0.6s ease ${index * 0.1}s`;
                 observer.observe(element);
             });
-        });
 
-        // ========== TOGGLE TEMA ==========
-        const lampada = document.querySelector('.lampada-toggle');
-        const root = document.documentElement;
+            // Enhanced hover effects for interactive elements
+            const interactiveElements = document.querySelectorAll('a[href^="mailto:"], a[href^="https://"], .app-stat-item');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    if (!this.style.transform || this.style.transform.includes('translateY(0')) {
+                        this.style.transform = 'translateY(-2px)';
+                    }
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    if (this.style.transform.includes('translateY(-2px)')) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            });
 
-        // Aplica o tema salvo ao carregar
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            root.setAttribute('data-theme', 'light');
-            lampada.setAttribute('aria-pressed', 'true');
-        } else {
-            root.removeAttribute('data-theme');
-            lampada.setAttribute('aria-pressed', 'false');
-        }
-
-        // Alterna o tema ao clicar na lâmpada
-        lampada.addEventListener('click', () => {
-            if (root.hasAttribute('data-theme')) {
-                // Volta para modo escuro
-                root.removeAttribute('data-theme');
-                lampada.setAttribute('aria-pressed', 'false');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                // Vai para modo claro
-                root.setAttribute('data-theme', 'light');
-                lampada.setAttribute('aria-pressed', 'true');
-                localStorage.setItem('theme', 'light');
+            // Progressive loading for images
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            img.classList.remove('loading');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
             }
-        });
 
-        // ========== SUAVIZAÇÃO ADICIONAL ==========
-        document.body.style.transition = 'all 0.3s ease';
+            // Reading progress indicator
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background: var(--gradient-primary);
+                z-index: 9999;
+                transition: width 0.1s ease;
+            `;
+            document.body.appendChild(progressBar);
+
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+
+            // Toast notification system
+            function showToast(message, type = 'info') {
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                toast.textContent = message;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => toast.classList.add('show'), 100);
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => document.body.removeChild(toast), 300);
+                }, 3000);
+            }
+
+            // Email copy functionality
+            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+            emailLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const email = this.href.replace('mailto:', '').split('?')[0];
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(email).then(() => {
+                            showToast('E-mail copiado para a área de transferência!', 'success');
+                        });
+                    }
+                });
+            });
+
+            // Print-friendly formatting
+            window.addEventListener('beforeprint', function() {
+                document.body.classList.add('printing');
+            });
+
+            window.addEventListener('afterprint', function() {
+                document.body.classList.remove('printing');
+            });
+
+            // Security warning for suspicious links
+            const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="roleentretenimento.com"]):not([href*="instagram.com"]):not([href*="tiktok.com"]):not([href*="wa.me"])');
+            externalLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (!confirm('Você está saindo do site ROLÊ Entretenimento. Deseja continuar?')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            // Stats animation on scroll
+            const statsElements = document.querySelectorAll('.app-stat-item');
+            statsElements.forEach((stat, index) => {
+                stat.style.transitionDelay = `${index * 100}ms`;
+            });
+
+            // Dynamic emoji animation
+            const emojiElements = document.querySelectorAll('span[style*="font-size: 32px"], span[style*="font-size: 48px"]');
+            emojiElements.forEach(emoji => {
+                emoji.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.2) rotate(10deg)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                emoji.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+            });
+
+            // Enhanced accessibility
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMenu();
+                }
+                
+                // Skip to main content with Tab
+                if (e.key === 'Tab' && !e.shiftKey && document.activeElement === document.body) {
+                    const mainContent = document.querySelector('.page-container');
+                    if (mainContent) {
+                        mainContent.focus();
+                        e.preventDefault();
+                    }
+                }
+            });
+
+            // Performance monitoring
+            const performanceObserver = new PerformanceObserver((list) => {
+                list.getEntries().forEach((entry) => {
+                    if (entry.entryType === 'navigation') {
+                        console.log('Página carregada em:', entry.loadEventEnd - entry.loadEventStart, 'ms');
+                    }
+                });
+            });
+            
+            if ('PerformanceObserver' in window) {
+                performanceObserver.observe({ entryTypes: ['navigation'] });
+            }
+
+            console.log('ROLÊ Entretenimento - Política Antispam carregada com sucesso! 🛡️✨');
+        });
     </script>
 </body>
 </html>
