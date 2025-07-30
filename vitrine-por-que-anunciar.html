@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="anúncio, publicidade, marketing cultural, eventos, arte, música, divulgação" />
     <meta name="description" content="Anuncie com o ROLÊ e conecte sua marca à cultura mais autêntica do Brasil. Alcance um público engajado e apaixonado por arte, música e entretenimento." />
     <meta property="og:title" content="Porque Anunciar com o ROLÊ - Marketing Cultural Autêntico" />
@@ -10,6 +10,11 @@
     <meta property="og:image" content="https://roleentretenimento.com/images/banner-anunciar.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com/porque-anunciar.html" />
+    
+    <!-- Anti-cache: força o navegador a buscar a versão mais recente -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     
     <script>
         if (localStorage.getItem('theme') === 'light') {
@@ -19,239 +24,499 @@
     
     <title>Porque Anunciar com o ROLÊ | Marketing Cultural Autêntico</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="estilo.css" />
     
     <noscript>
-        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+        <div class="no-js-message">
+            Para uma melhor experiência, ative o JavaScript no seu navegador.
+        </div>
     </noscript>
-    
-    <link rel="stylesheet" href="estilo.css" />
 </head>
 
 <body>
-    <section class="bloco-topo">
-        <div class="container-topo">
-            <div class="header-top">
-                <!-- LOGO ESQUERDA -->
-                <a href="index.html">
-                    <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="app-header-content">
+                <a href="index.html" class="app-logo-container">
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" />
                 </a>
+                <div class="app-header-actions">
+                    <!-- Desktop Menu (apenas desktop) -->
+                    <nav class="desktop-menu">
+                        <a href="index.html">Home</a>
+                        <a href="revista.html">Revista</a>
+                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="descontos.html">Descontos</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="quem-somos.html">Quem Somos</a>
+                    </nav>
 
-                <!-- MENU + TEMA (LADO DIREITO) -->
-                <div class="right-top">
-                    <!-- MENU DROPDOWN -->
-                    <div class="dropdown">
-                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-                            Explorar ▼
-                        </button>          
-                        <div class="dropdown-content" id="menu-explorar">
-                            <a href="index.html">Página Inicial</a>
-                            <a href="revista.html">Revista ROLÊ</a>
-                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                            <a href="descontos.html">Descontos</a>
-                            <a href="contato.html">Contato</a>
-                            <a href="quem-somos.html">Quem Somos</a>
-                        </div>
-                    </div>
-
-                    <!-- TEMA -->
-                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                    <!-- Mobile Menu Button (apenas mobile) -->
+                    <button class="menu-toggle" aria-label="Abrir menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" aria-label="Alternar tema">
+                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" />
+                    </button>
                 </div>
             </div>
-            <hr class="linha-topo" />
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <nav class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" />
+                    <button class="menu-close" aria-label="Fechar menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-menu-list">
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
+                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
+                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
+                </ul>
+                <div class="mobile-menu-footer">
+                    <div class="mobile-menu-social">
+                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener">
+                            <img src="images/instagram.svg" alt="Instagram" />
+                        </a>
+                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener">
+                            <img src="images/tiktok.svg" alt="TikTok" />
+                        </a>
+                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener">
+                            <img src="images/whatsapp.svg" alt="WhatsApp" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </section>
 
-    <!-- Conteúdo Principal -->
-    <main class="editorial-completo">
-        <h1 class="titulo-editorial">PORQUE ANUNCIAR COM O ROLÊ</h1>
-        <p class="subtitulo-editorial">Conecte sua marca à cultura mais autêntica e vibrante do Brasil</p>
-
-        <div class="texto-editorial">
-            <p>O ROLÊ não é apenas uma plataforma de entretenimento - somos um movimento cultural que conecta marcas autênticas com um público apaixonado por experiências genuínas. Quando você anuncia conosco, não está apenas comprando espaço publicitário: está se tornando parte de uma comunidade que valoriza arte, música, cultura alternativa e diversidade.</p>
-
-            <div class="destaque-frase">
-                "Seu público não quer apenas produtos. Eles querem marcas que compartilhem seus valores e façam parte de suas experiências mais marcantes."
-            </div>
-
-            <h2>🎯 NOSSO PÚBLICO</h2>
-            <p>Conectamos você com uma audiência única e altamente engajada:</p>
-            
-            <blockquote>
-                <strong>• Jovens de 18 a 35 anos</strong> apaixonados por cultura alternativa<br>
-                <strong>• Frequentadores assíduos</strong> de eventos, festivais e shows<br>
-                <strong>• Consumidores conscientes</strong> que valorizam autenticidade<br>
-                <strong>• Influenciadores culturais</strong> em suas comunidades<br>
-                <strong>• Pessoas com alto poder de engajamento</strong> nas redes sociais
-            </blockquote>
-
-            <h2>🚀 NOSSO ALCANCE</h2>
-            <p>O ROLÊ está presente nas principais cidades culturais do Brasil, conectando diferentes cenas e movimentos. Nossa presença digital cresce exponencialmente, com conteúdo que gera conversas e inspira ações.</p>
-
-            <p>Trabalhamos com <span class="keyword">marketing de influência cultural</span>, onde cada post, cada evento divulgado e cada interação carrega o peso da credibilidade que construímos junto à nossa comunidade.</p>
-
-            <h2>💜 POR QUE ESCOLHER O ROLÊ</h2>
-            
-            <p><strong>AUTENTICIDADE GARANTIDA:</strong> Não fazemos propaganda genérica. Cada parceria é cuidadosamente alinhada com nossos valores e com o que nossa audiência realmente busca.</p>
-
-            <p><strong>ENGAJAMENTO REAL:</strong> Nosso público não apenas consome conteúdo - eles participam, compartilham, comentam e se tornam embaixadores das marcas que apoiamos.</p>
-
-            <p><strong>DIVERSIDADE DE FORMATOS:</strong> De posts orgânicos a eventos exclusivos, criamos experiências memoráveis que conectam sua marca aos momentos mais especiais da vida cultural brasileira.</p>
-
-            <p><strong>MÉTRICAS QUE IMPORTAM:</strong> Não medimos apenas views e cliques. Acompanhamos engajamento, sentimento da audiência, share of voice cultural e, principalmente, conversões reais.</p>
-
-            <div class="destaque-frase">
-                "No ROLÊ, sua marca não interrompe a experiência cultural - ela a enriquece."
-            </div>
-
-            <h2>🎨 FORMATOS DE PARCERIA</h2>
-            
-            <p><strong>CONTEÚDO EDITORIAL:</strong> Matérias especiais, entrevistas e reportagens que posicionam sua marca como parte da narrativa cultural.</p>
-            
-            <p><strong>PATROCÍNIO DE EVENTOS:</strong> Associe sua marca aos rolês mais esperados das principais cidades brasileiras.</p>
-            
-            <p><strong>CAMPANHAS INTEGRADAS:</strong> Estratégias que conectam digital e físico, criando jornadas completas de brand experience.</p>
-            
-            <p><strong>INFLUÊNCIA CULTURAL:</strong> Parcerias com curadores, DJs, artistas e formadores de opinião que fazem parte do nosso ecossistema.</p>
-
-            <h2>🌟 CASES DE SUCESSO</h2>
-            <p>Nossas parcerias já geraram buzz orgânico, aumentaram participação em eventos, criaram conexões emocionais duradouras e, principalmente, converteram audiência em comunidade.</p>
-
-            <p>Trabalhamos com marcas que entendem que <span class="keyword">marketing cultural</span> não é sobre vender produtos - é sobre criar significado, gerar pertencimento e construir relacionamentos genuínos.</p>
-
-            <div class="destaque-frase">
-                "Quando sua marca vira parte da cultura, ela se torna inesquecível."
-            </div>
-
-            <h2>📈 VAMOS CONVERSAR?</h2>
-            <p>Se sua marca busca conexão autêntica com um público apaixonado por cultura, arte e experiências únicas, o ROLÊ é o parceiro ideal.</p>
-
-            <p>Não fazemos apenas publicidade - criamos pontes entre marcas e movimentos culturais, gerando valor real para todos os envolvidos.</p>
-
-            <div class="cta-final">
-                <a href="contato.html" class="btn-destaque">QUERO ANUNCIAR COM O ROLÊ</a>
-            </div>
-
-            <div class="frase-final">
-                Sua marca merece estar onde a cultura acontece de verdade. <br>
-                <span class="keyword">ROLÊ ENTRETENIMENTO</span> - Conectando marcas à cultura mais viva do Brasil.
-            </div>
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">PORQUE ANUNCIAR COM O ROLÊ</h1>
+            <p class="page-subtitle">Conecte sua marca à cultura mais autêntica e vibrante do Brasil</p>
         </div>
-    </main>
 
-    <!-- Seção de Comentários -->
-    <section class="comentarios">
-        <h2>O que você achou? Deixe sua opinião!</h2>
-        <form id="comment-form">
-            <input type="text" id="nome" placeholder="Seu nome" required>
-            <textarea id="comentario" placeholder="Sua opinião sobre anunciar com o ROLÊ..." required></textarea>
-            <button type="submit">Enviar Comentário</button>
-        </form>
-        <div id="comentarios-lista"></div>
-    </section>
+        <!-- Main Content -->
+        <main class="page-container">
+            <!-- Introduction Card -->
+            <div class="content-card">
+                <div class="marketing-intro">
+                    <p>O ROLÊ não é apenas uma plataforma de entretenimento - somos um movimento cultural que conecta marcas autênticas com um público apaixonado por experiências genuínas. Quando você anuncia conosco, não está apenas comprando espaço publicitário: está se tornando parte de uma comunidade que valoriza arte, música, cultura alternativa e diversidade.</p>
 
-    <footer>
-        <div class="footer-links">
-            © 2025 ROLÊ ENTRETENIMENTO ·
-            <a href="politica.html">Política de Privacidade</a> ·
-            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-            <a href="termos-organizador.html">Termos do Organizador</a> ·
-            <a href="politica-spam.html">Política Antispam</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://instagram.com/role.ent" target="_blank">
-                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+                    <div class="marketing-quote">
+                        "Seu público não quer apenas produtos. Eles querem marcas que compartilhem seus valores e façam parte de suas experiências mais marcantes."
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nosso Público Section -->
+            <div class="content-card">
+                <h2 class="section-title">🎯 NOSSO PÚBLICO</h2>
+                <p>Conectamos você com uma audiência única e altamente engajada:</p>
+                
+                <div class="audience-grid">
+                    <div class="audience-item">
+                        <div class="audience-icon">👥</div>
+                        <div class="audience-content">
+                            <h3>Jovens de 18 a 35 anos</h3>
+                            <p>Apaixonados por cultura alternativa</p>
+                        </div>
+                    </div>
+                    <div class="audience-item">
+                        <div class="audience-icon">🎪</div>
+                        <div class="audience-content">
+                            <h3>Frequentadores assíduos</h3>
+                            <p>De eventos, festivais e shows</p>
+                        </div>
+                    </div>
+                    <div class="audience-item">
+                        <div class="audience-icon">🌟</div>
+                        <div class="audience-content">
+                            <h3>Consumidores conscientes</h3>
+                            <p>Que valorizam autenticidade</p>
+                        </div>
+                    </div>
+                    <div class="audience-item">
+                        <div class="audience-icon">📱</div>
+                        <div class="audience-content">
+                            <h3>Influenciadores culturais</h3>
+                            <p>Em suas comunidades</p>
+                        </div>
+                    </div>
+                    <div class="audience-item">
+                        <div class="audience-icon">💜</div>
+                        <div class="audience-content">
+                            <h3>Alto poder de engajamento</h3>
+                            <p>Nas redes sociais</p>
+                        </div>
+                    </div>
+                    <div class="audience-item">
+                        <div class="audience-icon">🎨</div>
+                        <div class="audience-content">
+                            <h3>Criadores de tendências</h3>
+                            <p>Na cena cultural brasileira</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nosso Alcance Section -->
+            <div class="content-card">
+                <h2 class="section-title">🚀 NOSSO ALCANCE</h2>
+                <p>O ROLÊ está presente nas principais cidades culturais do Brasil, conectando diferentes cenas e movimentos. Nossa presença digital cresce exponencialmente, com conteúdo que gera conversas e inspira ações.</p>
+
+                <div class="reach-stats">
+                    <div class="reach-stat-item">
+                        <span class="reach-stat-number">5</span>
+                        <span class="reach-stat-label">Cidades ativas</span>
+                    </div>
+                    <div class="reach-stat-item">
+                        <span class="reach-stat-number">500k+</span>
+                        <span class="reach-stat-label">Alcance mensal</span>
+                    </div>
+                    <div class="reach-stat-item">
+                        <span class="reach-stat-number">2M+</span>
+                        <span class="reach-stat-label">Views mensais</span>
+                    </div>
+                    <div class="reach-stat-item">
+                        <span class="reach-stat-number">22k+</span>
+                        <span class="reach-stat-label">Seguidores engajados</span>
+                    </div>
+                </div>
+
+                <p>Trabalhamos com <strong class="marketing-keyword">marketing de influência cultural</strong>, onde cada post, cada evento divulgado e cada interação carrega o peso da credibilidade que construímos junto à nossa comunidade.</p>
+            </div>
+
+            <!-- Por Que Escolher Section -->
+            <div class="content-card">
+                <h2 class="section-title">💜 POR QUE ESCOLHER O ROLÊ</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✨</div>
+                        <div class="benefit-content">
+                            <h3>AUTENTICIDADE GARANTIDA</h3>
+                            <p>Não fazemos propaganda genérica. Cada parceria é cuidadosamente alinhada com nossos valores e com o que nossa audiência realmente busca.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔥</div>
+                        <div class="benefit-content">
+                            <h3>ENGAJAMENTO REAL</h3>
+                            <p>Nosso público não apenas consome conteúdo - eles participam, compartilham, comentam e se tornam embaixadores das marcas que apoiamos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎨</div>
+                        <div class="benefit-content">
+                            <h3>DIVERSIDADE DE FORMATOS</h3>
+                            <p>De posts orgânicos a eventos exclusivos, criamos experiências memoráveis que conectam sua marca aos momentos mais especiais da vida cultural brasileira.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📊</div>
+                        <div class="benefit-content">
+                            <h3>MÉTRICAS QUE IMPORTAM</h3>
+                            <p>Não medimos apenas views e cliques. Acompanhamos engajamento, sentimento da audiência, share of voice cultural e, principalmente, conversões reais.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="marketing-highlight">
+                    "No ROLÊ, sua marca não interrompe a experiência cultural - ela a enriquece."
+                </div>
+            </div>
+
+            <!-- Formatos de Parceria Section -->
+            <div class="content-card">
+                <h2 class="section-title">🎨 FORMATOS DE PARCERIA</h2>
+                
+                <div class="partnership-formats">
+                    <div class="format-item">
+                        <div class="format-header">
+                            <div class="format-icon">📝</div>
+                            <h3>CONTEÚDO EDITORIAL</h3>
+                        </div>
+                        <p>Matérias especiais, entrevistas e reportagens que posicionam sua marca como parte da narrativa cultural.</p>
+                    </div>
+                    
+                    <div class="format-item">
+                        <div class="format-header">
+                            <div class="format-icon">🎪</div>
+                            <h3>PATROCÍNIO DE EVENTOS</h3>
+                        </div>
+                        <p>Associe sua marca aos rolês mais esperados das principais cidades brasileiras.</p>
+                    </div>
+                    
+                    <div class="format-item">
+                        <div class="format-header">
+                            <div class="format-icon">🚀</div>
+                            <h3>CAMPANHAS INTEGRADAS</h3>
+                        </div>
+                        <p>Estratégias que conectam digital e físico, criando jornadas completas de brand experience.</p>
+                    </div>
+                    
+                    <div class="format-item">
+                        <div class="format-header">
+                            <div class="format-icon">🌟</div>
+                            <h3>INFLUÊNCIA CULTURAL</h3>
+                        </div>
+                        <p>Parcerias com curadores, DJs, artistas e formadores de opinião que fazem parte do nosso ecossistema.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cases de Sucesso Section -->
+            <div class="content-card success-cases">
+                <h2 class="section-title">🌟 CASES DE SUCESSO</h2>
+                <p>Nossas parcerias já geraram buzz orgânico, aumentaram participação em eventos, criaram conexões emocionais duradouras e, principalmente, converteram audiência em comunidade.</p>
+
+                <div class="success-metrics">
+                    <div class="success-metric">
+                        <span class="metric-number">+150%</span>
+                        <span class="metric-label">Aumento no engajamento</span>
+                    </div>
+                    <div class="success-metric">
+                        <span class="metric-number">+200%</span>
+                        <span class="metric-label">Crescimento em eventos</span>
+                    </div>
+                    <div class="success-metric">
+                        <span class="metric-number">85%</span>
+                        <span class="metric-label">Taxa de recall da marca</span>
+                    </div>
+                </div>
+
+                <p>Trabalhamos com marcas que entendem que <strong class="marketing-keyword">marketing cultural</strong> não é sobre vender produtos - é sobre criar significado, gerar pertencimento e construir relacionamentos genuínos.</p>
+
+                <div class="marketing-highlight">
+                    "Quando sua marca vira parte da cultura, ela se torna inesquecível."
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="content-card cta-section">
+                <h2 class="section-title">📈 VAMOS CONVERSAR?</h2>
+                <p>Se sua marca busca conexão autêntica com um público apaixonado por cultura, arte e experiências únicas, o ROLÊ é o parceiro ideal.</p>
+
+                <p>Não fazemos apenas publicidade - criamos pontes entre marcas e movimentos culturais, gerando valor real para todos os envolvidos.</p>
+
+                <div class="cta-buttons">
+                    <a href="contato.html" class="app-btn-hero">QUERO ANUNCIAR COM O ROLÊ</a>
+                    <a href="https://wa.me/5551980704353" class="app-btn-hero secondary" target="_blank" rel="noopener noreferrer">
+                        Falar no WhatsApp
+                    </a>
+                </div>
+
+                <div class="final-message">
+                    <p class="final-text">Sua marca merece estar onde a cultura acontece de verdade.</p>
+                    <p class="brand-signature"><strong>ROLÊ ENTRETENIMENTO</strong> - Conectando marcas à cultura mais viva do Brasil.</p>
+                </div>
+            </div>
+
+            <!-- Comentários Section -->
+            <div class="content-card comments-section">
+                <h2 class="section-title">💬 O que você achou? Deixe sua opinião!</h2>
+                <form class="comment-form" id="comment-form">
+                    <div class="form-group">
+                        <input type="text" id="nome" class="form-input" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="comentario" class="form-textarea" placeholder="Sua opinião sobre anunciar com o ROLÊ..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-button">Enviar Comentário</button>
+                </form>
+                <div id="comentarios-lista" class="comments-list"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="app-footer-links">
+                © 2025 ROLÊ ENTRETENIMENTO ·
+                <a href="politica.html">Política de Privacidade</a> ·
+                <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+                <a href="termos-organizador.html">Termos do Organizador</a> ·
+                <a href="politica-spam.html">Política Antispam</a>
+            </div>
+            <div class="app-social-icons">
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
+                    <img src="images/instagram.svg" alt="Instagram" width="24" height="24" />
+                </a>
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
+                    <img src="images/tiktok.svg" alt="TikTok" width="24" height="24" />
+                </a>
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
+                    <img src="images/whatsapp.svg" alt="WhatsApp" width="24" height="24" />
+                </a>
+            </div>
+        </footer>
+
+        <!-- Bottom Navigation -->
+        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal">
+            <a href="index.html" class="app-nav-item" aria-label="Página inicial">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
             </a>
-            <a href="https://tiktok.com/@role.ent" target="_blank">
-                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span class="app-nav-label">Buscar</span>
             </a>
-            <a href="https://wa.me/5551980704353" target="_blank">
-                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span class="app-nav-label">Revista</span>
             </a>
-        </div>
-    </footer>
+            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                <span class="app-nav-label">Descontos</span>
+            </a>
+            <a href="contato.html" class="app-nav-item active" aria-label="Contato">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span class="app-nav-label">Contato</span>
+            </a>
+        </nav>
 
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // ========== DROPDOWN EXPLORAR ==========
-            const dropdown = document.querySelector('.dropdown');
-            const button = dropdown.querySelector('.dropdown-button');
-            const content = dropdown.querySelector('.dropdown-content');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.menu-close');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-            if (button && content) {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dropdown.classList.toggle('open');
-                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-                });
+            function openMenu() {
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
-                document.addEventListener('click', function (e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', false);
+            function closeMenu() {
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            menuToggle?.addEventListener('click', openMenu);
+            menuClose?.addEventListener('click', closeMenu);
+            
+            // Close menu when clicking overlay
+            mobileMenuOverlay?.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    closeMenu();
+                }
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.querySelector('.theme-toggle-app');
+            const root = document.documentElement;
+
+            // Apply saved theme on load
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                root.setAttribute('data-theme', 'light');
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (root.hasAttribute('data-theme')) {
+                        root.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        root.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
                     }
-                });
-
-                content.addEventListener('click', function (e) {
-                    e.stopPropagation();
                 });
             }
 
-            // ========== SISTEMA DE COMENTÁRIOS ==========
+            // Comments system
             const commentForm = document.getElementById('comment-form');
             const commentsList = document.getElementById('comentarios-lista');
             let comments = [];
 
             function renderComments() {
                 commentsList.innerHTML = comments.map((comment, index) => `
-                    <div class="comentario" style="background: #1a1a1a; padding: 1rem; margin: 1rem 0; border-radius: 8px; border-left: 3px solid var(--highlight);">
-                        <strong style="color: var(--highlight);">${comment.nome}</strong>
-                        <p style="margin: 0.5rem 0; color: #f3f3f7;">${comment.texto}</p>
-                        <small style="color: #888;">${comment.data}</small>
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <strong class="comment-author">${comment.nome}</strong>
+                            <small class="comment-date">${comment.data}</small>
+                        </div>
+                        <p class="comment-text">${comment.texto}</p>
                     </div>
                 `).join('');
             }
 
-            commentForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const nome = document.getElementById('nome').value.trim();
-                const comentario = document.getElementById('comentario').value.trim();
-                
-                if (nome && comentario) {
-                    const novoComentario = {
-                        nome: nome,
-                        texto: comentario,
-                        data: new Date().toLocaleDateString('pt-BR')
-                    };
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
                     
-                    comments.unshift(novoComentario);
-                    renderComments();
+                    const nome = document.getElementById('nome').value.trim();
+                    const comentario = document.getElementById('comentario').value.trim();
                     
-                    // Limpar formulário
-                    document.getElementById('nome').value = '';
-                    document.getElementById('comentario').value = '';
-                    
-                    // Feedback visual
-                    const button = commentForm.querySelector('button');
-                    const originalText = button.textContent;
-                    button.textContent = 'Comentário enviado!';
-                    button.style.background = '#4CAF50';
-                    
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.style.background = '';
-                    }, 2000);
-                }
-            });
+                    if (nome && comentario) {
+                        const novoComentario = {
+                            nome: nome,
+                            texto: comentario,
+                            data: new Date().toLocaleDateString('pt-BR')
+                        };
+                        
+                        comments.unshift(novoComentario);
+                        renderComments();
+                        
+                        // Clear form
+                        document.getElementById('nome').value = '';
+                        document.getElementById('comentario').value = '';
+                        
+                        // Visual feedback
+                        const button = commentForm.querySelector('button');
+                        const originalText = button.textContent;
+                        button.textContent = 'Comentário enviado!';
+                        button.style.background = 'var(--accent-green)';
+                        
+                        setTimeout(() => {
+                            button.textContent = originalText;
+                            button.style.background = '';
+                        }, 2000);
+                    }
+                });
+            }
 
-            // ========== ANIMAÇÕES DE ENTRADA ==========
+            // Scroll animations
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
 
-            const observer = new IntersectionObserver((entries) => {
+            const fadeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
@@ -260,61 +525,629 @@
                 });
             }, observerOptions);
 
-            // Observar elementos para animação
-            document.querySelectorAll('.texto-editorial h2, .destaque-frase, .comentarios').forEach(element => {
+            // Animate content cards and elements
+            const animatedElements = document.querySelectorAll('.content-card, .audience-item, .benefit-item, .format-item');
+            animatedElements.forEach((element, index) => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
-                element.style.transition = 'all 0.6s ease';
-                observer.observe(element);
+                element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                fadeObserver.observe(element);
+            });
+
+            // Stats counter animation
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        animateReachStats(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statNumbers = document.querySelectorAll('.reach-stat-number, .metric-number');
+            statNumbers.forEach(stat => statsObserver.observe(stat));
+
+            function animateReachStats(element) {
+                const text = element.textContent;
+                const hasPlus = text.includes('+');
+                const hasPercent = text.includes('%');
+                const hasK = text.includes('k');
+                const hasM = text.includes('M');
+                
+                let target = parseFloat(text.replace(/[+%kM]/g, ''));
+                let current = 0;
+                let suffix = '';
+                
+                if (hasPlus) suffix += '+';
+                if (hasK) suffix += 'k';
+                if (hasM) suffix += 'M';
+                if (hasPercent) suffix += '%';
+                
+                const increment = target / 30;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current) + suffix;
+                }, 50);
+            }
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.style.display = 'flex';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
+
+            backToTop?.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Navigation active state management
+            const navItems = document.querySelectorAll('.app-nav-item');
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            navItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (href.includes('contato') || href.includes('anunciar')) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
             });
         });
+    </script>
 
-        // ========== TOGGLE TEMA ==========
-        const lampada = document.querySelector('.lampada-toggle');
-        const root = document.documentElement;
-
-        // Aplica o tema salvo ao carregar
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            root.setAttribute('data-theme', 'light');
-            lampada.setAttribute('aria-pressed', 'true');
-        } else {
-            root.removeAttribute('data-theme');
-            lampada.setAttribute('aria-pressed', 'false');
+    <style>
+        /* Estilos específicos para a página de Marketing */
+        .marketing-intro {
+            text-align: center;
+            padding: 2rem 0;
         }
 
-        // Alterna o tema ao clicar na lâmpada
-        lampada.addEventListener('click', () => {
-            if (root.hasAttribute('data-theme')) {
-                root.removeAttribute('data-theme');
-                lampada.setAttribute('aria-pressed', 'false');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                root.setAttribute('data-theme', 'light');
-                lampada.setAttribute('aria-pressed', 'true');
-                localStorage.setItem('theme', 'light');
+        .marketing-quote {
+            font-size: 1.25rem;
+            font-weight: 600;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: italic;
+            line-height: 1.4;
+            margin-top: 2rem;
+            padding: 2rem;
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        @media (min-width: 769px) {
+            .marketing-quote {
+                font-size: 1.5rem;
             }
-        });
+        }
 
-        // ========== BOTÃO VOLTAR AO TOPO ==========
-        const voltarTopo = document.createElement('button');
-        voltarTopo.className = 'voltar-topo';
-        voltarTopo.innerHTML = '↑';
-        voltarTopo.setAttribute('aria-label', 'Voltar ao topo');
-        voltarTopo.style.display = 'none';
-        document.body.appendChild(voltarTopo);
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                voltarTopo.style.display = 'block';
-            } else {
-                voltarTopo.style.display = 'none';
+        @media (min-width: 769px) {
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 2rem;
             }
-        });
+        }
 
-        voltarTopo.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+        /* Audience Grid */
+        .audience-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .audience-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .audience-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+        }
+
+        .audience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-purple);
+        }
+
+        .audience-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .audience-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .audience-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Reach Stats */
+        .reach-stats {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .reach-stats {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 1.5rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .reach-stats {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .reach-stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .reach-stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        @media (min-width: 769px) {
+            .reach-stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        .reach-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        @media (min-width: 769px) {
+            .reach-stat-label {
+                font-size: 0.9rem;
+            }
+        }
+
+        .marketing-keyword {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .benefit-item {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-purple);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .marketing-highlight {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: italic;
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 2px solid var(--accent-purple);
+            border-radius: 16px;
+            background-color: rgba(139, 92, 246, 0.05);
+        }
+
+        @media (min-width: 769px) {
+            .marketing-highlight {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Partnership Formats */
+        .partnership-formats {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .partnership-formats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .partnership-formats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .format-item {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+        }
+
+        .format-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-purple);
+        }
+
+        .format-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .format-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .format-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .format-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Success Cases */
+        .success-cases {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.03));
+        }
+
+        .success-metrics {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .success-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .success-metrics {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .success-metric {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .metric-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 2px solid var(--accent-purple);
+            text-align: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .app-btn-hero.secondary {
+            background: transparent;
+            border: 2px solid var(--accent-purple);
+            color: var(--accent-purple);
+        }
+
+        .app-btn-hero.secondary:hover {
+            background: var(--accent-purple);
+            color: white;
+        }
+
+        .final-message {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .final-text {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .brand-signature {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .brand-signature strong {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            background: var(--bg-secondary);
+        }
+
+        .comment-form {
+            margin-bottom: 3rem;
+        }
+
+        .comments-list {
+            margin-top: 2rem;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-purple);
+            transition: var(--transition-normal);
+        }
+
+        .comment-item:hover {
+            transform: translateX(4px);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-author {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+
+        .comment-date {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .comment-text {
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-normal);
+            z-index: 1000;
+        }
+
+        @media (min-width: 769px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 40px;
+            }
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Responsividade aprimorada */
+        @media (max-width: 480px) {
+            .marketing-quote,
+            .marketing-highlight {
+                padding: 1.5rem;
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .app-btn-hero {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* Animações específicas */
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .audience-item:nth-child(odd) {
+            animation: slideInFromLeft 0.6s ease forwards;
+        }
+
+        .audience-item:nth-child(even) {
+            animation: slideInFromLeft 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        /* Estados de hover aprimorados */
+        .benefit-item:hover .benefit-icon {
+            transform: scale(1.1);
+            transition: var(--transition-fast);
+        }
+
+        .format-item:hover .format-icon {
+            transform: rotate(5deg) scale(1.1);
+            transition: var(--transition-fast);
+        }
+
+        .audience-item:hover .audience-icon {
+            transform: scale(1.1);
+            transition: var(--transition-fast);
+        }
+    </style>
 </body>
 </html>
