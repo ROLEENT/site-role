@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Termos de uso da plataforma ROLÊ para produtores, coletivos e organizadores de eventos culturais." />
     <meta name="keywords" content="termos organizador, produtores, coletivos, eventos, cultura, parceria, divulgação" />
     <meta property="og:title" content="ROLÊ ENTRETENIMENTO — Termos do Organizador" />
@@ -19,285 +19,562 @@
     
     <title>ROLÊ ENTRETENIMENTO — Termos do Organizador</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="estilo.css" />
     
     <noscript>
-        <p style="text-align:center; color:red;">Para uma melhor experiência, ative o JavaScript no seu navegador.</p>
+        <div class="no-js-message">
+            Para uma melhor experiência, ative o JavaScript no seu navegador.
+        </div>
     </noscript>
-    
-    <link rel="stylesheet" href="estilo.css" />
 </head>
 
 <body>
-    <section class="bloco-topo">
-        <div class="container-topo">
-            <div class="header-top">
-                <!-- LOGO ESQUERDA -->
-                <img src="images/logo-role.png" alt="Logotipo da marca ROLÊ Entretenimento" class="logo" />
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="app-header-content">
+                <a href="index.html" class="app-logo-container">
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" />
+                </a>
+                <div class="app-header-actions">
+                    <!-- Desktop Menu -->
+                    <nav class="desktop-menu">
+                        <a href="index.html">Home</a>
+                        <a href="revista.html">Revista</a>
+                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="descontos.html">Descontos</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="quem-somos.html">Quem Somos</a>
+                    </nav>
 
-                <!-- MENU + TEMA (LADO DIREITO) -->
-                <div class="right-top">
-                    <!-- MENU DROPDOWN -->
-                    <div class="dropdown">
-                        <button class="dropdown-button" aria-haspopup="true" aria-controls="menu-explorar" aria-expanded="false">
-                            Explorar ▼
-                        </button>          
-                        <div class="dropdown-content" id="menu-explorar">
-                            <a href="index.html">Página Inicial</a>
-                            <a href="revista.html">Revista ROLÊ</a>
-                            <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                            <a href="descontos.html">Descontos</a>
-                            <a href="contato.html">Contato</a>
-                            <a href="quem-somos.html">Quem Somos</a>
-                        </div>
-                    </div>
-
-                    <!-- TEMA -->
-                    <img src="images/theme-toggle.gif" alt="Alternar tema" class="lampada-toggle" role="button" tabindex="0" aria-pressed="false" />
+                    <!-- Mobile Menu Button -->
+                    <button class="menu-toggle" aria-label="Abrir menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" aria-label="Alternar tema">
+                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" />
+                    </button>
                 </div>
             </div>
-            <hr class="linha-topo" />
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <nav class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" />
+                    <button class="menu-close" aria-label="Fechar menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-menu-list">
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
+                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
+                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
+                </ul>
+                <div class="mobile-menu-footer">
+                    <div class="mobile-menu-social">
+                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener">
+                            <img src="images/instagram.svg" alt="Instagram" />
+                        </a>
+                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener">
+                            <img src="images/tiktok.svg" alt="TikTok" />
+                        </a>
+                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener">
+                            <img src="images/whatsapp.svg" alt="WhatsApp" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </section>
 
-    <!-- Conteúdo Principal -->
-    <main class="editorial-completo fade-in">
-        <div class="texto-editorial">
-            <h1 class="titulo-editorial">Termos do Organizador</h1>
-            <p class="subtitulo-editorial">condições para divulgar eventos na plataforma ROLÊ</p>
-
-            <div class="destaque-frase">
-                "Juntos, fortalecemos a cena cultural brasileira com transparência e parceria."
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Termos do Organizador</h1>
+                <p class="page-subtitle">Condições para divulgar eventos na plataforma ROLÊ</p>
             </div>
 
-            <p>Estes Termos regulam a relação entre o <strong class="keyword">ROLÊ ENTRETENIMENTO</strong> e os organizadores de eventos que utilizam nossa plataforma para promover suas produções culturais.</p>
-
-            <p>Se você é <strong class="keyword">produtor</strong>, <strong class="keyword">coletivo</strong>, <strong class="keyword">casa de shows</strong> ou <strong class="keyword">artista independente</strong>, estes termos definem como podemos trabalhar juntos para levar cultura de qualidade ao público brasileiro.</p>
-
-            <h2>1. Cadastro e Envio de Informações</h2>
-            <p>Para fazer parte da nossa rede de parceiros culturais, os organizadores devem:</p>
-
-            <blockquote>
-                • Fornecer informações <strong>precisas, atualizadas e verdadeiras</strong> sobre seus eventos<br>
-                • Submeter materiais promocionais de alta qualidade<br>
-                • Respeitar prazos de envio estabelecidos<br>
-                • Manter dados de contato sempre atualizados<br>
-                • Seguir as diretrizes de formato e conteúdo
-            </blockquote>
-
-            <p>O ROLÊ se reserva o direito de <strong class="keyword">curadoria editorial</strong>, podendo recusar conteúdos que não estejam alinhados com nossa linha editorial ou que não atendam aos padrões de qualidade estabelecidos.</p>
-
-            <div class="destaque-frase">
-                "Qualidade é nossa prioridade, não quantidade."
+            <!-- Featured Quote -->
+            <div class="app-featured-banner">
+                <div class="app-banner-content">
+                    <div class="app-banner-tag">PARCERIA CULTURAL</div>
+                    <h3 class="app-banner-title">"Juntos, fortalecemos a cena cultural brasileira"</h3>
+                    <p class="app-banner-subtitle">Transparência e parceria para uma cultura mais forte e diversa</p>
+                </div>
             </div>
 
-            <h2>2. Processo de Curadoria</h2>
-            <p>Nossa equipe editorial analisa cada submissão considerando:</p>
-
-            <blockquote>
-                • <strong>Relevância cultural:</strong> Alinhamento com a cena alternativa<br>
-                • <strong>Qualidade artística:</strong> Nível dos artistas e produção<br>
-                • <strong>Originalidade:</strong> Proposta diferenciada no mercado<br>
-                • <strong>Impacto social:</strong> Contribuição para a comunidade<br>
-                • <strong>Viabilidade:</strong> Capacidade de realização do evento
-            </blockquote>
-
-            <p>A aprovação não é automática e depende da disponibilidade de espaço editorial e alinhamento estratégico.</p>
-
-            <h2>3. Responsabilidade pelos Eventos</h2>
-            <p>O organizador é o <strong class="keyword">único responsável</strong> pela realização do evento, incluindo mas não se limitando a:</p>
-
-            <blockquote>
-                • <strong>Questões legais:</strong> Licenças, alvarás e documentação<br>
-                • <strong>Segurança:</strong> Estrutura adequada e planos de emergência<br>
-                • <strong>Infraestrutura:</strong> Som, iluminação e espaço físico<br>
-                • <strong>Equipe:</strong> Staff, segurança e produção<br>
-                • <strong>Compliance:</strong> Cumprimento de normas sanitárias e municipais
-            </blockquote>
-
-            <p><strong>Importante:</strong> O ROLÊ atua exclusivamente como <strong class="keyword">plataforma de divulgação</strong> e não se responsabiliza por ocorrências, acidentes, prejuízos ou problemas durante os eventos.</p>
-
-            <h2>4. Direitos de Imagem e Divulgação</h2>
-            <p>Ao submeter materiais para divulgação, o organizador:</p>
-
-            <blockquote>
-                • <strong>Declara ter todos os direitos</strong> sobre fotos, textos, vídeos e artes<br>
-                • <strong>Autoriza o uso</strong> nas mídias digitais do ROLÊ<br>
-                • <strong>Garante não violação</strong> de direitos autorais de terceiros<br>
-                • <strong>Permite adaptações</strong> para adequação ao formato da plataforma<br>
-                • <strong>Concede licença</strong> para uso em peças promocionais do ROLÊ
-            </blockquote>
-
-            <p>Esta autorização é <strong class="keyword">gratuita e irrevogável</strong> para fins de divulgação cultural, respeitando sempre a autoria original.</p>
-
-            <h2>5. Política de Cancelamentos</h2>
-            <p>Em caso de cancelamento de evento já divulgado:</p>
-
-            <blockquote>
-                • <strong>Notificação imediata:</strong> Avisar o ROLÊ o mais rápido possível<br>
-                • <strong>Justificativa:</strong> Explicar o motivo do cancelamento<br>
-                • <strong>Comunicação:</strong> Auxiliar na comunicação ao público<br>
-                • <strong>Responsabilidade:</strong> Assumir todas as consequências<br>
-                • <strong>Reputação:</strong> Manter transparência com o público
-            </blockquote>
-
-            <p><strong>Atenção:</strong> Não há reembolso de taxas de divulgação após a publicação do conteúdo, salvo exceções previamente acordadas por escrito.</p>
-
-            <h2>6. Ética e Conduta Profissional</h2>
-            <p>Esperamos que todos os parceiros mantenham os mais altos padrões éticos. O ROLÊ se reserva o direito de <strong class="keyword">encerrar parcerias</strong> com organizadores que:</p>
-
-            <blockquote>
-                • Desrespeitem públicos, artistas ou colaboradores<br>
-                • Promovam discursos de ódio ou discriminação<br>
-                • Pratiquem assédio de qualquer natureza<br>
-                • Danifiquem espaços ou equipamentos<br>
-                • Tenham práticas trabalhistas inadequadas<br>
-                • Violem direitos autorais ou propriedade intelectual
-            </blockquote>
-
-            <div class="destaque-frase">
-                "Respeito e profissionalismo são inegociáveis."
+            <!-- Introduction -->
+            <div class="content-card">
+                <p>Estes Termos regulam a relação entre o <strong>ROLÊ ENTRETENIMENTO</strong> e os organizadores de eventos que utilizam nossa plataforma para promover suas produções culturais.</p>
+                
+                <p>Se você é <strong>produtor</strong>, <strong>coletivo</strong>, <strong>casa de shows</strong> ou <strong>artista independente</strong>, estes termos definem como podemos trabalhar juntos para levar cultura de qualidade ao público brasileiro.</p>
             </div>
 
-            <h2>7. Política de Parceria</h2>
-            <p>Oferecemos diferentes níveis de parceria:</p>
+            <!-- Terms Sections -->
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">1. Cadastro e Envio de Informações</h2>
+                <p>Para fazer parte da nossa rede de parceiros culturais, os organizadores devem:</p>
+                
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 12px; margin: 16px 0; border-left: 4px solid var(--accent-purple);">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Fornecer informações <strong>precisas, atualizadas e verdadeiras</strong> sobre seus eventos</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Submeter materiais promocionais de alta qualidade</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Respeitar prazos de envio estabelecidos</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Manter dados de contato sempre atualizados</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Seguir as diretrizes de formato e conteúdo</span>
+                    </div>
+                </div>
 
-            <blockquote>
-                • <strong>Parceria Básica:</strong> Divulgação pontual de eventos<br>
-                • <strong>Parceria Estratégica:</strong> Cobertura editorial completa<br>
-                • <strong>Parceria Premium:</strong> Produção de conteúdo exclusivo<br>
-                • <strong>Parceria Institucional:</strong> Colaboração de longo prazo
-            </blockquote>
-
-            <p>Cada nível tem benefícios específicos e critérios de elegibilidade diferenciados.</p>
-
-            <h2>8. Propriedade Intelectual</h2>
-            <p>O organizador garante que:</p>
-
-            <blockquote>
-                • Possui todos os direitos sobre o conteúdo enviado<br>
-                • Não viola propriedade intelectual de terceiros<br>
-                • Tem autorização para uso de imagens de pessoas<br>
-                • Respeita direitos autorais de músicas e obras<br>
-                • Assume responsabilidade por eventuais violações
-            </blockquote>
-
-            <h2>9. Modificações e Atualizações</h2>
-            <p>Estes termos podem ser atualizados periodicamente. Mudanças significativas serão comunicadas através de:</p>
-
-            <blockquote>
-                • E-mail para organizadores cadastrados<br>
-                • Aviso em nossas redes sociais<br>
-                • Comunicação direta via WhatsApp<br>
-                • Publicação destacada no site
-            </blockquote>
-
-            <h2>10. Contato e Suporte para Organizadores</h2>
-            <p>Dúvidas sobre parcerias ou quer divulgar seu evento? Entre em contato:</p>
-
-            <ul class="lista-contato">
-                <li>
-                    <img src="images/whatsapp.svg" alt="WhatsApp" class="icon-contato" />
-                    <a href="https://wa.me/5551980704353" target="_blank">WhatsApp: (51) 98070-4353</a>
-                </li>
-                <li>
-                    <img src="images/instagram.svg" alt="Instagram" class="icon-contato" />
-                    <a href="https://instagram.com/role.ent" target="_blank">@role.ent</a>
-                </li>
-                <li>
-                    <span>📧 Ou acesse nossa <a href="contato.html">página de contato</a></span>
-                </li>
-            </ul>
-
-            <p><strong>Para organizadores:</strong> Ao entrar em contato, mencione que você é um organizador de eventos e deseja saber sobre parcerias. Isso agilizará nosso atendimento!</p>
-
-            <div class="frase-final">
-                Vamos juntos fortalecer a cena cultural brasileira! 🎭✨🎵
+                <p>O ROLÊ se reserva o direito de <strong style="color: var(--accent-purple);">curadoria editorial</strong>, podendo recusar conteúdos que não estejam alinhados com nossa linha editorial ou que não atendam aos padrões de qualidade estabelecidos.</p>
             </div>
 
-            <div class="cta-final">
-                <a href="contato.html" class="btn-destaque">Quero ser Parceiro</a>
+            <!-- Quality Quote -->
+            <div style="text-align: center; padding: 24px 20px; margin: 32px 20px; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05)); border-radius: 16px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                <h3 style="color: var(--accent-purple); font-size: 24px; margin-bottom: 8px;">"Qualidade é nossa prioridade, não quantidade."</h3>
+            </div>
+
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">2. Processo de Curadoria</h2>
+                <p>Nossa equipe editorial analisa cada submissão considerando:</p>
+                
+                <div class="app-stats-grid" style="margin: 24px 0;">
+                    <div class="app-stat-item">
+                        <span style="font-size: 32px; margin-bottom: 8px;">🎯</span>
+                        <span style="font-weight: 600; color: var(--text-primary);">Relevância Cultural</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Alinhamento com a cena alternativa</span>
+                    </div>
+                    <div class="app-stat-item">
+                        <span style="font-size: 32px; margin-bottom: 8px;">⭐</span>
+                        <span style="font-weight: 600; color: var(--text-primary);">Qualidade Artística</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Nível dos artistas e produção</span>
+                    </div>
+                    <div class="app-stat-item">
+                        <span style="font-size: 32px; margin-bottom: 8px;">💡</span>
+                        <span style="font-weight: 600; color: var(--text-primary);">Originalidade</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Proposta diferenciada no mercado</span>
+                    </div>
+                    <div class="app-stat-item">
+                        <span style="font-size: 32px; margin-bottom: 8px;">🤝</span>
+                        <span style="font-weight: 600; color: var(--text-primary);">Impacto Social</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Contribuição para a comunidade</span>
+                    </div>
+                </div>
+
+                <p>A aprovação não é automática e depende da disponibilidade de espaço editorial e alinhamento estratégico.</p>
+            </div>
+
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">3. Responsabilidade pelos Eventos</h2>
+                <p>O organizador é o <strong style="color: var(--accent-red);">único responsável</strong> pela realização do evento, incluindo mas não se limitando a:</p>
+                
+                <div style="display: grid; gap: 16px; margin: 20px 0;">
+                    <div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="color: var(--accent-red); font-size: 20px;">⚖️</span>
+                        <div>
+                            <strong>Questões legais:</strong> Licenças, alvarás e documentação
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="color: var(--accent-orange); font-size: 20px;">🛡️</span>
+                        <div>
+                            <strong>Segurança:</strong> Estrutura adequada e planos de emergência
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="color: var(--accent-blue); font-size: 20px;">🏗️</span>
+                        <div>
+                            <strong>Infraestrutura:</strong> Som, iluminação e espaço físico
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="color: var(--accent-green); font-size: 20px;">👥</span>
+                        <div>
+                            <strong>Equipe:</strong> Staff, segurança e produção
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="color: var(--accent-purple); font-size: 20px;">📋</span>
+                        <div>
+                            <strong>Compliance:</strong> Cumprimento de normas sanitárias e municipais
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05)); padding: 20px; border-radius: 12px; border-left: 4px solid var(--accent-red); margin: 20px 0;">
+                    <p><strong>Importante:</strong> O ROLÊ atua exclusivamente como <strong style="color: var(--accent-purple);">plataforma de divulgação</strong> e não se responsabiliza por ocorrências, acidentes, prejuízos ou problemas durante os eventos.</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">4. Direitos de Imagem e Divulgação</h2>
+                <p>Ao submeter materiais para divulgação, o organizador:</p>
+                
+                <div style="background: var(--bg-secondary); padding: 20px; border-radius: 12px; margin: 16px 0;">
+                    <div style="margin-bottom: 12px;">
+                        <span style="color: var(--accent-blue);">📸</span> <strong>Declara ter todos os direitos</strong> sobre fotos, textos, vídeos e artes
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <span style="color: var(--accent-green);">✅</span> <strong>Autoriza o uso</strong> nas mídias digitais do ROLÊ
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <span style="color: var(--accent-red);">🚫</span> <strong>Garante não violação</strong> de direitos autorais de terceiros
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <span style="color: var(--accent-orange);">🎨</span> <strong>Permite adaptações</strong> para adequação ao formato da plataforma
+                    </div>
+                    <div>
+                        <span style="color: var(--accent-purple);">📝</span> <strong>Concede licença</strong> para uso em peças promocionais do ROLÊ
+                    </div>
+                </div>
+
+                <p>Esta autorização é <strong style="color: var(--accent-purple);">gratuita e irrevogável</strong> para fins de divulgação cultural, respeitando sempre a autoria original.</p>
+            </div>
+
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">5. Política de Cancelamentos</h2>
+                <p>Em caso de cancelamento de evento já divulgado:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(239, 68, 68, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-red);">⚡</span>
+                        <span><strong>Notificação imediata:</strong> Avisar o ROLÊ o mais rápido possível</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(245, 158, 11, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-orange);">📝</span>
+                        <span><strong>Justificativa:</strong> Explicar o motivo do cancelamento</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(59, 130, 246, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-blue);">📢</span>
+                        <span><strong>Comunicação:</strong> Auxiliar na comunicação ao público</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(139, 92, 246, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-purple);">🎯</span>
+                        <span><strong>Responsabilidade:</strong> Assumir todas as consequências</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-green);">🤝</span>
+                        <span><strong>Reputação:</strong> Manter transparência com o público</span>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05)); padding: 16px; border-radius: 12px; border-left: 4px solid var(--accent-orange);">
+                    <p><strong>Atenção:</strong> Não há reembolso de taxas de divulgação após a publicação do conteúdo, salvo exceções previamente acordadas por escrito.</p>
+                </div>
+            </div>
+
+            <!-- Ethics Quote -->
+            <div style="text-align: center; padding: 24px 20px; margin: 32px 20px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.05)); border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                <h3 style="color: var(--accent-green); font-size: 24px; margin-bottom: 8px;">"Respeito e profissionalismo são inegociáveis."</h3>
+            </div>
+
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">6. Ética e Conduta Profissional</h2>
+                <p>Esperamos que todos os parceiros mantenham os mais altos padrões éticos. O ROLÊ se reserva o direito de <strong style="color: var(--accent-red);">encerrar parcerias</strong> com organizadores que:</p>
+                
+                <div style="display: grid; gap: 12px; margin: 20px 0;">
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--accent-red); border-radius: 8px; background: rgba(239, 68, 68, 0.05);">
+                        <span style="color: var(--accent-red);">❌</span>
+                        <span>Desrespeitem públicos, artistas ou colaboradores</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--accent-red); border-radius: 8px; background: rgba(239, 68, 68, 0.05);">
+                        <span style="color: var(--accent-red);">❌</span>
+                        <span>Promovam discursos de ódio ou discriminação</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--accent-red); border-radius: 8px; background: rgba(239, 68, 68, 0.05);">
+                        <span style="color: var(--accent-red);">❌</span>
+                        <span>Pratiquem assédio de qualquer natureza</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--accent-red); border-radius: 8px; background: rgba(239, 68, 68, 0.05);">
+                        <span style="color: var(--accent-red);">❌</span>
+                        <span>Danifiquem espaços ou equipamentos</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--accent-red); border-radius: 8px; background: rgba(239, 68, 68, 0.05);">
+                        <span style="color: var(--accent-red);">❌</span>
+                        <span>Tenham práticas trabalhistas inadequadas</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--accent-red); border-radius: 8px; background: rgba(239, 68, 68, 0.05);">
+                        <span style="color: var(--accent-red);">❌</span>
+                        <span>Violem direitos autorais ou propriedade intelectual</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">7. Política de Parceria</h2>
+                <p>Oferecemos diferentes níveis de parceria:</p>
+                
+                <div class="app-stats-grid" style="margin: 24px 0;">
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));">
+                        <span style="font-size: 20px; margin-bottom: 8px;">🥉</span>
+                        <span style="font-weight: 600; color: var(--accent-purple);">Parceria Básica</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Divulgação pontual de eventos</span>
+                    </div>
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));">
+                        <span style="font-size: 20px; margin-bottom: 8px;">🥈</span>
+                        <span style="font-weight: 600; color: var(--accent-blue);">Parceria Estratégica</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Cobertura editorial completa</span>
+                    </div>
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));">
+                        <span style="font-size: 20px; margin-bottom: 8px;">🥇</span>
+                        <span style="font-weight: 600; color: var(--accent-orange);">Parceria Premium</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Produção de conteúdo exclusivo</span>
+                    </div>
+                    <div class="app-stat-item" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.05));">
+                        <span style="font-size: 20px; margin-bottom: 8px;">💎</span>
+                        <span style="font-weight: 600; color: var(--accent-pink);">Parceria Institucional</span>
+                        <span style="font-size: 12px; color: var(--text-secondary);">Colaboração de longo prazo</span>
+                    </div>
+                </div>
+
+                <p>Cada nível tem benefícios específicos e critérios de elegibilidade diferenciados.</p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="content-card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05)); border: 1px solid rgba(139, 92, 246, 0.2);">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">10. Contato e Suporte para Organizadores</h2>
+                <p style="margin-bottom: 20px;">Dúvidas sobre parcerias ou quer divulgar seu evento? Entre em contato:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 16px; margin: 20px 0;">
+                    <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" 
+                       style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <img src="images/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px;" />
+                        <span><strong>WhatsApp:</strong> (51) 98070-4353</span>
+                    </a>
+                    
+                    <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer"
+                       style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <img src="images/instagram.svg" alt="Instagram" style="width: 24px; height: 24px;" />
+                        <span><strong>Instagram:</strong> @role.ent</span>
+                    </a>
+                    
+                    <a href="contato.html"
+                       style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--bg-card); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: var(--transition-normal);"
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)'">
+                        <span style="font-size: 20px;">📧</span>
+                        <span><strong>Página de Contato:</strong> Formulário completo</span>
+                    </a>
+                </div>
+
+                <div style="background: var(--bg-card); padding: 16px; border-radius: 12px; border-left: 4px solid var(--accent-green);">
+                    <p><strong>Para organizadores:</strong> Ao entrar em contato, mencione que você é um organizador de eventos e deseja saber sobre parcerias. Isso agilizará nosso atendimento!</p>
+                </div>
+            </div>
+
+            <!-- CTA Final -->
+            <div style="text-align: center; margin: 40px 20px;">
+                <div style="font-size: 32px; margin-bottom: 16px;">🎭✨🎵</div>
+                <h3 style="color: var(--accent-purple); font-size: 24px; margin-bottom: 20px;">Vamos juntos fortalecer a cena cultural brasileira!</h3>
+                <a href="contato.html" 
+                   style="background: var(--gradient-primary); color: white; padding: 16px 32px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 16px; display: inline-block; transition: var(--transition-normal); text-transform: uppercase; letter-spacing: 0.5px;"
+                   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(139, 92, 246, 0.4)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    Quero ser Parceiro
+                </a>
+            </div>
+
+            <!-- Additional Terms -->
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">8. Propriedade Intelectual</h2>
+                <p>O organizador garante que:</p>
+                
+                <div style="display: grid; gap: 12px; margin: 20px 0;">
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Possui todos os direitos sobre o conteúdo enviado</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Não viola propriedade intelectual de terceiros</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Tem autorização para uso de imagens de pessoas</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Respeita direitos autorais de músicas e obras</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px;">
+                        <span style="color: var(--accent-green);">✅</span>
+                        <span>Assume responsabilidade por eventuais violações</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2 style="color: var(--accent-purple); margin-bottom: 16px;">9. Modificações e Atualizações</h2>
+                <p>Estes termos podem ser atualizados periodicamente. Mudanças significativas serão comunicadas através de:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0;">
+                    <div style="text-align: center; padding: 20px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="font-size: 32px; display: block; margin-bottom: 8px;">📧</span>
+                        <strong>E-mail</strong>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Para organizadores cadastrados</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="font-size: 32px; display: block; margin-bottom: 8px;">📱</span>
+                        <strong>Redes Sociais</strong>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Aviso em nossas redes sociais</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="font-size: 32px; display: block; margin-bottom: 8px;">💬</span>
+                        <strong>WhatsApp</strong>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Comunicação direta via WhatsApp</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: var(--bg-secondary); border-radius: 12px;">
+                        <span style="font-size: 32px; display: block; margin-bottom: 8px;">🌐</span>
+                        <strong>Site</strong>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Publicação destacada no site</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
 
-    <!-- Botão Voltar ao Topo -->
-    <button class="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo">
-        ↑
-    </button>
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="app-footer-links">
+                © 2025 ROLÊ ENTRETENIMENTO ·
+                <a href="politica.html">Política de Privacidade</a> ·
+                <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+                <a href="termos-organizador.html">Termos do Organizador</a> ·
+                <a href="politica-spam.html">Política Antispam</a>
+            </div>
+            <div class="app-social-icons">
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
+                    <img src="images/instagram.svg" alt="Instagram" width="24" height="24" />
+                </a>
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
+                    <img src="images/tiktok.svg" alt="TikTok" width="24" height="24" />
+                </a>
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
+                    <img src="images/whatsapp.svg" alt="WhatsApp" width="24" height="24" />
+                </a>
+            </div>
+        </footer>
 
-    <footer>
-        <div class="footer-links">
-            © 2025 ROLÊ ENTRETENIMENTO ·
-            <a href="politica.html">Política de Privacidade</a> ·
-            <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
-            <a href="termos-organizador.html">Termos do Organizador</a> ·
-            <a href="politica-spam.html">Política Antispam</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer">
-                <img src="images/instagram.svg" alt="Instagram ROLÊ" />
+        <!-- Bottom Navigation (Mobile) -->
+        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal">
+            <a href="index.html" class="app-nav-item" aria-label="Página inicial">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
             </a>
-            <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer">
-                <img src="images/tiktok.svg" alt="TikTok ROLÊ" />
+            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span class="app-nav-label">Buscar</span>
             </a>
-            <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer">
-                <img src="images/whatsapp.svg" alt="WhatsApp ROLÊ" />
+            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span class="app-nav-label">Revista</span>
             </a>
-        </div>
-    </footer>
+            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                <span class="app-nav-label">Descontos</span>
+            </a>
+            <a href="contato.html" class="app-nav-item active" aria-label="Contato">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span class="app-nav-label">Contato</span>
+            </a>
+        </nav>
 
+        <!-- Back to Top Button -->
+        <button style="position: fixed; bottom: 120px; right: 20px; background: var(--gradient-primary); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; box-shadow: var(--shadow-lg); transition: var(--transition-normal); z-index: 1000; opacity: 0; visibility: hidden;" 
+                id="backToTop" 
+                aria-label="Voltar ao topo"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            ↑
+        </button>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // ========== DROPDOWN EXPLORAR ==========
-            const dropdown = document.querySelector('.dropdown');
-            const button = dropdown?.querySelector('.dropdown-button');
-            const content = dropdown?.querySelector('.dropdown-content');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuClose = document.querySelector('.menu-close');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-            if (button && content) {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dropdown.classList.toggle('open');
-                    button.setAttribute('aria-expanded', dropdown.classList.contains('open'));
-                });
+            function openMenu() {
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
-                document.addEventListener('click', function (e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('open');
-                        button.setAttribute('aria-expanded', false);
+            function closeMenu() {
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            menuToggle?.addEventListener('click', openMenu);
+            menuClose?.addEventListener('click', closeMenu);
+            
+            // Close menu when clicking overlay
+            mobileMenuOverlay?.addEventListener('click', function(e) {
+                if (e.target === mobileMenuOverlay) {
+                    closeMenu();
+                }
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.querySelector('.theme-toggle-app');
+            const root = document.documentElement;
+
+            // Apply saved theme on load
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                root.setAttribute('data-theme', 'light');
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (root.hasAttribute('data-theme')) {
+                        root.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        root.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
                     }
-                });
-
-                content.addEventListener('click', function (e) {
-                    e.stopPropagation();
                 });
             }
 
-            // ========== ANIMAÇÕES DE ENTRADA ==========
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observar elementos para animação
-            const fadeElements = document.querySelectorAll('.fade-in, h2, blockquote');
-            fadeElements.forEach((element, index) => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                observer.observe(element);
-            });
-
-            // ========== SCROLL SUAVE PARA SEÇÕES ==========
+            // Smooth scroll for internal links
             const links = document.querySelectorAll('a[href^="#"]');
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -312,118 +589,127 @@
                 });
             });
 
-            // ========== DESTACAR SEÇÕES IMPORTANTES ==========
-            const importantSections = document.querySelectorAll('h2');
-            importantSections.forEach(section => {
-                section.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.02)';
-                    this.style.textShadow = '0 0 20px rgba(199, 125, 255, 0.8)';
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.style.opacity = '1';
+                    backToTopButton.style.visibility = 'visible';
+                } else {
+                    backToTopButton.style.opacity = '0';
+                    backToTopButton.style.visibility = 'hidden';
+                }
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe content cards for animation
+            const fadeElements = document.querySelectorAll('.content-card, .app-featured-banner');
+            fadeElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(element);
+            });
+
+            // Enhanced hover effects for interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .app-stat-item');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    if (!this.style.transform || this.style.transform === 'none') {
+                        this.style.transform = 'translateY(-2px)';
+                    }
                 });
                 
-                section.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                    this.style.textShadow = '0 0 20px rgba(199, 125, 255, 0.5)';
+                element.addEventListener('mouseleave', function() {
+                    if (this.style.transform === 'translateY(-2px)') {
+                        this.style.transform = 'translateY(0)';
+                    }
                 });
             });
-        });
 
-        // ========== TOGGLE TEMA ==========
-        const lampada = document.querySelector('.lampada-toggle');
-        const root = document.documentElement;
-
-        // Aplica o tema salvo ao carregar
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            root.setAttribute('data-theme', 'light');
-            lampada.setAttribute('aria-pressed', 'true');
-        } else {
-            root.removeAttribute('data-theme');
-            lampada.setAttribute('aria-pressed', 'false');
-        }
-
-        // Alterna o tema ao clicar na lâmpada
-        lampada.addEventListener('click', () => {
-            if (root.hasAttribute('data-theme')) {
-                // Volta para modo escuro
-                root.removeAttribute('data-theme');
-                lampada.setAttribute('aria-pressed', 'false');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                // Vai para modo claro
-                root.setAttribute('data-theme', 'light');
-                lampada.setAttribute('aria-pressed', 'true');
-                localStorage.setItem('theme', 'light');
+            // Progressive loading for images
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            img.classList.remove('loading');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
             }
-        });
 
-        // ========== EFEITO DE DIGITAÇÃO NO TÍTULO ==========
-        const titulo = document.querySelector('.titulo-editorial');
-        if (titulo) {
-            const textoOriginal = titulo.textContent;
-            titulo.textContent = '';
-            let i = 0;
-            
-            function digitarTitulo() {
-                if (i < textoOriginal.length) {
-                    titulo.textContent += textoOriginal.charAt(i);
-                    i++;
-                    setTimeout(digitarTitulo, 120);
-                }
-            }
-            
-            setTimeout(digitarTitulo, 500);
-        }
-
-        // ========== PROGRESSO DE LEITURA ==========
-        const progressBar = document.createElement('div');
-        progressBar.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, #c77dff, #e0aaff);
-            z-index: 9999;
-            transition: width 0.1s ease;
-        `;
-        document.body.appendChild(progressBar);
-
-        window.addEventListener('scroll', () => {
-            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            progressBar.style.width = scrolled + '%';
-        });
-
-        // ========== CONTADOR DE PARCEIROS (ANIMAÇÃO) ==========
-        const criarContador = () => {
-            const contadorDiv = document.createElement('div');
-            contadorDiv.style.cssText = `
+            // Reading progress indicator
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
                 position: fixed;
-                bottom: 100px;
-                right: 20px;
-                background: rgba(199, 125, 255, 0.9);
-                color: white;
-                padding: 15px;
-                border-radius: 10px;
-                font-weight: bold;
-                font-size: 14px;
-                z-index: 1000;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-                max-width: 200px;
-                text-align: center;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background: var(--gradient-primary);
+                z-index: 9999;
+                transition: width 0.1s ease;
             `;
-            contadorDiv.innerHTML = '🎭 +500 Organizadores<br>confiam no ROLÊ';
-            document.body.appendChild(contadorDiv);
-            
-            // Remove depois de 5 segundos
-            setTimeout(() => {
-                contadorDiv.style.opacity = '0';
-                contadorDiv.style.transform = 'translateY(20px)';
-                setTimeout(() => contadorDiv.remove(), 300);
-            }, 5000);
-        };
+            document.body.appendChild(progressBar);
 
-        // Mostra contador após 3 segundos
-        setTimeout(criarContador, 3000);
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+
+            // Copy link functionality for sharing
+            function copyCurrentUrl() {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    showToast('Link copiado para a área de transferência!', 'success');
+                });
+            }
+
+            // Toast notification system
+            function showToast(message, type = 'info') {
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                toast.textContent = message;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => toast.classList.add('show'), 100);
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => document.body.removeChild(toast), 300);
+                }, 3000);
+            }
+
+            // Print-friendly formatting
+            window.addEventListener('beforeprint', function() {
+                document.body.classList.add('printing');
+            });
+
+            window.addEventListener('afterprint', function() {
+                document.body.classList.remove('printing');
+            });
+
+            console.log('ROLÊ Entretenimento - Termos do Organizador carregados com sucesso! 🎭✨');
+        });
     </script>
 </body>
 </html>
