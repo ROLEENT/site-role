@@ -256,6 +256,23 @@
             }
         }
 
+        .desconto-image.has-bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .desconto-image.has-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
         .desconto-image img {
             width: 100%;
             height: 100%;
@@ -270,7 +287,10 @@
         .desconto-placeholder {
             color: white;
             font-size: 48px;
-            opacity: 0.7;
+            opacity: 0.8;
+            z-index: 2;
+            position: relative;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .desconto-content {
@@ -292,14 +312,35 @@
             margin-right: 12px;
         }
 
-        .desconto-percentage {
-            font-size: 24px;
-            font-weight: 800;
+        .desconto-code {
             background: linear-gradient(135deg, var(--accent-green), var(--accent-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            padding: 8px 12px;
+            border-radius: 12px;
             white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .desconto-code::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
 
         .desconto-description {
@@ -908,73 +949,85 @@
                         id: 1,
                         title: 'Festa Eletrônica Underground',
                         description: 'Desconto especial na festa mais aguardada do mês com DJs internacionais.',
-                        percentage: '30%',
+                        code: 'ROLE30',
                         category: 'festas',
                         badge: 'hot',
                         tags: ['🎵 Eletrônica', '🌙 Madrugada', '📍 Centro'],
                         expiry: 'Válido até 15/02',
-                        link: 'https://wa.me/5551980704353?text=Quero o desconto da festa eletrônica!',
-                        image: null
+                        link: 'https://wa.me/5551980704353?text=Quero usar o código ROLE30 na festa eletrônica!',
+                        image: null,
+                        bgImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        emoji: '🎧'
                     },
                     {
                         id: 2,
                         title: 'Show de Banda Nacional',
                         description: 'Ingresso com desconto para apresentação única da banda indie sensação.',
-                        percentage: '25%',
+                        code: 'INDIE25',
                         category: 'shows',
                         badge: 'new',
                         tags: ['🎸 Indie Rock', '🎤 Nacional', '📍 Casa de Shows'],
                         expiry: 'Válido até 20/02',
-                        link: 'https://wa.me/5551980704353?text=Quero o desconto do show indie!',
-                        image: null
+                        link: 'https://wa.me/5551980704353?text=Quero usar o código INDIE25 no show!',
+                        image: null,
+                        bgImage: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                        emoji: '🎸'
                     },
                     {
                         id: 3,
                         title: 'Peça Teatral Experimental',
                         description: 'Desconto exclusivo para espetáculo de teatro contemporâneo.',
-                        percentage: '40%',
+                        code: 'TEATRO40',
                         category: 'teatro',
                         badge: 'exclusive',
                         tags: ['🎭 Experimental', '📖 Drama', '📍 Teatro Independente'],
                         expiry: 'Válido até 10/02',
-                        link: 'https://wa.me/5551980704353?text=Quero o desconto da peça teatral!',
-                        image: null
+                        link: 'https://wa.me/5551980704353?text=Quero usar o código TEATRO40 na peça!',
+                        image: null,
+                        bgImage: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+                        emoji: '🎭'
                     },
                     {
                         id: 4,
                         title: 'Exposição de Arte Urbana',
                         description: 'Entrada com desconto para mostra coletiva de street art.',
-                        percentage: '20%',
+                        code: 'STREET20',
                         category: 'arte',
                         badge: 'new',
                         tags: ['🎨 Street Art', '🖼️ Coletiva', '📍 Galeria'],
                         expiry: 'Válido até 28/02',
-                        link: 'https://wa.me/5551980704353?text=Quero o desconto da exposição!',
-                        image: null
+                        link: 'https://wa.me/5551980704353?text=Quero usar o código STREET20 na exposição!',
+                        image: null,
+                        bgImage: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+                        emoji: '🎨'
                     },
                     {
                         id: 5,
                         title: 'Happy Hour Alternativo',
                         description: 'Drinks com desconto no bar mais underground da cidade.',
-                        percentage: '35%',
+                        code: 'HAPPY35',
                         category: 'bares',
                         badge: 'hot',
                         tags: ['🍺 Drinks', '⏰ Happy Hour', '📍 Bar Underground'],
                         expiry: 'Válido até 05/02',
-                        link: 'https://wa.me/5551980704353?text=Quero o desconto do happy hour!',
-                        image: null
+                        link: 'https://wa.me/5551980704353?text=Quero usar o código HAPPY35 no happy hour!',
+                        image: null,
+                        bgImage: 'linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%)',
+                        emoji: '🍺'
                     },
                     {
                         id: 6,
                         title: 'Festival de Cinema Indie',
                         description: 'Passe completo com desconto para 3 dias de cinema independente.',
-                        percentage: '50%',
+                        code: 'CINE50',
                         category: 'arte',
                         badge: 'exclusive',
                         tags: ['🎬 Cinema', '🎪 Festival', '📍 Cinemateca'],
                         expiry: 'Válido até 12/02',
-                        link: 'https://wa.me/5551980704353?text=Quero o desconto do festival de cinema!',
-                        image: null
+                        link: 'https://wa.me/5551980704353?text=Quero usar o código CINE50 no festival!',
+                        image: null,
+                        bgImage: 'linear-gradient(135deg, #81ecec 0%, #6c5ce7 100%)',
+                        emoji: '🎬'
                     }
                 ];
 
@@ -1001,16 +1054,16 @@
                 const descontosHTML = descontos.map((desconto, index) => `
                     <article class="desconto-card fade-in-up stagger-delay" data-category="${desconto.category}">
                         <div class="desconto-badge ${desconto.badge}">${getBadgeText(desconto.badge)}</div>
-                        <div class="desconto-image">
+                        <div class="desconto-image${desconto.bgImage ? ' has-bg' : ''}"${desconto.bgImage ? ` style="background: ${desconto.bgImage}"` : ''}>
                             ${desconto.image ? 
                                 `<img src="${desconto.image}" alt="${desconto.title}" loading="lazy" />` : 
-                                `<div class="desconto-placeholder">🎉</div>`
+                                `<div class="desconto-placeholder">${desconto.emoji || '🎉'}</div>`
                             }
                         </div>
                         <div class="desconto-content">
                             <div class="desconto-header">
                                 <h3 class="desconto-title">${desconto.title}</h3>
-                                <div class="desconto-percentage">${desconto.percentage}</div>
+                                <div class="desconto-code">${desconto.code}</div>
                             </div>
                             <p class="desconto-description">${desconto.description}</p>
                             <div class="desconto-info">
@@ -1022,7 +1075,8 @@
                                    target="_blank" 
                                    rel="noopener noreferrer" 
                                    class="desconto-btn"
-                                   data-desconto-id="${desconto.id}">
+                                   data-desconto-id="${desconto.id}"
+                                   data-desconto-code="${desconto.code}">
                                     Resgatar
                                 </a>
                             </div>
