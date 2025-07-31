@@ -24,9 +24,9 @@
     <link rel="preconnect" href="https://www.instagram.com" crossorigin>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
     
-    <!-- CRITICAL CSS EXPANDIDO (para mobile) -->
+    <!-- CRITICAL CSS BALANCEADO (mobile + desktop) -->
     <style>
-        /* Critical CSS expandido - Above the fold content */
+        /* Critical CSS otimizado para ambos dispositivos */
         * { box-sizing: border-box; }
         
         body { 
@@ -44,7 +44,7 @@
             flex-direction: column;
         }
         
-        /* Header crítico */
+        /* Header crítico - responsivo */
         .app-header { 
             position: sticky; 
             top: 0; 
@@ -75,6 +75,7 @@
             gap: 1rem;
         }
         
+        /* Menu responsivo */
         .menu-toggle {
             background: none;
             border: none;
@@ -87,7 +88,27 @@
             display: none;
         }
         
-        /* Hero section crítico */
+        @media (min-width: 769px) {
+            .menu-toggle { display: none; }
+            .desktop-menu { 
+                display: flex; 
+                gap: 2rem; 
+            }
+            .desktop-menu a { 
+                text-decoration: none; 
+                font-weight: 500; 
+                padding: 0.5rem 0;
+                border-bottom: 2px solid transparent;
+                transition: border-color 0.2s ease;
+                color: var(--text-color, #333);
+            }
+            .desktop-menu a.active,
+            .desktop-menu a:hover { 
+                border-bottom-color: var(--primary-color, #667eea); 
+            }
+        }
+        
+        /* Hero section responsivo */
         .app-hero-section { 
             padding: 2rem 1rem; 
             text-align: center; 
@@ -102,6 +123,11 @@
             line-height: 1.2;
         }
         
+        @media (min-width: 769px) { 
+            .app-hero-section { padding: 4rem 2rem; }
+            .app-hero-title { font-size: 3rem; }
+        }
+        
         .app-hero-description {
             font-size: 1rem;
             margin: 0 0 2rem;
@@ -109,6 +135,10 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        @media (min-width: 769px) {
+            .app-hero-description { font-size: 1.2rem; }
         }
         
         .app-btn-hero {
@@ -126,7 +156,7 @@
             transform: translateY(-2px);
         }
         
-        /* Search bar crítico */
+        /* Search bar responsivo */
         .app-search-container {
             padding: 1rem;
             background: var(--search-bg, #f8f9fa);
@@ -155,7 +185,7 @@
             opacity: 0.5;
         }
         
-        /* Categories crítico */
+        /* Categories responsivo */
         .app-categories {
             padding: 1rem;
         }
@@ -166,6 +196,15 @@
             overflow-x: auto;
             padding: 0.5rem 0;
             -webkit-overflow-scrolling: touch;
+        }
+        
+        @media (min-width: 769px) {
+            .categories-grid-app {
+                justify-content: center;
+                overflow-x: visible;
+                max-width: 800px;
+                margin: 0 auto;
+            }
         }
         
         .category-item-app {
@@ -196,7 +235,7 @@
             text-align: center;
         }
         
-        /* Mobile menu crítico */
+        /* Mobile menu */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
@@ -232,21 +271,42 @@
             transform: translateX(0);
         }
         
-        /* Responsive */
-        @media (min-width: 769px) { 
-            .app-hero-title { font-size: 2.5rem; }
-            .menu-toggle { display: none; }
-            .desktop-menu { display: flex; gap: 2rem; }
-            .desktop-menu a { 
-                text-decoration: none; 
-                font-weight: 500; 
-                padding: 0.5rem 0;
-                border-bottom: 2px solid transparent;
-                transition: border-color 0.2s ease;
-            }
-            .desktop-menu a.active,
-            .desktop-menu a:hover { 
-                border-bottom-color: var(--primary-color, #667eea); 
+        /* Section spacing */
+        .app-section-header {
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+        }
+        
+        .app-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        @media (min-width: 769px) {
+            .app-section-title { font-size: 2rem; }
+        }
+        
+        /* Cards container */
+        .app-recommendations {
+            padding: 0 1rem 2rem;
+        }
+        
+        .app-cards-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media (min-width: 769px) {
+            .app-cards-scroll {
+                justify-content: center;
+                flex-wrap: wrap;
+                overflow-x: visible;
+                max-width: 1200px;
+                margin: 0 auto;
             }
         }
         
@@ -254,11 +314,37 @@
         .app-recommendation-card {
             opacity: 0;
             transform: translateY(20px);
+            min-width: 300px;
+        }
+        
+        @media (min-width: 769px) {
+            .app-recommendation-card {
+                min-width: 350px;
+                max-width: 400px;
+            }
         }
         
         .app-stat-item {
             opacity: 0;
             transform: translateY(20px);
+        }
+        
+        /* Banner container */
+        .app-banner-wrapper {
+            padding: 1rem;
+        }
+        
+        .app-banner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .app-banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
     </style>
     
@@ -994,7 +1080,7 @@
                 });
             }, { threshold: 0.1 });
 
-            const fadeElements = document.querySelectoral('.app-recommendation-card, .app-stat-item');
+            const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
             fadeElements.forEach((element, index) => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
