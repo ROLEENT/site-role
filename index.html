@@ -11,22 +11,29 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com" />
 
-    <!-- PERFORMANCE BOOST - PRELOADS CRÍTICOS -->
+    <!-- MOBILE-FIRST PERFORMANCE -->
     <link rel="preload" href="estilo.css" as="style">
-    <link rel="preload" href="images/logo-role.png" as="image">
-    <link rel="preload" href="images/banner-home.png" as="image">
-    <link rel="preload" href="images/poa.png" as="image">
-    <link rel="preload" href="js/app.js" as="script">
+    <link rel="preload" href="images/logo-role.png" as="image" media="(max-width: 768px)">
+    <link rel="preload" href="images/banner-home.png" as="image" media="(max-width: 768px)">
+    <link rel="preload" href="images/poa.png" as="image" media="(max-width: 768px)">
     
-    <!-- DNS PREFETCH para recursos externos -->
+    <!-- PRIORIDADE MOBILE -->
     <link rel="dns-prefetch" href="https://www.instagram.com">
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-    <link rel="dns-prefetch" href="https://script.google.com">
-    <link rel="preconnect" href="https://www.instagram.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-
-    <!-- REMOVER HEADERS ANTI-CACHE para melhor performance -->
-    <!-- Meta tags anti-cache removidas intencionalmente para otimização -->
+    <link rel="preconnect" href="https://www.instagram.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    
+    <!-- CRITICAL CSS INLINE (para mobile) -->
+    <style>
+        /* Critical CSS para mobile - apenas o essencial */
+        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .app-container { min-height: 100vh; }
+        .app-header { position: sticky; top: 0; z-index: 100; background: var(--bg-color, #fff); }
+        .app-logo-img { max-height: 40px; width: auto; }
+        .app-hero-section { padding: 2rem 1rem; text-align: center; }
+        .app-hero-title { font-size: 1.5rem; margin: 0 0 1rem; }
+        @media (min-width: 769px) { .app-hero-title { font-size: 2.5rem; } }
+    </style>
     
     <script>
         if (localStorage.getItem('theme') === 'light') {
@@ -34,13 +41,35 @@
         }
     </script>
     
-    <!-- Google Ads - ASYNC e com preconnect -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
+    <!-- Google Ads - Carregamento otimizado -->
+    <script>
+        // Carrega ads apenas após interação do usuário em mobile
+        if (window.innerWidth <= 768) {
+            document.addEventListener('touchstart', function loadAds() {
+                if (!window.adsLoaded) {
+                    const script = document.createElement('script');
+                    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580';
+                    script.async = true;
+                    script.crossOrigin = 'anonymous';
+                    document.head.appendChild(script);
+                    window.adsLoaded = true;
+                }
+                document.removeEventListener('touchstart', loadAds);
+            }, { once: true, passive: true });
+        } else {
+            // Desktop carrega normalmente
+            const script = document.createElement('script');
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580';
+            script.async = true;
+            script.crossOrigin = 'anonymous';
+            document.head.appendChild(script);
+        }
+    </script>
     
     <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
     
-    <!-- CSS com preload já aplicado acima -->
+    <!-- CSS principal -->
     <link rel="stylesheet" href="estilo.css" />
     
     <noscript>
