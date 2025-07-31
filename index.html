@@ -16,6 +16,7 @@
     <link rel="preload" href="images/logo-role.png" as="image" media="(max-width: 768px)">
     <link rel="preload" href="images/banner-home.png" as="image" media="(max-width: 768px)">
     <link rel="preload" href="images/poa.png" as="image" media="(max-width: 768px)">
+    <!-- Removido preload do app.js para otimização -->
     
     <!-- PRIORIDADE MOBILE -->
     <link rel="dns-prefetch" href="https://www.instagram.com">
@@ -23,16 +24,242 @@
     <link rel="preconnect" href="https://www.instagram.com" crossorigin>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
     
-    <!-- CRITICAL CSS INLINE (para mobile) -->
+    <!-- CRITICAL CSS EXPANDIDO (para mobile) -->
     <style>
-        /* Critical CSS para mobile - apenas o essencial */
-        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        .app-container { min-height: 100vh; }
-        .app-header { position: sticky; top: 0; z-index: 100; background: var(--bg-color, #fff); }
-        .app-logo-img { max-height: 40px; width: auto; }
-        .app-hero-section { padding: 2rem 1rem; text-align: center; }
-        .app-hero-title { font-size: 1.5rem; margin: 0 0 1rem; }
-        @media (min-width: 769px) { .app-hero-title { font-size: 2.5rem; } }
+        /* Critical CSS expandido - Above the fold content */
+        * { box-sizing: border-box; }
+        
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .app-container { 
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header crítico */
+        .app-header { 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            background: var(--bg-color, #fff); 
+            border-bottom: 1px solid var(--border-color, #eee);
+            padding: 0.5rem 0;
+        }
+        
+        .app-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .app-logo-img { 
+            max-height: 40px; 
+            width: auto; 
+            display: block;
+        }
+        
+        .app-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: block;
+        }
+        
+        .desktop-menu {
+            display: none;
+        }
+        
+        /* Hero section crítico */
+        .app-hero-section { 
+            padding: 2rem 1rem; 
+            text-align: center; 
+            background: var(--hero-bg, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+            color: var(--hero-text, #fff);
+        }
+        
+        .app-hero-title { 
+            font-size: 1.75rem; 
+            margin: 0 0 1rem; 
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .app-hero-description {
+            font-size: 1rem;
+            margin: 0 0 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .app-btn-hero {
+            display: inline-block;
+            background: var(--primary-color, #fff);
+            color: var(--primary-text, #333);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        
+        .app-btn-hero:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Search bar crítico */
+        .app-search-container {
+            padding: 1rem;
+            background: var(--search-bg, #f8f9fa);
+        }
+        
+        .app-search-bar {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .app-search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--border-color, #ddd);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.5;
+        }
+        
+        /* Categories crítico */
+        .app-categories {
+            padding: 1rem;
+        }
+        
+        .categories-grid-app {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 0.5rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .category-item-app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+            padding: 1rem;
+            background: var(--card-bg, #fff);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: 1px solid var(--border-color, #eee);
+        }
+        
+        .category-item-app:hover {
+            transform: translateY(-2px);
+        }
+        
+        .category-icon-app {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-label-app {
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        /* Mobile menu crítico */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background: var(--menu-bg, #fff);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mobile-menu-overlay.active .mobile-menu {
+            transform: translateX(0);
+        }
+        
+        /* Responsive */
+        @media (min-width: 769px) { 
+            .app-hero-title { font-size: 2.5rem; }
+            .menu-toggle { display: none; }
+            .desktop-menu { display: flex; gap: 2rem; }
+            .desktop-menu a { 
+                text-decoration: none; 
+                font-weight: 500; 
+                padding: 0.5rem 0;
+                border-bottom: 2px solid transparent;
+                transition: border-color 0.2s ease;
+            }
+            .desktop-menu a.active,
+            .desktop-menu a:hover { 
+                border-bottom-color: var(--primary-color, #667eea); 
+            }
+        }
+        
+        /* Loading states */
+        .app-recommendation-card {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .app-stat-item {
+            opacity: 0;
+            transform: translateY(20px);
+        }
     </style>
     
     <script>
@@ -613,36 +840,77 @@
         </nav>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
+    <!-- JavaScript Otimizado -->
+    
+    <!-- Carregamento inteligente do app.js -->
     <script>
-        // Inline critical JavaScript
+        // Carrega app.js apenas após página totalmente carregada
+        window.addEventListener('load', function() {
+            const script = document.createElement('script');
+            script.src = 'js/app.js';
+            script.async = true;
+            document.head.appendChild(script);
+        });
+    </script>
+
+    <script>
+        // JavaScript crítico inline - apenas o essencial
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality
+            // Mobile menu - CRÍTICO
             const menuToggle = document.querySelector('.menu-toggle');
             const menuClose = document.querySelector('.menu-close');
             const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-            function openMenu() {
-                mobileMenuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeMenu() {
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            menuToggle?.addEventListener('click', openMenu);
-            menuClose?.addEventListener('click', closeMenu);
-            
-            // Close menu when clicking overlay
-            mobileMenuOverlay?.addEventListener('click', function(e) {
-                if (e.target === mobileMenuOverlay) {
-                    closeMenu();
+            if (menuToggle && mobileMenuOverlay) {
+                function openMenu() {
+                    mobileMenuOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 }
-            });
 
+                function closeMenu() {
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+
+                menuToggle.addEventListener('click', openMenu);
+                menuClose?.addEventListener('click', closeMenu);
+                
+                mobileMenuOverlay.addEventListener('click', function(e) {
+                    if (e.target === mobileMenuOverlay) closeMenu();
+                });
+            }
+
+            // Theme toggle - CRÍTICO
+            const themeToggle = document.querySelector('.theme-toggle-app');
+            const root = document.documentElement;
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (root.hasAttribute('data-theme')) {
+                        root.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        root.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            }
+
+            // Smooth scroll - CRÍTICO
+            const heroButton = document.querySelector('.app-btn-hero');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.getElementById('destaques');
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
+        });
+
+        // Funcionalidades NÃO-CRÍTICAS - carregam depois
+        window.addEventListener('load', function() {
             // Newsletter form
             const newsletterForm = document.getElementById('newsletter-form');
             if (newsletterForm) {
@@ -661,7 +929,6 @@
                         return;
                     }
                     
-                    // Loading state
                     submitBtn.disabled = true;
                     btnText.style.display = 'none';
                     btnLoading.style.display = 'inline';
@@ -688,61 +955,8 @@
                 });
             }
 
-            // Smooth scroll for hero CTA
-            const heroButton = document.querySelector('.app-btn-hero');
-            if (heroButton) {
-                heroButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.getElementById('destaques');
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            }
-
-            // Theme toggle functionality
-            const themeToggle = document.querySelector('.theme-toggle-app');
-            const root = document.documentElement;
-
-            // Apply saved theme on load
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                root.setAttribute('data-theme', 'light');
-            }
-
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    if (root.hasAttribute('data-theme')) {
-                        root.removeAttribute('data-theme');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        root.setAttribute('data-theme', 'light');
-                        localStorage.setItem('theme', 'light');
-                    }
-                });
-            }
-
-            // Category interactions
-            const categories = document.querySelectorAll('.category-item-app');
-            categories.forEach(category => {
-                category.addEventListener('click', function() {
-                    categories.forEach(c => c.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const categoryType = this.dataset.category;
-                    console.log('Category selected:', categoryType);
-                });
-            });
-
-            // Stats counter animation
-            const observerOptions = {
-                threshold: 0.5,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
+            // Stats animation - NÃO-CRÍTICO
+            const observerOptions = { threshold: 0.5, rootMargin: '0px 0px -100px 0px' };
             const statsObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -770,17 +984,7 @@
                 }, 50);
             }
 
-            // Search functionality
-            const searchInput = document.querySelector('.app-search-input');
-            if (searchInput) {
-                searchInput.addEventListener('input', function() {
-                    const query = this.value.toLowerCase();
-                    // Future: implement search functionality
-                    console.log('Search query:', query);
-                });
-            }
-
-            // Card animations on scroll
+            // Card animations - NÃO-CRÍTICO
             const fadeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -790,7 +994,7 @@
                 });
             }, { threshold: 0.1 });
 
-            const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
+            const fadeElements = document.querySelectoral('.app-recommendation-card, .app-stat-item');
             fadeElements.forEach((element, index) => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)';
@@ -798,7 +1002,25 @@
                 fadeObserver.observe(element);
             });
 
-            // Navigation active state management
+            // Categories - NÃO-CRÍTICO
+            const categories = document.querySelectorAll('.category-item-app');
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    categories.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    console.log('Category selected:', this.dataset.category);
+                });
+            });
+
+            // Search - NÃO-CRÍTICO  
+            const searchInput = document.querySelector('.app-search-input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    console.log('Search query:', this.value.toLowerCase());
+                });
+            }
+
+            // Navigation state - NÃO-CRÍTICO
             const navItems = document.querySelectorAll('.app-nav-item');
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             
@@ -811,7 +1033,7 @@
                 }
             });
 
-            // Touch/swipe support for cards
+            // Touch swipe - NÃO-CRÍTICO
             let startX = 0;
             let scrollContainer = document.querySelector('.app-cards-scroll');
             
