@@ -11,20 +11,36 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com" />
 
-    <!-- Anti-cache: força o navegador a buscar a versão mais recente -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+    <!-- PERFORMANCE BOOST - PRELOADS CRÍTICOS -->
+    <link rel="preload" href="estilo.css" as="style">
+    <link rel="preload" href="images/logo-role.png" as="image">
+    <link rel="preload" href="images/banner-home.png" as="image">
+    <link rel="preload" href="images/poa.png" as="image">
+    <link rel="preload" href="js/app.js" as="script">
+    
+    <!-- DNS PREFETCH para recursos externos -->
+    <link rel="dns-prefetch" href="https://www.instagram.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://script.google.com">
+    <link rel="preconnect" href="https://www.instagram.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+    <!-- REMOVER HEADERS ANTI-CACHE para melhor performance -->
+    <!-- Meta tags anti-cache removidas intencionalmente para otimização -->
+    
     <script>
         if (localStorage.getItem('theme') === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
         }
     </script>
     
+    <!-- Google Ads - ASYNC e com preconnect -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
     <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
+    
+    <!-- CSS com preload já aplicado acima -->
     <link rel="stylesheet" href="estilo.css" />
     
     <noscript>
@@ -40,7 +56,13 @@
         <header class="app-header">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" />
+                    <img src="images/logo-role.png" 
+                         alt="ROLÊ Entretenimento" 
+                         class="app-logo-img"
+                         loading="eager"
+                         decoding="async"
+                         width="120" 
+                         height="40" />
                 </a>
                 <div class="app-header-actions">
                     <!-- Desktop Menu (apenas desktop) -->
@@ -62,7 +84,12 @@
                     
                     <!-- Theme Toggle -->
                     <button class="theme-toggle-app" aria-label="Alternar tema">
-                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" />
+                        <img src="images/theme-toggle.gif" 
+                             alt=""
+                             loading="lazy"
+                             decoding="async"
+                             width="24" 
+                             height="24" />
                     </button>
                 </div>
             </div>
@@ -72,7 +99,13 @@
         <div class="mobile-menu-overlay" id="mobileMenuOverlay">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
-                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" />
+                    <img src="images/logo-role.png" 
+                         alt="ROLÊ" 
+                         class="mobile-menu-logo"
+                         loading="lazy"
+                         decoding="async"
+                         width="80" 
+                         height="30" />
                     <button class="menu-close" aria-label="Fechar menu">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -90,13 +123,28 @@
                 <div class="mobile-menu-footer">
                     <div class="mobile-menu-social">
                         <a href="https://instagram.com/role.ent" target="_blank" rel="noopener">
-                            <img src="images/instagram.svg" alt="Instagram" />
+                            <img src="images/instagram.svg" 
+                                 alt="Instagram"
+                                 loading="lazy"
+                                 decoding="async"
+                                 width="24" 
+                                 height="24" />
                         </a>
                         <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener">
-                            <img src="images/tiktok.svg" alt="TikTok" />
+                            <img src="images/tiktok.svg" 
+                                 alt="TikTok"
+                                 loading="lazy"
+                                 decoding="async"
+                                 width="24" 
+                                 height="24" />
                         </a>
                         <a href="https://wa.me/5551980704353" target="_blank" rel="noopener">
-                            <img src="images/whatsapp.svg" alt="WhatsApp" />
+                            <img src="images/whatsapp.svg" 
+                                 alt="WhatsApp"
+                                 loading="lazy"
+                                 decoding="async"
+                                 width="24" 
+                                 height="24" />
                         </a>
                     </div>
                 </div>
@@ -151,10 +199,15 @@
             </div>
         </section>
 
-        <!-- Banner -->
+        <!-- Banner - OTIMIZADO -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
-                <img src="images/banner-home.png" alt="Banner ROLÊ - Cultura e entretenimento brasileiro" loading="lazy" />
+                <img src="images/banner-home.png" 
+                     alt="Banner ROLÊ - Cultura e entretenimento brasileiro" 
+                     loading="eager"
+                     decoding="async"
+                     width="1200" 
+                     height="400" />
             </div>
         </div>
 
@@ -164,14 +217,19 @@
             <a href="vitrine-cultural.html" class="app-see-all">Ver tudo</a>
         </div>
 
-        <!-- Cities Cards - Destaques -->
+        <!-- Cities Cards - Destaques - OTIMIZADAS -->
         <div class="app-recommendations" id="destaques">
             <div class="app-cards-scroll">
                 <!-- Porto Alegre -->
                 <article class="app-recommendation-card" data-city="porto-alegre">
                     <div class="app-card-image">
                         <div class="app-card-badge">Agora</div>
-                        <img src="images/poa.png" alt="Cena cultural de Porto Alegre" loading="lazy" />
+                        <img src="images/poa.png" 
+                             alt="Cena cultural de Porto Alegre" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Porto Alegre</h3>
@@ -206,7 +264,12 @@
                 <article class="app-recommendation-card" data-city="florianopolis">
                     <div class="app-card-image">
                         <div class="app-card-badge">Hoje</div>
-                        <img src="images/floripa.png" alt="Cultura eletrônica de Florianópolis" loading="lazy" />
+                        <img src="images/floripa.png" 
+                             alt="Cultura eletrônica de Florianópolis" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Florianópolis</h3>
@@ -241,7 +304,12 @@
                 <article class="app-recommendation-card" data-city="curitiba">
                     <div class="app-card-image">
                         <div class="app-card-badge">Amanhã</div>
-                        <img src="images/curitiba.png" alt="Vida noturna de Curitiba" loading="lazy" />
+                        <img src="images/curitiba.png" 
+                             alt="Vida noturna de Curitiba" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Curitiba</h3>
@@ -276,7 +344,12 @@
                 <article class="app-recommendation-card" data-city="sao-paulo">
                     <div class="app-card-image">
                         <div class="app-card-badge">Hoje</div>
-                        <img src="images/sao-paulo.png" alt="Cena cultural de São Paulo" loading="lazy" />
+                        <img src="images/sao-paulo.png" 
+                             alt="Cena cultural de São Paulo" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">São Paulo</h3>
@@ -311,7 +384,12 @@
                 <article class="app-recommendation-card" data-city="rio-janeiro">
                     <div class="app-card-image">
                         <div class="app-card-badge">Sábado</div>
-                        <img src="images/rio.png" alt="Cultura funk e eventos no Rio de Janeiro" loading="lazy" />
+                        <img src="images/rio.png" 
+                             alt="Cultura funk e eventos no Rio de Janeiro" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Rio de Janeiro</h3>
@@ -445,13 +523,28 @@
             </div>
             <div class="app-social-icons">
                 <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
-                    <img src="images/instagram.svg" alt="Instagram" width="24" height="24" />
+                    <img src="images/instagram.svg" 
+                         alt="Instagram" 
+                         loading="lazy"
+                         decoding="async"
+                         width="24" 
+                         height="24" />
                 </a>
                 <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
-                    <img src="images/tiktok.svg" alt="TikTok" width="24" height="24" />
+                    <img src="images/tiktok.svg" 
+                         alt="TikTok"
+                         loading="lazy"
+                         decoding="async"
+                         width="24" 
+                         height="24" />
                 </a>
                 <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
-                    <img src="images/whatsapp.svg" alt="WhatsApp" width="24" height="24" />
+                    <img src="images/whatsapp.svg" 
+                         alt="WhatsApp"
+                         loading="lazy"
+                         decoding="async"
+                         width="24" 
+                         height="24" />
                 </a>
             </div>
         </footer>
