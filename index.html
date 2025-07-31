@@ -11,20 +11,378 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com" />
 
-    <!-- Anti-cache: força o navegador a buscar a versão mais recente -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+    <!-- MOBILE-FIRST PERFORMANCE -->
+    <link rel="preload" href="estilo.css" as="style">
+    <link rel="preload" href="images/logo-role.png" as="image" media="(max-width: 768px)">
+    <link rel="preload" href="images/banner-home.png" as="image" media="(max-width: 768px)">
+    <link rel="preload" href="images/poa.png" as="image" media="(max-width: 768px)">
+    <!-- Removido preload do app.js para otimização -->
+    
+    <!-- PRIORIDADE MOBILE -->
+    <link rel="dns-prefetch" href="https://www.instagram.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://www.instagram.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    
+    <!-- CRITICAL CSS BALANCEADO (mobile + desktop) -->
+    <style>
+        /* Critical CSS otimizado para ambos dispositivos */
+        * { box-sizing: border-box; }
+        
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .app-container { 
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header crítico - responsivo */
+        .app-header { 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            background: var(--bg-color, #fff); 
+            border-bottom: 1px solid var(--border-color, #eee);
+            padding: 0.5rem 0;
+        }
+        
+        .app-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .app-logo-img { 
+            max-height: 40px; 
+            width: auto; 
+            display: block;
+        }
+        
+        .app-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        /* Menu responsivo */
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: block;
+        }
+        
+        .desktop-menu {
+            display: none;
+        }
+        
+        @media (min-width: 769px) {
+            .menu-toggle { display: none; }
+            .desktop-menu { 
+                display: flex; 
+                gap: 2rem; 
+            }
+            .desktop-menu a { 
+                text-decoration: none; 
+                font-weight: 500; 
+                padding: 0.5rem 0;
+                border-bottom: 2px solid transparent;
+                transition: border-color 0.2s ease;
+                color: var(--text-color, #333);
+            }
+            .desktop-menu a.active,
+            .desktop-menu a:hover { 
+                border-bottom-color: var(--primary-color, #667eea); 
+            }
+        }
+        
+        /* Hero section responsivo */
+        .app-hero-section { 
+            padding: 2rem 1rem; 
+            text-align: center; 
+            background: var(--hero-bg, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+            color: var(--hero-text, #fff);
+        }
+        
+        .app-hero-title { 
+            font-size: 1.75rem; 
+            margin: 0 0 1rem; 
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        @media (min-width: 769px) { 
+            .app-hero-section { padding: 4rem 2rem; }
+            .app-hero-title { font-size: 3rem; }
+        }
+        
+        .app-hero-description {
+            font-size: 1rem;
+            margin: 0 0 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (min-width: 769px) {
+            .app-hero-description { font-size: 1.2rem; }
+        }
+        
+        .app-btn-hero {
+            display: inline-block;
+            background: var(--primary-color, #fff);
+            color: var(--primary-text, #333);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        
+        .app-btn-hero:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Search bar responsivo */
+        .app-search-container {
+            padding: 1rem;
+            background: var(--search-bg, #f8f9fa);
+        }
+        
+        .app-search-bar {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .app-search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--border-color, #ddd);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.5;
+        }
+        
+        /* Categories responsivo */
+        .app-categories {
+            padding: 1rem;
+        }
+        
+        .categories-grid-app {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 0.5rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media (min-width: 769px) {
+            .categories-grid-app {
+                justify-content: center;
+                overflow-x: visible;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+        
+        .category-item-app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+            padding: 1rem;
+            background: var(--card-bg, #fff);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: 1px solid var(--border-color, #eee);
+        }
+        
+        .category-item-app:hover {
+            transform: translateY(-2px);
+        }
+        
+        .category-icon-app {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-label-app {
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background: var(--menu-bg, #fff);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mobile-menu-overlay.active .mobile-menu {
+            transform: translateX(0);
+        }
+        
+        /* Section spacing */
+        .app-section-header {
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+        }
+        
+        .app-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        @media (min-width: 769px) {
+            .app-section-title { font-size: 2rem; }
+        }
+        
+        /* Cards container */
+        .app-recommendations {
+            padding: 0 1rem 2rem;
+        }
+        
+        .app-cards-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media (min-width: 769px) {
+            .app-cards-scroll {
+                justify-content: center;
+                flex-wrap: wrap;
+                overflow-x: visible;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* Loading states */
+        .app-recommendation-card {
+            opacity: 0;
+            transform: translateY(20px);
+            min-width: 300px;
+        }
+        
+        @media (min-width: 769px) {
+            .app-recommendation-card {
+                min-width: 350px;
+                max-width: 400px;
+            }
+        }
+        
+        .app-stat-item {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        /* Banner container */
+        .app-banner-wrapper {
+            padding: 1rem;
+        }
+        
+        .app-banner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .app-banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+    
     <script>
         if (localStorage.getItem('theme') === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
         }
     </script>
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
+    <!-- Google Ads - Carregamento otimizado -->
+    <script>
+        // Carrega ads apenas após interação do usuário em mobile
+        if (window.innerWidth <= 768) {
+            document.addEventListener('touchstart', function loadAds() {
+                if (!window.adsLoaded) {
+                    const script = document.createElement('script');
+                    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580';
+                    script.async = true;
+                    script.crossOrigin = 'anonymous';
+                    document.head.appendChild(script);
+                    window.adsLoaded = true;
+                }
+                document.removeEventListener('touchstart', loadAds);
+            }, { once: true, passive: true });
+        } else {
+            // Desktop carrega normalmente
+            const script = document.createElement('script');
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580';
+            script.async = true;
+            script.crossOrigin = 'anonymous';
+            document.head.appendChild(script);
+        }
+    </script>
     
     <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
+    
+    <!-- CSS principal -->
     <link rel="stylesheet" href="estilo.css" />
     
     <noscript>
@@ -40,7 +398,13 @@
         <header class="app-header">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" />
+                    <img src="images/logo-role.png" 
+                         alt="ROLÊ Entretenimento" 
+                         class="app-logo-img"
+                         loading="eager"
+                         decoding="async"
+                         width="120" 
+                         height="40" />
                 </a>
                 <div class="app-header-actions">
                     <!-- Desktop Menu (apenas desktop) -->
@@ -62,7 +426,12 @@
                     
                     <!-- Theme Toggle -->
                     <button class="theme-toggle-app" aria-label="Alternar tema">
-                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" />
+                        <img src="images/theme-toggle.gif" 
+                             alt=""
+                             loading="lazy"
+                             decoding="async"
+                             width="24" 
+                             height="24" />
                     </button>
                 </div>
             </div>
@@ -72,7 +441,13 @@
         <div class="mobile-menu-overlay" id="mobileMenuOverlay">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
-                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" />
+                    <img src="images/logo-role.png" 
+                         alt="ROLÊ" 
+                         class="mobile-menu-logo"
+                         loading="lazy"
+                         decoding="async"
+                         width="80" 
+                         height="30" />
                     <button class="menu-close" aria-label="Fechar menu">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -90,13 +465,28 @@
                 <div class="mobile-menu-footer">
                     <div class="mobile-menu-social">
                         <a href="https://instagram.com/role.ent" target="_blank" rel="noopener">
-                            <img src="images/instagram.svg" alt="Instagram" />
+                            <img src="images/instagram.svg" 
+                                 alt="Instagram"
+                                 loading="lazy"
+                                 decoding="async"
+                                 width="24" 
+                                 height="24" />
                         </a>
                         <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener">
-                            <img src="images/tiktok.svg" alt="TikTok" />
+                            <img src="images/tiktok.svg" 
+                                 alt="TikTok"
+                                 loading="lazy"
+                                 decoding="async"
+                                 width="24" 
+                                 height="24" />
                         </a>
                         <a href="https://wa.me/5551980704353" target="_blank" rel="noopener">
-                            <img src="images/whatsapp.svg" alt="WhatsApp" />
+                            <img src="images/whatsapp.svg" 
+                                 alt="WhatsApp"
+                                 loading="lazy"
+                                 decoding="async"
+                                 width="24" 
+                                 height="24" />
                         </a>
                     </div>
                 </div>
@@ -151,10 +541,15 @@
             </div>
         </section>
 
-        <!-- Banner -->
+        <!-- Banner - OTIMIZADO -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
-                <img src="images/banner-home.png" alt="Banner ROLÊ - Cultura e entretenimento brasileiro" loading="lazy" />
+                <img src="images/banner-home.png" 
+                     alt="Banner ROLÊ - Cultura e entretenimento brasileiro" 
+                     loading="eager"
+                     decoding="async"
+                     width="1200" 
+                     height="400" />
             </div>
         </div>
 
@@ -164,14 +559,19 @@
             <a href="vitrine-cultural.html" class="app-see-all">Ver tudo</a>
         </div>
 
-        <!-- Cities Cards - Destaques -->
+        <!-- Cities Cards - Destaques - OTIMIZADAS -->
         <div class="app-recommendations" id="destaques">
             <div class="app-cards-scroll">
                 <!-- Porto Alegre -->
                 <article class="app-recommendation-card" data-city="porto-alegre">
                     <div class="app-card-image">
                         <div class="app-card-badge">Agora</div>
-                        <img src="images/poa.png" alt="Cena cultural de Porto Alegre" loading="lazy" />
+                        <img src="images/poa.png" 
+                             alt="Cena cultural de Porto Alegre" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Porto Alegre</h3>
@@ -206,7 +606,12 @@
                 <article class="app-recommendation-card" data-city="florianopolis">
                     <div class="app-card-image">
                         <div class="app-card-badge">Hoje</div>
-                        <img src="images/floripa.png" alt="Cultura eletrônica de Florianópolis" loading="lazy" />
+                        <img src="images/floripa.png" 
+                             alt="Cultura eletrônica de Florianópolis" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Florianópolis</h3>
@@ -241,7 +646,12 @@
                 <article class="app-recommendation-card" data-city="curitiba">
                     <div class="app-card-image">
                         <div class="app-card-badge">Amanhã</div>
-                        <img src="images/curitiba.png" alt="Vida noturna de Curitiba" loading="lazy" />
+                        <img src="images/curitiba.png" 
+                             alt="Vida noturna de Curitiba" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Curitiba</h3>
@@ -276,7 +686,12 @@
                 <article class="app-recommendation-card" data-city="sao-paulo">
                     <div class="app-card-image">
                         <div class="app-card-badge">Hoje</div>
-                        <img src="images/sao-paulo.png" alt="Cena cultural de São Paulo" loading="lazy" />
+                        <img src="images/sao-paulo.png" 
+                             alt="Cena cultural de São Paulo" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">São Paulo</h3>
@@ -311,7 +726,12 @@
                 <article class="app-recommendation-card" data-city="rio-janeiro">
                     <div class="app-card-image">
                         <div class="app-card-badge">Sábado</div>
-                        <img src="images/rio.png" alt="Cultura funk e eventos no Rio de Janeiro" loading="lazy" />
+                        <img src="images/rio.png" 
+                             alt="Cultura funk e eventos no Rio de Janeiro" 
+                             loading="lazy"
+                             decoding="async"
+                             width="400" 
+                             height="300" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Rio de Janeiro</h3>
@@ -445,13 +865,28 @@
             </div>
             <div class="app-social-icons">
                 <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
-                    <img src="images/instagram.svg" alt="Instagram" width="24" height="24" />
+                    <img src="images/instagram.svg" 
+                         alt="Instagram" 
+                         loading="lazy"
+                         decoding="async"
+                         width="24" 
+                         height="24" />
                 </a>
                 <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
-                    <img src="images/tiktok.svg" alt="TikTok" width="24" height="24" />
+                    <img src="images/tiktok.svg" 
+                         alt="TikTok"
+                         loading="lazy"
+                         decoding="async"
+                         width="24" 
+                         height="24" />
                 </a>
                 <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
-                    <img src="images/whatsapp.svg" alt="WhatsApp" width="24" height="24" />
+                    <img src="images/whatsapp.svg" 
+                         alt="WhatsApp"
+                         loading="lazy"
+                         decoding="async"
+                         width="24" 
+                         height="24" />
                 </a>
             </div>
         </footer>
@@ -491,36 +926,77 @@
         </nav>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
+    <!-- JavaScript Otimizado -->
+    
+    <!-- Carregamento inteligente do app.js -->
     <script>
-        // Inline critical JavaScript
+        // Carrega app.js apenas após página totalmente carregada
+        window.addEventListener('load', function() {
+            const script = document.createElement('script');
+            script.src = 'js/app.js';
+            script.async = true;
+            document.head.appendChild(script);
+        });
+    </script>
+
+    <script>
+        // JavaScript crítico inline - apenas o essencial
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality
+            // Mobile menu - CRÍTICO
             const menuToggle = document.querySelector('.menu-toggle');
             const menuClose = document.querySelector('.menu-close');
             const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
-            function openMenu() {
-                mobileMenuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeMenu() {
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            menuToggle?.addEventListener('click', openMenu);
-            menuClose?.addEventListener('click', closeMenu);
-            
-            // Close menu when clicking overlay
-            mobileMenuOverlay?.addEventListener('click', function(e) {
-                if (e.target === mobileMenuOverlay) {
-                    closeMenu();
+            if (menuToggle && mobileMenuOverlay) {
+                function openMenu() {
+                    mobileMenuOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 }
-            });
 
+                function closeMenu() {
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+
+                menuToggle.addEventListener('click', openMenu);
+                menuClose?.addEventListener('click', closeMenu);
+                
+                mobileMenuOverlay.addEventListener('click', function(e) {
+                    if (e.target === mobileMenuOverlay) closeMenu();
+                });
+            }
+
+            // Theme toggle - CRÍTICO
+            const themeToggle = document.querySelector('.theme-toggle-app');
+            const root = document.documentElement;
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    if (root.hasAttribute('data-theme')) {
+                        root.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        root.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            }
+
+            // Smooth scroll - CRÍTICO
+            const heroButton = document.querySelector('.app-btn-hero');
+            if (heroButton) {
+                heroButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.getElementById('destaques');
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
+        });
+
+        // Funcionalidades NÃO-CRÍTICAS - carregam depois
+        window.addEventListener('load', function() {
             // Newsletter form
             const newsletterForm = document.getElementById('newsletter-form');
             if (newsletterForm) {
@@ -539,7 +1015,6 @@
                         return;
                     }
                     
-                    // Loading state
                     submitBtn.disabled = true;
                     btnText.style.display = 'none';
                     btnLoading.style.display = 'inline';
@@ -566,61 +1041,8 @@
                 });
             }
 
-            // Smooth scroll for hero CTA
-            const heroButton = document.querySelector('.app-btn-hero');
-            if (heroButton) {
-                heroButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.getElementById('destaques');
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            }
-
-            // Theme toggle functionality
-            const themeToggle = document.querySelector('.theme-toggle-app');
-            const root = document.documentElement;
-
-            // Apply saved theme on load
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                root.setAttribute('data-theme', 'light');
-            }
-
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    if (root.hasAttribute('data-theme')) {
-                        root.removeAttribute('data-theme');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        root.setAttribute('data-theme', 'light');
-                        localStorage.setItem('theme', 'light');
-                    }
-                });
-            }
-
-            // Category interactions
-            const categories = document.querySelectorAll('.category-item-app');
-            categories.forEach(category => {
-                category.addEventListener('click', function() {
-                    categories.forEach(c => c.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const categoryType = this.dataset.category;
-                    console.log('Category selected:', categoryType);
-                });
-            });
-
-            // Stats counter animation
-            const observerOptions = {
-                threshold: 0.5,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
+            // Stats animation - NÃO-CRÍTICO
+            const observerOptions = { threshold: 0.5, rootMargin: '0px 0px -100px 0px' };
             const statsObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -648,17 +1070,7 @@
                 }, 50);
             }
 
-            // Search functionality
-            const searchInput = document.querySelector('.app-search-input');
-            if (searchInput) {
-                searchInput.addEventListener('input', function() {
-                    const query = this.value.toLowerCase();
-                    // Future: implement search functionality
-                    console.log('Search query:', query);
-                });
-            }
-
-            // Card animations on scroll
+            // Card animations - NÃO-CRÍTICO
             const fadeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -676,7 +1088,25 @@
                 fadeObserver.observe(element);
             });
 
-            // Navigation active state management
+            // Categories - NÃO-CRÍTICO
+            const categories = document.querySelectorAll('.category-item-app');
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    categories.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    console.log('Category selected:', this.dataset.category);
+                });
+            });
+
+            // Search - NÃO-CRÍTICO  
+            const searchInput = document.querySelector('.app-search-input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    console.log('Search query:', this.value.toLowerCase());
+                });
+            }
+
+            // Navigation state - NÃO-CRÍTICO
             const navItems = document.querySelectorAll('.app-nav-item');
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             
@@ -689,7 +1119,7 @@
                 }
             });
 
-            // Touch/swipe support for cards
+            // Touch swipe - NÃO-CRÍTICO
             let startX = 0;
             let scrollContainer = document.querySelector('.app-cards-scroll');
             
