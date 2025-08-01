@@ -203,9 +203,108 @@
         }
     </style>
     
-    <!-- Async CSS Loading -->
-    <link rel="preload" href="estilo.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="estilo.css"></noscript>
+    <!-- CSS Loading - Blocking para garantir carregamento -->
+    <link rel="stylesheet" href="estilo.css">
+    <!-- Fallback CSS caso o arquivo principal falhe -->
+    <style>
+        /* Fallback crítico */
+        .app-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .desktop-menu {
+            display: none;
+        }
+        
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+        
+        .app-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .app-stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: 0.5rem;
+        }
+        
+        .app-stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .app-recommendations {
+            padding: 1rem;
+        }
+        
+        .app-cards-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scroll-behavior: smooth;
+        }
+        
+        .app-recommendation-card {
+            min-width: 280px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 1rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .app-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        @media (min-width: 768px) {
+            .desktop-menu {
+                display: flex;
+                gap: 2rem;
+            }
+            
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -316,19 +415,19 @@
         </div>
         <div class="app-stats-grid">
             <div class="app-stat-item">
-                <span class="app-stat-number" data-target="25">0</span>
+                <span class="app-stat-number">25</span>
                 <span class="app-stat-label">Artigos publicados</span>
             </div>
             <div class="app-stat-item">
-                <span class="app-stat-number" data-target="1.5">0</span>
-                <span class="app-stat-label">Milhões de leitores</span>
+                <span class="app-stat-number">1.5M</span>
+                <span class="app-stat-label">Leitores alcançados</span>
             </div>
             <div class="app-stat-item">
-                <span class="app-stat-number" data-target="6">0</span>
+                <span class="app-stat-number">6</span>
                 <span class="app-stat-label">Seções ativas</span>
             </div>
             <div class="app-stat-item">
-                <span class="app-stat-number" data-target="15">0</span>
+                <span class="app-stat-number">15</span>
                 <span class="app-stat-label">Entrevistas realizadas</span>
             </div>
         </div>
@@ -844,6 +943,172 @@
                             </div>
                             <div class="app-card-info-item">
                                 <span role="img" aria-label="Tempo de leitura">⏱️</span>
+                                <span>12 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">5.0</span>
+                            </div>
+                            <a href="entrevistas/jon-soares.html" class="app-card-link" rel="bookmark">Ver entrevista</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- ROLÊ.BPM -->
+        <div class="app-section-header">
+            <h2 class="app-section-title">ROLÊ.BPM</h2>
+            <a href="#" class="app-see-all" aria-label="Ver todos os artigos de música">Ver todos</a>
+        </div>
+
+        <div class="app-recommendations">
+            <div class="app-cards-scroll">
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Techno</div>
+                        <img src="images/bpm-techno-resistencia.png" alt="Arte sobre o techno como resistência" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Quem tem medo do techno?</h3>
+                        <p class="app-card-description">Techno é resistência: você sabe de onde veio?</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="BPM">🎵</span>
+                                <span>BPM</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Tempo de leitura">⏱️</span>
+                                <span>6 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" aria-label="4.8 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.8</span>
+                            </div>
+                            <a href="bpm/quem-tem-medo-do-techno.html" class="app-card-link" rel="bookmark">Ver artigo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Funk</div>
+                        <img src="images/bpm-funk-e-cultura.png" alt="Funk retratado como cultura e identidade" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">FUNK É CULTURA, SIM.</h3>
+                        <p class="app-card-description">Do asfalto pro topo, sem pedir licença. Funk é cultura!</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="BPM">🎵</span>
+                                <span>BPM</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Tempo de leitura">⏱️</span>
+                                <span>7 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">5.0</span>
+                            </div>
+                            <a href="bpm/funk-e-cultura-sim.html" class="app-card-link" rel="bookmark">Ver artigo</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- ACHADINHOS -->
+        <div class="app-section-header">
+            <h2 class="app-section-title">ACHADINHOS</h2>
+            <a href="#" class="app-see-all" aria-label="Ver todos os achadinhos">Ver todos</a>
+        </div>
+
+        <div class="app-recommendations">
+            <div class="app-cards-scroll">
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Underground</div>
+                        <img src="images/achadinho-floripa-segredos.png" alt="Segredos dos rolês underground em Florianópolis" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Qual é o segredo dos rolês de Floripa?</h3>
+                        <p class="app-card-description">Achadinhos de Floripa que o Google não mostra!</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Achadinho">🔍</span>
+                                <span>Achadinho</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Tempo de leitura">⏱️</span>
+                                <span>3 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" aria-label="4.9 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.9</span>
+                            </div>
+                            <a href="achadinhos/qual-e-o-segredo-dos-roles-de-floripa.html" class="app-card-link" rel="bookmark">Ver achadinho</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Footer Ad -->
+        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2898945215492580"
+                 data-ad-slot="1234567890"
+                 data-ad-format="horizontal"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal">
+            <a href="index.html" class="app-nav-item" aria-label="Página inicial" rel="home">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
+            </a>
+            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span class="app-nav-label">Buscar</span>
+            </a>
+            <a href="revista.html" class="app-nav-item active" aria-label="Revista ROLÊ" aria-current="page">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span class="app-nav-label">Revista</span>
+            </a>
+            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                <span class="app-nav-label">Descontos</span>
+            </a>
+            <a href="contato.html" class="app-nav-item" aria-label="Contato">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span class="app-nav-label">Contato</span>
+            </a>
+        </nav>🎤</span>
+                                <span>Entrevista</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Tempo de leitura">⏱️</span>
                                 <span>8 min</span>
                             </div>
                         </div>
@@ -961,18 +1226,58 @@
                 }
             }
 
-            // Initialize functionality
+            // Initialize functionality with fallback
             onDOMReady(function() {
-                try {
-                    initializeMenu();
-                    initializeTheme();
-                    initializeAnimations();
-                    initializeNewsletter();
-                    initializeHeroButton();
-                } catch (error) {
-                    console.warn('Initialization error:', error);
-                }
+                // Initialize with timeout fallback
+                setTimeout(function() {
+                    try {
+                        initializeMenu();
+                        initializeTheme();
+                        initializeNewsletter();
+                        initializeHeroButton();
+                        
+                        // Only initialize animations if CSS is loaded
+                        if (getComputedStyle(document.body).fontFamily.includes('Inter') || 
+                            document.querySelector('.app-stats-grid').offsetHeight > 0) {
+                            initializeAnimations();
+                        }
+                    } catch (error) {
+                        console.warn('Initialization error:', error);
+                        // Fallback: ensure basic functionality works
+                        ensureBasicFunctionality();
+                    }
+                }, 100);
             });
+            
+            // Fallback function for basic functionality
+            function ensureBasicFunctionality() {
+                // Ensure menu works even without full CSS
+                const menuToggle = document.querySelector('.menu-toggle');
+                const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+                
+                if (menuToggle && mobileMenuOverlay) {
+                    menuToggle.addEventListener('click', function() {
+                        mobileMenuOverlay.style.display = mobileMenuOverlay.style.display === 'block' ? 'none' : 'block';
+                    });
+                }
+                
+                // Ensure theme toggle works
+                const themeToggle = document.querySelector('.theme-toggle-app');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', function() {
+                        const root = document.documentElement;
+                        const currentTheme = root.getAttribute('data-theme');
+                        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                        root.setAttribute('data-theme', newTheme);
+                        
+                        try {
+                            localStorage.setItem('theme', newTheme);
+                        } catch (e) {
+                            console.warn('LocalStorage not available');
+                        }
+                    });
+                }
+            }
 
             // Mobile menu functionality
             function initializeMenu() {
@@ -1275,15 +1580,46 @@
         })();
     </script>
 
-    <!-- Async font loading -->
+    <!-- CSS Load Detection and Font Loading -->
     <script>
+        // Check if CSS loaded properly
+        function checkCSSLoaded() {
+            const testElement = document.createElement('div');
+            testElement.className = 'app-container';
+            testElement.style.position = 'absolute';
+            testElement.style.top = '-9999px';
+            document.body.appendChild(testElement);
+            
+            const computedStyle = getComputedStyle(testElement);
+            const cssLoaded = computedStyle.minHeight === '100vh' || 
+                             computedStyle.backgroundColor !== 'rgba(0, 0, 0, 0)';
+            
+            document.body.removeChild(testElement);
+            
+            if (!cssLoaded) {
+                console.warn('CSS não carregou completamente, aplicando fallbacks');
+                // Force reload CSS
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'estilo.css?v=' + Date.now();
+                document.head.appendChild(link);
+            }
+            
+            return cssLoaded;
+        }
+        
+        // Load fonts with fallback
         window.addEventListener('load', function() {
+            // Check CSS first
+            setTimeout(checkCSSLoaded, 100);
+            
+            // Load Google Fonts
             const fontLink = document.createElement('link');
             fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap';
             fontLink.rel = 'stylesheet';
-            fontLink.media = 'print';
-            fontLink.onload = function() { this.media = 'all'; };
-            fontLink.onerror = function() { console.warn('Google Fonts failed to load'); };
+            fontLink.onerror = function() { 
+                console.warn('Google Fonts failed to load, using system fonts'); 
+            };
             document.head.appendChild(fontLink);
         }, { once: true });
     </script>
