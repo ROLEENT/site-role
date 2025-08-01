@@ -11,6 +11,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com/descontos.html" />
     
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://script.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://script.google.com;" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    
     <!-- Anti-cache: força o navegador a buscar a versão mais recente -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -743,7 +748,7 @@
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
-                <span class="app-nav-label">Descontos</span>
+                <span class="app-nav-label">Home</span>
             </a>
             <a href="contato.html" class="app-nav-item" aria-label="Contato">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -819,6 +824,13 @@
                     
                     if (!email) {
                         showToast('Por favor, insira seu e-mail.', 'error');
+                        return;
+                    }
+                    
+                    // Input validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showToast('Por favor, insira um e-mail válido.', 'error');
                         return;
                     }
                     
@@ -1183,10 +1195,4 @@
         });
     </script>
 </body>
-</html>nav-label">Revista</span>
-            </a>
-            <a href="descontos.html" class="app-nav-item active" aria-label="Descontos">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-                </svg>
-                <span class="app-
+</html>
