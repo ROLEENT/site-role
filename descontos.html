@@ -11,11 +11,6 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://roleentretenimento.com/descontos.html" />
     
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://script.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://script.google.com;" />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    
     <!-- Anti-cache: força o navegador a buscar a versão mais recente -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -679,26 +674,22 @@
         <!-- Estatísticas de Descontos -->
         <section class="descontos-stats fade-in-up">
             <div class="desconto-stat stagger-delay">
-                <span class="desconto-stat-number" data-target="5">0</span>
+                <span class="desconto-stat-number" data-target="5">5</span>
                 <span class="desconto-stat-label">as ofertas ativas</span>
             </div>
             <div class="desconto-stat stagger-delay">
-                <span class="desconto-stat-number" data-target="5">0</span>
+                <span class="desconto-stat-number" data-target="5">5</span>
                 <span class="desconto-stat-label">Festas com Descontoo</span>
             </div>
             <div class="desconto-stat stagger-delay">
-                <span class="desconto-stat-number" data-target="+4000">0</span>
+                <span class="desconto-stat-number" data-target="+4000">+4000</span>
                 <span class="desconto-stat-label">+ Rolezeiros Economizando</span>
             </div>
         </section>
 
         <!-- Grid de Descontos -->
         <section class="descontos-grid fade-in-up" id="descontosGrid">
-            <!-- Loading State -->
-            <div class="descontos-loading" id="loadingState">
-                <div class="loading-spinner"></div>
-                <p>Carregando ofertas exclusivas...</p>
-            </div>
+            <!-- Descontos renderizados aqui pelo JavaScript -->
         </section>
 
         <!-- Newsletter de Descontos -->
@@ -748,7 +739,7 @@
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
-                <span class="app-nav-label">Home</span>
+                <span class="app-nav-label">Descontos</span>
             </a>
             <a href="contato.html" class="app-nav-item" aria-label="Contato">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -761,399 +752,176 @@
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // ========== MOBILE MENU FUNCTIONALITY ==========
-            const menuToggle = document.querySelector('.menu-toggle');
-            const menuClose = document.querySelector('.menu-close');
-            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-
-            function openMenu() {
-                mobileMenuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
+        // Dados dos descontos
+        const allDescontos = [
+            {
+                id: 1,
+                title: 'BLACK PARADE PROMO',
+                description: 'Open bar emo com hits e nostalgia',
+                code: 'ROLE',
+                category: 'rio-de-janeiro',
+                badge: 'hot',
+                tags: ['🎸 Emo Revival', '🥤 Open Bar', '🖤 Nostalgia 2000'],
+                expiry: '01 ago 2025 – 22h às 05h',
+                link: 'https://www.sympla.com.br/evento/e-eu-que-era-emo-edicao-de-ferias-open-bar-especial-my-chemical-romance-x-green-day/3017464',
+                image: 'images/emo.png',
+                bgImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                emoji: '🎧'
+            },
+            {
+                id: 2,
+                title: 'DESCONTO ROLÊ CREMA',
+                description: 'Adria b2b Malu + MHAVCK + Bia Portela',
+                code: 'ROLEENTRETENIMENTO',
+                category: 'sao-paulo',
+                badge: 'new',  
+                tags: ['🎶 Club Experience', '🔥 Line quente', '🌃 Noite house'],
+                expiry: '01 ago 2025 – a partir das 21h',
+                link: 'https://embedstore.ingresse.com/tickets/www.ingresse.com/event/84259?passkey=roleentretenimento',
+                image: 'images/crema.png',
+                bgImage: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                emoji: '🎸'
+            },
+            {
+                id: 3,
+                title: 'ROLEPOA NA LAZE',
+                description: 'Rap, pista quebrando e G.A ao vivo',
+                code: 'ROLEPOA',
+                category: 'porto-alegre',
+                badge: 'exclusive',
+                tags: ['🎤 Show do G.A', '🌒 After nervoso', '💥 Quebração no 4º D'],
+                expiry: '02 ago 2025 – das 23h às 06h',
+                link: 'https://www.pensanoevento.com.br/eventos/81299/laze-after-hours-ato-espartano-40-distrito?cupom=ROLEPOA',
+                image: 'images/laze.png',
+                bgImage: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+                emoji: '🎭'
+            },
+            {
+                id: 4,
+                title: 'ROLEFLORIPA TÍMPANO',
+                description: 'Funk, eletrônico e barulheira boa',
+                code: 'ROLE',
+                category: 'florianopolis',
+                badge: 'new',
+                tags: ['🧙 Bruxaria sonora', '🔊 TUINN PIUPIUPIU', '🔥 Underground em Floripa'],
+                expiry: '02 ago 2025 – das 22h às 04h',
+                link: 'https://www.pensanoevento.com.br/baladas/83339/timpano',
+                image: 'images/timpano.png',
+                bgImage: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+                emoji: '🎨'
+            },
+            {
+                id: 5,
+                title: 'EM BREVE UM NOVO DESCONTO AQUI',
+                description: 'Em breve um novo desconto aqui',
+                code: 'ROLE',
+                category: 'curitiba',
+                badge: 'exclusive',
+                tags: ['🎛️ Techno', '🌃 Underground', '🔥 Festival'],
+                expiry: '05 ago 2025 – das 20h às 06h',
+                link: 'https://www.sympla.com.br/evento/curitiba-underground-festival',
+                image: 'images/desconto.png',
+                bgImage: 'linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)',
+                emoji: '🎛️'
+            },
+            {
+                id: 6,
+                title: 'EM BREVE UM NOVO DESCONTO AQUI',
+                description: 'Em breve um novo desconto aqui',
+                code: 'ROLE',
+                category: 'curitiba',
+                badge: 'exclusive',
+                tags: ['🎛️ Techno', '🌃 Underground', '🔥 Festival'],
+                expiry: '05 ago 2025 – das 20h às 06h',
+                link: 'https://www.sympla.com.br/evento/curitiba-underground-festival',
+                image: 'images/desconto.png',
+                bgImage: 'linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)',
+                emoji: '🎛️'
             }
+        ];
 
-            function closeMenu() {
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            menuToggle?.addEventListener('click', openMenu);
-            menuClose?.addEventListener('click', closeMenu);
-            
-            // Close menu when clicking overlay
-            mobileMenuOverlay?.addEventListener('click', function(e) {
-                if (e.target === mobileMenuOverlay) {
-                    closeMenu();
-                }
-            });
-
-            // ========== THEME TOGGLE FUNCTIONALITY ==========
-            const themeToggle = document.querySelector('.theme-toggle-app');
-            const root = document.documentElement;
-
-            // Apply saved theme on load
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                root.setAttribute('data-theme', 'light');
-            }
-
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    if (root.hasAttribute('data-theme')) {
-                        root.removeAttribute('data-theme');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        root.setAttribute('data-theme', 'light');
-                        localStorage.setItem('theme', 'light');
-                    }
-                });
-            }
-
-            // ========== NEWSLETTER FORM ==========
-            const newsletterForm = document.getElementById('newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    const emailInput = this.querySelector('input[type="email"]');
-                    const submitBtn = this.querySelector('button[type="submit"]');
-                    const btnText = submitBtn.querySelector('.btn-text');
-                    const btnLoading = submitBtn.querySelector('.btn-loading');
-                    
-                    const email = emailInput.value.trim();
-                    
-                    if (!email) {
-                        showToast('Por favor, insira seu e-mail.', 'error');
-                        return;
-                    }
-                    
-                    // Input validation
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        showToast('Por favor, insira um e-mail válido.', 'error');
-                        return;
-                    }
-                    
-                    // Loading state
-                    submitBtn.disabled = true;
-                    btnText.style.display = 'none';
-                    btnLoading.style.display = 'inline';
-                    
-                    try {
-                        const response = await fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
-                            method: 'POST',
-                            body: new URLSearchParams({ email, source: 'descontos' })
-                        });
-                        
-                        if (response.ok) {
-                            showToast(`Sucesso! ${email} foi cadastrado na newsletter de descontos.`, 'discount');
-                            this.reset();
-                        } else {
-                            throw new Error('Erro no servidor');
-                        }
-                    } catch (error) {
-                        showToast('Erro ao cadastrar. Tente novamente mais tarde.', 'error');
-                    } finally {
-                        submitBtn.disabled = false;
-                        btnText.style.display = 'inline';
-                        btnLoading.style.display = 'none';
-                    }
-                });
-            }
-
-            // ========== ANIMATION OBSERVER ==========
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+        function getBadgeText(badgeType) {
+            const badges = {
+                'hot': '🔥 QUENTE',
+                'new': '✨ NOVO',
+                'exclusive': '👑 EXCLUSIVO'
             };
+            return badges[badgeType] || '💰 OFERTA';
+        }
 
-            const fadeObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements for fade-in animation
-            const fadeElements = document.querySelectorAll('.fade-in-up');
-            fadeElements.forEach(element => {
-                fadeObserver.observe(element);
-            });
-
-            // ========== STATS COUNTER ANIMATION ==========
-            const statsObserverOptions = {
-                threshold: 0.5,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                        entry.target.classList.add('counted');
-                        animateNumber(entry.target);
-                    }
-                });
-            }, statsObserverOptions);
-
-            const statNumbers = document.querySelectorAll('.desconto-stat-number');
-            statNumbers.forEach(stat => statsObserver.observe(stat));
-
-            function animateNumber(element) {
-                const target = parseInt(element.getAttribute('data-target'));
-                let current = 0;
-                const increment = Math.ceil(target / 30);
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    element.textContent = current;
-                }, 50);
-            }
-
-            // ========== CATEGORY FILTERING ==========
-            const categoryButtons = document.querySelectorAll('.desconto-category-btn');
+        function renderDescontos(descontos) {
             const descontosGrid = document.getElementById('descontosGrid');
-            let currentCategory = 'todos';
-
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Update active state
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Get selected category
-                    currentCategory = this.dataset.category;
-                    
-                    // Load discounts for selected category
-                    loadDescontos(currentCategory);
-                    
-                    console.log('Category selected:', currentCategory);
-                });
-            });
-
-            // ========== LOAD DESCONTOS FUNCTION ==========
-            function loadDescontos(category = 'todos') {
-                // Show loading
-                descontosGrid.innerHTML = '<div class="descontos-loading" id="loadingState"><div class="loading-spinner"></div><p>Carregando ofertas exclusivas...</p></div>';
-                
-                // Load immediately without artificial delay
-                const descontos = getDescontosByCategory(category);
-                renderDescontos(descontos);
-            }
-
-            function getDescontosByCategory(category) {
-                const allDescontos = [
-                    {
-                        id: 1,
-                        title: 'BLACK PARADE PROMO',
-                        description: 'Open bar emo com hits e nostalgia',
-                        code: 'ROLE',
-                        category: 'rio-de-janeiro',
-                        badge: 'hot',
-                        tags: ['🎸 Emo Revival', '🥤 Open Bar', '🖤 Nostalgia 2000'],
-                        expiry: '01 ago 2025 – 22h às 05h',
-                        link: 'https://www.sympla.com.br/evento/e-eu-que-era-emo-edicao-de-ferias-open-bar-especial-my-chemical-romance-x-green-day/3017464',
-                        image: 'images/emo.png',
-                        bgImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                        emoji: '🎧'
-                    },
-                    {
-                        id: 2,
-                        title: 'DESCONTO ROLÊ CREMA',
-                        description: 'Adria b2b Malu + MHAVCK + Bia Portela',
-                        code: 'ROLEENTRETENIMENTO',
-                        category: 'sao-paulo',
-                        badge: 'new',
-                        tags: ['🎶 Club Experience', '🔥 Line quente', '🌃 Noite house'],
-                        expiry: '01 ago 2025 – a partir das 21h',
-                        link: 'https://embedstore.ingresse.com/tickets/www.ingresse.com/event/84259?passkey=roleentretenimento',
-                        image: 'images/crema.png',
-                        bgImage: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                        emoji: '🎸'
-                    },
-                    {
-                        id: 3,
-                        title: 'ROLEPOA NA LAZE',
-                        description: 'Rap, pista quebrando e G.A ao vivo',
-                        code: 'ROLEPOA',
-                        category: 'porto-alegre',
-                        badge: 'exclusive',
-                        tags: ['🎤 Show do G.A', '🌒 After nervoso', '💥 Quebração no 4º D'],
-                        expiry: '02 ago 2025 – das 23h às 06h',
-                        link: 'https://www.pensanoevento.com.br/eventos/81299/laze-after-hours-ato-espartano-40-distrito?cupom=ROLEPOA',
-                        image: 'images/laze.png',
-                        bgImage: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
-                        emoji: '🎭'
-                    },
-                    {
-                        id: 4,
-                        title: 'ROLEFLORIPA TÍMPANO',
-                        description: 'Funk, eletrônico e barulheira boa',
-                        code: 'ROLE',
-                        category: 'florianopolis',
-                        badge: 'new',
-                        tags: ['🧙 Bruxaria sonora', '🔊 TUINN PIUPIUPIU', '🔥 Underground em Floripa'],
-                        expiry: '02 ago 2025 – das 22h às 04h',
-                        link: 'https://www.pensanoevento.com.br/baladas/83339/timpano',
-                        image: 'images/timpano.png',
-                        bgImage: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
-                        emoji: '🎨'
-                    },
-                    {
-                        id: 5,
-                        title: 'EM BREVE UM NOVO DESCONTO AQUI',
-                        description: 'Em breve um novo desconto aqui',
-                        code: 'ROLE',
-                        category: 'curitiba',
-                        badge: 'exclusive',
-                        tags: ['🎛️ Techno', '🌃 Underground', '🔥 Festival'],
-                        expiry: '05 ago 2025 – das 20h às 06h',
-                        link: 'https://www.sympla.com.br/evento/curitiba-underground-festival',
-                        image: 'images/desconto.png',
-                        bgImage: 'linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)',
-                        emoji: '🎛️'
-                     },
-                    {
-                        id: 6,
-                        title: 'EM BREVE UM NOVO DESCONTO AQUI',
-                        description: 'Em breve um novo desconto aqui',
-                        code: 'ROLE',
-                        category: 'curitiba',
-                        badge: 'exclusive',
-                        tags: ['🎛️ Techno', '🌃 Underground', '🔥 Festival'],
-                        expiry: '05 ago 2025 – das 20h às 06h',
-                        link: 'https://www.sympla.com.br/evento/curitiba-underground-festival',
-                        image: 'images/desconto.png',
-                        bgImage: 'linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%)',
-                        emoji: '🎛️'
-                    }
-                ];
-
-                if (category === 'todos') {
-                    return allDescontos;
-                }
-                
-                return allDescontos.filter(desconto => desconto.category === category);
-            }
-
-            function renderDescontos(descontos) {
-                if (descontos.length === 0) {
-                    descontosGrid.innerHTML = `
-                        <div class="descontos-empty">
-                            <div class="descontos-empty-icon">🔍</div>
-                            <h3>Nenhum desconto encontrado</h3>
-                            <p>Não há ofertas disponíveis nesta categoria no momento.</p>
-                            <p>Volte em breve ou inscreva-se na newsletter para ser avisado!</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                const descontosHTML = descontos.map((desconto, index) => `
-                    <article class="desconto-card fade-in-up stagger-delay" data-category="${desconto.category}">
-                        <div class="desconto-badge ${desconto.badge}">${getBadgeText(desconto.badge)}</div>
-                        <div class="desconto-image${desconto.bgImage ? ' has-bg' : ''}"${desconto.bgImage ? ` style="background: ${desconto.bgImage}"` : ''}>
-                            ${desconto.image ? 
-                                `<img src="${desconto.image}" alt="${desconto.title}" loading="lazy" />` : 
-                                `<div class="desconto-placeholder">${desconto.emoji || '🎉'}</div>`
-                            }
-                        </div>
-                        <div class="desconto-content">
-                            <div class="desconto-header">
-                                <h3 class="desconto-title">${desconto.title}</h3>
-                                <div class="desconto-code">${desconto.code}</div>
-                            </div>
-                            <p class="desconto-description">${desconto.description}</p>
-                            <div class="desconto-info">
-                                ${desconto.tags.map(tag => `<span class="desconto-tag">${tag}</span>`).join('')}
-                            </div>
-                            <div class="desconto-footer">
-                                <span class="desconto-expiry">${desconto.expiry}</span>
-                                <a href="${desconto.link}" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer" 
-                                   class="desconto-btn"
-                                   data-desconto-id="${desconto.id}"
-                                   data-desconto-code="${desconto.code}">
-                                    Resgatar
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                `).join('');
-
-                descontosGrid.innerHTML = descontosHTML;
-
-                // Re-observe new elements for animation
-                const newFadeElements = descontosGrid.querySelectorAll('.fade-in-up');
-                newFadeElements.forEach(element => {
-                    fadeObserver.observe(element);
-                });
-
-                // Add click tracking to desconto buttons
-                const descontoButtons = descontosGrid.querySelectorAll('.desconto-btn');
-                descontoButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        const descontoId = this.dataset.descontoId;
-                        const descontoTitle = this.closest('.desconto-card').querySelector('.desconto-title').textContent;
-                        
-                        console.log('Desconto clicked:', { id: descontoId, title: descontoTitle });
-                        showToast(`Redirecionando para o desconto: ${descontoTitle}`, 'discount');
-                    });
-                });
-            }
-
-            function getBadgeText(badgeType) {
-                const badges = {
-                    'hot': '🔥 QUENTE',
-                    'new': '✨ NOVO',
-                    'exclusive': '👑 EXCLUSIVO'
-                };
-                return badges[badgeType] || '💰 OFERTA';
-            }
-
-            // ========== KEYBOARD NAVIGATION ==========
-            document.addEventListener('keydown', function(e) {
-                // ESC key closes mobile menu
-                if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
-                    closeMenu();
-                }
-            });
-
-            // ========== NAVIGATION ACTIVE STATE ==========
-            const navItems = document.querySelectorAll('.app-nav-item');
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             
-            navItems.forEach(item => {
-                const href = item.getAttribute('href');
-                if (href === currentPage || (currentPage === 'descontos.html' && href === 'descontos.html')) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
+            if (!descontos || descontos.length === 0) {
+                descontosGrid.innerHTML = `
+                    <div class="descontos-empty">
+                        <div class="descontos-empty-icon">🔍</div>
+                        <h3>Nenhum desconto encontrado</h3>
+                        <p>Não há ofertas disponíveis nesta categoria no momento.</p>
+                        <p>Volte em breve ou inscreva-se na newsletter para ser avisado!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const descontosHTML = descontos.map((desconto, index) => `
+                <article class="desconto-card fade-in-up stagger-delay" data-category="${desconto.category}">
+                    <div class="desconto-badge ${desconto.badge}">${getBadgeText(desconto.badge)}</div>
+                    <div class="desconto-image${desconto.bgImage ? ' has-bg' : ''}"${desconto.bgImage ? ` style="background: ${desconto.bgImage}"` : ''}>
+                        ${desconto.image ? 
+                            `<img src="${desconto.image}" alt="${desconto.title}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                             <div class="desconto-placeholder" style="display: none;">${desconto.emoji || '🎉'}</div>` : 
+                            `<div class="desconto-placeholder">${desconto.emoji || '🎉'}</div>`
+                        }
+                    </div>
+                    <div class="desconto-content">
+                        <div class="desconto-header">
+                            <h3 class="desconto-title">${desconto.title}</h3>
+                            <div class="desconto-code">${desconto.code}</div>
+                        </div>
+                        <p class="desconto-description">${desconto.description}</p>
+                        <div class="desconto-info">
+                            ${desconto.tags.map(tag => `<span class="desconto-tag">${tag}</span>`).join('')}
+                        </div>
+                        <div class="desconto-footer">
+                            <span class="desconto-expiry">${desconto.expiry}</span>
+                            <a href="${desconto.link}" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="desconto-btn"
+                               data-desconto-id="${desconto.id}"
+                               data-desconto-code="${desconto.code}">
+                                Resgatar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+
+            descontosGrid.innerHTML = descontosHTML;
+
+            // Add click tracking to desconto buttons
+            const descontoButtons = descontosGrid.querySelectorAll('.desconto-btn');
+            descontoButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const descontoTitle = this.closest('.desconto-card').querySelector('.desconto-title').textContent;
+                    showToast(`Redirecionando para o desconto: ${descontoTitle}`, 'discount');
+                });
             });
+        }
 
-            // ========== INITIALIZE PAGE ==========
-            // Load initial discounts immediately
-            loadDescontos('todos');
+        function getDescontosByCategory(category) {
+            if (category === 'todos') {
+                return allDescontos;
+            }
+            return allDescontos.filter(desconto => desconto.category === category);
+        }
 
-            // Performance optimizations
-            let scrollTimeout;
-            window.addEventListener('scroll', function() {
-                if (scrollTimeout) {
-                    clearTimeout(scrollTimeout);
-                }
-                scrollTimeout = setTimeout(function() {
-                    // Handle scroll-based functionality here if needed
-                }, 10);
-            }, { passive: true });
-        });
+        function loadDescontos(category = 'todos') {
+            const descontos = getDescontosByCategory(category);
+            renderDescontos(descontos);
+        }
 
-        // ========== TOAST NOTIFICATION SYSTEM ==========
         function showToast(message, type = 'info') {
             // Remove existing toasts
             const existingToasts = document.querySelectorAll('.toast');
@@ -1162,36 +930,205 @@
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
             toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 120px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--accent-green);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-weight: 600;
+                font-size: 14px;
+                z-index: 10000;
+                opacity: 0;
+                transition: all 0.3s ease;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            `;
+            
+            if (type === 'error') {
+                toast.style.background = 'var(--accent-red)';
+            } else if (type === 'discount') {
+                toast.style.background = 'linear-gradient(135deg, var(--accent-green), var(--accent-blue))';
+            }
             
             document.body.appendChild(toast);
             
             // Show toast
-            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateX(-50%) translateY(-10px)';
+            }, 100);
             
             // Hide and remove toast
             setTimeout(() => {
-                toast.classList.remove('show');
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(-50%) translateY(0)';
                 setTimeout(() => toast.remove(), 300);
             }, 4000);
         }
 
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                // ========== MOBILE MENU FUNCTIONALITY ==========
+                const menuToggle = document.querySelector('.menu-toggle');
+                const menuClose = document.querySelector('.menu-close');
+                const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+                function openMenu() {
+                    if (mobileMenuOverlay) {
+                        mobileMenuOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                }
+
+                function closeMenu() {
+                    if (mobileMenuOverlay) {
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                }
+
+                if (menuToggle) menuToggle.addEventListener('click', openMenu);
+                if (menuClose) menuClose.addEventListener('click', closeMenu);
+                
+                // Close menu when clicking overlay
+                if (mobileMenuOverlay) {
+                    mobileMenuOverlay.addEventListener('click', function(e) {
+                        if (e.target === mobileMenuOverlay) {
+                            closeMenu();
+                        }
+                    });
+                }
+
+                // ========== THEME TOGGLE FUNCTIONALITY ==========
+                const themeToggle = document.querySelector('.theme-toggle-app');
+                const root = document.documentElement;
+
+                // Apply saved theme on load
+                try {
+                    const savedTheme = localStorage.getItem('theme');
+                    if (savedTheme === 'light') {
+                        root.setAttribute('data-theme', 'light');
+                    }
+                } catch (e) {
+                    console.warn('Theme loading failed:', e);
+                }
+
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', function() {
+                        try {
+                            if (root.hasAttribute('data-theme')) {
+                                root.removeAttribute('data-theme');
+                                localStorage.setItem('theme', 'dark');
+                            } else {
+                                root.setAttribute('data-theme', 'light');
+                                localStorage.setItem('theme', 'light');
+                            }
+                        } catch (e) {
+                            console.warn('Theme toggle failed:', e);
+                        }
+                    });
+                }
+
+                // ========== NEWSLETTER FORM ==========
+                const newsletterForm = document.getElementById('newsletter-form');
+                if (newsletterForm) {
+                    newsletterForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        
+                        const emailInput = this.querySelector('input[type="email"]');
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const btnText = submitBtn.querySelector('.btn-text');
+                        const btnLoading = submitBtn.querySelector('.btn-loading');
+                        
+                        const email = emailInput.value.trim();
+                        
+                        if (!email) {
+                            showToast('Por favor, insira seu e-mail.', 'error');
+                            return;
+                        }
+                        
+                        // Email validation
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(email)) {
+                            showToast('Por favor, insira um e-mail válido.', 'error');
+                            return;
+                        }
+                        
+                        // Loading state
+                        submitBtn.disabled = true;
+                        if (btnText) btnText.style.display = 'none';
+                        if (btnLoading) btnLoading.style.display = 'inline';
+                        
+                        try {
+                            const response = await fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
+                                method: 'POST',
+                                body: new URLSearchParams({ email, source: 'descontos' })
+                            });
+                            
+                            if (response.ok) {
+                                showToast(`Sucesso! ${email} foi cadastrado na newsletter de descontos.`, 'discount');
+                                this.reset();
+                            } else {
+                                throw new Error('Erro no servidor');
+                            }
+                        } catch (error) {
+                            console.error('Newsletter error:', error);
+                            showToast('Erro ao cadastrar. Tente novamente mais tarde.', 'error');
+                        } finally {
+                            submitBtn.disabled = false;
+                            if (btnText) btnText.style.display = 'inline';
+                            if (btnLoading) btnLoading.style.display = 'none';
+                        }
+                    });
+                }
+
+                // ========== CATEGORY FILTERING ==========
+                const categoryButtons = document.querySelectorAll('.desconto-category-btn');
+                let currentCategory = 'todos';
+
+                categoryButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Update active state
+                        categoryButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Get selected category
+                        currentCategory = this.dataset.category;
+                        
+                        // Load discounts for selected category
+                        loadDescontos(currentCategory);
+                        
+                        console.log('Category selected:', currentCategory);
+                    });
+                });
+
+                // ========== KEYBOARD NAVIGATION ==========
+                document.addEventListener('keydown', function(e) {
+                    // ESC key closes mobile menu
+                    if (e.key === 'Escape' && mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+
+                // ========== INITIALIZE PAGE ==========
+                // Load initial discounts immediately
+                loadDescontos('todos');
+
+                console.log('ROLÊ Descontos page loaded successfully!');
+
+            } catch (error) {
+                console.error('Error initializing page:', error);
+                // Fallback: still try to load descontos
+                loadDescontos('todos');
+            }
+        });
+
         // ========== ERROR HANDLING ==========
         window.addEventListener('error', function(e) {
             console.error('JavaScript Error:', e.error);
-        });
-
-        // ========== PREFETCH RELATED PAGES ==========
-        const prefetchLinks = [
-            'vitrine-cultural.html',
-            'revista.html',
-            'contato.html'
-        ];
-
-        prefetchLinks.forEach(href => {
-            const link = document.createElement('link');
-            link.rel = 'prefetch';
-            link.href = href;
-            document.head.appendChild(link);
         });
     </script>
 </body>
