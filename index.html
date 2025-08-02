@@ -1111,5 +1111,21 @@
             }
         }
     </style>
+
+    <!-- VERSÃO ALTERNATIVA - INICIALIZAR TODOS OS ANÚNCIOS DE UMA VEZ (ADICIONE ANTES DO </body>) -->
+<script>
+// Inicializa todos os anúncios da página após o carregamento
+document.addEventListener('DOMContentLoaded', function() {
+    // Para cada bloco de anúncio na página
+    const ads = document.querySelectorAll('.adsbygoogle');
+    ads.forEach(function(ad) {
+        try {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        } catch(e) {
+            console.warn('AdSense initialization failed for ad:', e);
+        }
+    });
+});
+</script>
 </body>
 </html>
