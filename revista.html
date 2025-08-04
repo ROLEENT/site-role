@@ -1118,180 +1118,124 @@
         </footer>
     </div>
 
-    <!-- JavaScript corrigido e otimizado -->
-    <script>
-        (function() {
-            'use strict';
-
-            // Enhanced security: Input sanitization
-            function sanitizeInput(str) {
-                if (!str) return '';
-                const div = document.createElement('div');
-                div.textContent = str;
-                return div.innerHTML.substring(0, 500);
-            }
-
-            // Enhanced security: Rate limiting
-            const rateLimiter = {
-                attempts: new Map(),
-                isAllowed: function(key, maxAttempts = 5, windowMs = 300000) {
-                    const now = Date.now();
-                    const attempts = this.attempts.get(key) || [];
-                    const validAttempts = attempts.filter(time => now - time < windowMs);
-                    
-                    if (validAttempts.length >= maxAttempts) {
-                        return false;
-                    }
-                    
-                    validAttempts.push(now);
-                    this.attempts.set(key, validAttempts);
-                    return true;
+ <script>
+(function() {
+    'use strict';
+    
+    // Função para definir página ativa
+    function setActiveNavigation(currentPage) {
+        // Remove todas as classes ativas
+        document.querySelectorAll('.desktop-menu a, .mobile-menu-link, .app-nav-item').forEach(link => {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+        });
+        
+        // Define a página ativa
+        const pageMap = {
+            'home': ['nav-home', 'mobile-nav-home', 'bottom-nav-home'],
+            'revista': ['nav-revista', 'mobile-nav-revista', 'bottom-nav-revista'],
+            'vitrine': ['nav-vitrine', 'mobile-nav-vitrine', 'bottom-nav-vitrine'],
+            'descontos': ['nav-descontos', 'mobile-nav-descontos', 'bottom-nav-descontos'],
+            'contato': ['nav-contato', 'mobile-nav-contato', 'bottom-nav-contato'],
+            'quem-somos': ['nav-quem-somos', 'mobile-nav-quem-somos']
+        };
+        
+        if (pageMap[currentPage]) {
+            pageMap[currentPage].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.classList.add('active');
+                    element.setAttribute('aria-current', 'page');
                 }
-            };
-
-            // DOM Ready callback
-            function onDOMReady(callback) {
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', callback, { once: true });
-                } else {
-                    callback();
-                }
-            }
-
-            // Initialize functionality with fallback
-            onDOMReady(function() {
-                // Initialize with timeout fallback
-                setTimeout(function() {
-                    try {
-                        initializeMenu();
-                        initializeTheme();
-                        initializeNewsletter();
-                        initializeHeroButton();
-                        
-                        // Only initialize animations if CSS is loaded
-                        if (getComputedStyle(document.body).fontFamily.includes('Inter') || 
-                            document.querySelector('.app-stats-grid').offsetHeight > 0) {
-                            initializeAnimations();
-                        }
-                    } catch (error) {
-                        console.warn('Initialization error:', error);
-                        // Fallback: ensure basic functionality works
-                        ensureBasicFunctionality();
-                    }
-                }, 100);
             });
-            
-            // Fallback function for basic functionality
-            function ensureBasicFunctionality() {
-                // Ensure menu works even without full CSS
-                const menuToggle = document.querySelector('.menu-toggle');
-                const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-                
-                if (menuToggle && mobileMenuOverlay) {
-                    menuToggle.addEventListener('click', function() {
-                        mobileMenuOverlay.style.display = mobileMenuOverlay.style.display === 'block' ? 'none' : 'block';
-                    });
-                }
-                
-                // Ensure theme toggle works
-                const themeToggle = document.querySelector('.theme-toggle-app');
-                if (themeToggle) {
-                    themeToggle.addEventListener('click', function() {
-                        const root = document.documentElement;
-                        const currentTheme = root.getAttribute('data-theme');
-                        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                        root.setAttribute('data-theme', newTheme);
-                        
-                        try {
-                            localStorage.setItem('theme', newTheme);
-                        } catch (e) {
-                            console.warn('LocalStorage not available');
-                        }
-                    });
-                }
+        }
+    }
+    
+    // Detectar página atual automaticamente
+    function detectCurrentPage() {
+        const currentPath = window.location.pathname.toLowerCase();
+        const currentFile = currentPath.split('/').pop().replace('.html', '');
+        
+        const pageMapping = {
+            'index': 'home',
+            '': 'home',
+            'revista': 'revista',
+            'vitrine-cultural': 'vitrine',
+            'descontos': 'descontos',
+            'contato': 'contato',
+            'quem-somos': 'quem-somos'
+        };
+        
+        const currentPage = pageMapping[currentFile] || 'home';
+        setActiveNavigation(currentPage);
+    }
+    
+    // Mobile menu functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuClose = document.querySelector('.menu-close');
+    const mobileMenuOverlay = document.getElementById('mobile-menu');
+    
+    if (menuToggle && mobileMenuOverlay) {
+        function openMenu() {
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            menuToggle.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMenu() {
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        
+        if (menuClose) {
+            menuClose.addEventListener('click', closeMenu);
+        }
+        
+        mobileMenuOverlay.addEventListener('click', function(e) {
+            if (e.target === mobileMenuOverlay) {
+                closeMenu();
             }
-
-            // Mobile menu functionality
-            function initializeMenu() {
-                const menuToggle = document.querySelector('.menu-toggle');
-                const menuClose = document.querySelector('.menu-close');
-                const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-
-                if (!menuToggle || !mobileMenuOverlay) return;
-
-                function openMenu() {
-                    mobileMenuOverlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                    menuToggle.setAttribute('aria-expanded', 'true');
-                    
-                    const firstFocusable = mobileMenuOverlay.querySelector('button, a');
-                    if (firstFocusable) {
-                        setTimeout(() => firstFocusable.focus(), 100);
-                    }
-                }
-
-                function closeMenu() {
-                    mobileMenuOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    setTimeout(() => menuToggle.focus(), 100);
-                }
-
-                menuToggle.addEventListener('click', openMenu);
-                if (menuClose) {
-                    menuClose.addEventListener('click', closeMenu);
-                }
-                
-                mobileMenuOverlay.addEventListener('click', function(e) {
-                    if (e.target === mobileMenuOverlay) {
-                        closeMenu();
-                    }
-                });
-
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
-                        closeMenu();
-                    }
-                });
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+                closeMenu();
             }
+        });
+    }
 
-            // Theme toggle functionality
-            function initializeTheme() {
-                const themeToggle = document.querySelector('.theme-toggle-app');
-                const root = document.documentElement;
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle-app');
+    const root = document.documentElement;
 
-                if (!themeToggle) return;
-
-                const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                const systemPrefersDark = mediaQuery.matches;
-                const savedTheme = localStorage.getItem('theme');
-                
-                if (savedTheme) {
-                    root.setAttribute('data-theme', savedTheme);
-                } else if (!systemPrefersDark) {
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            try {
+                const isLight = root.hasAttribute('data-theme');
+                if (isLight) {
+                    root.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'dark');
+                } else {
                     root.setAttribute('data-theme', 'light');
-                    try {
-                        localStorage.setItem('theme', 'light');
-                    } catch (e) {
-                        console.warn('LocalStorage not available');
-                    }
+                    localStorage.setItem('theme', 'light');
                 }
-
-                themeToggle.addEventListener('click', function() {
-                    const currentTheme = root.getAttribute('data-theme');
-                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                    
-                    root.setAttribute('data-theme', newTheme);
-                    try {
-                        localStorage.setItem('theme', newTheme);
-                    } catch (e) {
-                        console.warn('LocalStorage not available');
-                    }
-                    
-                    showToast(`Tema ${newTheme === 'light' ? 'claro' : 'escuro'} ativado`, 'info');
-                });
+            } catch(e) {
+                console.warn('Theme toggle failed:', e);
             }
-
+        });
+    }
+    
+    // Inicializar quando DOM estiver pronto
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', detectCurrentPage);
+    } else {
+        detectCurrentPage();
+    }
+    
+})();
             // Animation initialization
             function initializeAnimations() {
                 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1568,13 +1512,5 @@
             }
         }, { once: true });
     </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
