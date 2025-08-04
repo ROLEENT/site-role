@@ -331,72 +331,72 @@
 
 <body>
     <div class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="app-header-content">
-                <a href="index.html" class="app-logo-container" rel="home" aria-label="Ir para página inicial">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="120" height="40" loading="eager" />
-                </a>
-                <div class="app-header-actions">
-                    <!-- Desktop Menu -->
-                    <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
-                        <a href="index.html" rel="home">Home</a>
-                        <a href="revista.html" class="active" aria-current="page">Revista</a>
-                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                        <a href="descontos.html">Descontos</a>
-                        <a href="contato.html">Contato</a>
-                        <a href="quem-somos.html">Quem Somos</a>
-                    </nav>
-
-                    <!-- Mobile Menu Button -->
-                    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenuOverlay">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                    
-                    <!-- Theme Toggle -->
-                    <button class="theme-toggle-app" aria-label="Alternar tema claro/escuro">
-                        <img src="images/theme-toggle.gif" alt="Alternar tema" width="24" height="24" loading="lazy" />
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay" id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
-            <nav class="mobile-menu" role="navigation">
-                <div class="mobile-menu-header">
-                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="100" height="32" loading="lazy" />
-                    <button class="menu-close" aria-label="Fechar menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <ul class="mobile-menu-list" id="mobile-menu-title">
-                    <li><a href="index.html" class="mobile-menu-link" rel="home">🏠 Página Inicial</a></li>
-                    <li><a href="revista.html" class="mobile-menu-link active" aria-current="page">📰 Revista ROLÊ</a></li>
-                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
-                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
-                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
-                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
-                </ul>
-                <div class="mobile-menu-footer">
-                    <div class="mobile-menu-social">
-                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
-                            <img src="images/instagram.svg" alt="Instagram" width="20" height="20" loading="lazy" />
-                        </a>
-                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no TikTok">
-                            <img src="images/tiktok.svg" alt="TikTok" width="20" height="20" loading="lazy" />
-                        </a>
-                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
-                            <img src="images/whatsapp.svg" alt="WhatsApp" width="20" height="20" loading="lazy" />
-                        </a>
-                    </div>
-                </div>
+<!-- Header -->
+<header class="app-header" role="banner">
+    <div class="app-header-content">
+        <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
+            <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="150" height="50" />
+        </a>
+        <div class="app-header-actions">
+            <!-- Desktop Menu -->
+            <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
+                <a href="index.html" id="nav-home">Home</a>
+                <a href="revista.html" id="nav-revista">Revista</a>
+                <a href="vitrine-cultural.html" id="nav-vitrine">Vitrine Cultural</a>
+                <a href="descontos.html" id="nav-descontos">Descontos</a>
+                <a href="contato.html" id="nav-contato">Contato</a>
+                <a href="quem-somos.html" id="nav-quem-somos">Quem Somos</a>
             </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Theme Toggle -->
+            <button class="theme-toggle-app" aria-label="Alternar entre tema claro e escuro">
+                <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
+            </button>
         </div>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+    <nav class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
+            <button class="menu-close" aria-label="Fechar menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-menu-list" role="list">
+            <li><a href="index.html" class="mobile-menu-link" id="mobile-nav-home">🏠 Página Inicial</a></li>
+            <li><a href="revista.html" class="mobile-menu-link" id="mobile-nav-revista">📰 Revista ROLÊ</a></li>
+            <li><a href="vitrine-cultural.html" class="mobile-menu-link" id="mobile-nav-vitrine">🎨 Vitrine Cultural</a></li>
+            <li><a href="descontos.html" class="mobile-menu-link" id="mobile-nav-descontos">💰 Descontos</a></li>
+            <li><a href="contato.html" class="mobile-menu-link" id="mobile-nav-contato">📞 Contato</a></li>
+            <li><a href="quem-somos.html" class="mobile-menu-link" id="mobile-nav-quem-somos">ℹ️ Quem Somos</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <div class="mobile-menu-social">
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
+                    <img src="images/instagram.svg" alt="" width="20" height="20" role="presentation" />
+                </a>
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no TikTok">
+                    <img src="images/tiktok.svg" alt="" width="20" height="20" role="presentation" />
+                </a>
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+                    <img src="images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
 
         <!-- Hero Section -->
         <section class="app-hero-section">
@@ -1571,6 +1571,7 @@
 
 </body>
 </html>
+
 
 
 
