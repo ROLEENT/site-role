@@ -717,75 +717,6 @@
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
                     <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="150" height="50" />
                 </a>
-                <div class="app-header-actions">
-                    <!-- Desktop Menu -->
-                    <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
-                        <a href="index.html">Home</a>
-                        <a href="revista.html">Revista</a>
-                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                        <a href="descontos.html" class="active" aria-current="page">Descontos</a>
-                        <a href="contato.html">Contato</a>
-                        <a href="quem-somos.html">Quem Somos</a>
-                    </nav>
-
-                    <!-- Mobile Menu Button -->
-                    <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                    
-                    <!-- Theme Toggle -->
-                    <button class="theme-toggle-app" aria-label="Alternar entre tema claro e escuro">
-                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
-            <nav class="mobile-menu">
-                <div class="mobile-menu-header">
-                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
-                    <button class="menu-close" aria-label="Fechar menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <ul class="mobile-menu-list" role="list">
-                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
-                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
-                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
-                    <li><a href="descontos.html" class="mobile-menu-link active" aria-current="page">💰 Descontos</a></li>
-                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
-                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
-                </ul>
-                <div class="mobile-menu-footer">
-                    <div class="mobile-menu-social">
-                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
-                            <img src="images/instagram.svg" alt="" width="20" height="20" role="presentation" />
-                        </a>
-                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no TikTok">
-                            <img src="images/tiktok.svg" alt="" width="20" height="20" role="presentation" />
-                        </a>
-                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
-                            <img src="images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- Hero Section dos Descontos -->
-        <section class="descontos-hero fade-in-up">
-            <div class="descontos-hero-content">
-                <h1 class="descontos-hero-title">Descontos Exclusivos ROLÊ</h1>
-                <p class="descontos-hero-subtitle">
-                    Ofertas especiais e promoções únicas para rolezeiros conectados. 
-                    Economize nos melhores eventos, festas e experiências culturais da cena independente.
-                </p>
                 <div class="descontos-highlight">
                     <strong>🎯 Exclusivo para a comunidade:</strong> Descontos especiais negociados diretamente com produtores e casas de shows para nossos seguidores.
                 </div>
@@ -806,7 +737,7 @@
         <section class="descontos-stats fade-in-up">
             <div class="desconto-stat stagger-delay">
                 <span class="desconto-stat-number" data-target="5">0</span>
-                <span class="desconto-stat-label">as ofertas ativas</span>
+                <span class="desconto-stat-label">Ofertas ativas</span>
             </div>
             <div class="desconto-stat stagger-delay">
                 <span class="desconto-stat-number" data-target="5">0</span>
@@ -951,7 +882,97 @@
                     let timeout;
                     return function executedFunction(...args) {
                         const later = () => {
-                            clearTimeout(timeout);
+                            <div class="desconto-footer">
+                                <span class="desconto-expiry">${desconto.expiry}</span>
+                                <a href="${desconto.link}" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="desconto-btn"
+                                   data-desconto-id="${desconto.id}"
+                                   data-desconto-code="${desconto.code}">
+                                    Resgatar
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                `).join('');
+
+                descontosGrid.innerHTML = descontosHTML;
+
+                const newFadeElements = descontosGrid.querySelectorAll('.fade-in-up');
+                newFadeElements.forEach(element => {
+                    fadeObserver.observe(element);
+                });
+
+                const descontoButtons = descontosGrid.querySelectorAll('.desconto-btn');
+                descontoButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const descontoId = this.dataset.descontoId;
+                        const descontoTitle = this.closest('.desconto-card').querySelector('.desconto-title').textContent;
+                        
+                        console.log('Desconto clicked:', { id: descontoId, title: descontoTitle });
+                        utils.showToast(`Redirecionando para o desconto: ${descontoTitle}`, 'discount');
+                    });
+                });
+            }
+
+            function getBadgeText(badgeType) {
+                const badges = {
+                    'hot': '🔥 QUENTE',
+                    'new': '✨ NOVO',
+                    'exclusive': '👑 EXCLUSIVO'
+                };
+                return badges[badgeType] || '💰 OFERTA';
+            }
+
+            // ========== INITIALIZE PAGE ==========
+            loadDescontos('todos');
+
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                scrollTimeout = setTimeout(function() {
+                    // Handle scroll-based functionality here if needed
+                }, 10);
+            }, { passive: true });
+
+            // Initialize ads after DOM is ready
+            if (window.adsbygoogle) {
+                try {
+                    (window.adsbygoogle = window.adsbygoogle || []).push({});
+                } catch(e) {
+                    console.warn('AdSense initialization failed:', e);
+                }
+            }
+        });
+
+        // ========== ERROR HANDLING ==========
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript Error:', e.error);
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            console.warn('Unhandled promise rejection:', e.reason);
+        });
+    </script>
+
+    <!-- Initialize all ads after page load -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ads = document.querySelectorAll('.adsbygoogle');
+            ads.forEach(function(ad) {
+                try {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } catch(e) {
+                    console.warn('AdSense initialization failed for ad:', e);
+                }
+            });
+        });
+    </script>
+</body>
+</html>clearTimeout(timeout);
                             func(...args);
                         };
                         clearTimeout(timeout);
@@ -1354,4 +1375,85 @@
                         <div class="desconto-image${desconto.bgImage ? ' has-bg' : ''}"${desconto.bgImage ? ` style="background: ${desconto.bgImage}"` : ''}>
                             ${desconto.image ? 
                                 `<img src="${desconto.image}" alt="${desconto.title}" loading="lazy" />` : 
-                                `<div class="desconto
+                                `<div class="desconto-placeholder">${desconto.emoji || '🎉'}</div>`
+                            }
+                        </div>
+                        <div class="desconto-content">
+                            <div class="desconto-header">
+                                <h3 class="desconto-title">${desconto.title}</h3>
+                                <div class="desconto-code">${desconto.code}</div>
+                            </div>
+                            <p class="desconto-description">${desconto.description}</p>
+                            <div class="desconto-info">
+                                ${desconto.tags.map(tag => `<span class="desconto-tag">${tag}</span>`).join('')}
+                            </div>
+                            app-header-actions">
+                    <!-- Desktop Menu -->
+                    <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
+                        <a href="index.html">Home</a>
+                        <a href="revista.html">Revista</a>
+                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="descontos.html" class="active" aria-current="page">Descontos</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="quem-somos.html">Quem Somos</a>
+                    </nav>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" aria-label="Alternar entre tema claro e escuro">
+                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+            <nav class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
+                    <button class="menu-close" aria-label="Fechar menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-menu-list" role="list">
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="descontos.html" class="mobile-menu-link active" aria-current="page">💰 Descontos</a></li>
+                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
+                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
+                </ul>
+                <div class="mobile-menu-footer">
+                    <div class="mobile-menu-social">
+                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
+                            <img src="images/instagram.svg" alt="" width="20" height="20" role="presentation" />
+                        </a>
+                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no TikTok">
+                            <img src="images/tiktok.svg" alt="" width="20" height="20" role="presentation" />
+                        </a>
+                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+                            <img src="images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Hero Section dos Descontos -->
+        <section class="descontos-hero fade-in-up">
+            <div class="descontos-hero-content">
+                <h1 class="descontos-hero-title">Descontos Exclusivos ROLÊ</h1>
+                <p class="descontos-hero-subtitle">
+                    Ofertas especiais e promoções únicas para rolezeiros conectados. 
+                    Economize nos melhores eventos, festas e experiências culturais da cena independente.
+                </p>
+                <div class="
