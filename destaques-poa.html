@@ -225,7 +225,7 @@
             <h1 class="page-title">Eventos em Porto Alegre: os rolês mais quentes da semana na capital gaúcha</h1>
             <p class="page-subtitle">Uma cidade que dança mesmo no frio</p>
             <div class="article-meta">
-                <span class="article-date">📅 08 a 10 de agosto de 2025</span>
+                <span class="article-date">📅 6 de Janeiro, 2025</span>
                 <span class="article-category">🎭 Destaques da Semana</span>
             </div>
         </section>
@@ -263,7 +263,7 @@
                 <h2>As festas que prometem fritar a pista</h2>
 
                 <p>
-                    A sexta-feira já começa com o pé direito, ou melhor, com salto 15 e glitter até a sobrancelha. A <strong>SEXPOSED</strong> volta ao Cabaret num clima de libertação pop: gogoboys, sex shop no segundo andar e muita quenga se jogando no eletropop. Uma década de história e nenhuma vergonha de ser feliz essa festa já nasceu clássica.
+                    A sexta-feira já começa com o pé direito, ou melhor, com salto 15 e glitter até a sobrancelha. A <strong>SEXPOSED</strong> volta ao Cabaret num clima de libertação pop: gogoboys, sex shop no segundo andar e muita quenga se jogando no eletropop. Uma década de história e nenhuma vergonha de ser feliz — essa festa já nasceu clássica.
                 </p>
 
                 <p>
@@ -391,6 +391,31 @@
                         </svg>
                         Copiar Link
                     </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Interaction Section -->
+        <section class="instagram-interaction-section">
+            <div class="content-card">
+                <div class="instagram-cta">
+                    <div class="instagram-icon">
+                        <img src="images/instagram.svg" alt="Instagram" width="32" height="32" />
+                    </div>
+                    <div class="instagram-content">
+                        <h3>Curte, comenta e interage!</h3>
+                        <p>Veja o post oficial dos destaques da semana e deixa tua opinião sobre qual rolê tem mais a tua cara.</p>
+                    </div>
+                    <a href="https://www.instagram.com/p/DM8Gb9Uu3Ma/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="instagram-btn">
+                        <img src="images/instagram.svg" alt="Instagram" width="20" height="20" />
+                        <span>Ver Post dos Destaques</span>
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1032,6 +1057,120 @@
             background: var(--accent-purple);
             color: white;
             border-color: var(--accent-purple);
+        }
+
+        /* Instagram Interaction Section */
+        .instagram-interaction-section {
+            margin: 32px 0;
+        }
+
+        .instagram-cta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 32px;
+            background: linear-gradient(135deg, rgba(240, 148, 51, 0.1), rgba(188, 24, 136, 0.1));
+            border: 1px solid rgba(240, 148, 51, 0.2);
+            border-radius: 20px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .instagram-cta {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px 20px;
+                gap: 20px;
+            }
+        }
+
+        .instagram-icon {
+            flex-shrink: 0;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        @media (max-width: 768px) {
+            .instagram-icon {
+                width: 56px;
+                height: 56px;
+            }
+        }
+
+        .instagram-icon img {
+            filter: brightness(0) invert(1);
+        }
+
+        .instagram-content {
+            flex: 1;
+        }
+
+        .instagram-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        @media (min-width: 769px) {
+            .instagram-content h3 {
+                font-size: 1.375rem;
+            }
+        }
+
+        .instagram-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media (min-width: 769px) {
+            .instagram-content p {
+                font-size: 1rem;
+            }
+        }
+
+        .instagram-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .instagram-btn {
+                padding: 14px 20px;
+                font-size: 14px;
+                justify-content: center;
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(240, 148, 51, 0.4);
+        }
+
+        .instagram-btn img {
+            filter: brightness(0) invert(1);
         }
 
         /* Newsletter and Footer adjustments for mobile */
