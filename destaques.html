@@ -676,6 +676,52 @@
                 height: 32px;
             }
         }
+
+        /* Desktop menu alignment fix */
+        @media (min-width: 769px) {
+            .desktop-menu {
+                display: flex;
+                gap: 24px;
+                align-items: center;
+                margin-right: 24px;
+            }
+
+            .desktop-menu a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: var(--transition-fast);
+                padding: 8px 12px;
+                border-radius: 8px;
+                position: relative;
+                white-space: nowrap;
+            }
+
+            .desktop-menu a:hover,
+            .desktop-menu a.active {
+                color: var(--accent-purple);
+                background: rgba(139, 92, 246, 0.1);
+            }
+
+            .desktop-menu a.active::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 2px;
+                background: var(--accent-purple);
+                border-radius: 1px;
+            }
+
+            .app-header-actions {
+                display: flex;
+                gap: 16px;
+                align-items: center;
+            }
+        }
     </style>
     
     <!-- No-JS Fallback -->
