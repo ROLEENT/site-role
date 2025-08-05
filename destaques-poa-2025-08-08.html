@@ -130,6 +130,17 @@
     
     <!-- Custom Styles for Article Page -->
     <style>
+        /* Fix mobile header to match index.html */
+        @media (max-width: 768px) {
+            .app-header-content {
+                padding: 20px 0 16px 0 !important; /* Same as index.html */
+            }
+            
+            .app-logo-img {
+                height: 32px !important; /* Same as index.html */
+            }
+        }
+
         /* Article-specific styles that extend the main CSS */
         .article-content p {
             text-align: justify;
