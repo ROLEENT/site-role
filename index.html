@@ -5,29 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     
     <!-- SEO e Meta Tags Melhoradas -->
-    <title>ROLÊ ENTRETENIMENTO | Cultura, Arte e Diversão nas Cidades Brasileiras</title>
-    <meta name="description" content="ROLÊ: A melhor curadoria independente de eventos, cultura e experiências do Brasil. Descubra shows, festas, teatro e arte nas principais cidades brasileiras.">
-    <meta name="keywords" content="eventos brasil, cultura brasileira, shows ao vivo, festas, teatro, arte, entretenimento, Porto Alegre, São Paulo, Rio de Janeiro, Florianópolis, Curitiba">
+    <title>ROLÊ ENTRETENIMENTO | Curadoria Independente de Cultura e Eventos no Brasil</title>
+    <meta name="description" content="Descubra a melhor curadoria independente de eventos culturais do Brasil. Shows, festas, teatro e arte em Porto Alegre, São Paulo, Rio de Janeiro, Florianópolis e Curitiba. Editorial semanal com as melhores experiências.">
+    <meta name="keywords" content="eventos brasil, cultura brasileira, shows ao vivo, festas underground, teatro independente, arte contemporânea, entretenimento, Porto Alegre, São Paulo, Rio de Janeiro, Florianópolis, Curitiba, curadoria cultural, revista cultural">
     <meta name="author" content="ROLÊ Entretenimento">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://roleentretenimento.com/">
+    
+    <!-- Structured Data Aprimorado -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://roleentretenimento.com/#organization",
+                "name": "ROLÊ Entretenimento",
+                "alternateName": "ROLÊ",
+                "description": "Curadoria independente de eventos, cultura e experiências do Brasil",
+                "url": "https://roleentretenimento.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://roleentretenimento.com/images/logo-role.png",
+                    "width": 150,
+                    "height": 50
+                },
+                "sameAs": [
+                    "https://instagram.com/role.ent",
+                    "https://tiktok.com/@role.ent"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+55-51-98070-4353",
+                    "contactType": "customer service",
+                    "availableLanguage": ["Portuguese"],
+                    "areaServed": "BR"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "BR",
+                    "addressRegion": "Rio Grande do Sul"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://roleentretenimento.com/#website",
+                "url": "https://roleentretenimento.com",
+                "name": "ROLÊ Entretenimento",
+                "publisher": {
+                    "@id": "https://roleentretenimento.com/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://roleentretenimento.com/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://roleentretenimento.com/#webpage",
+                "url": "https://roleentretenimento.com",
+                "name": "ROLÊ ENTRETENIMENTO | Curadoria Independente de Cultura e Eventos",
+                "description": "Descubra a melhor curadoria independente de eventos culturais do Brasil. Shows, festas, teatro e arte nas principais cidades brasileiras.",
+                "isPartOf": {
+                    "@id": "https://roleentretenimento.com/#website"
+                },
+                "about": {
+                    "@id": "https://roleentretenimento.com/#organization"
+                },
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "https://roleentretenimento.com"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    </script>
     
     <!-- Open Graph Melhorado -->
     <meta property="og:site_name" content="ROLÊ Entretenimento">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roleentretenimento.com/">
-    <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Cultura, Arte e Diversão nas Cidades Brasileiras">
-    <meta property="og:description" content="A melhor curadoria independente de eventos culturais do Brasil. Shows, festas, teatro e arte em Porto Alegre, São Paulo, Rio e muito mais.">
+    <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Curadoria Independente de Cultura e Eventos">
+    <meta property="og:description" content="A melhor curadoria independente de eventos culturais do Brasil. Shows, festas, teatro e arte em Porto Alegre, São Paulo, Rio e muito mais. Editorial semanal com as melhores experiências.">
     <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png">
     <meta property="og:image:alt" content="Banner ROLÊ - Cultura e entretenimento brasileiro">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="pt">
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ROLÊ ENTRETENIMENTO – Cultura e Arte">
-    <meta name="twitter:description" content="Curadoria independente dos melhores eventos culturais do Brasil">
+    <meta name="twitter:site" content="@role.ent">
+    <meta name="twitter:creator" content="@role.ent">
+    <meta name="twitter:title" content="ROLÊ ENTRETENIMENTO – Curadoria Independente de Cultura">
+    <meta name="twitter:description" content="Curadoria independente dos melhores eventos culturais do Brasil. Editorial semanal com shows, festas, teatro e arte.">
     <meta name="twitter:image" content="https://roleentretenimento.com/images/banner-home.png">
     
     <!-- Performance e Cache -->
@@ -92,28 +173,6 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ROLÊ Entretenimento",
-        "description": "Curadoria independente de eventos, cultura e experiências",
-        "url": "https://roleentretenimento.com",
-        "logo": "https://roleentretenimento.com/images/logo-role.png",
-        "sameAs": [
-            "https://instagram.com/role.ent",
-            "https://tiktok.com/@role.ent"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+55-51-98070-4353",
-            "contactType": "customer service",
-            "availableLanguage": "Portuguese"
-        }
-    }
-    </script>
-    
     <!-- CSS Critical Path -->
     <style>
         /* Critical CSS inline */
@@ -121,6 +180,50 @@
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6}
         .app-header{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px)}
+        
+        /* Header Fixes */
+        @media (max-width: 768px) {
+            .app-header-content {
+                padding: 16px 0 12px 0 !important;
+            }
+            .app-logo-img {
+                height: 28px !important;
+            }
+            .app-header-actions {
+                gap: 12px !important;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .app-header-content {
+                padding: 16px 40px !important;
+            }
+            .app-header-actions {
+                gap: 20px !important;
+            }
+            .desktop-menu {
+                gap: 24px !important;
+                margin-right: 24px !important;
+            }
+        }
+        
+        /* Banner Size Fix */
+        .app-banner-container {
+            max-height: 200px !important;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 769px) {
+            .app-banner-container {
+                max-height: 280px !important;
+            }
+        }
+        
+        .app-banner-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
     
     <!-- Load Main CSS -->
@@ -136,14 +239,14 @@
 
 <body>
     <div class="app-container">
-        <!-- Header Atualizado com Destaques -->
+        <!-- Header Corrigido -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="150" height="50" />
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="120" height="28" />
                 </a>
                 <div class="app-header-actions">
-                    <!-- Desktop Menu com Destaques -->
+                    <!-- Desktop Menu -->
                     <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
                         <a href="index.html" class="active" aria-current="page">Home</a>
                         <a href="revista.html">Revista</a>
@@ -154,25 +257,25 @@
                         <a href="quem-somos.html">Quem Somos</a>
                     </nav>
 
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
+                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
+                    </button>
+
                     <!-- Mobile Menu Button -->
                     <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
-                    
-                    <!-- Theme Toggle -->
-                    <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
-                    </button>
                 </div>
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay Corrigido -->
+        <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
-                    <div class="mobile-menu-header">
+                <div class="mobile-menu-header">
                     <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
                     <button class="menu-close" id="menu-close-btn" aria-label="Fechar menu">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -184,6 +287,7 @@
                     <li><a href="index.html" class="mobile-menu-link active" aria-current="page">🏠 Página Inicial</a></li>
                     <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
                     <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="destaques.html" class="mobile-menu-link">⭐ Destaques</a></li>
                     <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
                     <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
                     <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
@@ -256,15 +360,15 @@
             </div>
         </section>
 
-        <!-- Banner -->
+        <!-- Banner Redimensionado -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
                 <img src="images/banner-home.png" alt="Banner ROLÊ - Cultura e entretenimento brasileiro" 
-                     loading="lazy" width="1200" height="400" />
+                     loading="lazy" width="1200" height="300" />
             </div>
         </div>
 
-        <!-- Section Header Atualizado -->
+        <!-- Section Header -->
         <div class="app-section-header">
             <h2 class="app-section-title" id="destaques-title">DESTAQUES DA SEMANA</h2>
             <a href="destaques.html" class="app-see-all" aria-describedby="destaques-title">Ver todos os destaques</a>
@@ -282,142 +386,6 @@
                     <div class="app-card-content">
                         <h3 class="app-card-title">Porto Alegre</h3>
                         <p class="app-card-description">A cena alternativa pulsa forte no Sul.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Localização">📍</span>
-                                <span>Rio Grande do Sul</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Música">🎸</span>
-                                <span>9 eventos em destaque</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.8</span>
-                            </div>
-                            <a href="destaques-poa.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais de Porto Alegre"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Florianópolis -->
-                <article class="app-recommendation-card" data-city="florianopolis" onclick="window.location.href='destaques-floripa.html'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Hoje</div>
-                        <img src="images/floripa.png" alt="Cultura eletrônica de Florianópolis" loading="lazy" width="280" height="140" />
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">Florianópolis</h3>
-                        <p class="app-card-description">Beira-mar, eletrônica e coletivo.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Localização">📍</span>
-                                <span>Santa Catarina</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Praia">🌊</span>
-                                <span>9 eventos em destaque</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.9</span>
-                            </div>
-                            <a href="destaques-floripa.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais de Florianópolis"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Curitiba -->
-                <article class="app-recommendation-card" data-city="curitiba" onclick="window.location.href='destaques-curitiba.html'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Amanhã</div>
-                        <img src="images/curitiba.png" alt="Vida noturna de Curitiba" loading="lazy" width="280" height="140" />
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">Curitiba</h3>
-                        <p class="app-card-description">Frio na rua, calor nas pistas.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Localização">📍</span>
-                                <span>Paraná</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Natureza">🌲</span>
-                                <span>9 eventos em destaque</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.2</span>
-                            </div>
-                            <a href="destaques-curitiba.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais de Curitiba"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- São Paulo -->
-                <article class="app-recommendation-card" data-city="sao-paulo" onclick="window.location.href='destaques-sao-paulo.html'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Hoje</div>
-                        <img src="images/sao-paulo.png" alt="Cena cultural de São Paulo" loading="lazy" width="280" height="140" />
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">São Paulo</h3>
-                        <p class="app-card-description">A cidade que nunca dorme... nem para de dançar.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Localização">📍</span>
-                                <span>São Paulo</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Metrópole">🏙️</span>
-                                <span>11 eventos em destaque</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.7</span>
-                            </div>
-                            <a href="destaques-sao-paulo.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais de São Paulo"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Rio de Janeiro -->
-                <article class="app-recommendation-card" data-city="rio-janeiro" onclick="window.location.href='destaques-rio.html'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Sábado</div>
-                        <img src="images/rio.png" alt="Cultura funk e eventos no Rio de Janeiro" loading="lazy" width="280" height="140" />
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">Rio de Janeiro</h3>
-                        <p class="app-card-description">Funk, favela, cor e calor cultural.</p>
                         <div class="app-card-info">
                             <div class="app-card-info-item">
                                 <span role="img" aria-label="Localização">📍</span>
@@ -561,7 +529,7 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation CORRIGIDO -->
+        <!-- Bottom Navigation -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item active" aria-label="Página inicial" aria-current="page">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -599,7 +567,7 @@
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript Corrigido e Funcional -->
+    <!-- JavaScript Otimizado -->
     <script>
         // Performance and Security Enhanced JavaScript
         (function() {
@@ -658,7 +626,7 @@
 
             // DOM Ready
             function initializeApp() {
-                // Mobile menu functionality CORRIGIDO
+                // Mobile menu functionality
                 const menuToggle = document.getElementById('menu-toggle-btn');
                 const menuClose = document.getElementById('menu-close-btn');
                 const mobileMenuOverlay = document.getElementById('mobile-menu');
@@ -685,14 +653,12 @@
 
                     menuToggle.addEventListener('click', function(e) {
                         e.preventDefault();
-                        console.log('Menu toggle clicked'); // Debug
                         openMenu();
                     });
                     
                     if (menuClose) {
                         menuClose.addEventListener('click', function(e) {
                             e.preventDefault();
-                            console.log('Menu close clicked'); // Debug
                             closeMenu();
                         });
                     }
@@ -712,7 +678,7 @@
                     });
                 }
 
-                // Theme toggle functionality CORRIGIDO
+                // Theme toggle functionality
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -724,11 +690,9 @@
                             if (isLight) {
                                 root.removeAttribute('data-theme');
                                 localStorage.setItem('theme', 'dark');
-                                console.log('Theme changed to dark');
                             } else {
                                 root.setAttribute('data-theme', 'light');
                                 localStorage.setItem('theme', 'light');
-                                console.log('Theme changed to light');
                             }
                         } catch(e) {
                             console.warn('Theme toggle failed:', e);
@@ -851,8 +815,6 @@
                         
                         const categoryType = this.dataset.category;
                         console.log('Category selected:', categoryType);
-                        
-                        // Future: implement filtering logic
                     });
                     
                     // Keyboard support
@@ -903,7 +865,6 @@
                     searchInput.addEventListener('input', utils.debounce(function() {
                         const query = utils.sanitize(this.value.toLowerCase().trim());
                         if (query.length >= 2) {
-                            // Future: implement search functionality
                             console.log('Search query:', query);
                         }
                     }, 300));
@@ -1000,24 +961,8 @@
         })();
     </script>
 
-    <!-- CSS Adicional para corrigir problemas mobile -->
+    <!-- CSS Adicional para correções finais -->
     <style>
-        /* Correção para o header mobile - reduzir altura */
-        @media (max-width: 768px) {
-            .app-header-content {
-                padding: 20px 0 16px 0; /* Reduzido de 60px para 20px */
-            }
-            
-            .app-logo-img {
-                height: 32px; /* Reduzido de 40px para 32px */
-            }
-            
-            /* Ajuste do safe area para iOS */
-            .app-header {
-                padding-top: env(safe-area-inset-top, 0px);
-            }
-        }
-
         /* Newsletter error styling */
         .newsletter-error {
             color: var(--accent-red);
@@ -1076,12 +1021,6 @@
             background: var(--accent-red);
         }
         
-        /* Enhanced focus styles */
-        .keyboard-navigation {
-            outline: 2px solid var(--accent-purple);
-            outline-offset: 2px;
-        }
-        
         /* Loading state for buttons */
         .btn-loading {
             display: none;
@@ -1091,45 +1030,142 @@
             opacity: 0.6;
             cursor: not-allowed;
         }
-        
-        /* Screen reader only content */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .app-card-badge {
-                border: 2px solid white;
-            }
-            
-            .category-icon-app {
-                border: 2px solid var(--text-primary);
-            }
-            
-            .app-btn-hero,
-            .app-btn-newsletter {
-                border: 2px solid currentColor;
-            }
-        }
-        
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
     </style>
 </body>
-</html>
+</html>" aria-label="Localização">📍</span>
+                                <span>Rio Grande do Sul</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Música">🎸</span>
+                                <span>9 eventos em destaque</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.8</span>
+                            </div>
+                            <a href="destaques-poa.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de Porto Alegre"
+                               onclick="event.stopPropagation();">
+                                Ler Destaques
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Florianópolis -->
+                <article class="app-recommendation-card" data-city="florianopolis" onclick="window.location.href='destaques-floripa.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Hoje</div>
+                        <img src="images/floripa.png" alt="Cultura eletrônica de Florianópolis" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Florianópolis</h3>
+                        <p class="app-card-description">Beira-mar, eletrônica e coletivo.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>Santa Catarina</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Praia">🌊</span>
+                                <span>9 eventos em destaque</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.9</span>
+                            </div>
+                            <a href="destaques-floripa.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de Florianópolis"
+                               onclick="event.stopPropagation();">
+                                Ler Destaques
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Curitiba -->
+                <article class="app-recommendation-card" data-city="curitiba" onclick="window.location.href='destaques-curitiba.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Amanhã</div>
+                        <img src="images/curitiba.png" alt="Vida noturna de Curitiba" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Curitiba</h3>
+                        <p class="app-card-description">Frio na rua, calor nas pistas.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>Paraná</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Natureza">🌲</span>
+                                <span>9 eventos em destaque</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.2</span>
+                            </div>
+                            <a href="destaques-curitiba.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de Curitiba"
+                               onclick="event.stopPropagation();">
+                                Ler Destaques
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- São Paulo -->
+                <article class="app-recommendation-card" data-city="sao-paulo" onclick="window.location.href='destaques-sao-paulo.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Hoje</div>
+                        <img src="images/sao-paulo.png" alt="Cena cultural de São Paulo" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">São Paulo</h3>
+                        <p class="app-card-description">A cidade que nunca dorme... nem para de dançar.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>São Paulo</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Metrópole">🏙️</span>
+                                <span>11 eventos em destaque</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.7</span>
+                            </div>
+                            <a href="destaques-sao-paulo.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de São Paulo"
+                               onclick="event.stopPropagation();">
+                                Ler Destaques
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Rio de Janeiro -->
+                <article class="app-recommendation-card" data-city="rio-janeiro" onclick="window.location.href='destaques-rio.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Sábado</div>
+                        <img src="images/rio.png" alt="Cultura funk e eventos no Rio de Janeiro" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Rio de Janeiro</h3>
+                        <p class="app-card-description">Funk, favela, cor e calor cultural.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img
