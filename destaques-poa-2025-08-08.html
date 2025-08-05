@@ -415,6 +415,241 @@
             transform: translateY(-3px);
         }
 
+        /* Instagram CTA Section - Super Stylized */
+        .instagram-post-cta {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .instagram-cta-wrapper {
+            position: relative;
+            background: linear-gradient(135deg, 
+                rgba(245, 133, 41, 0.1) 0%, 
+                rgba(221, 42, 123, 0.1) 25%, 
+                rgba(129, 52, 175, 0.1) 50%, 
+                rgba(81, 91, 212, 0.1) 100%);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(245, 133, 41, 0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .instagram-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .instagram-cta-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .instagram-cta-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .instagram-post-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 2rem;
+            background: linear-gradient(45deg, #F58529 0%, #DD2A7B 25%, #8134AF 50%, #515BD4 100%);
+            background-size: 200% 200%;
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(221, 42, 123, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            min-width: 280px;
+        }
+
+        .instagram-post-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .instagram-post-btn:hover::before {
+            left: 100%;
+        }
+
+        .instagram-post-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(221, 42, 123, 0.4);
+            background-position: 100% 100%;
+            animation: instagramPulse 2s infinite;
+        }
+
+        @keyframes instagramPulse {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .instagram-btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .instagram-post-btn:hover .instagram-btn-icon {
+            transform: rotate(15deg) scale(1.1);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .instagram-btn-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        .instagram-btn-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .instagram-btn-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .instagram-btn-arrow {
+            transition: var(--transition);
+        }
+
+        .instagram-post-btn:hover .instagram-btn-arrow {
+            transform: translateX(4px) translateY(-4px);
+        }
+
+        /* Decorative sparkles */
+        .instagram-cta-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .instagram-sparkle {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: sparkleFloat 3s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .instagram-sparkle-1 {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .instagram-sparkle-2 {
+            top: 25%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .instagram-sparkle-3 {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        @keyframes sparkleFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-10px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .instagram-cta-wrapper {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+            }
+
+            .instagram-cta-title {
+                font-size: 1.3rem;
+            }
+
+            .instagram-cta-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .instagram-post-btn {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1.5rem;
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .instagram-btn-content {
+                align-items: center;
+                text-align: center;
+            }
+
+            .instagram-btn-arrow {
+                transform: rotate(90deg);
+            }
+
+            .instagram-post-btn:hover .instagram-btn-arrow {
+                transform: rotate(90deg) translateX(4px) translateY(-4px);
+            }
+
+            .instagram-sparkle {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .instagram-cta-wrapper {
+                padding: 1.5rem 1rem;
+            }
+            
+            .instagram-sparkle {
+                display: none; /* Hide sparkles on very small screens */
+            }
+        }
+
         /* Toast styling */
         .toast {
             position: fixed;
@@ -697,17 +932,38 @@
                 </p>
 
                 <!-- Instagram Post Button -->
-                <div class="instagram-post-cta" style="text-align: center; margin: 2rem 0;">
-                    <a href="https://www.instagram.com/p/DM8Gb9Uu3Ma/" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="instagram-post-btn"
-                       aria-label="Ver publicação original no Instagram">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        Ver post original no Instagram
-                    </a>
+                <div class="instagram-post-cta">
+                    <div class="instagram-cta-wrapper">
+                        <div class="instagram-cta-content">
+                            <h3 class="instagram-cta-title">📸 Viu no Instagram?</h3>
+                            <p class="instagram-cta-subtitle">Confira o post original com todas as fotos e stories dos eventos</p>
+                            <a href="https://www.instagram.com/p/DM8Gb9Uu3Ma/" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="instagram-post-btn"
+                               aria-label="Ver publicação original no Instagram">
+                                <div class="instagram-btn-icon">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </div>
+                                <div class="instagram-btn-content">
+                                    <span class="instagram-btn-title">Ver Post Original</span>
+                                    <span class="instagram-btn-subtitle">@role.ent</span>
+                                </div>
+                                <div class="instagram-btn-arrow">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="instagram-cta-decoration">
+                            <div class="instagram-sparkle instagram-sparkle-1">✨</div>
+                            <div class="instagram-sparkle instagram-sparkle-2">💫</div>
+                            <div class="instagram-sparkle instagram-sparkle-3">⭐</div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Final Image -->
