@@ -1,16 +1,4 @@
-<div class="vitrine-highlight" style="margin-top: 24px;">
-                    <strong>📧 O que você recebe:</strong> Curadoria semanal, eventos exclusivos, dicas dos organizadores e acesso antecipado aos destaques antes de todo mundo.
-                </div>
-            </div>
-        </section>
-
-        <!-- Outras Cidades -->
-        <section class="app-recommendations tab-content" id="tab-outras-cidades">
-            <div class="app-section-header">
-                <h2 class="app-section-title">Outras Cidades</h2>
-                <p style="text-align: center; color: var(--text-secondary); margin-top: 12px;">Explore a curadoria cultural do ROLÊ em outras capitais</p>
-            </div>
-            <div class="vitrine-events-scroll">
+<div class="vitrine-events-scroll">
                 <article class="vitrine-event-card" onclick="window.location.href='../destaques-floripa/'">
                     <div class="vitrine-event-image">
                         <img src="../images/floripa.png" alt="Florianópolis" loading="lazy" width="280" height="140" />
@@ -52,25 +40,14 @@
             </div>
         </section>
 
-        <!-- Ad Container -->
-        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2898945215492580"
-                 data-ad-slot="7986392458"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-        </div>
-
         <!-- Footer -->
         <footer class="app-footer" role="contentinfo">
             <div class="app-footer-links">
-                <p>
-                    © 2025 ROLÊ Entretenimento. Todos os direitos reservados. <br>
-                    <a href="../privacidade.html">Política de Privacidade</a> | 
-                    <a href="../termos.html">Termos de Uso</a> | 
-                    <a href="../contato.html">Contato</a>
-                </p>
+                © 2025 ROLÊ ENTRETENIMENTO ·
+                <a href="../politica.html">Política de Privacidade</a> ·
+                <a href="../termos-usuario.html">Termos do Rolezeiro</a> ·
+                <a href="../termos-organizador.html">Termos do Organizador</a> ·
+                <a href="../politica-spam.html">Política Antispam</a>
             </div>
             <div class="app-social-icons">
                 <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
@@ -85,7 +62,7 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation (Mobile Only) -->
+        <!-- Bottom Navigation -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="../index.html" class="app-nav-item" aria-label="Página inicial">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -454,9 +431,6 @@
                     }, 50);
                 }
 
-                // Initialize Google AdSense
-                (adsbygoogle = window.adsbygoogle || []).push({});
-
                 console.log('Destaques POA page initialized successfully');
             }
 
@@ -479,136 +453,9 @@
         })();
     </script>
 
-    <!-- CSS Específico -->
+    <!-- Additional CSS for specific styling -->
     <style>
-        /* Breadcrumb */
-        .breadcrumb {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        .breadcrumb a {
-            color: var(--accent-purple);
-            text-decoration: none;
-            transition: var(--transition-fast);
-        }
-
-        .breadcrumb a:hover {
-            color: var(--accent-pink);
-        }
-
-        /* City Badge */
-        .city-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--accent-purple);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .city-icon {
-            font-size: 16px;
-        }
-
-        /* Page Description */
-        .page-description {
-            max-width: 600px;
-            margin: 16px auto 0 auto;
-            text-align: center;
-        }
-
-        .page-description p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        /* Latest Edition */
-        .latest-edition {
-            margin: 32px 0;
-        }
-
-        .edition-date {
-            color: var(--accent-purple);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .latest-edition-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .latest-edition-excerpt {
-            color: var(--text-secondary);
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .latest-edition-highlights {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
-        }
-
-        .highlight-tag {
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--accent-purple);
-            padding: 6px 12px;
-            border-radius: 16px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .latest-edition-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .edition-meta {
-            display: flex;
-            gap: 16px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        .btn-read-edition {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition-normal);
-        }
-
-        .btn-read-edition:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
-        }
-
-        /* Vitrine Navigation */
+        /* Estilos específicos para Vitrine Cultural (copiados) */
         .vitrine-nav {
             display: flex;
             flex-wrap: wrap;
@@ -673,41 +520,6 @@
             box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
         }
 
-        /* Tab Content */
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Archive Filters */
-        .archive-filters {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-card);
-            color: var(--text-secondary);
-            border-radius: 20px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: var(--transition-normal);
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--accent-purple);
-            color: white;
-            border-color: var(--accent-purple);
-        }
-
-        /* Vitrine Stats */
         .vitrine-stats-grid {
             display: grid;
             gap: 16px;
@@ -734,14 +546,201 @@
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 20px;
-            text-align: center;<!DOCTYPE html>
+            text-align: center;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+
+        @media (min-width: 769px) {
+            .vitrine-stat-card {
+                padding: 24px;
+            }
+        }
+
+        .vitrine-stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-purple);
+            box-shadow: var(--shadow-md);
+        }
+
+        .vitrine-stat-number {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .vitrine-stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .vitrine-events-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 20px 20px 20px;
+        }
+
+        .vitrine-events-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (min-width: 769px) {
+            .vitrine-events-scroll {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 24px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 40px;
+                overflow: visible;
+            }
+        }
+
+        .vitrine-event-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            flex: 0 0 280px;
+        }
+
+        @media (min-width: 769px) {
+            .vitrine-event-card {
+                width: 100%;
+                flex: none;
+            }
+        }
+
+        .vitrine-event-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-purple);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .vitrine-event-image {
+            width: 100%;
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 769px) {
+            .vitrine-event-image {
+                height: 200px;
+            }
+        }
+
+        .vitrine-event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-normal);
+        }
+
+        .vitrine-event-card:hover .vitrine-event-image img {
+            transform: scale(1.05);
+        }
+
+        .vitrine-event-content {
+            padding: 20px;
+        }
+
+        .vitrine-event-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .vitrine-event-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .vitrine-event-link {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-purple);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 12px;
+            transition: var(--transition-fast);
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .vitrine-event-link:hover {
+            background: var(--accent-purple);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .vitrine-highlight {
+            background: rgba(139, 92, 246, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 24px 0;
+            border-left: 4px solid var(--accent-purple);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Breadcrumb styling */
+        .breadcrumb {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* City Badge */
+        .city-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     
     <!-- SEO e Meta Tags -->
-    <title>Destaques de Porto Alegre - Curadoria Semanal | ROLÊ ENTRETENIMENTO</title>
+    <title>Destaques de Porto Alegre - 8 a 10 de Agosto | ROLÊ ENTRETENIMENTO</title>
     <meta name="description" content="Curadoria semanal dos melhores eventos de Porto Alegre. Festas, shows, arte e cultura com a opinião e estética do ROLÊ. Arquivo completo das edições.">
     <meta name="keywords" content="eventos porto alegre, agenda cultural poa, festas porto alegre, shows poa, vida noturna porto alegre, curadoria cultural">
     <meta name="author" content="ROLÊ Entretenimento">
@@ -967,18 +966,8 @@
             </div>
         </section>
 
-        <!-- Ad Container -->
-        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2898945215492580"
-                 data-ad-slot="7986392458"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-        </div>
-
         <!-- Navigation Tabs -->
-        <nav class="vitrine-nav">
+        <nav class="vitrine-nav fade-in-up">
             <button class="vitrine-nav-link primary" data-tab="arquivo">Arquivo de Edições</button>
             <button class="vitrine-nav-link" data-tab="como-funciona">Como Funciona</button>
             <button class="vitrine-nav-link" data-tab="estatisticas">Estatísticas</button>
@@ -998,8 +987,8 @@
             </div>
             
             <div class="timeline-container">
+                <!-- Current Edition -->
                 <div class="app-cards-scroll">
-                    <!-- Edição Atual -->
                     <article class="app-recommendation-card timeline-item" data-year="2025" data-month="agosto">
                         <div class="app-card-image">
                             <div class="app-card-badge">Nova</div>
@@ -1028,7 +1017,7 @@
                         </div>
                     </article>
 
-                    <!-- Próximas Edições -->
+                    <!-- Future Editions (Preview) -->
                     <article class="app-recommendation-card timeline-item upcoming" data-year="2025" data-month="agosto">
                         <div class="app-card-image">
                             <div class="app-card-badge">Em Breve</div>
@@ -1104,7 +1093,7 @@
             </div>
         </section>
 
-        <!-- Como Funciona -->
+        <!-- How It Works -->
         <section class="app-como-funciona tab-content" id="tab-como-funciona">
             <div class="content-card">
                 <div class="app-como-funciona-content">
@@ -1137,7 +1126,7 @@
             </div>
         </section>
 
-        <!-- Estatísticas -->
+        <!-- Statistics -->
         <section class="archive-stats tab-content" id="tab-estatisticas">
             <div class="app-section-header">
                 <h2 class="app-section-title">Estatísticas dos Destaques</h2>
@@ -1207,4 +1196,15 @@
                     <small>Newsletter específica dos destaques de Porto Alegre. <a href="../politica.html">Política de Privacidade</a>.</small>
                 </p>
                 <div class="vitrine-highlight" style="margin-top: 24px;">
-                    <strong>📧 O que você recebe:</strong> Cura
+                    <strong>📧 O que você recebe:</strong> Curadoria semanal, eventos exclusivos, dicas dos organizadores e acesso antecipado aos destaques antes de todo mundo.
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Cities -->
+        <section class="app-recommendations tab-content" id="tab-outras-cidades">
+            <div class="app-section-header">
+                <h2 class="app-section-title">Outras Cidades</h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-top: 12px;">Explore a curadoria cultural do ROLÊ em outras capitais</p>
+            </div>
+            <div class="vitrine-events
