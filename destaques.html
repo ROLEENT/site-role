@@ -164,13 +164,15 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script Otimizado -->
+    <!-- Theme Script Otimizado - REPLICADO DO INDEX -->
     <script>
         (function() {
             try {
-                const theme = localStorage.getItem('theme');
+                const theme = localStorage.getItem('theme') || 'dark';
                 if (theme === 'light') {
                     document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
                 }
             } catch(e) {
                 console.warn('Theme loading failed:', e);
@@ -181,38 +183,221 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- CSS Critical Path -->
+    <!-- CSS Critical Path - REPLICADO DO INDEX -->
     <style>
-        /* Critical CSS inline */
-        :root{--bg-primary:#0D0D0D;--text-primary:#FFFFFF;--accent-purple:#8B5CF6}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6}
-        .app-header{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px)}
+        /* Critical CSS inline - TEMA CORRIGIDO */
+        :root{
+            --bg-primary:#0D0D0D;
+            --bg-secondary:#1A1A1A;
+            --bg-card:#1F1F1F;
+            --text-primary:#FFFFFF;
+            --text-secondary:#A0A0A0;
+            --border-color:#2A2A2A;
+            --accent-purple:#8B5CF6;
+            --accent-green:#10B981;
+            --accent-red:#EF4444;
+        }
         
-        /* Header Fixes - IGUAL AO INDEX */
+        :root[data-theme="light"]{
+            --bg-primary:#FFFFFF;
+            --bg-secondary:#F8F9FA;
+            --bg-card:#FFFFFF;
+            --text-primary:#1F2937;
+            --text-secondary:#6B7280;
+            --border-color:#E5E7EB;
+        }
+        
+        *{margin:0;padding:0;box-sizing:border-box}
+        
+        body{
+            font-family:'Inter',sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+            transition:background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .app-container {
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease;
+        }
+        
+        .app-header{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:rgba(13,13,13,0.95);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid var(--border-color);
+            transition:background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-header{
+            background:rgba(255,255,255,0.95);
+        }
+        
+        /* CORREÇÃO: ESCONDER MENU MOBILE NO DESKTOP */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none !important;
+            }
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
+        
+        /* Header Fixes - IDÊNTICOS AO INDEX */
         @media (max-width: 768px) {
+            .app-header {
+                padding: 0 20px;
+            }
             .app-header-content {
-                padding: 60px 0 20px 0 !important;
+                padding: 12px 0 8px 0 !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             .app-logo-img {
-                height: 40px !important;
+                height: 24px !important;
+                max-width: 100px;
             }
             .app-header-actions {
-                gap: 16px !important;
+                gap: 8px !important;
+                display: flex;
+                align-items: center;
+            }
+            .menu-toggle, .theme-toggle-app {
+                padding: 6px;
+                width: 36px;
+                height: 36px;
             }
         }
         
         @media (min-width: 769px) {
             .app-header-content {
-                padding: 20px 40px !important;
+                padding: 14px 40px !important;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             .app-header-actions {
-                gap: 24px !important;
+                gap: 20px !important;
+                display: flex;
+                align-items: center;
             }
             .desktop-menu {
-                gap: 32px !important;
-                margin-right: 32px !important;
+                gap: 24px !important;
+                margin-right: 24px !important;
+                display: flex !important;
             }
+            .desktop-menu a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 8px 16px;
+                border-radius: 8px;
+            }
+            .desktop-menu a:hover,
+            .desktop-menu a.active {
+                color: var(--accent-purple);
+                background: rgba(139, 92, 246, 0.1);
+            }
+        }
+        
+        /* Bottom Nav Fix */
+        .app-bottom-nav {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            transition: background-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-bottom-nav {
+            background: rgba(248, 249, 250, 0.95);
+        }
+        
+        /* Theme transitions for all elements */
+        .app-search-input,
+        .app-recommendation-card,
+        .app-stat-item,
+        .app-newsletter-section,
+        .app-footer,
+        .mobile-menu,
+        .category-item-app {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* CORREÇÃO: Estilo dos botões de categoria clicáveis */
+        .category-item-app {
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 8px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .category-item-app:hover {
+            transform: translateY(-2px);
+            background: rgba(139, 92, 246, 0.05);
+        }
+        
+        .category-icon-app {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 769px) {
+            .category-icon-app {
+                width: 64px;
+                height: 64px;
+                font-size: 28px;
+            }
+        }
+        
+        .category-label-app {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+        
+        @media (min-width: 769px) {
+            .category-label-app {
+                font-size: 14px;
+            }
+        }
+        
+        /* Gradientes das categorias */
+        .category-item-app:nth-child(1) .category-icon-app {
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+        }
+        .category-item-app:nth-child(2) .category-icon-app {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+        }
+        .category-item-app:nth-child(3) .category-icon-app {
+            background: linear-gradient(135deg, #10B981, #3B82F6);
+        }
+        .category-item-app:nth-child(4) .category-icon-app {
+            background: linear-gradient(135deg, #F59E0B, #EF4444);
+        }
+        .category-item-app:nth-child(5) .category-icon-app {
+            background: linear-gradient(135deg, #EF4444, #EC4899);
         }
     </style>
     
@@ -233,7 +418,7 @@
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="120" height="28" />
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
                 </a>
                 <div class="app-header-actions">
                     <!-- Desktop Menu -->
@@ -249,12 +434,12 @@
 
                     <!-- Theme Toggle -->
                     <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
+                        <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
                     </button>
 
-                    <!-- Mobile Menu Button -->
+                    <!-- Mobile Menu Button - APENAS MOBILE -->
                     <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
@@ -584,12 +769,12 @@
         </section>
 
         <!-- Featured Banner - Revista ROLÊ -->
-        <div class="app-featured-banner" role="complementary">
+        <div class="app-featured-banner" role="complementary" onclick="window.location.href='revista.html'">
             <div class="app-banner-content">
                 <div class="app-banner-tag">CURADORIA SEMANAL</div>
                 <h3 class="app-banner-title">Destaques por Cidade</h3>
                 <p class="app-banner-subtitle">Receba toda semana os melhores eventos de todas as cidades na sua caixa de entrada.</p>
-                <a href="#newsletter" class="app-banner-cta">Assinar Newsletter</a>
+                <a href="#newsletter" class="app-banner-cta" onclick="event.stopPropagation();">Assinar Newsletter</a>
             </div>
         </div>
 
@@ -714,9 +899,9 @@
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript Otimizado -->
+    <!-- JavaScript Idêntico ao Index -->
     <script>
-        // Performance and Security Enhanced JavaScript
+        // Performance and Security Enhanced JavaScript - REPLICADO DO INDEX
         (function() {
             'use strict';
             
@@ -773,12 +958,15 @@
 
             // DOM Ready
             function initializeApp() {
-                // Mobile menu functionality
+                // Mobile menu functionality - APENAS MOBILE
                 const menuToggle = document.getElementById('menu-toggle-btn');
                 const menuClose = document.getElementById('menu-close-btn');
                 const mobileMenuOverlay = document.getElementById('mobile-menu');
                 
-                if (menuToggle && mobileMenuOverlay) {
+                // Verificar se estamos em mobile
+                const isMobile = window.innerWidth <= 768;
+                
+                if (menuToggle && mobileMenuOverlay && isMobile) {
                     function openMenu() {
                         mobileMenuOverlay.classList.add('active');
                         document.body.style.overflow = 'hidden';
@@ -825,7 +1013,7 @@
                     });
                 }
 
-                // Theme toggle functionality
+                // Theme toggle functionality - CORRIGIDO PARA TODA A PÁGINA
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -833,13 +1021,15 @@
                     themeToggle.addEventListener('click', function(e) {
                         e.preventDefault();
                         try {
-                            const isLight = root.hasAttribute('data-theme');
-                            if (isLight) {
+                            const currentTheme = root.getAttribute('data-theme');
+                            if (currentTheme === 'light') {
                                 root.removeAttribute('data-theme');
                                 localStorage.setItem('theme', 'dark');
+                                utils.showToast('Tema escuro ativado', 'success');
                             } else {
                                 root.setAttribute('data-theme', 'light');
                                 localStorage.setItem('theme', 'light');
+                                utils.showToast('Tema claro ativado', 'success');
                             }
                         } catch(e) {
                             console.warn('Theme toggle failed:', e);
@@ -945,209 +1135,4 @@
                         const email = this.value.trim();
                         if (email && !validateEmail(email)) {
                             this.classList.add('error');
-                            errorDiv.textContent = 'Formato de e-mail inválido.';
-                        } else {
-                            this.classList.remove('error');
-                            errorDiv.textContent = '';
-                        }
-                    }, 500));
-                }
-
-                // Category interactions (botões das capitais)
-                const categories = document.querySelectorAll('.category-item-app');
-                categories.forEach(category => {
-                    category.addEventListener('click', function() {
-                        categories.forEach(c => c.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        const cityType = this.dataset.city;
-                        console.log('City selected:', cityType);
-                    });
-                    
-                    // Keyboard support
-                    category.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            this.click();
-                        }
-                    });
-                });
-
-                // Stats counter animation with Intersection Observer
-                const observerOptions = {
-                    threshold: 0.5,
-                    rootMargin: '0px 0px -100px 0px'
-                };
-
-                const statsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                            entry.target.classList.add('counted');
-                            animateNumber(entry.target);
-                        }
-                    });
-                }, observerOptions);
-
-                const statNumbers = document.querySelectorAll('.app-stat-number');
-                statNumbers.forEach(stat => statsObserver.observe(stat));
-
-                function animateNumber(element) {
-                    const target = parseInt(element.getAttribute('data-target'), 10);
-                    let current = 0;
-                    const increment = Math.ceil(target / 30);
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        element.textContent = current;
-                    }, 50);
-                }
-
-                // Search functionality with debouncing
-                const searchInput = document.querySelector('.app-search-input');
-                if (searchInput) {
-                    searchInput.addEventListener('input', utils.debounce(function() {
-                        const query = utils.sanitize(this.value.toLowerCase().trim());
-                        if (query.length >= 2) {
-                            console.log('Search query:', query);
-                        }
-                    }, 300));
-                }
-
-                // Card animations on scroll
-                const fadeObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
-                fadeElements.forEach((element, index) => {
-                    element.style.opacity = '0';
-                    element.style.transform = 'translateY(30px)';
-                    element.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                    fadeObserver.observe(element);
-                });
-
-                // Touch/swipe support for cards
-                let startX = 0;
-                const scrollContainer = document.querySelector('.app-cards-scroll');
-                
-                if (scrollContainer) {
-                    scrollContainer.addEventListener('touchstart', function(e) {
-                        startX = e.touches[0].clientX;
-                    }, { passive: true });
-
-                    scrollContainer.addEventListener('touchend', function(e) {
-                        const endX = e.changedTouches[0].clientX;
-                        const diff = startX - endX;
-                        
-                        if (Math.abs(diff) > 50) {
-                            const scrollAmount = 300;
-                            if (diff > 0) {
-                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                            } else {
-                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                            }
-                        }
-                    }, { passive: true });
-                }
-
-                // Smooth scrolling for anchor links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const target = document.querySelector(this.getAttribute('href'));
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    });
-                });
-
-                // Initialize ads after DOM is ready
-                setTimeout(() => {
-                    try {
-                        const ads = document.querySelectorAll('.adsbygoogle');
-                        ads.forEach(function(ad) {
-                            try {
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            } catch(e) {
-                                console.warn('AdSense initialization failed for ad:', e);
-                            }
-                        });
-                    } catch(e) {
-                        console.warn('AdSense general initialization failed:', e);
-                    }
-                }, 1000);
-
-                console.log('Destaques page initialized successfully');
-            }
-
-            // Smooth scroll function
-            window.scrollToSection = function(sectionId) {
-                const target = document.getElementById(sectionId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            };
-
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeApp);
-            } else {
-                initializeApp();
-            }
-            
-            // Error handling
-            window.addEventListener('error', function(e) {
-                console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
-        })();
-    </script>
-
-    <!-- CSS Adicional para correções finais -->
-    <style>
-        /* Newsletter error styling */
-        .newsletter-error {
-            color: var(--accent-red);
-            font-size: 12px;
-            margin-top: 8px;
-            min-height: 16px;
-        }
-        
-        .app-newsletter-input.error {
-            border-color: var(--accent-red);
-            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
-        }
-        
-        /* Toast styling */
-        #toast-container {
-            position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10000;
-            pointer-events: none;
-        }
-        
-        @media (min-width: 769px) {
-            #toast-container {
-                bottom: 40px;
-            }
+                            errorDiv.textContent =
