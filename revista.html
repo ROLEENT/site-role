@@ -260,23 +260,23 @@
         <section class="app-categories" aria-labelledby="categories-title">
             <h2 id="categories-title" class="sr-only">Seções da revista</h2>
             <div class="categories-grid-app" role="group" aria-label="Filtros por seção">
-                <button class="category-item-app" data-category="editorial" aria-label="Filtrar por editorial">
+                <button class="category-item-app" data-category="editorial" aria-label="Ir para seção Editorial" onclick="scrollToSection('editorial')">
                     <div class="category-icon-app" role="img" aria-label="Ícone de editorial">📝</div>
                     <div class="category-label-app">Editorial</div>
                 </button>
-                <button class="category-item-app" data-category="posfacio" aria-label="Filtrar por posfácio">
+                <button class="category-item-app" data-category="posfacio" aria-label="Ir para seção Posfácio" onclick="scrollToSection('posfacio')">
                     <div class="category-icon-app" role="img" aria-label="Ícone de posfácio">✍️</div>
                     <div class="category-label-app">Posfácio</div>
                 </button>
-                <button class="category-item-app" data-category="bpm" aria-label="Filtrar por ROLÊ.BPM">
+                <button class="category-item-app" data-category="bpm" aria-label="Ir para seção ROLÊ.BPM" onclick="scrollToSection('bpm')">
                     <div class="category-icon-app" role="img" aria-label="Ícone de música">🎵</div>
                     <div class="category-label-app">ROLÊ.BPM</div>
                 </button>
-                <button class="category-item-app" data-category="dicas" aria-label="Filtrar por dicas">
+                <button class="category-item-app" data-category="dicas" aria-label="Ir para seção Dicas" onclick="scrollToSection('dicas')">
                     <div class="category-icon-app" role="img" aria-label="Ícone de dicas">💡</div>
                     <div class="category-label-app">Dicas</div>
                 </button>
-                <button class="category-item-app" data-category="achadinhos" aria-label="Filtrar por achadinhos">
+                <button class="category-item-app" data-category="achadinhos" aria-label="Ir para seção Achadinhos" onclick="scrollToSection('achadinhos')">
                     <div class="category-icon-app" role="img" aria-label="Ícone de descoberta">🔍</div>
                     <div class="category-label-app">Achadinhos</div>
                 </button>
@@ -456,7 +456,7 @@
         </div>
 
         <!-- POSFÁCIO -->
-        <section aria-labelledby="posfacio-title">
+        <section id="posfacio" aria-labelledby="posfacio-title">
             <div class="app-section-header">
                 <h2 id="posfacio-title" class="app-section-title">POSFÁCIO</h2>
                 <a href="#" class="app-see-all" aria-label="Ver todos os posfácios">Ver todos</a>
@@ -580,7 +580,7 @@
         </section>
 
         <!-- DICAS DO ROLÊ -->
-        <section aria-labelledby="dicas-title">
+        <section id="dicas" aria-labelledby="dicas-title">
             <div class="app-section-header">
                 <h2 id="dicas-title" class="app-section-title">DICAS DO ROLÊ</h2>
                 <a href="#" class="app-see-all" aria-label="Ver todas as dicas">Ver todas</a>
@@ -676,7 +676,7 @@
         </section>
 
         <!-- ROLÊ.BPM -->
-        <section aria-labelledby="bpm-title">
+        <section id="bpm" aria-labelledby="bpm-title">
             <div class="app-section-header">
                 <h2 id="bpm-title" class="app-section-title">ROLÊ.BPM</h2>
                 <a href="#" class="app-see-all" aria-label="Ver todos os artigos de música">Ver todos</a>
@@ -744,7 +744,7 @@
         </section>
 
         <!-- ACHADINHOS -->
-        <section aria-labelledby="achadinhos-title">
+        <section id="achadinhos" aria-labelledby="achadinhos-title">
             <div class="app-section-header">
                 <h2 id="achadinhos-title" class="app-section-title">ACHADINHOS</h2>
                 <a href="#" class="app-see-all" aria-label="Ver todos os achadinhos">Ver todos</a>
