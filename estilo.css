@@ -156,18 +156,16 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script Otimizado - CORRIGIDO -->
+    <!-- Theme Script ANTES do CSS -->
     <script>
         (function() {
             try {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'light') {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'light') {
                     document.documentElement.setAttribute('data-theme', 'light');
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
                 }
             } catch(e) {
-                console.warn('Theme loading failed:', e);
+                console.warn('Erro ao carregar tema:', e);
             }
         })();
     </script>
@@ -175,72 +173,86 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- CSS Critical Path - CORRIGIDO -->
+    <!-- Load Main CSS -->
+    <link rel="stylesheet" href="estilo.css" media="all">
+    
+    <!-- CSS Crítico Inline - CORREÇÕES ESPECÍFICAS -->
     <style>
-        /* Critical CSS inline - CORRIGIDO */
-        :root{--bg-primary:#0D0D0D;--bg-secondary:#1A1A1A;--bg-card:#1F1F1F;--text-primary:#FFFFFF;--text-secondary:#A0A0A0;--border-color:#2A2A2A;--accent-purple:#8B5CF6;--accent-green:#10B981;--accent-red:#EF4444}
-        :root[data-theme="light"]{--bg-primary:#FFFFFF;--bg-secondary:#F8F9FA;--bg-card:#FFFFFF;--text-primary:#1F2937;--text-secondary:#6B7280;--border-color:#E5E7EB}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;transition:background-color 0.3s ease, color 0.3s ease}
-        .app-header{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-color);transition:background-color 0.3s ease, border-color 0.3s ease}
-        :root[data-theme="light"] .app-header{background:rgba(255,255,255,0.95)}
+        /* CORREÇÕES ESPECÍFICAS INLINE */
         
-        /* Header Fixes - CORRIGIDOS */
+        /* 1. HEADER MOBILE COMPACTO */
         @media (max-width: 768px) {
             .app-header {
-                padding: 0 20px;
+                padding: 0 16px !important;
             }
+            
             .app-header-content {
-                padding: 12px 0 8px 0 !important;
+                padding: 8px 0 6px 0 !important;
+                min-height: 44px;
                 display: flex;
-                justify-content: space-between;
                 align-items: center;
+                justify-content: space-between;
             }
+            
             .app-logo-img {
-                height: 24px !important;
-                max-width: 100px;
+                height: 22px !important;
+                width: auto !important;
+                max-width: 90px !important;
             }
+            
             .app-header-actions {
-                gap: 8px !important;
                 display: flex;
                 align-items: center;
+                gap: 6px !important;
             }
-            .menu-toggle, .theme-toggle-app {
-                padding: 6px;
-                width: 36px;
-                height: 36px;
+            
+            .menu-toggle, 
+            .theme-toggle-app {
+                width: 32px !important;
+                height: 32px !important;
+                padding: 4px !important;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .menu-toggle svg,
+            .theme-toggle-app img {
+                width: 18px !important;
+                height: 18px !important;
             }
         }
         
-        @media (min-width: 769px) {
-            .app-header-content {
-                padding: 14px 40px !important;
-                max-width: 1200px;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .app-header-actions {
-                gap: 20px !important;
-                display: flex;
-                align-items: center;
-            }
-            .desktop-menu {
-                gap: 24px !important;
-                margin-right: 24px !important;
-            }
+        /* 2. TEMA CLARO/ESCURO - TRANSIÇÕES SUAVES */
+        :root {
+            --transition-theme: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
         
-        /* Banner Size Fix */
+        body,
+        .app-container,
+        .app-header,
+        .app-search-input,
+        .app-recommendation-card,
+        .app-stat-item,
+        .app-newsletter-section,
+        .app-footer,
+        .app-bottom-nav,
+        .mobile-menu,
+        .category-item-app {
+            transition: var(--transition-theme) !important;
+        }
+        
+        /* 3. BANNER ALTURA REDUZIDA */
         .app-banner-container {
-            max-height: 180px !important;
+            height: 160px !important;
             overflow: hidden;
+            border-radius: 16px;
         }
         
         @media (min-width: 769px) {
             .app-banner-container {
-                max-height: 250px !important;
+                height: 220px !important;
             }
         }
         
@@ -250,31 +262,40 @@
             object-fit: cover;
         }
         
-        /* Bottom Nav Fix */
-        .app-bottom-nav {
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(20px);
-            transition: background-color 0.3s ease;
+        /* 4. BOTTOM NAV - ESPAÇAMENTO AJUSTADO */
+        @media (max-width: 768px) {
+            .app-bottom-nav {
+                padding: 8px 12px 16px 12px !important;
+                height: auto !important;
+                min-height: 70px;
+            }
+            
+            .app-nav-item {
+                min-width: 50px !important;
+                padding: 6px 4px !important;
+            }
+            
+            .app-nav-icon {
+                width: 20px !important;
+                height: 20px !important;
+            }
+            
+            .app-nav-label {
+                font-size: 9px !important;
+                margin-top: 2px;
+            }
         }
         
-        :root[data-theme="light"] .app-bottom-nav {
-            background: rgba(248, 249, 250, 0.95);
+        /* 5. LOADING INICIAL - EVITA FLASH */
+        .app-container {
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
-        /* Theme transitions for all elements */
-        .app-container,
-        .app-search-input,
-        .app-recommendation-card,
-        .app-stat-item,
-        .app-newsletter-section,
-        .app-footer,
-        .mobile-menu {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        .app-container.loaded {
+            opacity: 1;
         }
     </style>
-    
-    <!-- Load Main CSS -->
-    <link rel="stylesheet" href="estilo.css" media="all">
     
     <!-- No-JS Fallback -->
     <noscript>
@@ -286,11 +307,11 @@
 
 <body>
     <div class="app-container">
-        <!-- Header Corrigido -->
+        <!-- Header Compacto -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
+                    <img src="images/logo-role.png" alt="ROLÊ" class="app-logo-img" width="90" height="22" />
                 </a>
                 <div class="app-header-actions">
                     <!-- Desktop Menu -->
@@ -305,13 +326,13 @@
                     </nav>
 
                     <!-- Theme Toggle -->
-                    <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
+                    <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar tema">
+                        <img src="images/theme-toggle.gif" alt="" width="18" height="18" />
                     </button>
 
                     <!-- Mobile Menu Button -->
-                    <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <button class="menu-toggle" id="menu-toggle-btn" aria-label="Menu" aria-expanded="false">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
@@ -320,18 +341,18 @@
         </header>
 
         <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
                     <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
                     <button class="menu-close" id="menu-close-btn" aria-label="Fechar menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
                 <ul class="mobile-menu-list" role="list">
-                    <li><a href="index.html" class="mobile-menu-link active" aria-current="page">🏠 Página Inicial</a></li>
+                    <li><a href="index.html" class="mobile-menu-link active">🏠 Página Inicial</a></li>
                     <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
                     <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
                     <li><a href="destaques.html" class="mobile-menu-link">⭐ Destaques</a></li>
@@ -341,14 +362,14 @@
                 </ul>
                 <div class="mobile-menu-footer">
                     <div class="mobile-menu-social">
-                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
-                            <img src="images/instagram.svg" alt="" width="20" height="20" role="presentation" />
+                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener" aria-label="Instagram">
+                            <img src="images/instagram.svg" alt="" width="20" height="20" />
                         </a>
-                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no TikTok">
-                            <img src="images/tiktok.svg" alt="" width="20" height="20" role="presentation" />
+                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener" aria-label="TikTok">
+                            <img src="images/tiktok.svg" alt="" width="20" height="20" />
                         </a>
-                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
-                            <img src="images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
+                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <img src="images/whatsapp.svg" alt="" width="20" height="20" />
                         </a>
                     </div>
                 </div>
@@ -358,36 +379,36 @@
         <!-- Search Bar -->
         <div class="app-search-container">
             <div class="app-search-bar">
-                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
                 <input type="search" class="app-search-input" placeholder="Procurar por rolês, artistas, cidades..." 
-                       aria-label="Buscar eventos, artistas ou cidades" autocomplete="off" spellcheck="false">
+                       aria-label="Buscar eventos" autocomplete="off">
             </div>
         </div>
 
         <!-- Categories Grid -->
         <section class="app-categories" aria-labelledby="categories-title">
             <h2 id="categories-title" class="sr-only">Categorias de eventos</h2>
-            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria">
-                <button class="category-item-app" data-category="shows" aria-label="Filtrar por shows">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de música">🎵</div>
+            <div class="categories-grid-app">
+                <button class="category-item-app" data-category="shows" aria-label="Shows">
+                    <div class="category-icon-app">🎵</div>
                     <div class="category-label-app">Shows</div>
                 </button>
-                <button class="category-item-app" data-category="teatro" aria-label="Filtrar por teatro">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de teatro">🎭</div>
+                <button class="category-item-app" data-category="teatro" aria-label="Teatro">
+                    <div class="category-icon-app">🎭</div>
                     <div class="category-label-app">Teatro</div>
                 </button>
-                <button class="category-item-app" data-category="festas" aria-label="Filtrar por festas">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de festa">🎉</div>
+                <button class="category-item-app" data-category="festas" aria-label="Festas">
+                    <div class="category-icon-app">🎉</div>
                     <div class="category-label-app">Festas</div>
                 </button>
-                <button class="category-item-app" data-category="bares" aria-label="Filtrar por bares">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de bebida">🍺</div>
+                <button class="category-item-app" data-category="bares" aria-label="Bares">
+                    <div class="category-icon-app">🍺</div>
                     <div class="category-label-app">Bares</div>
                 </button>
-                <button class="category-item-app" data-category="arte" aria-label="Filtrar por arte">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de arte">🎨</div>
+                <button class="category-item-app" data-category="arte" aria-label="Arte">
+                    <div class="category-icon-app">🎨</div>
                     <div class="category-label-app">Arte</div>
                 </button>
             </div>
@@ -401,190 +422,51 @@
                 A gente vive a cena pra te mostrar o que realmente importa com estética, presença e muita opinião.
             </p>
             <div class="app-hero-cta">
-                <button class="app-btn-hero" onclick="scrollToSection('destaques')" aria-describedby="hero-title">
+                <button class="app-btn-hero" onclick="scrollToDestaques()">
                     Descubra o ROLÊ na sua cidade
                 </button>
             </div>
         </section>
 
-        <!-- Banner Redimensionado -->
+        <!-- Banner Compacto -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
-                <img src="images/banner-home.png" alt="Banner ROLÊ - Cultura e entretenimento brasileiro" 
-                     loading="lazy" width="1200" height="250" />
+                <img src="images/banner-home.png" alt="Banner ROLÊ - Cultura brasileira" 
+                     loading="lazy" width="1200" height="220" />
             </div>
         </div>
 
         <!-- Section Header -->
         <div class="app-section-header">
             <h2 class="app-section-title" id="destaques-title">DESTAQUES DA SEMANA</h2>
-            <a href="destaques.html" class="app-see-all" aria-describedby="destaques-title">Ver todos os destaques</a>
+            <a href="destaques.html" class="app-see-all">Ver todos</a>
         </div>
 
         <!-- Cities Cards - Destaques -->
         <section class="app-recommendations" id="destaques" aria-labelledby="destaques-title">
-            <div class="app-cards-scroll" role="group" aria-label="Cidades em destaque">
+            <div class="app-cards-scroll">
                 <!-- Porto Alegre -->
-                <article class="app-recommendation-card" data-city="porto-alegre" onclick="window.location.href='destaques-poa.html'">
+                <article class="app-recommendation-card" onclick="location.href='destaques-poa.html'">
                     <div class="app-card-image">
                         <div class="app-card-badge">08 a 10/agosto</div>
-                        <img src="images/poa.png" alt="Cena cultural de Porto Alegre" loading="lazy" width="280" height="140" />
+                        <img src="images/poa.png" alt="Porto Alegre" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Porto Alegre</h3>
                         <p class="app-card-description">A cena alternativa pulsa forte no Sul.</p>
                         <div class="app-card-info">
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Localização">📍</span>
-                                <span>Rio Grande do Sul</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Música">🎸</span>
-                                <span>9 eventos em destaque</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.8</span>
-                            </div>
-                            <a href="destaques-poa.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais de Porto Alegre"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Florianópolis -->
-                <article class="app-recommendation-card" data-city="florianopolis" onclick="window.location.href='destaques-floripa.html'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Hoje</div>
-                        <img src="images/floripa.png" alt="Cultura eletrônica de Florianópolis" loading="lazy" width="280" height="140" />
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">Florianópolis</h3>
-                        <p class="app-card-description">Beira-mar, eletrônica e coletivo.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Localização">📍</span>
-                                <span>Santa Catarina</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Praia">🌊</span>
-                                <span>9 eventos em destaque</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.9</span>
-                            </div>
-                            <a href="destaques-floripa.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais de Florianópolis"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Curitiba -->
-                <article class="app-recommendation-card" data-city="curitiba" onclick="window.location.href='destaques-curitiba.html'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Amanhã</div>
-                        <img src="images/curitiba.png" alt="Vida noturna de Curitiba" loading="lazy" width="280" height="140" />
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">Curitiba</h3>
-                        <p class="app-card-description">Frio na rua, calor nas pistas.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Localização">📍</span>
-                                <span>Paraná</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Natureza">🌲</span>
-                                <span>9 eventos em destaque</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.2</span>
-                            </div>
-                            <a href="destaques-curitiba.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais de Curitiba"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- São Paulo -->
-                <article class="app-recommendation-card" data-city="sao-paulo" onclick="window.location.href='destaques-sao-paulo.html'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Hoje</div>
-                        <img src="images/sao-paulo.png" alt="Cena cultural de São Paulo" loading="lazy" width="280" height="140" />
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">São Paulo</h3>
-                        <p class="app-card-description">A cidade que nunca dorme... nem para de dançar.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Localização">📍</span>
-                                <span>São Paulo</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Metrópole">🏙️</span>
-                                <span>11 eventos em destaque</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.7</span>
-                            </div>
-                            <a href="destaques-sao-paulo.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais de São Paulo"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Rio de Janeiro -->
-                <article class="app-recommendation-card" data-city="rio-janeiro" onclick="window.location.href='destaques-rio.html'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Sábado</div>
-                        <img src="images/rio.png" alt="Cultura funk e eventos no Rio de Janeiro" loading="lazy" width="280" height="140" />
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">Rio de Janeiro</h3>
-                        <p class="app-card-description">Funk, favela, cor e calor cultural.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Praia">🏖️</span>
+                                <span>🏖️</span>
                                 <span>9 eventos de destaque</span>
                             </div>
                         </div>
                         <div class="app-card-footer">
                             <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
                                 <span class="rating-text">4.6</span>
                             </div>
-                            <a href="destaques-rio.html" 
-                               class="app-card-link"
-                               aria-label="Ver destaques semanais do Rio de Janeiro"
-                               onclick="event.stopPropagation();">
-                                Ler Destaques
+                            <a href="destaques-rio.html" class="app-card-link" onclick="event.stopPropagation();">
+                                Ver Destaques
                             </a>
                         </div>
                     </div>
@@ -632,19 +514,19 @@
             </div>
             <div class="app-stats-grid">
                 <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="500" aria-live="polite">0</span>
+                    <span class="app-stat-number" data-target="500">0</span>
                     <span class="app-stat-label">Mil contas alcançadas</span>
                 </div>
                 <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="2" aria-live="polite">0</span>
+                    <span class="app-stat-number" data-target="2">0</span>
                     <span class="app-stat-label">Milhões de views mensais</span>
                 </div>
                 <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="5" aria-live="polite">0</span>
+                    <span class="app-stat-number" data-target="5">0</span>
                     <span class="app-stat-label">Cidades ativas</span>
                 </div>
                 <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="22" aria-live="polite">0</span>
+                    <span class="app-stat-number" data-target="22">0</span>
                     <span class="app-stat-label">Mil seguidores</span>
                 </div>
             </div>
@@ -656,21 +538,20 @@
                 <h2 id="newsletter-title" class="app-section-title">Não perca o melhor do ROLÊ</h2>
                 <p>Assine a newsletter e receba semanalmente o que tem de mais relevante na cena cultural.</p>
                 <form class="app-newsletter-form" id="newsletter-form" novalidate>
-                    <label for="newsletter-email" class="sr-only">Seu endereço de email</label>
+                    <label for="newsletter-email" class="sr-only">Email</label>
                     <input type="email" 
                            id="newsletter-email"
                            class="app-newsletter-input" 
                            placeholder="Seu melhor e-mail" 
                            required 
-                           autocomplete="email"
-                           aria-describedby="newsletter-description newsletter-error">
-                    <button type="submit" class="app-btn-newsletter" aria-describedby="newsletter-title">
+                           autocomplete="email">
+                    <button type="submit" class="app-btn-newsletter">
                         <span class="btn-text">Assinar</span>
-                        <span class="btn-loading" aria-hidden="true">Enviando...</span>
+                        <span class="btn-loading" style="display:none;">Enviando...</span>
                     </button>
                 </form>
-                <div id="newsletter-error" class="newsletter-error" role="alert" aria-live="assertive"></div>
-                <p class="newsletter-disclaimer" id="newsletter-description">
+                <div id="newsletter-error" class="newsletter-error" role="alert"></div>
+                <p class="newsletter-disclaimer">
                     <small>Ao assinar, você concorda com nossa <a href="politica.html">Política de Privacidade</a>.</small>
                 </p>
             </div>
@@ -696,46 +577,46 @@
                 <a href="politica-spam.html">Política Antispam</a>
             </div>
             <div class="app-social-icons">
-                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
-                    <img src="images/instagram.svg" alt="" width="24" height="24" role="presentation" />
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener" aria-label="Instagram">
+                    <img src="images/instagram.svg" alt="" width="24" height="24" />
                 </a>
-                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
-                    <img src="images/tiktok.svg" alt="" width="24" height="24" role="presentation" />
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener" aria-label="TikTok">
+                    <img src="images/tiktok.svg" alt="" width="24" height="24" />
                 </a>
-                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
-                    <img src="images/whatsapp.svg" alt="" width="24" height="24" role="presentation" />
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <img src="images/whatsapp.svg" alt="" width="24" height="24" />
                 </a>
             </div>
         </footer>
 
-        <!-- Bottom Navigation - CORRIGIDA com Destaques -->
-        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
-            <a href="index.html" class="app-nav-item active" aria-label="Página inicial" aria-current="page">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <!-- Bottom Navigation CORRIGIDA - Com Destaques -->
+        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação mobile">
+            <a href="index.html" class="app-nav-item active" aria-current="page">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
                 <span class="app-nav-label">Home</span>
             </a>
-            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="vitrine-cultural.html" class="app-nav-item">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
                 <span class="app-nav-label">Vitrine</span>
             </a>
-            <a href="destaques.html" class="app-nav-item" aria-label="Destaques da semana">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="destaques.html" class="app-nav-item">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
                 </svg>
                 <span class="app-nav-label">Destaques</span>
             </a>
-            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="revista.html" class="app-nav-item">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
                 <span class="app-nav-label">Revista</span>
             </a>
-            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="descontos.html" class="app-nav-item">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
                 </svg>
                 <span class="app-nav-label">Descontos</span>
@@ -743,25 +624,27 @@
         </nav>
 
         <!-- Toast notifications -->
-        <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
+        <div id="toast-container" role="region" aria-live="polite"></div>
     </div>
 
-    <!-- JavaScript Otimizado - CORRIGIDO -->
+    <!-- JavaScript OTIMIZADO E CORRIGIDO -->
     <script>
-        // Performance and Security Enhanced JavaScript
         (function() {
             'use strict';
             
+            // Mostrar container após carregamento
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('.app-container').classList.add('loaded');
+            });
+            
             // Utilities
             const utils = {
-                // Sanitize input
                 sanitize: function(str) {
                     const div = document.createElement('div');
                     div.textContent = str;
                     return div.innerHTML;
                 },
                 
-                // Debounce function
                 debounce: function(func, wait) {
                     let timeout;
                     return function executedFunction(...args) {
@@ -774,7 +657,6 @@
                     };
                 },
                 
-                // Show toast notification
                 showToast: function(message, type = 'info') {
                     const container = document.getElementById('toast-container');
                     if (!container) return;
@@ -786,12 +668,10 @@
                     
                     container.appendChild(toast);
                     
-                    // Show toast
                     requestAnimationFrame(() => {
                         toast.classList.add('show');
                     });
                     
-                    // Hide toast after 4 seconds
                     setTimeout(() => {
                         toast.classList.remove('show');
                         setTimeout(() => {
@@ -803,9 +683,9 @@
                 }
             };
 
-            // DOM Ready
+            // Initialize App
             function initializeApp() {
-                // Mobile menu functionality
+                // Mobile menu
                 const menuToggle = document.getElementById('menu-toggle-btn');
                 const menuClose = document.getElementById('menu-close-btn');
                 const mobileMenuOverlay = document.getElementById('mobile-menu');
@@ -815,19 +695,12 @@
                         mobileMenuOverlay.classList.add('active');
                         document.body.style.overflow = 'hidden';
                         menuToggle.setAttribute('aria-expanded', 'true');
-                        
-                        // Focus first menu item
-                        const firstMenuItem = mobileMenuOverlay.querySelector('.mobile-menu-link');
-                        if (firstMenuItem) {
-                            setTimeout(() => firstMenuItem.focus(), 100);
-                        }
                     }
 
                     function closeMenu() {
                         mobileMenuOverlay.classList.remove('active');
                         document.body.style.overflow = '';
                         menuToggle.setAttribute('aria-expanded', 'false');
-                        menuToggle.focus();
                     }
 
                     menuToggle.addEventListener('click', function(e) {
@@ -842,14 +715,12 @@
                         });
                     }
                     
-                    // Close menu when clicking overlay
                     mobileMenuOverlay.addEventListener('click', function(e) {
                         if (e.target === mobileMenuOverlay) {
                             closeMenu();
                         }
                     });
                     
-                    // Close menu with Escape key
                     document.addEventListener('keydown', function(e) {
                         if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
                             closeMenu();
@@ -857,43 +728,43 @@
                     });
                 }
 
-                // Theme toggle functionality - CORRIGIDO
+                // Theme toggle - CORRIGIDO
                 const themeToggle = document.getElementById('theme-toggle-btn');
-                const root = document.documentElement;
-
                 if (themeToggle) {
                     themeToggle.addEventListener('click', function(e) {
                         e.preventDefault();
                         try {
-                            const currentTheme = root.getAttribute('data-theme');
+                            const html = document.documentElement;
+                            const currentTheme = html.getAttribute('data-theme');
+                            
                             if (currentTheme === 'light') {
-                                root.removeAttribute('data-theme');
+                                // Mudar para tema escuro
+                                html.removeAttribute('data-theme');
                                 localStorage.setItem('theme', 'dark');
                             } else {
-                                root.setAttribute('data-theme', 'light');
+                                // Mudar para tema claro
+                                html.setAttribute('data-theme', 'light');
                                 localStorage.setItem('theme', 'light');
                             }
                         } catch(e) {
-                            console.warn('Theme toggle failed:', e);
+                            console.warn('Erro ao alternar tema:', e);
                         }
                     });
                 }
 
-                // Newsletter form with enhanced security
+                // Newsletter form
                 const newsletterForm = document.getElementById('newsletter-form');
                 if (newsletterForm) {
                     const emailInput = document.getElementById('newsletter-email');
                     const errorDiv = document.getElementById('newsletter-error');
                     
-                    // Email validation
                     function validateEmail(email) {
                         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
                         return re.test(email) && email.length <= 254;
                     }
                     
-                    // Rate limiting
                     let lastSubmission = 0;
-                    const RATE_LIMIT = 30000; // 30 seconds
+                    const RATE_LIMIT = 30000;
                     
                     newsletterForm.addEventListener('submit', async function(e) {
                         e.preventDefault();
@@ -909,11 +780,9 @@
                         const btnText = submitBtn.querySelector('.btn-text');
                         const btnLoading = submitBtn.querySelector('.btn-loading');
                         
-                        // Clear previous errors
                         errorDiv.textContent = '';
                         emailInput.classList.remove('error');
                         
-                        // Validate email
                         if (!emailValue) {
                             errorDiv.textContent = 'Por favor, insira seu e-mail.';
                             emailInput.focus();
@@ -927,15 +796,11 @@
                             return;
                         }
                         
-                        // Loading state
                         submitBtn.disabled = true;
                         btnText.style.display = 'none';
                         btnLoading.style.display = 'inline';
                         
                         try {
-                            const controller = new AbortController();
-                            const timeoutId = setTimeout(() => controller.abort(), 10000);
-                            
                             const response = await fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
                                 method: 'POST',
                                 headers: {
@@ -945,11 +810,8 @@
                                     email: emailValue,
                                     timestamp: now,
                                     source: 'website'
-                                }),
-                                signal: controller.signal
+                                })
                             });
-                            
-                            clearTimeout(timeoutId);
                             
                             if (response.ok) {
                                 utils.showToast(`Sucesso! ${emailValue} foi cadastrado na nossa newsletter.`, 'success');
@@ -959,30 +821,14 @@
                                 throw new Error(`HTTP ${response.status}`);
                             }
                         } catch (error) {
-                            console.warn('Newsletter subscription error:', error);
-                            if (error.name === 'AbortError') {
-                                errorDiv.textContent = 'Tempo limite excedido. Tente novamente.';
-                            } else {
-                                errorDiv.textContent = 'Erro ao cadastrar. Tente novamente mais tarde.';
-                            }
+                            console.warn('Newsletter error:', error);
+                            errorDiv.textContent = 'Erro ao cadastrar. Tente novamente mais tarde.';
                         } finally {
                             submitBtn.disabled = false;
                             btnText.style.display = 'inline';
                             btnLoading.style.display = 'none';
                         }
                     });
-                    
-                    // Real-time email validation
-                    emailInput.addEventListener('input', utils.debounce(function() {
-                        const email = this.value.trim();
-                        if (email && !validateEmail(email)) {
-                            this.classList.add('error');
-                            errorDiv.textContent = 'Formato de e-mail inválido.';
-                        } else {
-                            this.classList.remove('error');
-                            errorDiv.textContent = '';
-                        }
-                    }, 500));
                 }
 
                 // Category interactions
@@ -991,26 +837,10 @@
                     category.addEventListener('click', function() {
                         categories.forEach(c => c.classList.remove('active'));
                         this.classList.add('active');
-                        
-                        const categoryType = this.dataset.category;
-                        console.log('Category selected:', categoryType);
-                    });
-                    
-                    // Keyboard support
-                    category.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            this.click();
-                        }
                     });
                 });
 
-                // Stats counter animation with Intersection Observer
-                const observerOptions = {
-                    threshold: 0.5,
-                    rootMargin: '0px 0px -100px 0px'
-                };
-
+                // Stats animation
                 const statsObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -1018,7 +848,7 @@
                             animateNumber(entry.target);
                         }
                     });
-                }, observerOptions);
+                }, { threshold: 0.5 });
 
                 const statNumbers = document.querySelectorAll('.app-stat-number');
                 statNumbers.forEach(stat => statsObserver.observe(stat));
@@ -1038,60 +868,18 @@
                     }, 50);
                 }
 
-                // Search functionality with debouncing
+                // Search functionality
                 const searchInput = document.querySelector('.app-search-input');
                 if (searchInput) {
                     searchInput.addEventListener('input', utils.debounce(function() {
                         const query = utils.sanitize(this.value.toLowerCase().trim());
                         if (query.length >= 2) {
-                            console.log('Search query:', query);
+                            console.log('Busca:', query);
                         }
                     }, 300));
                 }
 
-                // Card animations on scroll
-                const fadeObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
-                fadeElements.forEach((element, index) => {
-                    element.style.opacity = '0';
-                    element.style.transform = 'translateY(30px)';
-                    element.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                    fadeObserver.observe(element);
-                });
-
-                // Touch/swipe support for cards
-                let startX = 0;
-                const scrollContainer = document.querySelector('.app-cards-scroll');
-                
-                if (scrollContainer) {
-                    scrollContainer.addEventListener('touchstart', function(e) {
-                        startX = e.touches[0].clientX;
-                    }, { passive: true });
-
-                    scrollContainer.addEventListener('touchend', function(e) {
-                        const endX = e.changedTouches[0].clientX;
-                        const diff = startX - endX;
-                        
-                        if (Math.abs(diff) > 50) {
-                            const scrollAmount = 300;
-                            if (diff > 0) {
-                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                            } else {
-                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                            }
-                        }
-                    }, { passive: true });
-                }
-
-                // Initialize ads after DOM is ready
+                // Initialize ads
                 setTimeout(() => {
                     try {
                         const ads = document.querySelectorAll('.adsbygoogle');
@@ -1099,48 +887,36 @@
                             try {
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             } catch(e) {
-                                console.warn('AdSense initialization failed for ad:', e);
+                                console.warn('Ad failed:', e);
                             }
                         });
                     } catch(e) {
-                        console.warn('AdSense general initialization failed:', e);
+                        console.warn('Ads failed:', e);
                     }
                 }, 1000);
 
-                console.log('App initialized successfully');
+                console.log('ROLÊ App initialized');
             }
 
-            // Smooth scroll function
-            window.scrollToSection = function(sectionId) {
-                const target = document.getElementById(sectionId);
+            // Scroll to destaques
+            window.scrollToDestaques = function() {
+                const target = document.getElementById('destaques');
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             };
 
-            // Initialize when DOM is ready
+            // Initialize
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', initializeApp);
             } else {
                 initializeApp();
             }
             
-            // Error handling
-            window.addEventListener('error', function(e) {
-                console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
         })();
     </script>
 
-    <!-- CSS Adicional para correções finais -->
+    <!-- Estilos adicionais -->
     <style>
         /* Newsletter error styling */
         .newsletter-error {
@@ -1158,7 +934,7 @@
         /* Toast styling */
         #toast-container {
             position: fixed;
-            bottom: 120px;
+            bottom: 90px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10000;
@@ -1182,7 +958,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
             max-width: 300px;
             text-align: center;
         }
@@ -1200,28 +976,138 @@
             background: var(--accent-red);
         }
         
-        /* Loading state for buttons */
-        .btn-loading {
-            display: none;
-        }
-        
-        button[disabled] {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-        
-        /* Safe area adjustments for mobile */
-        @supports (padding: max(0px)) {
+        /* Safe area adjustments */
+        @supports (env(safe-area-inset-bottom)) {
             @media (max-width: 768px) {
-                .app-header {
-                    padding-top: max(env(safe-area-inset-top), 0px);
-                }
-                
                 .app-bottom-nav {
-                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                    padding-bottom: calc(16px + env(safe-area-inset-bottom));
                 }
             }
         }
     </style>
 </body>
-</html>
+</html>📍</span>
+                                <span>Rio Grande do Sul</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span>🎸</span>
+                                <span>9 eventos em destaque</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.8</span>
+                            </div>
+                            <a href="destaques-poa.html" class="app-card-link" onclick="event.stopPropagation();">
+                                Ver Destaques
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Florianópolis -->
+                <article class="app-recommendation-card" onclick="location.href='destaques-floripa.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Hoje</div>
+                        <img src="images/floripa.png" alt="Florianópolis" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Florianópolis</h3>
+                        <p class="app-card-description">Beira-mar, eletrônica e coletivo.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span>📍</span>
+                                <span>Santa Catarina</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span>🌊</span>
+                                <span>9 eventos em destaque</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.9</span>
+                            </div>
+                            <a href="destaques-floripa.html" class="app-card-link" onclick="event.stopPropagation();">
+                                Ver Destaques
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Curitiba -->
+                <article class="app-recommendation-card" onclick="location.href='destaques-curitiba.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Amanhã</div>
+                        <img src="images/curitiba.png" alt="Curitiba" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Curitiba</h3>
+                        <p class="app-card-description">Frio na rua, calor nas pistas.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span>📍</span>
+                                <span>Paraná</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span>🌲</span>
+                                <span>9 eventos em destaque</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.2</span>
+                            </div>
+                            <a href="destaques-curitiba.html" class="app-card-link" onclick="event.stopPropagation();">
+                                Ver Destaques
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- São Paulo -->
+                <article class="app-recommendation-card" onclick="location.href='destaques-sao-paulo.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Hoje</div>
+                        <img src="images/sao-paulo.png" alt="São Paulo" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">São Paulo</h3>
+                        <p class="app-card-description">A cidade que nunca dorme... nem para de dançar.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span>📍</span>
+                                <span>São Paulo</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span>🏙️</span>
+                                <span>11 eventos em destaque</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.7</span>
+                            </div>
+                            <a href="destaques-sao-paulo.html" class="app-card-link" onclick="event.stopPropagation();">
+                                Ver Destaques
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Rio de Janeiro -->
+                <article class="app-recommendation-card" onclick="location.href='destaques-rio.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Sábado</div>
+                        <img src="images/rio.png" alt="Rio de Janeiro" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Rio de Janeiro</h3>
+                        <p class="app-card-description">Funk, favela, cor e calor cultural.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span>
