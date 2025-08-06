@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     
-    <!-- SEO Específico - ALTERADO -->
-    <title>Vitrine Cultural | ROLÊ ENTRETENIMENTO - Divulgue seu Evento</title>
-    <meta name="description" content="ROLÊ Vitrine Cultural: O espaço premium para divulgar seus eventos na cena independente. Conecte-se com o público que realmente importa. +500k alcance/mês." />
+    <!-- SEO Específico - ALTERADO PARA REVISTA -->
+    <title>Revista ROLÊ | Editorial Semanal de Cultura e Entretenimento Independente</title>
+    <meta name="description" content="A Revista ROLÊ traz o melhor editorial semanal sobre cultura brasileira independente. Entrevistas exclusivas, histórias da cena underground e conteúdos profundos sobre arte, música e experiências culturais." />
     
     <!-- MANTER TODOS OS OUTROS META TAGS IGUAIS AO INDEX -->
-    <meta name="keywords" content="vitrine cultural, eventos, cultura, rolê, arte, música, festa, entretenimento, anunciar eventos, divulgação cultural, marketing eventos, underground, independente" />
+    <meta name="keywords" content="revista cultural, editorial semanal, cultura brasileira, música independente, arte underground, entrevistas exclusivas, conteúdo cultural, entretenimento, brasil, cena alternativa" />
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="ROLÊ ENTRETENIMENTO">
-    <link rel="canonical" href="https://roleentretenimento.com/vitrine-cultural.html">
+    <link rel="canonical" href="https://roleentretenimento.com/revista.html">
     
     <!-- Structured Data Aprimorado - ALTERADO APENAS WebPage -->
     <script type="application/ld+json">
@@ -65,10 +65,10 @@
             },
             {
                 "@type": "WebPage",
-                "@id": "https://roleentretenimento.com/vitrine-cultural.html#webpage",
-                "url": "https://roleentretenimento.com/vitrine-cultural.html",
-                "name": "Vitrine Cultural | ROLÊ ENTRETENIMENTO",
-                "description": "ROLÊ Vitrine Cultural: O espaço premium para divulgar seus eventos na cena independente.",
+                "@id": "https://roleentretenimento.com/revista.html#webpage",
+                "url": "https://roleentretenimento.com/revista.html",
+                "name": "Revista ROLÊ | Editorial Semanal de Cultura Independente",
+                "description": "Editorial semanal com as melhores histórias, entrevistas e conteúdos da cena cultural brasileira independente.",
                 "isPartOf": {
                     "@id": "https://roleentretenimento.com/#website"
                 },
@@ -87,8 +87,8 @@
                         {
                             "@type": "ListItem",
                             "position": 2,
-                            "name": "Vitrine Cultural",
-                            "item": "https://roleentretenimento.com/vitrine-cultural.html"
+                            "name": "Revista ROLÊ",
+                            "item": "https://roleentretenimento.com/revista.html"
                         }
                     ]
                 }
@@ -97,26 +97,26 @@
     }
     </script>
     
-    <!-- Open Graph - ALTERADO -->
+    <!-- Open Graph - ALTERADO PARA REVISTA -->
     <meta property="og:site_name" content="ROLÊ Entretenimento">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://roleentretenimento.com/vitrine-cultural.html">
-    <meta property="og:title" content="Vitrine Cultural | ROLÊ ENTRETENIMENTO - Divulgue seu Evento">
-    <meta property="og:description" content="A Vitrine Cultural do ROLÊ é onde seus eventos ganham visibilidade na cena alternativa. +500k pessoas alcançadas/mês. Pacotes especiais para produtores e artistas.">
-    <meta property="og:image" content="https://roleentretenimento.com/images/vitrine-og.png">
-    <meta property="og:image:alt" content="Banner Vitrine Cultural ROLÊ">
+    <meta property="og:url" content="https://roleentretenimento.com/revista.html">
+    <meta property="og:title" content="Revista ROLÊ | Editorial Semanal de Cultura Independente">
+    <meta property="og:description" content="Editorial semanal com as melhores histórias, entrevistas exclusivas e conteúdos profundos sobre a cena cultural brasileira independente.">
+    <meta property="og:image" content="https://roleentretenimento.com/images/revista-og.png">
+    <meta property="og:image:alt" content="Banner Revista ROLÊ">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:locale:alternate" content="pt">
     
-    <!-- Twitter Cards - ALTERADO -->
+    <!-- Twitter Cards - ALTERADO PARA REVISTA -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@role.ent">
     <meta name="twitter:creator" content="@role.ent">
-    <meta name="twitter:title" content="Vitrine Cultural | ROLÊ ENTRETENIMENTO">
-    <meta name="twitter:description" content="O espaço premium para divulgar seus eventos na cena independente. +500k alcance/mês.">
-    <meta name="twitter:image" content="https://roleentretenimento.com/images/vitrine-og.png">
+    <meta name="twitter:title" content="Revista ROLÊ | Editorial Semanal">
+    <meta name="twitter:description" content="Editorial semanal com histórias, entrevistas e conteúdos da cena cultural brasileira independente.">
+    <meta name="twitter:image" content="https://roleentretenimento.com/images/revista-og.png">
     
     <!-- Performance e Cache - MANTER IGUAL -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
@@ -167,9 +167,11 @@
     <script>
         (function() {
             try {
-                const theme = localStorage.getItem('theme');
+                const theme = localStorage.getItem('theme') || 'dark';
                 if (theme === 'light') {
                     document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
                 }
             } catch(e) {
                 console.warn('Theme loading failed:', e);
@@ -183,34 +185,125 @@
     <!-- CSS Critical Path - MANTER IGUAL -->
     <style>
         /* Critical CSS inline */
-        :root{--bg-primary:#0D0D0D;--text-primary:#FFFFFF;--accent-purple:#8B5CF6}
+        :root{
+            --bg-primary:#0D0D0D;
+            --bg-secondary:#1A1A1A;
+            --bg-card:#1F1F1F;
+            --text-primary:#FFFFFF;
+            --text-secondary:#A0A0A0;
+            --border-color:#2A2A2A;
+            --accent-purple:#8B5CF6;
+            --accent-green:#10B981;
+            --accent-red:#EF4444;
+        }
+        
+        :root[data-theme="light"]{
+            --bg-primary:#FFFFFF;
+            --bg-secondary:#F8F9FA;
+            --bg-card:#FFFFFF;
+            --text-primary:#1F2937;
+            --text-secondary:#6B7280;
+            --border-color:#E5E7EB;
+        }
+        
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6}
-        .app-header{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px)}
+        
+        body{
+            font-family:'Inter',sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+            transition:background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .app-container {
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease;
+        }
+        
+        .app-header{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:rgba(13,13,13,0.95);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid var(--border-color);
+            transition:background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-header{
+            background:rgba(255,255,255,0.95);
+        }
+        
+        /* CORREÇÃO: ESCONDER MENU MOBILE NO DESKTOP */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none !important;
+            }
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
         
         /* Header Fixes */
         @media (max-width: 768px) {
+            .app-header {
+                padding: 0 20px;
+            }
             .app-header-content {
-                padding: 16px 0 12px 0 !important;
+                padding: 12px 0 8px 0 !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             .app-logo-img {
-                height: 28px !important;
+                height: 24px !important;
+                max-width: 100px;
             }
             .app-header-actions {
-                gap: 12px !important;
+                gap: 8px !important;
+                display: flex;
+                align-items: center;
+            }
+            .menu-toggle, .theme-toggle-app {
+                padding: 6px;
+                width: 36px;
+                height: 36px;
             }
         }
         
         @media (min-width: 769px) {
             .app-header-content {
-                padding: 16px 40px !important;
+                padding: 14px 40px !important;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             .app-header-actions {
                 gap: 20px !important;
+                display: flex;
+                align-items: center;
             }
             .desktop-menu {
                 gap: 24px !important;
                 margin-right: 24px !important;
+                display: flex !important;
+            }
+            .desktop-menu a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 8px 16px;
+                border-radius: 8px;
+            }
+            .desktop-menu a:hover,
+            .desktop-menu a.active {
+                color: var(--accent-purple);
+                background: rgba(139, 92, 246, 0.1);
             }
         }
     </style>
@@ -221,14 +314,14 @@
     <!-- No-JS Fallback - MANTER IGUAL -->
     <noscript>
         <div style="position:fixed;top:0;left:0;right:0;background:#EF4444;color:white;padding:16px;text-align:center;font-weight:600;z-index:10000;">
-            Para uma melhor experiência da Vitrine Cultural, ative o JavaScript no seu navegador.
+            Para uma melhor experiência da Revista ROLÊ, ative o JavaScript no seu navegador.
         </div>
     </noscript>
     
-    <!-- Estilos específicos da Vitrine Cultural -->
+    <!-- Estilos específicos da Revista -->
     <style>
-        /* Estilos específicos para Vitrine Cultural */
-        .vitrine-hero {
+        /* Estilos específicos para Revista ROLÊ */
+        .revista-hero {
             text-align: center;
             padding: 32px 20px;
             margin-bottom: 32px;
@@ -239,14 +332,14 @@
         }
 
         @media (min-width: 769px) {
-            .vitrine-hero {
+            .revista-hero {
                 max-width: 1000px;
                 margin: 32px auto;
                 padding: 48px 40px;
             }
         }
 
-        .vitrine-hero-title {
+        .revista-hero-title {
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
             margin-bottom: 16px;
@@ -257,7 +350,7 @@
             line-height: 1.2;
         }
 
-        .vitrine-hero-subtitle {
+        .revista-hero-subtitle {
             font-size: clamp(1rem, 3vw, 1.25rem);
             line-height: 1.6;
             margin-bottom: 24px;
@@ -267,7 +360,7 @@
             margin-right: auto;
         }
 
-        .vitrine-highlight {
+        .revista-highlight {
             background: rgba(139, 92, 246, 0.15);
             padding: 20px;
             border-radius: 15px;
@@ -277,422 +370,227 @@
             font-weight: 500;
         }
 
-        .vitrine-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            align-items: center;
-            margin: 32px 20px;
-            padding: 24px;
-            background: rgba(139, 92, 246, 0.05);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-nav {
-                max-width: 1000px;
-                margin: 40px auto;
-                gap: 16px;
-            }
-        }
-
-        .vitrine-nav-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 12px 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 25px;
-            transition: var(--transition-normal);
-            background: var(--bg-card);
-            text-align: center;
-            min-width: 140px;
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-nav-link {
-                font-size: 15px;
-                padding: 14px 24px;
-                min-width: 160px;
-            }
-        }
-
-        .vitrine-nav-link:hover {
-            color: white;
-            background: var(--accent-purple);
-            border-color: var(--accent-purple);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
-        }
-
-        .vitrine-nav-link.primary {
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-        }
-
-        .vitrine-nav-link.primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
-        }
-
-        .vitrine-stats-grid {
-            display: grid;
-            gap: 16px;
-            margin: 32px 20px;
-        }
-
-        @media (max-width: 768px) {
-            .vitrine-stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-stats-grid {
-                grid-template-columns: repeat(4, 1fr);
-                max-width: 1000px;
-                margin: 40px auto;
-                gap: 24px;
-            }
-        }
-
-        .vitrine-stat-card {
+        .revista-article {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            transition: var(--transition-normal);
-            box-shadow: var(--shadow-sm);
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-stat-card {
-                padding: 24px;
-            }
-        }
-
-        .vitrine-stat-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-purple);
-            box-shadow: var(--shadow-md);
-        }
-
-        .vitrine-stat-number {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            margin-bottom: 8px;
-            line-height: 1.1;
-        }
-
-        .vitrine-stat-label {
-            font-size: 14px;
-            color: var(--text-secondary);
-            font-weight: 500;
-            line-height: 1.3;
-        }
-
-        .vitrine-carousel {
-            margin: 40px 0;
-        }
-
-        .vitrine-carousel-header {
-            text-align: center;
-            padding: 0 20px 24px 20px;
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-carousel-header {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 40px 32px 40px;
-            }
-        }
-
-        .vitrine-carousel-title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .vitrine-carousel-description {
-            font-size: 16px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        .vitrine-events-scroll {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            padding: 0 20px 20px 20px;
-        }
-
-        .vitrine-events-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-events-scroll {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 24px;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 40px;
-                overflow: visible;
-            }
-        }
-
-        .vitrine-event-card {
-            background: var(--bg-card);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: var(--transition-normal);
-            cursor: pointer;
+            margin: 24px 20px;
             box-shadow: var(--shadow-sm);
-            position: relative;
-            flex: 0 0 280px;
+            transition: var(--transition-normal);
         }
 
         @media (min-width: 769px) {
-            .vitrine-event-card {
-                width: 100%;
-                flex: none;
+            .revista-article {
+                max-width: 1000px;
+                margin: 32px auto;
             }
         }
 
-        .vitrine-event-card:hover {
-            transform: translateY(-6px);
+        .revista-article:hover {
+            transform: translateY(-4px);
             border-color: var(--accent-purple);
             box-shadow: var(--shadow-lg);
         }
 
-        .vitrine-event-card::after {
-            content: '✨ EM DESTAQUE';
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: var(--gradient-primary);
-            color: white;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 6px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            z-index: 3;
-        }
-
-        .vitrine-event-image {
+        .revista-article-image {
             width: 100%;
-            height: 160px;
+            height: 250px;
             position: relative;
             overflow: hidden;
         }
 
         @media (min-width: 769px) {
-            .vitrine-event-image {
-                height: 200px;
+            .revista-article-image {
+                height: 400px;
             }
         }
 
-        .vitrine-event-image img {
+        .revista-article-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition-normal);
         }
 
-        .vitrine-event-card:hover .vitrine-event-image img {
+        .revista-article:hover .revista-article-image img {
             transform: scale(1.05);
         }
 
-        .vitrine-event-content {
-            padding: 20px;
+        .revista-article-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .vitrine-event-title {
-            font-size: 18px;
+        .revista-article-content {
+            padding: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .revista-article-content {
+                padding: 32px;
+            }
+        }
+
+        .revista-article-category {
+            color: var(--accent-purple);
+            font-size: 14px;
             font-weight: 600;
-            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 8px;
-            line-height: 1.3;
         }
 
-        .vitrine-event-description {
+        .revista-article-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .revista-article-excerpt {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .revista-article-excerpt {
+                font-size: 18px;
+                margin-bottom: 32px;
+            }
+        }
+
+        .revista-article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
             font-size: 14px;
             color: var(--text-secondary);
-            margin-bottom: 16px;
-            line-height: 1.4;
         }
 
-        .vitrine-event-link {
-            display: inline-block;
-            font-size: 14px;
+        .revista-article-author {
             font-weight: 600;
             color: var(--accent-purple);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 12px;
-            transition: var(--transition-fast);
+        }
+
+        .revista-article-date {
+            position: relative;
+        }
+
+        .revista-article-date::before {
+            content: '•';
+            margin-right: 8px;
+            color: var(--text-muted);
+        }
+
+        .revista-article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .revista-tag {
             background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-purple);
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 500;
             border: 1px solid rgba(139, 92, 246, 0.2);
         }
 
-        .vitrine-event-link:hover {
-            background: var(--accent-purple);
+        .revista-read-more {
+            display: inline-block;
+            background: var(--gradient-primary);
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition-normal);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .vitrine-testimonial {
+        @media (min-width: 769px) {
+            .revista-read-more {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+        }
+
+        .revista-read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .revista-newsletter-cta {
             background: var(--bg-card);
-            padding: 32px;
-            border-radius: 20px;
-            border-left: 4px solid var(--accent-purple);
-            margin: 40px 20px;
-            font-style: italic;
-            position: relative;
             border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 32px 24px;
+            margin: 32px 20px;
+            text-align: center;
             box-shadow: var(--shadow-sm);
         }
 
         @media (min-width: 769px) {
-            .vitrine-testimonial {
+            .revista-newsletter-cta {
                 max-width: 800px;
                 margin: 48px auto;
                 padding: 40px;
             }
         }
 
-        .vitrine-testimonial::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--accent-purple);
-            position: absolute;
-            top: -10px;
-            left: 24px;
-            opacity: 0.3;
-            font-family: serif;
-        }
-
-        .vitrine-testimonial-text {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .vitrine-testimonial-author {
-            text-align: right;
-            font-weight: 600;
-            color: var(--accent-purple);
-            font-style: normal;
-            font-size: 16px;
-        }
-
-        .vitrine-cta {
-            text-align: center;
-            margin: 48px 20px;
-            padding: 40px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
-            border-radius: 20px;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-cta {
-                max-width: 1000px;
-                margin: 64px auto;
-                padding: 48px;
-            }
-        }
-
-        .vitrine-cta-title {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
+        .revista-newsletter-cta h3 {
+            font-size: clamp(1.25rem, 4vw, 1.75rem);
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             color: var(--text-primary);
         }
 
-        .vitrine-cta-text {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 32px;
+        .revista-newsletter-cta p {
+            font-size: 16px;
             color: var(--text-secondary);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 24px;
+            line-height: 1.5;
         }
 
-        .vitrine-cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @media (min-width: 600px) {
-            .vitrine-cta-buttons {
-                flex-direction: row;
-                gap: 20px;
-            }
-        }
-
-        .vitrine-cta-button {
+        .revista-cta-button {
             background: var(--gradient-primary);
             color: white;
-            padding: 16px 32px;
-            border-radius: 30px;
+            padding: 14px 28px;
+            border-radius: 25px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 16px;
             display: inline-block;
             transition: var(--transition-normal);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            min-width: 200px;
-            text-align: center;
         }
 
-        .vitrine-cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+        .revista-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
         }
 
-        .vitrine-cta-button.secondary {
-            background: transparent;
-            color: var(--accent-purple);
-            border: 2px solid var(--accent-purple);
-        }
-
-        .vitrine-cta-button.secondary:hover {
-            background: var(--accent-purple);
-            color: white;
-        }
-
-        /* Animações específicas */
+        /* Animações */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -709,26 +607,6 @@
         .stagger-delay:nth-child(3) { transition-delay: 0.3s; }
         .stagger-delay:nth-child(4) { transition-delay: 0.4s; }
         .stagger-delay:nth-child(5) { transition-delay: 0.5s; }
-        .stagger-delay:nth-child(6) { transition-delay: 0.6s; }
-        .stagger-delay:nth-child(7) { transition-delay: 0.7s; }
-        
-        /* Mobile específico */
-        @media (max-width: 480px) {
-            .vitrine-stats-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-            
-            .vitrine-nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-            
-            .vitrine-nav-link {
-                width: 100%;
-                max-width: 280px;
-            }
-        }
 
         /* Newsletter error styling */
         .newsletter-error {
@@ -764,14 +642,14 @@
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="120" height="28" />
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
                 </a>
                 <div class="app-header-actions">
-                    <!-- Desktop Menu - MOVER 'active' para Vitrine Cultural -->
+                    <!-- Desktop Menu - MOVER 'active' para Revista -->
                     <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
                         <a href="index.html">Home</a>
-                        <a href="revista.html">Revista</a>
-                        <a href="vitrine-cultural.html" class="active" aria-current="page">Vitrine Cultural</a>
+                        <a href="revista.html" class="active" aria-current="page">Revista</a>
+                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
                         <a href="destaques.html">Destaques</a>
                         <a href="descontos.html">Descontos</a>
                         <a href="contato.html">Contato</a>
@@ -780,12 +658,12 @@
 
                     <!-- Theme Toggle -->
                     <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
+                        <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
                     </button>
 
                     <!-- Mobile Menu Button -->
                     <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
@@ -793,7 +671,7 @@
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay PADRONIZADO - MOVER 'active' para Vitrine Cultural -->
+        <!-- Mobile Menu Overlay PADRONIZADO - MOVER 'active' para Revista -->
         <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
@@ -806,8 +684,8 @@
                 </div>
                 <ul class="mobile-menu-list" role="list">
                     <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
-                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
-                    <li><a href="vitrine-cultural.html" class="mobile-menu-link active" aria-current="page">🎨 Vitrine Cultural</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link active" aria-current="page">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
                     <li><a href="destaques.html" class="mobile-menu-link">⭐ Destaques</a></li>
                     <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
                     <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
@@ -835,78 +713,48 @@
                 <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
-                <input type="search" class="app-search-input" placeholder="Procurar por rolês, artistas, cidades..." 
-                       aria-label="Buscar eventos, artistas ou cidades" autocomplete="off" spellcheck="false">
+                <input type="search" class="app-search-input" placeholder="Procurar artigos, entrevistas, conteúdos..." 
+                       aria-label="Buscar conteúdos da revista" autocomplete="off" spellcheck="false">
             </div>
         </div>
 
-        <!-- Categories OPCIONAL - incluir quando relevante -->
+        <!-- Categories OPCIONAL - para revista -->
         <section class="app-categories" aria-labelledby="categories-title">
-            <h2 id="categories-title" class="sr-only">Categorias de eventos</h2>
+            <h2 id="categories-title" class="sr-only">Categorias de conteúdo</h2>
             <div class="categories-grid-app" role="group" aria-label="Filtros por categoria">
-                <button class="category-item-app" data-category="shows" aria-label="Filtrar por shows">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de música">🎵</div>
-                    <div class="category-label-app">Shows</div>
-                </button>
-                <button class="category-item-app" data-category="teatro" aria-label="Filtrar por teatro">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de teatro">🎭</div>
-                    <div class="category-label-app">Teatro</div>
-                </button>
-                <button class="category-item-app" data-category="festas" aria-label="Filtrar por festas">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de festa">🎉</div>
-                    <div class="category-label-app">Festas</div>
-                </button>
-                <button class="category-item-app" data-category="bares" aria-label="Filtrar por bares">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de bebida">🍺</div>
-                    <div class="category-label-app">Bares</div>
-                </button>
-                <button class="category-item-app" data-category="arte" aria-label="Filtrar por arte">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de arte">🎨</div>
-                    <div class="category-label-app">Arte</div>
-                </button>
+                <a href="revista.html?categoria=entrevistas" class="category-item-app" aria-label="Ver entrevistas">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de entrevista">🎙️</div>
+                    <div class="category-label-app">Entrevistas</div>
+                </a>
+                <a href="revista.html?categoria=cena" class="category-item-app" aria-label="Ver cena">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de cena">🌆</div>
+                    <div class="category-label-app">Cena</div>
+                </a>
+                <a href="revista.html?categoria=opiniao" class="category-item-app" aria-label="Ver opinião">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de opinião">💭</div>
+                    <div class="category-label-app">Opinião</div>
+                </a>
+                <a href="revista.html?categoria=cultura" class="category-item-app" aria-label="Ver cultura">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de cultura">🎨</div>
+                    <div class="category-label-app">Cultura</div>
+                </a>
+                <a href="revista.html?categoria=lifestyle" class="category-item-app" aria-label="Ver lifestyle">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de estilo">✨</div>
+                    <div class="category-label-app">Lifestyle</div>
+                </a>
             </div>
         </section>
 
-        <!-- CONTEÚDO ESPECÍFICO DA VITRINE CULTURAL -->
+        <!-- CONTEÚDO ESPECÍFICO DA REVISTA -->
         
-        <!-- Hero Section da Vitrine -->
-        <section class="vitrine-hero fade-in-up">
-            <h1 class="vitrine-hero-title">Vitrine Cultural ROLÊ</h1>
-            <p class="vitrine-hero-subtitle">
-                O espaço premium para dar visibilidade aos eventos que realmente importam na cena independente. 
-                Conecte seu evento com o público que busca experiências autênticas e culturalmente relevantes.
+        <!-- Hero Section da Revista -->
+        <section class="revista-hero fade-in-up">
+            <h1 class="revista-hero-title">Revista ROLÊ</h1>
+            <p class="revista-hero-subtitle">
+                Editorial semanal com as melhores histórias, entrevistas exclusivas e conteúdos profundos sobre a cena cultural brasileira independente. Aqui você encontra o que realmente importa na cultura underground.
             </p>
-            <div class="vitrine-highlight">
-                <strong>✨ Mais que divulgação:</strong> Uma curadoria especializada que coloca seu evento em destaque para quem realmente entende de cultura underground e alternativa.
-            </div>
-        </section>
-
-        <!-- Navegação específica da Vitrine Cultural -->
-        <nav class="vitrine-nav fade-in-up">
-            <a href="vitrine-hero.html" class="vitrine-nav-link primary">Como Funciona a Vitrine</a>
-            <a href="vitrine-por-que-anunciar.html" class="vitrine-nav-link">Por que Anunciar?</a>
-            <a href="vitrine-pacotes.html" class="vitrine-nav-link">Pacotes & Preços</a>
-            <a href="vitrine-faq.html" class="vitrine-nav-link">Perguntas Frequentes</a>
-            <a href="vitrine-artigo-marketing-eventos.html" class="vitrine-nav-link">Marketing para Eventos</a>
-        </nav>
-
-        <!-- Estatísticas da Vitrine -->
-        <section class="vitrine-stats-grid fade-in-up">
-            <div class="vitrine-stat-card stagger-delay">
-                <span class="vitrine-stat-number" data-target="500">0</span>
-                <span class="vitrine-stat-label">Mil Pessoas Alcançadas/Mês</span>
-            </div>
-            <div class="vitrine-stat-card stagger-delay">
-                <span class="vitrine-stat-number" data-target="85">0</span>
-                <span class="vitrine-stat-label">% Taxa de Engajamento</span>
-            </div>
-            <div class="vitrine-stat-card stagger-delay">
-                <span class="vitrine-stat-number" data-target="200">0</span>
-                <span class="vitrine-stat-label">+ Eventos Promovidos</span>
-            </div>
-            <div class="vitrine-stat-card stagger-delay">
-                <span class="vitrine-stat-number" data-target="5">0</span>
-                <span class="vitrine-stat-label">Cidades Ativas</span>
+            <div class="revista-highlight">
+                <strong>📰 Novo editorial toda quinta:</strong> Conteúdos originais, entrevistas exclusivas e a visão crítica sobre a cena que você não encontra em lugar nenhum.
             </div>
         </section>
 
@@ -920,167 +768,156 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Carrossel com eventos em destaque -->
-        <section class="vitrine-carousel fade-in-up">
-            <div class="vitrine-carousel-header">
-                <h2 class="vitrine-carousel-title">EVENTOS EM DESTAQUE NA VITRINE</h2>
-                <p class="vitrine-carousel-description">
-                    Conheça alguns dos eventos que ganharam visibilidade através da nossa curadoria especializada
+        <!-- Artigo Destaque 1 -->
+        <article class="revista-article fade-in-up stagger-delay">
+            <div class="revista-article-image">
+                <div class="revista-article-badge">DESTAQUE</div>
+                <img src="images/revista-destaque-1.jpg" alt="Cena underground brasileira" loading="lazy" />
+            </div>
+            <div class="revista-article-content">
+                <div class="revista-article-category">ENTREVISTA EXCLUSIVA</div>
+                <h2 class="revista-article-title">O Underground que Pulsa: Conversas com Quem Move a Cena</h2>
+                <div class="revista-article-meta">
+                    <span class="revista-article-author">Por ROLÊ Editorial</span>
+                    <span class="revista-article-date">08 de Agosto de 2025</span>
+                </div>
+                <p class="revista-article-excerpt">
+                    Uma conversa profunda com os protagonistas que estão moldando a cena cultural brasileira. Desde coletivos que ocupam espaços abandonados até produtores que reinventam a música eletrônica nacional, exploramos as vozes que ecoam longe dos holofotes mainstream.
                 </p>
+                <div class="revista-article-tags">
+                    <span class="revista-tag">Underground</span>
+                    <span class="revista-tag">Música Brasileira</span>
+                    <span class="revista-tag">Cultura Independente</span>
+                    <span class="revista-tag">Entrevistas</span>
+                </div>
+                <a href="revista-artigo-underground.html" class="revista-read-more">Ler Artigo Completo</a>
             </div>
-            
-            <div class="vitrine-events-scroll">
-                <!-- Card 1 -->
-                <article class="vitrine-event-card fade-in-up stagger-delay">
-                    <div class="vitrine-event-image">
-                        <img src="images/88goat.png" alt="DJ 88Goat de preto com óculos" loading="lazy" />
-                    </div>
-                    <div class="vitrine-event-content">
-                        <h3 class="vitrine-event-title">SP: O som vai bater diferente</h3>
-                        <p class="vitrine-event-description">88GOAT e Mavro no CR1A dia 01/08</p>
-                        <a href="https://www.instagram.com/p/DMskH8sOUyI/" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="vitrine-event-link">
-                            ver evento no insta
-                        </a>
-                    </div>
-                </article>
+        </article>
 
-                <!-- Card 2 -->
-                <article class="vitrine-event-card fade-in-up stagger-delay">
-                    <div class="vitrine-event-image">
-                        <img src="images/werk.png" alt="Drag loira no palco, Mona Vipère" loading="lazy" />
-                    </div>
-                    <div class="vitrine-event-content">
-                        <h3 class="vitrine-event-title">POA: Drag Power na Pista!</h3>
-                        <p class="vitrine-event-description">Divas pop e DJs no Workroom POA</p>
-                        <a href="https://www.instagram.com/p/DMtGocLPQwN/" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="vitrine-event-link">
-                            ver evento no insta
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="vitrine-event-card fade-in-up stagger-delay">
-                    <div class="vitrine-event-image">
-                        <img src="images/eeuqueeraemo.png" alt="Boné vermelho escrito emo" loading="lazy" />
-                    </div>
-                    <div class="vitrine-event-content">
-                        <h3 class="vitrine-event-title">RIO: E eu que era emo?</h3>
-                        <p class="vitrine-event-description">Festa emo nostálgica no Rio</p>
-                        <a href="https://www.instagram.com/p/DMtGocLPQwN/" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="vitrine-event-link">
-                            ver evento no insta
-                        </a>
-                    </div>
-                </article>
-        
-                <!-- Card 4 -->
-                <article class="vitrine-event-card fade-in-up stagger-delay">
-                    <div class="vitrine-event-image">
-                        <img src="images/laze1.png" alt="Selfie com duas mulheres na Laze" loading="lazy" />
-                    </div>
-                    <div class="vitrine-event-content">
-                        <h3 class="vitrine-event-title">POA: O baile não perdoa</h3>
-                        <p class="vitrine-event-description">LAZE volta a tremer o Ferro Velho</p>
-                        <a href="https://www.instagram.com/p/DMwAzzwv7oe/" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="vitrine-event-link">
-                            ver evento no insta
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Card 5 -->
-                <article class="vitrine-event-card fade-in-up stagger-delay">
-                    <div class="vitrine-event-image">
-                        <img src="images/balone.png" alt="Mulher sorrindo com brilho na Balonê" loading="lazy" />
-                    </div>
-                    <div class="vitrine-event-content">
-                        <h3 class="vitrine-event-title">POA: Like a Balonê</h3>
-                        <p class="vitrine-event-description">Festa 80/90 com glitter e Madonna</p>
-                        <a href="https://www.instagram.com/p/DMxtYz7Onms/" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="vitrine-event-link">
-                            ver evento no insta
-                        </a>
-                    </div>
-                </article>
-
-             <!-- Card 6 -->
-                <article class="vitrine-event-card fade-in-up stagger-delay">
-                    <div class="vitrine-event-image">
-                        <img src="images/entaotah.png" alt="Passista sorrindo na Então Tah" loading="lazy" />
-                    </div>
-                    <div class="vitrine-event-content">
-                        <h3 class="vitrine-event-title">RIO: Samba com Orgulho</h3>
-                        <p class="vitrine-event-description">Ancestralidade e batida na roda!</p>
-                        <a href="https://www.instagram.com/p/DM0KLvjuVts/" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="vitrine-event-link">
-                            ver evento no insta
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Card 7 -->
-                <article class="vitrine-event-card fade-in-up stagger-delay">
-                    <div class="vitrine-event-image">
-                        <img src="images/trio.png" alt="Sorriso no samba" loading="lazy" />
-                    </div>
-                    <div class="vitrine-event-content">
-                        <h3 class="vitrine-event-title">POA: SAIDEIRA CHEGOU!</h3>
-                        <p class="vitrine-event-description">Samba, brasilidades e reencontro</p>
-                        <a href="https://www.instagram.com/p/DM0UgSAOesb/" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="vitrine-event-link">
-                            ver evento no insta
-                        </a>
-                    </div>
-                </article>
+        <!-- Artigo 2 -->
+        <article class="revista-article fade-in-up stagger-delay">
+            <div class="revista-article-image">
+                <img src="images/revista-cena-noturna.jpg" alt="Vida noturna alternativa brasileira" loading="lazy" />
             </div>
-        </section>
-        
-        <!-- Depoimento -->
-        <section class="fade-in-up">
-            <div class="vitrine-testimonial">
-                <p class="vitrine-testimonial-text">A Vitrine Cultural do ROLÊ não é só divulgação, é uma curadoria real. Eles entendem nossa vibe e sabem exatamente como conectar nosso evento com o público certo. O resultado? House lotada e um engajamento que durou semanas.</p>
-                <div class="vitrine-testimonial-author">— Organizadores de festa tech-house</div>
+            <div class="revista-article-content">
+                <div class="revista-article-category">CENA</div>
+                <h2 class="revista-article-title">A Nova Geração da Noite: Como os Jovens Estão Reinventando as Baladas</h2>
+                <div class="revista-article-meta">
+                    <span class="revista-article-author">Por Marina Santos</span>
+                    <span class="revista-article-date">05 de Agosto de 2025</span>
+                </div>
+                <p class="revista-article-excerpt">
+                    Das raves em galpões abandonados às festas temáticas em rooftops, uma nova geração está criando experiências noturnas que vão muito além da música. Investigamos como a juventude brasileira está redefinindo o conceito de festa e comunidade.
+                </p>
+                <div class="revista-article-tags">
+                    <span class="revista-tag">Vida Noturna</span>
+                    <span class="revista-tag">Juventude</span>
+                    <span class="revista-tag">Festas</span>
+                    <span class="revista-tag">Comunidade</span>
+                </div>
+                <a href="revista-artigo-noite.html" class="revista-read-more">Ler Artigo Completo</a>
             </div>
+        </article>
+
+        <!-- ADSENSE OBRIGATÓRIO - 2ª POSIÇÃO -->
+        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2898945215492580"
+                 data-ad-slot="6673310789"
+                 data-ad-format="horizontal"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Artigo 3 -->
+        <article class="revista-article fade-in-up stagger-delay">
+            <div class="revista-article-image">
+                <img src="images/revista-arte-urbana.jpg" alt="Arte urbana e grafite brasileiro" loading="lazy" />
+            </div>
+            <div class="revista-article-content">
+                <div class="revista-article-category">ARTE & CULTURA</div>
+                <h2 class="revista-article-title">Muros que Falam: A Revolução da Arte Urbana Brasileira</h2>
+                <div class="revista-article-meta">
+                    <span class="revista-article-author">Por Carlos Mendoza</span>
+                    <span class="revista-article-date">02 de Agosto de 2025</span>
+                </div>
+                <p class="revista-article-excerpt">
+                    O grafite brasileiro evoluiu de ato de resistência para movimento artístico reconhecido mundialmente. Conversamos com artistas que transformam as ruas em galerias a céu aberto e exploram como essa arte dialoga com as questões sociais contemporâneas.
+                </p>
+                <div class="revista-article-tags">
+                    <span class="revista-tag">Arte Urbana</span>
+                    <span class="revista-tag">Grafite</span>
+                    <span class="revista-tag">Cultura de Rua</span>
+                    <span class="revista-tag">Brasil</span>
+                </div>
+                <a href="revista-artigo-arte-urbana.html" class="revista-read-more">Ler Artigo Completo</a>
+            </div>
+        </article>
+
+        <!-- Artigo 4 -->
+        <article class="revista-article fade-in-up stagger-delay">
+            <div class="revista-article-image">
+                <img src="images/revista-musica-independente.jpg" alt="Música independente brasileira" loading="lazy" />
+            </div>
+            <div class="revista-article-content">
+                <div class="revista-article-category">MÚSICA</div>
+                <h2 class="revista-article-title">Independente e Orgulhosa: As Gravadoras que Estão Mudando a Música Brasileira</h2>
+                <div class="revista-article-meta">
+                    <span class="revista-article-author">Por Ana Beatriz Lopes</span>
+                    <span class="revista-article-date">30 de Julho de 2025</span>
+                </div>
+                <p class="revista-article-excerpt">
+                    Longe dos grandes conglomerados musicais, selos independentes estão descobrindo e lançando os talentos que definirão o som da próxima década. Uma análise sobre como a indústria musical brasileira está se reinventando de baixo para cima.
+                </p>
+                <div class="revista-article-tags">
+                    <span class="revista-tag">Música Independente</span>
+                    <span class="revista-tag">Indústria Musical</span>
+                    <span class="revista-tag">Novos Talentos</span>
+                    <span class="revista-tag">Brasil</span>
+                </div>
+                <a href="revista-artigo-musica-independente.html" class="revista-read-more">Ler Artigo Completo</a>
+            </div>
+        </article>
+
+        <!-- Newsletter CTA da Revista -->
+        <section class="revista-newsletter-cta fade-in-up">
+            <h3>Não Perca Nenhuma Edição</h3>
+            <p>Receba semanalmente os melhores conteúdos da Revista ROLÊ direto no seu e-mail. Editorial exclusivo, entrevistas e análises que você não encontra em outro lugar.</p>
+            <a href="#newsletter-section" class="revista-cta-button" onclick="document.getElementById('newsletter-section').scrollIntoView({behavior: 'smooth'})">
+                Assinar Newsletter
+            </a>
         </section>
 
-        <!-- CTA Final -->
-        <section class="vitrine-cta fade-in-up">
-            <h2 class="vitrine-cta-title">Pronto para Destacar seu Evento?</h2>
-            <p class="vitrine-cta-text">
-                Não deixe seu evento passar despercebido na multidão. A Vitrine Cultural do ROLÊ oferece 
-                a visibilidade qualificada que sua produção merece, conectando você com um público 
-                engajado e apaixonado por cultura underground.
-            </p>
-            <div class="vitrine-cta-buttons">
-                <a href="vitrine-pacotes.html" class="vitrine-cta-button">Ver Pacotes & Preços</a>
-                <a href="https://wa.me/5551980704353?text=Olá! Quero saber mais sobre a Vitrine Cultural do ROLÊ" 
-                   class="vitrine-cta-button secondary" 
-                   target="_blank" 
-                   rel="noopener noreferrer">Falar no WhatsApp</a>
+        <!-- Artigo 5 -->
+        <article class="revista-article fade-in-up stagger-delay">
+            <div class="revista-article-image">
+                <img src="images/revista-lifestyle.jpg" alt="Lifestyle e moda alternativa" loading="lazy" />
             </div>
-        </section>
+            <div class="revista-article-content">
+                <div class="revista-article-category">LIFESTYLE</div>
+                <h2 class="revista-article-title">Além da Aparência: Como o Estilo Virou Linguagem na Cena Alternativa</h2>
+                <div class="revista-article-meta">
+                    <span class="revista-article-author">Por Juliana Ferreira</span>
+                    <span class="revista-article-date">28 de Julho de 2025</span>
+                </div>
+                <p class="revista-article-excerpt">
+                    Na cena underground, a moda transcende tendências e se torna forma de comunicação. Exploramos como jovens artistas e frequentadores da cena usam o vestuário para expressar identidade, resistência e pertencimento cultural.
+                </p>
+                <div class="revista-article-tags">
+                    <span class="revista-tag">Moda Alternativa</span>
+                    <span class="revista-tag">Identidade</span>
+                    <span class="revista-tag">Expressão</span>
+                    <span class="revista-tag">Underground</span>
+                </div>
+                <a href="revista-artigo-lifestyle.html" class="revista-read-more">Ler Artigo Completo</a>
+            </div>
+        </article>
 
         <!-- Newsletter Section PADRONIZADA -->
-        <section class="app-newsletter-section fade-in-up" aria-labelledby="newsletter-title">
+        <section class="app-newsletter-section fade-in-up" id="newsletter-section" aria-labelledby="newsletter-title">
             <div class="app-newsletter-content">
-                <h2 id="newsletter-title" class="app-section-title">Receba as Novidades da Vitrine</h2>
-                <p>Fique por dentro dos lançamentos, casos de sucesso e dicas exclusivas para organizadores de eventos.</p>
+                <h2 id="newsletter-title" class="app-section-title">Newsletter da Revista ROLÊ</h2>
+                <p>Assine e receba semanalmente os melhores conteúdos editoriais, entrevistas exclusivas e análises profundas sobre a cena cultural brasileira.</p>
                 <form class="app-newsletter-form" id="newsletter-form" novalidate>
                     <label for="newsletter-email" class="sr-only">Seu endereço de email</label>
                     <input type="email" 
@@ -1102,13 +939,13 @@
             </div>
         </section>
 
-        <!-- ADSENSE OBRIGATÓRIO - 2ª POSIÇÃO -->
+        <!-- ADSENSE OBRIGATÓRIO - 3ª POSIÇÃO -->
         <div class="app-ad-container" role="complementary" aria-label="Publicidade">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-2898945215492580"
-                 data-ad-slot="6673310789"
-                 data-ad-format="horizontal"
+                 data-ad-slot="7986392458"
+                 data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
         </div>
 
@@ -1134,7 +971,7 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation PADRONIZADA - MOVER 'active' para Vitrine -->
+        <!-- Bottom Navigation PADRONIZADA - MOVER 'active' para Revista -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item" aria-label="Página inicial">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1142,13 +979,13 @@
                 </svg>
                 <span class="app-nav-label">Home</span>
             </a>
-            <a href="vitrine-cultural.html" class="app-nav-item active" aria-label="Vitrine cultural" aria-current="page">
+            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
                 <span class="app-nav-label">Vitrine</span>
             </a>
-            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
+            <a href="revista.html" class="app-nav-item active" aria-label="Revista ROLÊ" aria-current="page">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
@@ -1236,7 +1073,10 @@
                 const menuClose = document.getElementById('menu-close-btn');
                 const mobileMenuOverlay = document.getElementById('mobile-menu');
                 
-                if (menuToggle && mobileMenuOverlay) {
+                // Verificar se estamos em mobile
+                const isMobile = window.innerWidth <= 768;
+                
+                if (menuToggle && mobileMenuOverlay && isMobile) {
                     function openMenu() {
                         mobileMenuOverlay.classList.add('active');
                         document.body.style.overflow = 'hidden';
@@ -1291,13 +1131,15 @@
                     themeToggle.addEventListener('click', function(e) {
                         e.preventDefault();
                         try {
-                            const isLight = root.hasAttribute('data-theme');
-                            if (isLight) {
+                            const currentTheme = root.getAttribute('data-theme');
+                            if (currentTheme === 'light') {
                                 root.removeAttribute('data-theme');
                                 localStorage.setItem('theme', 'dark');
+                                utils.showToast('Tema escuro ativado', 'success');
                             } else {
                                 root.setAttribute('data-theme', 'light');
                                 localStorage.setItem('theme', 'light');
+                                utils.showToast('Tema claro ativado', 'success');
                             }
                         } catch(e) {
                             console.warn('Theme toggle failed:', e);
@@ -1370,7 +1212,7 @@
                                 body: new URLSearchParams({ 
                                     email: emailValue,
                                     timestamp: now,
-                                    source: 'vitrine-cultural'
+                                    source: 'revista'
                                 }),
                                 signal: controller.signal
                             });
@@ -1378,7 +1220,7 @@
                             clearTimeout(timeoutId);
                             
                             if (response.ok) {
-                                utils.showToast(`Sucesso! ${emailValue} foi cadastrado na newsletter da Vitrine Cultural.`, 'success');
+                                utils.showToast(`Sucesso! ${emailValue} foi cadastrado na newsletter da Revista ROLÊ.`, 'success');
                                 this.reset();
                                 lastSubmission = now;
                             } else {
@@ -1399,236 +1241,4 @@
                     });
                     
                     // Real-time email validation
-                    emailInput.addEventListener('input', utils.debounce(function() {
-                        const email = this.value.trim();
-                        if (email && !validateEmail(email)) {
-                            this.classList.add('error');
-                            errorDiv.textContent = 'Formato de e-mail inválido.';
-                        } else {
-                            this.classList.remove('error');
-                            errorDiv.textContent = '';
-                        }
-                    }, 500));
-                }
-
-                // Category interactions
-                const categories = document.querySelectorAll('.category-item-app');
-                categories.forEach(category => {
-                    category.addEventListener('click', function() {
-                        categories.forEach(c => c.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        const categoryType = this.dataset.category;
-                        console.log('Category selected:', categoryType);
-                    });
-                    
-                    // Keyboard support
-                    category.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            this.click();
-                        }
-                    });
-                });
-
-                // Animation observer for fade-in effects
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-
-                const fadeObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                        }
-                    });
-                }, observerOptions);
-
-                // Observe elements for fade-in animation
-                const fadeElements = document.querySelectorAll('.fade-in-up');
-                fadeElements.forEach(element => {
-                    fadeObserver.observe(element);
-                });
-
-                // Stats counter animation with Intersection Observer
-                const statsObserverOptions = {
-                    threshold: 0.5,
-                    rootMargin: '0px 0px -100px 0px'
-                };
-
-                const statsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                            entry.target.classList.add('counted');
-                            animateNumber(entry.target);
-                        }
-                    });
-                }, statsObserverOptions);
-
-                const statNumbers = document.querySelectorAll('.vitrine-stat-number');
-                statNumbers.forEach(stat => statsObserver.observe(stat));
-
-                function animateNumber(element) {
-                    const target = parseInt(element.getAttribute('data-target'), 10);
-                    let current = 0;
-                    const increment = Math.ceil(target / 30);
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        element.textContent = current;
-                    }, 50);
-                }
-
-                // Search functionality with debouncing
-                const searchInput = document.querySelector('.app-search-input');
-                if (searchInput) {
-                    searchInput.addEventListener('input', utils.debounce(function() {
-                        const query = utils.sanitize(this.value.toLowerCase().trim());
-                        if (query.length >= 2) {
-                            console.log('Search query:', query);
-                        }
-                    }, 300));
-                }
-
-                // Touch/swipe support for cards
-                let startX = 0;
-                const scrollContainer = document.querySelector('.vitrine-events-scroll');
-                
-                if (scrollContainer) {
-                    scrollContainer.addEventListener('touchstart', function(e) {
-                        startX = e.touches[0].clientX;
-                    }, { passive: true });
-
-                    scrollContainer.addEventListener('touchend', function(e) {
-                        const endX = e.changedTouches[0].clientX;
-                        const diff = startX - endX;
-                        
-                        if (Math.abs(diff) > 50) {
-                            const scrollAmount = 300;
-                            if (diff > 0) {
-                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                            } else {
-                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                            }
-                        }
-                    }, { passive: true });
-                }
-
-                // Initialize ads after DOM is ready
-                setTimeout(() => {
-                    try {
-                        const ads = document.querySelectorAll('.adsbygoogle');
-                        ads.forEach(function(ad) {
-                            try {
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            } catch(e) {
-                                console.warn('AdSense initialization failed for ad:', e);
-                            }
-                        });
-                    } catch(e) {
-                        console.warn('AdSense general initialization failed:', e);
-                    }
-                }, 1000);
-
-                console.log('Vitrine Cultural page initialized successfully');
-            }
-
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeApp);
-            } else {
-                initializeApp();
-            }
-            
-            // Error handling
-            window.addEventListener('error', function(e) {
-                console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
-        })();
-    </script>
-
-    <!-- CSS Adicional para correções finais -->
-    <style>
-        /* Toast styling */
-        #toast-container {
-            position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10000;
-            pointer-events: none;
-        }
-        
-        @media (min-width: 769px) {
-            #toast-container {
-                bottom: 40px;
-            }
-        }
-        
-        .toast {
-            background: var(--accent-purple);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-            max-width: 300px;
-            text-align: center;
-        }
-        
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .toast.success {
-            background: var(--accent-green);
-        }
-        
-        .toast.error {
-            background: var(--accent-red);
-        }
-        
-        /* Loading state for buttons */
-        .btn-loading {
-            display: none;
-        }
-        
-        button[disabled] {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-    </style>
-
-    <!-- Schema.org adicional para melhor SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Vitrine Cultural ROLÊ",
-        "description": "O espaço premium para divulgar eventos na cena independente.",
-        "provider": {
-            "@type": "Organization",
-            "name": "ROLÊ ENTRETENIMENTO"
-        },
-        "serviceType": "Marketing de Eventos",
-        "areaServed": "Brasil"
-    }
-    </script>
-</body>
-</html>
+                    emailInput.addEventListener('input',
