@@ -156,13 +156,15 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script Otimizado -->
+    <!-- Theme Script Otimizado - CORRIGIDO -->
     <script>
         (function() {
             try {
                 const theme = localStorage.getItem('theme');
                 if (theme === 'light') {
                     document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
                 }
             } catch(e) {
                 console.warn('Theme loading failed:', e);
@@ -173,33 +175,56 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- CSS Critical Path -->
+    <!-- CSS Critical Path - CORRIGIDO -->
     <style>
-        /* Critical CSS inline */
-        :root{--bg-primary:#0D0D0D;--text-primary:#FFFFFF;--accent-purple:#8B5CF6}
+        /* Critical CSS inline - CORRIGIDO */
+        :root{--bg-primary:#0D0D0D;--bg-secondary:#1A1A1A;--bg-card:#1F1F1F;--text-primary:#FFFFFF;--text-secondary:#A0A0A0;--border-color:#2A2A2A;--accent-purple:#8B5CF6;--accent-green:#10B981;--accent-red:#EF4444}
+        :root[data-theme="light"]{--bg-primary:#FFFFFF;--bg-secondary:#F8F9FA;--bg-card:#FFFFFF;--text-primary:#1F2937;--text-secondary:#6B7280;--border-color:#E5E7EB}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6}
-        .app-header{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px)}
+        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;transition:background-color 0.3s ease, color 0.3s ease}
+        .app-header{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-color);transition:background-color 0.3s ease, border-color 0.3s ease}
+        :root[data-theme="light"] .app-header{background:rgba(255,255,255,0.95)}
         
-        /* Header Fixes */
+        /* Header Fixes - CORRIGIDOS */
         @media (max-width: 768px) {
+            .app-header {
+                padding: 0 20px;
+            }
             .app-header-content {
-                padding: 16px 0 12px 0 !important;
+                padding: 12px 0 8px 0 !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             .app-logo-img {
-                height: 28px !important;
+                height: 24px !important;
+                max-width: 100px;
             }
             .app-header-actions {
-                gap: 12px !important;
+                gap: 8px !important;
+                display: flex;
+                align-items: center;
+            }
+            .menu-toggle, .theme-toggle-app {
+                padding: 6px;
+                width: 36px;
+                height: 36px;
             }
         }
         
         @media (min-width: 769px) {
             .app-header-content {
-                padding: 16px 40px !important;
+                padding: 14px 40px !important;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
             .app-header-actions {
                 gap: 20px !important;
+                display: flex;
+                align-items: center;
             }
             .desktop-menu {
                 gap: 24px !important;
@@ -209,13 +234,13 @@
         
         /* Banner Size Fix */
         .app-banner-container {
-            max-height: 200px !important;
+            max-height: 180px !important;
             overflow: hidden;
         }
         
         @media (min-width: 769px) {
             .app-banner-container {
-                max-height: 280px !important;
+                max-height: 250px !important;
             }
         }
         
@@ -223,6 +248,28 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        
+        /* Bottom Nav Fix */
+        .app-bottom-nav {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            transition: background-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-bottom-nav {
+            background: rgba(248, 249, 250, 0.95);
+        }
+        
+        /* Theme transitions for all elements */
+        .app-container,
+        .app-search-input,
+        .app-recommendation-card,
+        .app-stat-item,
+        .app-newsletter-section,
+        .app-footer,
+        .mobile-menu {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
     </style>
     
@@ -243,7 +290,7 @@
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="120" height="28" />
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
                 </a>
                 <div class="app-header-actions">
                     <!-- Desktop Menu -->
@@ -259,12 +306,12 @@
 
                     <!-- Theme Toggle -->
                     <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
+                        <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
                     </button>
 
                     <!-- Mobile Menu Button -->
                     <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
@@ -364,7 +411,7 @@
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
                 <img src="images/banner-home.png" alt="Banner ROLÊ - Cultura e entretenimento brasileiro" 
-                     loading="lazy" width="1200" height="300" />
+                     loading="lazy" width="1200" height="250" />
             </div>
         </div>
 
@@ -661,7 +708,7 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation -->
+        <!-- Bottom Navigation - CORRIGIDA com Destaques -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item active" aria-label="Página inicial" aria-current="page">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -675,6 +722,12 @@
                 </svg>
                 <span class="app-nav-label">Vitrine</span>
             </a>
+            <a href="destaques.html" class="app-nav-item" aria-label="Destaques da semana">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                </svg>
+                <span class="app-nav-label">Destaques</span>
+            </a>
             <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -687,19 +740,13 @@
                 </svg>
                 <span class="app-nav-label">Descontos</span>
             </a>
-            <a href="contato.html" class="app-nav-item" aria-label="Contato">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                </svg>
-                <span class="app-nav-label">Contato</span>
-            </a>
         </nav>
 
         <!-- Toast notifications -->
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript Otimizado -->
+    <!-- JavaScript Otimizado - CORRIGIDO -->
     <script>
         // Performance and Security Enhanced JavaScript
         (function() {
@@ -810,7 +857,7 @@
                     });
                 }
 
-                // Theme toggle functionality
+                // Theme toggle functionality - CORRIGIDO
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -818,8 +865,8 @@
                     themeToggle.addEventListener('click', function(e) {
                         e.preventDefault();
                         try {
-                            const isLight = root.hasAttribute('data-theme');
-                            if (isLight) {
+                            const currentTheme = root.getAttribute('data-theme');
+                            if (currentTheme === 'light') {
                                 root.removeAttribute('data-theme');
                                 localStorage.setItem('theme', 'dark');
                             } else {
@@ -1161,6 +1208,19 @@
         button[disabled] {
             opacity: 0.6;
             cursor: not-allowed;
+        }
+        
+        /* Safe area adjustments for mobile */
+        @supports (padding: max(0px)) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(env(safe-area-inset-top), 0px);
+                }
+                
+                .app-bottom-nav {
+                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                }
+            }
         }
     </style>
 </body>
