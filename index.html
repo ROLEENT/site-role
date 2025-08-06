@@ -156,11 +156,11 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script Otimizado - CORRIGIDO -->
+    <!-- Theme Script Otimizado - CORRIGIDO PARA APLICAR EM TODA A PÁGINA -->
     <script>
         (function() {
             try {
-                const theme = localStorage.getItem('theme');
+                const theme = localStorage.getItem('theme') || 'dark';
                 if (theme === 'light') {
                     document.documentElement.setAttribute('data-theme', 'light');
                 } else {
@@ -175,15 +175,68 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- CSS Critical Path - CORRIGIDO -->
+    <!-- CSS Critical Path - CORRIGIDO TEMA -->
     <style>
-        /* Critical CSS inline - CORRIGIDO */
-        :root{--bg-primary:#0D0D0D;--bg-secondary:#1A1A1A;--bg-card:#1F1F1F;--text-primary:#FFFFFF;--text-secondary:#A0A0A0;--border-color:#2A2A2A;--accent-purple:#8B5CF6;--accent-green:#10B981;--accent-red:#EF4444}
-        :root[data-theme="light"]{--bg-primary:#FFFFFF;--bg-secondary:#F8F9FA;--bg-card:#FFFFFF;--text-primary:#1F2937;--text-secondary:#6B7280;--border-color:#E5E7EB}
+        /* Critical CSS inline - TEMA CORRIGIDO */
+        :root{
+            --bg-primary:#0D0D0D;
+            --bg-secondary:#1A1A1A;
+            --bg-card:#1F1F1F;
+            --text-primary:#FFFFFF;
+            --text-secondary:#A0A0A0;
+            --border-color:#2A2A2A;
+            --accent-purple:#8B5CF6;
+            --accent-green:#10B981;
+            --accent-red:#EF4444;
+        }
+        
+        :root[data-theme="light"]{
+            --bg-primary:#FFFFFF;
+            --bg-secondary:#F8F9FA;
+            --bg-card:#FFFFFF;
+            --text-primary:#1F2937;
+            --text-secondary:#6B7280;
+            --border-color:#E5E7EB;
+        }
+        
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;transition:background-color 0.3s ease, color 0.3s ease}
-        .app-header{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-color);transition:background-color 0.3s ease, border-color 0.3s ease}
-        :root[data-theme="light"] .app-header{background:rgba(255,255,255,0.95)}
+        
+        body{
+            font-family:'Inter',sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+            transition:background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .app-container {
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease;
+        }
+        
+        .app-header{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:rgba(13,13,13,0.95);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid var(--border-color);
+            transition:background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-header{
+            background:rgba(255,255,255,0.95);
+        }
+        
+        /* CORREÇÃO: ESCONDER MENU MOBILE NO DESKTOP */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none !important;
+            }
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
         
         /* Header Fixes - CORRIGIDOS */
         @media (max-width: 768px) {
@@ -229,25 +282,36 @@
             .desktop-menu {
                 gap: 24px !important;
                 margin-right: 24px !important;
+                display: flex !important;
+            }
+            .desktop-menu a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 8px 16px;
+                border-radius: 8px;
+            }
+            .desktop-menu a:hover,
+            .desktop-menu a.active {
+                color: var(--accent-purple);
+                background: rgba(139, 92, 246, 0.1);
             }
         }
         
-        /* Banner Size Fix */
+        /* Banner Size Fix - CORRIGIDO */
         .app-banner-container {
-            max-height: 180px !important;
+            width: 100%;
+            border-radius: 20px;
             overflow: hidden;
-        }
-        
-        @media (min-width: 769px) {
-            .app-banner-container {
-                max-height: 250px !important;
-            }
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         .app-banner-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
         }
         
         /* Bottom Nav Fix */
@@ -262,14 +326,84 @@
         }
         
         /* Theme transitions for all elements */
-        .app-container,
         .app-search-input,
         .app-recommendation-card,
         .app-stat-item,
         .app-newsletter-section,
         .app-footer,
-        .mobile-menu {
+        .mobile-menu,
+        .category-item-app {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* CORREÇÃO: Estilo dos botões de categoria clicáveis */
+        .category-item-app {
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 8px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .category-item-app:hover {
+            transform: translateY(-2px);
+            background: rgba(139, 92, 246, 0.05);
+        }
+        
+        .category-icon-app {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 769px) {
+            .category-icon-app {
+                width: 64px;
+                height: 64px;
+                font-size: 28px;
+            }
+        }
+        
+        .category-label-app {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+        
+        @media (min-width: 769px) {
+            .category-label-app {
+                font-size: 14px;
+            }
+        }
+        
+        /* Gradientes das categorias */
+        .category-item-app:nth-child(1) .category-icon-app {
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+        }
+        .category-item-app:nth-child(2) .category-icon-app {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+        }
+        .category-item-app:nth-child(3) .category-icon-app {
+            background: linear-gradient(135deg, #10B981, #3B82F6);
+        }
+        .category-item-app:nth-child(4) .category-icon-app {
+            background: linear-gradient(135deg, #F59E0B, #EF4444);
+        }
+        .category-item-app:nth-child(5) .category-icon-app {
+            background: linear-gradient(135deg, #EF4444, #EC4899);
         }
     </style>
     
@@ -309,7 +443,7 @@
                         <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
                     </button>
 
-                    <!-- Mobile Menu Button -->
+                    <!-- Mobile Menu Button - APENAS MOBILE -->
                     <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
                         <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -366,30 +500,30 @@
             </div>
         </div>
 
-        <!-- Categories Grid -->
+        <!-- Categories Grid - CORRIGIDO PARA SER FUNCIONAL -->
         <section class="app-categories" aria-labelledby="categories-title">
             <h2 id="categories-title" class="sr-only">Categorias de eventos</h2>
             <div class="categories-grid-app" role="group" aria-label="Filtros por categoria">
-                <button class="category-item-app" data-category="shows" aria-label="Filtrar por shows">
+                <a href="vitrine-cultural.html?categoria=shows" class="category-item-app" aria-label="Ver shows">
                     <div class="category-icon-app" role="img" aria-label="Ícone de música">🎵</div>
                     <div class="category-label-app">Shows</div>
-                </button>
-                <button class="category-item-app" data-category="teatro" aria-label="Filtrar por teatro">
+                </a>
+                <a href="vitrine-cultural.html?categoria=teatro" class="category-item-app" aria-label="Ver teatro">
                     <div class="category-icon-app" role="img" aria-label="Ícone de teatro">🎭</div>
                     <div class="category-label-app">Teatro</div>
-                </button>
-                <button class="category-item-app" data-category="festas" aria-label="Filtrar por festas">
+                </a>
+                <a href="vitrine-cultural.html?categoria=festas" class="category-item-app" aria-label="Ver festas">
                     <div class="category-icon-app" role="img" aria-label="Ícone de festa">🎉</div>
                     <div class="category-label-app">Festas</div>
-                </button>
-                <button class="category-item-app" data-category="bares" aria-label="Filtrar por bares">
+                </a>
+                <a href="vitrine-cultural.html?categoria=bares" class="category-item-app" aria-label="Ver bares">
                     <div class="category-icon-app" role="img" aria-label="Ícone de bebida">🍺</div>
                     <div class="category-label-app">Bares</div>
-                </button>
-                <button class="category-item-app" data-category="arte" aria-label="Filtrar por arte">
+                </a>
+                <a href="vitrine-cultural.html?categoria=arte" class="category-item-app" aria-label="Ver arte">
                     <div class="category-icon-app" role="img" aria-label="Ícone de arte">🎨</div>
                     <div class="category-label-app">Arte</div>
-                </button>
+                </a>
             </div>
         </section>
 
@@ -407,11 +541,11 @@
             </div>
         </section>
 
-        <!-- Banner Redimensionado -->
+        <!-- Banner Corrigido -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
                 <img src="images/banner-home.png" alt="Banner ROLÊ - Cultura e entretenimento brasileiro" 
-                     loading="lazy" width="1200" height="250" />
+                     loading="lazy" width="1200" height="400" />
             </div>
         </div>
 
@@ -616,12 +750,12 @@
         </section>
 
         <!-- Featured Banner - Revista ROLÊ -->
-        <div class="app-featured-banner" role="complementary">
+        <div class="app-featured-banner" role="complementary" onclick="window.location.href='revista.html'">
             <div class="app-banner-content">
                 <div class="app-banner-tag">EDITORIAL SEMANAL</div>
                 <h3 class="app-banner-title">Revista ROLÊ</h3>
                 <p class="app-banner-subtitle">Editorial semanal com as melhores histórias, entrevistas e conteúdos da cena cultural brasileira.</p>
-                <a href="revista.html" class="app-banner-cta">Ler Revista</a>
+                <a href="revista.html" class="app-banner-cta" onclick="event.stopPropagation();">Ler Revista</a>
             </div>
         </div>
 
@@ -708,7 +842,7 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation - CORRIGIDA com Destaques -->
+        <!-- Bottom Navigation - Mobile -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item active" aria-label="Página inicial" aria-current="page">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -746,7 +880,7 @@
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript Otimizado - CORRIGIDO -->
+    <!-- JavaScript Corrigido -->
     <script>
         // Performance and Security Enhanced JavaScript
         (function() {
@@ -805,12 +939,15 @@
 
             // DOM Ready
             function initializeApp() {
-                // Mobile menu functionality
+                // Mobile menu functionality - APENAS MOBILE
                 const menuToggle = document.getElementById('menu-toggle-btn');
                 const menuClose = document.getElementById('menu-close-btn');
                 const mobileMenuOverlay = document.getElementById('mobile-menu');
                 
-                if (menuToggle && mobileMenuOverlay) {
+                // Verificar se estamos em mobile
+                const isMobile = window.innerWidth <= 768;
+                
+                if (menuToggle && mobileMenuOverlay && isMobile) {
                     function openMenu() {
                         mobileMenuOverlay.classList.add('active');
                         document.body.style.overflow = 'hidden';
@@ -857,7 +994,7 @@
                     });
                 }
 
-                // Theme toggle functionality - CORRIGIDO
+                // Theme toggle functionality - CORRIGIDO PARA TODA A PÁGINA
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -869,9 +1006,11 @@
                             if (currentTheme === 'light') {
                                 root.removeAttribute('data-theme');
                                 localStorage.setItem('theme', 'dark');
+                                utils.showToast('Tema escuro ativado', 'success');
                             } else {
                                 root.setAttribute('data-theme', 'light');
                                 localStorage.setItem('theme', 'light');
+                                utils.showToast('Tema claro ativado', 'success');
                             }
                         } catch(e) {
                             console.warn('Theme toggle failed:', e);
@@ -985,26 +1124,6 @@
                     }, 500));
                 }
 
-                // Category interactions
-                const categories = document.querySelectorAll('.category-item-app');
-                categories.forEach(category => {
-                    category.addEventListener('click', function() {
-                        categories.forEach(c => c.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        const categoryType = this.dataset.category;
-                        console.log('Category selected:', categoryType);
-                    });
-                    
-                    // Keyboard support
-                    category.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            this.click();
-                        }
-                    });
-                });
-
                 // Stats counter animation with Intersection Observer
                 const observerOptions = {
                     threshold: 0.5,
@@ -1038,13 +1157,14 @@
                     }, 50);
                 }
 
-                // Search functionality with debouncing
+                                        // Search functionality with debouncing
                 const searchInput = document.querySelector('.app-search-input');
                 if (searchInput) {
                     searchInput.addEventListener('input', utils.debounce(function() {
                         const query = utils.sanitize(this.value.toLowerCase().trim());
                         if (query.length >= 2) {
                             console.log('Search query:', query);
+                            // Implementar busca aqui
                         }
                     }, 300));
                 }
@@ -1182,7 +1302,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
             max-width: 300px;
             text-align: center;
         }
@@ -1221,6 +1341,72 @@
                     padding-bottom: max(env(safe-area-inset-bottom), 12px);
                 }
             }
+        }
+        
+        /* CORREÇÃO ESPECÍFICA: Banner não cortado */
+        .app-banner-wrapper {
+            padding: 0 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .app-banner-wrapper {
+                max-width: 1200px;
+                margin: 0 auto 40px auto;
+                padding: 0 40px;
+            }
+        }
+        
+        /* CORREÇÃO: Categorias funcionais como links */
+        .categories-grid-app {
+            display: grid;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid-app {
+                grid-template-columns: repeat(5, 1fr);
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .categories-grid-app {
+                grid-template-columns: repeat(5, 1fr);
+                max-width: 600px;
+                margin: 0 auto;
+                gap: 24px;
+            }
+        }
+        
+        /* NOVA CORREÇÃO: Hover states para todos os elementos */
+        .app-search-input:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            background: var(--bg-card);
+        }
+        
+        .app-recommendation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-newsletter-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .app-newsletter-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
         }
     </style>
 </body>
