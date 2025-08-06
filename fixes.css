@@ -1,16 +1,27 @@
-/* ========== FIXES.CSS - CORREÇÕES GLOBAIS ========== */
-/* Aplicar em todas as páginas após o estilo.css */
+/* ========== FIXES.CSS - CORREÇÕES PONTUAIS ========== */
+/* Aplicar APENAS após estilo.css em todas as páginas */
 
-/* 1. HEADER MOBILE MENOR */
+/* 1. HEADER MOBILE MENOR - MANTENDO PROPORÇÕES */
 @media (max-width: 768px) {
     .app-header-content {
         padding: 12px 0 8px 0 !important;
+        min-height: auto !important;
     }
+    
     .app-logo-img {
         height: 24px !important;
+        width: auto !important;
     }
+    
     .app-header-actions {
         gap: 8px !important;
+    }
+    
+    .menu-toggle,
+    .theme-toggle-app {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 6px !important;
     }
 }
 
@@ -18,9 +29,11 @@
     .app-header-content {
         padding: 14px 40px !important;
     }
+    
     .app-header-actions {
         gap: 20px !important;
     }
+    
     .desktop-menu {
         gap: 24px !important;
         margin-right: 24px !important;
@@ -30,7 +43,7 @@
 /* 2. BANNER ALTURA REDUZIDA */
 .app-banner-container {
     max-height: 180px !important;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 @media (min-width: 769px) {
@@ -40,12 +53,12 @@
 }
 
 .app-banner-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
 }
 
-/* 3. TEMA - TRANSIÇÕES SUAVES PARA TODOS OS ELEMENTOS */
+/* 3. TEMA - APENAS TRANSIÇÕES (SEM ALTERAR ESTRUTURA) */
 body,
 .app-container,
 .app-header,
@@ -55,7 +68,29 @@ body,
 .app-newsletter-section,
 .app-footer,
 .app-bottom-nav,
-.mobile-menu,
-.category-item-app {
+.mobile-menu {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* 4. BOTTOM NAV - ESCONDER CONTATO, MOSTRAR DESTAQUES */
+@media (max-width: 768px) {
+    /* Esconder link do contato se existir */
+    .app-bottom-nav a[href="contato.html"] {
+        display: none !important;
+    }
+    
+    /* Garantir que destaques apareça se existir */
+    .app-bottom-nav a[href="destaques.html"] {
+        display: flex !important;
+    }
+    
+    /* Ajustar espaçamento para 5 ou 4 itens */
+    .app-bottom-nav {
+        justify-content: space-around !important;
+    }
+    
+    .app-nav-item {
+        flex: 1 !important;
+        max-width: 80px !important;
+    }
 }
