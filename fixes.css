@@ -1,0 +1,61 @@
+/* ========== FIXES.CSS - CORREÇÕES GLOBAIS ========== */
+/* Aplicar em todas as páginas após o estilo.css */
+
+/* 1. HEADER MOBILE MENOR */
+@media (max-width: 768px) {
+    .app-header-content {
+        padding: 12px 0 8px 0 !important;
+    }
+    .app-logo-img {
+        height: 24px !important;
+    }
+    .app-header-actions {
+        gap: 8px !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .app-header-content {
+        padding: 14px 40px !important;
+    }
+    .app-header-actions {
+        gap: 20px !important;
+    }
+    .desktop-menu {
+        gap: 24px !important;
+        margin-right: 24px !important;
+    }
+}
+
+/* 2. BANNER ALTURA REDUZIDA */
+.app-banner-container {
+    max-height: 180px !important;
+    overflow: hidden;
+}
+
+@media (min-width: 769px) {
+    .app-banner-container {
+        max-height: 250px !important;
+    }
+}
+
+.app-banner-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 3. TEMA - TRANSIÇÕES SUAVES PARA TODOS OS ELEMENTOS */
+body,
+.app-container,
+.app-header,
+.app-search-input,
+.app-recommendation-card,
+.app-stat-item,
+.app-newsletter-section,
+.app-footer,
+.app-bottom-nav,
+.mobile-menu,
+.category-item-app {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
