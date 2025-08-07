@@ -85,7 +85,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script - IDÊNTICO AO INDEX -->
+    <!-- Theme Script - EXATAMENTE IGUAL AO INDEX -->
     <script>
         (function() {
             try {
@@ -104,7 +104,7 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- Structured Data Aprimorado -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -120,11 +120,7 @@
         "author": {
             "@type": "Organization",
             "name": "ROLÊ Entretenimento",
-            "url": "https://roleentretenimento.com",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://roleentretenimento.com/images/logo-role.png"
-            }
+            "url": "https://roleentretenimento.com"
         },
         "publisher": {
             "@type": "Organization",
@@ -141,58 +137,11 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://roleentretenimento.com/destaques-poa.html"
-        },
-        "about": [
-            {
-                "@type": "Thing",
-                "name": "Eventos Porto Alegre"
-            },
-            {
-                "@type": "Thing", 
-                "name": "Vida Noturna"
-            },
-            {
-                "@type": "Thing",
-                "name": "Cultura POA"
-            }
-        ],
-        "keywords": "eventos porto alegre, festas poa, shows porto alegre, vida noturna, SEXPOSED, Venom Beyoncé Tribute",
-        "wordCount": 850,
-        "articleSection": "Eventos",
-        "inLanguage": "pt-BR",
-        "potentialAction": {
-            "@type": "ReadAction",
-            "target": "https://roleentretenimento.com/destaques-poa.html"
         }
     }
     </script>
     
-    <!-- Local Business Schema for POA Events -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "ROLÊ Entretenimento Porto Alegre",
-        "description": "Curadoria independente de eventos e cultura em Porto Alegre",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Porto Alegre",
-            "addressRegion": "RS",
-            "addressCountry": "BR"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": -30.0346,
-            "longitude": -51.2177
-        },
-        "url": "https://roleentretenimento.com/destaques-poa.html",
-        "sameAs": [
-            "https://instagram.com/role.ent"
-        ]
-    }
-    </script>
-    
-    <!-- CSS Critical Path - IDÊNTICO AO INDEX -->
+    <!-- CSS Critical Path - EXATAMENTE IGUAL AO INDEX -->
     <style>
         /* Critical CSS inline - TEMA CORRIGIDO */
         :root{
@@ -247,21 +196,498 @@
         
         /* CORREÇÃO: ESCONDER MENU MOBILE NO DESKTOP */
         @media (min-width: 769px) {
-instagram-btn-content {
+            .menu-toggle {
+                display: none !important;
+            }
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
+        
+        /* Header Fixes - EXATAMENTE IGUAIS AO INDEX */
+        @media (max-width: 768px) {
+            .app-header {
+                padding: 0 20px;
+            }
+            .app-header-content {
+                padding: 12px 0 8px 0 !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .app-logo-img {
+                height: 24px !important;
+                max-width: 100px;
+            }
+            .app-header-actions {
+                gap: 8px !important;
+                display: flex;
+                align-items: center;
+            }
+            .menu-toggle, .theme-toggle-app {
+                padding: 6px;
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .app-header-content {
+                padding: 14px 40px !important;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .app-header-actions {
+                gap: 20px !important;
+                display: flex;
+                align-items: center;
+            }
+            .desktop-menu {
+                gap: 24px !important;
+                margin-right: 24px !important;
+                display: flex !important;
+            }
+            .desktop-menu a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 8px 16px;
+                border-radius: 8px;
+            }
+            .desktop-menu a:hover,
+            .desktop-menu a.active {
+                color: var(--accent-purple);
+                background: rgba(139, 92, 246, 0.1);
+            }
+        }
+        
+        /* Banner Size Fix - EXATAMENTE IGUAL AO INDEX */
+        .app-banner-container {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Bottom Nav Fix */
+        .app-bottom-nav {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            transition: background-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-bottom-nav {
+            background: rgba(248, 249, 250, 0.95);
+        }
+        
+        /* Theme transitions for all elements */
+        .app-search-input,
+        .app-recommendation-card,
+        .app-stat-item,
+        .app-newsletter-section,
+        .app-footer,
+        .mobile-menu,
+        .content-card {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* CORREÇÃO: Banner wrapper */
+        .app-banner-wrapper {
+            padding: 0 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .app-banner-wrapper {
+                max-width: 1200px;
+                margin: 0 auto 40px auto;
+                padding: 0 40px;
+            }
+        }
+    </style>
+    
+    <!-- Load Main CSS -->
+    <link rel="stylesheet" href="estilo.css" media="all">
+    
+    <!-- Custom Styles for Article Page -->
+    <style>
+        /* Article-specific styles that extend the main CSS */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-purple);
+        }
+
+        .city-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .city-icon {
+            font-size: 1.2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .article-content p {
+            text-align: justify;
+            hyphens: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .lead-paragraph {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+            border-radius: 16px;
+            color: white;
+            text-align: justify;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            border-radius: 2px;
+        }
+
+        .article-content strong {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateX(2deg);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            transform: perspective(1000px) rotateX(0deg) scale(1.02);
+        }
+
+        .highlight-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .article-image {
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .article-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .share-btn.whatsapp:hover {
+            background: #1DA851;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .share-btn.instagram {
+            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+            color: white;
+        }
+
+        .share-btn.instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(221, 42, 123, 0.4);
+        }
+
+        .share-btn.copy-link {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .share-btn.copy-link:hover {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .instagram-post-cta {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .instagram-cta-wrapper {
+            position: relative;
+            background: linear-gradient(135deg, 
+                rgba(245, 133, 41, 0.1) 0%, 
+                rgba(221, 42, 123, 0.1) 25%, 
+                rgba(129, 52, 175, 0.1) 50%, 
+                rgba(81, 91, 212, 0.1) 100%);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(245, 133, 41, 0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .instagram-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .instagram-cta-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .instagram-cta-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .instagram-post-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 2rem;
+            background: linear-gradient(45deg, #F58529 0%, #DD2A7B 25%, #8134AF 50%, #515BD4 100%);
+            background-size: 200% 200%;
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(221, 42, 123, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            min-width: 280px;
+        }
+
+        .instagram-post-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(221, 42, 123, 0.4);
+            background-position: 100% 100%;
+        }
+
+        .instagram-btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .instagram-btn-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        .instagram-btn-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .instagram-btn-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .share-section {
+            margin: 3rem 0;
+        }
+
+        .share-section h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        /* Toast styling */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-purple);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 3000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .instagram-cta-wrapper {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+            }
+
+            .instagram-cta-title {
+                font-size: 1.3rem;
+            }
+
+            .instagram-cta-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .instagram-post-btn {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1.5rem;
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .instagram-btn-content {
                 align-items: center;
                 text-align: center;
-            }
-
-            .instagram-btn-arrow {
-                transform: rotate(90deg);
-            }
-
-            .instagram-post-btn:hover .instagram-btn-arrow {
-                transform: rotate(90deg) translateX(4px) translateY(-4px);
-            }
-
-            .instagram-sparkle {
-                font-size: 1.2rem;
             }
 
             .share-buttons {
@@ -286,16 +712,6 @@ instagram-btn-content {
                 transform: translateY(0);
             }
         }
-
-        @media (max-width: 480px) {
-            .instagram-cta-wrapper {
-                padding: 1.5rem 1rem;
-            }
-            
-            .instagram-sparkle {
-                display: none; /* Hide sparkles on very small screens */
-            }
-        }
     </style>
     
     <!-- No-JS Fallback -->
@@ -308,7 +724,7 @@ instagram-btn-content {
 
 <body>
     <div class="app-container">
-        <!-- Header IDÊNTICO ao index.html -->
+        <!-- Header EXATAMENTE IGUAL ao index.html -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
@@ -341,11 +757,11 @@ instagram-btn-content {
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay IDÊNTICO ao index.html -->
+        <!-- Mobile Menu Overlay EXATAMENTE IGUAL ao index.html -->
         <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
-                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
+" height="32" />
                     <button class="menu-close" id="menu-close-btn" aria-label="Fechar menu">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -377,7 +793,7 @@ instagram-btn-content {
             </nav>
         </div>
 
-        <!-- Search Bar IDÊNTICO ao index.html -->
+        <!-- Search Bar EXATAMENTE IGUAL ao index.html -->
         <div class="app-search-container">
             <div class="app-search-bar">
                 <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -386,7 +802,7 @@ instagram-btn-content {
                 <input type="search" class="app-search-input" placeholder="Procurar por rolês, artistas, cidades..." 
                        aria-label="Buscar eventos, artistas ou cidades" autocomplete="off" spellcheck="false">
             </div>
-            <!-- Breadcrumb -->
+            <!-- Breadcrumb dentro do search container -->
             <div class="breadcrumb">
                 <a href="index.html">Home</a> 
                 <span>›</span> 
@@ -396,14 +812,14 @@ instagram-btn-content {
             </div>
         </div>
 
-        <!-- Page Header com SEO aprimorado -->
-        <section class="page-header">
+        <!-- Page Header com estrutura do index.html -->
+        <section class="app-hero-section" aria-labelledby="hero-title">
             <div class="city-badge">
                 <span class="city-icon">🎵</span>
                 <span class="city-name">PORTO ALEGRE</span>
             </div>
-            <h1 class="page-title">Eventos em Porto Alegre: os rolês mais quentes da semana na capital gaúcha</h1>
-            <p class="page-subtitle">Uma cidade que dança mesmo no frio</p>
+            <h1 id="hero-title" class="app-hero-title">Eventos em Porto Alegre: os rolês mais quentes da semana na capital gaúcha</h1>
+            <p class="app-hero-description">Uma cidade que dança mesmo no frio</p>
             <div class="article-meta">
                 <span class="article-date">📅 6 de Janeiro, 2025</span>
                 <span class="article-category">🎭 Destaques da Semana</span>
@@ -411,7 +827,7 @@ instagram-btn-content {
             </div>
         </section>
 
-        <!-- Banner usando estrutura do index.html -->
+        <!-- Banner usando EXATAMENTE a estrutura do index.html -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
                 <img src="images/poa-hero.png" alt="Eventos da semana em Porto Alegre - ROLÊ" 
@@ -435,7 +851,7 @@ instagram-btn-content {
                     <p class="highlight-text">NÃO É SÓ SOBRE MÚSICA, É SOBRE ESTAR JUNTO</p>
                 </div>
 
-                <!-- Event Image Placeholder -->
+                <!-- Event Image -->
                 <div class="article-image">
                     <img src="images/venom-beyonce-tribute.png" alt="VENOM – Beyoncé Renaissance Tribute no Bar Opinião" loading="lazy" />
                     <p class="image-caption">VENOM – Beyoncé Renaissance Tribute no Bar Opinião</p>
@@ -570,11 +986,6 @@ instagram-btn-content {
                                 </div>
                             </a>
                         </div>
-                        <div class="instagram-cta-decoration">
-                            <div class="instagram-sparkle instagram-sparkle-1">✨</div>
-                            <div class="instagram-sparkle instagram-sparkle-2">💫</div>
-                            <div class="instagram-sparkle instagram-sparkle-3">⭐</div>
-                        </div>
                     </div>
                 </div>
 
@@ -611,7 +1022,7 @@ instagram-btn-content {
             </div>
         </section>
 
-        <!-- Ad Container IDÊNTICO ao index.html -->
+        <!-- Ad Container EXATAMENTE IGUAL ao index.html -->
         <div class="app-ad-container" role="complementary" aria-label="Publicidade">
             <ins class="adsbygoogle"
                  style="display:block"
@@ -621,7 +1032,7 @@ instagram-btn-content {
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Related Articles usando estrutura do index.html -->
+        <!-- Related Articles usando EXATAMENTE a estrutura do index.html -->
         <section class="app-recommendations">
             <div class="app-section-header">
                 <h2 class="app-section-title">Outros Destaques</h2>
@@ -629,20 +1040,33 @@ instagram-btn-content {
             </div>
             <div class="app-cards-scroll" role="group" aria-label="Outras cidades em destaque">
                 <!-- Florianópolis -->
-                <article class="app-recommendation-card" onclick="window.location.href='destaques-floripa.html'">
+                <article class="app-recommendation-card" data-city="florianopolis" onclick="window.location.href='destaques-floripa.html'">
                     <div class="app-card-image">
                         <div class="app-card-badge">Hoje</div>
-                        <img src="images/floripa.png" alt="Florianópolis" loading="lazy" width="280" height="140" />
+                        <img src="images/floripa.png" alt="Cultura eletrônica de Florianópolis" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Florianópolis</h3>
                         <p class="app-card-description">Beira-mar, eletrônica e coletivo.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>Santa Catarina</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Praia">🌊</span>
+                                <span>9 eventos em destaque</span>
+                            </div>
+                        </div>
                         <div class="app-card-footer">
                             <div class="app-card-rating">
-                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                 <span class="rating-text">4.9</span>
                             </div>
-                            <a href="destaques-floripa.html" class="app-card-link" onclick="event.stopPropagation();">
+                            <a href="destaques-floripa.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de Florianópolis"
+                               onclick="event.stopPropagation();">
                                 Ler Destaques
                             </a>
                         </div>
@@ -650,20 +1074,33 @@ instagram-btn-content {
                 </article>
 
                 <!-- São Paulo -->
-                <article class="app-recommendation-card" onclick="window.location.href='destaques-sao-paulo.html'">
+                <article class="app-recommendation-card" data-city="sao-paulo" onclick="window.location.href='destaques-sao-paulo.html'">
                     <div class="app-card-image">
                         <div class="app-card-badge">Hoje</div>
-                        <img src="images/sao-paulo.png" alt="São Paulo" loading="lazy" width="280" height="140" />
+                        <img src="images/sao-paulo.png" alt="Cena cultural de São Paulo" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">São Paulo</h3>
-                        <p class="app-card-description">A cidade que nunca dorme.</p>
+                        <p class="app-card-description">A cidade que nunca dorme... nem para de dançar.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>São Paulo</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Metrópole">🏙️</span>
+                                <span>11 eventos em destaque</span>
+                            </div>
+                        </div>
                         <div class="app-card-footer">
                             <div class="app-card-rating">
-                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                 <span class="rating-text">4.7</span>
                             </div>
-                            <a href="destaques-sao-paulo.html" class="app-card-link" onclick="event.stopPropagation();">
+                            <a href="destaques-sao-paulo.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de São Paulo"
+                               onclick="event.stopPropagation();">
                                 Ler Destaques
                             </a>
                         </div>
@@ -671,20 +1108,29 @@ instagram-btn-content {
                 </article>
 
                 <!-- Rio de Janeiro -->
-                <article class="app-recommendation-card" onclick="window.location.href='destaques-rio.html'">
+                <article class="app-recommendation-card" data-city="rio-janeiro" onclick="window.location.href='destaques-rio.html'">
                     <div class="app-card-image">
                         <div class="app-card-badge">Sábado</div>
-                        <img src="images/rio.png" alt="Rio de Janeiro" loading="lazy" width="280" height="140" />
+                        <img src="images/rio.png" alt="Cultura funk e eventos no Rio de Janeiro" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Rio de Janeiro</h3>
-                        <p class="app-card-description">Funk, favela, cor e calor.</p>
+                        <p class="app-card-description">Funk, favela, cor e calor cultural.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Praia">🏖️</span>
+                                <span>9 eventos de destaque</span>
+                            </div>
+                        </div>
                         <div class="app-card-footer">
                             <div class="app-card-rating">
-                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                 <span class="rating-text">4.6</span>
                             </div>
-                            <a href="destaques-rio.html" class="app-card-link" onclick="event.stopPropagation();">
+                            <a href="destaques-rio.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais do Rio de Janeiro"
+                               onclick="event.stopPropagation();">
                                 Ler Destaques
                             </a>
                         </div>
@@ -693,557 +1139,34 @@ instagram-btn-content {
             </div>
         </section>
 
-        <!-- Footer IDÊNTICO ao index.html -->
+        <!-- Footer EXATAMENTE IGUAL ao index.html -->
         <footer class="app-footer" role="contentinfo">
             <div class="app-footer-links">
                 © 2025 ROLÊ ENTRETENIMENTO ·
                 <a href="politica.html">Política de Privacidade</a> ·
                 <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
                 <a href="termos-organizador.html">Termos do Organizador</a> ·
-                <a href="politmenu-toggle {
-                display: none !important;
-            }
-            .mobile-menu-overlay {
-                display: none !important;
-            }
-        }
-        
-        /* Header Fixes - IDÊNTICOS AO INDEX */
-        @media (max-width: 768px) {
-            .app-header {
-                padding: 0 20px;
-            }
-            .app-header-content {
-                padding: 12px 0 8px 0 !important;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .app-logo-img {
-                height: 24px !important;
-                max-width: 100px;
-            }
-            .app-header-actions {
-                gap: 8px !important;
-                display: flex;
-                align-items: center;
-            }
-            .menu-toggle, .theme-toggle-app {
-                padding: 6px;
-                width: 36px;
-                height: 36px;
-            }
-        }
-        
-        @media (min-width: 769px) {
-            .app-header-content {
-                padding: 14px 40px !important;
-                max-width: 1200px;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .app-header-actions {
-                gap: 20px !important;
-                display: flex;
-                align-items: center;
-            }
-            .desktop-menu {
-                gap: 24px !important;
-                margin-right: 24px !important;
-                display: flex !important;
-            }
-            .desktop-menu a {
-                color: var(--text-secondary);
-                text-decoration: none;
-                font-weight: 500;
-                font-size: 15px;
-                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-                padding: 8px 16px;
-                border-radius: 8px;
-            }
-            .desktop-menu a:hover,
-            .desktop-menu a.active {
-                color: var(--accent-purple);
-                background: rgba(139, 92, 246, 0.1);
-            }
-        }
-        
-        /* Bottom Nav Fix */
-        .app-bottom-nav {
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(20px);
-            transition: background-color 0.3s ease;
-        }
-        
-        :root[data-theme="light"] .app-bottom-nav {
-            background: rgba(248, 249, 250, 0.95);
-        }
-        
-        /* Theme transitions for all elements */
-        .app-search-input,
-        .app-recommendation-card,
-        .app-stat-item,
-        .app-newsletter-section,
-        .app-footer,
-        .mobile-menu,
-        .content-card {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-    </style>
-    
-    <!-- Load Main CSS -->
-    <link rel="stylesheet" href="estilo.css" media="all">
-    
-    <!-- Custom Styles for Article Page -->
-    <style>
-        /* Article-specific styles that extend the main CSS */
-        .article-content p {
-            text-align: justify;
-            hyphens: auto;
-            margin-bottom: 1.5rem;
-        }
+                <a href="politica-spam.html">Política Antispam</a>
+            </div>
+            <div class="app-social-icons">
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
+                    <img src="images/instagram.svg" alt="" width="24" height="24" role="presentation" />
+                </a>
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
+                    <img src="images/tiktok.svg" alt="" width="24" height="24" role="presentation" />
+                </a>
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
+                    <img src="images/whatsapp.svg" alt="" width="24" height="24" role="presentation" />
+                </a>
+            </div>
+        </footer>
 
-        .lead-paragraph {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
-            background-size: 200% 200%;
-            animation: gradient 3s ease infinite;
-            border-radius: 16px;
-            color: white;
-            text-align: justify;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .article-content h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 3rem 0 1.5rem;
-            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-
-        .article-content h2::before {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
-            border-radius: 2px;
-        }
-
-        .article-content strong {
-            color: var(--accent-purple);
-            font-weight: 600;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transform: perspective(1000px) rotateX(2deg);
-            transition: all 0.3s ease;
-        }
-
-        .highlight-box:hover {
-            transform: perspective(1000px) rotateX(0deg) scale(1.02);
-        }
-
-        .highlight-text {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-        .article-image {
-            margin: 3rem 0;
-            text-align: center;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .article-image img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .article-image img:hover {
-            transform: scale(1.02);
-        }
-
-        .image-caption {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-top: 1rem;
-            text-align: center;
-        }
-
-        .city-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .city-icon {
-            font-size: 1.2rem;
-        }
-
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .breadcrumb a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .breadcrumb a:hover {
-            color: var(--accent-purple);
-        }
-
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .share-btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .share-btn.whatsapp:hover {
-            background: #1DA851;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        .share-btn.instagram {
-            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-            color: white;
-        }
-
-        .share-btn.instagram:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(221, 42, 123, 0.4);
-        }
-
-        .share-btn.copy-link {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border: 2px solid var(--border-color);
-        }
-
-        .share-btn.copy-link:hover {
-            background: var(--accent-purple);
-            border-color: var(--accent-purple);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Instagram CTA Section - Super Stylized */
-        .instagram-post-cta {
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .instagram-cta-wrapper {
-            position: relative;
-            background: linear-gradient(135deg, 
-                rgba(245, 133, 41, 0.1) 0%, 
-                rgba(221, 42, 123, 0.1) 25%, 
-                rgba(129, 52, 175, 0.1) 50%, 
-                rgba(81, 91, 212, 0.1) 100%);
-            border-radius: 24px;
-            padding: 2.5rem 2rem;
-            border: 1px solid rgba(245, 133, 41, 0.2);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
-        }
-
-        .instagram-cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .instagram-cta-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .instagram-cta-subtitle {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .instagram-post-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.25rem 2rem;
-            background: linear-gradient(45deg, #F58529 0%, #DD2A7B 25%, #8134AF 50%, #515BD4 100%);
-            background-size: 200% 200%;
-            color: white;
-            text-decoration: none;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 32px rgba(221, 42, 123, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            min-width: 280px;
-        }
-
-        .instagram-post-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
-            transition: left 0.6s ease;
-        }
-
-        .instagram-post-btn:hover::before {
-            left: 100%;
-        }
-
-        .instagram-post-btn:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 16px 48px rgba(221, 42, 123, 0.4);
-            background-position: 100% 100%;
-            animation: instagramPulse 2s infinite;
-        }
-
-        @keyframes instagramPulse {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .instagram-btn-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .instagram-post-btn:hover .instagram-btn-icon {
-            transform: rotate(15deg) scale(1.1);
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        .instagram-btn-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            flex: 1;
-        }
-
-        .instagram-btn-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            line-height: 1.2;
-        }
-
-        .instagram-btn-subtitle {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            font-weight: 500;
-        }
-
-        .instagram-btn-arrow {
-            transition: all 0.3s ease;
-        }
-
-        .instagram-post-btn:hover .instagram-btn-arrow {
-            transform: translateX(4px) translateY(-4px);
-        }
-
-        /* Decorative sparkles */
-        .instagram-cta-decoration {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .instagram-sparkle {
-            position: absolute;
-            font-size: 1.5rem;
-            animation: sparkleFloat 3s ease-in-out infinite;
-            opacity: 0.7;
-        }
-
-        .instagram-sparkle-1 {
-            top: 15%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .instagram-sparkle-2 {
-            top: 25%;
-            right: 15%;
-            animation-delay: 1s;
-        }
-
-        .instagram-sparkle-3 {
-            bottom: 20%;
-            left: 15%;
-            animation-delay: 2s;
-        }
-
-        @keyframes sparkleFloat {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-                opacity: 0.7;
-            }
-            50% {
-                transform: translateY(-10px) rotate(180deg);
-                opacity: 1;
-            }
-        }
-
-        .article-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .share-section {
-            margin: 3rem 0;
-        }
-
-        .share-section h3 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        /* Toast styling */
-        .toast {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--accent-purple);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 3000;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .instagram-cta-wrapper {
-                padding: 2rem 1.5rem;
-                margin: 0 1rem;
-            }
-
-            .instagram-cta-title {
-                font-size: 1.3rem;
-            }
-
-            .instagram-cta-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .instagram-post-btn {
-                flex-direction: column;
-                gap: 0.75rem;
-                padding: 1.5rem;
-                min-width: auto;
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .
+        <!-- Bottom Navigation EXATAMENTE IGUAL ao index.html -->
+        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
+            <a href="index.html" class="app-nav-item" aria-label="Página inicial">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
+            </a>
+            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine
