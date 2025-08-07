@@ -85,13 +85,15 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script -->
+    <!-- Theme Script - IDÊNTICO AO INDEX -->
     <script>
         (function() {
             try {
-                const theme = localStorage.getItem('theme');
+                const theme = localStorage.getItem('theme') || 'dark';
                 if (theme === 'light') {
                     document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
                 }
             } catch(e) {
                 console.warn('Theme loading failed:', e);
@@ -190,439 +192,62 @@
     }
     </script>
     
-    <!-- CSS Critical Path -->
+    <!-- CSS Critical Path - IDÊNTICO AO INDEX -->
     <style>
-        :root{--bg-primary:#0D0D0D;--text-primary:#FFFFFF;--accent-purple:#8B5CF6}
+        /* Critical CSS inline - TEMA CORRIGIDO */
+        :root{
+            --bg-primary:#0D0D0D;
+            --bg-secondary:#1A1A1A;
+            --bg-card:#1F1F1F;
+            --text-primary:#FFFFFF;
+            --text-secondary:#A0A0A0;
+            --border-color:#2A2A2A;
+            --accent-purple:#8B5CF6;
+            --accent-green:#10B981;
+            --accent-red:#EF4444;
+        }
+        
+        :root[data-theme="light"]{
+            --bg-primary:#FFFFFF;
+            --bg-secondary:#F8F9FA;
+            --bg-card:#FFFFFF;
+            --text-primary:#1F2937;
+            --text-secondary:#6B7280;
+            --border-color:#E5E7EB;
+        }
+        
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6}
-        .app-header{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(20px)}
-    </style>
-    
-    <!-- Load Main CSS -->
-    <link rel="stylesheet" href="estilo.css" media="all">
-    
-    <!-- Custom Styles for Article Page -->
-    <style>
-        /* Fix mobile header to match index.html */
-        @media (max-width: 768px) {
-            .app-header-content {
-                padding: 20px 0 16px 0 !important; /* Same as index.html */
-            }
-            
-            .app-logo-img {
-                height: 32px !important; /* Same as index.html */
-            }
+        
+        body{
+            font-family:'Inter',sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+            transition:background-color 0.3s ease, color 0.3s ease;
         }
-
-        /* Article-specific styles that extend the main CSS */
-        .article-content p {
-            text-align: justify;
-            hyphens: auto;
-            margin-bottom: 1.5rem;
+        
+        .app-container {
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease;
         }
-
-        .lead-paragraph {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            padding: 2rem;
-            background: var(--gradient-primary);
-            background-size: 200% 200%;
-            animation: gradient 3s ease infinite;
-            border-radius: 16px;
-            color: white;
-            text-align: justify;
+        
+        .app-header{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:rgba(13,13,13,0.95);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid var(--border-color);
+            transition:background-color 0.3s ease, border-color 0.3s ease;
         }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        
+        :root[data-theme="light"] .app-header{
+            background:rgba(255,255,255,0.95);
         }
-
-        .article-content h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 3rem 0 1.5rem;
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-
-        .article-content h2::before {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .article-content strong {
-            color: var(--accent-purple);
-            font-weight: 600;
-        }
-
-        .highlight-box {
-            background: var(--gradient-primary);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            transform: perspective(1000px) rotateX(2deg);
-            transition: var(--transition-normal);
-        }
-
-        .highlight-box:hover {
-            transform: perspective(1000px) rotateX(0deg) scale(1.02);
-        }
-
-        .highlight-text {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-        .article-image {
-            margin: 3rem 0;
-            text-align: center;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-
-        .article-image img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 16px;
-            transition: var(--transition-normal);
-        }
-
-        .article-image img:hover {
-            transform: scale(1.02);
-        }
-
-        .image-caption {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-top: 1rem;
-            text-align: center;
-        }
-
-        .city-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .city-icon {
-            font-size: 1.2rem;
-        }
-
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .breadcrumb a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition-normal);
-        }
-
-        .breadcrumb a:hover {
-            color: var(--accent-purple);
-        }
-
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition-normal);
-            font-size: 0.9rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .share-btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .share-btn.whatsapp:hover {
-            background: #1DA851;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        .share-btn.instagram {
-            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-            color: white;
-        }
-
-        .share-btn.instagram:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(221, 42, 123, 0.4);
-        }
-
-        .share-btn.copy-link {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border: 2px solid var(--border-color);
-        }
-
-        .share-btn.copy-link:hover {
-            background: var(--accent-purple);
-            border-color: var(--accent-purple);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Instagram CTA Section - Super Stylized */
-        .instagram-post-cta {
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .instagram-cta-wrapper {
-            position: relative;
-            background: linear-gradient(135deg, 
-                rgba(245, 133, 41, 0.1) 0%, 
-                rgba(221, 42, 123, 0.1) 25%, 
-                rgba(129, 52, 175, 0.1) 50%, 
-                rgba(81, 91, 212, 0.1) 100%);
-            border-radius: 24px;
-            padding: 2.5rem 2rem;
-            border: 1px solid rgba(245, 133, 41, 0.2);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
-        }
-
-        .instagram-cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .instagram-cta-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .instagram-cta-subtitle {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .instagram-post-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.25rem 2rem;
-            background: linear-gradient(45deg, #F58529 0%, #DD2A7B 25%, #8134AF 50%, #515BD4 100%);
-            background-size: 200% 200%;
-            color: white;
-            text-decoration: none;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 32px rgba(221, 42, 123, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            min-width: 280px;
-        }
-
-        .instagram-post-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
-            transition: left 0.6s ease;
-        }
-
-        .instagram-post-btn:hover::before {
-            left: 100%;
-        }
-
-        .instagram-post-btn:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 16px 48px rgba(221, 42, 123, 0.4);
-            background-position: 100% 100%;
-            animation: instagramPulse 2s infinite;
-        }
-
-        @keyframes instagramPulse {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .instagram-btn-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        .instagram-post-btn:hover .instagram-btn-icon {
-            transform: rotate(15deg) scale(1.1);
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        .instagram-btn-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            flex: 1;
-        }
-
-        .instagram-btn-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            line-height: 1.2;
-        }
-
-        .instagram-btn-subtitle {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            font-weight: 500;
-        }
-
-        .instagram-btn-arrow {
-            transition: var(--transition);
-        }
-
-        .instagram-post-btn:hover .instagram-btn-arrow {
-            transform: translateX(4px) translateY(-4px);
-        }
-
-        /* Decorative sparkles */
-        .instagram-cta-decoration {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .instagram-sparkle {
-            position: absolute;
-            font-size: 1.5rem;
-            animation: sparkleFloat 3s ease-in-out infinite;
-            opacity: 0.7;
-        }
-
-        .instagram-sparkle-1 {
-            top: 15%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .instagram-sparkle-2 {
-            top: 25%;
-            right: 15%;
-            animation-delay: 1s;
-        }
-
-        .instagram-sparkle-3 {
-            bottom: 20%;
-            left: 15%;
-            animation-delay: 2s;
-        }
-
-        @keyframes sparkleFloat {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-                opacity: 0.7;
-            }
-            50% {
-                transform: translateY(-10px) rotate(180deg);
-                opacity: 1;
-            }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .instagram-cta-wrapper {
-                padding: 2rem 1.5rem;
-                margin: 0 1rem;
-            }
-
-            .instagram-cta-title {
-                font-size: 1.3rem;
-            }
-
-            .instagram-cta-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .instagram-post-btn {
-                flex-direction: column;
-                gap: 0.75rem;
-                padding: 1.5rem;
-                min-width: auto;
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .instagram-btn-content {
+        
+        /* CORREÇÃO: ESCONDER MENU MOBILE NO DESKTOP */
+        @media (min-width: 769px) {
+instagram-btn-content {
                 align-items: center;
                 text-align: center;
             }
@@ -638,40 +263,7 @@
             .instagram-sparkle {
                 font-size: 1.2rem;
             }
-        }
 
-        @media (max-width: 480px) {
-            .instagram-cta-wrapper {
-                padding: 1.5rem 1rem;
-            }
-            
-            .instagram-sparkle {
-                display: none; /* Hide sparkles on very small screens */
-            }
-        }
-
-        /* Toast styling */
-        .toast {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--accent-purple);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: var(--transition-normal);
-            z-index: 3000;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        @media (max-width: 768px) {
             .share-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -694,6 +286,16 @@
                 transform: translateY(0);
             }
         }
+
+        @media (max-width: 480px) {
+            .instagram-cta-wrapper {
+                padding: 1.5rem 1rem;
+            }
+            
+            .instagram-sparkle {
+                display: none; /* Hide sparkles on very small screens */
+            }
+        }
     </style>
     
     <!-- No-JS Fallback -->
@@ -706,11 +308,11 @@
 
 <body>
     <div class="app-container">
-        <!-- Header usando o padrão do index.html -->
+        <!-- Header IDÊNTICO ao index.html -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="150" height="50" />
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
                 </a>
                 <div class="app-header-actions">
                     <!-- Desktop Menu -->
@@ -718,28 +320,29 @@
                         <a href="index.html">Home</a>
                         <a href="revista.html">Revista</a>
                         <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="destaques.html" class="active" aria-current="page">Destaques</a>
                         <a href="descontos.html">Descontos</a>
                         <a href="contato.html">Contato</a>
                         <a href="quem-somos.html">Quem Somos</a>
                     </nav>
 
-                    <!-- Mobile Menu Button -->
-                    <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                    
                     <!-- Theme Toggle -->
                     <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <img src="images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
+                        <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
+                    </button>
+
+                    <!-- Mobile Menu Button - APENAS MOBILE -->
+                    <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                     </button>
                 </div>
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay usando o padrão do index.html -->
-        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true">
+        <!-- Mobile Menu Overlay IDÊNTICO ao index.html -->
+        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
                     <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
@@ -753,6 +356,7 @@
                     <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
                     <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
                     <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="destaques.html" class="mobile-menu-link active" aria-current="page">⭐ Destaques</a></li>
                     <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
                     <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
                     <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
@@ -773,15 +377,23 @@
             </nav>
         </div>
 
-        <!-- Breadcrumb -->
+        <!-- Search Bar IDÊNTICO ao index.html -->
         <div class="app-search-container">
-           <div class="breadcrumb">
-               <a href="index.html">Home</a> 
-               <span>›</span> 
-               <a href="destaques-poa.html">Destaques</a>
-               <span>›</span>
-               <span>Porto Alegre</span>
-           </div>
+            <div class="app-search-bar">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="search" class="app-search-input" placeholder="Procurar por rolês, artistas, cidades..." 
+                       aria-label="Buscar eventos, artistas ou cidades" autocomplete="off" spellcheck="false">
+            </div>
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> 
+                <span>›</span> 
+                <a href="destaques.html">Destaques</a>
+                <span>›</span>
+                <span>Porto Alegre</span>
+            </div>
         </div>
 
         <!-- Page Header com SEO aprimorado -->
@@ -799,7 +411,7 @@
             </div>
         </section>
 
-        <!-- Featured Image -->
+        <!-- Banner usando estrutura do index.html -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
                 <img src="images/poa-hero.png" alt="Eventos da semana em Porto Alegre - ROLÊ" 
@@ -999,7 +611,7 @@
             </div>
         </section>
 
-        <!-- Ad Container -->
+        <!-- Ad Container IDÊNTICO ao index.html -->
         <div class="app-ad-container" role="complementary" aria-label="Publicidade">
             <ins class="adsbygoogle"
                  style="display:block"
@@ -1009,13 +621,13 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Related Articles -->
+        <!-- Related Articles usando estrutura do index.html -->
         <section class="app-recommendations">
             <div class="app-section-header">
                 <h2 class="app-section-title">Outros Destaques</h2>
                 <a href="index.html#destaques" class="app-see-all">Ver todas as cidades</a>
             </div>
-            <div class="app-cards-scroll">
+            <div class="app-cards-scroll" role="group" aria-label="Outras cidades em destaque">
                 <!-- Florianópolis -->
                 <article class="app-recommendation-card" onclick="window.location.href='destaques-floripa.html'">
                     <div class="app-card-image">
@@ -1081,309 +693,557 @@
             </div>
         </section>
 
-        <!-- Footer usando o padrão do index.html -->
+        <!-- Footer IDÊNTICO ao index.html -->
         <footer class="app-footer" role="contentinfo">
             <div class="app-footer-links">
                 © 2025 ROLÊ ENTRETENIMENTO ·
                 <a href="politica.html">Política de Privacidade</a> ·
                 <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
                 <a href="termos-organizador.html">Termos do Organizador</a> ·
-                <a href="politica-spam.html">Política Antispam</a>
-            </div>
-            <div class="app-social-icons">
-                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
-                    <img src="images/instagram.svg" alt="" width="24" height="24" role="presentation" />
-                </a>
-                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
-                    <img src="images/tiktok.svg" alt="" width="24" height="24" role="presentation" />
-                </a>
-                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
-                    <img src="images/whatsapp.svg" alt="" width="24" height="24" role="presentation" />
-                </a>
-            </div>
-        </footer>
+                <a href="politmenu-toggle {
+                display: none !important;
+            }
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
+        
+        /* Header Fixes - IDÊNTICOS AO INDEX */
+        @media (max-width: 768px) {
+            .app-header {
+                padding: 0 20px;
+            }
+            .app-header-content {
+                padding: 12px 0 8px 0 !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .app-logo-img {
+                height: 24px !important;
+                max-width: 100px;
+            }
+            .app-header-actions {
+                gap: 8px !important;
+                display: flex;
+                align-items: center;
+            }
+            .menu-toggle, .theme-toggle-app {
+                padding: 6px;
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .app-header-content {
+                padding: 14px 40px !important;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .app-header-actions {
+                gap: 20px !important;
+                display: flex;
+                align-items: center;
+            }
+            .desktop-menu {
+                gap: 24px !important;
+                margin-right: 24px !important;
+                display: flex !important;
+            }
+            .desktop-menu a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 8px 16px;
+                border-radius: 8px;
+            }
+            .desktop-menu a:hover,
+            .desktop-menu a.active {
+                color: var(--accent-purple);
+                background: rgba(139, 92, 246, 0.1);
+            }
+        }
+        
+        /* Bottom Nav Fix */
+        .app-bottom-nav {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            transition: background-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-bottom-nav {
+            background: rgba(248, 249, 250, 0.95);
+        }
+        
+        /* Theme transitions for all elements */
+        .app-search-input,
+        .app-recommendation-card,
+        .app-stat-item,
+        .app-newsletter-section,
+        .app-footer,
+        .mobile-menu,
+        .content-card {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+    
+    <!-- Load Main CSS -->
+    <link rel="stylesheet" href="estilo.css" media="all">
+    
+    <!-- Custom Styles for Article Page -->
+    <style>
+        /* Article-specific styles that extend the main CSS */
+        .article-content p {
+            text-align: justify;
+            hyphens: auto;
+            margin-bottom: 1.5rem;
+        }
 
-        <!-- Bottom Navigation (Mobile) usando o padrão do index.html -->
-        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
-            <a href="index.html" class="app-nav-item" aria-label="Página inicial">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                </svg>
-                <span class="app-nav-label">Home</span>
-            </a>
-            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
-                <span class="app-nav-label">Vitrine</span>
-            </a>
-            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                </svg>
-                <span class="app-nav-label">Revista</span>
-            </a>
-            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-                </svg>
-                <span class="app-nav-label">Descontos</span>
-            </a>
-            <a href="contato.html" class="app-nav-item" aria-label="Contato">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                </svg>
-                <span class="app-nav-label">Contato</span>
-            </a>
-        </nav>
+        .lead-paragraph {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+            border-radius: 16px;
+            color: white;
+            text-align: justify;
+        }
 
-        <!-- Toast notifications -->
-        <div id="toast" class="toast"></div>
-    </div>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    <!-- JavaScript usando o padrão do index.html -->
-    <script>
-        // Performance and Security Enhanced JavaScript
-        (function() {
-            'use strict';
-            
-            // Utilities
-            const utils = {
-                // Sanitize input
-                sanitize: function(str) {
-                    const div = document.createElement('div');
-                    div.textContent = str;
-                    return div.innerHTML;
-                },
-                
-                // Debounce function
-                debounce: function(func, wait) {
-                    let timeout;
-                    return function executedFunction(...args) {
-                        const later = () => {
-                            clearTimeout(timeout);
-                            func(...args);
-                        };
-                        clearTimeout(timeout);
-                        timeout = setTimeout(later, wait);
-                    };
-                },
-                
-                // Show toast notification
-                showToast: function(message, type = 'info') {
-                    const toast = document.getElementById('toast');
-                    if (!toast) return;
-                    
-                    toast.textContent = this.sanitize(message);
-                    toast.className = `toast ${type}`;
-                    toast.classList.add('show');
-                    
-                    setTimeout(() => {
-                        toast.classList.remove('show');
-                    }, 3000);
-                }
-            };
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
 
-            // DOM Ready
-            function initializeApp() {
-                // Mobile menu functionality
-                const menuToggle = document.getElementById('menu-toggle-btn');
-                const menuClose = document.getElementById('menu-close-btn');
-                const mobileMenuOverlay = document.getElementById('mobile-menu');
-                
-                if (menuToggle && mobileMenuOverlay) {
-                    function openMenu() {
-                        mobileMenuOverlay.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                        menuToggle.setAttribute('aria-expanded', 'true');
-                        
-                        // Focus first menu item
-                        const firstMenuItem = mobileMenuOverlay.querySelector('.mobile-menu-link');
-                        if (firstMenuItem) {
-                            setTimeout(() => firstMenuItem.focus(), 100);
-                        }
-                    }
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            border-radius: 2px;
+        }
 
-                    function closeMenu() {
-                        mobileMenuOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                        menuToggle.focus();
-                    }
+        .article-content strong {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
 
-                    menuToggle.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        openMenu();
-                    });
-                    
-                    if (menuClose) {
-                        menuClose.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            closeMenu();
-                        });
-                    }
-                    
-                    // Close menu when clicking overlay
-                    mobileMenuOverlay.addEventListener('click', function(e) {
-                        if (e.target === mobileMenuOverlay) {
-                            closeMenu();
-                        }
-                    });
-                    
-                    // Close menu with Escape key
-                    document.addEventListener('keydown', function(e) {
-                        if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
-                            closeMenu();
-                        }
-                    });
-                }
+        .highlight-box {
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateX(2deg);
+            transition: all 0.3s ease;
+        }
 
-                // Theme toggle functionality
-                const themeToggle = document.getElementById('theme-toggle-btn');
-                const root = document.documentElement;
+        .highlight-box:hover {
+            transform: perspective(1000px) rotateX(0deg) scale(1.02);
+        }
 
-                if (themeToggle) {
-                    themeToggle.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        try {
-                            const isLight = root.hasAttribute('data-theme');
-                            if (isLight) {
-                                root.removeAttribute('data-theme');
-                                localStorage.setItem('theme', 'dark');
-                            } else {
-                                root.setAttribute('data-theme', 'light');
-                                localStorage.setItem('theme', 'light');
-                            }
-                        } catch(e) {
-                            console.warn('Theme toggle failed:', e);
-                        }
-                    });
-                }
+        .highlight-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
 
-                // Copy to Clipboard Function
-                window.copyToClipboard = function() {
-                    const url = window.location.href;
-                    
-                    if (navigator.clipboard && window.isSecureContext) {
-                        navigator.clipboard.writeText(url).then(() => {
-                            utils.showToast('Link copiado para a área de transferência!', 'success');
-                        }).catch(err => {
-                            fallbackCopyTextToClipboard(url);
-                        });
-                    } else {
-                        fallbackCopyTextToClipboard(url);
-                    }
-                };
+        .article-image {
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
 
-                function fallbackCopyTextToClipboard(text) {
-                    const textArea = document.createElement("textarea");
-                    textArea.value = text;
-                    textArea.style.position = "fixed";
-                    textArea.style.left = "-999999px";
-                    textArea.style.top = "-999999px";
-                    document.body.appendChild(textArea);
-                    textArea.focus();
-                    textArea.select();
-                    
-                    try {
-                        document.execCommand('copy');
-                        utils.showToast('Link copiado para a área de transferência!', 'success');
-                    } catch (err) {
-                        utils.showToast('Erro ao copiar link. Tente novamente.', 'error');
-                    }
-                    
-                    document.body.removeChild(textArea);
-                }
+        .article-image img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
 
-                // Enhanced interactions
-                document.querySelectorAll('.share-btn, .app-card-link, .app-see-all').forEach(button => {
-                    button.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-2px) scale(1.02)';
-                    });
-                    
-                    button.addEventListener('mouseleave', function() {
-                        this.style.transform = '';
-                    });
-                });
+        .article-image img:hover {
+            transform: scale(1.02);
+        }
 
-                // Smooth scrolling for anchor links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const target = document.querySelector(this.getAttribute('href'));
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 1rem;
+            text-align: center;
+        }
 
-                // Lazy loading enhancement
-                if ('IntersectionObserver' in window) {
-                    const imageObserver = new IntersectionObserver((entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                const img = entry.target;
-                                img.src = img.dataset.src || img.src;
-                                img.classList.remove('loading');
-                                observer.unobserve(img);
-                            }
-                        });
-                    });
+        .city-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
 
-                    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                        imageObserver.observe(img);
-                    });
-                }
+        .city-icon {
+            font-size: 1.2rem;
+        }
 
-                // Error handling for images
-                document.querySelectorAll('img').forEach(img => {
-                    img.addEventListener('error', function() {
-                        this.style.backgroundColor = 'var(--bg-secondary)';
-                        this.style.display = 'flex';
-                        this.style.alignItems = 'center';
-                        this.style.justifyContent = 'center';
-                        this.alt = 'Imagem não disponível';
-                    });
-                });
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
 
-                // Initialize ads after DOM is ready
-                setTimeout(() => {
-                    try {
-                        const ads = document.querySelectorAll('.adsbygoogle');
-                        ads.forEach(function(ad) {
-                            try {
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            } catch(e) {
-                                console.warn('AdSense initialization failed for ad:', e);
-                            }
-                        });
-                    } catch(e) {
-                        console.warn('AdSense general initialization failed:', e);
-                    }
-                }, 1000);
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-                console.log('Article page initialized successfully');
+        .breadcrumb a:hover {
+            color: var(--accent-purple);
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .share-btn.whatsapp:hover {
+            background: #1DA851;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .share-btn.instagram {
+            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+            color: white;
+        }
+
+        .share-btn.instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(221, 42, 123, 0.4);
+        }
+
+        .share-btn.copy-link {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .share-btn.copy-link:hover {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Instagram CTA Section - Super Stylized */
+        .instagram-post-cta {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .instagram-cta-wrapper {
+            position: relative;
+            background: linear-gradient(135deg, 
+                rgba(245, 133, 41, 0.1) 0%, 
+                rgba(221, 42, 123, 0.1) 25%, 
+                rgba(129, 52, 175, 0.1) 50%, 
+                rgba(81, 91, 212, 0.1) 100%);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(245, 133, 41, 0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .instagram-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .instagram-cta-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .instagram-cta-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .instagram-post-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 2rem;
+            background: linear-gradient(45deg, #F58529 0%, #DD2A7B 25%, #8134AF 50%, #515BD4 100%);
+            background-size: 200% 200%;
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(221, 42, 123, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            min-width: 280px;
+        }
+
+        .instagram-post-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .instagram-post-btn:hover::before {
+            left: 100%;
+        }
+
+        .instagram-post-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(221, 42, 123, 0.4);
+            background-position: 100% 100%;
+            animation: instagramPulse 2s infinite;
+        }
+
+        @keyframes instagramPulse {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .instagram-btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .instagram-post-btn:hover .instagram-btn-icon {
+            transform: rotate(15deg) scale(1.1);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .instagram-btn-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        .instagram-btn-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .instagram-btn-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .instagram-btn-arrow {
+            transition: all 0.3s ease;
+        }
+
+        .instagram-post-btn:hover .instagram-btn-arrow {
+            transform: translateX(4px) translateY(-4px);
+        }
+
+        /* Decorative sparkles */
+        .instagram-cta-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .instagram-sparkle {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: sparkleFloat 3s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .instagram-sparkle-1 {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .instagram-sparkle-2 {
+            top: 25%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .instagram-sparkle-3 {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        @keyframes sparkleFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-10px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .share-section {
+            margin: 3rem 0;
+        }
+
+        .share-section h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        /* Toast styling */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-purple);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 3000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .instagram-cta-wrapper {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
             }
 
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeApp);
-            } else {
-                initializeApp();
+            .instagram-cta-title {
+                font-size: 1.3rem;
             }
-            
-            // Error handling
-            window.addEventListener('error', function(e) {
-                console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
-        })();
-    </script>
-</body>
-</html>
+
+            .instagram-cta-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .instagram-post-btn {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1.5rem;
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .
