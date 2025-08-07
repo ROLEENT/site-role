@@ -1205,8 +1205,11 @@
                 function loadDescontos(category = 'todos') {
                     descontosGrid.innerHTML = '<div class="descontos-loading" id="loadingState"><div class="loading-spinner"></div><p>Carregando ofertas exclusivas...</p></div>';
                     
-                    const descontos = getDescontosByCategory(category);
-                    renderDescontos(descontos);
+                    // Simular um pequeno delay para mostrar loading
+                    setTimeout(() => {
+                        const descontos = getDescontosByCategory(category);
+                        renderDescontos(descontos);
+                    }, 500);
                 }
 
                 function getDescontosByCategory(category) {
@@ -1333,3 +1336,255 @@
                                     `<div class="desconto-placeholder">${desconto.emoji || '🎉'}</div>`
                                 }
                             </div>
+                            <div class="desconto-content">
+                                <div class="desconto-header">
+                                    <h3 class="desconto-title">${desconto.title}</h3>
+                                    <div class="desconto-code">${desconto.code}</div>
+                                </div>
+                                <p class="desconto-description">${desconto.description}</p>
+                                <div class="desconto-info">
+                                    ${desconto.tags.map(tag => `<span class="desconto-tag">${tag}</span>`).join('')}
+                                </div>
+                                <div class="desconto-footer">
+                                    <span class="desconto-expiry">${desconto.expiry}</span>
+                                    <a href="${desconto.link}" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="desconto-btn"
+                                       data-desconto-id="${desconto.id}"
+                                       data-desconto-code="${desconto.code}">
+                                        Resgatar
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    `).join('');
+
+                    descontosGrid.innerHTML = descontosHTML;
+
+                    // Add click tracking to desconto buttons
+                    const descontoButtons = descontosGrid.querySelectorAll('.desconto-btn');
+                    descontoButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            const descontoId = this.dataset.descontoId;
+                            const descontoTitle = this.closest('.desconto-card').querySelector('.desconto-title').textContent;
+                            
+                            console.log('Desconto clicked:', { id: descontoId, title: descontoTitle });
+                            utils.showToast(`Redirecionando para o desconto: ${descontoTitle}`, 'success');
+                        });
+                    });
+                }
+
+                function getBadgeText(badgeType) {
+                    const badges = {
+                        'hot': '🔥 QUENTE',
+                        'new': '✨ NOVO',
+                        'exclusive': '👑 EXCLUSIVO'
+                    };
+                    return badges[badgeType] || '💰 OFERTA';
+                }
+
+                // Initialize ads - IDÊNTICO AO INDEX
+                setTimeout(() => {
+                    try {
+                        const ads = document.querySelectorAll('.adsbygoogle');
+                        ads.forEach(function(ad) {
+                            try {
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            } catch(e) {
+                                console.warn('AdSense initialization failed for ad:', e);
+                            }
+                        });
+                    } catch(e) {
+                        console.warn('AdSense general initialization failed:', e);
+                    }
+                }, 1000);
+
+                // Initialize page - Load descontos
+                loadDescontos('todos');
+
+                console.log('Descontos page initialized successfully');
+            }
+
+            // Initialize when DOM is ready - IDÊNTICO AO INDEX
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeApp);
+            } else {
+                initializeApp();
+            }
+            
+            // Error handling - IDÊNTICO AO INDEX
+            window.addEventListener('error', function(e) {
+                console.warn('Script error:', e.error);
+            });
+            
+            window.addEventListener('unhandledrejection', function(e) {
+                console.warn('Unhandled promise rejection:', e.reason);
+            });
+            
+        })();
+    </script>
+
+    <!-- CSS Adicional para correções finais - IDÊNTICO AO INDEX -->
+    <style>
+        /* Newsletter error styling */
+        .newsletter-error {
+            color: var(--accent-red);
+            font-size: 12px;
+            margin-top: 8px;
+            min-height: 16px;
+        }
+        
+        .app-newsletter-input.error {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+        }
+        
+        /* Toast styling */
+        #toast-container {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+        
+        @media (min-width: 769px) {
+            #toast-container {
+                bottom: 40px;
+            }
+        }
+        
+        .toast {
+            background: var(--accent-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            text-align: center;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast.success {
+            background: var(--accent-green);
+        }
+        
+        .toast.error {
+            background: var(--accent-red);
+        }
+        
+        /* Loading state for buttons */
+        .btn-loading {
+            display: none;
+        }
+        
+        button[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Safe area adjustments for mobile */
+        @supports (padding: max(0px)) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(env(safe-area-inset-top), 0px);
+                }
+                
+                .app-bottom-nav {
+                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                }
+            }
+        }
+        
+        /* Ajustes finais para elementos do tema */
+        .app-search-input:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            background: var(--bg-card);
+        }
+        
+        .app-recommendation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-newsletter-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .app-newsletter-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        
+        /* Correção específica para os cards de desconto */
+        .desconto-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .desconto-content {
+            background: var(--bg-card);
+        }
+        
+        .desconto-tag {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+        }
+        
+        .desconto-footer {
+            border-top: 1px solid var(--border-color);
+        }
+        
+        /* Ajustes para as estatísticas */
+        .desconto-stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .desconto-stat-label {
+            color: var(--text-secondary);
+        }
+        
+        /* Ajustes para as categorias */
+        .desconto-category-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        
+        /* Correção para o sr-only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</body>
+</html>
