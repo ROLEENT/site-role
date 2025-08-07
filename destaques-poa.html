@@ -38,24 +38,27 @@
     <link rel="dns-prefetch" href="//script.google.com">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon.png">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#8B5CF6">
     <meta name="msapplication-TileColor" content="#8B5CF6">
     
     <!-- Preload Resources -->
-    <link rel="preload" href="../estilo.css" as="style">
-    <link rel="preload" href="../images/logo-role.png" as="image">
+    <link rel="preload" href="estilo.css" as="style">
+    <link rel="preload" href="images/logo-role.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     
-    <!-- Theme Script -->
+    <!-- Theme Script - IDÊNTICO AO INDEX -->
     <script>
         (function() {
             try {
-                const theme = localStorage.getItem('theme');
+                const theme = localStorage.getItem('theme') || 'dark';
                 if (theme === 'light') {
                     document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
                 }
             } catch(e) {
                 console.warn('Theme loading failed:', e);
@@ -85,8 +88,156 @@
     }
     </script>
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="../estilo.css" media="all">
+    <!-- CSS Critical Path - IDÊNTICO AO INDEX -->
+    <style>
+        /* Critical CSS inline - TEMA CORRIGIDO */
+        :root{
+            --bg-primary:#0D0D0D;
+            --bg-secondary:#1A1A1A;
+            --bg-card:#1F1F1F;
+            --text-primary:#FFFFFF;
+            --text-secondary:#A0A0A0;
+            --border-color:#2A2A2A;
+            --accent-purple:#8B5CF6;
+            --accent-green:#10B981;
+            --accent-red:#EF4444;
+        }
+        
+        :root[data-theme="light"]{
+            --bg-primary:#FFFFFF;
+            --bg-secondary:#F8F9FA;
+            --bg-card:#FFFFFF;
+            --text-primary:#1F2937;
+            --text-secondary:#6B7280;
+            --border-color:#E5E7EB;
+        }
+        
+        *{margin:0;padding:0;box-sizing:border-box}
+        
+        body{
+            font-family:'Inter',sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+            transition:background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .app-container {
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease;
+        }
+        
+        .app-header{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:rgba(13,13,13,0.95);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid var(--border-color);
+            transition:background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-header{
+            background:rgba(255,255,255,0.95);
+        }
+        
+        /* ESCONDER MENU MOBILE NO DESKTOP */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none !important;
+            }
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
+        
+        /* Header Fixes */
+        @media (max-width: 768px) {
+            .app-header {
+                padding: 0 20px;
+            }
+            .app-header-content {
+                padding: 12px 0 8px 0 !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .app-logo-img {
+                height: 24px !important;
+                max-width: 100px;
+            }
+            .app-header-actions {
+                gap: 8px !important;
+                display: flex;
+                align-items: center;
+            }
+            .menu-toggle, .theme-toggle-app {
+                padding: 6px;
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .app-header-content {
+                padding: 14px 40px !important;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .app-header-actions {
+                gap: 20px !important;
+                display: flex;
+                align-items: center;
+            }
+            .desktop-menu {
+                gap: 24px !important;
+                margin-right: 24px !important;
+                display: flex !important;
+            }
+            .desktop-menu a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 8px 16px;
+                border-radius: 8px;
+            }
+            .desktop-menu a:hover,
+            .desktop-menu a.active {
+                color: var(--accent-purple);
+                background: rgba(139, 92, 246, 0.1);
+            }
+        }
+        
+        /* Bottom Nav Fix */
+        .app-bottom-nav {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            transition: background-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-bottom-nav {
+            background: rgba(248, 249, 250, 0.95);
+        }
+        
+        /* Theme transitions for all elements */
+        .app-search-input,
+        .app-recommendation-card,
+        .app-stat-item,
+        .app-newsletter-section,
+        .app-footer,
+        .mobile-menu,
+        .content-card {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+    
+    <!-- Load Main CSS -->
+    <link rel="stylesheet" href="estilo.css" media="all">
     
     <!-- No-JS Fallback -->
     <noscript>
@@ -98,43 +249,44 @@
 
 <body>
     <div class="app-container">
-        <!-- Header -->
+        <!-- Header - IDÊNTICO AO INDEX -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
-                <a href="../index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
-                    <img src="../images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="150" height="50" />
+                <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
                 </a>
                 <div class="app-header-actions">
                     <!-- Desktop Menu -->
                     <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
-                        <a href="../index.html">Home</a>
-                        <a href="../revista.html">Revista</a>
-                        <a href="../vitrine-cultural.html">Vitrine Cultural</a>
-                        <a href="../descontos.html">Descontos</a>
-                        <a href="../contato.html">Contato</a>
-                        <a href="../quem-somos.html">Quem Somos</a>
+                        <a href="index.html">Home</a>
+                        <a href="revista.html">Revista</a>
+                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="destaques.html" class="active" aria-current="page">Destaques</a>
+                        <a href="descontos.html">Descontos</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="quem-somos.html">Quem Somos</a>
                     </nav>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
+                        <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
+                    </button>
 
                     <!-- Mobile Menu Button -->
                     <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                    </button>
-                    
-                    <!-- Theme Toggle -->
-                    <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <img src="../images/theme-toggle.gif" alt="" width="24" height="24" role="presentation" />
                     </button>
                 </div>
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true">
+        <!-- Mobile Menu Overlay - IDÊNTICO AO INDEX -->
+        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
-                    <img src="../images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
+                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
                     <button class="menu-close" id="menu-close-btn" aria-label="Fechar menu">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -142,35 +294,47 @@
                     </button>
                 </div>
                 <ul class="mobile-menu-list" role="list">
-                    <li><a href="../index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
-                    <li><a href="../revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
-                    <li><a href="../vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
-                    <li><a href="../descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
-                    <li><a href="../contato.html" class="mobile-menu-link">📞 Contato</a></li>
-                    <li><a href="../quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="destaques.html" class="mobile-menu-link active" aria-current="page">⭐ Destaques</a></li>
+                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
+                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
+                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
                 </ul>
                 <div class="mobile-menu-footer">
                     <div class="mobile-menu-social">
                         <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
-                            <img src="../images/instagram.svg" alt="" width="20" height="20" role="presentation" />
+                            <img src="images/instagram.svg" alt="" width="20" height="20" role="presentation" />
                         </a>
                         <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no TikTok">
-                            <img src="../images/tiktok.svg" alt="" width="20" height="20" role="presentation" />
+                            <img src="images/tiktok.svg" alt="" width="20" height="20" role="presentation" />
                         </a>
                         <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
-                            <img src="../images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
+                            <img src="images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
                         </a>
                     </div>
                 </div>
             </nav>
         </div>
 
+        <!-- Search Bar - IDÊNTICO AO INDEX -->
+        <div class="app-search-container">
+            <div class="app-search-bar">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="search" class="app-search-input" placeholder="Procurar por rolês, artistas, cidades..." 
+                       aria-label="Buscar eventos, artistas ou cidades" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+
         <!-- Breadcrumb -->
         <div class="app-search-container">
             <div class="breadcrumb" style="text-align: left; padding: 16px 0;">
-                <a href="../index.html" style="color: var(--text-secondary); text-decoration: none;">Home</a> 
+                <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">Home</a> 
                 <span style="color: var(--text-muted); margin: 0 8px;">›</span> 
-                <a href="../index.html#destaques" style="color: var(--text-secondary); text-decoration: none;">Destaques</a>
+                <a href="index.html#destaques" style="color: var(--text-secondary); text-decoration: none;">Destaques</a>
                 <span style="color: var(--text-muted); margin: 0 8px;">›</span>
                 <span style="color: var(--accent-purple); font-weight: 500;">Porto Alegre</span>
             </div>
@@ -192,7 +356,7 @@
         <!-- Hero Banner -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
-                <img src="../images/poa-hero.png" alt="Destaques de Porto Alegre - Curadoria Cultural ROLÊ" 
+                <img src="images/poa-hero.png" alt="Destaques de Porto Alegre - Curadoria Cultural ROLÊ" 
                      loading="lazy" width="1200" height="400" style="border-radius: 20px;" />
             </div>
         </div>
@@ -270,7 +434,7 @@
                     <article class="app-recommendation-card timeline-item" data-year="2025" data-month="agosto">
                         <div class="app-card-image">
                             <div class="app-card-badge">Nova</div>
-                            <img src="../images/poa-hero.png" alt="Eventos da semana" loading="lazy" />
+                            <img src="images/poa-hero.png" alt="Eventos da semana" loading="lazy" />
                         </div>
                         <div class="app-card-content">
                             <h4 class="app-card-title">Eventos em Porto Alegre: os rolês mais quentes da semana</h4>
@@ -296,37 +460,6 @@
                     </article>
 
                     <!-- Future Editions (Preview) -->
-                    <article class="app-recommendation-card timeline-item upcoming" data-year="2025" data-month="agosto">
-                        <div class="app-card-image">
-                            <div class="app-card-badge">Em Breve</div>
-                            <div style="height: 100%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
-                                <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="app-card-content">
-                            <h4 class="app-card-title">Próxima Edição</h4>
-                            <p class="app-card-description">A curadoria da próxima semana será publicada em breve. Fique ligado!</p>
-                            <div class="app-card-info">
-                                <div class="app-card-info-item">
-                                    <span>📅</span>
-                                    <span>15 de Agosto</span>
-                                </div>
-                                <div class="app-card-info-item">
-                                    <span>⏰</span>
-                                    <span>Em produção</span>
-                                </div>
-                            </div>
-                            <div class="app-card-footer">
-                                <div class="app-card-rating">
-                                    <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
-                                </div>
-                                <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
-                            </div>
-                        </div>
-                    </article>
-
                     <article class="app-recommendation-card timeline-item upcoming" data-year="2025" data-month="agosto">
                         <div class="app-card-image">
                             <div class="app-card-badge">Em Breve</div>
@@ -404,7 +537,17 @@
             </div>
         </section>
 
-        <!-- Newsletter Section -->
+        <!-- Ad Container - IDÊNTICO AO INDEX -->
+        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2898945215492580"
+                 data-ad-slot="7986392458"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Newsletter Section - IDÊNTICO AO INDEX -->
         <section class="app-newsletter-section" aria-labelledby="newsletter-title">
             <div class="app-newsletter-content">
                 <h2 id="newsletter-title">Receba os Destaques de POA</h2>
@@ -418,4 +561,530 @@
                            required 
                            autocomplete="email"
                            aria-describedby="newsletter-description newsletter-error">
-                    <button type="submit" class="app-btn-newsletter" aria
+                    <button type="submit" class="app-btn-newsletter" aria-describedby="newsletter-title">
+                        <span class="btn-text">Assinar</span>
+                        <span class="btn-loading" aria-hidden="true">Enviando...</span>
+                    </button>
+                </form>
+                <div id="newsletter-error" class="newsletter-error" role="alert" aria-live="assertive"></div>
+                <p class="newsletter-disclaimer" id="newsletter-description">
+                    <small>Ao assinar, você concorda com nossa <a href="politica.html">Política de Privacidade</a>.</small>
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer Ad - IDÊNTICO AO INDEX -->
+        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2898945215492580"
+                 data-ad-slot="6673310789"
+                 data-ad-format="horizontal"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Footer - IDÊNTICO AO INDEX -->
+        <footer class="app-footer" role="contentinfo">
+            <div class="app-footer-links">
+                © 2025 ROLÊ ENTRETENIMENTO ·
+                <a href="politica.html">Política de Privacidade</a> ·
+                <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+                <a href="termos-organizador.html">Termos do Organizador</a> ·
+                <a href="politica-spam.html">Política Antispam</a>
+            </div>
+            <div class="app-social-icons">
+                <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
+                    <img src="images/instagram.svg" alt="" width="24" height="24" role="presentation" />
+                </a>
+                <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no TikTok">
+                    <img src="images/tiktok.svg" alt="" width="24" height="24" role="presentation" />
+                </a>
+                <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
+                    <img src="images/whatsapp.svg" alt="" width="24" height="24" role="presentation" />
+                </a>
+            </div>
+        </footer>
+
+        <!-- Bottom Navigation - Mobile - IDÊNTICO AO INDEX -->
+        <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
+            <a href="index.html" class="app-nav-item" aria-label="Página inicial">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
+            </a>
+            <a href="vitrine-cultural.html" class="app-nav-item" aria-label="Vitrine cultural">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+                <span class="app-nav-label">Vitrine</span>
+            </a>
+            <a href="destaques.html" class="app-nav-item active" aria-label="Destaques da semana" aria-current="page">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                </svg>
+                <span class="app-nav-label">Destaques</span>
+            </a>
+            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <span class="app-nav-label">Revista</span>
+            </a>
+            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                </svg>
+                <span class="app-nav-label">Descontos</span>
+            </a>
+        </nav>
+
+        <!-- Toast notifications -->
+        <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
+    </div>
+
+    <!-- JavaScript - IDÊNTICO AO INDEX COM AJUSTES ESPECÍFICOS -->
+    <script>
+        // Performance and Security Enhanced JavaScript
+        (function() {
+            'use strict';
+            
+            // Utilities
+            const utils = {
+                // Sanitize input
+                sanitize: function(str) {
+                    const div = document.createElement('div');
+                    div.textContent = str;
+                    return div.innerHTML;
+                },
+                
+                // Debounce function
+                debounce: function(func, wait) {
+                    let timeout;
+                    return function executedFunction(...args) {
+                        const later = () => {
+                            clearTimeout(timeout);
+                            func(...args);
+                        };
+                        clearTimeout(timeout);
+                        timeout = setTimeout(later, wait);
+                    };
+                },
+                
+                // Show toast notification
+                showToast: function(message, type = 'info') {
+                    const container = document.getElementById('toast-container');
+                    if (!container) return;
+                    
+                    const toast = document.createElement('div');
+                    toast.className = `toast ${type}`;
+                    toast.textContent = this.sanitize(message);
+                    toast.setAttribute('role', 'alert');
+                    
+                    container.appendChild(toast);
+                    
+                    // Show toast
+                    requestAnimationFrame(() => {
+                        toast.classList.add('show');
+                    });
+                    
+                    // Hide toast after 4 seconds
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => {
+                            if (toast.parentNode) {
+                                container.removeChild(toast);
+                            }
+                        }, 300);
+                    }, 4000);
+                }
+            };
+
+            // DOM Ready
+            function initializeApp() {
+                // Mobile menu functionality - APENAS MOBILE
+                const menuToggle = document.getElementById('menu-toggle-btn');
+                const menuClose = document.getElementById('menu-close-btn');
+                const mobileMenuOverlay = document.getElementById('mobile-menu');
+                
+                // Verificar se estamos em mobile
+                const isMobile = window.innerWidth <= 768;
+                
+                if (menuToggle && mobileMenuOverlay && isMobile) {
+                    function openMenu() {
+                        mobileMenuOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        menuToggle.setAttribute('aria-expanded', 'true');
+                        
+                        // Focus first menu item
+                        const firstMenuItem = mobileMenuOverlay.querySelector('.mobile-menu-link');
+                        if (firstMenuItem) {
+                            setTimeout(() => firstMenuItem.focus(), 100);
+                        }
+                    }
+
+                    function closeMenu() {
+                        mobileMenuOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.focus();
+                    }
+
+                    menuToggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        openMenu();
+                    });
+                    
+                    if (menuClose) {
+                        menuClose.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            closeMenu();
+                        });
+                    }
+                    
+                    // Close menu when clicking overlay
+                    mobileMenuOverlay.addEventListener('click', function(e) {
+                        if (e.target === mobileMenuOverlay) {
+                            closeMenu();
+                        }
+                    });
+                    
+                    // Close menu with Escape key
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+                            closeMenu();
+                        }
+                    });
+                }
+
+                // Theme toggle functionality
+                const themeToggle = document.getElementById('theme-toggle-btn');
+                const root = document.documentElement;
+
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        try {
+                            const currentTheme = root.getAttribute('data-theme');
+                            if (currentTheme === 'light') {
+                                root.removeAttribute('data-theme');
+                                localStorage.setItem('theme', 'dark');
+                                utils.showToast('Tema escuro ativado', 'success');
+                            } else {
+                                root.setAttribute('data-theme', 'light');
+                                localStorage.setItem('theme', 'light');
+                                utils.showToast('Tema claro ativado', 'success');
+                            }
+                        } catch(e) {
+                            console.warn('Theme toggle failed:', e);
+                        }
+                    });
+                }
+
+                // Newsletter form with enhanced security
+                const newsletterForm = document.getElementById('newsletter-form');
+                if (newsletterForm) {
+                    const emailInput = document.getElementById('newsletter-email');
+                    const errorDiv = document.getElementById('newsletter-error');
+                    
+                    // Email validation
+                    function validateEmail(email) {
+                        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        return re.test(email) && email.length <= 254;
+                    }
+                    
+                    // Rate limiting
+                    let lastSubmission = 0;
+                    const RATE_LIMIT = 30000; // 30 seconds
+                    
+                    newsletterForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        
+                        const now = Date.now();
+                        if (now - lastSubmission < RATE_LIMIT) {
+                            errorDiv.textContent = 'Aguarde antes de enviar novamente.';
+                            return;
+                        }
+                        
+                        const emailValue = emailInput.value.trim();
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const btnText = submitBtn.querySelector('.btn-text');
+                        const btnLoading = submitBtn.querySelector('.btn-loading');
+                        
+                        // Clear previous errors
+                        errorDiv.textContent = '';
+                        emailInput.classList.remove('error');
+                        
+                        // Validate email
+                        if (!emailValue) {
+                            errorDiv.textContent = 'Por favor, insira seu e-mail.';
+                            emailInput.focus();
+                            return;
+                        }
+                        
+                        if (!validateEmail(emailValue)) {
+                            errorDiv.textContent = 'Por favor, insira um e-mail válido.';
+                            emailInput.classList.add('error');
+                            emailInput.focus();
+                            return;
+                        }
+                        
+                        // Loading state
+                        submitBtn.disabled = true;
+                        btnText.style.display = 'none';
+                        btnLoading.style.display = 'inline';
+                        
+                        try {
+                            const controller = new AbortController();
+                            const timeoutId = setTimeout(() => controller.abort(), 10000);
+                            
+                            const response = await fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded',
+                                },
+                                body: new URLSearchParams({ 
+                                    email: emailValue,
+                                    timestamp: now,
+                                    source: 'destaques-poa'
+                                }),
+                                signal: controller.signal
+                            });
+                            
+                            clearTimeout(timeoutId);
+                            
+                            if (response.ok) {
+                                utils.showToast(`Sucesso! ${emailValue} foi cadastrado nos destaques de POA.`, 'success');
+                                this.reset();
+                                lastSubmission = now;
+                            } else {
+                                throw new Error(`HTTP ${response.status}`);
+                            }
+                        } catch (error) {
+                            console.warn('Newsletter subscription error:', error);
+                            if (error.name === 'AbortError') {
+                                errorDiv.textContent = 'Tempo limite excedido. Tente novamente.';
+                            } else {
+                                errorDiv.textContent = 'Erro ao cadastrar. Tente novamente mais tarde.';
+                            }
+                        } finally {
+                            submitBtn.disabled = false;
+                            btnText.style.display = 'inline';
+                            btnLoading.style.display = 'none';
+                        }
+                    });
+                    
+                    // Real-time email validation
+                    emailInput.addEventListener('input', utils.debounce(function() {
+                        const email = this.value.trim();
+                        if (email && !validateEmail(email)) {
+                            this.classList.add('error');
+                            errorDiv.textContent = 'Formato de e-mail inválido.';
+                        } else {
+                            this.classList.remove('error');
+                            errorDiv.textContent = '';
+                        }
+                    }, 500));
+                }
+
+                // Stats counter animation with Intersection Observer
+                const observerOptions = {
+                    threshold: 0.5,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                            entry.target.classList.add('counted');
+                            animateNumber(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                const statNumbers = document.querySelectorAll('.app-stat-number');
+                statNumbers.forEach(stat => statsObserver.observe(stat));
+
+                function animateNumber(element) {
+                    const target = parseInt(element.getAttribute('data-target'), 10);
+                    let current = 0;
+                    const increment = Math.ceil(target / 30);
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        element.textContent = current;
+                    }, 50);
+                }
+
+                // Filter functionality for archive
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const timelineItems = document.querySelectorAll('.timeline-item');
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const filter = this.getAttribute('data-filter');
+                        
+                        // Update active button
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Filter items
+                        timelineItems.forEach(item => {
+                            if (filter === 'all') {
+                                item.style.display = 'block';
+                            } else {
+                                const year = item.getAttribute('data-year');
+                                const month = item.getAttribute('data-month');
+                                
+                                if (filter === year || filter === month) {
+                                    item.style.display = 'block';
+                                } else {
+                                    item.style.display = 'none';
+                                }
+                            }
+                        });
+                    });
+                });
+
+                // Search functionality with debouncing
+                const searchInput = document.querySelector('.app-search-input');
+                if (searchInput) {
+                    searchInput.addEventListener('input', utils.debounce(function() {
+                        const query = utils.sanitize(this.value.toLowerCase().trim());
+                        if (query.length >= 2) {
+                            console.log('Search query:', query);
+                            // Implementar busca aqui
+                        }
+                    }, 300));
+                }
+
+                // Card animations on scroll
+                const fadeObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item, .content-card');
+                fadeElements.forEach((element, index) => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                    fadeObserver.observe(element);
+                });
+
+                // Initialize ads after DOM is ready
+                setTimeout(() => {
+                    try {
+                        const ads = document.querySelectorAll('.adsbygoogle');
+                        ads.forEach(function(ad) {
+                            try {
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            } catch(e) {
+                                console.warn('AdSense initialization failed for ad:', e);
+                            }
+                        });
+                    } catch(e) {
+                        console.warn('AdSense general initialization failed:', e);
+                    }
+                }, 1000);
+
+                console.log('Destaques POA page initialized successfully');
+            }
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeApp);
+            } else {
+                initializeApp();
+            }
+            
+            // Error handling
+            window.addEventListener('error', function(e) {
+                console.warn('Script error:', e.error);
+            });
+            
+            window.addEventListener('unhandledrejection', function(e) {
+                console.warn('Unhandled promise rejection:', e.reason);
+            });
+            
+        })();
+    </script>
+
+    <!-- CSS Adicional para correções finais - IDÊNTICO AO INDEX -->
+    <style>
+        /* Newsletter error styling */
+        .newsletter-error {
+            color: var(--accent-red);
+            font-size: 12px;
+            margin-top: 8px;
+            min-height: 16px;
+        }
+        
+        .app-newsletter-input.error {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+        }
+        
+        /* Toast styling */
+        #toast-container {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+        
+        @media (min-width: 769px) {
+            #toast-container {
+                bottom: 40px;
+            }
+        }
+        
+        .toast {
+            background: var(--accent-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+             center; justify-content: center; color: var(--text-secondary);">
+                                <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="app-card-content">
+                            <h4 class="app-card-title">Próxima Edição</h4>
+                            <p class="app-card-description">A curadoria da próxima semana será publicada em breve. Fique ligado!</p>
+                            <div class="app-card-info">
+                                <div class="app-card-info-item">
+                                    <span>📅</span>
+                                    <span>15 de Agosto</span>
+                                </div>
+                                <div class="app-card-info-item">
+                                    <span>⏰</span>
+                                    <span>Em produção</span>
+                                </div>
+                            </div>
+                            <div class="app-card-footer">
+                                <div class="app-card-rating">
+                                    <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
+                                </div>
+                                <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="app-recommendation-card timeline-item upcoming" data-year="2025" data-month="agosto">
+                        <div class="app-card-image">
+                            <div class="app-card-badge">Em Breve</div>
+                            <div style="height: 100%; background: var(--bg-secondary); display: flex; align-items:
