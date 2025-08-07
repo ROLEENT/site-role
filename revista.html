@@ -75,7 +75,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script Otimizado - APLICAR EM TODA A PÁGINA -->
+    <!-- Theme Script Otimizado -->
     <script>
         (function() {
             try {
@@ -94,9 +94,9 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- CSS Critical Path - TEMA CORRIGIDO -->
+    <!-- CSS Critical Path -->
     <style>
-        /* Critical CSS inline - TEMA CORRIGIDO */
+        /* Critical CSS inline */
         :root{
             --bg-primary:#0D0D0D;
             --bg-secondary:#1A1A1A;
@@ -431,16 +431,16 @@
 
 <body>
     <div class="app-container">
-        <!-- Header Completo -->
+        <!-- Header IGUAL AO INDEX -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
-                <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial" rel="home">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" loading="eager" />
+                <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
                 </a>
                 <div class="app-header-actions">
                     <!-- Desktop Menu -->
                     <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
-                        <a href="index.html" rel="home">Home</a>
+                        <a href="index.html">Home</a>
                         <a href="revista.html" class="active" aria-current="page">Revista</a>
                         <a href="vitrine-cultural.html">Vitrine Cultural</a>
                         <a href="destaques.html">Destaques</a>
@@ -464,7 +464,7 @@
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay -->
+        <!-- Mobile Menu Overlay IGUAL AO INDEX -->
         <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
@@ -476,7 +476,7 @@
                     </button>
                 </div>
                 <ul class="mobile-menu-list" role="list">
-                    <li><a href="index.html" class="mobile-menu-link" rel="home">🏠 Página Inicial</a></li>
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
                     <li><a href="revista.html" class="mobile-menu-link active" aria-current="page">📰 Revista ROLÊ</a></li>
                     <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
                     <li><a href="destaques.html" class="mobile-menu-link">⭐ Destaques</a></li>
@@ -500,7 +500,7 @@
             </nav>
         </div>
 
-        <!-- Search Bar -->
+        <!-- Search Bar IGUAL AO INDEX -->
         <div class="app-search-container">
             <div class="app-search-bar">
                 <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -511,7 +511,7 @@
             </div>
         </div>
 
-        <!-- Categories Grid -->
+        <!-- Categories Grid - ADAPTADAS PARA REVISTA -->
         <section class="app-categories" aria-labelledby="categories-title">
             <h2 id="categories-title" class="sr-only">Seções da revista</h2>
             <div class="categories-grid-app" role="group" aria-label="Filtros por seção">
@@ -538,7 +538,7 @@
             </div>
         </section>
 
-        <!-- Hero Section -->
+        <!-- Hero Section - ADAPTADO PARA REVISTA -->
         <section class="app-hero-section" aria-labelledby="hero-title">
             <h1 id="hero-title" class="app-hero-title">REVISTA ROLÊ</h1>
             <p class="app-hero-description">
@@ -551,7 +551,195 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
+        <!-- Banner - BANNER DA REVISTA -->
+        <div class="app-banner-wrapper">
+            <div class="app-banner-container">
+                <img src="images/banner-revista.png" alt="Banner Revista ROLÊ - Editorial e cultura independente" 
+                     loading="lazy" width="1200" height="400" />
+            </div>
+        </div>
+
+        <!-- Section Header - PRIMEIRA SEÇÃO -->
+        <div class="app-section-header">
+            <h2 class="app-section-title" id="editorial-title">EDITORIAL</h2>
+            <a href="#" class="app-see-all" aria-describedby="editorial-title">Ver todos os editoriais</a>
+        </div>
+
+        <!-- Editorial Cards -->
+        <section class="app-recommendations" id="editorial" aria-labelledby="editorial-title">
+            <div class="app-cards-scroll" role="group" aria-label="Artigos editoriais">
+                <!-- Artigo 1 -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Destaque</div>
+                        <img src="images/editorial-madrugada.png" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">As cidades já foram noturnas</h3>
+                        <p class="app-card-description">Sua cidade perdeu a madrugada? Descubra quem resiste na cena noturna brasileira!</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Editorial">📝</span>
+                                <span>Editorial</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Tempo de leitura">⏱️</span>
+                                <span>4 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.7</span>
+                            </div>
+                            <a href="editorial/as-cidades-ja-foram-noturnas.html" 
+                               class="app-card-link"
+                               aria-label="Ler artigo: As cidades já foram noturnas"
+                               onclick="event.stopPropagation();">
+                                Ler completo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artigo 2 -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Popular</div>
+                        <img src="images/editorial-dj-autor.png" alt="Arte de DJ como autor da pista" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">DJs são novos autores</h3>
+                        <p class="app-card-description">Quem escreve tua noite é o DJ. Já agradeceu hoje?</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Editorial">📝</span>
+                                <span>Editorial</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Tempo de leitura">⏱️</span>
+                                <span>4 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.9</span>
+                            </div>
+                            <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html" 
+                               class="app-card-link"
+                               aria-label="Ler artigo: DJs são novos autores"
+                               onclick="event.stopPropagation();">
+                                Ler completo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artigo 3 -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Novo</div>
+                        <img src="images/editorial-teatros-vazios.png" alt="Arte com cadeiras vazias representando o teatro" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Por que os teatros estão vazios</h3>
+                        <p class="app-card-description">Teatro na era do feed: presença ou performance?</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Editorial">📝</span>
+                                <span>Editorial</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Tempo de leitura">⏱️</span>
+                                <span>6 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.6</span>
+                            </div>
+                            <a href="editorial/por-que-os-teatros-estao-vazios.html" 
+                               class="app-card-link"
+                               aria-label="Ler artigo: Por que os teatros estão vazios"
+                               onclick="event.stopPropagation();">
+                                Ler completo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artigo 4 -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Tendência</div>
+                        <img src="images/editorial-look-fala.png" alt="Ilustração de look expressivo como identidade" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">E se teu look falasse por ti?</h3>
+                        <p class="app-card-description">Estética é política: o look também fala!</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Editorial">📝</span>
+                                <span>Editorial</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Tempo de leitura">⏱️</span>
+                                <span>3 min</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.8</span>
+                            </div>
+                            <a href="editorial/e-se-teu-look-falasse-por-ti.html" 
+                               class="app-card-link"
+                               aria-label="Ler artigo: E se teu look falasse por ti?"
+                               onclick="event.stopPropagation();">
+                                Ler completo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Ad Container -->
+        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2898945215492580"
+                 data-ad-slot="7986392458"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Como Funciona - ADAPTADO PARA REVISTA -->
+        <section class="app-como-funciona" aria-labelledby="como-funciona-title">
+            <div class="app-section-header">
+                <h2 id="como-funciona-title" class="app-section-title">Como Funciona a Revista</h2>
+            </div>
+            <div class="app-como-funciona-content">
+                <p>
+                    A Revista ROLÊ traz textos autorais que refletem a cena cultural brasileira. 
+                    Editorial, críticas, poesia e provocações que fazem pensar sobre arte, música e vida noturna.
+                </p>
+            </div>
+        </section>
+
+        <!-- Featured Banner - POSFÁCIO -->
+        <div class="app-featured-banner" role="complementary" onclick="scrollToSection('posfacio')">
+            <div class="app-banner-content">
+                <div class="app-banner-tag">SEÇÃO ESPECIAL</div>
+                <h3 class="app-banner-title">Posfácio</h3>
+                <p class="app-banner-subtitle">Reflexões profundas sobre arte, resistência e cultura na nossa seção mais provocativa.</p>
+                <a href="#posfacio" class="app-banner-cta" onclick="event.stopPropagation();">Ler Posfácio</a>
+            </div>
+        </div>
+
+        <!-- Stats Section - ADAPTADO PARA REVISTA -->
         <section aria-labelledby="stats-title">
             <div class="app-section-header">
                 <h2 id="stats-title" class="app-section-title">REVISTA EM NÚMEROS</h2>
@@ -576,149 +764,16 @@
             </div>
         </section>
 
-        <!-- EDITORIAL -->
-        <section id="editorial" aria-labelledby="editorial-title">
-            <div class="app-section-header">
-                <h2 id="editorial-title" class="app-section-title">EDITORIAL</h2>
-                <a href="#" class="app-see-all" aria-label="Ver todos os editoriais">Ver todos</a>
-            </div>
-
-            <div class="app-recommendations">
-                <div class="app-cards-scroll">
-                    <article class="app-recommendation-card">
-                        <div class="app-card-image">
-                            <div class="app-card-badge">Destaque</div>
-                            <img src="images/editorial-madrugada.png" alt="Ilustração sobre a perda da madrugada nas cidades" loading="lazy" width="280" height="140" />
-                        </div>
-                        <div class="app-card-content">
-                            <h3 class="app-card-title">As cidades já foram noturnas</h3>
-                            <p class="app-card-description">Sua cidade perdeu a madrugada? Descubra quem resiste na cena noturna brasileira!</p>
-                            <div class="app-card-info">
-                                <div class="app-card-info-item">
-                                    <span role="img" aria-label="Editorial">📝</span>
-                                    <span>Editorial</span>
-                                </div>
-                                <div class="app-card-info-item">
-                                    <span role="img" aria-label="Tempo de leitura">⏱️</span>
-                                    <span>4 min</span>
-                                </div>
-                            </div>
-                            <div class="app-card-footer">
-                                <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.7 estrelas">⭐⭐⭐⭐</div>
-                                    <span class="rating-text">4.7</span>
-                                </div>
-                                <a href="editorial/as-cidades-ja-foram-noturnas.html" class="app-card-link" rel="bookmark">Ler completo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="app-recommendation-card">
-                        <div class="app-card-image">
-                            <div class="app-card-badge">Popular</div>
-                            <img src="images/editorial-dj-autor.png" alt="Arte de DJ como autor da pista" loading="lazy" width="280" height="140" />
-                        </div>
-                        <div class="app-card-content">
-                            <h3 class="app-card-title">DJs são novos autores</h3>
-                            <p class="app-card-description">Quem escreve tua noite é o DJ. Já agradeceu hoje?</p>
-                            <div class="app-card-info">
-                                <div class="app-card-info-item">
-                                    <span role="img" aria-label="Editorial">📝</span>
-                                    <span>Editorial</span>
-                                </div>
-                                <div class="app-card-info-item">
-                                    <span role="img" aria-label="Tempo de leitura">⏱️</span>
-                                    <span>4 min</span>
-                                </div>
-                            </div>
-                            <div class="app-card-footer">
-                                <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.9 estrelas">⭐⭐⭐⭐⭐</div>
-                                    <span class="rating-text">4.9</span>
-                                </div>
-                                <a href="editorial/ja-agradeceu-o-dj-que-escreveu-a-historia-da-tua-noite.html" class="app-card-link" rel="bookmark">Ler completo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="app-recommendation-card">
-                        <div class="app-card-image">
-                            <div class="app-card-badge">Novo</div>
-                            <img src="images/editorial-teatros-vazios.png" alt="Arte com cadeiras vazias representando o teatro" loading="lazy" width="280" height="140" />
-                        </div>
-                        <div class="app-card-content">
-                            <h3 class="app-card-title">Por que os teatros estão vazios</h3>
-                            <p class="app-card-description">Teatro na era do feed: presença ou performance?</p>
-                            <div class="app-card-info">
-                                <div class="app-card-info-item">
-                                    <span role="img" aria-label="Editorial">📝</span>
-                                    <span>Editorial</span>
-                                </div>
-                                <div class="app-card-info-item">
-                                    <span role="img" aria-label="Tempo de leitura">⏱️</span>
-                                    <span>6 min</span>
-                                </div>
-                            </div>
-                            <div class="app-card-footer">
-                                <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.6 estrelas">⭐⭐⭐⭐</div>
-                                    <span class="rating-text">4.6</span>
-                                </div>
-                                <a href="editorial/por-que-os-teatros-estao-vazios.html" class="app-card-link" rel="bookmark">Ler completo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="app-recommendation-card">
-                        <div class="app-card-image">
-                            <div class="app-card-badge">Tendência</div>
-                            <img src="images/editorial-look-fala.png" alt="Ilustração de look expressivo como identidade" loading="lazy" width="280" height="140" />
-                        </div>
-                        <div class="app-card-content">
-                            <h3 class="app-card-title">E se teu look falasse por ti?</h3>
-                            <p class="app-card-description">Estética é política: o look também fala!</p>
-                            <div class="app-card-info">
-                                <div class="app-card-info-item">
-                                    <span role="img" aria-label="Editorial">📝</span>
-                                    <span>Editorial</span>
-                                </div>
-                                <div class="app-card-info-item">
-                                    <span role="img" aria-label="Tempo de leitura">⏱️</span>
-                                    <span>3 min</span>
-                                </div>
-                            </div>
-                            <div class="app-card-footer">
-                                <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.8 estrelas">⭐⭐⭐⭐⭐</div>
-                                    <span class="rating-text">4.8</span>
-                                </div>
-                                <a href="editorial/e-se-teu-look-falasse-por-ti.html" class="app-card-link" rel="bookmark">Ler completo</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ad Container 1 - MEIO DO CONTEÚDO -->
-        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2898945215492580"
-                 data-ad-slot="7986392458"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-        </div>
-
         <!-- POSFÁCIO -->
         <section id="posfacio" aria-labelledby="posfacio-title">
             <div class="app-section-header">
                 <h2 id="posfacio-title" class="app-section-title">POSFÁCIO</h2>
-                <a href="#" class="app-see-all" aria-label="Ver todos os posfácios">Ver todos</a>
+                <a href="#" class="app-see-all" aria-describedby="posfacio-title">Ver todos os posfácios</a>
             </div>
 
             <div class="app-recommendations">
-                <div class="app-cards-scroll">
+                <div class="app-cards-scroll" role="group" aria-label="Artigos posfácio">
+                    <!-- Posfácio 1 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Resistência</div>
@@ -739,14 +794,20 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.8 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">4.8</span>
                                 </div>
-                                <a href="posfacio/subir-no-palco-e-um-ato-politico.html" class="app-card-link" rel="bookmark">Ler completo</a>
+                                <a href="posfacio/subir-no-palco-e-um-ato-politico.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler posfácio: Subir no palco é um ato político"
+                                   onclick="event.stopPropagation();">
+                                    Ler completo
+                                </a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Posfácio 2 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Música</div>
@@ -767,14 +828,20 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.8 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">4.8</span>
                                 </div>
-                                <a href="posfacio/o-fim-do-cover-queremos-som-autoral.html" class="app-card-link" rel="bookmark">Ler completo</a>
+                                <a href="posfacio/o-fim-do-cover-queremos-som-autoral.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler posfácio: O fim do cover"
+                                   onclick="event.stopPropagation();">
+                                    Ler completo
+                                </a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Posfácio 3 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Dança</div>
@@ -795,14 +862,20 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.9 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">4.9</span>
                                 </div>
-                                <a href="posfacio/o-que-teu-corpo-diz-quando-danca.html" class="app-card-link" rel="bookmark">Ler completo</a>
+                                <a href="posfacio/o-que-teu-corpo-diz-quando-danca.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler posfácio: O que teu corpo diz quando dança?"
+                                   onclick="event.stopPropagation();">
+                                    Ler completo
+                                </a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Posfácio 4 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Orgulho</div>
@@ -823,10 +896,15 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">5.0</span>
                                 </div>
-                                <a href="posfacio/nao-foi-por-convite-foi-por-rebeliao.html" class="app-card-link" rel="bookmark">Ler completo</a>
+                                <a href="posfacio/nao-foi-por-convite-foi-por-rebeliao.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler posfácio: Não foi por convite. Foi por rebelião."
+                                   onclick="event.stopPropagation();">
+                                    Ler completo
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -838,11 +916,12 @@
         <section id="dicas" aria-labelledby="dicas-title">
             <div class="app-section-header">
                 <h2 id="dicas-title" class="app-section-title">DICAS DO ROLÊ</h2>
-                <a href="#" class="app-see-all" aria-label="Ver todas as dicas">Ver todas</a>
+                <a href="#" class="app-see-all" aria-describedby="dicas-title">Ver todas as dicas</a>
             </div>
 
             <div class="app-recommendations">
-                <div class="app-cards-scroll">
+                <div class="app-cards-scroll" role="group" aria-label="Dicas do rolê">
+                    <!-- Dica 1 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Segurança</div>
@@ -863,14 +942,20 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.8 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">4.8</span>
                                 </div>
-                                <a href="dicas/celular-no-role-como-levar-com-seguranca.html" class="app-card-link" rel="bookmark">Ler dica</a>
+                                <a href="dicas/celular-no-role-como-levar-com-seguranca.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler dica: Celular no rolê com segurança"
+                                   onclick="event.stopPropagation();">
+                                    Ler dica
+                                </a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Dica 2 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Glossário</div>
@@ -891,14 +976,20 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.7 estrelas">⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
                                     <span class="rating-text">4.7</span>
                                 </div>
-                                <a href="dicas/dicionario-rolezeiro.html" class="app-card-link" rel="bookmark">Ler dica</a>
+                                <a href="dicas/dicionario-rolezeiro.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler dica: Dicionário rolezeiro"
+                                   onclick="event.stopPropagation();">
+                                    Ler dica
+                                </a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- Dica 3 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Lifestyle</div>
@@ -919,10 +1010,15 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.9 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">4.9</span>
                                 </div>
-                                <a href="dicas/role-no-meio-da-semana-ta-doido.html" class="app-card-link" rel="bookmark">Ler dica</a>
+                                <a href="dicas/role-no-meio-da-semana-ta-doido.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler dica: Rolê no meio da semana"
+                                   onclick="event.stopPropagation();">
+                                    Ler dica
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -934,11 +1030,12 @@
         <section id="bpm" aria-labelledby="bpm-title">
             <div class="app-section-header">
                 <h2 id="bpm-title" class="app-section-title">ROLÊ.BPM</h2>
-                <a href="#" class="app-see-all" aria-label="Ver todos os artigos de música">Ver todos</a>
+                <a href="#" class="app-see-all" aria-describedby="bpm-title">Ver todos os artigos</a>
             </div>
 
             <div class="app-recommendations">
-                <div class="app-cards-scroll">
+                <div class="app-cards-scroll" role="group" aria-label="Artigos sobre música">
+                    <!-- BPM 1 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Techno</div>
@@ -959,14 +1056,20 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.8 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">4.8</span>
                                 </div>
-                                <a href="bpm/quem-tem-medo-do-techno.html" class="app-card-link" rel="bookmark">Ver artigo</a>
+                                <a href="bpm/quem-tem-medo-do-techno.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler artigo: Quem tem medo do techno?"
+                                   onclick="event.stopPropagation();">
+                                    Ver artigo
+                                </a>
                             </div>
                         </div>
                     </article>
 
+                    <!-- BPM 2 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Funk</div>
@@ -987,10 +1090,15 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="5 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">5.0</span>
                                 </div>
-                                <a href="bpm/funk-e-cultura-sim.html" class="app-card-link" rel="bookmark">Ver artigo</a>
+                                <a href="bpm/funk-e-cultura-sim.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler artigo: Funk é cultura, sim"
+                                   onclick="event.stopPropagation();">
+                                    Ver artigo
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -1002,11 +1110,12 @@
         <section id="achadinhos" aria-labelledby="achadinhos-title">
             <div class="app-section-header">
                 <h2 id="achadinhos-title" class="app-section-title">ACHADINHOS</h2>
-                <a href="#" class="app-see-all" aria-label="Ver todos os achadinhos">Ver todos</a>
+                <a href="#" class="app-see-all" aria-describedby="achadinhos-title">Ver todos os achadinhos</a>
             </div>
 
             <div class="app-recommendations">
-                <div class="app-cards-scroll">
+                <div class="app-cards-scroll" role="group" aria-label="Achadinhos da redação">
+                    <!-- Achadinho 1 -->
                     <article class="app-recommendation-card">
                         <div class="app-card-image">
                             <div class="app-card-badge">Underground</div>
@@ -1027,10 +1136,15 @@
                             </div>
                             <div class="app-card-footer">
                                 <div class="app-card-rating">
-                                    <div class="stars" aria-label="4.9 estrelas">⭐⭐⭐⭐⭐</div>
+                                    <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">4.9</span>
                                 </div>
-                                <a href="achadinhos/qual-e-o-segredo-dos-roles-de-floripa.html" class="app-card-link" rel="bookmark">Ver achadinho</a>
+                                <a href="achadinhos/qual-e-o-segredo-dos-roles-de-floripa.html" 
+                                   class="app-card-link"
+                                   aria-label="Ler achadinho: Segredos dos rolês de Floripa"
+                                   onclick="event.stopPropagation();">
+                                    Ver achadinho
+                                </a>
                             </div>
                         </div>
                     </article>
@@ -1038,35 +1152,33 @@
             </div>
         </section>
 
-        <!-- Newsletter Section -->
-        <section class="app-newsletter-section" role="region" aria-labelledby="newsletter-title">
+        <!-- Newsletter Section - IGUAL AO INDEX -->
+        <section class="app-newsletter-section" aria-labelledby="newsletter-title">
             <div class="app-newsletter-content">
-                <h2 class="app-section-title" id="newsletter-title">Não perca o melhor da Revista ROLÊ</h2>
+                <h2 id="newsletter-title" class="app-section-title">Não perca o melhor da Revista ROLÊ</h2>
                 <p>Assine a newsletter e receba semanalmente os melhores textos, entrevistas e achadinhos da cena cultural.</p>
                 <form class="app-newsletter-form" id="newsletter-form" novalidate>
-                    <label for="newsletter-email" class="sr-only">Endereço de e-mail</label>
+                    <label for="newsletter-email" class="sr-only">Seu endereço de email</label>
                     <input type="email" 
                            id="newsletter-email"
-                           name="email"
                            class="app-newsletter-input" 
                            placeholder="Seu melhor e-mail" 
                            required 
                            autocomplete="email"
-                           aria-describedby="newsletter-disclaimer newsletter-error">
-                    <button type="submit" class="app-btn-newsletter" aria-describedby="newsletter-status">
+                           aria-describedby="newsletter-description newsletter-error">
+                    <button type="submit" class="app-btn-newsletter" aria-describedby="newsletter-title">
                         <span class="btn-text">Assinar</span>
                         <span class="btn-loading" aria-hidden="true">Enviando...</span>
                     </button>
                 </form>
                 <div id="newsletter-error" class="newsletter-error" role="alert" aria-live="assertive"></div>
-                <p class="newsletter-disclaimer" id="newsletter-disclaimer">
-                    <small>Ao assinar, você concorda com nossa <a href="politica.html" rel="noopener">Política de Privacidade</a>.</small>
+                <p class="newsletter-disclaimer" id="newsletter-description">
+                    <small>Ao assinar, você concorda com nossa <a href="politica.html">Política de Privacidade</a>.</small>
                 </p>
-                <div id="newsletter-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
             </div>
         </section>
 
-        <!-- Ad Container 2 - ANTES DO FOOTER -->
+        <!-- Footer Ad - IGUAL AO INDEX -->
         <div class="app-ad-container" role="complementary" aria-label="Publicidade">
             <ins class="adsbygoogle"
                  style="display:block"
@@ -1076,14 +1188,14 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Footer -->
+        <!-- Footer - IGUAL AO INDEX -->
         <footer class="app-footer" role="contentinfo">
             <div class="app-footer-links">
                 © 2025 ROLÊ ENTRETENIMENTO ·
-                <a href="politica.html" rel="noopener">Política de Privacidade</a> ·
-                <a href="termos-usuario.html" rel="noopener">Termos do Rolezeiro</a> ·
-                <a href="termos-organizador.html" rel="noopener">Termos do Organizador</a> ·
-                <a href="politica-spam.html" rel="noopener">Política Antispam</a>
+                <a href="politica.html">Política de Privacidade</a> ·
+                <a href="termos-usuario.html">Termos do Rolezeiro</a> ·
+                <a href="termos-organizador.html">Termos do Organizador</a> ·
+                <a href="politica-spam.html">Política Antispam</a>
             </div>
             <div class="app-social-icons">
                 <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir ROLÊ no Instagram">
@@ -1098,9 +1210,9 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation - Mobile -->
+        <!-- Bottom Navigation - Mobile - IGUAL AO INDEX -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
-            <a href="index.html" class="app-nav-item" aria-label="Página inicial" rel="home">
+            <a href="index.html" class="app-nav-item" aria-label="Página inicial">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
@@ -1132,11 +1244,11 @@
             </a>
         </nav>
 
-        <!-- Toast Container -->
+        <!-- Toast notifications -->
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript Completo -->
+    <!-- JavaScript IGUAL AO INDEX -->
     <script>
         // Performance and Security Enhanced JavaScript
         (function() {
@@ -1380,26 +1492,6 @@
                     }, 500));
                 }
 
-                // Category interactions
-                const categories = document.querySelectorAll('.category-item-app');
-                categories.forEach(category => {
-                    category.addEventListener('click', function() {
-                        categories.forEach(c => c.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        const categoryType = this.dataset.category;
-                        console.log('Category selected:', categoryType);
-                    });
-                    
-                    // Keyboard support
-                    category.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            this.click();
-                        }
-                    });
-                });
-
                 // Stats counter animation with Intersection Observer
                 const observerOptions = {
                     threshold: 0.5,
@@ -1440,7 +1532,7 @@
                         const query = utils.sanitize(this.value.toLowerCase().trim());
                         if (query.length >= 2) {
                             console.log('Search query:', query);
-                            // Aqui seria implementada a busca nos artigos
+                            // Implementar busca aqui
                         }
                     }, 300));
                 }
@@ -1538,7 +1630,7 @@
         })();
     </script>
 
-    <!-- CSS Adicional para correções finais -->
+    <!-- CSS Adicional para correções finais - IGUAL AO INDEX -->
     <style>
         /* Newsletter error styling */
         .newsletter-error {
@@ -1647,6 +1739,62 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             color: var(--text-primary);
+        }
+        
+        /* Banner Size Fix - CORRIGIDO */
+        .app-banner-container {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* NOVA CORREÇÃO: Hover states para todos os elementos */
+        .app-search-input:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            background: var(--bg-card);
+        }
+        
+        .app-recommendation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-newsletter-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .app-newsletter-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        
+        /* CORREÇÃO: Banner não cortado */
+        .app-banner-wrapper {
+            padding: 0 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .app-banner-wrapper {
+                max-width: 1200px;
+                margin: 0 auto 40px auto;
+                padding: 0 40px;
+            }
         }
     </style>
 </body>
