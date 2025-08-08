@@ -217,29 +217,9 @@
             transition:background-color 0.3s ease, color 0.3s ease;
         }
         
-        /* ========== CONTAINER RESPONSIVO - REPLICADO DO ESTILO.CSS ========== */
         .app-container {
-            width: 100%;
             background: var(--bg-primary);
-            min-height: 100vh;
-            position: relative;
-        }
-
-        /* Mobile: design app-like */
-        @media (max-width: 768px) {
-            .app-container {
-                max-width: 430px;
-                margin: 0 auto;
-                box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-            }
-        }
-
-        /* Desktop: layout full-width */
-        @media (min-width: 769px) {
-            .app-container {
-                max-width: none;
-                box-shadow: none;
-            }
+            transition: background-color 0.3s ease;
         }
         
         .app-header{
@@ -256,225 +236,71 @@
             background:rgba(255,255,255,0.95);
         }
         
-        /* ========== MOBILE MENU (só mobile) - REPLICADO DO ESTILO.CSS ========== */
-        @media (max-width: 768px) {
+        /* CORREÇÃO: ESCONDER MENU MOBILE NO DESKTOP */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none !important;
+            }
             .mobile-menu-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.8);
-                z-index: 2000;
-                opacity: 0;
-                visibility: hidden;
-                transition: all var(--transition-normal);
-                backdrop-filter: blur(10px);
-            }
-
-            .mobile-menu-overlay.active {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .mobile-menu {
-                position: fixed;
-                top: 0;
-                right: -320px;
-                width: 320px;
-                height: 100vh;
-                background: var(--bg-card);
-                border-left: 1px solid var(--border-color);
-                transition: right var(--transition-normal);
-                overflow-y: auto;
-                box-shadow: var(--shadow-xl);
-            }
-
-            .mobile-menu-overlay.active .mobile-menu {
-                right: 0;
-            }
-
-            .mobile-menu-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 60px 20px 20px 20px;
-                border-bottom: 1px solid var(--border-color);
-            }
-
-            .mobile-menu-logo {
-                height: 32px;
-                width: auto;
-            }
-
-            .menu-close {
-                background: none;
-                border: none;
-                color: var(--text-secondary);
-                cursor: pointer;
-                padding: 8px;
-                border-radius: 8px;
-                transition: var(--transition-fast);
-            }
-
-            .menu-close:hover {
-                color: var(--accent-purple);
-                background: rgba(139, 92, 246, 0.1);
-            }
-
-            .mobile-menu-list {
-                list-style: none;
-                padding: 20px 0;
-            }
-
-            .mobile-menu-link {
-                display: flex;
-                align-items: center;
-                padding: 16px 20px;
-                color: var(--text-primary);
-                text-decoration: none;
-                font-weight: 500;
-                transition: var(--transition-fast);
-                border-left: 3px solid transparent;
-            }
-
-            .mobile-menu-link:hover,
-            .mobile-menu-link.active {
-                background: rgba(139, 92, 246, 0.05);
-                border-left-color: var(--accent-purple);
-                color: var(--accent-purple);
-            }
-
-            .mobile-menu-footer {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 20px;
-                border-top: 1px solid var(--border-color);
-            }
-
-            .mobile-menu-social {
-                display: flex;
-                justify-content: center;
-                gap: 16px;
-            }
-
-            .mobile-menu-social a {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 40px;
-                height: 40px;
-                border-radius: 12px;
-                background: rgba(139, 92, 246, 0.1);
-                transition: var(--transition-fast);
-            }
-
-            .mobile-menu-social a:hover {
-                background: var(--accent-purple);
-                transform: translateY(-2px);
-            }
-
-            .mobile-menu-social img {
-                width: 20px;
-                height: 20px;
+                display: none !important;
             }
         }
         
-        /* ========== HEADER RESPONSIVO - REPLICADO DO ESTILO.CSS ========== */
-        .app-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(13, 13, 13, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        :root[data-theme="light"] .app-header {
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        /* Mobile Header */
+        /* Header Fixes - CORRIGIDOS */
         @media (max-width: 768px) {
             .app-header {
                 padding: 0 20px;
             }
-
             .app-header-content {
+                padding: 12px 0 8px 0 !important;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 60px 0 20px 0;
             }
-
             .app-logo-img {
-                height: 40px;
-                width: auto;
-                max-width: 120px;
+                height: 24px !important;
+                max-width: 100px;
             }
-
             .app-header-actions {
+                gap: 8px !important;
                 display: flex;
-                gap: 16px;
                 align-items: center;
             }
-        }
-
-        /* Desktop Header */
-        @media (min-width: 769px) {
-            .app-header {
-                padding: 0;
+            .menu-toggle, .theme-toggle-app {
+                padding: 6px;
+                width: 36px;
+                height: 36px;
             }
-
+        }
+        
+        @media (min-width: 769px) {
             .app-header-content {
+                padding: 14px 40px !important;
                 max-width: 1200px;
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 20px 40px;
             }
-
-            .app-logo-img {
-                height: 50px;
-                width: auto;
-                max-width: 150px;
-            }
-
             .app-header-actions {
+                gap: 20px !important;
                 display: flex;
-                gap: 24px;
                 align-items: center;
             }
-
-            /* Desktop: mostrar menu horizontal */
-            .menu-toggle {
-                display: none;
-            }
-
-            .mobile-menu-overlay {
-                display: none;
-            }
-
-            /* Menu desktop */
             .desktop-menu {
-                display: flex;
-                gap: 32px;
-                align-items: center;
+                gap: 24px !important;
+                margin-right: 24px !important;
+                display: flex !important;
             }
-
             .desktop-menu a {
                 color: var(--text-secondary);
                 text-decoration: none;
                 font-weight: 500;
                 font-size: 15px;
-                transition: var(--transition-fast);
+                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
                 padding: 8px 16px;
                 border-radius: 8px;
             }
-
             .desktop-menu a:hover,
             .desktop-menu a.active {
                 color: var(--accent-purple);
@@ -672,26 +498,26 @@
         <section class="app-categories" aria-labelledby="categories-title">
             <h2 id="categories-title" class="sr-only">Acesso rápido às capitais</h2>
             <div class="categories-grid-app" role="group" aria-label="Acesso rápido às capitais">
-                <button class="category-item-app" data-city="porto-alegre" aria-label="Destaques de Porto Alegre" onclick="window.location.href='destaques-poa.html'">
+                <a href="destaques-poa.html" class="category-item-app" data-city="porto-alegre" aria-label="Destaques de Porto Alegre">
                     <div class="category-icon-app" role="img" aria-label="Porto Alegre">🎵</div>
                     <div class="category-label-app">Porto Alegre</div>
-                </button>
-                <button class="category-item-app" data-city="sao-paulo" aria-label="Destaques de São Paulo" onclick="window.location.href='destaques-sao-paulo.html'">
+                </a>
+                <a href="destaques-sao-paulo.html" class="category-item-app" data-city="sao-paulo" aria-label="Destaques de São Paulo">
                     <div class="category-icon-app" role="img" aria-label="São Paulo">🎭</div>
                     <div class="category-label-app">São Paulo</div>
-                </button>
-                <button class="category-item-app" data-city="rio-janeiro" aria-label="Destaques do Rio de Janeiro" onclick="window.location.href='destaques-rio.html'">
+                </a>
+                <a href="destaques-rio.html" class="category-item-app" data-city="rio-janeiro" aria-label="Destaques do Rio de Janeiro">
                     <div class="category-icon-app" role="img" aria-label="Rio de Janeiro">🎉</div>
                     <div class="category-label-app">Rio de Janeiro</div>
-                </button>
-                <button class="category-item-app" data-city="florianopolis" aria-label="Destaques de Florianópolis" onclick="window.location.href='destaques-floripa.html'">
+                </a>
+                <a href="destaques-floripa.html" class="category-item-app" data-city="florianopolis" aria-label="Destaques de Florianópolis">
                     <div class="category-icon-app" role="img" aria-label="Florianópolis">🏖️</div>
                     <div class="category-label-app">Florianópolis</div>
-                </button>
-                <button class="category-item-app" data-city="curitiba" aria-label="Destaques de Curitiba" onclick="window.location.href='destaques-curitiba.html'">
+                </a>
+                <a href="destaques-curitiba.html" class="category-item-app" data-city="curitiba" aria-label="Destaques de Curitiba">
                     <div class="category-icon-app" role="img" aria-label="Curitiba">🌲</div>
                     <div class="category-label-app">Curitiba</div>
-                </button>
+                </a>
             </div>
         </section>
 
@@ -1292,315 +1118,4 @@
                             }
                         } catch (error) {
                             console.warn('Newsletter subscription error:', error);
-                            if (error.name === 'AbortError') {
-                                errorDiv.textContent = 'Tempo limite excedido. Tente novamente.';
-                            } else {
-                                errorDiv.textContent = 'Erro ao cadastrar. Tente novamente mais tarde.';
-                            }
-                        } finally {
-                            submitBtn.disabled = false;
-                            btnText.style.display = 'inline';
-                            btnLoading.style.display = 'none';
-                        }
-                    });
-                    
-                    // Real-time email validation
-                    emailInput.addEventListener('input', utils.debounce(function() {
-                        const email = this.value.trim();
-                        if (email && !validateEmail(email)) {
-                            this.classList.add('error');
-                            errorDiv.textContent = 'Formato de e-mail inválido.';
-                        } else {
-                            this.classList.remove('error');
-                            errorDiv.textContent = '';
-                        }
-                    }, 500));
-                }
-
-                // Stats counter animation with Intersection Observer
-                const observerOptions = {
-                    threshold: 0.5,
-                    rootMargin: '0px 0px -100px 0px'
-                };
-
-                const statsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                            entry.target.classList.add('counted');
-                            animateNumber(entry.target);
-                        }
-                    });
-                }, observerOptions);
-
-                const statNumbers = document.querySelectorAll('.app-stat-number');
-                statNumbers.forEach(stat => statsObserver.observe(stat));
-
-                function animateNumber(element) {
-                    const target = parseInt(element.getAttribute('data-target'), 10);
-                    let current = 0;
-                    const increment = Math.ceil(target / 30);
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        element.textContent = current;
-                    }, 50);
-                }
-
-                // Search functionality with debouncing
-                const searchInput = document.querySelector('.app-search-input');
-                if (searchInput) {
-                    searchInput.addEventListener('input', utils.debounce(function() {
-                        const query = utils.sanitize(this.value.toLowerCase().trim());
-                        if (query.length >= 2) {
-                            console.log('Search query:', query);
-                            // Implementar busca aqui
-                        }
-                    }, 300));
-                }
-
-                // Card animations on scroll
-                const fadeObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
-                fadeElements.forEach((element, index) => {
-                    element.style.opacity = '0';
-                    element.style.transform = 'translateY(30px)';
-                    element.style.transition = `all 0.6s ease ${index * 0.1}s`;
-                    fadeObserver.observe(element);
-                });
-
-                // Touch/swipe support for cards
-                let startX = 0;
-                const scrollContainer = document.querySelector('.app-cards-scroll');
-                
-                if (scrollContainer) {
-                    scrollContainer.addEventListener('touchstart', function(e) {
-                        startX = e.touches[0].clientX;
-                    }, { passive: true });
-
-                    scrollContainer.addEventListener('touchend', function(e) {
-                        const endX = e.changedTouches[0].clientX;
-                        const diff = startX - endX;
-                        
-                        if (Math.abs(diff) > 50) {
-                            const scrollAmount = 300;
-                            if (diff > 0) {
-                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                            } else {
-                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                            }
-                        }
-                    }, { passive: true });
-                }
-
-                // Initialize ads after DOM is ready
-                setTimeout(() => {
-                    try {
-                        const ads = document.querySelectorAll('.adsbygoogle');
-                        ads.forEach(function(ad) {
-                            try {
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            } catch(e) {
-                                console.warn('AdSense initialization failed for ad:', e);
-                            }
-                        });
-                    } catch(e) {
-                        console.warn('AdSense general initialization failed:', e);
-                    }
-                }, 1000);
-
-                console.log('App initialized successfully');
-            }
-
-            // Smooth scroll function
-            window.scrollToSection = function(sectionId) {
-                const target = document.getElementById(sectionId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            };
-
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeApp);
-            } else {
-                initializeApp();
-            }
-            
-            // Error handling
-            window.addEventListener('error', function(e) {
-                console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
-        })();
-    </script>
-
-    <!-- CSS Adicional para correções finais - IDÊNTICO AO INDEX -->
-    <style>
-        /* Newsletter error styling */
-        .newsletter-error {
-            color: var(--accent-red);
-            font-size: 12px;
-            margin-top: 8px;
-            min-height: 16px;
-        }
-        
-        .app-newsletter-input.error {
-            border-color: var(--accent-red);
-            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
-        }
-        
-        /* Toast styling */
-        #toast-container {
-            position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10000;
-            pointer-events: none;
-        }
-        
-        @media (min-width: 769px) {
-            #toast-container {
-                bottom: 40px;
-            }
-        }
-        
-        .toast {
-            background: var(--accent-purple);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            max-width: 300px;
-            text-align: center;
-        }
-        
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .toast.success {
-            background: var(--accent-green);
-        }
-        
-        .toast.error {
-            background: var(--accent-red);
-        }
-        
-        /* Loading state for buttons */
-        .btn-loading {
-            display: none;
-        }
-        
-        button[disabled] {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-        
-        /* Safe area adjustments for mobile */
-        @supports (padding: max(0px)) {
-            @media (max-width: 768px) {
-                .app-header {
-                    padding-top: max(env(safe-area-inset-top), 0px);
-                }
-                
-                .app-bottom-nav {
-                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
-                }
-            }
-        }
-        
-        /* CORREÇÃO ESPECÍFICA: Banner não cortado - COMO NO INDEX */
-        .app-banner-wrapper {
-            padding: 0 20px;
-            margin-bottom: 24px;
-        }
-
-        @media (min-width: 769px) {
-            .app-banner-wrapper {
-                max-width: 1200px;
-                margin: 0 auto 40px auto;
-                padding: 0 40px;
-            }
-        }
-        
-        /* CORREÇÃO: Categorias funcionais como links - COMO NO INDEX */
-        .categories-grid-app {
-            display: grid;
-            gap: 16px;
-            justify-content: center;
-        }
-
-        @media (max-width: 768px) {
-            .categories-grid-app {
-                grid-template-columns: repeat(5, 1fr);
-                max-width: 400px;
-                margin: 0 auto;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .categories-grid-app {
-                grid-template-columns: repeat(5, 1fr);
-                max-width: 600px;
-                margin: 0 auto;
-                gap: 24px;
-            }
-        }
-        
-        /* NOVA CORREÇÃO: Hover states para todos os elementos - COMO NO INDEX */
-        .app-search-input:focus {
-            border-color: var(--accent-purple);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-            background: var(--bg-card);
-        }
-        
-        .app-recommendation-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-        }
-        
-        .app-stat-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-        }
-        
-        .app-newsletter-section {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .app-newsletter-input {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-        }
-    </style>
-</body>
-</html>
+                            if (error.name === 'Abort
