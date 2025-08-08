@@ -217,58 +217,72 @@
             transition:background-color 0.3s ease, color 0.3s ease;
         }
         
+        /* ========== CONTAINER RESPONSIVO - REPLICADO DO ESTILO.CSS ========== */
         .app-container {
+            width: 100%;
             background: var(--bg-primary);
-            transition: background-color 0.3s ease;
+            min-height: 100vh;
+            position: relative;
         }
-        
-        .app-header{
-            position:sticky;
-            top:0;
-            z-index:1000;
-            background:rgba(13,13,13,0.95);
-            backdrop-filter:blur(20px);
-            border-bottom:1px solid var(--border-color);
-            transition:background-color 0.3s ease, border-color 0.3s ease;
+
+        /* Mobile: design app-like */
+        @media (max-width: 768px) {
+            .app-container {
+                max-width: 430px;
+                margin: 0 auto;
+                box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            }
         }
-        
-        :root[data-theme="light"] .app-header{
-            background:rgba(255,255,255,0.95);
-        }
-        
-        /* CORREÇÃO: ESCONDER MENU MOBILE NO DESKTOP */
+
+        /* Desktop: layout full-width */
         @media (min-width: 769px) {
-            .menu-toggle {
-                display: none !important;
-            }
-            .mobile-menu-overlay {
-                display: none !important;
+            .app-container {
+                max-width: none;
+                box-shadow: none;
             }
         }
         
-        /* Header Fixes - CORRIGIDOS - IDÊNTICO AO INDEX */
+        /* ========== HEADER RESPONSIVO - REPLICADO DO ESTILO.CSS ========== */
+        .app-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        :root[data-theme="light"] .app-header {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Mobile Header */
         @media (max-width: 768px) {
             .app-header {
                 padding: 0 20px;
             }
+
             .app-header-content {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 padding: 60px 0 20px 0;
             }
+
             .app-logo-img {
                 height: 40px;
                 width: auto;
                 max-width: 120px;
             }
+
             .app-header-actions {
                 display: flex;
                 gap: 16px;
                 align-items: center;
             }
         }
-        
+
+        /* Desktop Header */
         @media (min-width: 769px) {
             .app-header {
                 padding: 0;
@@ -327,6 +341,134 @@
                 background: rgba(139, 92, 246, 0.1);
             }
         }
+        
+        /* ========== MOBILE MENU (só mobile) - REPLICADO DO ESTILO.CSS ========== */
+        @media (max-width: 768px) {
+            .mobile-menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 2000;
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-normal);
+                backdrop-filter: blur(10px);
+            }
+
+            .mobile-menu-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -320px;
+                width: 320px;
+                height: 100vh;
+                background: var(--bg-card);
+                border-left: 1px solid var(--border-color);
+                transition: right var(--transition-normal);
+                overflow-y: auto;
+                box-shadow: var(--shadow-xl);
+            }
+
+            .mobile-menu-overlay.active .mobile-menu {
+                right: 0;
+            }
+
+            .mobile-menu-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 60px 20px 20px 20px;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .mobile-menu-logo {
+                height: 32px;
+                width: auto;
+            }
+
+            .menu-close {
+                background: none;
+                border: none;
+                color: var(--text-secondary);
+                cursor: pointer;
+                padding: 8px;
+                border-radius: 8px;
+                transition: var(--transition-fast);
+            }
+
+            .menu-close:hover {
+                color: var(--accent-purple);
+                background: rgba(139, 92, 246, 0.1);
+            }
+
+            .mobile-menu-list {
+                list-style: none;
+                padding: 20px 0;
+            }
+
+            .mobile-menu-link {
+                display: flex;
+                align-items: center;
+                padding: 16px 20px;
+                color: var(--text-primary);
+                text-decoration: none;
+                font-weight: 500;
+                transition: var(--transition-fast);
+                border-left: 3px solid transparent;
+            }
+
+            .mobile-menu-link:hover,
+            .mobile-menu-link.active {
+                background: rgba(139, 92, 246, 0.05);
+                border-left-color: var(--accent-purple);
+                color: var(--accent-purple);
+            }
+
+            .mobile-menu-footer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .mobile-menu-social {
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .mobile-menu-social a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 12px;
+                background: rgba(139, 92, 246, 0.1);
+                transition: var(--transition-fast);
+            }
+
+            .mobile-menu-social a:hover {
+                background: var(--accent-purple);
+                transform: translateY(-2px);
+            }
+
+            .mobile-menu-social img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Header Fixes - CORRIGIDOS - IDÊNTICO AO INDEX */
         
         /* Bottom Nav Fix */
         .app-bottom-nav {
@@ -434,7 +576,7 @@
 
 <body>
     <div class="app-container">
-        <!-- Header - IDÊNTICO AO INDEX COM APENAS LINK ATIVO DIFERENTE -->
+        <!-- Header Corrigido - ESTRUTURA EXATA DO INDEX -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
@@ -881,7 +1023,7 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation - IDÊNTICO AO INDEX COM APENAS LINK ATIVO DIFERENTE -->
+        <!-- Bottom Navigation - Mobile -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item" aria-label="Página inicial">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -895,23 +1037,23 @@
                 </svg>
                 <span class="app-nav-label">Vitrine</span>
             </a>
+            <a href="destaques.html" class="app-nav-item active" aria-label="Destaques da semana" aria-current="page">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                </svg>
+                <span class="app-nav-label">Destaques</span>
+            </a>
             <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
                 <span class="app-nav-label">Revista</span>
             </a>
-            <a href="destaques.html" class="app-nav-item active" aria-label="Destaques" aria-current="page">
+            <a href="descontos.html" class="app-nav-item" aria-label="Descontos">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
                 </svg>
-                <span class="app-nav-label">Destaques</span>
-            </a>
-            <a href="contato.html" class="app-nav-item" aria-label="Contato">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                </svg>
-                <span class="app-nav-label">Contato</span>
+                <span class="app-nav-label">Descontos</span>
             </a>
         </nav>
 
@@ -1299,8 +1441,136 @@
         })();
     </script>
 
-    <!-- CSS Adicional para correções finais - IDÊNTICO AO INDEX -->
+    <!-- CSS Adicional para correções finais - MOBILE ESPECÍFICO -->
     <style>
+        /* CORREÇÃO CRÍTICA MOBILE - FORÇAR ESTRUTURA IGUAL AO INDEX */
+        @media (max-width: 768px) {
+            /* Header Mobile - FORÇADO */
+            .app-header {
+                padding: 0 20px !important;
+            }
+            
+            .app-header-content {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 60px 0 20px 0 !important;
+                min-height: auto !important;
+            }
+            
+            .app-logo-img {
+                height: 40px !important;
+                width: auto !important;
+                max-width: 120px !important;
+            }
+            
+            .app-header-actions {
+                display: flex !important;
+                gap: 16px !important;
+                align-items: center !important;
+            }
+            
+            /* Desktop menu escondido no mobile */
+            .desktop-menu {
+                display: none !important;
+            }
+            
+            /* Container Mobile - FORÇADO */
+            .app-container {
+                max-width: 430px !important;
+                margin: 0 auto !important;
+                box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) !important;
+            }
+            
+            /* Bottom Nav Mobile - FORÇADO */
+            .app-bottom-nav {
+                position: fixed !important;
+                bottom: 0 !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                width: 100% !important;
+                max-width: 430px !important;
+                background: rgba(26, 26, 26, 0.95) !important;
+                border-top: 1px solid var(--border-color) !important;
+                padding: 12px 20px 30px 20px !important;
+                display: flex !important;
+                justify-content: space-around !important;
+                align-items: center !important;
+                backdrop-filter: blur(20px) !important;
+                z-index: 1000 !important;
+            }
+            
+            .app-nav-item {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 4px !important;
+                text-decoration: none !important;
+                transition: all 0.3s ease !important;
+                padding: 8px 12px !important;
+                border-radius: 12px !important;
+                color: var(--text-secondary) !important;
+                min-width: 60px !important;
+            }
+            
+            .app-nav-item.active {
+                background: rgba(139, 92, 246, 0.1) !important;
+                color: var(--accent-purple) !important;
+            }
+            
+            .app-nav-icon {
+                width: 22px !important;
+                height: 22px !important;
+                transition: all 0.3s ease !important;
+            }
+            
+            .app-nav-label {
+                font-size: 10px !important;
+                font-weight: 500 !important;
+                transition: all 0.3s ease !important;
+            }
+            
+            /* Search container mobile */
+            .app-search-container {
+                padding: 0 20px 24px 20px !important;
+            }
+            
+            /* Categories mobile */
+            .app-categories {
+                padding: 0 20px 24px 20px !important;
+            }
+            
+            .categories-grid-app {
+                grid-template-columns: repeat(5, 1fr) !important;
+                max-width: 400px !important;
+                margin: 0 auto !important;
+                gap: 16px !important;
+            }
+            
+            /* Footer padding para bottom nav */
+            .app-footer {
+                padding: 24px 20px 100px 20px !important;
+            }
+        }
+        
+        /* Desktop - garantir que funcione normalmente */
+        @media (min-width: 769px) {
+            .app-container {
+                max-width: none !important;
+                box-shadow: none !important;
+            }
+            
+            .app-bottom-nav {
+                display: none !important;
+            }
+            
+            .desktop-menu {
+                display: flex !important;
+                gap: 32px !important;
+                align-items: center !important;
+            }
+        }
+        
         /* Newsletter error styling */
         .newsletter-error {
             color: var(--accent-red);
@@ -1382,45 +1652,7 @@
             }
         }
         
-        /* CORREÇÃO ESPECÍFICA: Banner não cortado - COMO NO INDEX */
-        .app-banner-wrapper {
-            padding: 0 20px;
-            margin-bottom: 24px;
-        }
-
-        @media (min-width: 769px) {
-            .app-banner-wrapper {
-                max-width: 1200px;
-                margin: 0 auto 40px auto;
-                padding: 0 40px;
-            }
-        }
-        
-        /* CORREÇÃO: Categorias funcionais como links - COMO NO INDEX */
-        .categories-grid-app {
-            display: grid;
-            gap: 16px;
-            justify-content: center;
-        }
-
-        @media (max-width: 768px) {
-            .categories-grid-app {
-                grid-template-columns: repeat(5, 1fr);
-                max-width: 400px;
-                margin: 0 auto;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .categories-grid-app {
-                grid-template-columns: repeat(5, 1fr);
-                max-width: 600px;
-                margin: 0 auto;
-                gap: 24px;
-            }
-        }
-        
-        /* NOVA CORREÇÃO: Hover states para todos os elementos - COMO NO INDEX */
+        /* Hover states para todos os elementos */
         .app-search-input:focus {
             border-color: var(--accent-purple);
             box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
