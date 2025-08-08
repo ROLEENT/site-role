@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     
     <!-- SEO e Meta Tags Melhoradas -->
-    <title>ROLÊ ENTRETENIMENTO | Vitrine Cultural - Seu evento merece ser visto com os olhos certos</title>
+    <title>ROLÊ ENTRETENIMENTO | Vitrine Cultural - Como Funciona</title>
     <meta name="description" content="Descubra como destacar seu evento na Vitrine Cultural do ROLÊ e alcançar um público apaixonado por cultura e entretenimento brasileiro.">
     <meta name="keywords" content="vitrine cultural, eventos brasil, divulgação cultural, marketing eventos, ROLÊ entretenimento, destaque eventos, curadoria cultural">
     <meta name="author" content="ROLÊ Entretenimento">
@@ -17,31 +17,99 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Vitrine Cultural ROLÊ",
-        "description": "Destaque seu evento na Vitrine Cultural do ROLÊ - curadoria independente de cultura e entretenimento",
-        "url": "https://roleentretenimento.com/vitrine-hero.html",
-        "isPartOf": {
-            "@type": "WebSite",
-            "name": "ROLÊ Entretenimento",
-            "url": "https://roleentretenimento.com"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "ROLÊ Entretenimento",
-            "logo": "https://roleentretenimento.com/images/logo-role.png"
-        }
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://roleentretenimento.com/#organization",
+                "name": "ROLÊ Entretenimento",
+                "alternateName": "ROLÊ",
+                "description": "Curadoria independente de eventos, cultura e experiências do Brasil",
+                "url": "https://roleentretenimento.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://roleentretenimento.com/images/logo-role.png",
+                    "width": 150,
+                    "height": 50
+                },
+                "sameAs": [
+                    "https://instagram.com/role.ent",
+                    "https://tiktok.com/@role.ent"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+55-51-98070-4353",
+                    "contactType": "customer service",
+                    "availableLanguage": ["Portuguese"],
+                    "areaServed": "BR"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "BR",
+                    "addressRegion": "Rio Grande do Sul"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://roleentretenimento.com/#website",
+                "url": "https://roleentretenimento.com",
+                "name": "ROLÊ Entretenimento",
+                "publisher": {
+                    "@id": "https://roleentretenimento.com/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://roleentretenimento.com/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://roleentretenimento.com/vitrine-hero.html#webpage",
+                "url": "https://roleentretenimento.com/vitrine-hero.html",
+                "name": "Vitrine Cultural ROLÊ - Como Funciona",
+                "description": "Destaque seu evento na Vitrine Cultural do ROLÊ - curadoria independente de cultura e entretenimento",
+                "isPartOf": {
+                    "@id": "https://roleentretenimento.com/#website"
+                },
+                "about": {
+                    "@id": "https://roleentretenimento.com/#organization"
+                },
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "https://roleentretenimento.com"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Vitrine Cultural",
+                            "item": "https://roleentretenimento.com/vitrine-cultural.html"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Como Funciona",
+                            "item": "https://roleentretenimento.com/vitrine-hero.html"
+                        }
+                    ]
+                }
+            }
+        ]
     }
     </script>
     
-    <!-- Open Graph -->
+    <!-- Open Graph Melhorado -->
     <meta property="og:site_name" content="ROLÊ Entretenimento">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roleentretenimento.com/vitrine-hero.html">
-    <meta property="og:title" content="Vitrine Cultural ROLÊ – Seu evento merece ser visto com os olhos certos">
-    <meta property="og:description" content="Descubra como destacar seu evento na Vitrine Cultural do ROLÊ e alcançar um público apaixonado por cultura e entretenimento.">
+    <meta property="og:title" content="ROLÊ ENTRETENIMENTO – Vitrine Cultural - Como Funciona">
+    <meta property="og:description" content="Descubra como destacar seu evento na Vitrine Cultural do ROLÊ e alcançar um público apaixonado por cultura e entretenimento brasileiro.">
     <meta property="og:image" content="https://roleentretenimento.com/images/vitrine-banner.png">
-    <meta property="og:image:alt" content="Vitrine Cultural ROLÊ - Destaque seu evento">
+    <meta property="og:image:alt" content="Vitrine Cultural ROLÊ - Como Funciona">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pt_BR">
@@ -51,8 +119,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@role.ent">
     <meta name="twitter:creator" content="@role.ent">
-    <meta name="twitter:title" content="Vitrine Cultural ROLÊ">
-    <meta name="twitter:description" content="Seu evento merece ser visto com os olhos certos. Descubra a Vitrine Cultural.">
+    <meta name="twitter:title" content="ROLÊ ENTRETENIMENTO – Vitrine Cultural - Como Funciona">
+    <meta name="twitter:description" content="Descubra como destacar seu evento na Vitrine Cultural do ROLÊ e alcançar um público apaixonado por cultura e entretenimento brasileiro.">
     <meta name="twitter:image" content="https://roleentretenimento.com/images/vitrine-banner.png">
     
     <!-- Performance e Cache -->
@@ -100,7 +168,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script Otimizado - IDÊNTICO AO INDEX -->
+    <!-- Theme Script Otimizado - CORRIGIDO PARA APLICAR EM TODA A PÁGINA -->
     <script>
         (function() {
             try {
@@ -119,7 +187,7 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- CSS Critical Path - IDÊNTICO AO INDEX -->
+    <!-- CSS Critical Path - CORRIGIDO TEMA -->
     <style>
         /* Critical CSS inline - TEMA CORRIGIDO */
         :root{
@@ -325,8 +393,6 @@
             font-weight: 500;
             color: var(--text-secondary);
             transition: color 0.3s ease;
-            text-align: center;
-            line-height: 1.2;
         }
         
         @media (min-width: 769px) {
@@ -335,7 +401,7 @@
             }
         }
         
-        /* Gradientes das categorias específicas da vitrine */
+        /* Gradientes das categorias */
         .category-item-app:nth-child(1) .category-icon-app {
             background: linear-gradient(135deg, #8B5CF6, #EC4899);
         }
@@ -366,7 +432,7 @@
 
 <body>
     <div class="app-container">
-        <!-- Header Corrigido - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Header Corrigido -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
@@ -399,7 +465,7 @@
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
@@ -435,7 +501,7 @@
             </nav>
         </div>
 
-        <!-- Search Bar - IDÊNTICA AO INDEX -->
+        <!-- Search Bar -->
         <div class="app-search-container">
             <div class="app-search-bar">
                 <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -446,34 +512,34 @@
             </div>
         </div>
 
-        <!-- Categories Grid - ESPECÍFICAS DA VITRINE MAS USANDO ESTRUTURA DO INDEX -->
+        <!-- Categories Grid - CORRIGIDO PARA SER FUNCIONAL -->
         <section class="app-categories" aria-labelledby="categories-title">
-            <h2 id="categories-title" class="sr-only">Seções da vitrine cultural</h2>
-            <div class="categories-grid-app" role="group" aria-label="Seções da vitrine cultural">
-                <button class="category-item-app" onclick="scrollToSection('como-funciona')" aria-label="Como funciona a vitrine">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de informação">ℹ️</div>
-                    <div class="category-label-app">Como<br>Funciona</div>
-                </button>
-                <button class="category-item-app" onclick="scrollToSection('por-que-anunciar')" aria-label="Por que anunciar na vitrine">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de megafone">📢</div>
-                    <div class="category-label-app">Por que<br>Anunciar</div>
-                </button>
-                <button class="category-item-app" onclick="scrollToSection('pacotes')" aria-label="Ver pacotes da vitrine">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de dinheiro">💰</div>
-                    <div class="category-label-app">Pacotes</div>
-                </button>
-                <button class="category-item-app" onclick="scrollToSection('faq')" aria-label="Ver perguntas frequentes">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de pergunta">❓</div>
-                    <div class="category-label-app">FAQ</div>
-                </button>
-                <button class="category-item-app" onclick="scrollToSection('contato-vitrine')" aria-label="Marketing e contato">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de gráfico">📊</div>
-                    <div class="category-label-app">Marketing</div>
-                </button>
+            <h2 id="categories-title" class="sr-only">Categorias de eventos</h2>
+            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria">
+                <a href="vitrine-cultural.html?categoria=shows" class="category-item-app" aria-label="Ver shows">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de música">🎵</div>
+                    <div class="category-label-app">Shows</div>
+                </a>
+                <a href="vitrine-cultural.html?categoria=teatro" class="category-item-app" aria-label="Ver teatro">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de teatro">🎭</div>
+                    <div class="category-label-app">Teatro</div>
+                </a>
+                <a href="vitrine-cultural.html?categoria=festas" class="category-item-app" aria-label="Ver festas">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de festa">🎉</div>
+                    <div class="category-label-app">Festas</div>
+                </a>
+                <a href="vitrine-cultural.html?categoria=bares" class="category-item-app" aria-label="Ver bares">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de bebida">🍺</div>
+                    <div class="category-label-app">Bares</div>
+                </a>
+                <a href="vitrine-cultural.html?categoria=arte" class="category-item-app" aria-label="Ver arte">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de arte">🎨</div>
+                    <div class="category-label-app">Arte</div>
+                </a>
             </div>
         </section>
 
-        <!-- Hero Section - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Hero Section -->
         <section class="app-hero-section" aria-labelledby="hero-title">
             <h1 id="hero-title" class="app-hero-title">Vitrine Cultural do ROLÊ</h1>
             <p class="app-hero-description">
@@ -481,13 +547,13 @@
                 A Vitrine Cultural é o espaço premium de destaque editorial do ROLÊ ENTRETENIMENTO.
             </p>
             <div class="app-hero-cta">
-                <button class="app-btn-hero" onclick="scrollToSection('introducao')" aria-describedby="hero-title">
+                <button class="app-btn-hero" onclick="scrollToSection('destaques')" aria-describedby="hero-title">
                     Descubra como funciona
                 </button>
             </div>
         </section>
 
-        <!-- Banner - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Banner Corrigido -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
                 <img src="images/vitrine-banner.png" alt="Vitrine Cultural do ROLÊ - Destaque seu evento" 
@@ -495,119 +561,149 @@
             </div>
         </div>
 
-        <!-- Section Header - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Section Header -->
         <div class="app-section-header">
-            <h2 class="app-section-title" id="introducao-title">SOBRE A VITRINE CULTURAL</h2>
-            <a href="vitrine-cultural.html" class="app-see-all" aria-describedby="introducao-title">Voltar para a Vitrine</a>
+            <h2 class="app-section-title" id="destaques-title">COMO FUNCIONA A VITRINE</h2>
+            <a href="vitrine-cultural.html" class="app-see-all" aria-describedby="destaques-title">Voltar para a Vitrine</a>
         </div>
 
-        <!-- Main Content usando estrutura de cards do INDEX -->
-        <section class="app-recommendations" id="introducao">
-            <!-- Introduction Card usando estrutura de app-recommendation-card -->
-            <div class="vitrine-content-container">
-                <article class="vitrine-content-card" id="como-funciona">
-                    <div class="vitrine-intro">
-                        <div class="intro-quote">
-                            "Se você tem um evento cultural, artístico ou festeiro… essa página é pra você."
+        <!-- Cards de Conteúdo usando estrutura do INDEX -->
+        <section class="app-recommendations" id="destaques" aria-labelledby="destaques-title">
+            <div class="app-cards-scroll" role="group" aria-label="Como funciona a vitrine cultural">
+                
+                <!-- Card 1: Introdução -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Se você tem um evento cultural…</h3>
+                        <p class="app-card-description">"Se você tem um evento cultural, artístico ou festeiro… essa página é pra você."</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Alvo">🎯</span>
+                                <span>Trabalharemos a ATENÇÃO</span>
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary); line-height: 1.5; margin-top: 12px;">
+                            Seu evento é incrível, mas ninguém vai se apaixonar por ele se não souber que ele existe.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Card 2: Interesse -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Instigaremos INTERESSE</h3>
+                        <p class="app-card-description">A gente não faz publipost. A gente faz cultura virar desejo.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Lupa">🔍</span>
+                                <span>Espaço premium editorial</span>
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary); line-height: 1.5; margin-top: 12px;">
+                            A Vitrine Cultural é o espaço premium de destaque editorial do ROLÊ — onde festas, shows, artistas, feiras e coletivos ganham conteúdo próprio.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Card 3: Formatos -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Formatos que funcionam</h3>
+                        <p class="app-card-description">Carrossel, Stories, Reels e cobertura ao vivo com a estética ROLÊ.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Celular">📱</span>
+                                <span>Narrativa afiada</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Câmera">📸</span>
+                                <span>Interações inteligentes</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">Impacto</span>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <!-- Atenção Section -->
-                <article class="vitrine-content-card">
-                    <h2 class="vitrine-section-title">🎯 Trabalharemos a ATENÇÃO</h2>
-                    <p>Seu evento é incrível, mas ninguém vai se apaixonar por ele se não souber que ele existe.</p>
-                    <p>Você já teve a sensação de preparar um rolê com amor, suor e flyer bonito… mas na hora de divulgar, parecer que só sua mãe curtiu?</p>
-                    <p>A real é que visibilidade cultural não se faz no grito. Se faz com estratégia, narrativa e conexão. É aqui que entra a Vitrine Cultural do ROLÊ.</p>
-                </article>
-
-                <!-- Interesse Section -->
-                <article class="vitrine-content-card" id="por-que-anunciar">
-                    <h2 class="vitrine-section-title">🔍 Instigaremos INTERESSE</h2>
-                    <p>A gente não faz publipost. A gente faz cultura virar desejo.</p>
-                    <p>A Vitrine Cultural é o espaço premium de destaque editorial do ROLÊ ENTRETENIMENTO — um território onde festas, shows, artistas, feiras e coletivos ganham um conteúdo próprio, pensado com carinho, estética e impacto.</p>
-                    <p>A gente não joga o nome do seu evento num card genérico. A gente transforma o que você criou numa história visual e emocional que o público sente vontade de viver.</p>
-
-                    <div class="imagination-box">
-                        <div class="imagination-title">💡 Imagina só:</div>
-                        <div class="imagination-grid">
-                            <div class="imagination-item">
-                                <div class="imagination-icon">📱</div>
-                                <div class="imagination-content">
-                                    <strong>Carrossel com narrativa afiada</strong>
-                                    <p>Estética que respeita a identidade do seu evento e texto que cola na mente.</p>
-                                </div>
+                <!-- Card 4: Resultados -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Despertaremos DESEJO</h3>
+                        <p class="app-card-description">A prova tá nos números — e na memória de quem viveu.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Coração">❤️</span>
+                                <span>50k+ alcance médio</span>
                             </div>
-                            <div class="imagination-item">
-                                <div class="imagination-icon">📸</div>
-                                <div class="imagination-content">
-                                    <strong>Stories com interações inteligentes</strong>
-                                    <p>Links diretos e uma ambientação que instiga.</p>
-                                </div>
-                            </div>
-                            <div class="imagination-item">
-                                <div class="imagination-icon">🎬</div>
-                                <div class="imagination-content">
-                                    <strong>Reels com edição dinâmica</strong>
-                                    <p>Trilha, bastidores e aquele jeitinho ROLÊ de contar.</p>
-                                </div>
-                            </div>
-                            <div class="imagination-item">
-                                <div class="imagination-icon">📺</div>
-                                <div class="imagination-content">
-                                    <strong>Cobertura ao vivo</strong>
-                                    <p>Vídeos, registros e a curadoria do nosso time experiente.</p>
-                                </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Olhos">👀</span>
+                                <span>1.5M+ views mensais</span>
                             </div>
                         </div>
-                        <div class="imagination-footer">
-                            <strong>Tudo isso pensado para o seu evento não só ser visto, mas lembrado.</strong>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Resultados">💬💜✨</div>
+                                <span class="rating-text">"Vi no ROLÊ e fui"</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5: FAQ -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Objeções comuns</h3>
+                        <p class="app-card-description">Não tenho grana? Já tenho social media? Meu evento é pequeno?</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Pensativo">🤔</span>
+                                <span>Formatos acessíveis</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Parceria">🤝</span>
+                                <span>Potencializamos seu time</span>
+                            </div>
+                        </div>
+                        <p style="color: var(--text-secondary); line-height: 1.5; margin-top: 12px;">
+                            Vale sim! O que importa é a entrega — e isso a gente sabe fazer.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Card 6: CTA -->
+                <article class="app-recommendation-card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05)); border: 2px solid var(--accent-purple);">
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Tá esperando o quê?</h3>
+                        <p class="app-card-description">As datas são limitadas. Os espaços esgotam rápido.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Calendário">🗓️</span>
+                                <span>Curadoria semanal</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="WhatsApp">📲</span>
+                                <span>@role.ent ou WhatsApp</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <a href="https://wa.me/5551980704353" 
+                               class="app-card-link"
+                               aria-label="Falar no WhatsApp"
+                               target="_blank" rel="noopener noreferrer"
+                               onclick="event.stopPropagation();">
+                                👉 Falar no WhatsApp
+                            </a>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- Stats Section - USANDO ESTRUTURA IDÊNTICA AO INDEX -->
-        <div class="app-section-header">
-            <h2 id="stats-title" class="app-section-title">❤️ Despertaremos DESEJO</h2>
-        </div>
-
-        <section class="app-recommendations" id="pacotes" aria-labelledby="stats-title">
-            <div class="vitrine-content-container">
-                <article class="vitrine-content-card">
-                    <p>A prova tá nos números — e na memória de quem viveu.</p>
-                    
-                    <div class="app-stats-grid">
-                        <div class="app-stat-item">
-                            <span class="app-stat-number" data-target="50" aria-live="polite">0</span>
-                            <span class="app-stat-label">Mil alcance médio por post</span>
-                        </div>
-                        <div class="app-stat-item">
-                            <span class="app-stat-number" data-target="1.5" aria-live="polite">0</span>
-                            <span class="app-stat-label">Milhões de views mensais</span>
-                        </div>
-                        <div class="app-stat-item">
-                            <span class="app-stat-number" data-target="70" aria-live="polite">0</span>
-                            <span class="app-stat-label">% Alcance não seguidores</span>
-                        </div>
-                        <div class="app-stat-item">
-                            <span class="app-stat-number" data-target="2.5" aria-live="polite">0</span>
-                            <span class="app-stat-label">Mil views Stories 24h</span>
-                        </div>
-                    </div>
-
-                    <p>Mas o que mais conta, pra gente e pra você, é o que ninguém consegue medir:</p>
-                    <div class="testimonials-box">
-                        <div class="testimonial">✨ "Vi no ROLÊ e fui"</div>
-                        <div class="testimonial">💬 "Eu só descobri esse rolê por causa de vocês"</div>
-                        <div class="testimonial">💜 "Já comprei ingresso só porque tava bonito o post de vocês"</div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Ad Container - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Ad Container -->
         <div class="app-ad-container" role="complementary" aria-label="Publicidade">
             <ins class="adsbygoogle"
                  style="display:block"
@@ -617,135 +713,42 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- FAQ Section - USANDO ESTRUTURA DE CARDS -->
-        <div class="app-section-header">
-            <h2 class="app-section-title" id="faq-title">🤔 Objeções comuns</h2>
-        </div>
-
-        <section class="app-recommendations" id="faq" aria-labelledby="faq-title">
-            <div class="vitrine-content-container">
-                <article class="vitrine-content-card">
-                    <div class="faq-grid">
-                        <div class="faq-item">
-                            <div class="faq-question">"Ah, mas não tenho grana pra isso agora…"</div>
-                            <div class="faq-answer">A gente entende. Por isso temos formatos acessíveis, com descontos pra quem fecha combos e opções pontuais que cabem no orçamento de festas independentes.</div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">"Já tenho meu social media…"</div>
-                            <div class="faq-answer">Maravilha! A Vitrine não substitui seu time, ela potencializa. Somos uma vitrine externa, com autoridade cultural e uma comunidade engajada que confia no nosso filtro.</div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question">"Meu evento é pequeno, será que vale a pena?"</div>
-                            <div class="faq-answer">Vale sim. Alguns dos posts com maior engajamento foram de festas menores, mas com identidade forte e narrativa potente. O que importa é a entrega — e isso a gente sabe fazer.</div>
-                        </div>
-                    </div>
-                </article>
+        <!-- Stats Section -->
+        <section aria-labelledby="stats-title">
+            <div class="app-section-header">
+                <h2 id="stats-title" class="app-section-title">ROLÊ em números</h2>
+            </div>
+            <div class="app-stats-grid">
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="50" aria-live="polite">0</span>
+                    <span class="app-stat-label">Mil alcance médio por post</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="1.5" aria-live="polite">0</span>
+                    <span class="app-stat-label">Milhões de views mensais</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="70" aria-live="polite">0</span>
+                    <span class="app-stat-label">% Alcance não seguidores</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="2.5" aria-live="polite">0</span>
+                    <span class="app-stat-label">Mil views Stories 24h</span>
+                </div>
             </div>
         </section>
 
-        <!-- Featured Banner - USANDO ESTRUTURA DO INDEX -->
+        <!-- Featured Banner - O que inclui -->
         <div class="app-featured-banner" role="complementary">
             <div class="app-banner-content">
                 <div class="app-banner-tag">VITRINE CULTURAL</div>
-                <h3 class="app-banner-title">💡 O que a Vitrine inclui?</h3>
-                <p class="app-banner-subtitle">Tudo pensado para o seu evento não só ser visto, mas lembrado.</p>
-                <div class="includes-grid">
-                    <div class="include-item">
-                        <div class="include-icon">🎨</div>
-                        <div class="include-content">
-                            <strong>Direção de arte</strong>
-                            <p>Baseada na identidade do seu evento</p>
-                        </div>
-                    </div>
-                    <div class="include-item">
-                        <div class="include-icon">✍️</div>
-                        <div class="include-content">
-                            <strong>Textos editoriais</strong>
-                            <p>Escritos por quem entende da cena</p>
-                        </div>
-                    </div>
-                    <div class="include-item">
-                        <div class="include-icon">📈</div>
-                        <div class="include-content">
-                            <strong>Planejamento estratégico</strong>
-                            <p>Horário e formato para melhor alcance</p>
-                        </div>
-                    </div>
-                    <div class="include-item">
-                        <div class="include-icon">💬</div>
-                        <div class="include-content">
-                            <strong>Pós-venda completo</strong>
-                            <p>Interação e relatório de performance</p>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="app-banner-title">O que a Vitrine inclui?</h3>
+                <p class="app-banner-subtitle">Direção de arte baseada na identidade do seu evento, textos editoriais escritos por quem entende da cena, planejamento estratégico e pós-venda completo.</p>
+                <a href="https://encurtador.com.br/uLneV" class="app-banner-cta" target="_blank" rel="noopener noreferrer">Ver portfólio completo</a>
             </div>
         </div>
 
-        <!-- CTA Section - USANDO ESTRUTURA DE CARDS -->
-        <div class="app-section-header">
-            <h2 class="app-section-title" id="contato-title">🚀 Tá esperando o quê?</h2>
-        </div>
-
-        <section class="app-recommendations" id="contato-vitrine" aria-labelledby="contato-title">
-            <div class="vitrine-content-container">
-                <article class="vitrine-content-card cta-section">
-                    <h2 class="vitrine-section-title">Tá esperando o quê pra aparecer na Vitrine?</h2>
-                    <p>Se você:</p>
-                    <div class="checklist">
-                        <div class="checklist-item">✅ Tem um evento chegando e quer bombar o alcance</div>
-                        <div class="checklist-item">✅ Quer que sua arte ganhe um post com cara de capa de revista</div>
-                        <div class="checklist-item">✅ Precisa vender ingressos, atrair público e fortalecer marca</div>
-                        <div class="checklist-item">✅ Ou só quer ver seu trabalho tratado com respeito, estética e impacto</div>
-                    </div>
-                    <p class="cta-text"><strong>Então bora falar com a gente.</strong></p>
-
-                    <div class="urgency-banner">
-                        <div class="urgency-content">
-                            <div class="urgency-icon">🗓️</div>
-                            <div>
-                                <strong>As datas são limitadas.</strong> A gente trabalha com uma curadoria semanal e os espaços esgotam rápido.
-                            </div>
-                        </div>
-                        <div class="urgency-content">
-                            <div class="urgency-icon">📲</div>
-                            <div>
-                                É só mandar uma mensagem no Instagram <strong>@role.ent</strong> ou no WhatsApp e garantir seu espaço.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cta-buttons">
-                        <a href="https://encurtador.com.br/uLneV" class="app-btn-hero" target="_blank" rel="noopener noreferrer">
-                            👉 Ver portfólio completo
-                        </a>
-                        <a href="https://wa.me/5551980704353" class="app-btn-hero secondary" target="_blank" rel="noopener noreferrer">
-                            👉 Falar no WhatsApp
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Final Message -->
-                <article class="vitrine-content-card final-message">
-                    <h2 class="vitrine-section-title">✊ O seu evento merece ser visto com os olhos certos</h2>
-                    <p>No meio de tanto ruído, a Vitrine Cultural é um espaço de foco, cuidado e afeto.</p>
-                    <p>A gente sabe que fazer cultura no Brasil é um ato de resistência. Então criar pontes entre público e produtor é também um ato político. E aqui, essa ponte é bonita, funcional e cheia de cor.</p>
-                    
-                    <div class="final-quote">
-                        Se o seu evento tem alma, ele tem espaço aqui.
-                    </div>
-
-                    <div class="signature">
-                        Nos vemos na Vitrine.<br>
-                        Nos vemos no ROLÊ. 🌈
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Newsletter Section - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Newsletter Section -->
         <section class="app-newsletter-section" aria-labelledby="newsletter-title">
             <div class="app-newsletter-content">
                 <h2 id="newsletter-title" class="app-section-title">Não perca o melhor do ROLÊ</h2>
@@ -771,7 +774,7 @@
             </div>
         </section>
 
-        <!-- Footer Ad - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Footer Ad -->
         <div class="app-ad-container" role="complementary" aria-label="Publicidade">
             <ins class="adsbygoogle"
                  style="display:block"
@@ -781,7 +784,7 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Footer - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Footer -->
         <footer class="app-footer" role="contentinfo">
             <div class="app-footer-links">
                 © 2025 ROLÊ ENTRETENIMENTO ·
@@ -803,7 +806,7 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation - ESTRUTURA IDÊNTICA AO INDEX -->
+        <!-- Bottom Navigation - Mobile -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item" aria-label="Página inicial">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -841,9 +844,9 @@
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript - IDÊNTICO AO INDEX COM ADAPTAÇÕES ESPECÍFICAS -->
+    <!-- JavaScript Corrigido -->
     <script>
-        // Performance and Security Enhanced JavaScript - BASEADO NO INDEX
+        // Performance and Security Enhanced JavaScript
         (function() {
             'use strict';
             
@@ -955,7 +958,7 @@
                     });
                 }
 
-                // Theme toggle functionality - IDÊNTICO AO INDEX
+                // Theme toggle functionality - CORRIGIDO PARA TODA A PÁGINA
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -979,7 +982,7 @@
                     });
                 }
 
-                // Newsletter form with enhanced security - IDÊNTICO AO INDEX
+                // Newsletter form with enhanced security
                 const newsletterForm = document.getElementById('newsletter-form');
                 if (newsletterForm) {
                     const emailInput = document.getElementById('newsletter-email');
@@ -1085,7 +1088,7 @@
                     }, 500));
                 }
 
-                // Stats counter animation with Intersection Observer - ADAPTADO PARA VITRINE
+                // Stats counter animation with Intersection Observer
                 const observerOptions = {
                     threshold: 0.5,
                     rootMargin: '0px 0px -100px 0px'
@@ -1128,7 +1131,7 @@
                     }, 50);
                 }
 
-                // Search functionality with debouncing - IDÊNTICO AO INDEX
+                // Search functionality with debouncing
                 const searchInput = document.querySelector('.app-search-input');
                 if (searchInput) {
                     searchInput.addEventListener('input', utils.debounce(function() {
@@ -1140,7 +1143,7 @@
                     }, 300));
                 }
 
-                // Card animations on scroll - IDÊNTICO AO INDEX
+                // Card animations on scroll
                 const fadeObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -1150,7 +1153,7 @@
                     });
                 }, { threshold: 0.1 });
 
-                const fadeElements = document.querySelectorAll('.vitrine-content-card, .app-stat-item, .imagination-item, .faq-item');
+                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
                 fadeElements.forEach((element, index) => {
                     element.style.opacity = '0';
                     element.style.transform = 'translateY(30px)';
@@ -1158,7 +1161,31 @@
                     fadeObserver.observe(element);
                 });
 
-                // Initialize ads after DOM is ready - IDÊNTICO AO INDEX
+                // Touch/swipe support for cards
+                let startX = 0;
+                const scrollContainer = document.querySelector('.app-cards-scroll');
+                
+                if (scrollContainer) {
+                    scrollContainer.addEventListener('touchstart', function(e) {
+                        startX = e.touches[0].clientX;
+                    }, { passive: true });
+
+                    scrollContainer.addEventListener('touchend', function(e) {
+                        const endX = e.changedTouches[0].clientX;
+                        const diff = startX - endX;
+                        
+                        if (Math.abs(diff) > 50) {
+                            const scrollAmount = 300;
+                            if (diff > 0) {
+                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                            } else {
+                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                            }
+                        }
+                    }, { passive: true });
+                }
+
+                // Initialize ads after DOM is ready
                 setTimeout(() => {
                     try {
                         const ads = document.querySelectorAll('.adsbygoogle');
@@ -1166,604 +1193,4 @@
                             try {
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             } catch(e) {
-                                console.warn('AdSense initialization failed for ad:', e);
-                            }
-                        });
-                    } catch(e) {
-                        console.warn('AdSense general initialization failed:', e);
-                    }
-                }, 1000);
-
-                console.log('Vitrine Hero App initialized successfully');
-            }
-
-            // Smooth scroll function - IDÊNTICA AO INDEX
-            window.scrollToSection = function(sectionId) {
-                const target = document.getElementById(sectionId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            };
-
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeApp);
-            } else {
-                initializeApp();
-            }
-            
-            // Error handling
-            window.addEventListener('error', function(e) {
-                console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
-        })();
-    </script>
-
-    <!-- CSS Específico da Vitrine - COMPLEMENTAR AO estilo.css -->
-    <style>
-        /* Container específico para conteúdo da vitrine */
-        .vitrine-content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-content-container {
-                padding: 0 40px;
-            }
-        }
-
-        /* Cards de conteúdo usando base do estilo.css */
-        .vitrine-content-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 24px;
-            margin-bottom: 24px;
-            border: 1px solid var(--border-color);
-            transition: var(--transition-normal);
-            box-shadow: var(--shadow-sm);
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-content-card {
-                padding: 32px 40px;
-                margin-bottom: 32px;
-            }
-        }
-
-        .vitrine-content-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-purple);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Estilos específicos para a página da Vitrine */
-        .vitrine-intro {
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .intro-quote {
-            font-size: 1.25rem;
-            font-weight: 600;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-style: italic;
-            line-height: 1.4;
-        }
-
-        @media (min-width: 769px) {
-            .intro-quote {
-                font-size: 1.5rem;
-            }
-        }
-
-        .vitrine-section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        @media (min-width: 769px) {
-            .vitrine-section-title {
-                font-size: 1.75rem;
-                margin-bottom: 2rem;
-            }
-        }
-
-        .imagination-box {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .imagination-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            color: var(--accent-purple);
-        }
-
-        .imagination-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .imagination-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .imagination-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        .imagination-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            padding: 1.5rem;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            transition: var(--transition-normal);
-        }
-
-        .imagination-item:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--accent-purple);
-        }
-
-        .imagination-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-        }
-
-        .imagination-content strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .imagination-content p {
-            color: var(--text-secondary);
-            margin: 0;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .imagination-footer {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--accent-purple);
-        }
-
-        .testimonials-box {
-            background: var(--bg-secondary);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 1px solid var(--border-color);
-        }
-
-        .testimonial {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            background: var(--bg-card);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-purple);
-            font-style: italic;
-            color: var(--text-primary);
-        }
-
-        .testimonial:last-child {
-            margin-bottom: 0;
-        }
-
-        .faq-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .faq-item {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            transition: var(--transition-normal);
-        }
-
-        .faq-item:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--accent-purple);
-        }
-
-        .faq-question {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--accent-purple);
-            margin-bottom: 1rem;
-        }
-
-        .faq-answer {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
-            border: 2px solid var(--accent-purple);
-        }
-
-        .checklist {
-            margin: 2rem 0;
-        }
-
-        .checklist-item {
-            padding: 0.75rem 0;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .cta-text {
-            text-align: center;
-            font-size: 1.25rem;
-            margin: 2rem 0;
-            color: var(--accent-purple);
-        }
-
-        .urgency-banner {
-            background: rgba(239, 68, 68, 0.1);
-            border: 2px solid var(--accent-red);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .urgency-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .urgency-content:last-child {
-            margin-bottom: 0;
-        }
-
-        .urgency-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
-
-        .app-btn-hero.secondary {
-            background: transparent;
-            border: 2px solid var(--accent-purple);
-            color: var(--accent-purple);
-        }
-
-        .app-btn-hero.secondary:hover {
-            background: var(--accent-purple);
-            color: white;
-        }
-
-        .includes-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .includes-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .includes-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        .include-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            transition: var(--transition-normal);
-        }
-
-        :root[data-theme="light"] .include-item {
-            background: rgba(139, 92, 246, 0.05);
-        }
-
-        .include-item:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--accent-purple);
-        }
-
-        .include-icon {
-            font-size: 2.5rem;
-            flex-shrink: 0;
-        }
-
-        .include-content strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .include-content p {
-            color: var(--text-secondary);
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        .final-message {
-            text-align: center;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.03));
-        }
-
-        .final-quote {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 2rem 0;
-            font-style: italic;
-        }
-
-        @media (min-width: 769px) {
-            .final-quote {
-                font-size: 2rem;
-            }
-        }
-
-        .signature {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            line-height: 1.6;
-            margin-top: 2rem;
-        }
-
-        /* Newsletter error styling - IDÊNTICO AO INDEX */
-        .newsletter-error {
-            color: var(--accent-red);
-            font-size: 12px;
-            margin-top: 8px;
-            min-height: 16px;
-        }
-        
-        .app-newsletter-input.error {
-            border-color: var(--accent-red);
-            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
-        }
-        
-        /* Toast styling - IDÊNTICO AO INDEX */
-        #toast-container {
-            position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10000;
-            pointer-events: none;
-        }
-        
-        @media (min-width: 769px) {
-            #toast-container {
-                bottom: 40px;
-            }
-        }
-        
-        .toast {
-            background: var(--accent-purple);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            max-width: 300px;
-            text-align: center;
-        }
-        
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .toast.success {
-            background: var(--accent-green);
-        }
-        
-        .toast.error {
-            background: var(--accent-red);
-        }
-        
-        /* Loading state for buttons - IDÊNTICO AO INDEX */
-        .btn-loading {
-            display: none;
-        }
-        
-        button[disabled] {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        /* Responsividade aprimorada */
-        @media (max-width: 480px) {
-            .imagination-box,
-            .urgency-banner,
-            .cta-section {
-                padding: 1.5rem;
-            }
-
-            .vitrine-section-title {
-                font-size: 1.25rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .app-btn-hero {
-                width: 100%;
-                max-width: 280px;
-            }
-        }
-
-        /* Melhorias de acessibilidade */
-        .include-item:focus-within,
-        .imagination-item:focus-within,
-        .faq-item:focus-within,
-        .vitrine-content-card:focus-within {
-            outline: 2px solid var(--accent-purple);
-            outline-offset: 2px;
-        }
-
-        /* Estados de hover aprimorados */
-        .testimonial:hover {
-            transform: translateX(4px);
-            transition: var(--transition-fast);
-        }
-
-        .checklist-item:hover {
-            color: var(--accent-purple);
-            transform: translateX(4px);
-            transition: var(--transition-fast);
-        }
-
-        /* Safe area adjustments for mobile - IDÊNTICO AO INDEX */
-        @supports (padding: max(0px)) {
-            @media (max-width: 768px) {
-                .app-header {
-                    padding-top: max(env(safe-area-inset-top), 0px);
-                }
-                
-                .app-bottom-nav {
-                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
-                }
-            }
-        }
-
-        /* PWA specific - IDÊNTICO AO INDEX */
-        @media (display-mode: standalone) {
-            @media (max-width: 768px) {
-                .app-header {
-                    padding-top: max(80px, env(safe-area-inset-top));
-                }
-            }
-            
-            body {
-                user-select: none;
-                -webkit-user-select: none;
-            }
-            
-            input, textarea {
-                user-select: text;
-                -webkit-user-select: text;
-            }
-        }
-
-        /* Correções finais para manter consistência com o INDEX */
-        .app-search-input:focus {
-            border-color: var(--accent-purple);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-            background: var(--bg-card);
-        }
-        
-        .app-stat-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-        }
-        
-        .app-newsletter-section {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .app-newsletter-input {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-        }
-
-        /* Ajuste específico para o banner featured */
-        .app-featured-banner {
-            margin: 32px 20px;
-            background: var(--gradient-primary);
-            border-radius: 20px;
-            padding: 24px;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition-normal);
-        }
-
-        @media (min-width: 769px) {
-            .app-featured-banner {
-                max-width: 1000px;
-                margin: 48px auto;
-                padding: 40px;
-            }
-        }
-
-        .app-featured-banner:hover {
-            transform: scale(1.01) translateY(-2px);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
-        }
-    </style>
-</body>
-</html>
+                                console.warn('AdSense initialization
