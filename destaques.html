@@ -161,7 +161,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script Otimizado - IDÊNTICO AO INDEX -->
+    <!-- Theme Script Otimizado - CORRIGIDO PARA APLICAR EM TODA A PÁGINA -->
     <script>
         (function() {
             try {
@@ -180,7 +180,7 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- CSS Critical Path - IDÊNTICO AO INDEX -->
+    <!-- CSS Critical Path - CORRIGIDO TEMA -->
     <style>
         /* Critical CSS inline - TEMA CORRIGIDO */
         :root{
@@ -425,7 +425,7 @@
 
 <body>
     <div class="app-container">
-        <!-- Header Corrigido - IDÊNTICO AO INDEX -->
+        <!-- Header Corrigido -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
@@ -458,7 +458,7 @@
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay - IDÊNTICO AO INDEX -->
+        <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
@@ -494,7 +494,7 @@
             </nav>
         </div>
 
-        <!-- Search Bar - IDÊNTICO AO INDEX -->
+        <!-- Search Bar -->
         <div class="app-search-container">
             <div class="app-search-bar">
                 <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -505,7 +505,7 @@
             </div>
         </div>
 
-        <!-- Categories Grid - IDÊNTICO AO INDEX -->
+        <!-- Categories Grid - CORRIGIDO PARA SER FUNCIONAL -->
         <section class="app-categories" aria-labelledby="categories-title">
             <h2 id="categories-title" class="sr-only">Categorias de eventos</h2>
             <div class="categories-grid-app" role="group" aria-label="Filtros por categoria">
@@ -532,7 +532,7 @@
             </div>
         </section>
 
-        <!-- Hero Section - ADAPTADO PARA DESTAQUES -->
+        <!-- Hero Section -->
         <section class="app-hero-section" aria-labelledby="hero-title">
             <h1 id="hero-title" class="app-hero-title">Destaques Semanais de Todas as Cidades</h1>
             <p class="app-hero-description">
@@ -546,39 +546,39 @@
             </div>
         </section>
 
-        <!-- Banner - ADAPTADO PARA DESTAQUES -->
+        <!-- Banner Corrigido -->
         <div class="app-banner-wrapper">
             <div class="app-banner-container">
-                <img src="images/destaques-hero.png" alt="Destaques Semanais - Curadoria Cultural ROLÊ" 
+                <img src="images/banner-home.png" alt="Destaques Semanais - Curadoria Cultural ROLÊ" 
                      loading="lazy" width="1200" height="400" />
             </div>
         </div>
 
-        <!-- Section Header - SEGUINDO ESTRUTURA DO INDEX -->
+        <!-- Section Header -->
         <div class="app-section-header">
             <h2 class="app-section-title" id="destaques-title">DESTAQUES DA SEMANA</h2>
             <a href="#arquivo" class="app-see-all" aria-describedby="destaques-title">Ver arquivo</a>
         </div>
 
-        <!-- Cities Cards - Destaques - SEGUINDO ESTRUTURA DO INDEX -->
+        <!-- Cities Cards - Destaques -->
         <section class="app-recommendations" id="destaques" aria-labelledby="destaques-title">
             <div class="app-cards-scroll" role="group" aria-label="Cidades em destaque">
                 <!-- Porto Alegre -->
                 <article class="app-recommendation-card" data-city="porto-alegre" onclick="window.location.href='destaques-poa.html'">
                     <div class="app-card-image">
-                        <div class="app-card-badge">Última Edição</div>
+                        <div class="app-card-badge">Última edição</div>
                         <img src="images/poa.png" alt="Cena cultural de Porto Alegre" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Porto Alegre</h3>
-                        <p class="app-card-description">A cena alternativa pulsa forte no Sul com eventos únicos toda semana.</p>
+                        <p class="app-card-description">A cena alternativa pulsa forte no Sul.</p>
                         <div class="app-card-info">
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Data">📅</span>
-                                <span>8 de Agosto</span>
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>Rio Grande do Sul</span>
                             </div>
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Eventos">🎭</span>
+                                <span role="img" aria-label="Música">🎸</span>
                                 <span>12 eventos em destaque</span>
                             </div>
                         </div>
@@ -600,27 +600,33 @@
                 <!-- Florianópolis -->
                 <article class="app-recommendation-card" data-city="florianopolis" onclick="window.location.href='destaques-floripa.html'">
                     <div class="app-card-image">
-                        <div class="app-card-badge">Em Breve</div>
+                        <div class="app-card-badge">Em breve</div>
                         <img src="images/floripa.png" alt="Cultura eletrônica de Florianópolis" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Florianópolis</h3>
-                        <p class="app-card-description">Beira-mar, eletrônica e coletivo com a energia única da ilha.</p>
+                        <p class="app-card-description">Beira-mar, eletrônica e coletivo.</p>
                         <div class="app-card-info">
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Data">📅</span>
-                                <span>15 de Agosto</span>
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>Santa Catarina</span>
                             </div>
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Status">⏰</span>
+                                <span role="img" aria-label="Praia">🌊</span>
                                 <span>Em produção</span>
                             </div>
                         </div>
                         <div class="app-card-footer">
                             <div class="app-card-rating">
-                                <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
+                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.9</span>
                             </div>
-                            <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
+                            <a href="destaques-floripa.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de Florianópolis"
+                               onclick="event.stopPropagation();">
+                                Em Breve
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -628,27 +634,33 @@
                 <!-- Curitiba -->
                 <article class="app-recommendation-card" data-city="curitiba" onclick="window.location.href='destaques-curitiba.html'">
                     <div class="app-card-image">
-                        <div class="app-card-badge">Em Breve</div>
+                        <div class="app-card-badge">Em breve</div>
                         <img src="images/curitiba.png" alt="Vida noturna de Curitiba" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Curitiba</h3>
-                        <p class="app-card-description">Frio na rua, calor nas pistas da capital paranaense.</p>
+                        <p class="app-card-description">Frio na rua, calor nas pistas.</p>
                         <div class="app-card-info">
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Data">📅</span>
-                                <span>15 de Agosto</span>
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>Paraná</span>
                             </div>
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Status">⏰</span>
+                                <span role="img" aria-label="Natureza">🌲</span>
                                 <span>Em produção</span>
                             </div>
                         </div>
                         <div class="app-card-footer">
                             <div class="app-card-rating">
-                                <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
+                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.2</span>
                             </div>
-                            <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
+                            <a href="destaques-curitiba.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de Curitiba"
+                               onclick="event.stopPropagation();">
+                                Em Breve
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -656,7 +668,7 @@
                 <!-- São Paulo -->
                 <article class="app-recommendation-card" data-city="sao-paulo" onclick="window.location.href='destaques-sao-paulo.html'">
                     <div class="app-card-image">
-                        <div class="app-card-badge">Em Breve</div>
+                        <div class="app-card-badge">Em breve</div>
                         <img src="images/sao-paulo.png" alt="Cena cultural de São Paulo" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
@@ -664,19 +676,25 @@
                         <p class="app-card-description">A cidade que nunca dorme... nem para de dançar.</p>
                         <div class="app-card-info">
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Data">📅</span>
-                                <span>15 de Agosto</span>
+                                <span role="img" aria-label="Localização">📍</span>
+                                <span>São Paulo</span>
                             </div>
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Status">⏰</span>
+                                <span role="img" aria-label="Metrópole">🏙️</span>
                                 <span>Em produção</span>
                             </div>
                         </div>
                         <div class="app-card-footer">
                             <div class="app-card-rating">
-                                <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
+                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.7</span>
                             </div>
-                            <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
+                            <a href="destaques-sao-paulo.html" 
+                               class="app-card-link"
+                               aria-label="Ver destaques semanais de São Paulo"
+                               onclick="event.stopPropagation();">
+                                Em Breve
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -684,64 +702,28 @@
                 <!-- Rio de Janeiro -->
                 <article class="app-recommendation-card" data-city="rio-janeiro" onclick="window.location.href='destaques-rio.html'">
                     <div class="app-card-image">
-                        <div class="app-card-badge">Em Breve</div>
+                        <div class="app-card-badge">Em breve</div>
                         <img src="images/rio.png" alt="Cultura funk e eventos no Rio de Janeiro" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Rio de Janeiro</h3>
-                        <p class="app-card-description">Funk, favela, cor e calor cultural carioca.</p>
+                        <p class="app-card-description">Funk, favela, cor e calor cultural.</p>
                         <div class="app-card-info">
                             <div class="app-card-info-item">
-                                <span role="img" aria-label="Data">📅</span>
-                                <span>15 de Agosto</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Status">⏰</span>
+                                <span role="img" aria-label="Praia">🏖️</span>
                                 <span>Em produção</span>
                             </div>
                         </div>
                         <div class="app-card-footer">
                             <div class="app-card-rating">
-                                <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
+                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.6</span>
                             </div>
-                            <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Arquivo Card -->
-                <article class="app-recommendation-card" onclick="window.location.href='#arquivo'">
-                    <div class="app-card-image">
-                        <div class="app-card-badge">Arquivo</div>
-                        <div style="height: 140px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
-                            <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="app-card-content">
-                        <h3 class="app-card-title">Arquivo de Edições</h3>
-                        <p class="app-card-description">Explore todas as edições anteriores dos destaques semanais.</p>
-                        <div class="app-card-info">
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Edições">📚</span>
-                                <span>5 edições</span>
-                            </div>
-                            <div class="app-card-info-item">
-                                <span role="img" aria-label="Eventos">🎭</span>
-                                <span>60 eventos cobertos</span>
-                            </div>
-                        </div>
-                        <div class="app-card-footer">
-                            <div class="app-card-rating">
-                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
-                                <span class="rating-text">4.8</span>
-                            </div>
-                            <a href="#arquivo" 
+                            <a href="destaques-rio.html" 
                                class="app-card-link"
-                               aria-label="Ver arquivo de edições"
+                               aria-label="Ver destaques semanais do Rio de Janeiro"
                                onclick="event.stopPropagation();">
-                                Ver Arquivo
+                                Em Breve
                             </a>
                         </div>
                     </div>
@@ -749,7 +731,7 @@
             </div>
         </section>
 
-        <!-- Ad Container - IDÊNTICO AO INDEX -->
+        <!-- Ad Container -->
         <div class="app-ad-container" role="complementary" aria-label="Publicidade">
             <ins class="adsbygoogle"
                  style="display:block"
@@ -759,20 +741,20 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Como Funciona - ADAPTADO PARA DESTAQUES -->
+        <!-- Como Funciona -->
         <section class="app-como-funciona" aria-labelledby="como-funciona-title">
             <div class="app-section-header">
-                <h2 id="como-funciona-title" class="app-section-title">Como Funciona a Curadoria</h2>
+                <h2 id="como-funciona-title" class="app-section-title">Como Funciona</h2>
             </div>
             <div class="app-como-funciona-content">
                 <p>
-                    Nossa curadoria vai muito além de uma simples agenda. Pesquisamos ativamente a cena cultural de cada cidade, 
-                    selecionamos eventos com critério e apresentamos com contexto e personalidade única do ROLÊ.
+                    Aqui você encontra festas, shows e experiências que valem o seu tempo. 
+                    A gente não vende ingresso, a gente te mostra o que faz sentido viver.
                 </p>
             </div>
         </section>
 
-        <!-- Featured Banner - ADAPTADO PARA DESTAQUES -->
+        <!-- Featured Banner - Revista ROLÊ -->
         <div class="app-featured-banner" role="complementary" onclick="window.location.href='revista.html'">
             <div class="app-banner-content">
                 <div class="app-banner-tag">EDITORIAL SEMANAL</div>
@@ -782,36 +764,36 @@
             </div>
         </div>
 
-        <!-- Stats Section - ADAPTADO PARA DESTAQUES -->
+        <!-- Stats Section -->
         <section aria-labelledby="stats-title" id="arquivo">
             <div class="app-section-header">
-                <h2 id="stats-title" class="app-section-title">Destaques em números</h2>
+                <h2 id="stats-title" class="app-section-title">ROLÊ em números</h2>
             </div>
             <div class="app-stats-grid">
                 <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="5" aria-live="polite">0</span>
-                    <span class="app-stat-label">Edições publicadas</span>
+                    <span class="app-stat-number" data-target="500" aria-live="polite">0</span>
+                    <span class="app-stat-label">Mil contas alcançadas</span>
                 </div>
                 <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="60" aria-live="polite">0</span>
-                    <span class="app-stat-label">Eventos cobertos</span>
+                    <span class="app-stat-number" data-target="2" aria-live="polite">0</span>
+                    <span class="app-stat-label">Milhões de views mensais</span>
                 </div>
                 <div class="app-stat-item">
                     <span class="app-stat-number" data-target="5" aria-live="polite">0</span>
                     <span class="app-stat-label">Cidades ativas</span>
                 </div>
                 <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="25" aria-live="polite">0</span>
-                    <span class="app-stat-label">Mil visualizações</span>
+                    <span class="app-stat-number" data-target="22" aria-live="polite">0</span>
+                    <span class="app-stat-label">Mil seguidores</span>
                 </div>
             </div>
         </section>
 
-        <!-- Newsletter Section - IDÊNTICO AO INDEX -->
+        <!-- Newsletter Section -->
         <section class="app-newsletter-section" aria-labelledby="newsletter-title">
             <div class="app-newsletter-content">
-                <h2 id="newsletter-title" class="app-section-title">Receba os Destaques na sua cidade</h2>
-                <p>Assine nossa newsletter e receba semanalmente os melhores eventos da sua região com a curadoria ROLÊ.</p>
+                <h2 id="newsletter-title" class="app-section-title">Não perca o melhor do ROLÊ</h2>
+                <p>Assine a newsletter e receba semanalmente o que tem de mais relevante na cena cultural.</p>
                 <form class="app-newsletter-form" id="newsletter-form" novalidate>
                     <label for="newsletter-email" class="sr-only">Seu endereço de email</label>
                     <input type="email" 
@@ -833,7 +815,7 @@
             </div>
         </section>
 
-        <!-- Footer Ad - IDÊNTICO AO INDEX -->
+        <!-- Footer Ad -->
         <div class="app-ad-container" role="complementary" aria-label="Publicidade">
             <ins class="adsbygoogle"
                  style="display:block"
@@ -843,7 +825,7 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Footer - IDÊNTICO AO INDEX -->
+        <!-- Footer -->
         <footer class="app-footer" role="contentinfo">
             <div class="app-footer-links">
                 © 2025 ROLÊ ENTRETENIMENTO ·
@@ -860,12 +842,12 @@
                     <img src="images/tiktok.svg" alt="" width="24" height="24" role="presentation" />
                 </a>
                 <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Falar com ROLÊ no WhatsApp">
-                    <img src="images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
+                    <img src="images/whatsapp.svg" alt="" width="24" height="24" role="presentation" />
                 </a>
             </div>
         </footer>
 
-        <!-- Bottom Navigation - Mobile - IDÊNTICO AO INDEX -->
+        <!-- Bottom Navigation - Mobile -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item" aria-label="Página inicial">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -903,7 +885,7 @@
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript - IDÊNTICO AO INDEX COM ADAPTAÇÕES MÍNIMAS -->
+    <!-- JavaScript Corrigido -->
     <script>
         // Performance and Security Enhanced JavaScript
         (function() {
@@ -1017,7 +999,7 @@
                     });
                 }
 
-                // Theme toggle functionality
+                // Theme toggle functionality - CORRIGIDO PARA TODA A PÁGINA
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -1114,7 +1096,7 @@
                             clearTimeout(timeoutId);
                             
                             if (response.ok) {
-                                utils.showToast(`Sucesso! ${emailValue} foi cadastrado nos destaques semanais.`, 'success');
+                                utils.showToast(`Sucesso! ${emailValue} foi cadastrado na nossa newsletter.`, 'success');
                                 this.reset();
                                 lastSubmission = now;
                             } else {
@@ -1129,4 +1111,72 @@
                             }
                         } finally {
                             submitBtn.disabled = false;
-                            btnText.style.display
+                            btnText.style.display = 'inline';
+                            btnLoading.style.display = 'none';
+                        }
+                    });
+                    
+                    // Real-time email validation
+                    emailInput.addEventListener('input', utils.debounce(function() {
+                        const email = this.value.trim();
+                        if (email && !validateEmail(email)) {
+                            this.classList.add('error');
+                            errorDiv.textContent = 'Formato de e-mail inválido.';
+                        } else {
+                            this.classList.remove('error');
+                            errorDiv.textContent = '';
+                        }
+                    }, 500));
+                }
+
+                // Stats counter animation with Intersection Observer
+                const observerOptions = {
+                    threshold: 0.5,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                            entry.target.classList.add('counted');
+                            animateNumber(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                const statNumbers = document.querySelectorAll('.app-stat-number');
+                statNumbers.forEach(stat => statsObserver.observe(stat));
+
+                function animateNumber(element) {
+                    const target = parseInt(element.getAttribute('data-target'), 10);
+                    let current = 0;
+                    const increment = Math.ceil(target / 30);
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        element.textContent = current;
+                    }, 50);
+                }
+
+                // Search functionality with debouncing
+                const searchInput = document.querySelector('.app-search-input');
+                if (searchInput) {
+                    searchInput.addEventListener('input', utils.debounce(function() {
+                        const query = utils.sanitize(this.value.toLowerCase().trim());
+                        if (query.length >= 2) {
+                            console.log('Search query:', query);
+                            // Implementar busca aqui
+                        }
+                    }, 300));
+                }
+
+                // Card animations on scroll
+                const fadeObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0
