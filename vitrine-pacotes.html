@@ -109,7 +109,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script - IDÊNTICO AO INDEX.HTML -->
+    <!-- Theme Script Otimizado - IDÊNTICO AO INDEX.HTML -->
     <script>
         (function() {
             try {
@@ -286,7 +286,7 @@
 
 <body>
     <div class="app-container">
-        <!-- Header - IDÊNTICO AO INDEX.HTML -->
+        <!-- Header Corrigido - IDÊNTICO AO INDEX.HTML -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
@@ -371,7 +371,7 @@
             </div>
         </div>
 
-        <!-- Introdução -->
+        <!-- Introdução usando content-card padrão -->
         <section class="content-card">
             <div class="intro-highlight">
                 🎯 <strong>Tá na hora do seu evento aparecer como merece</strong>
@@ -391,16 +391,16 @@
             <p><strong>Você escolhe o formato. A gente entrega com narrativa, estética e estratégia.</strong></p>
         </section>
 
-        <!-- Formatos Disponíveis -->
+        <!-- Formatos Disponíveis usando estrutura padrão de cards -->
         <div class="app-section-header">
             <h2 class="app-section-title">Formatos Disponíveis</h2>
         </div>
         
         <section class="app-recommendations" aria-labelledby="formatos-title">
             <div class="app-cards-scroll" role="group" aria-label="Formatos disponíveis">
-                <article class="app-recommendation-card format-card">
-                    <div class="app-card-image format-image">
-                        <div class="format-icon">📸</div>
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">📸</div>
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Carrossel Editorial</h3>
@@ -415,12 +415,19 @@
                                 <span>2-3 dias</span>
                             </div>
                         </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Mais popular">🌟🌟🌟🌟🌟</div>
+                                <span class="rating-text">Mais popular</span>
+                            </div>
+                            <a href="#pricing" class="app-card-link" aria-label="Ver preço do Carrossel Editorial">R$ 150</a>
+                        </div>
                     </div>
                 </article>
 
-                <article class="app-recommendation-card format-card">
-                    <div class="app-card-image format-image">
-                        <div class="format-icon">📲</div>
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">📲</div>
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Stories Interativos</h3>
@@ -435,12 +442,19 @@
                                 <span>Mobile first</span>
                             </div>
                         </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Engajamento alto">🔥🔥🔥🔥</div>
+                                <span class="rating-text">Alto engajamento</span>
+                            </div>
+                            <a href="#pricing" class="app-card-link" aria-label="Ver preço dos Stories">R$ 60</a>
+                        </div>
                     </div>
                 </article>
 
-                <article class="app-recommendation-card format-card">
-                    <div class="app-card-image format-image">
-                        <div class="format-icon">🎥</div>
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">🎥</div>
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Reels & Vídeos</h3>
@@ -455,12 +469,19 @@
                                 <span>Sob medida</span>
                             </div>
                         </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Personalizado">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">Personalizado</span>
+                            </div>
+                            <a href="#pricing" class="app-card-link" aria-label="Solicitar orçamento">Orçamento</a>
+                        </div>
                     </div>
                 </article>
 
-                <article class="app-recommendation-card format-card">
-                    <div class="app-card-image format-image">
-                        <div class="format-icon">🧩</div>
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">🧩</div>
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Combo Completo</h3>
@@ -475,12 +496,19 @@
                                 <span>Máxima exposição</span>
                             </div>
                         </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Melhor custo-benefício">💜💜💜💜💜</div>
+                                <span class="rating-text">Melhor valor</span>
+                            </div>
+                            <a href="#pricing" class="app-card-link" aria-label="Ver combo">R$ 180</a>
+                        </div>
                     </div>
                 </article>
 
-                <article class="app-recommendation-card format-card">
-                    <div class="app-card-image format-image">
-                        <div class="format-icon">🔁</div>
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">🔁</div>
                     </div>
                     <div class="app-card-content">
                         <h3 class="app-card-title">Pacote Mensal</h3>
@@ -495,122 +523,138 @@
                                 <span>Parceria estratégica</span>
                             </div>
                         </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Relacionamento longo prazo">🤝🤝🤝🤝🤝</div>
+                                <span class="rating-text">Longo prazo</span>
+                            </div>
+                            <a href="#pricing" class="app-card-link" aria-label="Fazer proposta">Proposta</a>
+                        </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- Pacotes e Preços -->
-        <div class="app-section-header">
+        <!-- Pricing Grid usando cards padrão -->
+        <div class="app-section-header" id="pricing">
             <h2 class="app-section-title">🔥 Escolha seu pacote e veja seu evento acontecer</h2>
         </div>
 
-        <div class="pricing-grid">
-            <!-- Carrossel Editorial -->
-            <div class="pricing-card featured">
-                <div class="pricing-badge">MAIS POPULAR</div>
-                <div class="pricing-header">
-                    <div class="pricing-icon">🌀</div>
-                    <h3 class="pricing-title">CARROSSEL EDITORIAL</h3>
-                    <div class="pricing-price">R$ 150</div>
-                    <div class="pricing-reach">40 a 60 mil contas alcançadas</div>
-                </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>✓ Até 10 cards editoriais</li>
-                        <li>✓ Direção de arte inspirada na identidade do evento</li>
-                        <li>✓ Texto com storytelling exclusivo do ROLÊ</li>
-                        <li>✓ Publicação no feed com destaque</li>
-                        <li>✓ Link nos stories + comentário fixado</li>
-                        <li>✓ Relatório de performance pós-evento</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/5551980704353?text=Oi! Quero contratar o Carrossel Editorial por R$ 150" target="_blank" class="pricing-button">Contratar Agora</a>
-            </div>
+        <section class="app-recommendations">
+            <div class="app-cards-scroll" role="group" aria-label="Pacotes e preços">
+                <!-- Carrossel Editorial -->
+                <article class="app-recommendation-card featured-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">MAIS POPULAR</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">🌀 CARROSSEL EDITORIAL</h3>
+                        <div class="pricing-price">R$ 150</div>
+                        <div class="pricing-reach">40 a 60 mil contas alcançadas</div>
+                        <p class="app-card-description">Até 10 cards editoriais com direção de arte personalizada e storytelling exclusivo</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">✓ Até 10 cards editoriais</div>
+                            <div class="app-card-info-item">✓ Direção de arte inspirada</div>
+                            <div class="app-card-info-item">✓ Storytelling exclusivo</div>
+                            <div class="app-card-info-item">✓ Relatório de performance</div>
+                        </div>
+                        <div class="app-card-footer">
+                            <a href="https://wa.me/5551980704353?text=Oi! Quero contratar o Carrossel Editorial por R$ 150" target="_blank" class="app-card-link">Contratar Agora</a>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- Stories Interativos -->
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <div class="pricing-icon">🔥</div>
-                    <h3 class="pricing-title">STORIES INTERATIVOS</h3>
-                    <div class="pricing-price">R$ 60</div>
-                    <div class="pricing-combo">Em combo: R$ 42 (30% OFF)</div>
-                </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>✓ Até 3 blocos de stories</li>
-                        <li>✓ Ambientação visual personalizada</li>
-                        <li>✓ Gatilhos de interação (enquetes, perguntas)</li>
-                        <li>✓ Link direto para o evento</li>
-                        <li>✓ Engajamento otimizado</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/5551980704353?text=Oi! Quero contratar os Stories Interativos por R$ 60" target="_blank" class="pricing-button">Contratar Agora</a>
-            </div>
+                <!-- Stories Interativos -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">🔥</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">STORIES INTERATIVOS</h3>
+                        <div class="pricing-price">R$ 60</div>
+                        <div class="pricing-combo">Em combo: R$ 42 (30% OFF)</div>
+                        <p class="app-card-description">Até 3 blocos de stories com ambientação visual personalizada</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">✓ Até 3 blocos de stories</div>
+                            <div class="app-card-info-item">✓ Ambientação visual personalizada</div>
+                            <div class="app-card-info-item">✓ Gatilhos de interação</div>
+                            <div class="app-card-info-item">✓ Engajamento otimizado</div>
+                        </div>
+                        <div class="app-card-footer">
+                            <a href="https://wa.me/5551980704353?text=Oi! Quero contratar os Stories Interativos por R$ 60" target="_blank" class="app-card-link">Contratar Agora</a>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- Combo -->
-            <div class="pricing-card combo">
-                <div class="pricing-badge">ECONOMIA R$ 30</div>
-                <div class="pricing-header">
-                    <div class="pricing-icon">🌪️</div>
-                    <h3 class="pricing-title">COMBO CARROSSEL + STORIES</h3>
-                    <div class="pricing-price special">R$ 180</div>
-                    <div class="pricing-original">De R$ 210</div>
-                </div>
-                <div class="pricing-features">
-                    <p><strong>Máxima visibilidade</strong> com feed + stories em pacote promocional</p>
-                    <ul>
-                        <li>✓ Todos os benefícios do Carrossel</li>
-                        <li>✓ Todos os benefícios dos Stories</li>
-                        <li>✓ Estratégia integrada de comunicação</li>
-                        <li>✓ Economia de R$ 30</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/5551980704353?text=Oi! Quero contratar o Combo Carrossel + Stories por R$ 180" target="_blank" class="pricing-button">Contratar Agora</a>
-            </div>
+                <!-- Combo -->
+                <article class="app-recommendation-card combo-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">ECONOMIA R$ 30</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">🌪️ COMBO CARROSSEL + STORIES</h3>
+                        <div class="pricing-price special">R$ 180</div>
+                        <div class="pricing-original">De R$ 210</div>
+                        <p class="app-card-description">Máxima visibilidade com feed + stories em pacote promocional</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">✓ Todos os benefícios do Carrossel</div>
+                            <div class="app-card-info-item">✓ Todos os benefícios dos Stories</div>
+                            <div class="app-card-info-item">✓ Estratégia integrada</div>
+                            <div class="app-card-info-item">✓ Economia de R$ 30</div>
+                        </div>
+                        <div class="app-card-footer">
+                            <a href="https://wa.me/5551980704353?text=Oi! Quero contratar o Combo Carrossel + Stories por R$ 180" target="_blank" class="app-card-link">Contratar Agora</a>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- Reels -->
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <div class="pricing-icon">🎥</div>
-                    <h3 class="pricing-title">REELS OU COBERTURA</h3>
-                    <div class="pricing-price">A partir de R$ 200</div>
-                    <div class="pricing-custom">Orçamento personalizado</div>
-                </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>✓ Produção de vídeo sob medida</li>
-                        <li>✓ Edição profissional</li>
-                        <li>✓ Trilha sonora exclusiva</li>
-                        <li>✓ Cobertura ao vivo ou pós-evento</li>
-                        <li>✓ Otimização para algoritmo</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/5551980704353?text=Oi! Quero orçamento para Reels/Cobertura" target="_blank" class="pricing-button">Solicitar Orçamento</a>
-            </div>
+                <!-- Reels -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">🎥</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">REELS OU COBERTURA</h3>
+                        <div class="pricing-price">A partir de R$ 200</div>
+                        <div class="pricing-custom">Orçamento personalizado</div>
+                        <p class="app-card-description">Produção de vídeo sob medida com edição profissional</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">✓ Produção sob medida</div>
+                            <div class="app-card-info-item">✓ Edição profissional</div>
+                            <div class="app-card-info-item">✓ Trilha sonora exclusiva</div>
+                            <div class="app-card-info-item">✓ Otimização para algoritmo</div>
+                        </div>
+                        <div class="app-card-footer">
+                            <a href="https://wa.me/5551980704353?text=Oi! Quero orçamento para Reels/Cobertura" target="_blank" class="app-card-link">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- Pacote Mensal -->
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <div class="pricing-icon">♻️</div>
-                    <h3 class="pricing-title">PACOTE MENSAL</h3>
-                    <div class="pricing-price">Sob proposta</div>
-                    <div class="pricing-custom">Para produtoras e coletivos</div>
-                </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>✓ Datas fixas garantidas no mês</li>
-                        <li>✓ Descontos progressivos por volume</li>
-                        <li>✓ Destaque editorial em sequência</li>
-                        <li>✓ Consultoria estratégica inclusa</li>
-                        <li>✓ Relatórios mensais detalhados</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/5551980704353?text=Oi! Quero uma proposta para Pacote Mensal" target="_blank" class="pricing-button">Fazer Proposta</a>
+                <!-- Pacote Mensal -->
+                <article class="app-recommendation-card">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">♻️</div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">PACOTE MENSAL</h3>
+                        <div class="pricing-price">Sob proposta</div>
+                        <div class="pricing-custom">Para produtoras e coletivos</div>
+                        <p class="app-card-description">Datas fixas garantidas com descontos progressivos</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">✓ Datas fixas garantidas</div>
+                            <div class="app-card-info-item">✓ Descontos progressivos</div>
+                            <div class="app-card-info-item">✓ Consultoria estratégica</div>
+                            <div class="app-card-info-item">✓ Relatórios mensais</div>
+                        </div>
+                        <div class="app-card-footer">
+                            <a href="https://wa.me/5551980704353?text=Oi! Quero uma proposta para Pacote Mensal" target="_blank" class="app-card-link">Fazer Proposta</a>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <!-- Objeções -->
+        <!-- Objeções usando content-card -->
         <section class="content-card">
             <div class="intro-highlight">
                 😬 <strong>Objeções comuns (e por que elas não colam por aqui)</strong>
@@ -643,7 +687,7 @@
             </div>
         </section>
 
-        <!-- Bônus -->
+        <!-- Bônus usando estrutura de stats -->
         <div class="app-section-header">
             <h2 class="app-section-title">🧠 Bônus: O que você leva junto com o pacote</h2>
         </div>
@@ -720,7 +764,7 @@
             </div>
         </section>
 
-        <!-- Testemunhos -->
+        <!-- Testemunhos usando estrutura de cards -->
         <div class="app-section-header">
             <h2 class="app-section-title">💬 O que os produtores falam da gente</h2>
         </div>
@@ -736,8 +780,11 @@
                             <strong>Marina Silva</strong>
                             <span>Coletivo Subterrâneo - Porto Alegre</span>
                         </div>
-                        <div class="testimonial-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">5.0</span>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -751,8 +798,11 @@
                             <strong>Lucas Ferreira</strong>
                             <span>Produtor Independente - Florianópolis</span>
                         </div>
-                        <div class="testimonial-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">5.0</span>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -766,30 +816,33 @@
                             <strong>Rafaela Costa</strong>
                             <span>Selo Musical Independente - São Paulo</span>
                         </div>
-                        <div class="testimonial-rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">5.0</span>
+                            </div>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- CTAs -->
+        <!-- CTAs usando botões padrão -->
         <section class="cta-section">
             <div class="cta-grid">
-                <a href="https://wa.me/5551980704353" target="_blank" class="app-btn-hero cta-primary">
+                <a href="https://wa.me/5551980704353" target="_blank" class="app-btn-hero">
                     📲 Fale com a gente no WhatsApp
                 </a>
-                <a href="#" class="app-btn-hero cta-secondary" onclick="alert('Em breve! Por enquanto, fale conosco no WhatsApp.')">
+                <button class="app-btn-hero" onclick="alert('Em breve! Por enquanto, fale conosco no WhatsApp.')">
                     📥 Baixe nosso portfólio completo
-                </a>
-                <a href="#" class="app-btn-hero cta-secondary" onclick="alert('Consulte disponibilidade via WhatsApp!')">
+                </button>
+                <button class="app-btn-hero" onclick="alert('Consulte disponibilidade via WhatsApp!')">
                     📅 Veja datas disponíveis
-                </a>
+                </button>
             </div>
         </section>
 
-        <!-- Stats Section -->
+        <!-- Stats Section usando estrutura padrão -->
         <section aria-labelledby="stats-title">
             <div class="app-section-header">
                 <h2 id="stats-title" class="app-section-title">📈 ROLÊ em números</h2>
@@ -1005,7 +1058,7 @@
                     });
                 }
 
-                // Theme toggle functionality - CORRIGIDO PARA TODA A PÁGINA
+                // Theme toggle functionality
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -1062,40 +1115,34 @@
                     }, 50);
                 }
 
-                // Scroll animations
-                const scrollObserverOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-
-                const scrollObserver = new IntersectionObserver((entries) => {
+                // Card animations on scroll
+                const fadeObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.style.opacity = '1';
                             entry.target.style.transform = 'translateY(0)';
                         }
                     });
-                }, scrollObserverOptions);
+                }, { threshold: 0.1 });
 
-                // Animate elements on scroll
-                const animatedElements = document.querySelectorAll('.content-card, .pricing-card, .app-recommendation-card, .app-stat-item, .faq-item');
-                animatedElements.forEach((element, index) => {
+                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item, .content-card');
+                fadeElements.forEach((element, index) => {
                     element.style.opacity = '0';
                     element.style.transform = 'translateY(30px)';
-                    element.style.transition = `all 0.8s ease ${index * 0.1}s`;
-                    scrollObserver.observe(element);
+                    element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                    fadeObserver.observe(element);
                 });
 
                 // Touch/swipe support for cards
                 let startX = 0;
-                const scrollContainers = document.querySelectorAll('.app-cards-scroll');
+                const scrollContainer = document.querySelector('.app-cards-scroll');
                 
-                scrollContainers.forEach(container => {
-                    container.addEventListener('touchstart', function(e) {
+                if (scrollContainer) {
+                    scrollContainer.addEventListener('touchstart', function(e) {
                         startX = e.touches[0].clientX;
                     }, { passive: true });
 
-                    container.addEventListener('touchend', function(e) {
+                    scrollContainer.addEventListener('touchend', function(e) {
                         const endX = e.changedTouches[0].clientX;
                         const diff = startX - endX;
                         
@@ -1108,23 +1155,7 @@
                             }
                         }
                     }, { passive: true });
-                });
-
-                // Pricing card interactions
-                const pricingCards = document.querySelectorAll('.pricing-card');
-                pricingCards.forEach(card => {
-                    card.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-8px) scale(1.02)';
-                    });
-                    
-                    card.addEventListener('mouseleave', function() {
-                        if (!this.classList.contains('featured')) {
-                            this.style.transform = 'translateY(0) scale(1)';
-                        } else {
-                            this.style.transform = 'scale(1.05)';
-                        }
-                    });
-                });
+                }
 
                 console.log('App initialized successfully');
             }
@@ -1163,6 +1194,18 @@
     <style>
         /* ========== ESTILOS ESPECÍFICOS DA PÁGINA VITRINE PACOTES ========== */
         
+        /* Page container com padding adequado para mobile nav */
+        .page-container {
+            padding-bottom: 120px;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 769px) {
+            .page-container {
+                padding-bottom: 40px;
+            }
+        }
+        
         /* Intro Highlights */
         .intro-highlight {
             background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
@@ -1183,4 +1226,332 @@
         }
 
         .intro-highlight:hover {
-            background: linear-gradient
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15));
+            transform: translateX(4px);
+        }
+
+        /* Pricing específico */
+        .pricing-price {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 8px 0;
+        }
+
+        .pricing-price.special {
+            font-size: 2.2rem;
+        }
+
+        .pricing-reach {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .pricing-combo {
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .pricing-original {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .pricing-custom {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        /* Featured card styling */
+        .featured-card {
+            position: relative;
+            border: 2px solid var(--accent-purple);
+            transform: scale(1.05);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+        }
+
+        .combo-card {
+            border: 2px solid var(--accent-green);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.2);
+        }
+
+        /* FAQ Grid */
+        .faq-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .faq-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 3px solid var(--accent-purple);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: var(--bg-card);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-item h4 {
+            color: var(--accent-purple);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+        }
+
+        .step-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--gradient-primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Bonus cards styling */
+        .bonus-card {
+            text-align: center;
+        }
+
+        .bonus-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .bonus-card h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .bonus-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Testimonial cards */
+        .testimonial-card .app-card-content {
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            margin-bottom: 12px;
+        }
+
+        .testimonial-author strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-author span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            margin: 40px 20px;
+        }
+
+        @media (min-width: 769px) {
+            .cta-section {
+                max-width: 1200px;
+                margin: 48px auto;
+                padding: 0 40px;
+            }
+        }
+
+        .cta-grid {
+            display: grid;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        @media (min-width: 769px) {
+            .cta-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Back navigation */
+        .back-navigation {
+            margin: 32px 20px;
+            text-align: center;
+        }
+
+        @media (min-width: 769px) {
+            .back-navigation {
+                max-width: 1200px;
+                margin: 48px auto;
+                padding: 0 40px;
+            }
+        }
+
+        /* Conclusion text */
+        .conclusion-text {
+            margin-top: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Toast styling específico */
+        .toast {
+            background: var(--accent-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast.success {
+            background: var(--accent-green);
+        }
+
+        .toast.error {
+            background: var(--accent-red);
+        }
+
+        /* Toast container */
+        #toast-container {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        @media (min-width: 769px) {
+            #toast-container {
+                bottom: 40px;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .pricing-price {
+                font-size: 1.8rem;
+            }
+            
+            .pricing-price.special {
+                font-size: 2rem;
+            }
+            
+            .featured-card {
+                transform: scale(1);
+            }
+        }
+
+        /* Theme support para elementos específicos */
+        .faq-item,
+        .step-item,
+        .bonus-card,
+        .testimonial-card {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Safe area adjustments */
+        @supports (padding: max(0px)) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(env(safe-area-inset-top), 0px);
+                }
+                
+                .app-bottom-nav {
+                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                }
+            }
+        }
+    </style>
+</body>
+</html>
