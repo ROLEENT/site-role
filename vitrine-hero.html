@@ -512,29 +512,29 @@
             </div>
         </div>
 
-        <!-- Categories Grid - CORRIGIDO PARA SER FUNCIONAL -->
+        <!-- Categories Grid - ESPECÍFICAS DA VITRINE -->
         <section class="app-categories" aria-labelledby="categories-title">
-            <h2 id="categories-title" class="sr-only">Categorias de eventos</h2>
-            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria">
-                <a href="vitrine-cultural.html?categoria=shows" class="category-item-app" aria-label="Ver shows">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de música">🎵</div>
-                    <div class="category-label-app">Shows</div>
+            <h2 id="categories-title" class="sr-only">Seções da vitrine cultural</h2>
+            <div class="categories-grid-app" role="group" aria-label="Seções da vitrine cultural">
+                <a href="vitrine-hero.html" class="category-item-app active" aria-label="Como funciona a vitrine">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de informação">ℹ️</div>
+                    <div class="category-label-app">Como<br>Funciona</div>
                 </a>
-                <a href="vitrine-cultural.html?categoria=teatro" class="category-item-app" aria-label="Ver teatro">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de teatro">🎭</div>
-                    <div class="category-label-app">Teatro</div>
+                <a href="vitrine-por-que-anunciar.html" class="category-item-app" aria-label="Por que anunciar na vitrine">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de megafone">📢</div>
+                    <div class="category-label-app">Por que<br>Anunciar</div>
                 </a>
-                <a href="vitrine-cultural.html?categoria=festas" class="category-item-app" aria-label="Ver festas">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de festa">🎉</div>
-                    <div class="category-label-app">Festas</div>
+                <a href="vitrine-pacotes.html" class="category-item-app" aria-label="Ver pacotes da vitrine">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de dinheiro">💰</div>
+                    <div class="category-label-app">Pacotes</div>
                 </a>
-                <a href="vitrine-cultural.html?categoria=bares" class="category-item-app" aria-label="Ver bares">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de bebida">🍺</div>
-                    <div class="category-label-app">Bares</div>
+                <a href="vitrine-faq.html" class="category-item-app" aria-label="Ver perguntas frequentes">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de pergunta">❓</div>
+                    <div class="category-label-app">FAQ</div>
                 </a>
-                <a href="vitrine-cultural.html?categoria=arte" class="category-item-app" aria-label="Ver arte">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de arte">🎨</div>
-                    <div class="category-label-app">Arte</div>
+                <a href="vitrine-artigo-marketing-eventos.html" class="category-item-app" aria-label="Marketing e eventos">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de gráfico">📊</div>
+                    <div class="category-label-app">Marketing</div>
                 </a>
             </div>
         </section>
@@ -1193,4 +1193,190 @@
                             try {
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             } catch(e) {
-                                console.warn('AdSense initialization
+                                console.warn('AdSense initialization failed for ad:', e);
+                            }
+                        });
+                    } catch(e) {
+                        console.warn('AdSense general initialization failed:', e);
+                    }
+                }, 1000);
+
+                console.log('Vitrine Hero App initialized successfully');
+            }
+
+            // Smooth scroll function
+            window.scrollToSection = function(sectionId) {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            };
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeApp);
+            } else {
+                initializeApp();
+            }
+            
+            // Error handling
+            window.addEventListener('error', function(e) {
+                console.warn('Script error:', e.error);
+            });
+            
+            window.addEventListener('unhandledrejection', function(e) {
+                console.warn('Unhandled promise rejection:', e.reason);
+            });
+            
+        })();
+    </script>
+
+    <!-- CSS Adicional para correções finais -->
+    <style>
+        /* Newsletter error styling */
+        .newsletter-error {
+            color: var(--accent-red);
+            font-size: 12px;
+            margin-top: 8px;
+            min-height: 16px;
+        }
+        
+        .app-newsletter-input.error {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+        }
+        
+        /* Toast styling */
+        #toast-container {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+        
+        @media (min-width: 769px) {
+            #toast-container {
+                bottom: 40px;
+            }
+        }
+        
+        .toast {
+            background: var(--accent-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            text-align: center;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast.success {
+            background: var(--accent-green);
+        }
+        
+        .toast.error {
+            background: var(--accent-red);
+        }
+        
+        /* Loading state for buttons */
+        .btn-loading {
+            display: none;
+        }
+        
+        button[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Safe area adjustments for mobile */
+        @supports (padding: max(0px)) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(env(safe-area-inset-top), 0px);
+                }
+                
+                .app-bottom-nav {
+                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                }
+            }
+        }
+        
+        /* CORREÇÃO ESPECÍFICA: Banner não cortado */
+        .app-banner-wrapper {
+            padding: 0 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .app-banner-wrapper {
+                max-width: 1200px;
+                margin: 0 auto 40px auto;
+                padding: 0 40px;
+            }
+        }
+        
+        /* NOVA CORREÇÃO: Hover states para todos os elementos */
+        .app-search-input:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            background: var(--bg-card);
+        }
+        
+        .app-recommendation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-newsletter-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .app-newsletter-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        /* PWA specific */
+        @media (display-mode: standalone) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(80px, env(safe-area-inset-top));
+                }
+            }
+            
+            body {
+                user-select: none;
+                -webkit-user-select: none;
+            }
+            
+            input, textarea {
+                user-select: text;
+                -webkit-user-select: text;
+            }
+        }
+    </style>
+</body>
+</html>
