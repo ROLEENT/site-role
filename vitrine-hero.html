@@ -309,6 +309,44 @@
             </nav>
         </div>
 
+        <!-- Search Bar - IDÊNTICA AO INDEX -->
+        <div class="app-search-container">
+            <div class="app-search-bar">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="search" class="app-search-input" placeholder="Procurar por rolês, artistas, cidades..." 
+                       aria-label="Buscar eventos, artistas ou cidades" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+
+        <!-- Categories Grid - ESPECÍFICAS DA VITRINE -->
+        <section class="app-categories" aria-labelledby="categories-title">
+            <h2 id="categories-title" class="sr-only">Categorias da vitrine cultural</h2>
+            <div class="categories-grid-app" role="group" aria-label="Seções da vitrine cultural">
+                <button class="category-item-app" onclick="scrollToSection('como-funciona')" aria-label="Como funciona a vitrine">
+                    <div class="category-icon-app vitrine-icon-info" role="img" aria-label="Ícone de informação">ℹ️</div>
+                    <div class="category-label-app">Como<br>Funciona</div>
+                </button>
+                <button class="category-item-app" onclick="scrollToSection('por-que-anunciar')" aria-label="Por que anunciar na vitrine">
+                    <div class="category-icon-app vitrine-icon-megaphone" role="img" aria-label="Ícone de megafone">📢</div>
+                    <div class="category-label-app">Por que<br>Anunciar</div>
+                </button>
+                <button class="category-item-app" onclick="scrollToSection('pacotes')" aria-label="Ver pacotes da vitrine">
+                    <div class="category-icon-app vitrine-icon-money" role="img" aria-label="Ícone de dinheiro">💰</div>
+                    <div class="category-label-app">Pacotes</div>
+                </button>
+                <button class="category-item-app" onclick="scrollToSection('faq')" aria-label="Ver perguntas frequentes">
+                    <div class="category-icon-app vitrine-icon-question" role="img" aria-label="Ícone de pergunta">❓</div>
+                    <div class="category-label-app">FAQ</div>
+                </button>
+                <button class="category-item-app" onclick="scrollToSection('contato-vitrine')" aria-label="Marketing e contato">
+                    <div class="category-icon-app vitrine-icon-chart" role="img" aria-label="Ícone de gráfico">📊</div>
+                    <div class="category-label-app">Marketing</div>
+                </button>
+            </div>
+        </section>
+
         <!-- Hero Section - USANDO A MESMA ESTRUTURA DO INDEX -->
         <section class="app-hero-section" aria-labelledby="hero-title">
             <h1 id="hero-title" class="app-hero-title">Vitrine Cultural do ROLÊ</h1>
@@ -339,7 +377,7 @@
         <!-- Main Content usando content-card - MESMA ESTRUTURA BASE -->
         <main class="page-container" id="introducao">
             <!-- Introduction Card -->
-            <div class="content-card">
+            <div class="content-card" id="como-funciona">
                 <div class="vitrine-intro">
                     <div class="intro-quote">
                         "Se você tem um evento cultural, artístico ou festeiro… essa página é pra você."
@@ -356,7 +394,7 @@
             </div>
 
             <!-- Interesse Section -->
-            <div class="content-card">
+            <div class="content-card" id="por-que-anunciar">
                 <h2 class="section-title">🔍 Instigaremos INTERESSE</h2>
                 <p>A gente não faz publipost. A gente faz cultura virar desejo.</p>
                 <p>A Vitrine Cultural é o espaço premium de destaque editorial do ROLÊ ENTRETENIMENTO — um território onde festas, shows, artistas, feiras e coletivos ganham um conteúdo próprio, pensado com carinho, estética e impacto.</p>
@@ -401,7 +439,7 @@
             </div>
 
             <!-- Stats Section - USANDO A MESMA ESTRUTURA DO INDEX -->
-            <section aria-labelledby="stats-title">
+            <section aria-labelledby="stats-title" id="pacotes">
                 <div class="app-section-header">
                     <h2 id="stats-title" class="app-section-title">❤️ Despertaremos DESEJO</h2>
                 </div>
@@ -437,7 +475,7 @@
             </section>
 
             <!-- FAQ Section -->
-            <div class="content-card">
+            <div class="content-card" id="faq">
                 <h2 class="section-title">🤔 Objeções comuns</h2>
                 <div class="faq-grid">
                     <div class="faq-item">
@@ -458,7 +496,7 @@
             </div>
 
             <!-- CTA Section -->
-            <div class="content-card cta-section">
+            <div class="content-card cta-section" id="contato-vitrine">
                 <h2 class="section-title">🚀 Tá esperando o quê pra aparecer na Vitrine?</h2>
                 <p>Se você:</p>
                 <div class="checklist">
