@@ -246,61 +246,81 @@
             }
         }
         
-        /* Header Fixes - CORRIGIDOS */
+        /* Header Fixes - CORRIGIDOS - IDÊNTICO AO INDEX */
         @media (max-width: 768px) {
             .app-header {
                 padding: 0 20px;
             }
             .app-header-content {
-                padding: 12px 0 8px 0 !important;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                padding: 60px 0 20px 0;
             }
             .app-logo-img {
-                height: 24px !important;
-                max-width: 100px;
+                height: 40px;
+                width: auto;
+                max-width: 120px;
             }
             .app-header-actions {
-                gap: 8px !important;
                 display: flex;
+                gap: 16px;
                 align-items: center;
-            }
-            .menu-toggle, .theme-toggle-app {
-                padding: 6px;
-                width: 36px;
-                height: 36px;
             }
         }
         
         @media (min-width: 769px) {
+            .app-header {
+                padding: 0;
+            }
+
             .app-header-content {
-                padding: 14px 40px !important;
                 max-width: 1200px;
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                padding: 20px 40px;
             }
+
+            .app-logo-img {
+                height: 50px;
+                width: auto;
+                max-width: 150px;
+            }
+
             .app-header-actions {
-                gap: 20px !important;
                 display: flex;
+                gap: 24px;
                 align-items: center;
             }
-            .desktop-menu {
-                gap: 24px !important;
-                margin-right: 24px !important;
-                display: flex !important;
+
+            /* Desktop: mostrar menu horizontal */
+            .menu-toggle {
+                display: none;
             }
+
+            .mobile-menu-overlay {
+                display: none;
+            }
+
+            /* Menu desktop */
+            .desktop-menu {
+                display: flex;
+                gap: 32px;
+                align-items: center;
+            }
+
             .desktop-menu a {
                 color: var(--text-secondary);
                 text-decoration: none;
                 font-weight: 500;
                 font-size: 15px;
-                transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: var(--transition-fast);
                 padding: 8px 16px;
                 border-radius: 8px;
             }
+
             .desktop-menu a:hover,
             .desktop-menu a.active {
                 color: var(--accent-purple);
@@ -1118,4 +1138,315 @@
                             }
                         } catch (error) {
                             console.warn('Newsletter subscription error:', error);
-                            if (error.name === 'Abort
+                            if (error.name === 'AbortError') {
+                                errorDiv.textContent = 'Tempo limite excedido. Tente novamente.';
+                            } else {
+                                errorDiv.textContent = 'Erro ao cadastrar. Tente novamente mais tarde.';
+                            }
+                        } finally {
+                            submitBtn.disabled = false;
+                            btnText.style.display = 'inline';
+                            btnLoading.style.display = 'none';
+                        }
+                    });
+                    
+                    // Real-time email validation
+                    emailInput.addEventListener('input', utils.debounce(function() {
+                        const email = this.value.trim();
+                        if (email && !validateEmail(email)) {
+                            this.classList.add('error');
+                            errorDiv.textContent = 'Formato de e-mail inválido.';
+                        } else {
+                            this.classList.remove('error');
+                            errorDiv.textContent = '';
+                        }
+                    }, 500));
+                }
+
+                // Stats counter animation with Intersection Observer
+                const observerOptions = {
+                    threshold: 0.5,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                            entry.target.classList.add('counted');
+                            animateNumber(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                const statNumbers = document.querySelectorAll('.app-stat-number');
+                statNumbers.forEach(stat => statsObserver.observe(stat));
+
+                function animateNumber(element) {
+                    const target = parseInt(element.getAttribute('data-target'), 10);
+                    let current = 0;
+                    const increment = Math.ceil(target / 30);
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        element.textContent = current;
+                    }, 50);
+                }
+
+                // Search functionality with debouncing
+                const searchInput = document.querySelector('.app-search-input');
+                if (searchInput) {
+                    searchInput.addEventListener('input', utils.debounce(function() {
+                        const query = utils.sanitize(this.value.toLowerCase().trim());
+                        if (query.length >= 2) {
+                            console.log('Search query:', query);
+                            // Implementar busca aqui
+                        }
+                    }, 300));
+                }
+
+                // Card animations on scroll
+                const fadeObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
+                fadeElements.forEach((element, index) => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                    fadeObserver.observe(element);
+                });
+
+                // Touch/swipe support for cards
+                let startX = 0;
+                const scrollContainer = document.querySelector('.app-cards-scroll');
+                
+                if (scrollContainer) {
+                    scrollContainer.addEventListener('touchstart', function(e) {
+                        startX = e.touches[0].clientX;
+                    }, { passive: true });
+
+                    scrollContainer.addEventListener('touchend', function(e) {
+                        const endX = e.changedTouches[0].clientX;
+                        const diff = startX - endX;
+                        
+                        if (Math.abs(diff) > 50) {
+                            const scrollAmount = 300;
+                            if (diff > 0) {
+                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                            } else {
+                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                            }
+                        }
+                    }, { passive: true });
+                }
+
+                // Initialize ads after DOM is ready
+                setTimeout(() => {
+                    try {
+                        const ads = document.querySelectorAll('.adsbygoogle');
+                        ads.forEach(function(ad) {
+                            try {
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            } catch(e) {
+                                console.warn('AdSense initialization failed for ad:', e);
+                            }
+                        });
+                    } catch(e) {
+                        console.warn('AdSense general initialization failed:', e);
+                    }
+                }, 1000);
+
+                console.log('App initialized successfully');
+            }
+
+            // Smooth scroll function
+            window.scrollToSection = function(sectionId) {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            };
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeApp);
+            } else {
+                initializeApp();
+            }
+            
+            // Error handling
+            window.addEventListener('error', function(e) {
+                console.warn('Script error:', e.error);
+            });
+            
+            window.addEventListener('unhandledrejection', function(e) {
+                console.warn('Unhandled promise rejection:', e.reason);
+            });
+            
+        })();
+    </script>
+
+    <!-- CSS Adicional para correções finais - IDÊNTICO AO INDEX -->
+    <style>
+        /* Newsletter error styling */
+        .newsletter-error {
+            color: var(--accent-red);
+            font-size: 12px;
+            margin-top: 8px;
+            min-height: 16px;
+        }
+        
+        .app-newsletter-input.error {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+        }
+        
+        /* Toast styling */
+        #toast-container {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+        
+        @media (min-width: 769px) {
+            #toast-container {
+                bottom: 40px;
+            }
+        }
+        
+        .toast {
+            background: var(--accent-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            text-align: center;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast.success {
+            background: var(--accent-green);
+        }
+        
+        .toast.error {
+            background: var(--accent-red);
+        }
+        
+        /* Loading state for buttons */
+        .btn-loading {
+            display: none;
+        }
+        
+        button[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Safe area adjustments for mobile */
+        @supports (padding: max(0px)) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(env(safe-area-inset-top), 0px);
+                }
+                
+                .app-bottom-nav {
+                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                }
+            }
+        }
+        
+        /* CORREÇÃO ESPECÍFICA: Banner não cortado - COMO NO INDEX */
+        .app-banner-wrapper {
+            padding: 0 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .app-banner-wrapper {
+                max-width: 1200px;
+                margin: 0 auto 40px auto;
+                padding: 0 40px;
+            }
+        }
+        
+        /* CORREÇÃO: Categorias funcionais como links - COMO NO INDEX */
+        .categories-grid-app {
+            display: grid;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid-app {
+                grid-template-columns: repeat(5, 1fr);
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .categories-grid-app {
+                grid-template-columns: repeat(5, 1fr);
+                max-width: 600px;
+                margin: 0 auto;
+                gap: 24px;
+            }
+        }
+        
+        /* NOVA CORREÇÃO: Hover states para todos os elementos - COMO NO INDEX */
+        .app-search-input:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            background: var(--bg-card);
+        }
+        
+        .app-recommendation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-newsletter-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .app-newsletter-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+    </style>
+</body>
+</html>
