@@ -505,29 +505,29 @@
             </div>
         </div>
 
-        <!-- Categories Grid - CORRIGIDO PARA SER FUNCIONAL -->
+        <!-- Categories Grid - ADAPTADO PARA CIDADES -->
         <section class="app-categories" aria-labelledby="categories-title">
-            <h2 id="categories-title" class="sr-only">Categorias de eventos</h2>
-            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria">
-                <a href="vitrine-cultural.html?categoria=shows" class="category-item-app" aria-label="Ver shows">
+            <h2 id="categories-title" class="sr-only">Cidades em destaque</h2>
+            <div class="categories-grid-app" role="group" aria-label="Navegação por cidades">
+                <a href="destaques-poa.html" class="category-item-app" aria-label="Ver destaques de Porto Alegre">
                     <div class="category-icon-app" role="img" aria-label="Ícone de música">🎵</div>
-                    <div class="category-label-app">Shows</div>
+                    <div class="category-label-app">POA</div>
                 </a>
-                <a href="vitrine-cultural.html?categoria=teatro" class="category-item-app" aria-label="Ver teatro">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de teatro">🎭</div>
-                    <div class="category-label-app">Teatro</div>
+                <a href="destaques-floripa.html" class="category-item-app" aria-label="Ver destaques de Florianópolis">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de praia">🌊</div>
+                    <div class="category-label-app">Floripa</div>
                 </a>
-                <a href="vitrine-cultural.html?categoria=festas" class="category-item-app" aria-label="Ver festas">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de festa">🎉</div>
-                    <div class="category-label-app">Festas</div>
+                <a href="destaques-curitiba.html" class="category-item-app" aria-label="Ver destaques de Curitiba">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de natureza">🌲</div>
+                    <div class="category-label-app">Curitiba</div>
                 </a>
-                <a href="vitrine-cultural.html?categoria=bares" class="category-item-app" aria-label="Ver bares">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de bebida">🍺</div>
-                    <div class="category-label-app">Bares</div>
+                <a href="destaques-sao-paulo.html" class="category-item-app" aria-label="Ver destaques de São Paulo">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de metrópole">🏙️</div>
+                    <div class="category-label-app">Sampa</div>
                 </a>
-                <a href="vitrine-cultural.html?categoria=arte" class="category-item-app" aria-label="Ver arte">
-                    <div class="category-icon-app" role="img" aria-label="Ícone de arte">🎨</div>
-                    <div class="category-label-app">Arte</div>
+                <a href="destaques-rio.html" class="category-item-app" aria-label="Ver destaques do Rio de Janeiro">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de praia">🏖️</div>
+                    <div class="category-label-app">Rio</div>
                 </a>
             </div>
         </section>
@@ -1179,4 +1179,240 @@
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
+                fadeElements.forEach((element, index) => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                    fadeObserver.observe(element);
+                });
+
+                // Touch/swipe support for cards
+                let startX = 0;
+                const scrollContainer = document.querySelector('.app-cards-scroll');
+                
+                if (scrollContainer) {
+                    scrollContainer.addEventListener('touchstart', function(e) {
+                        startX = e.touches[0].clientX;
+                    }, { passive: true });
+
+                    scrollContainer.addEventListener('touchend', function(e) {
+                        const endX = e.changedTouches[0].clientX;
+                        const diff = startX - endX;
+                        
+                        if (Math.abs(diff) > 50) {
+                            const scrollAmount = 300;
+                            if (diff > 0) {
+                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                            } else {
+                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                            }
+                        }
+                    }, { passive: true });
+                }
+
+                // Initialize ads after DOM is ready
+                setTimeout(() => {
+                    try {
+                        const ads = document.querySelectorAll('.adsbygoogle');
+                        ads.forEach(function(ad) {
+                            try {
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            } catch(e) {
+                                console.warn('AdSense initialization failed for ad:', e);
+                            }
+                        });
+                    } catch(e) {
+                        console.warn('AdSense general initialization failed:', e);
+                    }
+                }, 1000);
+
+                console.log('App initialized successfully');
+            }
+
+            // Smooth scroll function
+            window.scrollToSection = function(sectionId) {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            };
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeApp);
+            } else {
+                initializeApp();
+            }
+            
+            // Error handling
+            window.addEventListener('error', function(e) {
+                console.warn('Script error:', e.error);
+            });
+            
+            window.addEventListener('unhandledrejection', function(e) {
+                console.warn('Unhandled promise rejection:', e.reason);
+            });
+            
+        })();
+    </script>
+
+    <!-- CSS Adicional para correções finais -->
+    <style>
+        /* Newsletter error styling */
+        .newsletter-error {
+            color: var(--accent-red);
+            font-size: 12px;
+            margin-top: 8px;
+            min-height: 16px;
+        }
+        
+        .app-newsletter-input.error {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+        }
+        
+        /* Toast styling */
+        #toast-container {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+        
+        @media (min-width: 769px) {
+            #toast-container {
+                bottom: 40px;
+            }
+        }
+        
+        .toast {
+            background: var(--accent-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            text-align: center;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast.success {
+            background: var(--accent-green);
+        }
+        
+        .toast.error {
+            background: var(--accent-red);
+        }
+        
+        /* Loading state for buttons */
+        .btn-loading {
+            display: none;
+        }
+        
+        button[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Safe area adjustments for mobile */
+        @supports (padding: max(0px)) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(env(safe-area-inset-top), 0px);
+                }
+                
+                .app-bottom-nav {
+                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                }
+            }
+        }
+        
+        /* CORREÇÃO ESPECÍFICA: Banner não cortado */
+        .app-banner-wrapper {
+            padding: 0 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 769px) {
+            .app-banner-wrapper {
+                max-width: 1200px;
+                margin: 0 auto 40px auto;
+                padding: 0 40px;
+            }
+        }
+        
+        /* CORREÇÃO: Categorias funcionais como links */
+        .categories-grid-app {
+            display: grid;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid-app {
+                grid-template-columns: repeat(5, 1fr);
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .categories-grid-app {
+                grid-template-columns: repeat(5, 1fr);
+                max-width: 600px;
+                margin: 0 auto;
+                gap: 24px;
+            }
+        }
+        
+        /* NOVA CORREÇÃO: Hover states para todos os elementos */
+        .app-search-input:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            background: var(--bg-card);
+        }
+        
+        .app-recommendation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-newsletter-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .app-newsletter-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+    </style>
+</body>
+</html>
