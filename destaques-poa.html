@@ -4,40 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     
-    <!-- SEO e Meta Tags -->
-    <title>Destaques de Porto Alegre - 8 a 10 de Agosto | ROLÊ ENTRETENIMENTO</title>
-    <meta name="description" content="Curadoria semanal dos melhores eventos de Porto Alegre. Festas, shows, arte e cultura com a opinião e estética do ROLÊ. Arquivo completo das edições.">
+    <!-- SEO e Meta Tags Melhoradas -->
+    <title>Destaques de Porto Alegre | ROLÊ ENTRETENIMENTO</title>
+    <meta name="description" content="Curadoria semanal dos melhores eventos de Porto Alegre. Festas, shows, arte e cultura com a opinião e estética do ROLÊ.">
     <meta name="keywords" content="eventos porto alegre, agenda cultural poa, festas porto alegre, shows poa, vida noturna porto alegre, curadoria cultural">
     <meta name="author" content="ROLÊ Entretenimento">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://roleentretenimento.com/destaques-poa/">
     
-    <!-- Open Graph -->
+    <!-- Structured Data Aprimorado -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://roleentretenimento.com/#organization",
+                "name": "ROLÊ Entretenimento",
+                "alternateName": "ROLÊ",
+                "description": "Curadoria independente de eventos, cultura e experiências do Brasil",
+                "url": "https://roleentretenimento.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://roleentretenimento.com/images/logo-role.png",
+                    "width": 150,
+                    "height": 50
+                },
+                "sameAs": [
+                    "https://instagram.com/role.ent",
+                    "https://tiktok.com/@role.ent"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+55-51-98070-4353",
+                    "contactType": "customer service",
+                    "availableLanguage": ["Portuguese"],
+                    "areaServed": "BR"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "BR",
+                    "addressRegion": "Rio Grande do Sul"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://roleentretenimento.com/#website",
+                "url": "https://roleentretenimento.com",
+                "name": "ROLÊ Entretenimento",
+                "publisher": {
+                    "@id": "https://roleentretenimento.com/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://roleentretenimento.com/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://roleentretenimento.com/destaques-poa/#webpage",
+                "url": "https://roleentretenimento.com/destaques-poa/",
+                "name": "Destaques de Porto Alegre | ROLÊ Entretenimento",
+                "description": "Curadoria semanal dos melhores eventos de Porto Alegre com opinião e estética ROLÊ.",
+                "isPartOf": {
+                    "@id": "https://roleentretenimento.com/#website"
+                },
+                "about": {
+                    "@id": "https://roleentretenimento.com/#organization"
+                },
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": "https://roleentretenimento.com"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Destaques",
+                            "item": "https://roleentretenimento.com/destaques.html"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Porto Alegre"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Open Graph Melhorado -->
     <meta property="og:site_name" content="ROLÊ Entretenimento">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roleentretenimento.com/destaques-poa/">
-    <meta property="og:title" content="Destaques de Porto Alegre | Curadoria Semanal de Eventos">
-    <meta property="og:description" content="Toda semana, o ROLÊ mergulha na cena cultural de POA para te mostrar os eventos que realmente importam.">
+    <meta property="og:title" content="Destaques de Porto Alegre | ROLÊ Entretenimento">
+    <meta property="og:description" content="Curadoria semanal dos melhores eventos de Porto Alegre. Shows, festas, teatro e arte com a opinião e estética do ROLÊ.">
     <meta property="og:image" content="https://roleentretenimento.com/images/destaques-poa-cover.png">
+    <meta property="og:image:alt" content="Destaques de Porto Alegre - Curadoria Cultural ROLÊ">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="pt">
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Destaques de Porto Alegre | Curadoria Semanal">
+    <meta name="twitter:site" content="@role.ent">
+    <meta name="twitter:creator" content="@role.ent">
+    <meta name="twitter:title" content="Destaques de Porto Alegre | ROLÊ Entretenimento">
     <meta name="twitter:description" content="Curadoria semanal dos melhores eventos de Porto Alegre com opinião e estética ROLÊ.">
     <meta name="twitter:image" content="https://roleentretenimento.com/images/destaques-poa-cover.png">
     
-    <!-- Performance -->
+    <!-- Performance e Cache -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     <meta http-equiv="Expires" content="31536000">
     
-    <!-- DNS Prefetch -->
+    <!-- DNS Prefetch e Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    <link rel="preconnect" href="https://www.instagram.com" crossorigin>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//script.google.com">
     
-    <!-- Favicons -->
+    <!-- Favicons Completos -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
@@ -45,12 +141,33 @@
     <meta name="theme-color" content="#8B5CF6">
     <meta name="msapplication-TileColor" content="#8B5CF6">
     
-    <!-- Preload Resources -->
+    <!-- Preload Critical Resources -->
     <link rel="preload" href="estilo.css" as="style">
     <link rel="preload" href="images/logo-role.png" as="image">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     
-    <!-- Theme Script - IDÊNTICO AO INDEX -->
+    <!-- Headers de Segurança via Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://script.google.com https://googleads.g.doubleclick.net;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        img-src 'self' data: https: blob:;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self' https://script.google.com https://pagead2.googlesyndication.com;
+        frame-src 'self' https://googleads.g.doubleclick.net;
+        media-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self' https://script.google.com;
+        upgrade-insecure-requests;
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+    
+    <!-- Theme Script Otimizado - IDÊNTICO AO INDEX -->
     <script>
         (function() {
             try {
@@ -68,25 +185,6 @@
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Destaques de Porto Alegre",
-        "description": "Curadoria semanal dos melhores eventos de Porto Alegre",
-        "url": "https://roleentretenimento.com/destaques-poa/",
-        "publisher": {
-            "@type": "Organization",
-            "name": "ROLÊ Entretenimento",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://roleentretenimento.com/images/logo-role.png"
-            }
-        }
-    }
-    </script>
     
     <!-- CSS Critical Path - IDÊNTICO AO INDEX -->
     <style>
@@ -141,7 +239,7 @@
             background:rgba(255,255,255,0.95);
         }
         
-        /* ESCONDER MENU MOBILE NO DESKTOP */
+        /* CORREÇÃO: ESCONDER MENU MOBILE NO DESKTOP */
         @media (min-width: 769px) {
             .menu-toggle {
                 display: none !important;
@@ -151,7 +249,7 @@
             }
         }
         
-        /* Header Fixes */
+        /* Header Fixes - CORRIGIDOS */
         @media (max-width: 768px) {
             .app-header {
                 padding: 0 20px;
@@ -213,6 +311,20 @@
             }
         }
         
+        /* Banner Size Fix - CORRIGIDO */
+        .app-banner-container {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         /* Bottom Nav Fix */
         .app-bottom-nav {
             background: rgba(26, 26, 26, 0.95);
@@ -231,8 +343,78 @@
         .app-newsletter-section,
         .app-footer,
         .mobile-menu,
-        .content-card {
+        .category-item-app {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* CORREÇÃO: Estilo dos botões de categoria clicáveis */
+        .category-item-app {
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 8px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .category-item-app:hover {
+            transform: translateY(-2px);
+            background: rgba(139, 92, 246, 0.05);
+        }
+        
+        .category-icon-app {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 769px) {
+            .category-icon-app {
+                width: 64px;
+                height: 64px;
+                font-size: 28px;
+            }
+        }
+        
+        .category-label-app {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+        
+        @media (min-width: 769px) {
+            .category-label-app {
+                font-size: 14px;
+            }
+        }
+        
+        /* Gradientes das categorias */
+        .category-item-app:nth-child(1) .category-icon-app {
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+        }
+        .category-item-app:nth-child(2) .category-icon-app {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+        }
+        .category-item-app:nth-child(3) .category-icon-app {
+            background: linear-gradient(135deg, #10B981, #3B82F6);
+        }
+        .category-item-app:nth-child(4) .category-icon-app {
+            background: linear-gradient(135deg, #F59E0B, #EF4444);
+        }
+        .category-item-app:nth-child(5) .category-icon-app {
+            background: linear-gradient(135deg, #EF4444, #EC4899);
         }
     </style>
     
@@ -249,7 +431,7 @@
 
 <body>
     <div class="app-container">
-        <!-- Header - IDÊNTICO AO INDEX -->
+        <!-- Header Corrigido - IDÊNTICO AO INDEX -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
@@ -272,7 +454,7 @@
                         <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
                     </button>
 
-                    <!-- Mobile Menu Button -->
+                    <!-- Mobile Menu Button - APENAS MOBILE -->
                     <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
                         <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -329,211 +511,171 @@
             </div>
         </div>
 
-        <!-- Breadcrumb -->
-        <div class="app-search-container">
-            <div class="breadcrumb" style="text-align: left; padding: 16px 0;">
-                <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">Home</a> 
-                <span style="color: var(--text-muted); margin: 0 8px;">›</span> 
-                <a href="index.html#destaques" style="color: var(--text-secondary); text-decoration: none;">Destaques</a>
-                <span style="color: var(--text-muted); margin: 0 8px;">›</span>
-                <span style="color: var(--accent-purple); font-weight: 500;">Porto Alegre</span>
+        <!-- Categories Grid - IDÊNTICO AO INDEX -->
+        <section class="app-categories" aria-labelledby="categories-title">
+            <h2 id="categories-title" class="sr-only">Categorias de eventos</h2>
+            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria">
+                <a href="vitrine-cultural.html?categoria=shows" class="category-item-app" aria-label="Ver shows">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de música">🎵</div>
+                    <div class="category-label-app">Shows</div>
+                </a>
+                <a href="vitrine-cultural.html?categoria=teatro" class="category-item-app" aria-label="Ver teatro">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de teatro">🎭</div>
+                    <div class="category-label-app">Teatro</div>
+                </a>
+                <a href="vitrine-cultural.html?categoria=festas" class="category-item-app" aria-label="Ver festas">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de festa">🎉</div>
+                    <div class="category-label-app">Festas</div>
+                </a>
+                <a href="vitrine-cultural.html?categoria=bares" class="category-item-app" aria-label="Ver bares">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de bebida">🍺</div>
+                    <div class="category-label-app">Bares</div>
+                </a>
+                <a href="vitrine-cultural.html?categoria=arte" class="category-item-app" aria-label="Ver arte">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de arte">🎨</div>
+                    <div class="category-label-app">Arte</div>
+                </a>
             </div>
-        </div>
+        </section>
 
-        <!-- Page Header -->
-        <section class="page-header">
+        <!-- Hero Section - ADAPTADO PARA POA -->
+        <section class="app-hero-section" aria-labelledby="hero-title">
             <div class="city-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(139, 92, 246, 0.1); padding: 8px 16px; border-radius: 20px; margin-bottom: 16px; border: 1px solid rgba(139, 92, 246, 0.2);">
                 <span class="city-icon" style="font-size: 20px;">🎵</span>
                 <span class="city-name" style="font-size: 12px; font-weight: 600; color: var(--accent-purple); text-transform: uppercase; letter-spacing: 0.5px;">PORTO ALEGRE</span>
             </div>
-            <h1 class="page-title">Destaques de Porto Alegre</h1>
-            <p class="page-subtitle">Curadoria semanal dos melhores rolês da capital gaúcha</p>
-            <div class="page-description" style="max-width: 600px; margin: 16px auto 0 auto; color: var(--text-secondary); line-height: 1.6;">
-                <p>Toda semana, o ROLÊ mergulha na cena cultural de POA para te mostrar os eventos que realmente importam. Não é só agenda, é curadoria com opinião, estética e presença.</p>
-            </div>
-        </section>
-
-        <!-- Hero Banner -->
-        <div class="app-banner-wrapper">
-            <div class="app-banner-container">
-                <img src="images/poa-hero.png" alt="Destaques de Porto Alegre - Curadoria Cultural ROLÊ" 
-                     loading="lazy" width="1200" height="400" style="border-radius: 20px;" />
-            </div>
-        </div>
-
-        <!-- Stats Section -->
-        <section class="archive-stats" style="margin: 32px 0;">
-            <div class="app-stats-grid">
-                <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="4" aria-live="polite">4</span>
-                    <span class="app-stat-label">Edições publicadas</span>
-                </div>
-                <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="42" aria-live="polite">42</span>
-                    <span class="app-stat-label">Eventos cobertos</span>
-                </div>
-                <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="15" aria-live="polite">15</span>
-                    <span class="app-stat-label">Casas mapeadas</span>
-                </div>
-                <div class="app-stat-item">
-                    <span class="app-stat-number" data-target="8" aria-live="polite">8</span>
-                    <span class="app-stat-label">Mil visualizações</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Latest Edition Highlight -->
-        <section class="latest-edition" style="margin: 40px 0;">
-            <div class="app-section-header">
-                <h2 class="app-section-title">Última Edição</h2>
-                <span class="edition-date" style="color: var(--text-secondary); font-size: 14px; font-weight: 500;">8 de Agosto, 2025</span>
-            </div>
-            <div class="content-card">
-                <div class="latest-edition-content">
-                    <div class="latest-edition-info">
-                        <h3 class="latest-edition-title" style="font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; line-height: 1.3;">Eventos em Porto Alegre: os rolês mais quentes da semana na capital gaúcha</h3>
-                        <p class="latest-edition-excerpt" style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">Uma cidade que dança mesmo no frio. Porto Alegre pode até amanhecer gelada, mas quando o sol se põe, tem sempre alguém arrumando a franja na frente do espelho...</p>
-                        <div class="latest-edition-highlights" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-                            <span class="highlight-tag" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;">SEXPOSED no Cabaret</span>
-                            <span class="highlight-tag" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;">Venom - Beyoncé Tribute</span>
-                            <span class="highlight-tag" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;">ROT no Ocidente</span>
-                        </div>
-                        <div class="latest-edition-footer" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
-                            <div class="edition-meta" style="display: flex; gap: 16px; flex-wrap: wrap;">
-                                <span style="font-size: 13px; color: var(--text-secondary);">📅 8 de Agosto</span>
-                                <span style="font-size: 13px; color: var(--text-secondary);">🎭 12 eventos</span>
-                                <span style="font-size: 13px; color: var(--text-secondary);">⭐ Curadoria especial</span>
-                            </div>
-                            <a href="destaques-poa-2025-08-08.html" class="btn-read-edition" style="display: inline-flex; align-items: center; gap: 8px; background: var(--gradient-primary); color: white; padding: 10px 20px; border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 600; transition: var(--transition-normal);">
-                                Ler Edição Completa
-                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Archive Timeline -->
-        <section class="archive-timeline" style="margin: 40px 0;">
-            <div class="app-section-header">
-                <h2 class="app-section-title">Arquivo de Edições</h2>
-                <div class="archive-filters" style="display: flex; gap: 8px;">
-                    <button class="filter-btn active" data-filter="all" style="padding: 6px 12px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary); border-radius: 8px; font-size: 12px; cursor: pointer; transition: var(--transition-fast);">Todas</button>
-                    <button class="filter-btn" data-filter="2025" style="padding: 6px 12px; border: 1px solid var(--border-color); background: transparent; color: var(--text-secondary); border-radius: 8px; font-size: 12px; cursor: pointer; transition: var(--transition-fast);">2025</button>
-                    <button class="filter-btn" data-filter="agosto" style="padding: 6px 12px; border: 1px solid var(--border-color); background: transparent; color: var(--text-secondary); border-radius: 8px; font-size: 12px; cursor: pointer; transition: var(--transition-fast);">Agosto</button>
-                </div>
-            </div>
-            
-            <div class="timeline-container">
-                <!-- Current Edition -->
-                <div class="app-cards-scroll">
-                    <article class="app-recommendation-card timeline-item" data-year="2025" data-month="agosto">
-                        <div class="app-card-image">
-                            <div class="app-card-badge">Nova</div>
-                            <img src="images/poa-hero.png" alt="Eventos da semana" loading="lazy" />
-                        </div>
-                        <div class="app-card-content">
-                            <h4 class="app-card-title">Eventos em Porto Alegre: os rolês mais quentes da semana</h4>
-                            <p class="app-card-description">Uma cidade que dança mesmo no frio. Entre concertos clássicos, festas pop e techno pra suar até a alma...</p>
-                            <div class="app-card-info">
-                                <div class="app-card-info-item">
-                                    <span>📅</span>
-                                    <span>8 de Agosto</span>
-                                </div>
-                                <div class="app-card-info-item">
-                                    <span>🎭</span>
-                                    <span>12 eventos</span>
-                                </div>
-                            </div>
-                            <div class="app-card-footer">
-                                <div class="app-card-rating">
-                                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                                    <span class="rating-text">5.0</span>
-                                </div>
-                                <a href="destaques-poa-2025-08-08.html" class="app-card-link">Ler Edição</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Future Editions (Preview) -->
-                    <article class="app-recommendation-card timeline-item upcoming" data-year="2025" data-month="agosto">
-                        <div class="app-card-image">
-                            <div class="app-card-badge">Em Breve</div>
-                            <div style="height: 100%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
-                                <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="app-card-content">
-                            <h4 class="app-card-title">Mais Edições</h4>
-                            <p class="app-card-description">Mais uma semana de curadoria cultural esperando por você.</p>
-                            <div class="app-card-info">
-                                <div class="app-card-info-item">
-                                    <span>📅</span>
-                                    <span>22 de Agosto</span>
-                                </div>
-                                <div class="app-card-info-item">
-                                    <span>⏰</span>
-                                    <span>Planejando</span>
-                                </div>
-                            </div>
-                            <div class="app-card-footer">
-                                <div class="app-card-rating">
-                                    <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
-                                </div>
-                                <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- Load More Button -->
-            <div style="text-align: center; margin: 40px 0;">
-                <button class="form-button" id="load-more-btn">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-right: 8px;">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                    </svg>
-                    Carregar Mais Edições
+            <h1 id="hero-title" class="app-hero-title">Destaques de Porto Alegre</h1>
+            <p class="app-hero-description">
+                Toda semana, o ROLÊ mergulha na cena cultural de POA para te mostrar os eventos que realmente importam. 
+                Não é só agenda, é curadoria com opinião, estética e presença.
+            </p>
+            <div class="app-hero-cta">
+                <button class="app-btn-hero" onclick="scrollToSection('destaques')" aria-describedby="hero-title">
+                    Ver Destaques da Semana
                 </button>
             </div>
         </section>
 
-        <!-- How It Works -->
-        <section class="app-como-funciona">
-            <div class="content-card">
-                <div class="app-como-funciona-content">
-                    <h2 class="app-section-title">Como Funciona a Curadoria</h2>
-                    <p>Nossa curadoria vai muito além de uma simples agenda. Pesquisamos ativamente a cena cultural de Porto Alegre, selecionamos eventos com critério e apresentamos com contexto e personalidade única.</p>
-                    
-                    <div class="app-stats-grid" style="margin-top: 32px;">
-                        <div class="app-stat-item">
-                            <div style="font-size: 2.5rem; margin-bottom: 16px;">🔍</div>
-                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 12px;">Pesquisa Ativa</h3>
-                            <p style="font-size: 14px; color: var(--text-secondary);">Mapeamos a cena cultural de POA, desde as grandes casas até os espaços independentes.</p>
+        <!-- Banner - IDÊNTICO AO INDEX EM ESTRUTURA -->
+        <div class="app-banner-wrapper">
+            <div class="app-banner-container">
+                <img src="images/poa-hero.png" alt="Destaques de Porto Alegre - Curadoria Cultural ROLÊ" 
+                     loading="lazy" width="1200" height="400" />
+            </div>
+        </div>
+
+        <!-- Section Header - IDÊNTICO AO INDEX -->
+        <div class="app-section-header">
+            <h2 class="app-section-title" id="destaques-title">ÚLTIMA EDIÇÃO</h2>
+            <a href="destaques-poa-2025-08-08.html" class="app-see-all" aria-describedby="destaques-title">Ler edição completa</a>
+        </div>
+
+        <!-- Latest Edition Cards - SEGUINDO ESTRUTURA DO INDEX -->
+        <section class="app-recommendations" id="destaques" aria-labelledby="destaques-title">
+            <div class="app-cards-scroll" role="group" aria-label="Edição atual em destaque">
+                <!-- Latest Edition Card -->
+                <article class="app-recommendation-card" onclick="window.location.href='destaques-poa-2025-08-08.html'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">8 de Agosto</div>
+                        <img src="images/poa-hero.png" alt="Eventos da semana em Porto Alegre" loading="lazy" width="280" height="140" />
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Eventos em Porto Alegre: os rolês mais quentes da semana na capital gaúcha</h3>
+                        <p class="app-card-description">Uma cidade que dança mesmo no frio. Porto Alegre pode até amanhecer gelada, mas quando o sol se põe, tem sempre alguém arrumando a franja na frente do espelho...</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Data">📅</span>
+                                <span>8 de Agosto</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Eventos">🎭</span>
+                                <span>12 eventos em destaque</span>
+                            </div>
                         </div>
-                        <div class="app-stat-item">
-                            <div style="font-size: 2.5rem; margin-bottom: 16px;">✨</div>
-                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 12px;">Curadoria com Opinião</h3>
-                            <p style="font-size: 14px; color: var(--text-secondary);">Não é só agenda. Selecionamos eventos com critério, estética e personalidade.</p>
-                        </div>
-                        <div class="app-stat-item">
-                            <div style="font-size: 2.5rem; margin-bottom: 16px;">📝</div>
-                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 12px;">Contexto Cultural</h3>
-                            <p style="font-size: 14px; color: var(--text-secondary);">Cada edição traz análise, contexto e a vibe única de cada rolê.</p>
-                        </div>
-                        <div class="app-stat-item">
-                            <div style="font-size: 2.5rem; margin-bottom: 16px;">🎯</div>
-                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 12px;">Toda Semana</h3>
-                            <p style="font-size: 14px; color: var(--text-secondary);">Publicação semanal com os destaques mais quentes da capital gaúcha.</p>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">5.0</span>
+                            </div>
+                            <a href="destaques-poa-2025-08-08.html" 
+                               class="app-card-link"
+                               aria-label="Ler edição completa dos destaques de Porto Alegre"
+                               onclick="event.stopPropagation();">
+                                Ler Edição
+                            </a>
                         </div>
                     </div>
-                </div>
+                </article>
+
+                <!-- Upcoming Edition Card -->
+                <article class="app-recommendation-card" data-city="upcoming">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Em Breve</div>
+                        <div style="height: 140px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+                            <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Próxima Edição</h3>
+                        <p class="app-card-description">A curadoria da próxima semana será publicada em breve. Fique ligado!</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Data">📅</span>
+                                <span>15 de Agosto</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Status">⏰</span>
+                                <span>Em produção</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
+                            </div>
+                            <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Archive Card -->
+                <article class="app-recommendation-card" onclick="window.location.href='#arquivo'">
+                    <div class="app-card-image">
+                        <div class="app-card-badge">Arquivo</div>
+                        <div style="height: 140px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+                            <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="app-card-content">
+                        <h3 class="app-card-title">Arquivo de Edições</h3>
+                        <p class="app-card-description">Explore todas as edições anteriores dos destaques de Porto Alegre.</p>
+                        <div class="app-card-info">
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Edições">📚</span>
+                                <span>4 edições</span>
+                            </div>
+                            <div class="app-card-info-item">
+                                <span role="img" aria-label="Eventos">🎭</span>
+                                <span>42 eventos cobertos</span>
+                            </div>
+                        </div>
+                        <div class="app-card-footer">
+                            <div class="app-card-rating">
+                                <div class="stars" role="img" aria-label="Avaliação 4 estrelas">⭐⭐⭐⭐</div>
+                                <span class="rating-text">4.8</span>
+                            </div>
+                            <a href="#arquivo" 
+                               class="app-card-link"
+                               aria-label="Ver arquivo de edições"
+                               onclick="event.stopPropagation();">
+                                Ver Arquivo
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -547,10 +689,58 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
+        <!-- Como Funciona - IDÊNTICO AO INDEX -->
+        <section class="app-como-funciona" aria-labelledby="como-funciona-title">
+            <div class="app-section-header">
+                <h2 id="como-funciona-title" class="app-section-title">Como Funciona a Curadoria</h2>
+            </div>
+            <div class="app-como-funciona-content">
+                <p>
+                    Nossa curadoria vai muito além de uma simples agenda. Pesquisamos ativamente a cena cultural de Porto Alegre, 
+                    selecionamos eventos com critério e apresentamos com contexto e personalidade única.
+                </p>
+            </div>
+        </section>
+
+        <!-- Featured Banner - ADAPTADO PARA POA -->
+        <div class="app-featured-banner" role="complementary" onclick="window.location.href='destaques-poa-2025-08-08.html'">
+            <div class="app-banner-content">
+                <div class="app-banner-tag">CURADORIA SEMANAL</div>
+                <h3 class="app-banner-title">Destaques de Porto Alegre</h3>
+                <p class="app-banner-subtitle">Toda semana, os melhores eventos da capital gaúcha com a opinião e estética ROLÊ.</p>
+                <a href="destaques-poa-2025-08-08.html" class="app-banner-cta" onclick="event.stopPropagation();">Ler Última Edição</a>
+            </div>
+        </div>
+
+        <!-- Stats Section - IDÊNTICO AO INDEX -->
+        <section aria-labelledby="stats-title" id="arquivo">
+            <div class="app-section-header">
+                <h2 id="stats-title" class="app-section-title">Arquivo em números</h2>
+            </div>
+            <div class="app-stats-grid">
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="4" aria-live="polite">0</span>
+                    <span class="app-stat-label">Edições publicadas</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="42" aria-live="polite">0</span>
+                    <span class="app-stat-label">Eventos cobertos</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="15" aria-live="polite">0</span>
+                    <span class="app-stat-label">Casas mapeadas</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="8" aria-live="polite">0</span>
+                    <span class="app-stat-label">Mil visualizações</span>
+                </div>
+            </div>
+        </section>
+
         <!-- Newsletter Section - IDÊNTICO AO INDEX -->
         <section class="app-newsletter-section" aria-labelledby="newsletter-title">
             <div class="app-newsletter-content">
-                <h2 id="newsletter-title">Receba os Destaques de POA</h2>
+                <h2 id="newsletter-title" class="app-section-title">Receba os Destaques de POA</h2>
                 <p>Assine nossa newsletter específica e receba toda semana os melhores eventos de Porto Alegre na sua caixa de entrada.</p>
                 <form class="app-newsletter-form" id="newsletter-form" novalidate>
                     <label for="newsletter-email" class="sr-only">Seu endereço de email</label>
@@ -643,7 +833,7 @@
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript - IDÊNTICO AO INDEX COM AJUSTES ESPECÍFICOS -->
+    <!-- JavaScript - IDÊNTICO AO INDEX COM ADAPTAÇÕES MÍNIMAS -->
     <script>
         // Performance and Security Enhanced JavaScript
         (function() {
@@ -920,36 +1110,6 @@
                     }, 50);
                 }
 
-                // Filter functionality for archive
-                const filterButtons = document.querySelectorAll('.filter-btn');
-                const timelineItems = document.querySelectorAll('.timeline-item');
-
-                filterButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        const filter = this.getAttribute('data-filter');
-                        
-                        // Update active button
-                        filterButtons.forEach(btn => btn.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        // Filter items
-                        timelineItems.forEach(item => {
-                            if (filter === 'all') {
-                                item.style.display = 'block';
-                            } else {
-                                const year = item.getAttribute('data-year');
-                                const month = item.getAttribute('data-month');
-                                
-                                if (filter === year || filter === month) {
-                                    item.style.display = 'block';
-                                } else {
-                                    item.style.display = 'none';
-                                }
-                            }
-                        });
-                    });
-                });
-
                 // Search functionality with debouncing
                 const searchInput = document.querySelector('.app-search-input');
                 if (searchInput) {
@@ -972,13 +1132,37 @@
                     });
                 }, { threshold: 0.1 });
 
-                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item, .content-card');
+                const fadeElements = document.querySelectorAll('.app-recommendation-card, .app-stat-item');
                 fadeElements.forEach((element, index) => {
                     element.style.opacity = '0';
                     element.style.transform = 'translateY(30px)';
                     element.style.transition = `all 0.6s ease ${index * 0.1}s`;
                     fadeObserver.observe(element);
                 });
+
+                // Touch/swipe support for cards
+                let startX = 0;
+                const scrollContainer = document.querySelector('.app-cards-scroll');
+                
+                if (scrollContainer) {
+                    scrollContainer.addEventListener('touchstart', function(e) {
+                        startX = e.touches[0].clientX;
+                    }, { passive: true });
+
+                    scrollContainer.addEventListener('touchend', function(e) {
+                        const endX = e.changedTouches[0].clientX;
+                        const diff = startX - endX;
+                        
+                        if (Math.abs(diff) > 50) {
+                            const scrollAmount = 300;
+                            if (diff > 0) {
+                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                            } else {
+                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                            }
+                        }
+                    }, { passive: true });
+                }
 
                 // Initialize ads after DOM is ready
                 setTimeout(() => {
@@ -998,6 +1182,17 @@
 
                 console.log('Destaques POA page initialized successfully');
             }
+
+            // Smooth scroll function
+            window.scrollToSection = function(sectionId) {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            };
 
             // Initialize when DOM is ready
             if (document.readyState === 'loading') {
@@ -1056,35 +1251,222 @@
             border-radius: 25px;
             font-weight: 600;
             font-size: 14px;
-             center; justify-content: center; color: var(--text-secondary);">
-                                <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="app-card-content">
-                            <h4 class="app-card-title">Próxima Edição</h4>
-                            <p class="app-card-description">A curadoria da próxima semana será publicada em breve. Fique ligado!</p>
-                            <div class="app-card-info">
-                                <div class="app-card-info-item">
-                                    <span>📅</span>
-                                    <span>15 de Agosto</span>
-                                </div>
-                                <div class="app-card-info-item">
-                                    <span>⏰</span>
-                                    <span>Em produção</span>
-                                </div>
-                            </div>
-                            <div class="app-card-footer">
-                                <div class="app-card-rating">
-                                    <span style="color: var(--text-muted); font-size: 12px;">Aguarde...</span>
-                                </div>
-                                <button class="app-card-link" disabled style="opacity: 0.5; cursor: not-allowed;">Em Breve</button>
-                            </div>
-                        </div>
-                    </article>
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            text-align: center;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast.success {
+            background: var(--accent-green);
+        }
+        
+        .toast.error {
+            background: var(--accent-red);
+        }
+        
+        /* Loading state for buttons */
+        .btn-loading {
+            display: none;
+        }
+        
+        button[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Safe area adjustments for mobile */
+        @supports (padding: max(0px)) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(env(safe-area-inset-top), 0px);
+                }
+                
+                .app-bottom-nav {
+                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                }
+            }
+        }
+        
+        /* CORREÇÃO ESPECÍFICA: Banner não cortado */
+        .app-banner-wrapper {
+            padding: 0 20px;
+            margin-bottom: 24px;
+        }
 
-                    <article class="app-recommendation-card timeline-item upcoming" data-year="2025" data-month="agosto">
-                        <div class="app-card-image">
-                            <div class="app-card-badge">Em Breve</div>
-                            <div style="height: 100%; background: var(--bg-secondary); display: flex; align-items:
+        @media (min-width: 769px) {
+            .app-banner-wrapper {
+                max-width: 1200px;
+                margin: 0 auto 40px auto;
+                padding: 0 40px;
+            }
+        }
+        
+        /* Hover states para todos os elementos */
+        .app-search-input:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            background: var(--bg-card);
+        }
+        
+        .app-recommendation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-newsletter-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .app-newsletter-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        
+        /* City badge styling */
+        .city-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .city-icon {
+            font-size: 20px;
+        }
+        
+        .city-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Featured banner styling */
+        .app-featured-banner {
+            margin: 32px 20px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        @media (min-width: 769px) {
+            .app-featured-banner {
+                max-width: 1000px;
+                margin: 48px auto;
+                padding: 40px;
+            }
+        }
+        
+        .app-featured-banner:hover {
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        .app-banner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .app-banner-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (min-width: 769px) {
+            .app-banner-tag {
+                padding: 8px 16px;
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+        }
+        
+        .app-banner-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+        
+        @media (min-width: 769px) {
+            .app-banner-title {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+        }
+        
+        .app-banner-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+        
+        @media (min-width: 769px) {
+            .app-banner-subtitle {
+                font-size: 16px;
+                margin-bottom: 20px;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        .app-banner-cta {
+            background: white;
+            color: var(--accent-purple);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        @media (min-width: 769px) {
+            .app-banner-cta {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+        }
+        
+        .app-banner-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</body>
+</html>
