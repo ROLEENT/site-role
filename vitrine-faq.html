@@ -10,6 +10,7 @@
     <meta name="keywords" content="faq, dúvidas, ajuda, rolê, entretenimento, cultura, eventos brasil, perguntas frequentes">
     <meta name="author" content="ROLÊ Entretenimento">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://roleentretenimento.com/vitrine-faq.html">
     
     <!-- Open Graph -->
@@ -20,33 +21,63 @@
     <meta property="og:description" content="Tire todas suas dúvidas sobre eventos culturais, artistas e nossa plataforma. FAQ completo do ROLÊ Entretenimento.">
     <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png">
     <meta property="og:image:alt" content="FAQ ROLÊ - Perguntas frequentes">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pt_BR">
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@role.ent">
-    <meta name="twitter:title" content="FAQ - ROLÊ ENTRETENIMENTO">
-    <meta name="twitter:description" content="Tire todas suas dúvidas sobre eventos culturais e nossa plataforma.">
+    <meta name="twitter:creator" content="@role.ent">
+    <meta name="twitter:title" content="FAQ - ROLÊ ENTRETENIMENTO | Perguntas Frequentes">
+    <meta name="twitter:description" content="Tire todas suas dúvidas sobre eventos culturais, artistas e nossa plataforma.">
     <meta name="twitter:image" content="https://roleentretenimento.com/images/banner-home.png">
     
     <!-- Performance e Cache -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    <meta http-equiv="Expires" content="31536000">
     
     <!-- DNS Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//script.google.com">
     
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#8B5CF6">
+    <meta name="msapplication-TileColor" content="#8B5CF6">
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="estilo.css" as="style">
     <link rel="preload" href="images/logo-role.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     
-    <!-- Theme Script Identical to Index -->
+    <!-- Headers de Segurança -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://script.google.com https://googleads.g.doubleclick.net;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        img-src 'self' data: https: blob:;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self' https://script.google.com https://pagead2.googlesyndication.com;
+        frame-src 'self' https://googleads.g.doubleclick.net;
+        media-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self' https://script.google.com;
+        upgrade-insecure-requests;
+    ">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+    
+    <!-- Theme Script - IDENTICO AO INDEX -->
     <script>
         (function() {
             try {
@@ -62,9 +93,12 @@
         })();
     </script>
     
-    <!-- Critical CSS Inline - IDENTICAL TO INDEX -->
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
+    
+    <!-- CSS Critical Path - IDENTICO AO INDEX -->
     <style>
-        /* Critical CSS inline - IDENTICAL TO INDEX */
+        /* Critical CSS inline - IDENTICO AO INDEX */
         :root{
             --bg-primary:#0D0D0D;
             --bg-secondary:#1A1A1A;
@@ -125,7 +159,7 @@
             }
         }
         
-        /* Header Fixes - IDENTICAL TO INDEX */
+        /* Header Fixes - IDENTICOS AO INDEX */
         @media (max-width: 768px) {
             .app-header {
                 padding: 0 20px;
@@ -188,22 +222,6 @@
         }
         
         /* FAQ Specific Styles */
-        .faq-section {
-            margin-bottom: 40px;
-        }
-        
-        .faq-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        @media (min-width: 769px) {
-            .faq-container {
-                padding: 0 40px;
-            }
-        }
-        
         .faq-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -302,82 +320,6 @@
         .faq-section.active {
             display: block;
         }
-        
-        /* Contact buttons */
-        .contact-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .contact-buttons .app-banner-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            min-width: 140px;
-            justify-content: center;
-        }
-        
-        /* Back navigation */
-        .back-navigation {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        
-        @media (min-width: 769px) {
-            .back-navigation {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 48px 40px;
-            }
-        }
-        
-        /* Vitrine nav */
-        .vitrine-nav {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-            padding: 16px 0;
-            margin-bottom: 24px;
-        }
-        
-        .vitrine-nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        
-        .vitrine-nav-container::-webkit-scrollbar {
-            display: none;
-        }
-        
-        @media (min-width: 769px) {
-            .vitrine-nav-container {
-                padding: 0 40px;
-                justify-content: center;
-            }
-        }
-        
-        .vitrine-nav-item {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .vitrine-nav-item:hover,
-        .vitrine-nav-item.active {
-            color: var(--accent-purple);
-            background: rgba(139, 92, 246, 0.1);
-        }
     </style>
     
     <!-- Load Main CSS -->
@@ -393,7 +335,7 @@
 
 <body>
     <div class="app-container">
-        <!-- Header IDENTICAL TO INDEX -->
+        <!-- Header IDENTICO AO INDEX -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
@@ -404,7 +346,7 @@
                     <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
                         <a href="index.html">Home</a>
                         <a href="revista.html">Revista</a>
-                        <a href="vitrine-cultural.html" class="active">Vitrine Cultural</a>
+                        <a href="vitrine-cultural.html" class="active" aria-current="page">Vitrine Cultural</a>
                         <a href="destaques.html">Destaques</a>
                         <a href="descontos.html">Descontos</a>
                         <a href="contato.html">Contato</a>
@@ -416,7 +358,7 @@
                         <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
                     </button>
 
-                    <!-- Mobile Menu Button - APENAS MOBILE -->
+                    <!-- Mobile Menu Button -->
                     <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
                         <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -426,7 +368,7 @@
             </div>
         </header>
 
-        <!-- Mobile Menu Overlay IDENTICAL TO INDEX -->
+        <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
             <nav class="mobile-menu">
                 <div class="mobile-menu-header">
@@ -462,30 +404,7 @@
             </nav>
         </div>
 
-        <!-- Hero Section IDÊNTICO AO VITRINE-HERO -->
-        <section class="app-hero-section" aria-labelledby="hero-title">
-            <h1 id="hero-title" class="app-hero-title">FAQ - Perguntas Frequentes</h1>
-            <p class="app-hero-description">
-                Tire suas dúvidas sobre o ROLÊ Entretenimento, eventos culturais, artistas e nossa plataforma
-            </p>
-            <div class="app-hero-cta">
-                <button class="app-btn-hero" onclick="scrollToSection('faq-filter')" aria-describedby="hero-title">
-                    Ver perguntas frequentes
-                </button>
-            </div>
-        </section>
-
-        <!-- Vitrine Navigation -->
-        <nav class="vitrine-nav" role="navigation" aria-label="Navegação da Vitrine Cultural">
-            <div class="vitrine-nav-container">
-                <a href="vitrine-cultural.html" class="vitrine-nav-item">Vitrine Cultural</a>
-                <a href="vitrine-pacotes.html" class="vitrine-nav-item">Pacotes</a>
-                <a href="vitrine-faq.html" class="vitrine-nav-item active" aria-current="page">FAQ</a>
-                <a href="guia-eventos.html" class="vitrine-nav-item">Guia de Eventos</a>
-            </div>
-        </nav>
-
-        <!-- Search Bar IDENTICAL TO INDEX -->
+        <!-- Search Bar -->
         <div class="app-search-container">
             <div class="app-search-bar">
                 <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -496,7 +415,7 @@
             </div>
         </div>
 
-        <!-- Categories Grid - ESPECÍFICAS DA VITRINE (IDÊNTICO AO VITRINE-HERO) -->
+        <!-- Categories Grid - Vitrine -->
         <section class="app-categories" aria-labelledby="categories-title">
             <h2 id="categories-title" class="sr-only">Seções da vitrine cultural</h2>
             <div class="categories-grid-app" role="group" aria-label="Seções da vitrine cultural">
@@ -523,36 +442,58 @@
             </div>
         </section>
 
-        <!-- FAQ Categories Filter -->
-        <div class="faq-filter-section" id="faq-filter">
-            <div class="app-section-header">
-                <h2 class="app-section-title">Filtrar Perguntas</h2>
+        <!-- Hero Section -->
+        <section class="app-hero-section" aria-labelledby="hero-title">
+            <h1 id="hero-title" class="app-hero-title">FAQ - Perguntas Frequentes</h1>
+            <p class="app-hero-description">
+                Tire suas dúvidas sobre o ROLÊ Entretenimento, eventos culturais, artistas e nossa plataforma
+            </p>
+            <div class="app-hero-cta">
+                <button class="app-btn-hero" onclick="scrollToSection('faq-filter')" aria-describedby="hero-title">
+                    Ver perguntas frequentes
+                </button>
             </div>
-            <div class="faq-filter-container">
-                <div class="faq-filter-grid" role="group" aria-label="Filtros por categoria de perguntas">
-                    <button class="faq-filter-btn active" data-category="geral" aria-label="Ver perguntas gerais">
-                        <span class="faq-filter-icon">📌</span>
-                        <span class="faq-filter-label">Geral</span>
-                    </button>
-                    <button class="faq-filter-btn" data-category="eventos" aria-label="Ver perguntas sobre eventos">
-                        <span class="faq-filter-icon">🎉</span>
-                        <span class="faq-filter-label">Eventos</span>
-                    </button>
-                    <button class="faq-filter-btn" data-category="artistas" aria-label="Ver perguntas sobre artistas">
-                        <span class="faq-filter-icon">🎨</span>
-                        <span class="faq-filter-label">Artistas</span>
-                    </button>
-                    <button class="faq-filter-btn" data-category="tecnico" aria-label="Ver perguntas técnicas">
-                        <span class="faq-filter-icon">💻</span>
-                        <span class="faq-filter-label">Técnico</span>
-                    </button>
-                    <button class="faq-filter-btn" data-category="parcerias" aria-label="Ver perguntas sobre parcerias">
-                        <span class="faq-filter-icon">🤝</span>
-                        <span class="faq-filter-label">Parcerias</span>
-                    </button>
-                </div>
+        </section>
+
+        <!-- Banner -->
+        <div class="app-banner-wrapper">
+            <div class="app-banner-container">
+                <img src="images/banner-home.png" alt="Banner FAQ ROLÊ - Perguntas e respostas sobre cultura e entretenimento" 
+                     loading="lazy" width="1200" height="400" />
             </div>
         </div>
+
+        <!-- Section Header -->
+        <div class="app-section-header">
+            <h2 class="app-section-title" id="faq-filter-title">CATEGORIAS DE PERGUNTAS</h2>
+            <a href="contato.html" class="app-see-all" aria-describedby="faq-filter-title">Ainda com dúvidas?</a>
+        </div>
+
+        <!-- FAQ Categories Filter -->
+        <section class="app-categories" id="faq-filter" aria-labelledby="faq-filter-title">
+            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria de perguntas">
+                <button class="category-item-app active" data-category="geral" aria-label="Ver perguntas gerais">
+                    <div class="category-icon-app" role="img" aria-label="Ícone geral">📌</div>
+                    <div class="category-label-app">Geral</div>
+                </button>
+                <button class="category-item-app" data-category="eventos" aria-label="Ver perguntas sobre eventos">
+                    <div class="category-icon-app" role="img" aria-label="Ícone eventos">🎉</div>
+                    <div class="category-label-app">Eventos</div>
+                </button>
+                <button class="category-item-app" data-category="artistas" aria-label="Ver perguntas sobre artistas">
+                    <div class="category-icon-app" role="img" aria-label="Ícone artistas">🎨</div>
+                    <div class="category-label-app">Artistas</div>
+                </button>
+                <button class="category-item-app" data-category="tecnico" aria-label="Ver perguntas técnicas">
+                    <div class="category-icon-app" role="img" aria-label="Ícone técnico">💻</div>
+                    <div class="category-label-app">Técnico</div>
+                </button>
+                <button class="category-item-app" data-category="parcerias" aria-label="Ver perguntas sobre parcerias">
+                    <div class="category-icon-app" role="img" aria-label="Ícone parcerias">🤝</div>
+                    <div class="category-label-app">Parcerias</div>
+                </button>
+            </div>
+        </section>
 
         <!-- FAQ Content -->
         <main class="faq-main">
@@ -562,99 +503,36 @@
                     <h2 id="geral-title" class="app-section-title">📌 Sobre o ROLÊ Entretenimento</h2>
                 </div>
                 
-                <div class="faq-container">
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>O que é o ROLÊ Entretenimento?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                <div class="app-recommendations">
+                    <div class="app-cards-scroll">
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Posso divulgar meu evento no ROLÊ?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sim! Entre em contato através do nosso <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a> ou <a href="https://instagram.com/role.ent" target="_blank">Instagram</a>. Analisamos cada proposta considerando nossa linha editorial e disponibilidade. Eventos alinhados com nossa curadoria cultural têm prioridade.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>O ROLÊ Entretenimento é uma plataforma que conecta cultura, arte e os rolês mais vivos do Brasil. Promovemos eventos, divulgamos artistas emergentes e criamos conteúdo cultural para aproximar pessoas das experiências mais autênticas de cada cidade.</p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Como vocês escolhem os eventos para divulgar?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Vocês cobram para divulgar eventos?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Oferecemos tanto divulgação orgânica quanto parcerias comerciais. Eventos com impacto cultural relevante podem ser divulgados gratuitamente. Para campanhas estratégicas, temos <a href="vitrine-pacotes.html">planos personalizados</a>.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Nossa curadoria busca eventos que representem a diversidade cultural brasileira, priorizando produções independentes, artistas emergentes e iniciativas que fortaleçam a cena cultural local. Valorizamos originalidade, qualidade e impacto social.</p>
-                        </div>
-                    </article>
-
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Quais cidades vocês cobrem?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Atualmente focamos nas principais capitais brasileiras: <strong>Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis</strong>, Belo Horizonte, Salvador, Recife, Fortaleza e Brasília. Estamos expandindo para outras cidades constantemente.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Seção Eventos -->
-            <section class="faq-section" data-category="eventos" aria-labelledby="eventos-title">
-                <div class="app-section-header">
-                    <h2 id="eventos-title" class="app-section-title">🎉 Eventos e Ingressos</h2>
-                </div>
-                
-                <div class="faq-container">
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Como compro ingressos pelos canais do ROLÊ?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Não vendemos ingressos diretamente. Direcionamos nossos seguidores para os canais oficiais dos organizadores ou plataformas parceiras. Sempre verifique a autenticidade dos links e compre apenas em fontes confiáveis.</p>
-                        </div>
-                    </article>
-
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Posso divulgar meu evento no ROLÊ?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sim! Entre em contato através do nosso <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a> ou <a href="https://instagram.com/role.ent" target="_blank">Instagram</a>. Analisamos cada proposta considerando nossa linha editorial e disponibilidade. Eventos alinhados com nossa curadoria cultural têm prioridade.</p>
-                        </div>
-                    </article>
-
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Vocês cobram para divulgar eventos?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Oferecemos tanto divulgação orgânica quanto parcerias comerciais. Eventos com impacto cultural relevante podem ser divulgados gratuitamente. Para campanhas estratégicas, temos <a href="vitrine-pacotes.html">planos personalizados</a>.</p>
-                        </div>
-                    </article>
+                        </article>
+                    </div>
                 </div>
             </section>
 
@@ -664,48 +542,50 @@
                     <h2 id="artistas-title" class="app-section-title">🎨 Para Artistas</h2>
                 </div>
                 
-                <div class="faq-container">
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Como faço para aparecer na Vitrine Cultural?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                <div class="app-recommendations">
+                    <div class="app-cards-scroll">
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como faço para aparecer na Vitrine Cultural?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Envie seu material através dos nossos canais de contato. Incluir: biografia, fotos profissionais, links das redes sociais, samples de trabalhos e informações sobre próximos projetos. Nossa equipe avalia e retorna em até 7 dias.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Envie seu material através dos nossos canais de contato. Incluir: biografia, fotos profissionais, links das redes sociais, samples de trabalhos e informações sobre próximos projetos. Nossa equipe avalia e retorna em até 7 dias.</p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Que tipo de artista vocês apoiam?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Que tipo de artista vocês apoiam?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Apoiamos artistas de todas as linguagens: música, artes visuais, performance, teatro, dança, literatura, cinema e cultura digital. Priorizamos talentos emergentes e projetos com identidade cultural brasileira.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Apoiamos artistas de todas as linguagens: música, artes visuais, performance, teatro, dança, literatura, cinema e cultura digital. Priorizamos talentos emergentes e projetos com identidade cultural brasileira.</p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Vocês oferecem mentoria ou consultoria para artistas?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Vocês oferecem mentoria ou consultoria para artistas?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Eventualmente organizamos workshops e mentorias coletivas. Para consultoria individual, entre em contato para avaliarmos disponibilidade. Também conectamos artistas com profissionais do mercado através da nossa rede.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Eventualmente organizamos workshops e mentorias coletivas. Para consultoria individual, entre em contato para avaliarmos disponibilidade. Também conectamos artistas com profissionais do mercado através da nossa rede.</p>
-                        </div>
-                    </article>
+                        </article>
+                    </div>
                 </div>
             </section>
 
@@ -715,48 +595,50 @@
                     <h2 id="tecnico-title" class="app-section-title">💻 Suporte Técnico</h2>
                 </div>
                 
-                <div class="faq-container">
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Por que não consigo acessar alguns links?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                <div class="app-recommendations">
+                    <div class="app-cards-scroll">
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Por que não consigo acessar alguns links?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Alguns links podem expirar ou ser temporariamente indisponíveis. Se encontrar problemas, nos informe através do WhatsApp. Sempre atualizamos informações e corrigimos links quebrados rapidamente.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Alguns links podem expirar ou ser temporariamente indisponíveis. Se encontrar problemas, nos informe através do WhatsApp. Sempre atualizamos informações e corrigimos links quebrados rapidamente.</p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Como ativo as notificações para não perder eventos?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como ativo as notificações para não perder eventos?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Siga nossas redes sociais (<a href="https://instagram.com/role.ent" target="_blank">Instagram</a> e <a href="https://tiktok.com/@role.ent" target="_blank">TikTok</a>) e ative as notificações. No Instagram, toque no sino ao lado do "Seguindo". Também temos um grupo no WhatsApp para avisos urgentes de eventos imperdíveis.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Siga nossas redes sociais (<a href="https://instagram.com/role.ent" target="_blank">Instagram</a> e <a href="https://tiktok.com/@role.ent" target="_blank">TikTok</a>) e ative as notificações. No Instagram, toque no sino ao lado do "Seguindo". Também temos um grupo no WhatsApp para avisos urgentes de eventos imperdíveis.</p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>O site funciona em todos os dispositivos?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>O site funciona em todos os dispositivos?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sim! Nosso site é responsivo e funciona perfeitamente em smartphones, tablets e computadores. Se encontrar algum problema de visualização, nos reporte para resolvermos rapidamente.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sim! Nosso site é responsivo e funciona perfeitamente em smartphones, tablets e computadores. Se encontrar algum problema de visualização, nos reporte para resolvermos rapidamente.</p>
-                        </div>
-                    </article>
+                        </article>
+                    </div>
                 </div>
             </section>
 
@@ -766,75 +648,136 @@
                     <h2 id="parcerias-title" class="app-section-title">🤝 Parcerias e Colaborações</h2>
                 </div>
                 
-                <div class="faq-container">
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Como posso colaborar com o ROLÊ?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                <div class="app-recommendations">
+                    <div class="app-cards-scroll">
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como posso colaborar com o ROLÊ?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Existem várias formas: indicar eventos e artistas, criar conteúdo colaborativo, oferecer skills técnicas, ou propor parcerias comerciais. Entre em <a href="contato.html">contato</a> detalhando como gostaria de contribuir com nossa missão cultural.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Existem várias formas: indicar eventos e artistas, criar conteúdo colaborativo, oferecer skills técnicas, ou propor parcerias comerciais. Entre em <a href="contato.html">contato</a> detalhando como gostaria de contribuir com nossa missão cultural.</p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Vocês trabalham com influenciadores e criadores de conteúdo?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Vocês trabalham com influenciadores e criadores de conteúdo?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sim! Buscamos parcerias autênticas com criadores alinhados à cultura alternativa e independente. Se seu conteúdo dialoga com nossos valores, vamos conversar sobre possíveis colaborações.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sim! Buscamos parcerias autênticas com criadores alinhados à cultura alternativa e independente. Se seu conteúdo dialoga com nossos valores, vamos conversar sobre possíveis colaborações.</p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="faq-card">
-                        <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                            <span>Empresas podem patrocinar conteúdos do ROLÊ?</span>
-                            <div class="faq-icon">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Empresas podem patrocinar conteúdos do ROLÊ?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Aceitamos patrocínios de marcas que respeitam nossa independência editorial e valorizam a cultura brasileira. Priorizamos parcerias de longo prazo com empresas que genuinamente apoiam a cena cultural independente.</p>
                             </div>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Aceitamos patrocínios de marcas que respeitam nossa independência editorial e valorizam a cultura brasileira. Priorizamos parcerias de longo prazo com empresas que genuinamente apoiam a cena cultural independente.</p>
-                        </div>
-                    </article>
+                        </article>
+                    </div>
                 </div>
             </section>
         </main>
 
-        <!-- Featured Banner - CTA IDENTICAL STRUCTURE TO INDEX -->
+        <!-- Ad Container -->
+        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2898945215492580"
+                 data-ad-slot="7986392458"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Stats Section -->
+        <section aria-labelledby="stats-title">
+            <div class="app-section-header">
+                <h2 id="stats-title" class="app-section-title">FAQ em números</h2>
+            </div>
+            <div class="app-stats-grid">
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="25" aria-live="polite">0</span>
+                    <span class="app-stat-label">Perguntas respondidas</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="5" aria-live="polite">0</span>
+                    <span class="app-stat-label">Categorias disponíveis</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="100" aria-live="polite">0</span>
+                    <span class="app-stat-label">% de dúvidas esclarecidas</span>
+                </div>
+                <div class="app-stat-item">
+                    <span class="app-stat-number" data-target="24" aria-live="polite">0</span>
+                    <span class="app-stat-label">Horas de suporte</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Banner -->
         <div class="app-featured-banner" role="complementary" onclick="window.location.href='contato.html'">
             <div class="app-banner-content">
                 <div class="app-banner-tag">AINDA COM DÚVIDAS?</div>
                 <h3 class="app-banner-title">Fale diretamente com nossa equipe</h3>
                 <p class="app-banner-subtitle">Nossa equipe está sempre disponível para ajudar! Entre em contato através dos nossos canais oficiais.</p>
-                <div class="contact-buttons">
-                    <a href="https://wa.me/5551980704353" target="_blank" class="app-banner-cta" onclick="event.stopPropagation();">
-                        📲 WhatsApp
-                    </a>
-                    <a href="contato.html" class="app-banner-cta" onclick="event.stopPropagation();">
-                        📞 Contato
-                    </a>
-                </div>
+                <a href="https://wa.me/5551980704353" class="app-banner-cta" onclick="event.stopPropagation();">Falar no WhatsApp</a>
             </div>
         </div>
 
-        <!-- Back Navigation -->
-        <div class="back-navigation">
-            <a href="vitrine-cultural.html" class="app-btn-hero">← Voltar à Vitrine Cultural</a>
+        <!-- Newsletter Section -->
+        <section class="app-newsletter-section" aria-labelledby="newsletter-title">
+            <div class="app-newsletter-content">
+                <h2 id="newsletter-title" class="app-section-title">Não perca o melhor do ROLÊ</h2>
+                <p>Assine a newsletter e receba semanalmente o que tem de mais relevante na cena cultural.</p>
+                <form class="app-newsletter-form" id="newsletter-form" novalidate>
+                    <label for="newsletter-email" class="sr-only">Seu endereço de email</label>
+                    <input type="email" 
+                           id="newsletter-email"
+                           class="app-newsletter-input" 
+                           placeholder="Seu melhor e-mail" 
+                           required 
+                           autocomplete="email"
+                           aria-describedby="newsletter-description newsletter-error">
+                    <button type="submit" class="app-btn-newsletter" aria-describedby="newsletter-title">
+                        <span class="btn-text">Assinar</span>
+                        <span class="btn-loading" aria-hidden="true">Enviando...</span>
+                    </button>
+                </form>
+                <div id="newsletter-error" class="newsletter-error" role="alert" aria-live="assertive"></div>
+                <p class="newsletter-disclaimer" id="newsletter-description">
+                    <small>Ao assinar, você concorda com nossa <a href="politica.html">Política de Privacidade</a>.</small>
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer Ad -->
+        <div class="app-ad-container" role="complementary" aria-label="Publicidade">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2898945215492580"
+                 data-ad-slot="6673310789"
+                 data-ad-format="horizontal"
+                 data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Footer IDENTICAL TO INDEX -->
+        <!-- Footer -->
         <footer class="app-footer" role="contentinfo">
             <div class="app-footer-links">
                 © 2025 ROLÊ ENTRETENIMENTO ·
@@ -856,7 +799,7 @@
             </div>
         </footer>
 
-        <!-- Bottom Navigation - Mobile IDENTICAL TO INDEX -->
+        <!-- Bottom Navigation Mobile -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item" aria-label="Página inicial">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -894,22 +837,20 @@
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript ENHANCED AND IDENTICAL STRUCTURE TO INDEX -->
+    <!-- JavaScript -->
     <script>
-        // Performance and Security Enhanced JavaScript - IDENTICAL TO INDEX
+        // Performance and Security Enhanced JavaScript
         (function() {
             'use strict';
             
-            // Utilities - IDENTICAL TO INDEX
+            // Utilities
             const utils = {
-                // Sanitize input
                 sanitize: function(str) {
                     const div = document.createElement('div');
                     div.textContent = str;
                     return div.innerHTML;
                 },
                 
-                // Debounce function
                 debounce: function(func, wait) {
                     let timeout;
                     return function executedFunction(...args) {
@@ -922,7 +863,6 @@
                     };
                 },
                 
-                // Show toast notification
                 showToast: function(message, type = 'info') {
                     const container = document.getElementById('toast-container');
                     if (!container) return;
@@ -934,12 +874,10 @@
                     
                     container.appendChild(toast);
                     
-                    // Show toast
                     requestAnimationFrame(() => {
                         toast.classList.add('show');
                     });
                     
-                    // Hide toast after 4 seconds
                     setTimeout(() => {
                         toast.classList.remove('show');
                         setTimeout(() => {
@@ -953,12 +891,11 @@
 
             // DOM Ready
             function initializeApp() {
-                // Mobile menu functionality - IDENTICAL TO INDEX
+                // Mobile menu functionality
                 const menuToggle = document.getElementById('menu-toggle-btn');
                 const menuClose = document.getElementById('menu-close-btn');
                 const mobileMenuOverlay = document.getElementById('mobile-menu');
                 
-                // Verificar se estamos em mobile
                 const isMobile = window.innerWidth <= 768;
                 
                 if (menuToggle && mobileMenuOverlay && isMobile) {
@@ -967,7 +904,6 @@
                         document.body.style.overflow = 'hidden';
                         menuToggle.setAttribute('aria-expanded', 'true');
                         
-                        // Focus first menu item
                         const firstMenuItem = mobileMenuOverlay.querySelector('.mobile-menu-link');
                         if (firstMenuItem) {
                             setTimeout(() => firstMenuItem.focus(), 100);
@@ -993,14 +929,12 @@
                         });
                     }
                     
-                    // Close menu when clicking overlay
                     mobileMenuOverlay.addEventListener('click', function(e) {
                         if (e.target === mobileMenuOverlay) {
                             closeMenu();
                         }
                     });
                     
-                    // Close menu with Escape key
                     document.addEventListener('keydown', function(e) {
                         if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
                             closeMenu();
@@ -1008,7 +942,7 @@
                     });
                 }
 
-                // Theme toggle functionality - IDENTICAL TO INDEX
+                // Theme toggle functionality
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -1032,167 +966,123 @@
                     });
                 }
 
-                // FAQ Category Filtering - ATUALIZADO PARA NOVOS BOTÕES
-                const categoryButtons = document.querySelectorAll('.faq-filter-btn');
-                const faqSections = document.querySelectorAll('.faq-section');
-
-                categoryButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        const category = this.getAttribute('data-category');
+                // Newsletter form
+                const newsletterForm = document.getElementById('newsletter-form');
+                if (newsletterForm) {
+                    const emailInput = document.getElementById('newsletter-email');
+                    const errorDiv = document.getElementById('newsletter-error');
+                    
+                    function validateEmail(email) {
+                        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        return re.test(email) && email.length <= 254;
+                    }
+                    
+                    let lastSubmission = 0;
+                    const RATE_LIMIT = 30000;
+                    
+                    newsletterForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
                         
-                        // Update active button
-                        categoryButtons.forEach(btn => btn.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        // Show/hide sections
-                        faqSections.forEach(section => {
-                            section.classList.remove('active');
-                            if (section.getAttribute('data-category') === category) {
-                                section.classList.add('active');
-                            }
-                        });
-                        
-                        utils.showToast(`Mostrando perguntas: ${this.querySelector('.faq-filter-label').textContent}`, 'info');
-                    });
-                });
-
-                // FAQ Search functionality
-                const searchInput = document.getElementById('faq-search');
-                if (searchInput) {
-                    searchInput.addEventListener('input', utils.debounce(function() {
-                        const query = utils.sanitize(this.value.toLowerCase().trim());
-                        const faqCards = document.querySelectorAll('.faq-card');
-                        let foundResults = 0;
-                        
-                        faqCards.forEach(card => {
-                            const question = card.querySelector('.faq-question span').textContent.toLowerCase();
-                            const answer = card.querySelector('.faq-answer p').textContent.toLowerCase();
-                            
-                            if (query === '' || question.includes(query) || answer.includes(query)) {
-                                card.style.display = 'block';
-                                foundResults++;
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        });
-                        
-                        if (query && foundResults === 0) {
-                            utils.showToast('Nenhuma pergunta encontrada para esta busca', 'error');
+                        const now = Date.now();
+                        if (now - lastSubmission < RATE_LIMIT) {
+                            errorDiv.textContent = 'Aguarde antes de enviar novamente.';
+                            return;
                         }
-                    }, 300));
-                }
+                        
+                        const emailValue = emailInput.value.trim();
+                        const submitBtn = this.querySelector('button[type="submit"]');
+                        const btnText = submitBtn.querySelector('.btn-text');
+                        const btnLoading = submitBtn.querySelector('.btn-loading');
+                        
+                        errorDiv.textContent = '';
+                        emailInput.classList.remove('error');
+                        
+                        if (!emailValue) {
+                            errorDiv.textContent = 'Por favor, insira seu e-mail.';
+                            emailInput.focus();
+                            return;
+                        }
+                        
+                        if (!validateEmail(emailValue)) {
+                            errorDiv.textContent = 'Por favor, insira um e-mail válido.';
+                            emailInput.classList.add('error');
+                            emailInput.focus();
+                            return;
+                        }
+                        
+                        submitBtn.disabled = true;
+                        btnText.style.display = 'none';
+                        btnLoading.style.display = 'inline';
+                        
+                        try {
+                            const controller = new AbortController();
+                            const timeoutId = setTimeout(() => controller.abort(), 10000);
+                            
+                            const response = await="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>O que é o ROLÊ Entretenimento?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>O ROLÊ Entretenimento é uma plataforma que conecta cultura, arte e os rolês mais vivos do Brasil. Promovemos eventos, divulgamos artistas emergentes e criamos conteúdo cultural para aproximar pessoas das experiências mais autênticas de cada cidade.</p>
+                            </div>
+                        </article>
 
-                console.log('FAQ App initialized successfully');
-            }
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como vocês escolhem os eventos para divulgar?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Nossa curadoria busca eventos que representem a diversidade cultural brasileira, priorizando produções independentes, artistas emergentes e iniciativas que fortaleçam a cena cultural local. Valorizamos originalidade, qualidade e impacto social.</p>
+                            </div>
+                        </article>
 
-            // Smooth scroll function - IDÊNTICO AO VITRINE-HERO
-            window.scrollToSection = function(sectionId) {
-                const target = document.getElementById(sectionId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            };
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Quais cidades vocês cobrem?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Atualmente focamos nas principais capitais brasileiras: <strong>Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis</strong>, Belo Horizonte, Salvador, Recife, Fortaleza e Brasília. Estamos expandindo para outras cidades constantemente.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
 
-            // Initialize when DOM is ready - IDENTICAL TO INDEX
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeApp);
-            } else {
-                initializeApp();
-            }
-            
-            // Error handling - IDENTICAL TO INDEX
-            window.addEventListener('error', function(e) {
-                console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
-        })();
-    </script>
-
-    <!-- CSS Adicional para correções finais - IDENTICAL STRUCTURE TO INDEX -->
-    <style>
-        /* Toast styling - IDENTICAL TO INDEX */
-        #toast-container {
-            position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10000;
-            pointer-events: none;
-        }
-        
-        @media (min-width: 769px) {
-            #toast-container {
-                bottom: 40px;
-            }
-        }
-        
-        .toast {
-            background: var(--accent-purple);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            max-width: 300px;
-            text-align: center;
-        }
-        
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .toast.success {
-            background: var(--accent-green);
-        }
-        
-        .toast.error {
-            background: var(--accent-red);
-        }
-        
-        /* Safe area adjustments for mobile - IDENTICAL TO INDEX */
-        @supports (padding: max(0px)) {
-            @media (max-width: 768px) {
-                .app-header {
-                    padding-top: max(env(safe-area-inset-top), 0px);
-                }
+            <!-- Seção Eventos -->
+            <section class="faq-section" data-category="eventos" aria-labelledby="eventos-title">
+                <div class="app-section-header">
+                    <h2 id="eventos-title" class="app-section-title">🎉 Eventos e Ingressos</h2>
+                </div>
                 
-                .app-bottom-nav {
-                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
-                }
-            }
-        }
-        
-        /* Theme transitions for all elements - IDENTICAL TO INDEX */
-        .app-search-input,
-        .faq-card,
-        .app-footer,
-        .mobile-menu,
-        .category-item-app,
-        .vitrine-nav,
-        .vitrine-nav-item,
-        .faq-filter-btn {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-        
-        /* FAQ search improvements */
-        .app-search-input:focus {
-            border-color: var(--accent-purple);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-            background: var(--bg-card);
-        }
-    </style>
-</body>
-</html>
+                <div class="app-recommendations">
+                    <div class="app-cards-scroll">
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como compro ingressos pelos canais do ROLÊ?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Não vendemos ingressos diretamente. Direcionamos nossos seguidores para os canais oficiais dos organizadores ou plataformas parceiras. Sempre verifique a autenticidade dos links e compre apenas em fontes confiáveis.</p>
+                            </div>
+                        </article>
+
+                        <article class
