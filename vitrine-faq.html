@@ -440,15 +440,30 @@
             </div>
         </div>
 
-        <!-- Category Filters -->
-        <section class="category-filters" aria-labelledby="category-filters-title">
-            <h2 id="category-filters-title" class="sr-only">Filtros por categoria</h2>
-            <div class="categories-faq" role="group" aria-label="Filtros de categoria FAQ">
-                <button class="category-btn-faq active" data-category="geral">📌 Geral</button>
-                <button class="category-btn-faq" data-category="eventos">🎉 Eventos</button>
-                <button class="category-btn-faq" data-category="artistas">🎨 Artistas</button>
-                <button class="category-btn-faq" data-category="tecnico">💻 Técnico</button>
-                <button class="category-btn-faq" data-category="parcerias">🤝 Parcerias</button>
+        <!-- Category Filters - ESTILO VITRINE -->
+        <section class="app-categories" aria-labelledby="categories-title-faq">
+            <h2 id="categories-title-faq" class="sr-only">Categorias FAQ</h2>
+            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria FAQ">
+                <button class="category-item-app active" data-category="geral" aria-label="Perguntas gerais">
+                    <div class="category-icon-app" role="img" aria-label="Ícone informação">ℹ️</div>
+                    <div class="category-label-app">Geral</div>
+                </button>
+                <button class="category-item-app" data-category="eventos" aria-label="Perguntas sobre eventos">
+                    <div class="category-icon-app" role="img" aria-label="Ícone festa">🎉</div>
+                    <div class="category-label-app">Eventos</div>
+                </button>
+                <button class="category-item-app" data-category="artistas" aria-label="Perguntas para artistas">
+                    <div class="category-icon-app" role="img" aria-label="Ícone arte">🎨</div>
+                    <div class="category-label-app">Artistas</div>
+                </button>
+                <button class="category-item-app" data-category="tecnico" aria-label="Suporte técnico">
+                    <div class="category-icon-app" role="img" aria-label="Ícone técnico">💻</div>
+                    <div class="category-label-app">Técnico</div>
+                </button>
+                <button class="category-item-app" data-category="parcerias" aria-label="Perguntas sobre parcerias">
+                    <div class="category-icon-app" role="img" aria-label="Ícone parceria">🤝</div>
+                    <div class="category-label-app">Parcerias</div>
+                </button>
             </div>
         </section>
 
@@ -927,8 +942,8 @@
 
                 // FAQ SPECIFIC FUNCTIONALITY
                 
-                // Category Filtering
-                const categoryButtons = document.querySelectorAll('.category-btn-faq');
+                // Category Filtering - ATUALIZADO PARA USAR CLASSES DO INDEX
+                const categoryButtons = document.querySelectorAll('.category-item-app');
                 const faqSections = document.querySelectorAll('.faq-section');
 
                 categoryButtons.forEach(button => {
