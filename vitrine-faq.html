@@ -312,13 +312,91 @@
             }
         }
         
-        /* Category filter for FAQ */
-        .faq-section {
-            display: none;
+        /* NOVO: FAQ Compact Filters */
+        .faq-compact {
+            padding: 0 20px 16px 20px;
         }
         
-        .faq-section.active {
-            display: block;
+        @media (min-width: 769px) {
+            .faq-compact {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 40px 24px 40px;
+            }
+        }
+        
+        .faq-filter-compact {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-filter-compact {
+                gap: 12px;
+            }
+        }
+        
+        .faq-filter-btn-compact {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-filter-btn-compact {
+                padding: 10px 16px;
+                font-size: 15px;
+                gap: 8px;
+            }
+        }
+        
+        .faq-filter-btn-compact:hover {
+            background: rgba(139, 92, 246, 0.05);
+            border-color: var(--accent-purple);
+            color: var(--text-primary);
+        }
+        
+        .faq-filter-btn-compact.active {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+            color: white;
+        }
+        
+        .faq-filter-icon-compact {
+            font-size: 16px;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-filter-icon-compact {
+                font-size: 18px;
+            }
+        }
+        
+        .faq-filter-label-compact {
+            font-weight: 500;
+        }
+        
+        /* CORREÇÃO: Remover sublinhado dos links da vitrine */
+        .category-item-app {
+            text-decoration: none !important;
+        }
+        
+        .category-item-app:hover,
+        .category-item-app:focus,
+        .category-item-app:active {
+            text-decoration: none !important;
         }
     </style>
     
@@ -455,42 +533,34 @@
             </div>
         </section>
 
-        <!-- Banner -->
-        <div class="app-banner-wrapper">
-            <div class="app-banner-container">
-                <img src="images/banner-home.png" alt="Banner FAQ ROLÊ - Perguntas e respostas sobre cultura e entretenimento" 
-                     loading="lazy" width="1200" height="400" />
-            </div>
-        </div>
-
         <!-- Section Header -->
         <div class="app-section-header">
-            <h2 class="app-section-title" id="faq-filter-title">CATEGORIAS DE PERGUNTAS</h2>
+            <h2 class="app-section-title" id="faq-filter-title">PERGUNTAS FREQUENTES</h2>
             <a href="contato.html" class="app-see-all" aria-describedby="faq-filter-title">Ainda com dúvidas?</a>
         </div>
 
-        <!-- FAQ Categories Filter -->
-        <section class="app-categories" id="faq-filter" aria-labelledby="faq-filter-title">
-            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria de perguntas">
-                <button class="category-item-app active" data-category="geral" aria-label="Ver perguntas gerais">
-                    <div class="category-icon-app" role="img" aria-label="Ícone geral">📌</div>
-                    <div class="category-label-app">Geral</div>
+        <!-- FAQ Categories Filter - VERSÃO COMPACTA -->
+        <section class="app-categories faq-compact" id="faq-filter" aria-labelledby="faq-filter-title">
+            <div class="faq-filter-compact" role="group" aria-label="Filtros por categoria de perguntas">
+                <button class="faq-filter-btn-compact active" data-category="geral" aria-label="Ver perguntas gerais">
+                    <span class="faq-filter-icon-compact">📌</span>
+                    <span class="faq-filter-label-compact">Geral</span>
                 </button>
-                <button class="category-item-app" data-category="eventos" aria-label="Ver perguntas sobre eventos">
-                    <div class="category-icon-app" role="img" aria-label="Ícone eventos">🎉</div>
-                    <div class="category-label-app">Eventos</div>
+                <button class="faq-filter-btn-compact" data-category="eventos" aria-label="Ver perguntas sobre eventos">
+                    <span class="faq-filter-icon-compact">🎉</span>
+                    <span class="faq-filter-label-compact">Eventos</span>
                 </button>
-                <button class="category-item-app" data-category="artistas" aria-label="Ver perguntas sobre artistas">
-                    <div class="category-icon-app" role="img" aria-label="Ícone artistas">🎨</div>
-                    <div class="category-label-app">Artistas</div>
+                <button class="faq-filter-btn-compact" data-category="artistas" aria-label="Ver perguntas sobre artistas">
+                    <span class="faq-filter-icon-compact">🎨</span>
+                    <span class="faq-filter-label-compact">Artistas</span>
                 </button>
-                <button class="category-item-app" data-category="tecnico" aria-label="Ver perguntas técnicas">
-                    <div class="category-icon-app" role="img" aria-label="Ícone técnico">💻</div>
-                    <div class="category-label-app">Técnico</div>
+                <button class="faq-filter-btn-compact" data-category="tecnico" aria-label="Ver perguntas técnicas">
+                    <span class="faq-filter-icon-compact">💻</span>
+                    <span class="faq-filter-label-compact">Técnico</span>
                 </button>
-                <button class="category-item-app" data-category="parcerias" aria-label="Ver perguntas sobre parcerias">
-                    <div class="category-icon-app" role="img" aria-label="Ícone parcerias">🤝</div>
-                    <div class="category-label-app">Parcerias</div>
+                <button class="faq-filter-btn-compact" data-category="parcerias" aria-label="Ver perguntas sobre parcerias">
+                    <span class="faq-filter-icon-compact">🤝</span>
+                    <span class="faq-filter-label-compact">Parcerias</span>
                 </button>
             </div>
         </section>
@@ -1018,7 +1088,341 @@
                             const controller = new AbortController();
                             const timeoutId = setTimeout(() => controller.abort(), 10000);
                             
-                            const response = await="faq-card">
+                            const response = await fetch('https://script.google.com/macros/s/AKfycbx0JqMhtw7RBl7XLqaq6uW4BuxsO6rL68njeMJG_OqJpo4NVbE--9cPyt_AYJLxhJ8/exec', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded',
+                                },
+                                body: new URLSearchParams({ 
+                                    email: emailValue,
+                                    timestamp: now,
+                                    source: 'faq-page'
+                                }),
+                                signal: controller.signal
+                            });
+                            
+                            clearTimeout(timeoutId);
+                            
+                            if (response.ok) {
+                                utils.showToast(`Sucesso! ${emailValue} foi cadastrado na nossa newsletter.`, 'success');
+                                this.reset();
+                                lastSubmission = now;
+                            } else {
+                                throw new Error(`HTTP ${response.status}`);
+                            }
+                        } catch (error) {
+                            console.warn('Newsletter subscription error:', error);
+                            if (error.name === 'AbortError') {
+                                errorDiv.textContent = 'Tempo limite excedido. Tente novamente.';
+                            } else {
+                                errorDiv.textContent = 'Erro ao cadastrar. Tente novamente mais tarde.';
+                            }
+                        } finally {
+                            submitBtn.disabled = false;
+                            btnText.style.display = 'inline';
+                            btnLoading.style.display = 'none';
+                        }
+                    });
+                    
+                    emailInput.addEventListener('input', utils.debounce(function() {
+                        const email = this.value.trim();
+                        if (email && !validateEmail(email)) {
+                            this.classList.add('error');
+                            errorDiv.textContent = 'Formato de e-mail inválido.';
+                        } else {
+                            this.classList.remove('error');
+                            errorDiv.textContent = '';
+                        }
+                    }, 500));
+                }
+
+                // Stats counter animation
+                const observerOptions = {
+                    threshold: 0.5,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                            entry.target.classList.add('counted');
+                            animateNumber(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                const statNumbers = document.querySelectorAll('.app-stat-number');
+                statNumbers.forEach(stat => statsObserver.observe(stat));
+
+                function animateNumber(element) {
+                    const target = parseInt(element.getAttribute('data-target'), 10);
+                    let current = 0;
+                    const increment = Math.ceil(target / 30);
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        element.textContent = current;
+                    }, 50);
+                }
+
+                // FAQ Category Filtering - CORRIGIDO PARA FILTROS COMPACTOS
+                const categoryButtons = document.querySelectorAll('.faq-filter-btn-compact[data-category]');
+                const faqSections = document.querySelectorAll('.faq-section');
+
+                categoryButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const category = this.getAttribute('data-category');
+                        
+                        // Update active button
+                        categoryButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Show/hide sections
+                        faqSections.forEach(section => {
+                            section.classList.remove('active');
+                            if (section.getAttribute('data-category') === category) {
+                                section.classList.add('active');
+                            }
+                        });
+                        
+                        utils.showToast(`Mostrando perguntas: ${this.querySelector('.faq-filter-label-compact').textContent}`, 'info');
+                    });
+                });
+
+                // FAQ Search functionality
+                const searchInput = document.getElementById('faq-search');
+                if (searchInput) {
+                    searchInput.addEventListener('input', utils.debounce(function() {
+                        const query = utils.sanitize(this.value.toLowerCase().trim());
+                        const faqCards = document.querySelectorAll('.faq-card');
+                        let foundResults = 0;
+                        
+                        faqCards.forEach(card => {
+                            const question = card.querySelector('.faq-question span').textContent.toLowerCase();
+                            const answer = card.querySelector('.faq-answer p').textContent.toLowerCase();
+                            
+                            if (query === '' || question.includes(query) || answer.includes(query)) {
+                                card.style.display = 'block';
+                                foundResults++;
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                        
+                        if (query && foundResults === 0) {
+                            utils.showToast('Nenhuma pergunta encontrada para esta busca', 'error');
+                        }
+                    }, 300));
+                }
+
+                // Card animations on scroll
+                const fadeObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                const fadeElements = document.querySelectorAll('.faq-card, .app-stat-item');
+                fadeElements.forEach((element, index) => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                    fadeObserver.observe(element);
+                });
+
+                // Initialize ads
+                setTimeout(() => {
+                    try {
+                        const ads = document.querySelectorAll('.adsbygoogle');
+                        ads.forEach(function(ad) {
+                            try {
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            } catch(e) {
+                                console.warn('AdSense initialization failed for ad:', e);
+                            }
+                        });
+                    } catch(e) {
+                        console.warn('AdSense general initialization failed:', e);
+                    }
+                }, 1000);
+
+                console.log('FAQ App initialized successfully');
+            }
+
+            // FAQ Toggle Function
+            window.toggleFAQ = function(button) {
+                const answer = button.nextElementSibling;
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-question').forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                        otherButton.nextElementSibling.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (isExpanded) {
+                    button.setAttribute('aria-expanded', 'false');
+                    answer.classList.remove('active');
+                } else {
+                    button.setAttribute('aria-expanded', 'true');
+                    answer.classList.add('active');
+                }
+            };
+
+            // Smooth scroll function
+            window.scrollToSection = function(sectionId) {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            };
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeApp);
+            } else {
+                initializeApp();
+            }
+            
+            // Error handling
+            window.addEventListener('error', function(e) {
+                console.warn('Script error:', e.error);
+            });
+            
+            window.addEventListener('unhandledrejection', function(e) {
+                console.warn('Unhandled promise rejection:', e.reason);
+            });
+            
+        })();
+    </script>
+
+    <!-- CSS Adicional para correções finais -->
+    <style>
+        /* Newsletter error styling */
+        .newsletter-error {
+            color: var(--accent-red);
+            font-size: 12px;
+            margin-top: 8px;
+            min-height: 16px;
+        }
+        
+        .app-newsletter-input.error {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+        }
+        
+        /* Toast styling */
+        #toast-container {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+        
+        @media (min-width: 769px) {
+            #toast-container {
+                bottom: 40px;
+            }
+        }
+        
+        .toast {
+            background: var(--accent-purple);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            text-align: center;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .toast.success {
+            background: var(--accent-green);
+        }
+        
+        .toast.error {
+            background: var(--accent-red);
+        }
+        
+        /* Loading state for buttons */
+        .btn-loading {
+            display: none;
+        }
+        
+        button[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* Safe area adjustments for mobile */
+        @supports (padding: max(0px)) {
+            @media (max-width: 768px) {
+                .app-header {
+                    padding-top: max(env(safe-area-inset-top), 0px);
+                }
+                
+                .app-bottom-nav {
+                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+                }
+            }
+        }
+        
+        /* Hover states para todos os elementos */
+        .app-search-input:focus {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            background: var(--bg-card);
+        }
+        
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+        
+        .app-newsletter-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .app-newsletter-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+    </style>
+</body>
+</html>="faq-card">
                             <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                                 <span>O que é o ROLÊ Entretenimento?</span>
                                 <div class="faq-icon">
