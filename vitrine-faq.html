@@ -51,11 +51,6 @@
     <meta name="theme-color" content="#8B5CF6">
     <meta name="msapplication-TileColor" content="#8B5CF6">
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="estilo.css" as="style">
-    <link rel="preload" href="images/logo-role.png" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
-    
     <!-- Headers de Segurança -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
@@ -77,7 +72,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
     
-    <!-- Theme Script - IDENTICO AO INDEX -->
+    <!-- Theme Script -->
     <script>
         (function() {
             try {
@@ -96,9 +91,9 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2898945215492580" crossorigin="anonymous"></script>
     
-    <!-- CSS Critical Path - IDENTICO AO INDEX -->
+    <!-- CSS Critical Path -->
     <style>
-        /* Critical CSS inline - IDENTICO AO INDEX */
+        /* Critical CSS inline */
         :root{
             --bg-primary:#0D0D0D;
             --bg-secondary:#1A1A1A;
@@ -159,7 +154,7 @@
             }
         }
         
-        /* Header Fixes - IDENTICOS AO INDEX */
+        /* Header Fixes */
         @media (max-width: 768px) {
             .app-header {
                 padding: 0 20px;
@@ -312,7 +307,7 @@
             }
         }
         
-        /* NOVO: FAQ Compact Filters */
+        /* FAQ Compact Filters */
         .faq-compact {
             padding: 0 20px 16px 20px;
         }
@@ -388,7 +383,7 @@
             font-weight: 500;
         }
         
-        /* CORREÇÃO: Remover sublinhado dos links da vitrine */
+        /* Remover sublinhado dos links da vitrine */
         .category-item-app {
             text-decoration: none !important;
         }
@@ -413,7 +408,7 @@
 
 <body>
     <div class="app-container">
-        <!-- Header IDENTICO AO INDEX -->
+        <!-- Header -->
         <header class="app-header" role="banner">
             <div class="app-header-content">
                 <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
@@ -539,7 +534,7 @@
             <a href="contato.html" class="app-see-all" aria-describedby="faq-filter-title">Ainda com dúvidas?</a>
         </div>
 
-        <!-- FAQ Categories Filter - VERSÃO COMPACTA -->
+        <!-- FAQ Categories Filter -->
         <section class="app-categories faq-compact" id="faq-filter" aria-labelledby="faq-filter-title">
             <div class="faq-filter-compact" role="group" aria-label="Filtros por categoria de perguntas">
                 <button class="faq-filter-btn-compact active" data-category="geral" aria-label="Ver perguntas gerais">
@@ -577,6 +572,48 @@
                     <div class="app-cards-scroll">
                         <article class="faq-card">
                             <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>O que é o ROLÊ Entretenimento?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>O ROLÊ Entretenimento é uma plataforma que conecta cultura, arte e os rolês mais vivos do Brasil. Promovemos eventos, divulgamos artistas emergentes e criamos conteúdo cultural para aproximar pessoas das experiências mais autênticas de cada cidade.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como vocês escolhem os eventos para divulgar?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Nossa curadoria busca eventos que representem a diversidade cultural brasileira, priorizando produções independentes, artistas emergentes e iniciativas que fortaleçam a cena cultural local. Valorizamos originalidade, qualidade e impacto social.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Quais cidades vocês cobrem?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Atualmente focamos nas principais capitais brasileiras: <strong>Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis</strong>, Belo Horizonte, Salvador, Recife, Fortaleza e Brasília. Estamos expandindo para outras cidades constantemente.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
                                 <span>Posso divulgar meu evento no ROLÊ?</span>
                                 <div class="faq-icon">
                                     <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -600,6 +637,73 @@
                             </button>
                             <div class="faq-answer">
                                 <p>Oferecemos tanto divulgação orgânica quanto parcerias comerciais. Eventos com impacto cultural relevante podem ser divulgados gratuitamente. Para campanhas estratégicas, temos <a href="vitrine-pacotes.html">planos personalizados</a>.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Eventos -->
+            <section class="faq-section" data-category="eventos" aria-labelledby="eventos-title">
+                <div class="app-section-header">
+                    <h2 id="eventos-title" class="app-section-title">🎉 Eventos e Ingressos</h2>
+                </div>
+                
+                <div class="app-recommendations">
+                    <div class="app-cards-scroll">
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como compro ingressos pelos canais do ROLÊ?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Não vendemos ingressos diretamente. Direcionamos nossos seguidores para os canais oficiais dos organizadores ou plataformas parceiras. Sempre verifique a autenticidade dos links e compre apenas em fontes confiáveis.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como posso submeter meu evento para divulgação?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Envie informações completas do evento através dos nossos canais de contato: descrição, data, local, lineup/programação, valores, links e materiais visuais. Quanto mais detalhado, melhor nossa análise para aprovação.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Vocês fazem cobertura de eventos?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Sim! Fazemos coberturas jornalísticas de eventos relevantes para a cena cultural. Entre em contato para discutir possibilidades de parceria para cobertura especializada do seu evento.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Qual o prazo mínimo para divulgar um evento?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Recomendamos no mínimo 2 semanas de antecedência para uma divulgação efetiva. Para eventos maiores ou campanhas especiais, idealmente 1 mês. Emergências são avaliadas caso a caso.</p>
                             </div>
                         </article>
                     </div>
@@ -655,6 +759,20 @@
                                 <p>Eventualmente organizamos workshops e mentorias coletivas. Para consultoria individual, entre em contato para avaliarmos disponibilidade. Também conectamos artistas com profissionais do mercado através da nossa rede.</p>
                             </div>
                         </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como posso colaborar criando conteúdo para o ROLÊ?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Aceitamos colaborações para nossa Revista: artigos, entrevistas, resenhas, crônicas culturais e ensaios fotográficos. Envie uma proposta detalhada e exemplos do seu trabalho para análise.</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -708,6 +826,20 @@
                                 <p>Sim! Nosso site é responsivo e funciona perfeitamente em smartphones, tablets e computadores. Se encontrar algum problema de visualização, nos reporte para resolvermos rapidamente.</p>
                             </div>
                         </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como reportar um problema técnico?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Entre em contato através do <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a> informando: dispositivo, navegador, descrição do problema e, se possível, um print da tela. Respondemos problemas técnicos em até 24h.</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -759,6 +891,20 @@
                             </button>
                             <div class="faq-answer">
                                 <p>Aceitamos patrocínios de marcas que respeitam nossa independência editorial e valorizam a cultura brasileira. Priorizamos parcerias de longo prazo com empresas que genuinamente apoiam a cena cultural independente.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-card">
+                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                                <span>Como funciona uma parceria comercial com o ROLÊ?</span>
+                                <div class="faq-icon">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Desenvolvemos estratégias personalizadas incluindo: criação de conteúdo, cobertura de eventos, campanhas nas redes sociais e posicionamento na Vitrine Cultural. Confira nossos <a href="vitrine-pacotes.html">pacotes</a> ou solicite proposta customizada.</p>
                             </div>
                         </article>
                     </div>
@@ -872,24 +1018,6 @@
         <!-- Bottom Navigation Mobile -->
         <nav class="app-bottom-nav" role="navigation" aria-label="Navegação principal mobile">
             <a href="index.html" class="app-nav-item" aria-label="Página inicial">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                </svg>
-                <span class="app-nav-label">Home</span>
-            </a>
-            <a href="vitrine-cultural.html" class="app-nav-item active" aria-label="Vitrine cultural" aria-current="page">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
-                <span class="app-nav-label">Vitrine</span>
-            </a>
-            <a href="destaques.html" class="app-nav-item" aria-label="Destaques da semana">
-                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                </svg>
-                <span class="app-nav-label">Destaques</span>
-            </a>
-            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
                 <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
@@ -1169,7 +1297,7 @@
                     }, 50);
                 }
 
-                // FAQ Category Filtering - CORRIGIDO PARA FILTROS COMPACTOS
+                // FAQ Category Filtering
                 const categoryButtons = document.querySelectorAll('.faq-filter-btn-compact[data-category]');
                 const faqSections = document.querySelectorAll('.faq-section');
 
@@ -1420,73 +1548,58 @@
             border: 1px solid var(--border-color);
             color: var(--text-primary);
         }
+        
+        /* Seção Transitions */
+        .faq-section {
+            display: none;
+        }
+        
+        .faq-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Screen reader only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </body>
-</html>="faq-card">
-                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                                <span>O que é o ROLÊ Entretenimento?</span>
-                                <div class="faq-icon">
-                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="faq-answer">
-                                <p>O ROLÊ Entretenimento é uma plataforma que conecta cultura, arte e os rolês mais vivos do Brasil. Promovemos eventos, divulgamos artistas emergentes e criamos conteúdo cultural para aproximar pessoas das experiências mais autênticas de cada cidade.</p>
-                            </div>
-                        </article>
-
-                        <article class="faq-card">
-                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                                <span>Como vocês escolhem os eventos para divulgar?</span>
-                                <div class="faq-icon">
-                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Nossa curadoria busca eventos que representem a diversidade cultural brasileira, priorizando produções independentes, artistas emergentes e iniciativas que fortaleçam a cena cultural local. Valorizamos originalidade, qualidade e impacto social.</p>
-                            </div>
-                        </article>
-
-                        <article class="faq-card">
-                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                                <span>Quais cidades vocês cobrem?</span>
-                                <div class="faq-icon">
-                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Atualmente focamos nas principais capitais brasileiras: <strong>Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis</strong>, Belo Horizonte, Salvador, Recife, Fortaleza e Brasília. Estamos expandindo para outras cidades constantemente.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Seção Eventos -->
-            <section class="faq-section" data-category="eventos" aria-labelledby="eventos-title">
-                <div class="app-section-header">
-                    <h2 id="eventos-title" class="app-section-title">🎉 Eventos e Ingressos</h2>
-                </div>
-                
-                <div class="app-recommendations">
-                    <div class="app-cards-scroll">
-                        <article class="faq-card">
-                            <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
-                                <span>Como compro ingressos pelos canais do ROLÊ?</span>
-                                <div class="faq-icon">
-                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Não vendemos ingressos diretamente. Direcionamos nossos seguidores para os canais oficiais dos organizadores ou plataformas parceiras. Sempre verifique a autenticidade dos links e compre apenas em fontes confiáveis.</p>
-                            </div>
-                        </article>
-
-                        <article class
+</html>M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                <span class="app-nav-label">Home</span>
+            </a>
+            <a href="vitrine-cultural.html" class="app-nav-item active" aria-label="Vitrine cultural" aria-current="page">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+                <span class="app-nav-label">Vitrine</span>
+            </a>
+            <a href="destaques.html" class="app-nav-item" aria-label="Destaques da semana">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                </svg>
+                <span class="app-nav-label">Destaques</span>
+            </a>
+            <a href="revista.html" class="app-nav-item" aria-label="Revista ROLÊ">
+                <svg class="app-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="
