@@ -1,586 +1,4 @@
-<!-- FAQ Hero Section -->
-        <section class="faq-hero" aria-labelledby="faq-title">
-            <h1 id="faq-title">Perguntas Frequentes</h1>
-            <p>Tire suas dúvidas sobre o ROLÊ Entretenimento, eventos culturais, artistas e nossa plataforma</p>
-        </section><!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    
-    <!-- SEO e Meta Tags -->
-    <title>FAQ - ROLÊ ENTRETENIMENTO | Perguntas Frequentes sobre Cultura e Eventos</title>
-    <meta name="description" content="Tire todas suas dúvidas sobre ROLÊ Entretenimento, eventos culturais, artistas, parcerias e nossa plataforma. Suporte completo para rolezeiros e organizadores.">
-    <meta name="keywords" content="faq, dúvidas, suporte, rolê entretenimento, eventos brasil, cultura brasileira, artistas, parcerias">
-    <meta name="author" content="ROLÊ Entretenimento">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://roleentretenimento.com/vitrine-faq.html">
-    
-    <!-- Open Graph -->
-    <meta property="og:site_name" content="ROLÊ Entretenimento">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://roleentretenimento.com/vitrine-faq.html">
-    <meta property="og:title" content="FAQ - ROLÊ ENTRETENIMENTO | Perguntas Frequentes">
-    <meta property="og:description" content="Tire suas dúvidas sobre eventos culturais, artistas e nossa plataforma. Suporte completo para a comunidade ROLÊ.">
-    <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png">
-    
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FAQ - ROLÊ ENTRETENIMENTO">
-    <meta name="twitter:description" content="Perguntas frequentes sobre eventos culturais e nossa plataforma">
-    
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
-    <meta name="theme-color" content="#8B5CF6">
-    
-    <!-- DNS Prefetch -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    
-    <!-- Theme Script - MESMO DO INDEX -->
-    <script>
-        (function() {
-            try {
-                const theme = localStorage.getItem('theme') || 'dark';
-                if (theme === 'light') {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
-                }
-            } catch(e) {
-                console.warn('Theme loading failed:', e);
-            }
-        })();
-    </script>
-    
-    <!-- CSS Critical Path - MESMO DO INDEX -->
-    <style>
-        :root{
-            --bg-primary:#0D0D0D;
-            --bg-secondary:#1A1A1A;
-            --bg-card:#1F1F1F;
-            --text-primary:#FFFFFF;
-            --text-secondary:#A0A0A0;
-            --border-color:#2A2A2A;
-            --accent-purple:#8B5CF6;
-            --accent-green:#10B981;
-            --accent-red:#EF4444;
-        }
-        
-        :root[data-theme="light"]{
-            --bg-primary:#FFFFFF;
-            --bg-secondary:#F8F9FA;
-            --bg-card:#FFFFFF;
-            --text-primary:#1F2937;
-            --text-secondary:#6B7280;
-            --border-color:#E5E7EB;
-        }
-        
-        *{margin:0;padding:0;box-sizing:border-box}
-        
-        body{
-            font-family:'Inter',sans-serif;
-            background:var(--bg-primary);
-            color:var(--text-primary);
-            line-height:1.6;
-            transition:background-color 0.3s ease, color 0.3s ease;
-        }
-        
-        .app-container {
-            background: var(--bg-primary);
-            transition: background-color 0.3s ease;
-        }
-        
-        .app-header{
-            position:sticky;
-            top:0;
-            z-index:1000;
-            background:rgba(13,13,13,0.95);
-            backdrop-filter:blur(20px);
-            border-bottom:1px solid var(--border-color);
-            transition:background-color 0.3s ease, border-color 0.3s ease;
-        }
-        
-        :root[data-theme="light"] .app-header{
-            background:rgba(255,255,255,0.95);
-        }
-        
-        /* Header Mobile/Desktop Fixes */
-        @media (max-width: 768px) {
-            .app-header {
-                padding: 0 20px;
-            }
-            .app-header-content {
-                padding: 12px 0 8px 0 !important;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .app-logo-img {
-                height: 24px !important;
-                max-width: 100px;
-            }
-            .menu-toggle, .theme-toggle-app {
-                padding: 6px;
-                width: 36px;
-                height: 36px;
-            }
-        }
-        
-        @media (min-width: 769px) {
-            .app-header-content {
-                padding: 14px 40px !important;
-                max-width: 1200px;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .desktop-menu {
-                gap: 24px !important;
-                margin-right: 24px !important;
-                display: flex !important;
-            }
-            .menu-toggle {
-                display: none !important;
-            }
-            .mobile-menu-overlay {
-                display: none !important;
-            }
-        }
-        
-        /* FAQ Specific Styles */
-        .faq-hero {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            margin: 24px 20px;
-            border-radius: 20px;
-        }
-        
-        @media (min-width: 769px) {
-            .faq-hero {
-                max-width: 1200px;
-                margin: 40px auto;
-                padding: 60px 40px;
-            }
-        }
-        
-        .faq-hero h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--accent-purple), #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        @media (min-width: 769px) {
-            .faq-hero h1 {
-                font-size: 40px;
-                margin-bottom: 24px;
-            }
-        }
-        
-        .faq-hero p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        @media (min-width: 769px) {
-            .faq-hero p {
-                font-size: 18px;
-            }
-        }
-        
-        .category-filters {
-            padding: 0 20px 24px 20px;
-        }
-        
-        @media (min-width: 769px) {
-            .category-filters {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 40px 40px 40px;
-            }
-        }
-        
-        .categories-faq {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .category-btn-faq {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-        
-        .category-btn-faq:hover,
-        .category-btn-faq.active {
-            background: var(--accent-purple);
-            border-color: var(--accent-purple);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .faq-section {
-            display: none;
-            padding: 0 20px 24px 20px;
-        }
-        
-        @media (min-width: 769px) {
-            .faq-section {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 40px 40px 40px;
-            }
-        }
-        
-        .faq-section.active {
-            display: block;
-            animation: fadeInUp 0.5s ease;
-        }
-        
-        .faq-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            margin-bottom: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .faq-card:hover {
-            border-color: var(--accent-purple);
-            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .faq-question {
-            width: 100%;
-            background: none;
-            border: none;
-            padding: 20px;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        
-        @media (min-width: 769px) {
-            .faq-question {
-                padding: 24px;
-                font-size: 18px;
-            }
-        }
-        
-        .faq-question:hover {
-            background: rgba(139, 92, 246, 0.05);
-        }
-        
-        .faq-icon {
-            transition: transform 0.3s ease;
-            color: var(--accent-purple);
-            font-size: 16px;
-            min-width: 20px;
-            margin-left: 16px;
-        }
-        
-        .faq-question[aria-expanded="true"] .faq-icon {
-            transform: rotate(180deg);
-        }
-        
-        .faq-answer {
-            padding: 0 20px 20px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            display: none;
-            font-size: 15px;
-        }
-        
-        @media (min-width: 769px) {
-            .faq-answer {
-                padding: 0 24px 24px;
-                font-size: 16px;
-            }
-        }
-        
-        .faq-answer.active {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-        
-        .faq-answer a {
-            color: var(--accent-purple);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .faq-answer a:hover {
-            text-decoration: underline;
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-    
-    <!-- Load Main CSS -->
-    <link rel="stylesheet" href="estilo.css" media="all">
-</head>
-
-<body>
-    <div class="app-container">
-        <!-- Header IDÊNTICO ao index.html -->
-        <header class="app-header" role="banner">
-            <div class="app-header-content">
-                <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
-                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
-                </a>
-                <div class="app-header-actions">
-                    <!-- Desktop Menu -->
-                    <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
-                        <a href="index.html">Home</a>
-                        <a href="revista.html">Revista</a>
-                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
-                        <a href="destaques.html">Destaques</a>
-                        <a href="descontos.html">Descontos</a>
-                        <a href="contato.html">Contato</a>
-                        <a href="quem-somos.html">Quem Somos</a>
-                    </nav>
-
-                    <!-- Theme Toggle -->
-                    <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
-                    </button>
-
-                    <!-- Mobile Menu Button -->
-                    <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Mobile Menu Overlay IDÊNTICO -->
-        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
-            <nav class="mobile-menu">
-                <div class="mobile-menu-header">
-                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
-                    <button class="menu-close" id="menu-close-btn" aria-label="Fechar menu">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <ul class="mobile-menu-list" role="list">
-                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
-                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
-                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
-                    <li><a href="destaques.html" class="mobile-menu-link">⭐ Destaques</a></li>
-                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
-                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
-                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
-                </ul>
-                <div class="mobile-menu-footer">
-                    <div class="mobile-menu-social">
-                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
-                            <img src="images/instagram.svg" alt="" width="20" height="20" role="presentation" />
-                        </a>
-                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no TikTok">
-                            <img src="images/tiktok.svg" alt="" width="20" height="20" role="presentation" />
-                        </a>
-                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
-                            <img src="images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb-nav" aria-label="Navegação da vitrine">
-            <div class="breadcrumb-container">
-                <a href="vitrine-cultural.html" class="breadcrumb-link">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    Voltar para Vitrine Cultural
-                </a>
-                <div class="breadcrumb-divider">/</div>
-                <span class="breadcrumb-current">FAQ</span>
-            </div>
-        </nav>
-
-        <!-- Vitrine Navigation -->
-        <section class="vitrine-nav" aria-labelledby="vitrine-nav-title">
-            <div class="vitrine-nav-container">
-                <h2 id="vitrine-nav-title" class="vitrine-nav-title">Outras páginas da Vitrine</h2>
-                <div class="vitrine-nav-grid">
-                    <a href="vitrine-cultural.html" class="vitrine-nav-item">
-                        <div class="vitrine-nav-icon">🎨</div>
-                        <div class="vitrine-nav-content">
-                            <h3>Vitrine Cultural</h3>
-                            <p>Artistas e eventos em destaque</p>
-                        </div>
-                    </a>
-                    <a href="vitrine-como-funciona.html" class="vitrine-nav-item">
-                        <div class="vitrine-nav-icon">ℹ️</div>
-                        <div class="vitrine-nav-content">
-                            <h3>Como Funciona</h3>
-                            <p>Entenda nossa plataforma</p>
-                        </div>
-                    </a>
-                    <a href="vitrine-anunciar.html" class="vitrine-nav-item">
-                        <div class="vitrine-nav-icon">📢</div>
-                        <div class="vitrine-nav-content">
-                            <h3>Por que Anunciar</h3>
-                            <p>Benefícios para organizadores</p>
-                        </div>
-                    </a>
-                    <a href="vitrine-pacotes.html" class="vitrine-nav-item">
-                        <div class="vitrine-nav-icon">💰</div>
-                        <div class="vitrine-nav-content">
-                            <h3>Pacotes</h3>
-                            <p>Planos e preços</p>
-                        </div>
-                    </a>
-                    <a href="vitrine-marketing.html" class="vitrine-nav-item">
-                        <div class="vitrine-nav-icon">📊</div>
-                        <div class="vitrine-nav-content">
-                            <h3>Marketing</h3>
-                            <p>Estratégias de divulgação</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Search Bar usando o mesmo componente -->
-        <div class="app-search-container">
-            <div class="app-search-bar">
-                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-                <input type="search" class="app-search-input" id="faq-search" placeholder="Buscar nas perguntas frequentes..." 
-                       aria-label="Buscar perguntas frequentes" autocomplete="off" spellcheck="false">
-            </div>
-        </div>
-
-        <!-- Category Filters - ESTILO VITRINE -->
-        <section class="app-categories" aria-labelledby="categories-title-faq">
-            <h2 id="categories-title-faq" class="sr-only">Categorias FAQ</h2>
-            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria FAQ">
-                <button class="category-item-app active" data-category="geral" aria-label="Perguntas gerais">
-                    <div class="category-icon-app" role="img" aria-label="Ícone informação">ℹ️</div>
-                    <div class="category-label-app">Geral</div>
-                </button>
-                <button class="category-item-app" data-category="eventos" aria-label="Perguntas sobre eventos">
-                    <div class="category-icon-app" role="img" aria-label="Ícone festa">🎉</div>
-                    <div class="category-label-app">Eventos</div>
-                </button>
-                <button class="category-item-app" data-category="artistas" aria-label="Perguntas para artistas">
-                    <div class="category-icon-app" role="img" aria-label="Ícone arte">🎨</div>
-                    <div class="category-label-app">Artistas</div>
-                </button>
-                <button class="category-item-app" data-category="tecnico" aria-label="Suporte técnico">
-                    <div class="category-icon-app" role="img" aria-label="Ícone técnico">💻</div>
-                    <div class="category-label-app">Técnico</div>
-                </button>
-                <button class="category-item-app" data-category="parcerias" aria-label="Perguntas sobre parcerias">
-                    <div class="category-icon-app" role="img" aria-label="Ícone parceria">🤝</div>
-                    <div class="category-label-app">Parcerias</div>
-                </button>
-            </div>
-        </section>
-
-        <!-- FAQ Content -->
-        <main>
-            <!-- Seção Geral -->
-            <section class="faq-section active" data-category="geral" aria-labelledby="geral-title">
-                <div class="app-section-header">
-                    <h2 id="geral-title" class="app-section-title">📌 Sobre o ROLÊ Entretenimento</h2>
-                </div>
-                
-                <div class="faq-card">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-1">
-                        <span>O que é o ROLÊ Entretenimento?</span>
-                        <div class="faq-icon">⬇️</div>
-                    </button>
-                    <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-1-question">
-                        <p>O ROLÊ Entretenimento é uma plataforma que conecta cultura, arte e os rolês mais vivos do Brasil. Promovemos eventos, divulgamos artistas emergentes e criamos conteúdo cultural para aproximar pessoas das experiências mais autênticas de cada cidade.</p>
-                    </div>
-                </div>
-
-                <div class="faq-card">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-2">
-                        <span>Como vocês escolhem os eventos para divulgar?</span>
-                        <div class="faq-icon">⬇️</div>
-                    </button>
-                    <div class="faq-answer" id="faq-2" role="region">
-                        <p>Nossa curadoria busca eventos que representem a diversidade cultural brasileira, priorizando produções independentes, artistas emergentes e iniciativas que fortaleçam a cena cultural local. Valorizamos originalidade, qualidade e impacto social.</p>
-                    </div>
-                </div>
-
-                <div class="faq-card">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-3">
-                        <span>Quais cidades vocês cobrem?</span>
-                        <div class="faq-icon">⬇️</div>
-                    </button>
-                    <div class="faq-answer" id="faq-3" role="region">
-                        <p>Atualmente focamos nas principais capitais brasileiras: <strong>Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis</strong>, Belo Horizonte, Salvador, Recife, Fortaleza e Brasília. Estamos expandindo para outras cidades constantemente.</p>
-                    </div>
-                </div>
-
-                <div class="faq-card">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-4">
-                        <span>Posso divulgar meu evento no ROLÊ?</span>
-                        <div class="faq-icon">⬇️</div>
-                    </button>
-                    <div class="faq-answer" id="faq-4" role="region">
-                        <p>Sim! Entre em contato através do nosso <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a> ou <a href="https://instagram.com/role.ent" target="_blank">Instagram</a>. Analisamos cada proposta considerando nossa linha editorial e disponibilidade.</p>
-                    </div>
-                </div>
-
-                <div class="faq-card">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-5">
-                        <span>Vocês cobram para divulgar eventos?</span>
-                        <div class="faq-icon">⬇️</div>
-                    </button>
-                    <div class="faq-answer" id="faq-5" role="region">
-                        <p>Oferecemos tanto divulgação orgânica quanto parcerias comerciais. Eventos com impacto cultural relevante podem ser divulgados gratuitamente. Para campanhas estratégicas, temos planos personalizados.</p>
-                    </div>
-                </div>
-            </section>
+</section>
 
             <!-- Seção Eventos -->
             <section class="faq-section" data-category="eventos" aria-labelledby="eventos-title">
@@ -741,7 +159,7 @@
             </section>
         </main>
 
-        <!-- Stats Section usando mesmo estilo do index -->
+        <!-- Stats Section -->
         <section aria-labelledby="stats-title">
             <div class="app-section-header">
                 <h2 id="stats-title" class="app-section-title">FAQ em números</h2>
@@ -766,7 +184,7 @@
             </div>
         </section>
 
-        <!-- Contact Banner usando mesmo estilo do index -->
+        <!-- Contact Banner -->
         <div class="app-featured-banner" role="complementary" onclick="window.location.href='https://wa.me/5551980704353'">
             <div class="app-banner-content">
                 <div class="app-banner-tag">SUPORTE DIRETO</div>
@@ -775,6 +193,50 @@
                 <a href="https://wa.me/5551980704353" class="app-banner-cta" target="_blank" onclick="event.stopPropagation();">Falar no WhatsApp</a>
             </div>
         </div>
+
+        <!-- Vitrine Navigation -->
+        <section class="vitrine-nav" aria-labelledby="vitrine-nav-title">
+            <div class="vitrine-nav-container">
+                <h2 id="vitrine-nav-title" class="vitrine-nav-title">Outras páginas da Vitrine</h2>
+                <div class="vitrine-nav-grid">
+                    <a href="vitrine-cultural.html" class="vitrine-nav-item">
+                        <div class="vitrine-nav-icon">🎨</div>
+                        <div class="vitrine-nav-content">
+                            <h3>Vitrine Cultural</h3>
+                            <p>Artistas e eventos em destaque</p>
+                        </div>
+                    </a>
+                    <a href="vitrine-como-funciona.html" class="vitrine-nav-item">
+                        <div class="vitrine-nav-icon">ℹ️</div>
+                        <div class="vitrine-nav-content">
+                            <h3>Como Funciona</h3>
+                            <p>Entenda nossa plataforma</p>
+                        </div>
+                    </a>
+                    <a href="vitrine-anunciar.html" class="vitrine-nav-item">
+                        <div class="vitrine-nav-icon">📢</div>
+                        <div class="vitrine-nav-content">
+                            <h3>Por que Anunciar</h3>
+                            <p>Benefícios para organizadores</p>
+                        </div>
+                    </a>
+                    <a href="vitrine-pacotes.html" class="vitrine-nav-item">
+                        <div class="vitrine-nav-icon">💰</div>
+                        <div class="vitrine-nav-content">
+                            <h3>Pacotes</h3>
+                            <p>Planos e preços</p>
+                        </div>
+                    </a>
+                    <a href="vitrine-marketing.html" class="vitrine-nav-item">
+                        <div class="vitrine-nav-icon">📊</div>
+                        <div class="vitrine-nav-content">
+                            <h3>Marketing</h3>
+                            <p>Estratégias de divulgação</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer IDÊNTICO ao index.html -->
         <footer class="app-footer" role="contentinfo">
@@ -836,12 +298,11 @@
         <div id="toast-container" role="region" aria-live="polite" aria-label="Notificações"></div>
     </div>
 
-    <!-- JavaScript BASEADO no index.html -->
+    <!-- JavaScript -->
     <script>
         (function() {
             'use strict';
             
-            // Utilities
             const utils = {
                 sanitize: function(str) {
                     const div = document.createElement('div');
@@ -888,7 +349,7 @@
             };
 
             function initializeApp() {
-                // Mobile menu functionality - IGUAL AO INDEX
+                // Mobile menu
                 const menuToggle = document.getElementById('menu-toggle-btn');
                 const menuClose = document.getElementById('menu-close-btn');
                 const mobileMenuOverlay = document.getElementById('mobile-menu');
@@ -939,7 +400,7 @@
                     });
                 }
 
-                // Theme toggle - IGUAL AO INDEX
+                // Theme toggle
                 const themeToggle = document.getElementById('theme-toggle-btn');
                 const root = document.documentElement;
 
@@ -963,42 +424,7 @@
                     });
                 }
 
-                // Stats counter animation - IGUAL AO INDEX
-                const observerOptions = {
-                    threshold: 0.5,
-                    rootMargin: '0px 0px -100px 0px'
-                };
-
-                const statsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                            entry.target.classList.add('counted');
-                            animateNumber(entry.target);
-                        }
-                    });
-                }, observerOptions);
-
-                const statNumbers = document.querySelectorAll('.app-stat-number');
-                statNumbers.forEach(stat => statsObserver.observe(stat));
-
-                function animateNumber(element) {
-                    const target = parseInt(element.getAttribute('data-target'), 10);
-                    let current = 0;
-                    const increment = Math.ceil(target / 30);
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        element.textContent = current;
-                    }, 50);
-                }
-
-                // FAQ SPECIFIC FUNCTIONALITY
-                
-                // Category Filtering - ATUALIZADO PARA USAR CLASSES DO INDEX
+                // Category Filtering
                 const categoryButtons = document.querySelectorAll('.category-item-app');
                 const faqSections = document.querySelectorAll('.faq-section');
 
@@ -1006,11 +432,9 @@
                     button.addEventListener('click', () => {
                         const category = button.getAttribute('data-category');
                         
-                        // Update active button
                         categoryButtons.forEach(btn => btn.classList.remove('active'));
                         button.classList.add('active');
                         
-                        // Show/hide sections
                         faqSections.forEach(section => {
                             section.classList.remove('active');
                             if (section.getAttribute('data-category') === category) {
@@ -1018,7 +442,6 @@
                             }
                         });
 
-                        // Close all FAQs when switching categories
                         document.querySelectorAll('.faq-question').forEach(faqButton => {
                             faqButton.setAttribute('aria-expanded', 'false');
                             faqButton.nextElementSibling.classList.remove('active');
@@ -1059,6 +482,39 @@
                     }, 300));
                 }
 
+                // Stats animation
+                const observerOptions = {
+                    threshold: 0.5,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const statsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                            entry.target.classList.add('counted');
+                            animateNumber(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                const statNumbers = document.querySelectorAll('.app-stat-number');
+                statNumbers.forEach(stat => statsObserver.observe(stat));
+
+                function animateNumber(element) {
+                    const target = parseInt(element.getAttribute('data-target'), 10);
+                    let current = 0;
+                    const increment = Math.ceil(target / 30);
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        element.textContent = current;
+                    }, 50);
+                }
+
                 console.log('FAQ page initialized successfully');
             }
 
@@ -1067,7 +523,6 @@
                 const answer = button.nextElementSibling;
                 const isExpanded = button.getAttribute('aria-expanded') === 'true';
                 
-                // Close all other FAQs in the same section
                 const currentSection = button.closest('.faq-section');
                 currentSection.querySelectorAll('.faq-question').forEach(otherButton => {
                     if (otherButton !== button) {
@@ -1076,7 +531,6 @@
                     }
                 });
                 
-                // Toggle current FAQ
                 if (isExpanded) {
                     button.setAttribute('aria-expanded', 'false');
                     answer.classList.remove('active');
@@ -1084,7 +538,6 @@
                     button.setAttribute('aria-expanded', 'true');
                     answer.classList.add('active');
                     
-                    // Scroll to question for better UX
                     setTimeout(() => {
                         button.scrollIntoView({
                             behavior: 'smooth',
@@ -1094,70 +547,691 @@
                 }
             };
 
-            // Initialize when DOM is ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', initializeApp);
             } else {
                 initializeApp();
             }
             
-            // Error handling
             window.addEventListener('error', function(e) {
                 console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
+            });<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    
+    <!-- SEO e Meta Tags -->
+    <title>FAQ - ROLÊ ENTRETENIMENTO | Perguntas Frequentes sobre Cultura e Eventos</title>
+    <meta name="description" content="Tire todas suas dúvidas sobre ROLÊ Entretenimento, eventos culturais, artistas, parcerias e nossa plataforma. Suporte completo para rolezeiros e organizadores.">
+    <meta name="keywords" content="faq, dúvidas, suporte, rolê entretenimento, eventos brasil, cultura brasileira, artistas, parcerias">
+    <meta name="author" content="ROLÊ Entretenimento">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://roleentretenimento.com/vitrine-faq.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="ROLÊ Entretenimento">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://roleentretenimento.com/vitrine-faq.html">
+    <meta property="og:title" content="FAQ - ROLÊ ENTRETENIMENTO | Perguntas Frequentes">
+    <meta property="og:description" content="Tire suas dúvidas sobre eventos culturais, artistas e nossa plataforma. Suporte completo para a comunidade ROLÊ.">
+    <meta property="og:image" content="https://roleentretenimento.com/images/banner-home.png">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ - ROLÊ ENTRETENIMENTO">
+    <meta name="twitter:description" content="Perguntas frequentes sobre eventos culturais e nossa plataforma">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <meta name="theme-color" content="#8B5CF6">
+    
+    <!-- DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Theme Script -->
+    <script>
+        (function() {
+            try {
+                const theme = localStorage.getItem('theme') || 'dark';
+                if (theme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+            } catch(e) {
+                console.warn('Theme loading failed:', e);
+            }
         })();
     </script>
-
-    <!-- CSS Adicional para Toast (igual ao index) -->
+    
+    <!-- CSS Critical Path -->
     <style>
-        #toast-container {
-            position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10000;
-            pointer-events: none;
+        :root{
+            --bg-primary:#0D0D0D;
+            --bg-secondary:#1A1A1A;
+            --bg-card:#1F1F1F;
+            --text-primary:#FFFFFF;
+            --text-secondary:#A0A0A0;
+            --border-color:#2A2A2A;
+            --accent-purple:#8B5CF6;
+            --accent-green:#10B981;
+            --accent-red:#EF4444;
+            --accent-pink:#EC4899;
         }
         
-        @media (min-width: 769px) {
-            #toast-container {
-                bottom: 40px;
+        :root[data-theme="light"]{
+            --bg-primary:#FFFFFF;
+            --bg-secondary:#F8F9FA;
+            --bg-card:#FFFFFF;
+            --text-primary:#1F2937;
+            --text-secondary:#6B7280;
+            --border-color:#E5E7EB;
+        }
+        
+        *{margin:0;padding:0;box-sizing:border-box}
+        
+        body{
+            font-family:'Inter',sans-serif;
+            background:var(--bg-primary);
+            color:var(--text-primary);
+            line-height:1.6;
+            transition:background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .app-container {
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease;
+        }
+        
+        .app-header{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:rgba(13,13,13,0.95);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid var(--border-color);
+            transition:background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .app-header{
+            background:rgba(255,255,255,0.95);
+        }
+        
+        /* Header Responsivo */
+        @media (max-width: 768px) {
+            .app-header {
+                padding: 0 20px;
+            }
+            .app-header-content {
+                padding: 12px 0 8px 0 !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .app-logo-img {
+                height: 24px !important;
+                max-width: 100px;
+            }
+            .menu-toggle, .theme-toggle-app {
+                padding: 6px;
+                width: 36px;
+                height: 36px;
             }
         }
         
-        .toast {
-            background: var(--accent-purple);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
+        @media (min-width: 769px) {
+            .app-header-content {
+                padding: 14px 40px !important;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .desktop-menu {
+                gap: 24px !important;
+                margin-right: 24px !important;
+                display: flex !important;
+            }
+            .menu-toggle {
+                display: none !important;
+            }
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb-nav {
+            padding: 16px 20px 0 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        @media (min-width: 769px) {
+            .breadcrumb-nav {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 24px 40px 0 40px;
+            }
+        }
+        
+        .breadcrumb-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
+            padding-bottom: 16px;
+        }
+        
+        .breadcrumb-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 500;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            max-width: 300px;
+        }
+        
+        .breadcrumb-link:hover {
+            color: var(--accent-pink);
+            transform: translateX(-2px);
+        }
+        
+        .breadcrumb-divider {
+            color: var(--text-secondary);
+            margin: 0 4px;
+        }
+        
+        .breadcrumb-current {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* FAQ Hero */
+        .faq-hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            margin: 24px 20px;
+            border-radius: 20px;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-hero {
+                max-width: 1200px;
+                margin: 40px auto;
+                padding: 60px 40px;
+            }
+        }
+        
+        .faq-hero h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-hero h1 {
+                font-size: 40px;
+                margin-bottom: 24px;
+            }
+        }
+        
+        .faq-hero p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-hero p {
+                font-size: 18px;
+            }
+        }
+        
+        /* FAQ específicos */
+        .faq-section {
+            display: none;
+            padding: 0 20px 24px 20px;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-section {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 40px 40px 40px;
+            }
+        }
+        
+        .faq-section.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-card:hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-question {
+                padding: 24px;
+                font-size: 18px;
+            }
+        }
+        
+        .faq-question:hover {
+            background: rgba(139, 92, 246, 0.05);
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--accent-purple);
+            font-size: 16px;
+            min-width: 20px;
+            margin-left: 16px;
+        }
+        
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            display: none;
+            font-size: 15px;
+        }
+        
+        @media (min-width: 769px) {
+            .faq-answer {
+                padding: 0 24px 24px;
+                font-size: 16px;
+            }
+        }
+        
+        .faq-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .faq-answer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Vitrine Navigation */
+        .vitrine-nav {
+            padding: 32px 20px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.02));
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            margin: 24px 20px;
+            border-radius: 20px;
+        }
+        
+        @media (min-width: 769px) {
+            .vitrine-nav {
+                max-width: 1200px;
+                margin: 40px auto;
+                padding: 48px 40px;
+            }
+        }
+        
+        .vitrine-nav-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-primary);
             text-align: center;
         }
         
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
+        @media (min-width: 769px) {
+            .vitrine-nav-title {
+                font-size: 24px;
+                margin-bottom: 32px;
+            }
         }
         
-        .toast.success {
-            background: var(--accent-green);
+        .vitrine-nav-grid {
+            display: grid;
+            gap: 16px;
+            justify-content: center;
         }
         
-        .toast.error {
-            background: var(--accent-red);
+        @media (max-width: 768px) {
+            .vitrine-nav-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .vitrine-nav-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        }
+        
+        .vitrine-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 769px) {
+            .vitrine-nav-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+                gap: 12px;
+            }
+        }
+        
+        .vitrine-nav-item:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+        
+        .vitrine-nav-icon {
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 769px) {
+            .vitrine-nav-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 36px;
+                margin: 0 auto;
+            }
+        }
+        
+        .vitrine-nav-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        
+        @media (min-width: 769px) {
+            .vitrine-nav-content h3 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+        }
+        
+        .vitrine-nav-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        
+        @media (min-width: 769px) {
+            .vitrine-nav-content p {
+                font-size: 15px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
-</body>
-</html>
+    
+    <!-- Load Main CSS -->
+    <link rel="stylesheet" href="estilo.css" media="all">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header IDÊNTICO ao index.html -->
+        <header class="app-header" role="banner">
+            <div class="app-header-content">
+                <a href="index.html" class="app-logo-container" aria-label="ROLÊ Entretenimento - Página inicial">
+                    <img src="images/logo-role.png" alt="ROLÊ Entretenimento" class="app-logo-img" width="100" height="24" />
+                </a>
+                <div class="app-header-actions">
+                    <!-- Desktop Menu -->
+                    <nav class="desktop-menu" role="navigation" aria-label="Menu principal">
+                        <a href="index.html">Home</a>
+                        <a href="revista.html">Revista</a>
+                        <a href="vitrine-cultural.html">Vitrine Cultural</a>
+                        <a href="destaques.html">Destaques</a>
+                        <a href="descontos.html">Descontos</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="quem-somos.html">Quem Somos</a>
+                    </nav>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-app" id="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
+                        <img src="images/theme-toggle.gif" alt="" width="20" height="20" role="presentation" />
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay IDÊNTICO -->
+        <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+            <nav class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <img src="images/logo-role.png" alt="ROLÊ" class="mobile-menu-logo" width="120" height="32" />
+                    <button class="menu-close" id="menu-close-btn" aria-label="Fechar menu">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="mobile-menu-list" role="list">
+                    <li><a href="index.html" class="mobile-menu-link">🏠 Página Inicial</a></li>
+                    <li><a href="revista.html" class="mobile-menu-link">📰 Revista ROLÊ</a></li>
+                    <li><a href="vitrine-cultural.html" class="mobile-menu-link">🎨 Vitrine Cultural</a></li>
+                    <li><a href="destaques.html" class="mobile-menu-link">⭐ Destaques</a></li>
+                    <li><a href="descontos.html" class="mobile-menu-link">💰 Descontos</a></li>
+                    <li><a href="contato.html" class="mobile-menu-link">📞 Contato</a></li>
+                    <li><a href="quem-somos.html" class="mobile-menu-link">ℹ️ Quem Somos</a></li>
+                </ul>
+                <div class="mobile-menu-footer">
+                    <div class="mobile-menu-social">
+                        <a href="https://instagram.com/role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no Instagram">
+                            <img src="images/instagram.svg" alt="" width="20" height="20" role="presentation" />
+                        </a>
+                        <a href="https://tiktok.com/@role.ent" target="_blank" rel="noopener noreferrer" aria-label="Seguir no TikTok">
+                            <img src="images/tiktok.svg" alt="" width="20" height="20" role="presentation" />
+                        </a>
+                        <a href="https://wa.me/5551980704353" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+                            <img src="images/whatsapp.svg" alt="" width="20" height="20" role="presentation" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" aria-label="Navegação da vitrine">
+            <div class="breadcrumb-container">
+                <a href="vitrine-cultural.html" class="breadcrumb-link">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Voltar para Vitrine Cultural
+                </a>
+                <div class="breadcrumb-divider">/</div>
+                <span class="breadcrumb-current">FAQ</span>
+            </div>
+        </nav>
+
+        <!-- FAQ Hero Section -->
+        <section class="faq-hero" aria-labelledby="faq-title">
+            <h1 id="faq-title">Perguntas Frequentes</h1>
+            <p>Tire suas dúvidas sobre o ROLÊ Entretenimento, eventos culturais, artistas e nossa plataforma</p>
+        </section>
+
+        <!-- Search Bar -->
+        <div class="app-search-container">
+            <div class="app-search-bar">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="search" class="app-search-input" id="faq-search" placeholder="Buscar nas perguntas frequentes..." 
+                       aria-label="Buscar perguntas frequentes" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <section class="app-categories" aria-labelledby="categories-title-faq">
+            <h2 id="categories-title-faq" class="sr-only">Categorias FAQ</h2>
+            <div class="categories-grid-app" role="group" aria-label="Filtros por categoria FAQ">
+                <button class="category-item-app active" data-category="geral" aria-label="Perguntas gerais">
+                    <div class="category-icon-app" role="img" aria-label="Ícone informação">ℹ️</div>
+                    <div class="category-label-app">Geral</div>
+                </button>
+                <button class="category-item-app" data-category="eventos" aria-label="Perguntas sobre eventos">
+                    <div class="category-icon-app" role="img" aria-label="Ícone festa">🎉</div>
+                    <div class="category-label-app">Eventos</div>
+                </button>
+                <button class="category-item-app" data-category="artistas" aria-label="Perguntas para artistas">
+                    <div class="category-icon-app" role="img" aria-label="Ícone arte">🎨</div>
+                    <div class="category-label-app">Artistas</div>
+                </button>
+                <button class="category-item-app" data-category="tecnico" aria-label="Suporte técnico">
+                    <div class="category-icon-app" role="img" aria-label="Ícone técnico">💻</div>
+                    <div class="category-label-app">Técnico</div>
+                </button>
+                <button class="category-item-app" data-category="parcerias" aria-label="Perguntas sobre parcerias">
+                    <div class="category-icon-app" role="img" aria-label="Ícone parceria">🤝</div>
+                    <div class="category-label-app">Parcerias</div>
+                </button>
+            </div>
+        </section>
+
+        <!-- FAQ Content -->
+        <main>
+            <!-- Seção Geral -->
+            <section class="faq-section active" data-category="geral" aria-labelledby="geral-title">
+                <div class="app-section-header">
+                    <h2 id="geral-title" class="app-section-title">📌 Sobre o ROLÊ Entretenimento</h2>
+                </div>
+                
+                <div class="faq-card">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-1">
+                        <span>O que é o ROLÊ Entretenimento?</span>
+                        <div class="faq-icon">⬇️</div>
+                    </button>
+                    <div class="faq-answer" id="faq-1" role="region">
+                        <p>O ROLÊ Entretenimento é uma plataforma que conecta cultura, arte e os rolês mais vivos do Brasil. Promovemos eventos, divulgamos artistas emergentes e criamos conteúdo cultural para aproximar pessoas das experiências mais autênticas de cada cidade.</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-2">
+                        <span>Como vocês escolhem os eventos para divulgar?</span>
+                        <div class="faq-icon">⬇️</div>
+                    </button>
+                    <div class="faq-answer" id="faq-2" role="region">
+                        <p>Nossa curadoria busca eventos que representem a diversidade cultural brasileira, priorizando produções independentes, artistas emergentes e iniciativas que fortaleçam a cena cultural local. Valorizamos originalidade, qualidade e impacto social.</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-3">
+                        <span>Quais cidades vocês cobrem?</span>
+                        <div class="faq-icon">⬇️</div>
+                    </button>
+                    <div class="faq-answer" id="faq-3" role="region">
+                        <p>Atualmente focamos nas principais capitais brasileiras: <strong>Porto Alegre, São Paulo, Rio de Janeiro, Curitiba, Florianópolis</strong>, Belo Horizonte, Salvador, Recife, Fortaleza e Brasília. Estamos expandindo para outras cidades constantemente.</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-4">
+                        <span>Posso divulgar meu evento no ROLÊ?</span>
+                        <div class="faq-icon">⬇️</div>
+                    </button>
+                    <div class="faq-answer" id="faq-4" role="region">
+                        <p>Sim! Entre em contato através do nosso <a href="https://wa.me/5551980704353" target="_blank">WhatsApp</a> ou <a href="https://instagram.com/role.ent" target="_blank">Instagram</a>. Analisamos cada proposta considerando nossa linha editorial e disponibilidade.</p>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false" aria-controls="faq-5">
+                        <span>Vocês cobram para divulgar eventos?</span>
+                        <div class="faq-icon">⬇️</div>
+                    </button>
+                    <div class="faq-answer" id="faq-5" role="region">
+                        <p>Oferecemos tanto divulgação orgânica quanto parcerias comerciais. Eventos com impacto cultural relevante podem ser divulgados gratuitamente. Para campanhas estratégicas, temos planos personalizados.</p>
+                    </div>
+                </div>
