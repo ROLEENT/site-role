@@ -462,12 +462,17 @@
             </nav>
         </div>
 
-        <!-- Hero Section -->
+        <!-- Hero Section IDÊNTICO AO VITRINE-HERO -->
         <section class="app-hero-section" aria-labelledby="hero-title">
             <h1 id="hero-title" class="app-hero-title">FAQ - Perguntas Frequentes</h1>
             <p class="app-hero-description">
                 Tire suas dúvidas sobre o ROLÊ Entretenimento, eventos culturais, artistas e nossa plataforma
             </p>
+            <div class="app-hero-cta">
+                <button class="app-btn-hero" onclick="scrollToSection('faq-filter')" aria-describedby="hero-title">
+                    Ver perguntas frequentes
+                </button>
+            </div>
         </section>
 
         <!-- Vitrine Navigation -->
@@ -491,55 +496,35 @@
             </div>
         </div>
 
-        <!-- Vitrine Categories Grid - BOTÕES IDÊNTICOS ÀS OUTRAS PÁGINAS -->
+        <!-- Categories Grid - ESPECÍFICAS DA VITRINE (IDÊNTICO AO VITRINE-HERO) -->
         <section class="app-categories" aria-labelledby="categories-title">
-            <h2 id="categories-title" class="sr-only">Seções da Vitrine Cultural</h2>
-            <div class="categories-grid-app" role="group" aria-label="Navegação da Vitrine Cultural">
-                <a href="vitrine-cultural.html" class="category-item-app" aria-label="Como Funciona">
-                    <div class="category-icon-app" role="img" aria-label="Ícone Como Funciona">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
-                        </svg>
-                    </div>
-                    <div class="category-label-app">Como Funciona</div>
+            <h2 id="categories-title" class="sr-only">Seções da vitrine cultural</h2>
+            <div class="categories-grid-app" role="group" aria-label="Seções da vitrine cultural">
+                <a href="vitrine-hero.html" class="category-item-app" aria-label="Como funciona a vitrine">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de informação">ℹ️</div>
+                    <div class="category-label-app">Como<br>Funciona</div>
                 </a>
-                <a href="vitrine-cultural.html" class="category-item-app" aria-label="Por que Anunciar">
-                    <div class="category-icon-app" role="img" aria-label="Ícone Por que Anunciar">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18 8h2a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h2V7a6 6 0 1 1 12 0v1zM5 10v9h14v-9H5zm6-1V7a4 4 0 1 0-8 0v2h8zm-2 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
-                        </svg>
-                    </div>
-                    <div class="category-label-app">Por que Anunciar</div>
+                <a href="vitrine-por-que-anunciar.html" class="category-item-app" aria-label="Por que anunciar na vitrine">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de megafone">📢</div>
+                    <div class="category-label-app">Por que<br>Anunciar</div>
                 </a>
-                <a href="vitrine-pacotes.html" class="category-item-app" aria-label="Pacotes">
-                    <div class="category-icon-app" role="img" aria-label="Ícone Pacotes">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                    </div>
+                <a href="vitrine-pacotes.html" class="category-item-app" aria-label="Ver pacotes da vitrine">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de dinheiro">💰</div>
                     <div class="category-label-app">Pacotes</div>
                 </a>
-                <a href="vitrine-faq.html" class="category-item-app active" aria-label="FAQ" aria-current="page">
-                    <div class="category-icon-app" role="img" aria-label="Ícone FAQ">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
-                        </svg>
-                    </div>
+                <a href="vitrine-faq.html" class="category-item-app active" aria-label="Ver perguntas frequentes" aria-current="page">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de pergunta">❓</div>
                     <div class="category-label-app">FAQ</div>
                 </a>
-                <a href="vitrine-cultural.html" class="category-item-app" aria-label="Marketing">
-                    <div class="category-icon-app" role="img" aria-label="Ícone Marketing">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
-                        </svg>
-                    </div>
+                <a href="vitrine-artigo-marketing-eventos.html" class="category-item-app" aria-label="Marketing e eventos">
+                    <div class="category-icon-app" role="img" aria-label="Ícone de gráfico">📊</div>
                     <div class="category-label-app">Marketing</div>
                 </a>
             </div>
         </section>
 
         <!-- FAQ Categories Filter -->
-        <div class="faq-filter-section">
+        <div class="faq-filter-section" id="faq-filter">
             <div class="app-section-header">
                 <h2 class="app-section-title">Filtrar Perguntas</h2>
             </div>
@@ -1100,22 +1085,14 @@
                 console.log('FAQ App initialized successfully');
             }
 
-            // FAQ Toggle Function - GLOBAL
-            window.toggleFAQ = function(button) {
-                const answer = button.parentNode.querySelector('.faq-answer');
-                const isExpanded = button.getAttribute('aria-expanded') === 'true';
-                
-                // Close all other FAQ items
-                const allButtons = document.querySelectorAll('.faq-question');
-                const allAnswers = document.querySelectorAll('.faq-answer');
-                
-                allButtons.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
-                allAnswers.forEach(ans => ans.classList.remove('active'));
-                
-                // Toggle current item
-                if (!isExpanded) {
-                    button.setAttribute('aria-expanded', 'true');
-                    answer.classList.add('active');
+            // Smooth scroll function - IDÊNTICO AO VITRINE-HERO
+            window.scrollToSection = function(sectionId) {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             };
 
