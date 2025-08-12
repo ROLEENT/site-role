@@ -567,25 +567,25 @@
         <!-- Section Header - IDÊNTICO AO INDEX -->
         <div class="app-section-header">
             <h2 class="app-section-title" id="destaques-title">ÚLTIMA EDIÇÃO</h2>
-            <a href="destaques-sp-2025-08-11.html" class="app-see-all" aria-describedby="destaques-title">Ler edição completa</a>
+            <a href="destaques-sp-14-16-agosto.html" class="app-see-all" aria-describedby="destaques-title">Ler edição completa</a>
         </div>
 
         <!-- Latest Edition Cards - SEGUINDO ESTRUTURA DO INDEX -->
         <section class="app-recommendations" id="destaques" aria-labelledby="destaques-title">
             <div class="app-cards-scroll" role="group" aria-label="Edição atual em destaque">
                 <!-- Latest Edition Card -->
-                <article class="app-recommendation-card" onclick="window.location.href='destaques-sp-2025-08-11.html'">
+                <article class="app-recommendation-card" onclick="window.location.href='destaques-sp-14-16-agosto.html'">
                     <div class="app-card-image">
-                        <div class="app-card-badge">11 de Agosto</div>
-                        <img src="images/sp-hero.png" alt="Eventos da semana em São Paulo" loading="lazy" width="280" height="140" />
+                        <div class="app-card-badge">14-16 Agosto</div>
+                        <img src="images/sp-hero-heavy-house.png" alt="Eventos da semana em São Paulo - 14 a 16 de agosto" loading="lazy" width="280" height="140" />
                     </div>
                     <div class="app-card-content">
-                        <h3 class="app-card-title">Eventos em São Paulo: a metrópole que nunca para de dançar</h3>
-                        <p class="app-card-description">A cidade que nunca dorme... nem para de dançar. São Paulo pulsa 24 horas com uma agenda cultural inesgotável e rolês que movem a sampa...</p>
+                        <h3 class="app-card-title">Eventos em São Paulo: os rolês imperdíveis da semana para quem vive a cidade no modo turbo</h3>
+                        <p class="app-card-description">São Paulo não dá trégua — e, sinceramente, a gente nem quer. Entre os dias 14 e 16 de agosto, a cidade abre um cardápio de experiências imperdíveis...</p>
                         <div class="app-card-info">
                             <div class="app-card-info-item">
                                 <span role="img" aria-label="Data">📅</span>
-                                <span>11 de Agosto</span>
+                                <span>14-16 Agosto</span>
                             </div>
                             <div class="app-card-info-item">
                                 <span role="img" aria-label="Eventos">🏙️</span>
@@ -597,7 +597,7 @@
                                 <div class="stars" role="img" aria-label="Avaliação 5 estrelas">⭐⭐⭐⭐⭐</div>
                                 <span class="rating-text">4.7</span>
                             </div>
-                            <a href="destaques-sp-2025-08-11.html" 
+                            <a href="destaques-sp-14-16-agosto.html" 
                                class="app-card-link"
                                aria-label="Ler edição completa dos destaques de São Paulo"
                                onclick="event.stopPropagation();">
@@ -703,12 +703,12 @@
         </section>
 
         <!-- Featured Banner - ADAPTADO PARA SÃO PAULO -->
-        <div class="app-featured-banner" role="complementary" onclick="window.location.href='destaques-sp-2025-08-11.html'">
+        <div class="app-featured-banner" role="complementary" onclick="window.location.href='destaques-sp-14-16-agosto.html'">
             <div class="app-banner-content">
                 <div class="app-banner-tag">CURADORIA SEMANAL</div>
                 <h3 class="app-banner-title">Destaques de São Paulo</h3>
                 <p class="app-banner-subtitle">Toda semana, os melhores eventos da metrópole que nunca dorme com a opinião e estética ROLÊ.</p>
-                <a href="destaques-sp-2025-08-11.html" class="app-banner-cta" onclick="event.stopPropagation();">Ler Última Edição</a>
+                <a href="destaques-sp-14-16-agosto.html" class="app-banner-cta" onclick="event.stopPropagation();">Ler Última Edição</a>
             </div>
         </div>
 
@@ -1149,324 +1149,4 @@
                         startX = e.touches[0].clientX;
                     }, { passive: true });
 
-                    scrollContainer.addEventListener('touchend', function(e) {
-                        const endX = e.changedTouches[0].clientX;
-                        const diff = startX - endX;
-                        
-                        if (Math.abs(diff) > 50) {
-                            const scrollAmount = 300;
-                            if (diff > 0) {
-                                this.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                            } else {
-                                this.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                            }
-                        }
-                    }, { passive: true });
-                }
-
-                // Initialize ads after DOM is ready
-                setTimeout(() => {
-                    try {
-                        const ads = document.querySelectorAll('.adsbygoogle');
-                        ads.forEach(function(ad) {
-                            try {
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            } catch(e) {
-                                console.warn('AdSense initialization failed for ad:', e);
-                            }
-                        });
-                    } catch(e) {
-                        console.warn('AdSense general initialization failed:', e);
-                    }
-                }, 1000);
-
-                console.log('Destaques São Paulo page initialized successfully');
-            }
-
-            // Smooth scroll function
-            window.scrollToSection = function(sectionId) {
-                const target = document.getElementById(sectionId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            };
-
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeApp);
-            } else {
-                initializeApp();
-            }
-            
-            // Error handling
-            window.addEventListener('error', function(e) {
-                console.warn('Script error:', e.error);
-            });
-            
-            window.addEventListener('unhandledrejection', function(e) {
-                console.warn('Unhandled promise rejection:', e.reason);
-            });
-            
-        })();
-    </script>
-
-    <!-- CSS Adicional para correções finais - IDÊNTICO AO INDEX -->
-    <style>
-        /* Newsletter error styling */
-        .newsletter-error {
-            color: var(--accent-red);
-            font-size: 12px;
-            margin-top: 8px;
-            min-height: 16px;
-        }
-        
-        .app-newsletter-input.error {
-            border-color: var(--accent-red);
-            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
-        }
-        
-        /* Toast styling */
-        #toast-container {
-            position: fixed;
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10000;
-            pointer-events: none;
-        }
-        
-        @media (min-width: 769px) {
-            #toast-container {
-                bottom: 40px;
-            }
-        }
-        
-        .toast {
-            background: var(--accent-purple);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            max-width: 300px;
-            text-align: center;
-        }
-        
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .toast.success {
-            background: var(--accent-green);
-        }
-        
-        .toast.error {
-            background: var(--accent-red);
-        }
-        
-        /* Loading state for buttons */
-        .btn-loading {
-            display: none;
-        }
-        
-        button[disabled] {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-        
-        /* Safe area adjustments for mobile */
-        @supports (padding: max(0px)) {
-            @media (max-width: 768px) {
-                .app-header {
-                    padding-top: max(env(safe-area-inset-top), 0px);
-                }
-                
-                .app-bottom-nav {
-                    padding-bottom: max(env(safe-area-inset-bottom), 12px);
-                }
-            }
-        }
-        
-        /* CORREÇÃO ESPECÍFICA: Banner não cortado */
-        .app-banner-wrapper {
-            padding: 0 20px;
-            margin-bottom: 24px;
-        }
-
-        @media (min-width: 769px) {
-            .app-banner-wrapper {
-                max-width: 1200px;
-                margin: 0 auto 40px auto;
-                padding: 0 40px;
-            }
-        }
-        
-        /* Hover states para todos os elementos */
-        .app-search-input:focus {
-            border-color: var(--accent-purple);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-            background: var(--bg-card);
-        }
-        
-        .app-recommendation-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-        }
-        
-        .app-stat-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-        }
-        
-        .app-newsletter-section {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .app-newsletter-input {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-        }
-        
-        /* City badge styling */
-        .city-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(139, 92, 246, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin-bottom: 16px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .city-icon {
-            font-size: 20px;
-        }
-        
-        .city-name {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--accent-purple);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Featured banner styling */
-        .app-featured-banner {
-            margin: 32px 20px;
-            background: var(--gradient-primary);
-            border-radius: 20px;
-            padding: 24px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        @media (min-width: 769px) {
-            .app-featured-banner {
-                max-width: 1000px;
-                margin: 48px auto;
-                padding: 40px;
-            }
-        }
-        
-        .app-featured-banner:hover {
-            transform: scale(1.02) translateY(-2px);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
-        }
-        
-        .app-banner-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-        
-        .app-banner-tag {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 12px;
-            backdrop-filter: blur(10px);
-        }
-        
-        @media (min-width: 769px) {
-            .app-banner-tag {
-                padding: 8px 16px;
-                font-size: 12px;
-                margin-bottom: 16px;
-            }
-        }
-        
-        .app-banner-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 8px;
-        }
-        
-        @media (min-width: 769px) {
-            .app-banner-title {
-                font-size: 24px;
-                margin-bottom: 12px;
-            }
-        }
-        
-        .app-banner-subtitle {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 16px;
-            line-height: 1.4;
-        }
-        
-        @media (min-width: 769px) {
-            .app-banner-subtitle {
-                font-size: 16px;
-                margin-bottom: 20px;
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-        
-        .app-banner-cta {
-            background: white;
-            color: var(--accent-purple);
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        
-        @media (min-width: 769px) {
-            .app-banner-cta {
-                padding: 14px 28px;
-                font-size: 16px;
-            }
-        }
-        
-        .app-banner-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-        }
-    </style>
-</body>
-</html>
+                    scrollContainer.addEventListener('touchend', function
